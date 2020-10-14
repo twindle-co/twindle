@@ -1,6 +1,6 @@
 # How to contribute
 
-You can contribute by 
+You can contribute by first forking the repository and then,
 - Creating Pull Requests
 - Creating Issues
 - Reviewing Pull Requests
