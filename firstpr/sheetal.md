@@ -1,0 +1,3 @@
+### Hey there! :)
+#### I am Sheetal Pandey, an engineering student from India.
+I basically work with Python but I am also good with HTML5 and CSS3. Though I am yet to learn JavaScript.

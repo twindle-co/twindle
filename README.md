@@ -2,7 +2,9 @@
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/firstcontributions/open-source-badges)  [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 ## What is Twindle? 🤔
-> Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting Twitter threads into ePub's or PDF documents to allow users to read threads on a kindle or as a PDF on their device of choice.
+ main
+Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
+ main
 
 ## Twindle - high level design (DRAFT)
 TODO: Later we will move to wiki
@@ -14,3 +16,7 @@ TODO: Later we will move to wiki
 - [ ] A webpage providing the same services
 - [ ] Converting blogs from sites such as Hashnode and Medium
 - [ ] Browser Extension with similiar functionality
+
+## Want to Contribute..
+
+Contributions to this repository is most welcome. Read our [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️.
