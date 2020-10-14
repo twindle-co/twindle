@@ -1,6 +1,7 @@
 # How to contribute
 
-You can contribute by 
+You can contribute by First forking the repository and then,
+
 - Creating Pull Requests
 - Creating Issues
 - Reviewing Pull Requests
@@ -8,6 +9,7 @@ You can contribute by
 ## Contributing through PRs
 
 You should keep these points in mind while contributing
+
 - Any changes in the documentation are most welcome
 - For convenience it's recommended that you don't change more than 2 or 3 files per PR
 - You should respect Twindle contributors' coding style
