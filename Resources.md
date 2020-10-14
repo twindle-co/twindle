@@ -9,4 +9,4 @@ You can also contribute by giving useful resources either by providing Youtube l
 - Learn the fundamentals of [JavaScript](https://www.youtube.com/watch?v=W6NZfCO5SIk&t=1s)
 - Get started with the new features of [JavaScript](https://www.youtube.com/watch?v=hdI2bqOjy3c) like ES5, ES6 features & more.
 - Get yourself started with [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
-- Learn [Git & Github](https://www.youtube.com/watch?v=DVRQoVRzMIY)
+- Learn [Git & GitHub](https://www.youtube.com/watch?v=RGOj5yH7evk)
