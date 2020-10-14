@@ -4,7 +4,8 @@
     “description”: "Convert Twitter threads to PDF",
     "permissions":[
          "clipboardRead",
-         "storage"
+         "storage",
+         "activeTab"
     ],
     "icons": {
         "128": "./icon.svg"
