@@ -10,4 +10,4 @@
 - [ ] Node.js CLI
 - [ ] A webpage providing the same services
 - [ ] Converting blogs from sites such as Hashnode and Medium
-- [ ] Browser Extention with similiar functionality
+- [ ] Browser Extension with similiar functionality
