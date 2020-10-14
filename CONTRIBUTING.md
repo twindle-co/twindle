@@ -1,6 +1,6 @@
 # How to contribute
 
-You can contribute by 
+You can contribute by first forking the repository and then,
 - Creating Pull Requests
 - Creating Issues
 - Reviewing Pull Requests
@@ -19,4 +19,5 @@ You should keep these points in mind while contributing
 
 - Make sure that there is not similiar issue available already, if so please comment any other similiar issue there itself
 - No harsh language allowed.
+- Do not hesitate to ask questions.
 
