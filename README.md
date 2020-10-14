@@ -1,10 +1,12 @@
-# Twindle
+# Twindle 📖 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/firstcontributions/open-source-badges)  [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-## What is Twindle?
-    Twindle is an open source project to convert Twitter thread into a ePud, PDf document to allow developers and engineers to read through the interested thread information on the digital devices or print a hard copy.
+
+## What is Twindle? 🤔
+> Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting Twitter threads into ePud or PDF documents to allow users to read threads on a kindle or as a PDF on their choice of device.
 
 
-### Features coming in this project
+### Roadmap 🛣
 - [ ] Node.js CLI
 - [ ] A webpage providing the same services
 - [ ] Converting blogs from sites such as Hashnode and Medium
+- [ ] Chrome Extention with similiar functionality
