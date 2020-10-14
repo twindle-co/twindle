@@ -18,6 +18,10 @@ You should keep these points in mind while contributing
 ## Contributing through Issues
 
 - Make sure that there is not similiar issue available already, if so please comment any other similiar issue there itself
+
+## Contributing in firstpr folder
+
+- Make sure to use lowercase letters while naming your files.
+
 - No harsh language allowed.
 - Do not hesitate to ask questions.
-

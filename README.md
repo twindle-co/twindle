@@ -17,4 +17,4 @@ TODO: Later we will move to wiki
 
 ## Want to Contribute..
 
-Contributions to this repository is most welcome. Read our [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️.
+Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️ on how you can contribute.
