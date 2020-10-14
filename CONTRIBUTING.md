@@ -20,4 +20,3 @@ You should keep these points in mind while contributing
 - Make sure that there is not similiar issue available already, if so please comment any other similiar issue there itself
 - No harsh language allowed.
 
-
