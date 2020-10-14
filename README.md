@@ -17,4 +17,4 @@ TODO: Later we will move to wiki
 
 ## Want to Contribute..
 
-Contributions to this repository is most welcome. Read our <a href="https://github.com/twindle-co/twindle/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> file for more information ℹ️.
+Contributions to this repository is most welcome. Read our [CONTRIBUTING.md](https://github.com/twindle-co/twindle/blob/main/CONTRIBUTING.md) file for more information ℹ️.
