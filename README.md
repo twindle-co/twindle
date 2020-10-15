@@ -20,3 +20,15 @@ TODO: Later we will move to wiki
 ## Want to Contribute..
 
 Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️ on how you can contribute.
+
+## Social Links
+
+<p>  
+<a href="https://github.com/twindle-co/twindle" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" alt="twindle" height="30" width="30" /> Github</a> 
+
+<a href="https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg" alt="twindle" height="30" width="30" /> Twindle Youtube</a>
+
+<a href="https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtubemusic.svg" alt="twindle" height="30" width="30" /> Daily Standup Playlist</a>
+
+<a href="https://twitter.com/twindleco" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="twindle" height="30" width="30" /> Twitter</a>  
+</p>
