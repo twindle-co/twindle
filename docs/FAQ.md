@@ -1,8 +1,8 @@
 FAQs
 ------------------------------------
 
-- [General](#general)
-- [Github](#github)
+- [General](#general-)
+- [Github](#github-octocat)
 - [Google Meet](#google-meet)
 - [Logo](#logo)
 
