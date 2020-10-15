@@ -41,7 +41,7 @@ Hi, I'm Abiola Gbode, Experienced Software developer 🚀 from Nigeria, currentl
 - 🌱 I’m currently learning Flutter and Dart; 
 - 👯 I’m looking to collaborate on [Hi-CHAT](https://github.com/Abiolagbode/hiChat) 🤝;
 - 🤔 I’m looking for help with Data Structures and Algorithms 😭;
-- 💬 Ask me about anything, I am happy to help;
+- 💬 Ask me about anything, I am happy to help always;
 - ⚡️ Fun-Fact: I started helping JEE and AIPMT aspirants, by launching my own platform known as [TimzoidGeeks](https://competitivegeeks.wordpress.com/) in 2020, and sold almost **750+** Notes so far!
 - 📫 How to reach me: gbodeabiola@gmail.com;
 - 📝[Resume](https://drive.google.com/file/d/1NE3URMfr6o6Cv7fzLpLbllrO6SUXLmxD/view?usp=sharing)
