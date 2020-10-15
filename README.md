@@ -20,3 +20,13 @@ TODO: Later we will move to wiki
 ## Want to Contribute..
 
 Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️ on how you can contribute.
+
+## Connect with us
+
+<a href='https://twitter.com/twindleco'><img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=50 width=50 /></a>
+<a href='htps://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA'><img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 /></a>
+<a href='https://github.com/twindle-co/twindle'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' height=50 width=50 /></a>
+
+#### Daily Build Logs [Playlist on Youtube] :
+  
+<a href='https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ'><img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 style='margin-top:auto' /></a>
