@@ -1,4 +1,4 @@
-# Why should you consider Twindle to read through Twitter thread?
+# Why should twitter users consider Twindle to read through Twitter thread?
 
 Before we dive into what Twindle aims to solve and why to consider Twindle as the first set of choices to read through informative threads on Twitter, let's take a look at the existing problem in reading through or following a long thread on Twitter.
 
@@ -10,7 +10,7 @@ Twitter threads are a common way, nowadays, to share informative content about d
 
 Widely used approaches are to track is to retweet, like the tweet revisit later by scrolling through your likes feed. 
 
-Alternatively, a Twitter bot named threadreaderapp was introduced to address the pain point by allowing users to retweet on the original post and get a link that combines all the information related to the thread in one place through a URL. Non-twitter users can also access the URL. 
+Alternatively, a Twitter bot named threadreaderapp was introduced to address the pain point by allowing users to retweet on the original post and get a link that combines all the information related to the thread in one place through a URL. Non-twitter users can also access the URL.
 
 ### Limitations of threadreaderapp
 
