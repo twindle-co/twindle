@@ -1,1 +1,1 @@
-My name is Michael from Nigeria
+My name is Michael from Nigeria and I love coding.
