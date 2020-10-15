@@ -21,3 +21,6 @@ You should keep these points in mind while contributing
 - No harsh language allowed.
 - Do not hesitate to ask questions.
 
+## Contributing in firstpr folder
+
+- Make sure to use lowercase letters and avoid use of numbers while naming your files.
