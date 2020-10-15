@@ -28,5 +28,5 @@ Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CO
 <a href='https://github.com/twindle-co/twindle'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' height=50 width=50 /></a>
 
 #### Daily Build Logs [Playlist on Youtube] :
-  
+
 <a href='https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ'><img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 style='margin-top:auto' /></a>
