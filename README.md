@@ -3,7 +3,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 ## What is Twindle? 🤔
-> Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read long📜 threads on a kindle or as a PDF on their choice of device.
+> Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
 
 ## Twindle - high level design (DRAFT)
 TODO: Later we will move to wiki
@@ -18,4 +18,4 @@ TODO: Later we will move to wiki
 
 ## Want to Contribute..
 
-Contributions to this repository is most welcome. Read our [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️.
+Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information ℹ️ on how you can contribute.
