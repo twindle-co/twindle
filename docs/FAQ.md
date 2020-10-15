@@ -63,6 +63,11 @@ D) Expert
 - Create a new file `firstname_lastname.md` inside the `firstpr` directory, commit your change and raise your first Pull Request.
 - Make few changes in the `firstname_lastname.md` file, commit, and use a "CLI" to raise your second Pull Request.
 
+**What is git branching in git?**
+* Git branches are alternative working directory system within git repository. 
+* In essence, they are the backbone of version control and code management feature provided by git.
+* Here's a video explaining the git branch in short:
+
 ### Logo 🎨
 
 **Where to make the logo from?**
@@ -75,6 +80,3 @@ D) Expert
 
 **Is it necessary to make a logo?**
 - No, it is just a part of the project. So, if you are not comfortable with it, its okay.
-
-
-
