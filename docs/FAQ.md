@@ -1,10 +1,10 @@
 FAQs
 ------------------------------------
 
-- [General](#general-)
-- [Github](#github-octocat)
-- [Google Meet](#google-meet)
-- [Logo](#logo)
+1. [General](#general-)
+2. [Github](#github-octocat)
+3. [Google Meet](#google-meet-)
+4. [Logo](#logo-)
 
 
 ### General 👥
@@ -57,7 +57,7 @@ D) Expert
 
 **How to create first PR?**
 - Pictures of step by step [here](https://github.com/twindle-co/twindle/issues/57)
-- Video of PR steps:  [![here 🎬]()](https://youtu.be/bzaBiQQl6fU)
+- Video of PR steps:  [![here]()](https://youtu.be/bzaBiQQl6fU)
 
 **What are the two necessary tasks for being a part of Twindle (through Github)?**
 - Create a new file `firstname_lastname.md` inside the `firstpr` directory, commit your change and raise your first Pull Request.
