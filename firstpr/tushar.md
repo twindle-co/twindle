@@ -1,1 +1,0 @@
-Tushar Kashyap from India, good with HTML, CSS, JS and React.
