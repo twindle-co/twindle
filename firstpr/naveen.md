@@ -1,1 +1,1 @@
-I am Naveen, an engineering student. Familiar with basic html, css, javascript and reactjs.
+I am Naveen, an engineering student. Begineer in html , CSS, javascript and React.
