@@ -1,4 +1,4 @@
-## Soource file
+## Source file
 
 - lowercase
 - separated by - if multiple word
