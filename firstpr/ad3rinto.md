@@ -1,3 +1,4 @@
-Micheal Aderinto base din the UK.
-Just started learning:
-CSS, HTML, JAVASCRIPT and PYTHON.
+******************************ad3rinto****************
+Based in manchester , UK
+twitter/ad3rinto
+Codenewbie
