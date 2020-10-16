@@ -22,6 +22,9 @@
 
 - [Yaksh Bariya](https://www.github.com/thunder-coding) from India, a 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.
 
+- [Nishank Navelkar](https://www.github.com/nishanknavelkar)
+Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.
+
 ## Intermediate
 
 - [Tolga Erdönmez](https://github.com/tolgaerdonmez), I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.
