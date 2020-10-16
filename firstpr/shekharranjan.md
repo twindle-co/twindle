@@ -1,0 +1,1 @@
+Shekhar Ranjan - Learning JavaScript and a beginner in GitHub. I have basic knowledge of Java and SQL.This is 2nd PR and I am doing this from GitHub Desktop.
