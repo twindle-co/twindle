@@ -1,6 +1,6 @@
 <!--
 
-Please follow the tenplate below for uniformity  ['-' before is necessary ]
+Please follow the template below for uniformity  ['-' before is necessary ]
 - [Name](GitHub/Twitter Acc Url here) ,
 Years of experience as a dev ,
 place of living ,
