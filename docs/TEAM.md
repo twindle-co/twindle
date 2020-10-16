@@ -15,6 +15,9 @@ Less than 1 yr of experience
 From small city in Rio de Janeiro State - Brazil
 I'm very excited to learn and helf in this project!
 
+- [Yaksh Bariya](https://www.github.com/thunder-coding) from India, a 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.
+
+
 ## Intermediate
 - [Tolga Erdönmez](https://github.com/tolgaerdonmez), I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.
 - [Ameen](https://github.com/UnevenCoder) ,
