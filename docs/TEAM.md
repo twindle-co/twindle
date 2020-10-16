@@ -7,6 +7,8 @@ From Lagos, Nigeria.
 Second year Computer Science Undergraduate,
 Started learning web and mobile development this year.
 
+- [tr0mbley](https://github.com/tr0mbl3y) :learning how things works! nothing to share much
+
 
 
 ## Intermediate
