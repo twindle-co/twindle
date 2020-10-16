@@ -9,6 +9,8 @@ Started learning web and mobile development this year.
 
 Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
 
+- [Tushar Kandpal](https://github.com/tusharkandpal)
+From India, Contributing to make **Twindle** a success, Always a Learner :v:
 
 ## Intermediate
 - [Tolga Erdönmez](https://github.com/tolgaerdonmez), I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.
