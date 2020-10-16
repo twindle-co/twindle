@@ -1,5 +1,9 @@
 ## Beginner
 Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
+- [Rafael Rodrigues](https://github.com/RafaelBatman55)
+Less than 1 yr of experience 
+From small city in Rio de Janeiro State - Brazil
+I'm very excited to learn and helf in this project!
 
 ## Intermediate
 - [Tolga Erdönmez](https://github.com/tolgaerdonmez), I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.
