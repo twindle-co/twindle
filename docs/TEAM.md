@@ -1,6 +1,15 @@
+<!--
+
+Please follow the tenplate below for uniformity  ['-' before is necessary ]
+- [Name](GitHub/Twitter Acc Url here) ,
+Years of experience as a dev ,
+place of living ,
+cool fact about yourself
+
+That's pretty much it , welcome aboard :)-->
 ## Beginner
 
-- Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
+- [Usha Kiran](https://twitter.com/ushakiran_m), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
 - Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
 - [Michael Osajeh](https://github.com/michaelcosj),
 From Lagos, Nigeria.
@@ -21,8 +30,7 @@ An Extrovert & A Feeler :)
 15 yr of experience
 From India, Living in Sydney
 Actively participating to make twindle a success.
-
-Kenny
+- Kenny
 4+ yrs of experience
 Kerala, India
 Here to help :partying_face:
