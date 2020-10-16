@@ -2,6 +2,13 @@
 
 - Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
 - Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
+[Michael Osajeh](https://github.com/michaelcosj),
+From Lagos, Nigeria.
+Second year Computer Science Undergraduate,
+Started learning web and mobile development this year.
+
+Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
+
 
 ## Intermediate
 - [Tolga Erdönmez](https://github.com/tolgaerdonmez), I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.
