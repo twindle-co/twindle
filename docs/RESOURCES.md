@@ -7,6 +7,7 @@ You can also contribute by providing useful resources from **Youtube or Blogs** 
 ### Blogs
 
 - This is a simple guide about how to start with git. **Roger Dudler.** [git - the simple guide](https://rogerdudler.github.io/git-guide/index.html)
+- Free GitHub Learning Labs A to Z of Web Development including (Git and Github)🐱‍🏍 👉[Article Link🌊](https://dev.to/krishnakakade/free-github-learning-labs-a-to-z-of-web-development-3501) by **krishnadevz** 
 
 
 ### Youtube Links
