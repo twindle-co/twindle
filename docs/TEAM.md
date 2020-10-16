@@ -18,6 +18,9 @@ I'm very excited to learn and helf in this project!
 - [Yaksh Bariya](https://www.github.com/thunder-coding) from India, a 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.
 
 
+- [Harsha Vardhan](https://github.com/Harsha-Ambati),Iam a student from india.I recently came into this web development field , had a decent basic knowledge in html,css,js
+
+
 ## Intermediate
 - [Tolga Erdönmez](https://github.com/tolgaerdonmez), I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.
 - [Ameen](https://github.com/UnevenCoder) ,
