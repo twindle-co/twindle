@@ -6,7 +6,7 @@
 From Lagos, Nigeria.
 Second year Computer Science Undergraduate,
 Started learning web and mobile development this year.
-
+- [Yaksh Bariya](https://www.github.com/thunder-coding) from India, a 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.
 
 
 ## Intermediate
