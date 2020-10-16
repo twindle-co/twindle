@@ -26,7 +26,7 @@ Micheal Aderinto, Manchester UK. Hoping this will be by first step in the world 
 Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.
 
 - [Manohar Rajaram](https://github.com/manohar52)
-I am from India but currently pusruing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP. **Twindle** will be my first open source project. I am very happy to be learning from such a wonderful group of people.
+I am from India but currently pusruing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.
 
 ## Intermediate
 
