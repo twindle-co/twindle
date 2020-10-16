@@ -9,7 +9,7 @@ Eyram from Ghana, I have no experience,I started learning web development some m
 From Lagos, Nigeria.
 Second year Computer Science Undergraduate,
 Started learning web and mobile development this year.
-<<<<<<< HEAD
+
 - [Tushar Kandpal](https://github.com/tusharkandpal)
 From India, Contributing in making **twindle** a succees, Always a Learner :v:
 
