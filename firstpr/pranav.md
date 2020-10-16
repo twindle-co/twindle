@@ -1,5 +1,5 @@
 ## Pranav Goel
-from Uttar Pradesh, India
+Uttar Pradesh, India
 
 ### Skills
 HTML, CSS, C++, C
