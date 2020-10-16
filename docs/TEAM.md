@@ -6,7 +6,8 @@
 From Lagos, Nigeria.
 Second year Computer Science Undergraduate,
 Started learning web and mobile development this year.
-
+- [Tushar Kandpal](https://github.com/tusharkandpal)
+From India, Contributing in making **twindle** a succees, Always a Learner :v:
 
 
 ## Intermediate
