@@ -34,7 +34,8 @@ Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engine
   An Extrovert & A Feeler :)
 - [Samriddhi](https://github.com/sammjainn), I'm a student from India. Here to learn and work together!
 - [Vipin Rawat](https://github.com/aesthytik), I'm a frontend Engineer from Punjab,India. 2+ years experience in
-  React Native and React js. I create Logos and graphics for fun :)
+  React Native and React js. I create Logos and graphics for fun
+  Happy to help :)
 
 
 ## Mentor
