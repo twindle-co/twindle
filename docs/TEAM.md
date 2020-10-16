@@ -1,7 +1,11 @@
 ## Beginner
 
+- [Pranav Goel](https://github.com/pranavgoel29), I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.
+
 - Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
+
 - Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
+
 - [Michael Osajeh](https://github.com/michaelcosj),
 From Lagos, Nigeria.
 Second year Computer Science Undergraduate,
