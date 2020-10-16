@@ -6,6 +6,8 @@
 From Lagos, Nigeria.
 Second year Computer Science Undergraduate,
 Started learning web and mobile development this year.
+- Swati Rao 
+From Mumbai, I am familiar with HTML,CSS and can learn Node.JS, javascript etc. This is the my first open source project TWINDLE. Really excited!!
 
 
 
