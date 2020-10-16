@@ -15,6 +15,7 @@ Started learning web and mobile development this year.
 3+ yrs of experience 
 , From India , born & brought up in Jeddah [ I am 15 yrs old :)],
 An Extrovert & A Feeler :)
+- [Kryptöñ](https://github.com/madhusudanbabar), I'm an engineering student from India, passionate for web technologies,  especially nuxtJS. I love blogging (technical articles & CTF walkthroughs mostly as I'm also interested in cyber security). 
 
 ## Mentor
 - [Proful](https://github.com/proful)
