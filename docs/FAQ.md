@@ -70,7 +70,7 @@ D) Expert
 - Use photoshop (if you already have the software)
 
 **How to share the logo I made?**
-- Comment on the issue **#4 "We need a logo"** raised by johnjacobkenny
+- Comment on the issue **[#4 "We need a logo"](https://github.com/twindle-co/twindle/issues/4)** raised by johnjacobkenny
 - Share in the respective twitter group you belong to.
 
 **Is it necessary to make a logo?**
