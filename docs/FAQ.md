@@ -2,10 +2,10 @@ FAQs
 ------------------------------------
 
 1. [General](#general-)
-2. [Github](#github-octocat)
-3. [Google Meet](#google-meet-)
-4. [Logo](#logo-)
-
+2. [Git](#Git-)
+3. [Github](#github-octocat)
+4. [Google Meet](#google-meet-)
+5. [Logo](#logo-)
 
 ### General 👥
 
@@ -31,6 +31,46 @@ D) Expert
    Team: Helping each other, speaking up, pair programming, making and sharing videos (for this project).
    Github: Updating the first PR and README.md, posting questions, or discussing in the issues created.
 
+
+### Git
+**What is git branching in git?**
+
+Git branches are alternative working directory system within git repository.
+In essence, they are the backbone of version control and code management feature provided by git.
+Here's a video explaining the git branch in short [![tutorial](https://img.youtube.com/vi/PipalhI9yWY/0.jpg)](https://youtu.be/PipalhI9yWY)
+
+### Github :octocat:
+
+**What to do next after creating a GitHub account?**
+- Fork the project from this [link](https://github.com/twindle-co/twindle)
+- Create the first PR.
+
+**How to fork?** 0️⃣
+- We'll do a video about it, and we can share the link in this answer.
+
+**What is the first PR about?** 1️⃣
+- Create a new file `firstname_lastname.md` inside the `firstpr` directory, commit your change and raise your first Pull Request through Github.
+- Make few changes in the `firstname_lastname.md` file, commit, and use a "CLI" to raise your second Pull Request.
+
+**How to create first PR?** 
+- Pictures of step by step [here](https://github.com/twindle-co/twindle/issues/57)
+- Video of PR steps: [![tutorial](https://img.youtube.com/vi/bzaBiQQl6fU/0.jpg)](https://youtu.be/bzaBiQQl6fU).
+
+**What is the second PR about?** 2️⃣
+- Make few changes in the file `firstname_lastname.md` inside the `firstpr` directory, commit, through the CLI (command line interface) and raise your second Pull Request. 
+
+**How to create second PR?**
+- If you use Github Desktop, check this step by step [tutorial](https://github.com/twindle-co/twindle/issues/177).
+
+
+**What is the third PR about?** 3️⃣
+- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your second Pull Request. 
+
+
+**Tips for your PR**
+- Use these [keywords](https://github.com/twindle-co/twindle/issues/167) to make your PR close automatically once is merged.
+
+
 ### Google Meet 📹
 
 **Rules**
@@ -46,22 +86,6 @@ D) Expert
 - Someone will take notes and share it with the team.
 - You can also watch the videos on this [list](https://youtu.be/i90UeTiEKQk) of the YT channel.
 
-### Github :octocat:
-
-**What to do next after creating a GitHub account?**
-- Fork the project from this [link](https://github.com/twindle-co/twindle)
-- Create the first PR.
-
-**How to fork?**
-- We'll do a video about it, and we can share the link in this answer.
-
-**How to create first PR?**
-- Pictures of step by step [here](https://github.com/twindle-co/twindle/issues/57)
-- Video of PR steps:  [![here](http://img.youtube.com/vi/bzaBiQQl6fU/0.jpg)](https://youtu.be/bzaBiQQl6fU)
-
-**What are the two necessary tasks for being a part of Twindle (through Github)?**
-- Create a new file `firstname_lastname.md` inside the `firstpr` directory, commit your change and raise your first Pull Request.
-- Make few changes in the `firstname_lastname.md` file, commit, and use a "CLI" to raise your second Pull Request.
 
 ### Logo 🎨
 
