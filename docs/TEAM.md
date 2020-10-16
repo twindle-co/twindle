@@ -1,4 +1,4 @@
-## Beginner
+﻿## Beginner
 Micheal Aderinto, Manchester UK. Hoping this will be by first step in the world of solving world problems with code.
 
 - [Pranav Goel](https://github.com/pranavgoel29), I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.
@@ -24,6 +24,8 @@ Micheal Aderinto, Manchester UK. Hoping this will be by first step in the world 
 
 - [Nishank Navelkar](https://www.github.com/nishanknavelkar)
 Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.
+
+- [Edori Atiri](https://github.com/EdoriAtiri) From Nigeria. Began to learn Web Development this year. I hope to learn and contribute while I'm here.
 
 ## Intermediate
 
