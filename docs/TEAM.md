@@ -1,4 +1,5 @@
 ## Beginner
+Micheal Aderinto, Manchester UK. Hoping this will be by first step in the world of solving world problems with code.
 
 - [Pranav Goel](https://github.com/pranavgoel29), I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.
 
