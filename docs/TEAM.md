@@ -26,3 +26,8 @@ Kenny
 4+ yrs of experience
 Kerala, India
 Here to help :partying_face:
+
+- [Ashish](https://github.com/kambleaa007)
+3+ yr of experience in .Net Java JavaScript Testing
+Pune, India
+SoReady2Help :partying_face:
