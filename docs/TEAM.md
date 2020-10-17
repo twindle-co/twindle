@@ -15,7 +15,7 @@
 |[Shekhar Ranjan](https://github.com/shekhar10feb)|I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
 |[Nahuel Alfano](https://github.com/NahuelAlfano)|I am from Argentina, beginner at github and open source projects. I have basic knowledge of HTML, CSS, Javascript, C#, C++, currently learning Python. |
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
-|[Sippeybro](https://github.com/sippeybro)| : I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
+|[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 
 ---
 <br/>
