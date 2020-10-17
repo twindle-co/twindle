@@ -25,6 +25,7 @@
 |[Samriddhi](https://github.com/sammjainn)|I'm a student from India. Here to learn and work together!|
 |[PraveenKumar](https://github.com/praveen2896)|I'm from India, having 3 years of professional experience in Backend, new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.|
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
+|[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
 
 ---
 
@@ -34,6 +35,6 @@
 ## Mentor
 | Name       | Description |
 | ---------- | ----------- |
-|[Proful](https://github.com/proful)| 15 yr of experience From India, Living in SydneyActively participating to make twindle a success.|
-|Kenny|4+ yrs of experienceKerala, India Here to help :partying_face:|
+|[Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success.|
+|Kenny|4+ yrs of experience Kerala, India Here to help :partying_face:|
 
