@@ -25,7 +25,7 @@ Micheal Aderinto, Manchester UK. Hoping this will be by first step in the world 
 - [Nishank Navelkar](https://www.github.com/nishanknavelkar)
 Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.
 
-|[sippeyBro](https://github.com/sippeybro)| im sippey bro. know HTML CSS and basic javascript and php.|
+- |[sippeyBro](https://github.com/sippeybro)| im sippey bro. know HTML CSS and basic javascript and php.|
 
 
 ## Intermediate
