@@ -10,21 +10,7 @@
 |[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
 |[Yaksh Bariya](https://www.github.com/thunder-coding) from India|A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
-- [tr0mbley](https://github.com/tr0mbl3y) :learning how things works! nothing to share much
----
-
-<br/>
-
-- [Pranav Goel](https://github.com/pranavgoel29), I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.
-
-- Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
-
-- Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
-
-- [Michael Osajeh](https://github.com/michaelcosj),
-  From Lagos, Nigeria.
-  Second year Computer Science Undergraduate,
-  Started learning web and mobile development this year.
+|[tr0mbley] (https://github.com/tr0mbl3y) :learning how things works! nothing to share much|
 
 
 
