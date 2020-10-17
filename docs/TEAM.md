@@ -1,6 +1,7 @@
 ## Beginner
 Micheal Aderinto, Manchester UK. Hoping this will be by first step in the world of solving world problems with code.
 
+Eyram from Ghana, I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.
 - [Pranav Goel](https://github.com/pranavgoel29), I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.
 
 - Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
@@ -32,6 +33,9 @@ Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engine
   3+ yrs of experience
   , From India , born & brought up in Jeddah [ I am 15 yrs old :)],
   An Extrovert & A Feeler :)
+- [PraveenKumar](https://github.com/praveen2896),I'm from India,
+  having 3years of professional experience in Backend ,
+  new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.
 - [Samriddhi](https://github.com/sammjainn), I'm a student from India. Here to learn and work together!
 - [Vipin Rawat](https://github.com/aesthytik), I'm a frontend Engineer from Punjab,India. 2+ years experience in
   React Native and React js. I create Logos and graphics for fun
