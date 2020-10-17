@@ -1,0 +1,1 @@
+﻿hello, i am samuel adeniyi from nigeria, i am comfortable with HTML, CSS, Javascript, React amd Node

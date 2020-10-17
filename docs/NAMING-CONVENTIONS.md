@@ -2,4 +2,4 @@
 
 - lowercase
 - separated by - if multiple word
-- no number
+- no number or special characters
