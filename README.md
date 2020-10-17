@@ -27,11 +27,14 @@ Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CO
 
 ## Connect with us
 
-[![Twitter](https://user-images.githubusercontent.com/49528393/96320938-bc041180-100b-11eb-9bfb-ebd90fda78eb.png)](https://twitter.com/twindleco)
-[![Youtube](https://user-images.githubusercontent.com/49528393/96320950-c3c3b600-100b-11eb-9b7a-493c28c56bfa.png)](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
-[![Discord](https://user-images.githubusercontent.com/49528393/96320953-c7573d00-100b-11eb-9d6f-e077a4d865b7.jpg)
+[![Twitter](https://img.icons8.com/color/48/000000/twitter.png)](https://twitter.com/twindleco)
+[![Youtube](https://img.icons8.com/color/50/000000/youtube-play.png)](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
+[![Discord](https://img.icons8.com/fluent/48/000000/discord-logo.png)
 ](https://discord.gg/jBj2zMR)
 
 #### Daily Build Logs [Playlist on Youtube] :
 
-[![Youtube](https://user-images.githubusercontent.com/49528393/96320950-c3c3b600-100b-11eb-9b7a-493c28c56bfa.png)](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
+[![Youtube](https://img.icons8.com/color/50/000000/youtube-play.png)](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
+
+
+[social icons by icons8](https://icons8.com/)
