@@ -33,7 +33,7 @@
 |[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
 and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
-
+|[Prathap(https://github.com/codeprm)]| From India, CS student. Have 4+ exp on various languages. Never got a chance to tinker on UIs. Thought why not I start with twindle itself!
 ---
 <br/>
 
