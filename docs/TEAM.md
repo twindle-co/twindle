@@ -10,8 +10,14 @@
 |[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
 |[Yaksh Bariya](https://www.github.com/thunder-coding) from India|A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
+<<<<<<< HEAD
 |[tr0mbley] (https://github.com/tr0mbl3y)|learning how things works! nothing to share much|
 
+=======
+|[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
+|[Shekhar Ranjan](https://github.com/shekhar10feb)| I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
+---
+>>>>>>> 0889ec08e5569a5057a30e055d95bcda1098847c
 
 
 ## Intermediate
@@ -24,15 +30,15 @@
 |[Samriddhi](https://github.com/sammjainn)|I'm a student from India. Here to learn and work together!|
 |[PraveenKumar](https://github.com/praveen2896)|I'm from India, having 3 years of professional experience in Backend, new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.|
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
+|[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
+|[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
 
 ---
-
-<br />
-
+<br/>
 
 ## Mentor
 | Name       | Description |
 | ---------- | ----------- |
-|[Proful](https://github.com/proful)| 15 yr of experience From India, Living in SydneyActively participating to make twindle a success.|
-|Kenny|4+ yrs of experienceKerala, India Here to help :partying_face:|
+|[Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success.|
+|Kenny|4+ yrs of experience Kerala, India Here to help :partying_face:|
 
