@@ -11,9 +11,14 @@
 |[Yaksh Bariya](https://www.github.com/thunder-coding) from India|A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
 |[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
+<<<<<<< HEAD
 |[Shekhar Ranjan](https://github.com/shekhar10feb)| I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much.
 
+=======
+|[Shekhar Ranjan](https://github.com/shekhar10feb)|I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
+---
+>>>>>>> d1ad964b914d1c58ea31bbd1151b9a9098863996
 
 
 ## Intermediate
@@ -28,7 +33,8 @@
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
 |[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
 |[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
-
+|[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
+and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 ---
 <br/>
 
