@@ -67,6 +67,11 @@ e.g. ```closes #102 #33 #14```
 - You can also watch the videos on this [list](https://youtu.be/i90UeTiEKQk) of the YT channel.
 
 
+**What is git branching in git?**
+* Git branches are alternative working directory system within git repository. 
+* In essence, they are the backbone of version control and code management feature provided by git.
+* Here's a video explaining the git branch in short:
+
 ### Logo 🎨
 
 **Where to make the logo from?**
