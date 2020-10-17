@@ -26,7 +26,9 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 **How to do the first PR?**
 - Pictures of step by step [here](https://github.com/twindle-co/twindle/issues/57)
-- Video of PR steps: [![tutorial](https://img.youtube.com/vi/bzaBiQQl6fU/0.jpg)](https://youtu.be/bzaBiQQl6fU).
+- Video of PR steps:   
+
+[![tutorial](https://img.youtube.com/vi/bzaBiQQl6fU/0.jpg)](https://youtu.be/bzaBiQQl6fU).
 
 
 3. Do your second PR
@@ -48,7 +50,9 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 **How to do the third PR?**
 
-- Video of the tutorial using vsCode and GitLens [![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
+- Video of the tutorial using vsCode and GitLens:   
+
+[![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
 
 
 ---
