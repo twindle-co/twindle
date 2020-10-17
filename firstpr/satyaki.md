@@ -1,1 +1,4 @@
-Satyaki from India, having 1.3 yeras of MERN stack experience.
+# Hi, I'm Satyaki !
+I am a MERN stack developer.
+
+Find me on [Github](https://github.com/satyaki07)
