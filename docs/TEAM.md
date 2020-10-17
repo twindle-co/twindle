@@ -10,7 +10,7 @@
 |[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
 |[Yaksh Bariya](https://www.github.com/thunder-coding) from India|A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
-|[tr0mbley] (https://github.com/tr0mbl3y) :learning how things works! nothing to share much|
+|[tr0mbley] (https://github.com/tr0mbl3y)|learning how things works! nothing to share much|
 
 
 
