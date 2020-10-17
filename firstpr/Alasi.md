@@ -1,1 +1,2 @@
-Alasi Habeeb Frontend developer from Nigeria.
+Alasi Habeeb
+I'm a Frontend developer from Nigeria.
