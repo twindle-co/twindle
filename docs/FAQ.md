@@ -67,11 +67,11 @@ Here's a video explaining the git branch in short [![tutorial](https://img.youtu
 [![tutorial](https://img.youtube.com/vi/7I9StcZt5cI/0.jpg)](https://youtu.be/7I9StcZt5cI).
 
 **What is the third PR about?** 3️⃣
-- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your second Pull Request. 
-
+- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your second Pull Request.  
+e.g. ```closes #102 #33 #14```
 
 **Tips for your PR**
-- Use these [keywords](https://github.com/twindle-co/twindle/issues/167) to make your PR close automatically once is merged.
+- Use these [keywords](https://github.com/twindle-co/twindle/issues/167) in your PR description to make the issues linked (to the PR) close automatically once is merged.
 
 
 ### Google Meet 📹
