@@ -11,11 +11,12 @@
 |[Yaksh Bariya](https://www.github.com/thunder-coding) from India|A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
 
+
+
 ---
 
 <br/>
 
-<<<<<<< HEAD
 - [Pranav Goel](https://github.com/pranavgoel29), I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.
 
 - Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)), I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.
@@ -26,8 +27,9 @@
   From Lagos, Nigeria.
   Second year Computer Science Undergraduate,
   Started learning web and mobile development this year.
-
+  
 - [tr0mbley](https://github.com/tr0mbl3y) :learning how things works! nothing to share much
+
 
 =======
 ## Intermediate
@@ -42,7 +44,6 @@
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
 
 ---
->>>>>>> d3bdd42dd80c0423e0c16640f5fc3374296b0ad0
 
 <br />
 
