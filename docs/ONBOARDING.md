@@ -2,7 +2,6 @@
 
 Welcome to the twindle team 🥳 , this is a beginner friendly project, please follow these steps to start!
 
-
 ## Connect with the team 📱
 
 Once you are part of the twindle team, please join us here to keep in touch.
@@ -22,20 +21,23 @@ Once you are part of the twindle team, please join us here to keep in touch.
 2. Do your first PR
 
 **What is the first PR about?**
+
 - Create a new file `firstname_lastname.md` inside the `firstpr` directory, commit your change and raise your first Pull Request through Github.
 
 **How to do the first PR?**
+
 - Pictures of step by step [here](https://github.com/twindle-co/twindle/issues/57)
-- Video of PR steps:   
+- Video of PR steps:
 
 [![tutorial](https://img.youtube.com/vi/bzaBiQQl6fU/0.jpg)](https://youtu.be/bzaBiQQl6fU).
 
-
 3. Do your second PR
-**What is the second PR about?** 2️⃣
-- Make few changes in the file `firstname_lastname.md` inside the `firstpr` directory, `add`, `commit` and `push` your changes through the CLI (command line interface) and raise your second Pull Request. 
+   **What is the second PR about?** 2️⃣
+
+- Make few changes in the file `firstname_lastname.md` inside the `firstpr` directory, `add`, `commit` and `push` your changes through the CLI (command line interface) and raise your second Pull Request.
 
 **How to do the second PR?**
+
 - If you use Github Desktop, check this step by step [tutorial](https://github.com/twindle-co/twindle/issues/177).
 - If you are using git bash/command prompt, chick this step by step [tutorial](https://github.com/twindle-co/twindle/issues/163) with screenshots or this [tutorial](https://github.com/twindle-co/twindle/issues/156) which has the commands documented.
 - If you are using terminal(Mac) or command prompt(windows), watch this step by step video:
@@ -45,17 +47,17 @@ Once you are part of the twindle team, please join us here to keep in touch.
 4. Do the third PR
 
 **What is the third PR about?**
-- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your second Pull Request.  
 
+- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your third Pull Request.
 
 **How to do the third PR?**
 
-- Video of the tutorial using vsCode and GitLens:   
+- Video of the tutorial using vsCode and GitLens:
 
 [![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
 
-
 ---
+
 <br>
 
 For further questions, check the [FAQ](https://github.com/twindle-co/twindle/blob/main/docs/FAQ.md) documentation.
