@@ -20,7 +20,11 @@
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
+<<<<<<< HEAD
 |[Jilva Sheth](https://github.com/JilvaSheth)| I am Jilva Sheth and I am from India. I have been working as a Java Developer and looking forward to learn and contribute to 'Twindle' as much as I can. |
+=======
+|[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
+>>>>>>> 68dbe0340dc809700a274402ff7bb78e1df260d5
 ---
 <br/>
 
@@ -30,10 +34,12 @@
 | ---------- | ----------- |
 |[Tolga Erdönmez](https://github.com/tolgaerdonmez)|I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.|
 |[Ameen](https://github.com/UnevenCoder)|3+ yrs of experience ,From India , born & brought up in Jeddah [ I am 15 yrs old :)], An Extrovert & A Feeler :)|
+|[Krypton](https://github.com/madhusudanbabar)|I'm an engineering student from India, passionate for web technologies,  especially nuxtJS. I love blogging (technical articles & CTF walkthroughs mostly as I'm also interested in cyber security).|
 |[Rakesh](https://github.com/Rakesh-4)|Software Developer have 3+ years of experience in C#, JavaScript and Angular Framework|
 |[Samriddhi](https://github.com/sammjainn)|I'm a student from India. Here to learn and work together!|
 |[PraveenKumar](https://github.com/praveen2896)|I'm from India, having 3 years of professional experience in Backend, new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.|
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
+|[Satyaki Bose](https://github.com/satyaki07)|I'm a newbie in MERN stack from Kolkata, India with 1+ years of experience. :)|
 |[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
 |[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
 |[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
