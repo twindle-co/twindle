@@ -49,4 +49,5 @@ and a engineering student. And i am wroking on MERN stack and also comfortable w
 | ---------- | ----------- |
 |[Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success.|
 |Kenny|4+ yrs of experience Kerala, India Here to help :partying_face:|
+|Kingsley| 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:|
 
