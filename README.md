@@ -29,14 +29,11 @@ Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CO
 
 ## Connect with us
 
-[![Twitter](https://img.icons8.com/color/48/000000/twitter.png)](https://twitter.com/twindleco)
-[![Youtube](https://img.icons8.com/color/50/000000/youtube-play.png)](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
-[![Discord](https://img.icons8.com/fluent/48/000000/discord-logo.png)
-](https://discord.gg/jBj2zMR)
+
+[<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
+[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
+[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
 
 #### Daily Build Logs [Playlist on Youtube] :
 
-[![Youtube](https://img.icons8.com/color/50/000000/youtube-play.png)](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
-
-
-[social icons by icons8](https://icons8.com/)
+[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 style='margin-top:auto' />](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
