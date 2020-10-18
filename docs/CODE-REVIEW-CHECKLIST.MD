@@ -1,1 +1,1 @@
-# List down things to look for in a PR 
+# List down things to look for in a Pull Request
