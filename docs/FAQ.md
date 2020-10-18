@@ -1,11 +1,12 @@
 # FAQs
 
 1. [General](#general-)
-2. [Google Meet](#google-meet-)
+2. [Git](#Git-)
 3. [Github](#github-octocat)
-4. [Logo](#logo-)
+4. [Google Meet](#google-meet-)
+5. [Logo](#logo-)
 
-## General 👥
+### General 👥
 
 **What is our tech stack?**
 
@@ -33,7 +34,28 @@
   Team: Helping each other, speaking up, pair programming, making and sharing videos (for this project).
   Github: Updating the first PR and README.md, posting questions, or discussing in the issues created.
 
-## Google Meet 📹
+### Git
+
+**What is git branching in git?**
+
+Git branches are alternative working directory system within git repository.
+In essence, they are the backbone of version control and code management feature provided by git.
+Here's a video explaining the git branch in short [![tutorial](https://img.youtube.com/vi/PipalhI9yWY/0.jpg)](https://youtu.be/PipalhI9yWY)
+
+### Github :octocat:
+
+**What to do next after creating a GitHub account?**
+
+- Fork the project from this [link](https://github.com/twindle-co/twindle)
+- Create the first PR.
+
+**Tips for your PR**
+
+- Use these [keywords](https://github.com/twindle-co/twindle/issues/167) in your PR description to make the issues linked (to the PR) close automatically once is merged.
+
+e.g. `closes #102 #33 #14`
+
+### Google Meet 📹
 
 **Rules**
 
@@ -51,35 +73,11 @@
 - Someone will take notes and share it with the team.
 - You can also watch the videos on this [list](https://youtu.be/i90UeTiEKQk) of the YT channel.
 
-## Github :octocat:
+**What is git branching in git?**
 
-**What to do next after creating a GitHub account?**
-
-- Fork the project from this [link](https://github.com/twindle-co/twindle)
-- Create the first PR.
-
-**How to fork?**
-
-- This is covered in the video for making first pull request.
-
-**How to create first PR?**
-
-- Pictures of step by step: [click here](https://github.com/twindle-co/twindle/issues/57)
-- Video of PR steps: [click here](https://youtu.be/bzaBiQQl6fU)
-
-**How to create second PR?**
-
-- Video tutorial: [click here](https://www.youtube.com/watch?v=bPBTumdMhyQ&ab_channel=Twindle)
-- Picture of step by step: [click here](https://github.com/twindle-co/twindle/issues/163)
-
-**How to create third PR?**
-
-- Video tutorial: [click here](https://www.youtube.com/watch?v=U2bOwEY-vKo&ab_channel=Twindle)
-
-**What are the two necessary tasks for being a part of Twindle (through Github)?**
-
-- Create a new file `firstname_lastname.md` inside the `firstpr` directory, commit your change and raise your first Pull Request.
-- Make few changes in the `firstname_lastname.md` file, commit, and use a "CLI" to raise your second Pull Request.
+- Git branches are alternative working directory system within git repository.
+- In essence, they are the backbone of version control and code management feature provided by git.
+- Here's a video explaining the git branch in short:
 
 ### Youtube 💻
 
