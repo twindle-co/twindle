@@ -43,7 +43,8 @@ Once you are part of the twindle team, please join us here to keep in touch.
 - If you are using terminal(Mac) or command prompt(windows), watch this step by step video:
 
 [![tutorial](https://img.youtube.com/vi/7I9StcZt5cI/0.jpg)](https://youtu.be/7I9StcZt5cI).
-<br><br>
+
+<br>
 
 [![tutorial](https://img.youtube.com/vi/bPBTumdMhyQ/0.jpg)](https://youtu.be/bPBTumdMhyQ)
 
@@ -59,7 +60,7 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 **How to do the third PR?**
 
-- Check this step by step [tutorial](https://github.com/twindle-co/twindle/issues/226)
+- [Step by Step tutorial](https://github.com/twindle-co/twindle/issues/226)
 - Video of the tutorial using vsCode and GitLens:   
 
 [![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
