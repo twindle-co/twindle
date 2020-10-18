@@ -1,4 +1,4 @@
-//pdf kit is a pdf generation npm module that is easy to use and has alot of features
+//pdfjs is a pdf generation npm module that is easy to use and has alot of features
 const pdf = require('pdfjs')
 
 //fs is the default node js filesystem module
