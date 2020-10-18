@@ -19,7 +19,7 @@
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
-
+|[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
 ---
 <br/>
 
@@ -37,7 +37,6 @@
 |[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
 |[Sunny](https://github.com/SunnyDev7)|I am Sunny from India and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
-
 ---
 <br/>
 
