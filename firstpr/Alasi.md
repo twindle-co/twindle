@@ -1,2 +1,1 @@
-Alasi Habeeb
-I'm a Frontend developer from Nigeria.
+I am Alasi. I have basic knowledge of HTML and CSS but currently learning Javascript. 
