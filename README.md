@@ -36,4 +36,4 @@ Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CO
 
 #### Daily Build Logs [Playlist on Youtube] :
 
-[<img src ='https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/social_icons/50px/discord.png' />](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
+[<img src ='https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/social_icons/50px/youtube.png' />](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
