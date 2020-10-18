@@ -3,12 +3,12 @@ import { hideBin } from 'yargs/helpers';
 import { generateEpub } from "./epub.js";
 
 const options = yargs(hideBin(process.argv))
-   .usage("Usage: -o <file type> -n <filename>")
+   .usage("Usage: -o <file format> -n <filename>")
    .option({
 	o: {
 		alias: "output",
 		demandOption: false,
-      describe: "Output file type",
+      describe: "Output file format",
 		choices: ["mobi", "epub", "pdf"],
       type: "string",
       default: "epub",
