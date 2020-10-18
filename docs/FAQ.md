@@ -45,6 +45,13 @@ Here's a video explaining the git branch in short [![tutorial](https://img.youtu
 - Fork the project from this [link](https://github.com/twindle-co/twindle)
 - Create the first PR.
 
+**How to make a PR(Pull Request)?**
+- For the first 3 tasks after you joined, you can check the [ONBOARDING page](https://github.com/twindle-co/twindle/blob/main/docs/ONBOARDING.md).
+- For a general PR, this tutorial will walk you throught using VSCode and GUI: 
+
+[![tutorial](https://img.youtube.com/vi/ZQqfZt1RIpA/0.jpg)](https://youtu.be/ZQqfZt1RIpA)
+
+
 **Tips for your PR**
 - Use these [keywords](https://github.com/twindle-co/twindle/issues/167) in your PR description to make the issues linked (to the PR) close automatically once is merged.
 
