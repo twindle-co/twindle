@@ -41,9 +41,12 @@ Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engine
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
 |[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
 |[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
+|[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
+and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 |[Sunny](https://github.com/SunnyDev7)|I am Sunny from India and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
-
+|[Karan Parsnani](https://github.com/LilFatFrank)| From Mumbai, India. Here to learn and contribute. |
+|[Lukman Okunade](https://github.com/lokunade)| From Lagos, Nigeria. I am joining the twindle open source to learn and contribute. |
 ---
 <br/>
 
