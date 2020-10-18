@@ -13,7 +13,7 @@
 ## Twindle - high level design (DRAFT)
 
 TODO: Later we will move to wiki
-![image](https://user-images.githubusercontent.com/354596/95971617-2d519200-0e5d-11eb-9e4b-2a77bd1ecb67.png)
+![image](https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/HLD/Draft_1.png)
 
 ### Roadmap 🛣
 
@@ -30,10 +30,10 @@ Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CO
 ## Connect with us
 
 
-[<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
-[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
-[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
+[<img src='https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/social_icons/50px/twitter.png' />](https://twitter.com/twindleco)
+[<img src ='https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/social_icons/50px/youtube.png' />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
+[<img src='https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/social_icons/50px/discord.png' />](https://discord.gg/jBj2zMR)
 
 #### Daily Build Logs [Playlist on Youtube] :
 
-[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 style='margin-top:auto' />](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
+[<img src ='https://raw.githubusercontent.com/codeprm/twindle/issue-233/public/social_icons/50px/discord.png' />](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
