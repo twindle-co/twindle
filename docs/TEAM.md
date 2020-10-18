@@ -20,7 +20,7 @@
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
-|[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know besic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.
+|[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know besic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
 
 ---
 <br/>
