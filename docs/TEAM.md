@@ -21,6 +21,7 @@
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
 |[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
+|[Nneyen](https://github.com/Na-ilah) | I am from  Nigeria, I have 6 months yr of experience in Python, HTML, CSS. My background is in Computing Science and Graphics. I have a few years of work experience as a teacher ( just theory of computing). I want to pick up more freelance jobs and learn how to create simple solutions for fun as well. I also want to learn and contribute to open source. 
 ---
 <br/>
 
