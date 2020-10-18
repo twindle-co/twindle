@@ -20,7 +20,7 @@
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
-
+|[Omolo](https://github.com/geowen74)| I am from Nairobi, Kenya. I have knowledge on HTML, CSS and some basic on JavaScript and MySQL. My goal is to be a full-stack developer. Currently learning JavaScript.  
 ---
 <br/>
 
