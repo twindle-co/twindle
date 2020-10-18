@@ -55,7 +55,9 @@ Here's a video explaining the git branch in short [![tutorial](https://img.youtu
 **Tips for your PR**
 - Use these [keywords](https://github.com/twindle-co/twindle/issues/167) in your PR description to make the issues linked (to the PR) close automatically once is merged.
 
-e.g. ```closes #102 #33 #14```
+```close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved```
+
+e.g. ```closes #102, closes #33, closes #14```
 
 
 ### Google Meet 📹
