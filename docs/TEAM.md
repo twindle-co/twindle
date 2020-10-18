@@ -30,6 +30,7 @@
 | ---------- | ----------- |
 |[Tolga Erdönmez](https://github.com/tolgaerdonmez)|I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.|
 |[Ameen](https://github.com/UnevenCoder)|3+ yrs of experience ,From India , born & brought up in Jeddah [ I am 15 yrs old :)], An Extrovert & A Feeler :)|
+|[Krypton](https://github.com/madhusudanbabar)|I'm an engineering student from India, passionate for web technologies,  especially nuxtJS. I love blogging (technical articles & CTF walkthroughs mostly as I'm also interested in cyber security).|
 |[Rakesh](https://github.com/Rakesh-4)|Software Developer have 3+ years of experience in C#, JavaScript and Angular Framework|
 |[Samriddhi](https://github.com/sammjainn)|I'm a student from India. Here to learn and work together!|
 |[PraveenKumar](https://github.com/praveen2896)|I'm from India, having 3 years of professional experience in Backend, new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.|
