@@ -1,1 +1,1 @@
-Chioma Vera Nkanmuo from Nigeria, Just starting out in Tech world (Beginner with basic knowlege of HTML and CSS).
+Vera from Nigeria, Beginner with Basic Knownledge of HTMLand CSS. I can work on projects by  searching the internet (Google).
