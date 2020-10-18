@@ -15,4 +15,4 @@ Know Front End Technologies like JavaScript, HTML5, CSS3 in moderation, enough t
 ## **Contact me here**
 <a href="https://github.com/vasudeveloper001">Github</a> | <a href="https://twitter.com/saudev001">Twitter</a> | <a href="https://www.linkedin.com/in/saurabh-srivastava-b62330109/">LinkedIn</a>
 
-✉ vasudeveloper001@gmail.com
+✉ vasudeveloper001@gmail.com 

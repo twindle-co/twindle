@@ -1,6 +1,7 @@
 **Basic Intro**
 
-Name : Regina Mumbi 
+Name : Regina Mumbi Gachomba
+
 I am a kenyan student currently studying in Turkey for my undergrad degree in computer engineering
 Proficient in C,C++ and python.
 Currently doing Java OOP as part of my course work.
