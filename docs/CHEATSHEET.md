@@ -4,4 +4,4 @@
 ![git cheatsheet](./images/git.png)
 
 
-![git cheatsheet](./images/term.jpg)
+![Terminal commands cheatsheet](./images/term.jpg)
