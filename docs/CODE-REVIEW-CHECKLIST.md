@@ -9,7 +9,7 @@
 - [x] Please add some basic bio about yourself in the first PR.
 - [x] For the second PR, you can update the same file and add more details.
 - [x]  Approve PR carefully as they may not show any merge conflict but still there can be some error.
-- [x] Check for repeated names too in `TEAM.md` as sometimes the same names are getting repeated 1-2 times
+- [x] Check for repeated names too in `TEAM.md` as sometimes the same names are getting repeated 1-2 times.
 
 - [x] You need to create your second PR from your local machine by cloning your the forked repo and saying    few things about yourself in the doc folder. 
 - [x] Then create your PR again from your local machine this time you have update your forked repo from the main repo. 
