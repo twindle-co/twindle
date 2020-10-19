@@ -22,14 +22,10 @@
 |[Nahuel Alfano](https://github.com/NahuelAlfano)|I am from Argentina, beginner at github and open source projects. I have basic knowledge of HTML, CSS, Javascript, C#, C++, currently learning Python. |
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
-|[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. | 
 |[Sheetal Pandey](https://github.com/Sheetal777)|A keen learner from India pursuing engineering. Good with Python but new to Web Development. | 
 |[Regina Gachomba](https://github.com/MumbiGachomba04)| I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.| 
 |[Swati Rao](https://github.com/SwatiRaoDataEnthusiast)|I am from India,I am familiar with HTML,CSS and can learn Node.JS, javascript etc. This is the my first open source project TWINDLE. Really excited!! |
 |[Prathap](https://github.com/codeprm)|From India. Newbie to UI tech. CS Student, 4+ exp. |
-|[Nahuel Alfano](https://github.com/NahuelAlfano)|I am from Argentina, beginner at github and open source projects. I have basic knowledge of HTML, CSS, Javascript, C#, C++, currently learning Python. |
-|[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
-|[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
 |[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
 |[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
