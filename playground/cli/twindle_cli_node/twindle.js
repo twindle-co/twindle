@@ -7,7 +7,7 @@ const yargs = require("yargs");
 const args = yargs.options({
     "o": {
         alias: "option",
-        describe: "twindle command line options,\n pdf for pdf, epub for epub, md for markdown, mobi for mobi",
+        describe: "twindle command line options\n choices 'pdf', 'epub', 'mobi', 'md'",
         demandOption: true
     },
     "t": {
@@ -16,7 +16,7 @@ const args = yargs.options({
         demandOption: true
     }
 }).help().alias("help", "h")
-.usage("node twindle --thread-id 100000 -o pdf - generates a pdf file from thread").argv;
+.usage("node twindle --thread-id <thread id> -o <file type>").argv;
 
 /* 
 --YARGS METHODS--
@@ -29,14 +29,14 @@ const args = yargs.options({
 
 
 //if/elif block to check what options were passed and log a message
-if (args.o === "pdf") {
-    console.log("pdf generated from thread " + args["t-id"]);
-} else if (args.o === "epub") {
-    console.log("epub document generated from thread " + args["t-id"]);
-} else if (args.o === "md") {
-    console.log("markdown document generated from thread " + args["t-id"]);
-} else if (args.o === "mobi") {
-    console.log("mobi document generated from thread " + args["t-id"]);
+if (args.option === "pdf") {
+    console.log("pdf generated from thread " + args["t"]);
+} else if (args.option === "epub") {
+    console.log("epub document generated from thread " + args["t"]);
+} else if (args.option === "md") {
+    console.log("markdown document generated from thread " + args["t"]);
+} else if (args.option === "mobi") {
+    console.log("mobi document generated from thread " + args["t"]);
 } else{
-    console.error("incorrect option")
+    console.error("incorrect choise")
 }
