@@ -11,6 +11,9 @@
 |[Yaksh Bariya](https://www.github.com/thunder-coding) from India|A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
 |[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
+|[Shekhar Ranjan](https://github.com/shekhar10feb)| I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
+|[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. | 
+
 |[Sheetal Pandey](https://github.com/Sheetal777) |A keen learner from India pursuing engineering. Good with Python but new to Web Developement. |
 |[Shekhar Ranjan](https://github.com/shekhar10feb)|I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
 |[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
@@ -36,6 +39,7 @@
 |[Samriddhi](https://github.com/sammjainn)|I'm a student from India. Here to learn and work together!|
 |[PraveenKumar](https://github.com/praveen2896)|I'm from India, having 3 years of professional experience in Backend, new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.|
 |[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
+|[Satyaki Bose](https://github.com/satyaki07)|I'm a newbie in MERN stack from Kolkata, India with 1+ years of experience. :)|
 |[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
 |[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
 |[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
