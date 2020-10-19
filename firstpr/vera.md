@@ -2,4 +2,5 @@ Hi,I'm Chioma Vera Nkanmuo, Beginner Web developer from Nigeria with basic knowl
 Aside  from coding, I love to  read alot.
 FUN FACT: I am a fitness ethusiam.
           I love to teach (because i  believe in sharing knowlege, you gain knowlege), so you may reach out to me for help, and I will be delighed  to help.
-Connect with me:  verachioma39@yahoo.com
+Connect with me:  verachioma39@yahoo.com / verayahoo5@gmail.com
+follow me instagram and twitter; @dev_chivee
