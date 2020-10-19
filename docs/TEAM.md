@@ -33,7 +33,7 @@
 |[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
 and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
-
+|[Rohit Sawai](https://github.com/rohitsawai)|I'm a Full Stack Web Developer from Beed, Maharahstra, India. I worked in ASP.NET MVC, ReactJS, MS-SQL Server, HTML, CSS, Vanilla Javascript, Bootstrap, Material UI. I have little bit knowledge of NodeJS. But I want to explore it more and thats why I'm here for learning new things and out of the box things.
 ---
 <br/>
 
