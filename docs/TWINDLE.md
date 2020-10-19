@@ -18,8 +18,9 @@ Although the threadreaderapp alleviates the pain point, there are some limitatio
     - If the thread owner blocks the threadreaderapp bot, it will not access the thread content.
     - If the thread owner is a private user, the bot will not access the thread content.
     - The threadreaderapp bot can only access up to 3000 tweets per user
+    - Threads get deleted from the app when they are deleted by the author or Twitter because the app site is in sync with Twitter. The only way to avoid this is a premium membership which allows threads to be saved as PDF files.
     - Finally, the reader must connect to the internet to access the URL
-
+    
 ### Twindle: Access thread content offline as well
 In walks Twindle, a web application allows users to convert threads on Twitter to pdf or ePub format. 
     - The users can store the pdf/ePub on a digital device 
