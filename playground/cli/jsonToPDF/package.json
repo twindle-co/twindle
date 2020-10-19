@@ -2,7 +2,7 @@
   "name": "fetch-json-data",
   "version": "1.0.0",
   "description": "convert json data to pdf",
-  "main": "\u001b[A\u001b[B",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node script.js"

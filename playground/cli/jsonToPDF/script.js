@@ -5,10 +5,10 @@ const pdf = require('html-pdf')
 
  
 main();
-async function main(){
+function main(){
     let data;
     //getting the json file and then console
-    data= await require("./twit_thread.json");
+    data= require("./twit_thread.json");
     console.log(data);
     let tweetData={
       tweets:data
