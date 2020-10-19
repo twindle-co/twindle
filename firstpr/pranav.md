@@ -1,5 +1,4 @@
 ## Pranav Goel
-I'm a student.
 Uttar Pradesh, India
 
 ### Skills

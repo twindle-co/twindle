@@ -32,7 +32,6 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 
 3. Do your second PR
-
 **What is the second PR about?** 2️⃣
 - Make few changes in the file `firstname_lastname.md` inside the `firstpr` directory, `add`, `commit` and `push` your changes through the CLI (command line interface) and raise your second Pull Request. 
 
@@ -46,7 +45,7 @@ Once you are part of the twindle team, please join us here to keep in touch.
 4. Do the third PR
 
 **What is the third PR about?**
-- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your third Pull Request.  
+- Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your second Pull Request.  
 
 
 **How to do the third PR?**
