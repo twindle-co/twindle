@@ -32,7 +32,6 @@
 ---
 <br/>
 
-- 
 
 ## Intermediate
 
