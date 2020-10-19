@@ -14,6 +14,9 @@
 |[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
 |[Sheetal Pandey](https://github.com/Sheetal777) |A keen learner from India pursuing engineering. Good with Python but new to Web Developement. |
 |[Shekhar Ranjan](https://github.com/shekhar10feb)|I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
+|[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
+|[Swati Rao](https://github.com/SwatiRaoDataEnthusiast)|I am from India,I am familiar with HTML,CSS and can learn Node.JS, javascript etc. This is the my first open source project TWINDLE. Really excited!!|
+|[Prathap](https://github.com/codeprm)| From India. Newbie to UI tech. CS Student, 4+ exp.|
 |[Fabio Duarte](https://github.com/lh536)|I am from Colombia. I have some experience with HTML, CSS and JavaScript. Lately I've been learning Tailwindcss, ParcelJS, NodeJS and a first lesson of VueJS. I like listen to music (play guitar and drums), airplanes, cooking, video/photography and science; actually I'm biologist, but I love coding since I was in the school. I hope I can contribute to twindle. I'm always learning.|
 |[Nahuel Alfano](https://github.com/NahuelAlfano)|I am from Argentina, beginner at github and open source projects. I have basic knowledge of HTML, CSS, Javascript, C#, C++, currently learning Python. |
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
@@ -53,6 +56,7 @@
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
 |[Karan Parsnani](https://github.com/LilFatFrank)| From Mumbai, India. Here to learn and contribute. |
 |[Lukman Okunade](https://github.com/lokunade)| From Lagos, Nigeria. I am joining the twindle open source to learn and contribute. |
+|[krishnadevz](https://github.com/lokunade)| I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙  #webdev 🐱‍💻 |
 |[Melissa Huerta](https://github.com/piratelicorne)| Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV |
 ---
 <br/>
