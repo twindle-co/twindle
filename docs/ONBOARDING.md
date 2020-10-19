@@ -31,6 +31,8 @@ Once you are part of the twindle team, please join us here to keep in touch.
 [![tutorial](https://img.youtube.com/vi/bzaBiQQl6fU/0.jpg)](https://youtu.be/bzaBiQQl6fU).
 
 
+-----
+
 3. Do your second PR
 **What is the second PR about?** 2️⃣
 - Make few changes in the file `firstname_lastname.md` inside the `firstpr` directory, `add`, `commit` and `push` your changes through the CLI (command line interface) and raise your second Pull Request. 
@@ -42,7 +44,15 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 [![tutorial](https://img.youtube.com/vi/7I9StcZt5cI/0.jpg)](https://youtu.be/7I9StcZt5cI).
 
+<br>
+
+[![tutorial](https://img.youtube.com/vi/bPBTumdMhyQ/0.jpg)](https://youtu.be/bPBTumdMhyQ)
+
+<br>
+
+
 4. Do the third PR
+<br>
 
 **What is the third PR about?**
 - Make few changes in the file `TEAM.md` inside the `docs` directory, commit, through the CLI (command line interface) and raise your second Pull Request.  
@@ -50,6 +60,7 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 **How to do the third PR?**
 
+- [Step by Step tutorial](https://github.com/twindle-co/twindle/issues/226)
 - Video of the tutorial using vsCode and GitLens:   
 
 [![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
