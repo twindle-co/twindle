@@ -26,12 +26,13 @@
 |[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
 |[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
 |[Nneyen ](https://github.com/Na-ilah) | I am from Nigeria. I am  beginner at github and open source projects. I have basic knowlege of Python, HTML and CSS. I don't remember much about programming even if I have a degree in computing. I would like to be able to contribute to the open source community and build educational solutions.|
+|[Harsha Vardhan](https://github.com/Harsha-Ambati) | Iam a student from India.I recently came into this web development field , had basic knowledge in HTML, CSS,JavaScript. |
+
 
 ---
 <br/>
 
-- [Harsha Vardhan](https://github.com/Harsha-Ambati) , Iam a student from India.I recently came into this web development field , had basic knowledge in html,css,js
-
+- 
 
 ## Intermediate
 
