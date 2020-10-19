@@ -1,8 +1,9 @@
+
 ## Beginner
 | Name       | Description |
 | ---------- | ----------- |
 |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
-|Micheal Aderinto, Manchester UK|Hoping this will be by first step in the world of solving world problems with code.|
+|[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
 |Eyram from Ghana|I have no experience,I started learning web development some months ago. I am participating to learn and also make twindle a success.|
 |[Michael Osajeh](https://github.com/michaelcosj) Lagos, Nigeria.|Second year Computer Science Undergraduate,Started learning web and mobile development this year.|
@@ -16,6 +17,13 @@
 |[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
 |[Swati Rao](https://github.com/SwatiRaoDataEnthusiast)|I am from India,I am familiar with HTML,CSS and can learn Node.JS, javascript etc. This is the my first open source project TWINDLE. Really excited!!|
 |[Prathap](https://github.com/codeprm)| From India. Newbie to UI tech. CS Student, 4+ exp.|
+|[Shekhar Ranjan](https://github.com/shekhar10feb)| I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories.|
+|[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. | 
+|[Sheetal Pandey](https://github.com/Sheetal777)|A keen learner from India pursuing engineering. Good with Python but new to Web Development. | 
+|[Shekhar Ranjan](https://github.com/shekhar10feb)|I am from India, have basic knowledge of HTML, CSS, Java, SQL, Electronics Engineer, currently learning JavaScript, a beginner in Git and GitHub, like to draw, paint and write stories. | 
+|[Regina Gachomba](https://github.com/MumbiGachomba04)| I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.| 
+|[Swati Rao](https://github.com/SwatiRaoDataEnthusiast)|I am from India,I am familiar with HTML,CSS and can learn Node.JS, javascript etc. This is the my first open source project TWINDLE. Really excited!! |
+|[Prathap](https://github.com/codeprm)|From India. Newbie to UI tech. CS Student, 4+ exp. |
 |[Nahuel Alfano](https://github.com/NahuelAlfano)|I am from Argentina, beginner at github and open source projects. I have basic knowledge of HTML, CSS, Javascript, C#, C++, currently learning Python. |
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
@@ -38,14 +46,12 @@
 |[Satyaki Bose](https://github.com/satyaki07)|I'm a newbie in MERN stack from Kolkata, India with 1+ years of experience. :)|
 |[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
 |[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
-|[Sunny](https://github.com/SunnyDev7)|I am Sunny from India
-and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
-|[Sunny](https://github.com/SunnyDev7)|I am Sunny from India and a engineering student. And i am wroking on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
+|[Sunny](https://github.com/SunnyDev7)|I am Sunny from India and a engineering student. And i am working on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
 |[Karan Parsnani](https://github.com/LilFatFrank)| From Mumbai, India. Here to learn and contribute. |
 |[Lukman Okunade](https://github.com/lokunade)| From Lagos, Nigeria. I am joining the twindle open source to learn and contribute. |
 |[krishnadevz](https://github.com/lokunade)| I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙  #webdev 🐱‍💻 |
-
+|[Melissa Huerta](https://github.com/piratelicorne)| Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV |
 ---
 <br/>
 
@@ -55,4 +61,5 @@ and a engineering student. And i am wroking on MERN stack and also comfortable w
 |[Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success.|
 |Kenny|4+ yrs of experience Kerala, India Here to help :partying_face:|
 |Kingsley| 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:|
+|[Pratham](https://github.com/prasoonpratham)| 2+ experience in JavaScript, always open to help :smile:|
 
