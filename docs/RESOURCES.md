@@ -18,3 +18,8 @@ You can also contribute by providing useful resources from **Youtube or Blogs** 
 - Get yourself started with [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
 - Learn [Git & Github](https://www.youtube.com/watch?v=RGOj5yH7evk&t=339s)
 
+### Github Repositories for learning
+
+- [Best practices for Nodejs](https://github.com/goldbergyoni/nodebestpractices)
+- [You don't know JavaScript book for have strong fundamentals](https://github.com/getify/You-Dont-Know-JS)
+- [Best Practices for Clean Code in JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
