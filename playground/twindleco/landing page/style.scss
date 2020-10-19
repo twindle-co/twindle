@@ -76,6 +76,15 @@ body{
         background: white;
         color: var(--color-secondary);
     }
+    
+    &:active{
+        transform: translateY(0);
+    }
+
+    &:focus{
+        outline: none;
+        box-shadow: 0px 1px 2px var(--color-secondary);
+}
 }
 
 
@@ -137,7 +146,7 @@ body{
 // HOME
 .home{
     margin-top: var(--logo-size);
-    background: linear-gradient(to bottom right,rgba(194, 97, 233, 0.2), rgba(76, 43, 243, 0.1)) , url(./cover.jpg);
+    background: linear-gradient(to bottom right,rgba(194, 97, 233, 0.2), rgba(76, 43, 243, 0.1)) , url(./assets/cover.jpg);
     min-height: calc(100vh - var(--logo-size));
     background-repeat: no-repeat;
     display: flex;
@@ -237,8 +246,8 @@ body{
     }
 
     &__logo{
-        height: 5rem;
-        width: 5rem;
+        height: 4rem;
+        width: 4rem;
         object-fit: cover;
     }
 

@@ -80,6 +80,17 @@ body {
   color: var(--color-secondary);
 }
 
+*[class$="cta"]:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+*[class$="cta"]:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 1px 2px var(--color-secondary);
+          box-shadow: 0px 1px 2px var(--color-secondary);
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,8 +160,8 @@ body {
 
 .home {
   margin-top: var(--logo-size);
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(194, 97, 233, 0.2)), to(rgba(76, 43, 243, 0.1))), url(./cover.jpg);
-  background: linear-gradient(to bottom right, rgba(194, 97, 233, 0.2), rgba(76, 43, 243, 0.1)), url(./cover.jpg);
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(194, 97, 233, 0.2)), to(rgba(76, 43, 243, 0.1))), url(./assets/cover.jpg);
+  background: linear-gradient(to bottom right, rgba(194, 97, 233, 0.2), rgba(76, 43, 243, 0.1)), url(./assets/cover.jpg);
   min-height: calc(100vh - var(--logo-size));
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -288,8 +299,8 @@ body {
 }
 
 .footer__logo {
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
