@@ -8,3 +8,8 @@
 - [x] Using `.md` file extension is a must.
 - [x] Please add some basic bio about yourself in the first PR.
 - [ ] For the second PR, you can update the same file and add more details.
+
+- [x] You need to create your second PR from your local machine by cloning your the forked repo and saying    few things about yourself in the doc folder. 
+- [x] Then create your PR again from your local machine this time you have update your forked repo from the main repo. 
+- [x] After that you state your experience whether you are a beginner ,intermediate or mentor in the TEAM.md file in doc folder.
+- [x] if you having any difficulties in creating the second and third PR click this https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA to help
