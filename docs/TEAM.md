@@ -44,7 +44,7 @@ and a engineering student. And i am wroking on MERN stack and also comfortable w
 |[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
 |[Karan Parsnani](https://github.com/LilFatFrank)| From Mumbai, India. Here to learn and contribute. |
 |[Lukman Okunade](https://github.com/lokunade)| From Lagos, Nigeria. I am joining the twindle open source to learn and contribute. |
-|[krishnadevz](https://github.com/lokunade) |I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙  #webdev 🐱‍💻 |
+|[krishnadevz](https://github.com/lokunade)| I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙  #webdev 🐱‍💻 |
 
 ---
 <br/>
