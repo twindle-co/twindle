@@ -11,7 +11,7 @@ const data = [
 ];
 
 // setting available fonts
-var fonts = {
+const fonts = {
   Courier: {
     normal: 'Courier',
     bold: 'Courier-Bold',
@@ -38,12 +38,12 @@ var fonts = {
   }
 };
 
-var PdfPrinter = require('pdfmake');
-var printer = new PdfPrinter(fonts);
-var fs = require('fs');
+const PdfPrinter = require('pdfmake');
+const printer = new PdfPrinter(fonts);
+const fs = require('fs');
 
 // document
-var docDefinition = {
+const docDefinition = {
   content: [
     {
       columns: [{ text: 'Name: ', bold: true }, data[0].name]
@@ -64,7 +64,7 @@ var docDefinition = {
   }
 };
 
-var pdfDoc = printer.createPdfKitDocument(docDefinition);
+const pdfDoc = printer.createPdfKitDocument(docDefinition);
 pdfDoc.pipe(fs.createWriteStream('./tweet.pdf'));
 pdfDoc.end();
 
