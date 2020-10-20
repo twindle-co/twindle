@@ -12,7 +12,6 @@
 |[Yaksh Bariya](https://www.github.com/thunder-coding)| I am from India. A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
 |[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
-
 |[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. | 
 |[Sheetal Pandey](https://github.com/Sheetal777) |A keen learner from India pursuing engineering. Good with Python but new to Web Developement. |
 |[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
@@ -32,7 +31,7 @@
 |[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
 ---
 
-<br/>
+
 
 ## Intermediate
 
@@ -58,7 +57,6 @@
 
 ---
 
-<br/>
 
 ## Mentor
 
