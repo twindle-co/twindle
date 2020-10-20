@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "create-html": "^4.1.0",
-    "html-pdf": "^2.2.0",
+    "html-to-pdf": "^0.1.11",
     "jquery": "^3.5.1",
     "mustache": "^4.0.1"
   }
