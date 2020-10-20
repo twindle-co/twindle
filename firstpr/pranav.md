@@ -1,6 +1,5 @@
 ## Pranav Goel
-I'm a student.
-Uttar Pradesh, India
+From Uttar Pradesh, India
 
 ### Skills
 HTML, CSS, C++, C
