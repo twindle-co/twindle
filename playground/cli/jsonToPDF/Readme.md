@@ -2,6 +2,10 @@
 
 This json-pdf will convert the JSON files to PDF
 
+# Requirements
+
+ - Node.js 10.x.x
+
 # workflow
   - Convert JSON to HTML
   - Convert HTML to PDF
