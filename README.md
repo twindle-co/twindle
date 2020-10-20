@@ -4,6 +4,8 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 ![image](https://visitor-badge.glitch.me/badge?page_id=Twindle-co.twindle)
 
+# WE ARE NOT APPLYING FOR HACKTOBERFEST
+
 ## What is Twindle? 🤔
 
 > Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
@@ -27,10 +29,11 @@ Contributions to this repository are most welcome. Read the [CONTRIBUTING.md](CO
 
 ## Connect with us
 
-<a href='https://twitter.com/twindleco'><img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=50 width=50 /></a>
-<a href='https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA'><img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 /></a>
-<a href='https://github.com/twindle-co/twindle'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' height=50 width=50 /></a>
+
+[<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
+[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
+[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
 
 #### Daily Build Logs [Playlist on Youtube] :
 
-<a href='https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ'><img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 style='margin-top:auto' /></a>
+[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 style='margin-top:auto' />](https://www.youtube.com/watch?v=mveHORtiKx8&list=PLJ6Y8JfXAV--l82_UnUi4w7WEaYJhJFRQ)
