@@ -8,6 +8,8 @@ module.exports.http = (req, res, next) => {
   // Inject the Twitter api key into every request
   req.twitterApiKey = TWITTER_API_KEY;
 
+  // console.log(TWITTER_API_URL);
+
   // Inject options into every request. These options would be made available as configuration parameters to axios
   req.opts = {
    headers: {

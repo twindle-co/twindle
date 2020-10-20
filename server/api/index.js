@@ -13,9 +13,10 @@ class API {
    });
    res.status(200).json({
     statusCode: 200,
-    response: response.data
+    response: response.data.data
    });
   } catch (error) {
+   // console.log(error);
    res.status(500).json({
     statusCode: 500,
     response: error.message
