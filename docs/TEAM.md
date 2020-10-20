@@ -30,6 +30,7 @@
 |[Maria Rivera](https://github.com/GorettiRivera) | I have basic knowledge of Javascript, HTML and CSS. Currently working in different open source projects|
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
 |[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
+|[Naveen Kala](https://github.com/naveenkala)|I'm an engineering student from India. Having basic knowledge of HTML, CSS and JavaScript. Currently I am learning Reactjs.|
 ---
 
 <br/>
