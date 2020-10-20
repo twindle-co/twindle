@@ -1,6 +1,6 @@
-# JSON-PDF
+# Theme
 
-This json-pdf will convert the JSON files to PDF
+ - convert the JSON files to PDF
 
 # Requirements
 
