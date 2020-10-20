@@ -51,6 +51,9 @@ Here's a video explaining the git branch in short [![tutorial](https://img.youtu
 
 [![tutorial](https://img.youtube.com/vi/ZQqfZt1RIpA/0.jpg)](https://youtu.be/ZQqfZt1RIpA)
 
+- PR needs 2 code reviewer in order to be approved, if you made a PR, copy the link and share it into the Twitter group so people can assign it to themselves and approve it.
+- We have a Github Team for all the members and more and more contributions are welcomed.
+
 
 **Tips for your PR**
 - Use these [keywords](https://github.com/twindle-co/twindle/issues/167) in your PR description to make the issues linked (to the PR) close automatically once is merged.
