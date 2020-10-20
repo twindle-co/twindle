@@ -12,7 +12,7 @@
 |[Yaksh Bariya](https://www.github.com/thunder-coding)| I am from India. A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
 |[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
-
+|[Naveen Kala](https://github.com/naveenkala) |I'm an engineering student from India. Having basic knowledge of HTML, CSS and JavaScript. Currently I am learning Reactjs.|
 |[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. | 
 |[Sheetal Pandey](https://github.com/Sheetal777) |A keen learner from India pursuing engineering. Good with Python but new to Web Developement. |
 |[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
@@ -30,7 +30,6 @@
 |[Maria Rivera](https://github.com/GorettiRivera) | I have basic knowledge of Javascript, HTML and CSS. Currently working in different open source projects|
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
 |[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
-|[Naveen Kala](https://github.com/naveenkala)|I'm an engineering student from India. Having basic knowledge of HTML, CSS and JavaScript. Currently I am learning Reactjs.|
 ---
 
 <br/>
