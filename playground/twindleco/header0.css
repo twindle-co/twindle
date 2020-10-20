@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+li, a{
+    font-size: 18px;
+    color: #3b98d5;
+
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color:  #eef9ff;
+    height: 50px;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 10px 15px 15px #D3D3D3;
+    
+}
+
+.link{
+    list-style: none;
+}
+
+.link,li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+#logo{
+    margin-right: auto;
+    color: #3b98d5;
+}
+
+li,a:hover{
+    color:  #586066;
+}
+
+

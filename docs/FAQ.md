@@ -45,10 +45,22 @@ Here's a video explaining the git branch in short [![tutorial](https://img.youtu
 - Fork the project from this [link](https://github.com/twindle-co/twindle)
 - Create the first PR.
 
+**How to make a PR(Pull Request)?**
+- For the first 3 tasks after you joined, you can check the [ONBOARDING page](https://github.com/twindle-co/twindle/blob/main/docs/ONBOARDING.md).
+- For a general PR, this tutorial will walk you throught using VSCode and GUI: 
+
+[![tutorial](https://img.youtube.com/vi/ZQqfZt1RIpA/0.jpg)](https://youtu.be/ZQqfZt1RIpA)
+
+- PR needs 2 code reviewer in order to be approved, if you made a PR, copy the link and share it into the Twitter group so people can assign it to themselves and approve it.
+- We have a Github Team for all the members and more and more contributions are welcomed.
+
+
 **Tips for your PR**
 - Use these [keywords](https://github.com/twindle-co/twindle/issues/167) in your PR description to make the issues linked (to the PR) close automatically once is merged.
 
-e.g. ```closes #102 #33 #14```
+```close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved```
+
+e.g. ```closes #102, closes #33, closes #14```
 
 
 ### Google Meet 📹
@@ -66,11 +78,6 @@ e.g. ```closes #102 #33 #14```
 - Someone will take notes and share it with the team.
 - You can also watch the videos on this [list](https://youtu.be/i90UeTiEKQk) of the YT channel.
 
-
-**What is git branching in git?**
-* Git branches are alternative working directory system within git repository. 
-* In essence, they are the backbone of version control and code management feature provided by git.
-* Here's a video explaining the git branch in short:
 
 ### Logo 🎨
 

@@ -23,4 +23,4 @@ You should keep these points in mind while contributing
 
 ## Contributing in firstpr folder
 
-- Make sure to use lowercase letters and avoid use of numbers while naming your files.
+- Make sure to use lowercase letters and avoid use of numbers or special characters while naming your files.
