@@ -4,5 +4,5 @@ I want to contribute to the project.
 This my first pr.
 if I make some mistakes,please forgive me.
 I like hot weather.
-Make a little progress every day.
+I want to make a little progress every day.
 
