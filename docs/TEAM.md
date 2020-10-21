@@ -12,6 +12,7 @@
 |[Yaksh Bariya](https://www.github.com/thunder-coding)| I am from India. A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
 |[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
 |[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
+|[Naveen Kala](https://github.com/naveenkala) |I'm an engineering student from India. Having basic knowledge of HTML, CSS and JavaScript. Currently I am learning Reactjs.|
 |[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. | 
 |[Sheetal Pandey](https://github.com/Sheetal777) |A keen learner from India pursuing engineering. Good with Python but new to Web Developement. |
 |[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
@@ -53,7 +54,9 @@
 | [Lukman Okunade](https://github.com/lokunade)      | From Lagos, Nigeria. I am joining the twindle open source to learn and contribute.                                                                                                                                                                                                                                          |
 | [krishnadevz](https://github.com/lokunade)         | I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙ #webdev 🐱‍💻 |
 | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
-| [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.                                                                                                                                                                                                                                                                                               |
+| [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
+| [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
+
 
 ---
 

@@ -18,6 +18,7 @@ You can also contribute by providing useful resources from **Youtube or Blogs** 
 - Get started with the new features of [JavaScript](https://www.youtube.com/watch?v=hdI2bqOjy3c) like ES5, ES6 features & more.
 - Get yourself started with [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
 - Learn [Git & Github](https://www.youtube.com/watch?v=RGOj5yH7evk&t=339s)
+- How to create PDFs using Puppeteer & Handlebars with HTML, watch this [video](https://youtu.be/llkkwRABN-s)
 
 ### Github Repositories for learning
 
