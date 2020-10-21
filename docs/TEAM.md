@@ -54,7 +54,9 @@
 | [Lukman Okunade](https://github.com/lokunade)      | From Lagos, Nigeria. I am joining the twindle open source to learn and contribute.                                                                                                                                                                                                                                          |
 | [krishnadevz](https://github.com/lokunade)         | I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙ #webdev 🐱‍💻 |
 | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
-| [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.                                                                                                                                                                                                                                                                                               |
+| [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
+| [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
+
 
 ---
 
