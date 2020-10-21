@@ -1,6 +1,6 @@
 name: Add label on merge conflict
 on:
-  pull_request:
+  pull_request_target:
     branches: [ main ]
 jobs:
   add-label:
