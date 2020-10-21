@@ -1,0 +1,7 @@
+#node modules
+node_modules/
+
+#ebook files
+*.mobi
+*.pdf
+*.epub
