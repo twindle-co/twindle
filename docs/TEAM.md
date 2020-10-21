@@ -30,11 +30,8 @@
 |[Maria Rivera](https://github.com/GorettiRivera) | I have basic knowledge of Javascript, HTML and CSS. Currently working in different open source projects|
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
 |[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
-<<<<<<< HEAD
-|[Fusen Ye](https://github.com/Yexiansen66)| I'm interested in programming.I known some HTML,CSS and JavaScript.I want to do something for twindle.And I want to learn more advanced knowledge.
-=======
 |[Franklin U.O. Ohaegbulam](https://github.com/frankiefab100)| I'm comfortable working with HTML and CSS, with basic knowledge of JavaScript. I'm from Nigeria and love talking about accessibility, inclusive design and web animation.|
->>>>>>> a67527677a213779ce8c98b51d0145d3701926c6
+|[Fusen Ye](https://github.com/Yexiansen66)| I'm interested in programming.I known some HTML,CSS and JavaScript.I want to do something for twindle.And I want to learn more advanced knowledge.|
 ---
 
 <br/>
