@@ -1,0 +1,11 @@
+name: Add label on merge conflict
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label Conflicting Pull Requests
+        uses: eps1lon/actions-label-merge-conflict@v2.0.0
+
