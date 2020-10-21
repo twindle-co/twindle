@@ -1,8 +1,8 @@
 main();
-async function main(){
+function main(){
     var myData;
-    myData=await require("./twit_thread.json");
-    console.log(await myData);  
+    myData=require("./twit_thread.json");
+    console.log("Tweets",myData);  
 }
 
 
