@@ -1,0 +1,16 @@
+{
+  "name": "cli-epub",
+  "version": "1.0.0",
+  "description": "Generate cli from text input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "billgufran",
+  "license": "ISC",
+  "dependencies": {
+    "epub-gen": "^0.1.0",
+    "yargs": "^16.1.0"
+  },
+  "type": "module"
+}
