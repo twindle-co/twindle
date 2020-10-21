@@ -1,1 +1,1 @@
-Alexis Rivas From México,  Computer Systems Engineer with 1 year of developement experience. 
+I'm Alexis Rivas from México, a just graduated Computer Systems Engineer and a newbie in the open source development, I hope learn and contribute everything what I can. 
