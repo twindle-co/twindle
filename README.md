@@ -40,7 +40,7 @@ Pre-requsites
 * HTML
 * CSS
 
-[twindle-web](https://github.com/twindle-co/twindle-web)
+[twindle-co playground](https://github.com/twindle-co/twindle/playground/twindleco)
 
 ## Want to contribute on twindle cli (phase 1 application)
 Pre-requsites
