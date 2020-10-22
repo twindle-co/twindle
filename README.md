@@ -40,14 +40,16 @@ Pre-requsites
 * HTML
 * CSS
 
-[twindle-web](https://github.com/twindle-co/twindle-web)
+Initial code goes into playground/twindleco
 
 ## Want to contribute on twindle cli (phase 1 application)
 Pre-requsites
 * JavaScript
 * Node.js (basic)
 
-[twindle-cli](https://github.com/twindle-co/twindle-cli)
+Initial code goes into playground/cli
+
+[Final twindle-cli](https://github.com/twindle-co/twindle-cli)
 
 ## Connect with us
 
