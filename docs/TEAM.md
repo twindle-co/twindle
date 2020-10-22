@@ -2,7 +2,7 @@
 
 | Image                                                           | Name                                                           | Description |
 |---------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------- |
-| <img src="./images/team/pranav.jpg" width="60px" height="60px"> | [Pranav Goel](https://github.com/pranavgoel29)                   |I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
+| <img src="./images/team/pranav.jpg" width="60px" height="50px"> | [Pranav Goel](https://github.com/pranavgoel29)                   |I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
 |  |[Adewale Abiola]( https://github.com/princehaybee )               |I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
 |  |[Micheal Aderinto](https://github.com/ad3rinto)                   | Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 |  |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m))          | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
