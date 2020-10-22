@@ -1,14 +1,9 @@
 ## Beginner
 
 | Name       | Description |
-<<<<<<< HEAD
 | ---------- | ----------- |
 |<img src="/docs/images/team/Pranav.jpg" width="80" height="80">[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
-=======
-|------------|---------------|
 |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
-|[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
->>>>>>> 6f551a94eb356c813e117639e3f27938e895f83b
 |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
 |Eyram ([Ey_kwasi](https://twitter.com/Ey_kwasi))| I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
