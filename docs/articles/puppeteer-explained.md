@@ -20,7 +20,7 @@ We know that using Twindle we convert long twitter threads to readable PDFs/ePub
 
 > We need Puppeteer to render the HTML content in the headless browser so that we can perform print operation to convert the content to PDF.
 
-### **How to utilize Handlebars in Twindle project?**
+### **How to utilize Puppeteer in Twindle project?**
 
 Already @tolgaerdonmez has implemented Puppeteer to generate PDF from HTML. Lets dissect the code :grinning: :hocho: 
 Following is the code from [create-pdf.js](https://github.com/twindle-co/twindle/blob/main/playground/cli/pdf-from-html-cli/create-pdf.js)
