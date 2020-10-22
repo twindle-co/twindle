@@ -13,6 +13,7 @@
 ## Articles
 * [Joined Twindle. What next?](./docs/ONBOARDING.md)
 * [Handlebar Explained](./docs/articles/handlebar-explained.md)
+* [Puppeteer Explained](./docs/articles/puppeteer-explained.md)
 
 
 ## Twindle - high level design (DRAFT)
