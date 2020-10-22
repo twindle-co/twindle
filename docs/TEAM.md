@@ -35,7 +35,6 @@
 | |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
 | |[Edori Atiri](https://github.com/EdoriAtiri) | From Nigeria. Began to learn Web Development this year. I hope to learn and contribute while I'm here.|
 
-<<<<<<< HEAD
 | Name       | Description |
 | ---------- | ----------- |
 |<img src="/docs/images/team/Pranav.jpg" width="80" height="80">[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
@@ -72,8 +71,6 @@
 |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
 
 ---
-=======
->>>>>>> upstream/main
 
 <br/>
 
