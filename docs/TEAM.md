@@ -27,6 +27,7 @@
 |[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
 |[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
 |[Nneyen ](https://github.com/Na-ilah) | I am from Nigeria. I am  beginner at github and open source projects. I have basic knowlege of Python, HTML and CSS. I don't remember much about programming even if I have a degree in computing. I would like to be able to contribute to the open source community and build educational solutions.|
+|[Shekhar Ranjan](https://github.com/shekhar10feb) | I am from India, a beginner in Git, GitHub, have basic knowlege of Java, SQL, HTML and CSS and currently learning JavaScript. This is my first Open-Source Project. And in free time, I like to play cricket, make painting and write stories. |
 |[Harsha Vardhan](https://github.com/Harsha-Ambati) | I am a student from India, recently came into this web development field, had basic knowledge in HTML, CSS, JavaScript. |
 |[Maria Rivera](https://github.com/GorettiRivera) | I have basic knowledge of Javascript, HTML and CSS. Currently working in different open source projects|
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
