@@ -139,7 +139,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
   }
 }
 @media screen and (max-width: 600px)  {
-  .team  .nav-bar {
+  .team   {
     max-width: 100%;
   }
 }
