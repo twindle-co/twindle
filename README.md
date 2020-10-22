@@ -17,6 +17,7 @@ Twindle (Twitter + Kindle = Twindle) is an open source project made for the purp
 * [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
 * [Handlebar Explained](./docs/articles/handlebar-explained.md)
 * [Puppeteer Explained](./docs/articles/puppeteer-explained.md)
+* [How to sync to the main repo](./docs/articles/sync-to-main-repo.md)
 
 
 ## Twindle - high level design (DRAFT)
