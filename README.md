@@ -16,7 +16,6 @@
 
 ## Twindle - high level design (DRAFT)
 
-TODO: Later we will move to wiki
 ![image](https://user-images.githubusercontent.com/354596/95971617-2d519200-0e5d-11eb-9e4b-2a77bd1ecb67.png)
 
 ### Roadmap 🛣
