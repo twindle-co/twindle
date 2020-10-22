@@ -8,6 +8,5 @@ This is just my 2nd PR. Trying to see if it goes well.
 
 I am now working on the third PR.  
 
-So, I will be adding my twitter handle here @bornriches
+this is still my 2nd PR. 
 
-My code for twindle footer to follow if this third PR goes through. 
