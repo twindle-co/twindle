@@ -54,4 +54,4 @@ Pre-requsites
 
 ## Daily Meeting (5 PM IST)
 
-[Google Meet Link](https://meet.google.com/gna-hvym-tfj)
+[Google Meet Link](https://meet.google.com/gna-hvym-tfj) - [Time Zone Converter](https://time.is/compare/1700_in_IST)  
