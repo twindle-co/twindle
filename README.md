@@ -1,17 +1,22 @@
 # [Twindle](https://twindle-co.github.io/twindle/.) 📖
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/firstcontributions/open-source-badges) [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![image](https://visitor-badge.glitch.me/badge?page_id=Twindle-co.twindle)
 
 # WE ARE NOT APPLYING FOR HACKTOBERFEST
 
 ## What is Twindle? 🤔
 
-> Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
+Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
 
-## Joined Twindle. What next?
-[Read onboarding guides](./docs/ONBOARDING.md)
+## Articles
+* [Joined Twindle. What next?](./docs/ONBOARDING.md)
+* [FAQ](./docs/FAQ.md)
+* [Resources](./docs/RESOURCES.md)
+* [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
+* [Handlebar Explained](./docs/articles/handlebar-explained.md)
+* [Puppeteer Explained](./docs/articles/puppeteer-explained.md)
 
 
 ## Twindle - high level design (DRAFT)
@@ -53,4 +58,4 @@ Pre-requsites
 
 ## Daily Meeting (5 PM IST)
 
-[Google Meet Link](https://meet.google.com/gna-hvym-tfj)
+[Google Meet Link](https://meet.google.com/gna-hvym-tfj) - [Time Zone Converter](https://time.is/compare/1700_in_IST)  
