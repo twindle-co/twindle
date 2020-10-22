@@ -10,8 +10,9 @@
 
 > Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
 
-## Joined Twindle. What next?
-[Read onboarding guides](./docs/ONBOARDING.md)
+## Articles
+* [Read onboarding guides](./docs/ONBOARDING.md)
+* [Handlebar Explained](./docs/articles/handlebar-explained.md)
 
 
 ## Twindle - high level design (DRAFT)
