@@ -23,12 +23,6 @@
 |[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
 |[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
 |[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
-<<<<<<< HEAD
-|[Omolo](https://github.com/geowen74)| I am from Nairobi, Kenya. I have knowledge on HTML, CSS and some basic on JavaScript and MySQL. My goal is to be a full-stack developer. Currently learning JavaScript.  
-|[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
-|[Nneyen ](https://github.com/Na-ilah) | I am from Nigeria. I am  beginner at github and open source projects. I have basic knowlege of Python, HTML and CSS. I don't remember much about programming even if I have a degree in computing. I would like to be able to contribute to the open source community and build educational solutions.|
-
-=======
 |[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
 |[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
 |[Nneyen ](https://github.com/Na-ilah) | I am from Nigeria. I am  beginner at github and open source projects. I have basic knowlege of Python, HTML and CSS. I don't remember much about programming even if I have a degree in computing. I would like to be able to contribute to the open source community and build educational solutions.|
@@ -37,31 +31,13 @@
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
 |[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
 |[Franklin U.O. Ohaegbulam](https://github.com/frankiefab100)| I'm comfortable working with HTML and CSS, with basic knowledge of JavaScript. I'm from Nigeria and love talking about accessibility, inclusive design and web animation.|
->>>>>>> upstream/main
----
+|[OmoloG] (https://github.com/geowen74) | I am from Nairobi, Kenya. I have knowledge on html, css and basic in javascript and mysql and i aspire to be a full stack web developer.  
+ ---
 
 <br/>
 
 ## Intermediate
 
-<<<<<<< HEAD
-| Name       | Description |
-| ---------- | ----------- |
-|[Tolga Erdönmez](https://github.com/tolgaerdonmez)|I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.|
-|[Ameen](https://github.com/UnevenCoder)|3+ yrs of experience ,From India , born & brought up in Jeddah [ I am 15 yrs old :)], An Extrovert & A Feeler :)|
-|[Krypton](https://github.com/madhusudanbabar)|I'm an engineering student from India, passionate for web technologies,  especially nuxtJS. I love blogging (technical articles & CTF walkthroughs mostly as I'm also interested in cyber security).|
-|[Rakesh](https://github.com/Rakesh-4)|Software Developer have 3+ years of experience in C#, JavaScript and Angular Framework|
-|[Samriddhi](https://github.com/sammjainn)|I'm a student from India. Here to learn and work together!|
-|[PraveenKumar](https://github.com/praveen2896)|I'm from India, having 3 years of professional experience in Backend, new to JS,HTML,CSS ,Planning to learn React in future with the help of #twindle.|
-|[Vipin Rawat](https://github.com/aesthytik)|I'm a frontend Engineer from Punjab,India. 2+ years experience in React Native and React js. I create Logos and graphics for fun.Happy to help :)|
-|[Aparna Sivasailam](https://github.com/Mira-Alf)|I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design|
-|[Rajesh](https://github.com/rkumar1904)|I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.|
-|[Sunny](https://github.com/SunnyDev7)|I am Sunny from India and a engineering student. And i am working on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.|
-|[Akshay Sharma](https://github.com/Akshay2996)|I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.|
-|[Karan Parsnani](https://github.com/LilFatFrank)| From Mumbai, India. Here to learn and contribute. |
-|[Lukman Okunade](https://github.com/lokunade)| From Lagos, Nigeria. I am joining the twindle open source to learn and contribute. |
-|[Melissa Huerta](https://github.com/piratelicorne)| Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV |
-=======
 | Name                                               | Description                                                                                                                                                                                                                                                                                                                 |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Tolga Erdönmez](https://github.com/tolgaerdonmez) | I'm from Turkey. I'm a student. I've been programming for 4 years but no proffessional experience.                                                                                                                                                                                                                          |
@@ -84,7 +60,6 @@
 | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
 
 
->>>>>>> upstream/main
 ---
 
 <br/>
