@@ -20,6 +20,8 @@
 
 ![phase-1](./assets/phase-1.png)
 
+![phase-2](./assets/phase-2.png)
+
 ### Roadmap 🛣
 
 -   [ ] In depth detail roadmap discussion
