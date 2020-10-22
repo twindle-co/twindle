@@ -27,6 +27,7 @@
 |[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
 |[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
 |[Nneyen ](https://github.com/Na-ilah) | I am from Nigeria. I am  beginner at github and open source projects. I have basic knowlege of Python, HTML and CSS. I don't remember much about programming even if I have a degree in computing. I would like to be able to contribute to the open source community and build educational solutions.|
+|[Shekhar Ranjan](https://github.com/shekhar10feb) | I am from India, a beginner in Git, GitHub, have basic knowlege of Java, SQL, HTML and CSS and currently learning JavaScript. This is my first Open-Source Project. And in free time, I like to play cricket, make painting and write stories. |
 |[Harsha Vardhan](https://github.com/Harsha-Ambati) | I am a student from India, recently came into this web development field, had basic knowledge in HTML, CSS, JavaScript. |
 |[Maria Rivera](https://github.com/GorettiRivera) | I have basic knowledge of Javascript, HTML and CSS. Currently working in different open source projects|
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
@@ -34,7 +35,7 @@
 |[Franklin U.O. Ohaegbulam](https://github.com/frankiefab100)| I'm comfortable working with HTML and CSS, with basic knowledge of JavaScript. I'm from Nigeria and love talking about accessibility, inclusive design and web animation.|
 |[Aravind Sivasailam](https://github.com/aravindsivasailam) | I'm a product engineer living in US with 2 years of experience in software testing and project management. New to software development and wish to improve in HTML, CSS and JS. |
 |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
-
+|[Fusen Ye](https://github.com/Yexiansen66)| I'm interested in programming.I known some HTML,CSS and JavaScript.I want to do something for twindle.And I want to learn more advanced knowledge.|
 ---
 
 <br/>
@@ -61,7 +62,7 @@
 | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
 | [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
 | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
-
+| [Nitin Kadam](https://github.com/ni3-kdm)            | Hi! I'm a full stack developer from Pune, India. Having 5+ years of experience in web development. |
 
 ---
 
