@@ -31,7 +31,7 @@
 |[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
 |[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
 |[Franklin U.O. Ohaegbulam](https://github.com/frankiefab100)| I'm comfortable working with HTML and CSS, with basic knowledge of JavaScript. I'm from Nigeria and love talking about accessibility, inclusive design and web animation.|
-|[OmoloG] (https://github.com/geowen74) | I am from Nairobi, Kenya. I have knowledge on html, css and basic in javascript and mysql and i aspire to be a full stack web developer.  
+|[OmoloG] (https://github.com/geowen74) | I am from Nairobi, Kenya. I have knowledge on HTML, CSS and basic in Javascript and mysql and i aspire to be a full-stack web developer.  
  ---
 
 <br/>
