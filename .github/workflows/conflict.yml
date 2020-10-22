@@ -12,6 +12,6 @@ jobs:
           dirtyLabel: "TEST: merge-conflict"
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           commentOnDirty: "This pull request has conflicts, so we need to resolve that! 
-          don't worry at all let me help with you with that.
+          don't worry at all let me help you with that.
           please visit this link ---> https://github.com/twindle-co/twindle/issues/41."
           commentOnClean: "Conflicts have been resolved. A maintainer will review the pull request shortly."
