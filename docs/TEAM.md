@@ -60,6 +60,7 @@
 | | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
 | | [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
 | | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
+| <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Lt6uKVNG--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/322705/1412670d-03f2-4342-bf66-483956dde97a.jpeg" width="240px" height="85px"> | [Joel Vinay Kumar](https://github.com/JoelVinayKumar)     | I'm a FullStack Developer from Hyderabad, India. Worked on building microservices, web apps and mobile apps. I learned UI design out of passion. I'm proud of any small contribution to Twindle|
 
 ---
 <br/>
