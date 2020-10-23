@@ -18,6 +18,7 @@ Twindle (Twitter + Kindle = Twindle) is an open source project made for the purp
 * [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
 * [Handlebar Explained](./docs/articles/handlebar-explained.md)
 * [Puppeteer Explained](./docs/articles/puppeteer-explained.md)
+* [How to sync to the main repo](./docs/articles/sync-to-main-repo.md)
 
 
 ## Twindle - high level design (DRAFT)
@@ -53,7 +54,6 @@ Initial code goes into playground/cli
 [Final twindle-cli](https://github.com/twindle-co/twindle-cli)
 
 ## Connect with us
-
 
 [<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
 [<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
