@@ -4,7 +4,7 @@ Here, I am assuming that you have already connected your GitHub account with the
 
     
 <b>Step 1:</b> First, Open the folder in <b>Visual Studio Code</b>, which is connected to your <b>GitHub</b> account.
-
+ 
     
 ![](https://user-images.githubusercontent.com/72906055/96881417-e1759d00-149b-11eb-932f-16e1fd2844c1.JPG)
     <br>  
