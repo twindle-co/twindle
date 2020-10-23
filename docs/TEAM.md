@@ -5,7 +5,7 @@
 | |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
 | |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 | |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
-| |Eyram ([Ey_kwasi](https://twitter.com/Ey_kwasi))| I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
+| <img src="./images/team/eyram.jpg" width="80px" height="80px"> | [Eyram ](https://twitter.com/Ey_kwasi)            | I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
 | |[Michael Osajeh](https://github.com/michaelcosj) |I am from Lagos, Nigeria, second year Computer Science Undergraduate, started learning web and mobile development this year.|
 | |[Tushar Kandpal](https://github.com/tusharkandpal)|From India, Contributing in making **twindle** a succees, Always a Learner :v:|
 | |[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
@@ -72,4 +72,3 @@
 | | Kenny                                        | 4+ yrs of experience Kerala, India Here to help :partying_face:                                    |
 | | Kingsley                                     | 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:                         |
 | | [Pratham](https://github.com/prasoonpratham) | 2+ experience in JavaScript, always open to help :smile:                                           |
-
