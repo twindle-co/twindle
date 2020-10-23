@@ -1,4 +1,5 @@
 # [Twindle](https://twindle-co.github.io/twindle/.) 📖
+> ### An open source project for beginners.
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/firstcontributions/open-source-badges) [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -40,14 +41,16 @@ Pre-requsites
 * HTML
 * CSS
 
-[twindle-web](https://github.com/twindle-co/twindle-web)
+Initial code goes into playground/twindleco
 
 ## Want to contribute on twindle cli (phase 1 application)
 Pre-requsites
 * JavaScript
 * Node.js (basic)
 
-[twindle-cli](https://github.com/twindle-co/twindle-cli)
+Initial code goes into playground/cli
+
+[Final twindle-cli](https://github.com/twindle-co/twindle-cli)
 
 ## Connect with us
 

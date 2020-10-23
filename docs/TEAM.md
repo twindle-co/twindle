@@ -1,12 +1,11 @@
 ## Beginner
-
 | Image | Name       | Description |
 | ---------- | ---------- | ----------- |
-| |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
+| <img src="https://avatars3.githubusercontent.com/u/48860494?v=4" width="280px" height="82px"> |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
 | |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
 | |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 | |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
-| |Eyram ([Ey_kwasi](https://twitter.com/Ey_kwasi))| I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
+| <img src="./images/team/eyram.jpg" width="80px" height="80px"> | [Eyram ](https://twitter.com/Ey_kwasi)            | I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
 | |[Michael Osajeh](https://github.com/michaelcosj) |I am from Lagos, Nigeria, second year Computer Science Undergraduate, started learning web and mobile development this year.|
 | |[Tushar Kandpal](https://github.com/tusharkandpal)|From India, Contributing in making **twindle** a succees, Always a Learner :v:|
 | |[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
@@ -34,9 +33,9 @@
 | |[Franklin U.O. Ohaegbulam](https://github.com/frankiefab100)| I'm comfortable working with HTML and CSS, with basic knowledge of JavaScript. I'm from Nigeria and love talking about accessibility, inclusive design and web animation.|
 | |[Aravind Sivasailam](https://github.com/aravindsivasailam) | I'm a product engineer living in US with 2 years of experience in software testing and project management. New to software development and wish to improve in HTML, CSS and JS. |
 | |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
+| |[Edori Atiri](https://github.com/EdoriAtiri) | From Nigeria. Began to learn Web Development this year. I hope to learn and contribute while I'm here.|
 
 ---
-
 <br/>
 
 ## Intermediate
@@ -54,7 +53,7 @@
 | | [Aparna Sivasailam](https://github.com/Mira-Alf)   | I'm from Bengaluru, India. Tech woman on a career break with 6 years of Java Experience. Trying to upskill myself with Javascript and UI/UX design                                                                                                                                                                          |
 | | [Rajesh](https://github.com/rkumar1904)            | I'm a Lead frontend developer from Mumbai, India. Total 9+ years experience in front end technology. Currently working on ReactJS & Flutter. Initially, I started my career as a Programming Faculty.                                                                                                                       |
 | | [Sunny](https://github.com/SunnyDev7)              | I am Sunny from India and a engineering student. And i am working on MERN stack and also comfortable with html, css and vanilla js and am Here to learn, collaborate and help.                                                                                                                                              |
-| <img src="https://avatars0.githubusercontent.com/u/37118877?v=4" width="225px" height="100px"> | [Akshay Sharma](https://github.com/Akshay2996)     | I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.                                                                                                                                                                                |
+| <img src="https://avatars0.githubusercontent.com/u/37118877?v=4" width="240px" height="85px"> | [Akshay Sharma](https://github.com/Akshay2996)     | I'm a Frontend Developer from Bangalore, India. Total 1+ years of experience in the industry. Contributing to Twindle to make it successful.                                                                                                                                                                                |
 | | [Karan Parsnani](https://github.com/LilFatFrank)   | From Mumbai, India. Here to learn and contribute.                                                                                                                                                                                                                                                                           |
 | | [Lukman Okunade](https://github.com/lokunade)      | From Lagos, Nigeria. I am joining the twindle open source to learn and contribute.                                                                                                                                                                                                                                          |
 | | [krishnadevz](https://github.com/lokunade)         | I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙ #webdev 🐱‍💻 |
@@ -63,9 +62,7 @@
 | | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
 | <img src="https://avatars2.githubusercontent.com/u/56103269?s=60&v=4"> | [Saurabh Srivastava](https://github.com/vasudeveloper001) | From India, 18 months Software Development Experience mainly in backend PHP development. Know about JavaScript, HTML, CSS, Nodejs, Python basics as well. Learning JAVA currently and starting a YouTube Channel on coding.
 
-
 ---
-
 <br/>
 
 ## Mentor
