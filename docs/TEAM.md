@@ -3,7 +3,7 @@
 | ---------- | ---------- | ----------- |
 | <img src="https://avatars3.githubusercontent.com/u/48860494?v=4" width="280px" height="82px"> |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
 | |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
-| |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
+|<img src="./images/team/ad3rinto.jpg" width="80px" height="80px"> |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 | |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
 | <img src="./images/team/eyram.jpg" width="80px" height="80px"> | [Eyram ](https://twitter.com/Ey_kwasi)            | I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
 | |[Michael Osajeh](https://github.com/michaelcosj) |I am from Lagos, Nigeria, second year Computer Science Undergraduate, started learning web and mobile development this year.|
