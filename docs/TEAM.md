@@ -3,7 +3,7 @@
 | ---------- | ---------- | ----------- |
 | <img src="https://avatars3.githubusercontent.com/u/48860494?v=4" width="280px" height="82px"> |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
 | |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
-| |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
+|<img src="./images/team/ad3rinto.jpg" width="80px" height="80px"> |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 | |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
 | <img src="./images/team/eyram.jpg" width="80px" height="80px"> | [Eyram ](https://twitter.com/Ey_kwasi)            | I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
 | |[Michael Osajeh](https://github.com/michaelcosj) |I am from Lagos, Nigeria, second year Computer Science Undergraduate, started learning web and mobile development this year.|
@@ -35,6 +35,43 @@
 | |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
 | |[Edori Atiri](https://github.com/EdoriAtiri) | From Nigeria. Began to learn Web Development this year. I hope to learn and contribute while I'm here.|
 
+| Name       | Description |
+| ---------- | ----------- |
+|<img src="/docs/images/team/Pranav.jpg" width="80" height="80">[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
+|[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
+|[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
+|Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
+|Eyram ([Ey_kwasi](https://twitter.com/Ey_kwasi))| I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
+|[Michael Osajeh](https://github.com/michaelcosj) |I am from Lagos, Nigeria, second year Computer Science Undergraduate, started learning web and mobile development this year.|
+|[Tushar Kandpal](https://github.com/tusharkandpal)|From India, Contributing in making **twindle** a succees, Always a Learner :v:|
+|[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
+|[Yaksh Bariya](https://www.github.com/thunder-coding)| I am from India. A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
+|[Nishank Navelkar](https://www.github.com/nishanknavelkar)|Im from India, Basic knoweledge of Python, C, C++, HTML, CSS,  Electrical engineer, Here to learn and Contribute.|
+|[Manohar Rajaram](https://github.com/manohar52) |I am from India but currently pursuing my Masters in computer science in US. I am quite new to Javascript. I have some experience in HTML, CSS and PHP.|
+|[Naveen Kala](https://github.com/naveenkala) |I'm an engineering student from India. Having basic knowledge of HTML, CSS and JavaScript. Currently I am learning Reactjs.|
+|[Alasi Habeeb](https://github.com/Holaryeankar007) |I'm from Nigeria, I have experience in HTML and CSS but i'm currently learning Javascript. |
+|[Sheetal Pandey](https://github.com/Sheetal777) |A keen learner from India pursuing engineering. Good with Python but new to Web Developement. |
+|[Regina Gachomba](https://github.com/MumbiGachomba04)|I am a Kenyan undergraduate student currently based in Ankara, Turkey. During my first year in college I learnt C,C++ and python. I am currently learning Java OOP for my coursework and teaching myself HTML,CSS and Javascript. Looking forward to master front-end development at the moment, then hopefully I can begin learning back-end.|
+|[Swati Rao](https://github.com/SwatiRaoDataEnthusiast)|I am from India,I am familiar with HTML,CSS and can learn Node.JS, javascript etc. This is the my first open source project TWINDLE. Really excited!!|
+|[Prathap](https://github.com/codeprm)| From India. Newbie to UI tech. CS Student, 4+ exp.|
+|[Fabio Duarte](https://github.com/lh536)|I am from Colombia. I have some experience with HTML, CSS and JavaScript. Lately I've been learning Tailwindcss, ParcelJS, NodeJS and a first lesson of VueJS. I like listen to music (play guitar and drums), airplanes, cooking, video/photography and science; actually I'm biologist, but I love coding since I was in the school. I hope I can contribute to twindle. I'm always learning.|
+|[Nahuel Alfano](https://github.com/NahuelAlfano)|I am from Argentina, beginner at github and open source projects. I have basic knowledge of HTML, CSS, Javascript, C#, C++, currently learning Python. |
+|[Tr0mbley](https://github.com/tr0mbl3y)| learning how things works! nothing to share much|
+|[Sippeybro](https://github.com/sippeybro)| I'm from Maldives, Have basic knowledge of HTML, CSS, php and I'm currently learning Javascript.|
+|[Titi Olopade](https://github.com/teckiegeek)| I am from the United Kingdom. My background is Computing and Statistics with a MSc. in Agile Project Management and PRINCE2 certified, SCRUM Master Certified. I have several years professional experience with few years career break. I started learning HTML and CSS coding 6months ago. I plan a change in career to be a Front-end developer. Here to learn and contribute to success of "twindle".|
+|[luli](https://github.com/ululi)| I'm from zambia,have some basic knowledge of html, css and js, am here to learn more about web development.|
+|[Ashish](https://github.com/kambleaa007) | 3+ yr of experience in .Net Java JavaScript Testing, Pune, India SoReady2Help :partying_face: |
+|<img src ="docs/images/team/nailah.png" width ="80px" height = "80px">[Nneyen ](https://github.com/Na-ilah) | I am from Nigeria. I am  beginner at github and open source projects. I have basic knowlege of Python, HTML and CSS. I don't remember much about programming even if I have a degree in computing. I would like to be able to contribute to the open source community and build educational solutions.|
+|[Harsha Vardhan](https://github.com/Harsha-Ambati) | I am a student from India, recently came into this web development field, had basic knowledge in HTML, CSS, JavaScript. |
+|[Maria Rivera](https://github.com/GorettiRivera) | I have basic knowledge of Javascript, HTML and CSS. Currently working in different open source projects|
+|[Neaz Mahmood](https://github.com/Neaz-Mahmood)|I am from Dhaka, Bangladesh. I am a second year Computer Science undergraduate. I know basic html, css, javascript. I am here to learn & contribute to 'twindle'. This is my first open source project.|
+|[Predrag](https://github.com/stamenkovic-dev)| I'm from Serbia, and I have only basic knowledge of HTML and CSS, but I'm here to learn more about web development and team play at coding.|
+|[Franklin U.O. Ohaegbulam](https://github.com/frankiefab100)| I'm comfortable working with HTML and CSS, with basic knowledge of JavaScript. I'm from Nigeria and love talking about accessibility, inclusive design and web animation.|
+|[Aravind Sivasailam](https://github.com/aravindsivasailam) | I'm a product engineer living in US with 2 years of experience in software testing and project management. New to software development and wish to improve in HTML, CSS and JS. |
+|[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
+
+---
+
 ---
 <br/>
 
@@ -60,6 +97,7 @@
 | | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
 | | [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
 | | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
+| <img src="./images/team/nitin_kadam.jpeg" width="80px" height="80px"> | [Nitin Kadam](https://github.com/ni3-kdm)            | Full stack developer from Pune, India. 5+ years of experience in the web development 👩🏽‍💻. |
 
 ---
 <br/>
