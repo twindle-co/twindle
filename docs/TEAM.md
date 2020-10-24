@@ -1,7 +1,7 @@
 ## Beginner
 | Image | Name       | Description |
 | ---------- | ---------- | ----------- |
-| <img src="./images/team/pranav.jpg" width="430px" height="110px"> |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
+| ![avatar](https://github.com/pranavgoel29.png?size=400) |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
 | |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
 |<img src="./images/team/ad3rinto.jpg" width="80px" height="80px"> |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
 | |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
@@ -70,7 +70,7 @@
 
 | Image | Name       | Description |
 | --------- | ---------- | ----------- |
-| <img src="./images/team/proful.png" width="80px" height="80px"> | [Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success. |
+| ![avatar](https://github.com/proful.png?size=80) | [Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success. |
 | | Kenny                                        | 4+ yrs of experience Kerala, India Here to help :partying_face:                                    |
 | | Kingsley                                     | 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:                         |
 | | [Pratham](https://github.com/prasoonpratham) | 2+ experience in JavaScript, always open to help :smile:                                           |
