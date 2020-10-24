@@ -7,6 +7,7 @@
 | |Usha Kiran ([K!r@nD0n](https://twitter.com/ushakiran_m)) | I am a student from India. I just started my OpenSource journey with TWINDLE. I am currently learning #JavaScript.|
 | <img src="./images/team/eyram.jpg" width="80px" height="80px"> | [Eyram ](https://twitter.com/Ey_kwasi)            | I am from Ghana and I have no experience, started learning web development some months ago. I am participating to learn and also make twindle a success.|
 | |[Michael Osajeh](https://github.com/michaelcosj) |I am from Lagos, Nigeria, second year Computer Science Undergraduate, started learning web and mobile development this year.|
+| |[Lorenna Leon](https://github.com/lorennaleon) |I am Peruvian, I have knowledge in html, css and javascripts I hope to learn a lot from you|
 | |[Tushar Kandpal](https://github.com/tusharkandpal)|From India, Contributing in making **twindle** a succees, Always a Learner :v:|
 | |[Rafael Rodrigues](https://github.com/RafaelBatman55)|Less than 1 yr of experience From small city in Rio de Janeiro State - Braz.I'm very excited to learn and helf in this project!|
 | |[Yaksh Bariya](https://www.github.com/thunder-coding)| I am from India. A 14 year old technology lover. I create amazing things using the knowledge I have gained so far. Currently, I want to explore more of JavaScript/TypeScript.|
