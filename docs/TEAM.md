@@ -34,6 +34,7 @@
 | |[Aravind Sivasailam](https://github.com/aravindsivasailam) | I'm a product engineer living in US with 2 years of experience in software testing and project management. New to software development and wish to improve in HTML, CSS and JS. |
 | |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
 | |[Edori Atiri](https://github.com/EdoriAtiri) | From Nigeria. Began to learn Web Development this year. I hope to learn and contribute while I'm here.|
+| |[Lorenna Leon](https://github.com/lorennaleon) |I am Peruvian, I have knowledge in html, css and javascripts I hope to learn a lot from you|
 
 | Name       | Description |
 | ---------- | ----------- |
