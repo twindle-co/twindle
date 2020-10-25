@@ -1,0 +1,107 @@
+@charset "UTF-8";
+.container {
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  padding-top: 0px;
+  background-color: white;
+  margin-left: -10px;
+}
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.header h1 {
+  display: block;
+  border: 2px solid transparent;
+  width: 70px;
+  height: 66px;
+  margin-left: -10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  margin-top: -10px;
+  background-color: #E01C15;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Sansita Swashed', cursive;
+}
+
+.links-container {
+  position: absolute;
+  right: 5%;
+}
+.links-container .links {
+  display: flex;
+  flex-direction: row;
+}
+.links-container .links a {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: none;
+}
+.links-container .links li {
+  font-size: 15px;
+  margin-right: 3vw;
+  list-style: none;
+  font-family: 'Sansita Swashed', cursive;
+}
+.links-container .links a:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+}
+.links-container .links button {
+  padding: 5px;
+  color: white;
+  background-color: cyan;
+  border-radius: 5px;
+  border-color: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+.links-container .links button::before {
+  content: "↖ IT'S FREE!";
+  position: absolute;
+  color: rgba(0, 0, 0, 0.4);
+  top: 39px;
+  right: 2px;
+  font-size: 10px;
+}
+.links-container .links button:hover {
+  padding: 6.6px;
+}
+
+.body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body img {
+  margin-top: 100px;
+  width: 40%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  li {
+    font-size: 5px;
+    margin-right: 1vw;
+  }
+}
