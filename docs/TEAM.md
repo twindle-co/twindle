@@ -61,8 +61,7 @@
 | | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
 | | [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
 | | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
-| <img src="https://avatars2.githubusercontent.com/u/56103269?s=60&v=4"> | [Saurabh Srivastava](https://github.com/vasudeveloper001) | From India, 18 months Software Development Experience mainly in backend PHP development. Know about JavaScript, HTML, CSS, Nodejs, Python basics as well. Learning JAVA currently and starting a YouTube Channel on coding.
-=======
+| <img src="https://avatars2.githubusercontent.com/u/56103269?s=60&v=4"> | [Saurabh Srivastava](https://github.com/vasudeveloper001) | From India, 18 months Software Development Experience mainly in backend PHP development. Know about JavaScript, HTML, CSS, Nodejs, Python basics as well. Learning JAVA currently and starting a YouTube Channel on coding. |
 | <img src="./images/team/nitin_kadam.jpeg" width="80px" height="80px"> | [Nitin Kadam](https://github.com/ni3-kdm)            | Full stack developer from Pune, India. 5+ years of experience in the web development 👩🏽‍💻. |
 | | [Marcus](https://github.com/mar-code)              | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs|
 
