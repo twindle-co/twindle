@@ -1,6 +1,6 @@
 ## Beginner
 | Image | Name       | Description |
-| <img src="https://avatars0.githubusercontent.com/u/70926567?s=460&u=7ff3dbfe0a665f95f12fcbdd53528debf76c2080&v=4" width="80px" height="80px">  | [Chioma Vera Nkanmuo](https://github.com/chiomavera)| Hi,I'm Chioma Vera Nkanmuo, Beginner Web developer from Nigeria with basic knowledge of  HTML and  CSS. I am currently in my penultimate level in university. Learning while contributing in making twindle a success.  |
+| <img src="https://github.com/chiomavera.png?size=80">  | [Chioma Vera Nkanmuo](https://github.com/chiomavera)|I am a Nigerian with basic knowledge of  HTML and  CSS. Learning while contributing in making twindle a success.  |
 | <img src="./images/team/pranav.jpg" width="430px" height="110px"> |[Pranav Goel](https://github.com/pranavgoel29)|I'm from India, Have basic knowledge of HTML, CSS, C++ and C, I'm currently learning Javascript.|
 | |[Adewale Abiola]( https://github.com/princehaybee )|I am a Nigerian. I have basic knowledge of HTML,CSS and Javascript.|
 |<img src="./images/team/ad3rinto.jpg" width="80px" height="80px"> |[Micheal Aderinto](https://github.com/ad3rinto)| Manchester UK, Hoping this will be my first step in the world of solving world problems with code.|
