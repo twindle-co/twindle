@@ -59,6 +59,6 @@ Initial code goes into playground/cli
 [<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
 [<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
 
-## Daily Meeting (5 PM IST)
+## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
 
 [Google Meet Link](https://meet.google.com/gna-hvym-tfj) - [Time Zone Converter](https://time.is/compare/1700_in_IST)  
