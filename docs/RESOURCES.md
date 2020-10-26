@@ -19,6 +19,8 @@ You can also contribute by providing useful resources from **Youtube or Blogs** 
 - Get yourself started with [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
 - Learn [Git & Github](https://www.youtube.com/watch?v=RGOj5yH7evk&t=339s)
 - How to create PDFs using Puppeteer & Handlebars with HTML, watch this [video](https://youtu.be/llkkwRABN-s)
+- Configure git bash and complete your second pull request. [Video](https://www.youtube.com/watch?v=cBigFcoAXZg)
+
 
 ### Github Repositories for learning
 
