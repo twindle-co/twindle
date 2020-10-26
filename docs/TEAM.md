@@ -95,7 +95,8 @@
 | <img src="./images/team/nitin_kadam.jpeg" width="80px" height="80px">                                                            | [Nitin Kadam](https://github.com/ni3-kdm)                 | Full stack developer from Pune, India. 5+ years of experience in the web development 👩🏽‍💻.                                                                                                                                                                                                                                    |
 | <img src="./images/team/marcus.jpg" width="100px" height="150px">                                                                | [Marcus](https://github.com/mar-code)                     | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs                                                                                                                                          |
 
-> > > > > > > 7d778e98261215e49eab7b5850e7fa5e0848990f
+| | [Samuel Adeniyi](https://github.com/samueladeniy)
+| I am proficient in HTML, CSS an Javascript. I am comfortable with react. I intend to become fullstack with MERN. I am from Nigeria |
 
 ---
 
