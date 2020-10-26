@@ -35,7 +35,7 @@
 | |[Edwin Mancipe](https://github.com/efmg0325)|I am from Colombia. I have a bit of knowledge about HTML, CSS, Javascript, Python and SQL. I love to listeninng to Heavy Metal music. I like second life web browser games.|
 | |[Edori Atiri](https://github.com/EdoriAtiri) | From Nigeria. Began to learn Web Development this year. I hope to learn and contribute while I'm here.|
 | |[Lorenna Leon](https://github.com/lorennaleon) |I am Peruvian, I have knowledge in html, css and javascripts I hope to learn a lot from you|
-
+| <img src="https://avatars2.githubusercontent.com/u/58055517" width="90px" height="90px"> | [Fusen Ye](https://github.com/Yexiansen66) | I'm a beginner from China. I know HTML,CSS and JavaScript.I want to learn more advanced knowledge and contribute to twindle. |
 ---
 <br/>
 
@@ -58,11 +58,12 @@
 | | [Karan Parsnani](https://github.com/LilFatFrank)   | From Mumbai, India. Here to learn and contribute.                                                                                                                                                                                                                                                                           |
 | | [Lukman Okunade](https://github.com/lokunade)      | From Lagos, Nigeria. I am joining the twindle open source to learn and contribute.                                                                                                                                                                                                                                          |
 | | [krishnadevz](https://github.com/lokunade)         | I am krishna 4 years of expereince in web-development Current skills(HTML/CSS/JS/REACTJS/C/bootstrap4) from india currrently i am final year CS gradd student and Learning MERN✡ Stack Developer SelfTaught-Dev/Opensourcer🛠 #100DaysOfCode(R2) FOSS❤ I like to build things & Write things related to Web🌐⚙ #webdev 🐱‍💻 |
-| | [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
+| <img src="https://avatars1.githubusercontent.com/u/52439373?s=400&u=9f8fd9570b808befd2d3f8bdb033375d86c2fffa&v=4" width="100px">| [Melissa Huerta](https://github.com/piratelicorne) | Hi! I'm Systems Engineer from Perú, 3+ yrs of experience in IT Infrastructure, I have knowledge in C and Javascript. I recently started in Development as Flutter Developer, currently working on side projects 👩🏽‍💻 and blogging for #WomenWhoCodeSV                                                                         |
 | | [Abdou Masoudi](https://github.com/uplancer)       | a selft-taught Web Developer.|
 | | [Viraj](https://github.com/viraj-patil)            | I'm a full stack developer from Pune, India. Total 9+ years of experience in software industry as a developer. |
+| <img src="https://avatars2.githubusercontent.com/u/56103269?s=60&v=4"> | [Saurabh Srivastava](https://github.com/vasudeveloper001) | From India, 18 months Software Development Experience mainly in backend PHP development. Know about JavaScript, HTML, CSS, Nodejs, Python basics as well. Learning JAVA currently and starting a YouTube Channel on coding. |
 | <img src="./images/team/nitin_kadam.jpeg" width="80px" height="80px"> | [Nitin Kadam](https://github.com/ni3-kdm)            | Full stack developer from Pune, India. 5+ years of experience in the web development 👩🏽‍💻. |
-| | [Marcus](https://github.com/mar-code)              | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs|
+|  <img src="./images/team/marcus.jpg" width="100px" height="150px"> | [Marcus](https://github.com/mar-code)              | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs|
 
 ---
 <br/>
@@ -72,6 +73,7 @@
 | Image | Name       | Description |
 | --------- | ---------- | ----------- |
 | <img src="./images/team/proful.png" width="80px" height="80px"> | [Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success. |
-| | Kenny                                        | 4+ yrs of experience Kerala, India Here to help :partying_face:                                    |
+| ![avatar](https://github.com/johnjacobkenny.png?size=80)| Kenny John Jacob | 4+ yrs of experience. From Kerala, India. Here to help :partying_face:                                    |
 | | Kingsley                                     | 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:                         |
 | | [Pratham](https://github.com/prasoonpratham) | 2+ experience in JavaScript, always open to help :smile:                                           |
+| | [Sarath](http://http://www.sarathnagaraj.ca/) | 6+ experience in JavaScript, Currently working on a side project using ReactJS :man_technologist: |
