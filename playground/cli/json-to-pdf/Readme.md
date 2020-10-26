@@ -1,6 +1,6 @@
 # Theme
 
- - convert the JSON files to PDF
+ - Simple nodejs CLI application for convert the JSON files to PDF
 
 # Requirements
 
@@ -24,3 +24,21 @@
 Install the dependencies:
 - npm i
 - npm start
+
+### Options:  
+Options:  
+
+--version: Show version number  
+
+-o, --option: twindle command line options, choices ['pdf', 'epub', 'mobi', 'md'] 
+
+-f, --file path: file path of the json that is to be converted  
+
+-h, --help: Show help        
+
+# Usage
+`node script -f <file path of the json> -o <file type>`
+
+# Example:
+`node script -f ./twit_thread.json -o pdf`  
+PDF Succesfully saved in F:\Projects\JS\Twindle\fetch-json-data\output.pdf
