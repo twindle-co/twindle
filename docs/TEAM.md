@@ -73,7 +73,7 @@
 | Image | Name       | Description |
 | --------- | ---------- | ----------- |
 | <img src="./images/team/proful.png" width="80px" height="80px"> | [Proful](https://github.com/proful)| 15 yr of experience From India, Living in Sydney Actively participating to make twindle a success. |
-| | Kenny                                        | 4+ yrs of experience Kerala, India Here to help :partying_face:                                    |
+| ![avatar](https://github.com/johnjacobkenny.png?size=80)| Kenny John Jacob | 4+ yrs of experience. From Kerala, India. Here to help :partying_face:                                    |
 | | Kingsley                                     | 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:                         |
 | | [Pratham](https://github.com/prasoonpratham) | 2+ experience in JavaScript, always open to help :smile:                                           |
 | | [Sarath](http://http://www.sarathnagaraj.ca/) | 6+ experience in JavaScript, Currently working on a side project using ReactJS :man_technologist: |
