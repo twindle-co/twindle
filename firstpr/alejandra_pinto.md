@@ -1,0 +1,2 @@
+Hi, I'm Alejandra, I live in Spain, I would like to dedicate myself to web development, with a lot of experience, but if 
+I have the necessary studies to be able to collaborate, a greeting.
