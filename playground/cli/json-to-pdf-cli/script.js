@@ -31,18 +31,16 @@ if (args["o"] === "pdf" && fs.existsSync(resolve(args["f"]))) {
 }
 
 function main() {
-  let data;
-  //get the data from json
-  data = fs.readFile(resolve(args["f"]), "utf-8", function (err, data) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log(data);
-  });
+  data = require("./twit_thread.json");
+  //console.log(data);
   let tweetData = {
     tweets: data,
   };
+  getHtml(tweetData);
+}
+
+function getHtml(tweetData) {
+  //console.log("TweetData", tweetData);
   //get external mustache template
   fs.readFile("tweet_template.mustache", "utf8", function (err, data) {
     if (err) {
@@ -55,7 +53,7 @@ function main() {
     let htmlContent = createHTML({
       title: "Twindle",
       body: info,
-      css: "output.css",
+      css: "output.css", //external css
     });
     getPdf(htmlContent);
   });
