@@ -52,6 +52,8 @@ Once you are part of the twindle team, please join us here to keep in touch.
 <br>
 
 
+-----
+
 4. Do the third PR
 <br>
 
@@ -68,6 +70,26 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 
 ---
+
+5. Do the fourth PR
+
+**What is the fourth PR about?**
+- Upload your profile image into /docs/images/team folder.
+
+- Give the name same as your first pr file name & use extension jpg, jpeg or png e.g., 'proful.png'.
+
+- Edit TEAM.md to link to your image. Someone experienced with markdown come up with an initial design (size & placement). Other follow.
+
+This will improve your knowledge of merging. 
+
+**How to do the fourth PR?**
+
+- [Step by Step tutorial](https://github.com/twindle-co/twindle/issues/226)
+- Video of the tutorial using vsCode and GitLens:   
+
+[![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
+
 <br>
 
+---
 For further questions, check the [FAQ](https://github.com/twindle-co/twindle/blob/main/docs/FAQ.md) documentation.
