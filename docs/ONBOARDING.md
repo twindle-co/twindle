@@ -84,12 +84,10 @@ This will improve your knowledge of merging.
 
 **How to do the fourth PR?**
 
-- [Step by Step tutorial](https://github.com/twindle-co/twindle/issues/226)
-- Video of the tutorial using vsCode and GitLens:   
-
-[![here](https://img.youtube.com/vi/U2bOwEY-vKo/0.jpg)](https://youtu.be/7I9StcZt5cI).
+- Follow the steps for third PR and add your image to the TEAM.md
 
 <br>
 
 ---
+
 For further questions, check the [FAQ](https://github.com/twindle-co/twindle/blob/main/docs/FAQ.md) documentation.
