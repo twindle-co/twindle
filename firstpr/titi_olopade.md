@@ -1,3 +1,7 @@
+Titi Olopade from United Kingdom. My background is computing with few years career break.
+I came back and got PRINCE2 certification (project management) and started learning coding less than a year ago.
+My HTML and CSS are at an intermediate level. 
+Here is how I created my second PR.
 Use GIT Bash for Microsoft Windows environment to run GIT from my commandline.
 From the twindle repository page on GitHub, click the green button labeled Clone or download.
 In the “Clone with HTTPs” section, copy the URL for the repository.
