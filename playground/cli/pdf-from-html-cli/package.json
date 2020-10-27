@@ -1,0 +1,15 @@
+{
+	"name": "pdf-from-html-cli",
+	"version": "1.0.0",
+	"description": "Creates pdf from html using puppeteer and handlebars template",
+	"main": "index.js",
+	"author": "Tolga Erdönmez",
+	"license": "MIT",
+	"scripts": {
+		"start": "node ."
+	},
+	"dependencies": {
+		"handlebars": "^4.7.6",
+		"puppeteer": "^5.3.1"
+	}
+}
