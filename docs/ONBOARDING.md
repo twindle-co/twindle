@@ -51,6 +51,7 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 <br>
 
+---
 
 -----
 
@@ -91,3 +92,4 @@ This will improve your knowledge of merging.
 ---
 
 For further questions, check the [FAQ](https://github.com/twindle-co/twindle/blob/main/docs/FAQ.md) documentation.
+=======
