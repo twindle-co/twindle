@@ -181,7 +181,7 @@ a:hover
   
   .social-buttons a:hover i{
     background: linear-gradient(45deg,#2577d4,#1b09c2);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(2.2);
   }
