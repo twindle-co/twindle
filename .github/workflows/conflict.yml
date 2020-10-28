@@ -9,9 +9,7 @@ jobs:
       - name: Label Conflicting Pull Requests
         uses: eps1lon/actions-label-merge-conflict@v2.0.0
         with: 
-          dirtyLabel: "TEST: merge-conflict"
+          dirtyLabel: "Merge Conflict"
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          commentOnDirty: "This pull request has conflicts, so you need to resolve that! 
-          don't worry at all,let me help you deal with that.
-          please visit this link ---> https://github.com/twindle-co/twindle/wiki/Resolving-merge-conflicts."
+          commentOnDirty: "This pull request has conflicts, which you need to resolve! :partying_face: Don't need to worry at all, please follow the steps here - https://github.com/twindle-co/twindle/wiki/Resolving-merge-conflicts"
           commentOnClean: "Conflicts have been resolved. A maintainer will review the pull request shortly."
