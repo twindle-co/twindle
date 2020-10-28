@@ -69,6 +69,9 @@
 | <img src="./images/team/nitin_kadam.jpeg" width="80px" height="80px">                                                            | [Nitin Kadam](https://github.com/ni3-kdm)                 | Full stack developer from Pune, India. 5+ years of experience in the web development 👩🏽‍💻.                                                                                                                                                                                                                                    |
 | <img src="./images/team/marcus.jpg" width="100px" height="150px">                                                                | [Marcus](https://github.com/mar-code)                     | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs                                                                                                                                          |
 
+| <img src="./images/team/sachin.jpeg" width="80px" height="80px"> | [Sachin](https://github.com/toocoolsachin) |
+I'm from India, experience in JavaScript, Node, React, Html, Css.
+
 ---
 
 <br/>
@@ -82,5 +85,3 @@
 |                                                                 | Kingsley                                      | 3+ yrs of experience. Based in Nigeria and here to help :man_technologist:                         |
 |                                                                 | [Pratham](https://github.com/prasoonpratham)  | 2+ experience in JavaScript, always open to help :smile:                                           |
 |                                                                 | [Sarath](http://http://www.sarathnagaraj.ca/) | 6+ experience in JavaScript, Currently working on a side project using ReactJS :man_technologist:  |
-
-|<img src="" width="80px" height="80px"> | [Sachin](https://github.com/toocoolsachin) | I'm from India, experience in JavaScript, Node, React, Html, Css.
