@@ -1,0 +1,17 @@
+{
+  "name": "cli-example-esm",
+  "version": "1.0.0",
+  "description": "Example of how to use ES6+ syntax to run node scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.js"
+  },
+  "keywords": [],
+  "author": "Aravind",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "esm": "^3.2.25"
+  }
+}
