@@ -40,7 +40,9 @@
 |                                                                                          | [Lorenna Leon](https://github.com/lorennaleon)               | I am Peruvian, I have knowledge in html, css and javascripts I hope to learn a lot from you                                                                                                                                                                                                                                                                                                                |
 | <img src="https://avatars2.githubusercontent.com/u/58055517" width="90px" height="90px"> | [Fusen Ye](https://github.com/Yexiansen66)                   | I'm a beginner from China. I know HTML,CSS and JavaScript.I want to learn more advanced knowledge and contribute to twindle.                                                                                                                                                                                                                                                                               |
 | |[OmoloG] (https://github.com/geowen74) | From Nairobi, Kenya. Have Knowledge on HTML, CSS and some basic on javascript and Mysql. Aspiring to be a full-stack developer. Currently learning javascript.
-
+                                 |
+| <img src="./images/team/shekharranjan.jpg" width="90px" height="90px"> | [Shekhar Ranjan](https://github.com/shekhar10feb)                   | I'm from India, have basic knowledge of Java, SQL, HTML, CSS and still learning JavaScript, want to learn more and explore advance stuffs.
+                                 |
 ---
 
 <br/>
