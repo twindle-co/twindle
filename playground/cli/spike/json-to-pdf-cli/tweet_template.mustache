@@ -1,0 +1,21 @@
+<div>
+<h1 id="title">Twindle</h1>
+    <ul>
+        {{!-- uses the twit mock object from mock API --}}
+        {{#tweets}}
+        <li>
+            <div class="tweetContainer">
+                <div class="header">
+                    <img src="{{image}}" alt="{{twitterHandle}}" />
+                    <div>
+                        <h3>{{name}} - <span>@{{twitterHandle}}</span></h3>
+                        <p><span>{{createdAt}}</span></p>
+                    </div>
+                </div>
+                <p>{{tweet}}</p>
+            </div>
+        </li>
+        {{/tweets}}
+
+    </ul>
+</div>  
