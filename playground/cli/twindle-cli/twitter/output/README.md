@@ -1,0 +1,1 @@
+This folder contains the output json of the tweets fetched from Twitter API
