@@ -77,7 +77,7 @@
 | <img src="https://avatars2.githubusercontent.com/u/56103269?s=60&v=4"> | [Saurabh Srivastava](https://github.com/vasudeveloper001) | From India, 18 months Software Development Experience mainly in backend PHP development. Know about JavaScript, HTML, CSS, Nodejs, Python basics as well. Learning JAVA currently and starting a YouTube Channel on coding. |
 | <img src="./images/team/nitin_kadam.jpeg" width="80px" height="80px"> | [Nitin Kadam](https://github.com/ni3-kdm)            | Full stack developer from Pune, India. 5+ years of experience in the web development 👩🏽‍💻. |
 |  <img src="./images/team/marcus.jpg" width="100px" height="150px"> | [Marcus](https://github.com/mar-code)              | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs|
-
+| | [Samuel Adeniyi](https://github.com/samueladeniyi) | I am proficient in HTML, CSS and Javascript. I am comfortable with react. I intend to become a fullstack developer with the MERN stack. I am from Nigeria |
 ---
 
 <br/>
