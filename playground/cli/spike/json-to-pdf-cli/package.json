@@ -4,8 +4,7 @@
   "description": "convert json data to pdf",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node script.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "PraveenKumar",
   "license": "ISC",
@@ -13,6 +12,7 @@
     "create-html": "^4.1.0",
     "html-to-pdf": "^0.1.11",
     "jquery": "^3.5.1",
-    "mustache": "^4.0.1"
+    "mustache": "^4.0.1",
+    "yargs": "^16.1.0"
   }
 }
