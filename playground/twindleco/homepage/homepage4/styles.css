@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@300&display=swap');
+
+:root {
+    --primary-color: rgb(86, 115, 184);
+    --secondary-color: rgb(100, 156, 201);
+    --twindle-yellow: rgb(237, 175, 21);
+    --twindle-pink: rgb(246, 210, 200);
+    --twindle-red: rgb(231, 36, 68);
+    --overlay-color: rgba(0, 0, 0, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins';
+    line-height: 1.6;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+h1 {
+    line-height: 1.3;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+  }
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.navbar {
+    font-size: 0.9rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    background-color: var(--secondary-color);
+}
+
+.navbar .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.navbar .nav{
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .nav a {
+    padding: 0 1rem;
+}
+
+.navbar .nav a:hover {
+    color: var(--twindle-yellow);
+    background-color: white;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+hr {
+    border-top: 0px dashed var(--twindle-pink);
+}
+
+.section-convert {
+    margin: 3rem 0;
+}
+
+.section-convert .container {
+    display: grid;
+    grid-gap: 3rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.section-title{
+    font-family: 'Indie Flower', cursive;;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.section-description {
+    margin: 3rem 0;
+}
+
+.section-description .container {
+    display: grid;
+    grid-gap: 3rem;
+    align-items: center;
+    justify-items: center; 
+}
+
+.section-description .container div{
+    display: contents;
+}
+
+.section-description .container p{
+    width: 70%;
+}
+
+.img-bird {
+    margin-top: -150px;
+    margin-left: 800px;
+}
+
+input {
+    height: 30px;
+    width: 40%;
+    border: none;
+    border-bottom: 1.8px solid silver;
+    font-family: 'Poppins';
+    
+}
+
+.button{
+    display: inline-block;
+    background: var(--twindle-red);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.button:hover{
+    background: var(--twindle-yellow);
+}
+
+.section-footer {
+    background-color: var(--primary-color);
+    padding: 3rem 0;
+}
+
+.section-footer .container{
+    grid-template-columns: 1fr;
+    text-align: center;
+    width: 23%;
+    color: white;
+    font-size: small;
+}
+
+.section-footer .container .contact{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+ion-icon {
+    color: var(--twindle-yellow);
+    font-size: 2rem;
+}

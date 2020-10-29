@@ -16,9 +16,12 @@ You can also contribute by providing useful resources from **Youtube or Blogs** 
 - Get started with the most popular Code Editor [VsCode](https://www.youtube.com/watch?v=WPqXP_kLzpo&t=382s)
 - Learn the fundamentals of [JavaScript](https://www.youtube.com/watch?v=W6NZfCO5SIk&t=1s)
 - Get started with the new features of [JavaScript](https://www.youtube.com/watch?v=hdI2bqOjy3c) like ES5, ES6 features & more.
+- Learn about [Asynchronous JavaScript](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jx2TTZk3IGWKSbtugYdrlu) and its advance features.
 - Get yourself started with [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
 - Learn [Git & Github](https://www.youtube.com/watch?v=RGOj5yH7evk&t=339s)
 - How to create PDFs using Puppeteer & Handlebars with HTML, watch this [video](https://youtu.be/llkkwRABN-s)
+- Configure git bash and complete your second pull request. [Video](https://www.youtube.com/watch?v=cBigFcoAXZg)
+
 
 ### Github Repositories for learning
 
