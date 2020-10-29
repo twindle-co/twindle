@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .navbar {
+    width: 100%;
+    overflow: hidden;
+    height: 70px;
+    line-height: 70px;
+    background: rgb(62, 121, 155);
+    border-bottom: 2px solid blue;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .logo{ 
+  width: 100px;
+  height: 70px;
+  float: left;
+  }
+  
+  .menu {
+    float: right; 
+  }
+  
+  .menu li { 
+  float: left;
+  width: 120px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  list-style-type: none;
+  }
+
+  .menu li a { 
+  color: whitesmoke;
+  text-decoration: none;
+  list-style: none;
+  font-family: Calibri;
+  text-transform: capitalize;
+  display: block;
+  }
+  
+
+  .menu li a:hover {
+    background: rgb(40, 54, 179);
+  }
