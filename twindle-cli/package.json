@@ -26,5 +26,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "epub-gen": "^0.1.0",
+    "yargs": "^16.1.0"
   }
 }
