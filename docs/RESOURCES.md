@@ -22,6 +22,7 @@ You can also contribute by providing useful resources from **Youtube or Blogs** 
 - Learn [Git & Github](https://www.youtube.com/watch?v=RGOj5yH7evk&t=339s)
 - How to create PDFs using Puppeteer & Handlebars with HTML, watch this [video](https://youtu.be/llkkwRABN-s)
 - Configure git bash and complete your second pull request. [Video](https://www.youtube.com/watch?v=cBigFcoAXZg)
+- Software Engineering is Overwhelming [Video](https://www.youtube.com/watch?v=MbDjrztWtX4)
 
 
 ### Github Repositories for learning
