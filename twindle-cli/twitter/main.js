@@ -1,10 +1,14 @@
-const { TWEET_LOOKUP , fetchUrl, computeUrl } = require("./utils/tweet-processing");
-const { setTweetId, setScreenName } = require("./utils/tweet-info");
 const fs = require('fs');
+const { doTweetLookup } = require("./utils/tweet-lookup-request");
+const { extractTweetId } = require("./utils/tweet-utils");
+const { writeTweets } = require("./utils/tweet-info");
 
-function getTweets(url) {
-    setTweetId(url);
-    setScreenName(url);
-    fetchUrl(computeUrl(TWEET_LOOKUP), TWEET_LOOKUP);    
+async function getTweetsFromURL(url) {
+    let response = await doTweetLookup(extractTweetId(url));
+    writeTweets();
 }
-module.exports = { getTweets };
+async function getTweetsFromTweetId(tweet_id) {
+    await doTweetLookup(tweet_id);
+    writeTweets();
+}
+module.exports = { getTweetsFromURL, getTweetsFromTweetId };
