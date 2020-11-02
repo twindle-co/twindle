@@ -12,7 +12,7 @@ export const data = {
         github: "https://github.com/Akshay2996",
         twitter: "https://twitter.com/AkshayS2909",
       },
-      Title: "FrontEnd Developer",
+      title: "FrontEnd Developer",
       location: {
         city: "Bangalore",
         state: "Karnataka",

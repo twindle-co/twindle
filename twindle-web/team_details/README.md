@@ -18,7 +18,7 @@ To add your name to the list, simply open `persons.js` file, and then add your o
       github: "[YOUR_GITHUB_URL]",
       twitter: "[YOUR_TWITTER_URL]",
     },
-    Title: "[YOUR_TITLE]",
+    title: "[YOUR_TITLE]",
     location: {
       city: "[YOUR_CITY]",
       state: "[YOUR_STATE_OR_PROVINCE]",
