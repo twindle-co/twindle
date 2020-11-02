@@ -12,25 +12,34 @@ body {
 }
 
 header {
+  background-color: #03a9f4;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
 }
 
+#logo{
+  display: flex;
+  justify-content: center;
+}
+
 header nav {
   flex: 1;
+  padding-bottom: 1%;
 }
 
 header nav ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   list-style: none;
   margin-right: 2rem;
 }
 
 header nav ul li a {
-  color: #000000;
+  font-size: larger;
+  font-weight: bold;
+  color: #ffffff;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
@@ -40,7 +49,8 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a:focus {
-  background-color: rgba(9, 133, 227, 0.1);
+  background-color: #e5e5e5;
+  color:#03a9f4;
 }
 
 main {
@@ -134,6 +144,9 @@ main .what_we_do p {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background: #03a9f4;
   color: white;
   display: flex;
