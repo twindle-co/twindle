@@ -11,5 +11,5 @@ jobs:
         with: 
           dirtyLabel: "Merge Conflict"
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          commentOnDirty: "This pull request has conflicts, which you need to resolve! ::partying_face: : Don't need to worry at all, please follow the steps here - https://github.com/twindle-co/twindle/wiki/Resolving-merge-conflicts"
+          commentOnDirty: "This pull request has conflicts, which you need to resolve! :partying_face: Don't need to worry at all, please follow the steps here - https://github.com/twindle-co/twindle/wiki/Resolving-merge-conflicts"
           commentOnClean: "Conflicts have been resolved. A maintainer will review the pull request shortly."
