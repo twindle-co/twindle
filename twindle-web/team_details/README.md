@@ -18,7 +18,7 @@ To add your name to the list, simply open `persons.js` file, and then add your o
       github: "[YOUR_GITHUB_URL]",
       twitter: "[YOUR_TWITTER_URL]",
     },
-    jobTitle: "[YOUR_TITLE]",
+    title: "[YOUR_TITLE]",
     location: {
       city: "[YOUR_CITY]",
       state: "[YOUR_STATE_OR_PROVINCE]",
@@ -30,3 +30,17 @@ To add your name to the list, simply open `persons.js` file, and then add your o
 ### Please note!
 
 - **If you do not want to fill some of the fields, leave them blank (e.g. `state: "",`)**.
+
+
+### How to add profile image using Github avatars
+
+1. Go to your profile page on github.com
+2. Append to your GitHub profile url “.png”, so it will look like this: 
+
+    https://github.com/akshay2996.png
+
+3. Hit enter and the browser will generate a page with your image, it look like this:
+    
+    https://avatars0.githubusercontent.com/u/37118877?v=4
+
+4. Copy url of this page and paste it in persons.js file
