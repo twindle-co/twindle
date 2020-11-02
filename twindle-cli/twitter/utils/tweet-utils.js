@@ -1,47 +1,36 @@
-//extract tweet_id from tweet_url
-function extractTweetId(tweet_url) {
-    return tweet_url.substring(tweet_url.lastIndexOf("/") + 1);
-}
+const extractTweetId = (tweet_url) => 
+            tweet_url.substring(tweet_url.lastIndexOf("/") + 1);
+const extractScreenName = 
+        (tweet_url) => tweet_url
+            .substring(0, tweet_url.lastIndexOf("/status"))
+            .substring(tweet_url.lastIndexOf("/") + 1);
 
-//extract screen_name from tweet_url
-function extractScreenName(tweet_url) {
-    tweet_url = tweet_url.substring(0, tweet_url.lastIndexOf("/status"));
-    return tweet_url.substring(tweet_url.lastIndexOf("/") + 1);
-}
+const getTweetObject = (responseJSON) => responseJSON.data[0];
+const getTweetArray = (responseJSON) => responseJSON.data;
+const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 
-function getTweetObject(responseJSON) {
-  return responseJSON.data[0];
-}
+const createCustomTweet = (tweet_object, user_object) => {
+    return {
+        "id" : tweet_object.id,
+        "name" : user_object.name,
+        "twitterHandle" : user_object.username,
+        "image" : user_object.profile_image_url,
+        "createdAt" : tweet_object.created_at,
+        "tweet" : tweet_object.text 
+      };
+};
 
-function getTweetArray(responseJSON) {
-  return responseJSON.data;
-}
-
-function getUserObject(responseJSON) {
-  return responseJSON.includes.users[0];
-}
-
-function createCustomTweet(tweet_object, user_object) {
-  var customTweet = {};
-  customTweet.name = user_object.name;
-  customTweet.twitterHandle = user_object.username;
-  customTweet.image = user_object.profile_image_url;
-  customTweet.createdAt = tweet_object.created_at;
-  customTweet.tweet = tweet_object.text;
-  return customTweet;
-}
-
-function isTweetNotOlderThanSevenDays(tweet) {
-  var dateOfTweet = new Date(tweet.created_at);
-  var currentDate = new Date();
-  var differenceInDays = (currentDate.getTime() - dateOfTweet.getTime())/(1000*3600*24);
-  if(differenceInDays >= 7) {
-      console.log("cannot retrieve tweet thread");
+const checkIfRequestSuccessful = (response) => {
+    console.log(response.status);
+    if(response.status != 200) {
+      console.log("error", 
+          { "type" : "error", 
+            "status" : response.status, 
+            "statusText" : response.statusText } );
       return false;
-  }
-  return true;
+    }
+    return true;
 }
-
 
 module.exports = {extractTweetId, 
                   extractScreenName, 
@@ -49,4 +38,4 @@ module.exports = {extractTweetId,
                   getTweetArray, 
                   getUserObject, 
                   createCustomTweet,
-                  isTweetNotOlderThanSevenDays};
+                  checkIfRequestSuccessful};

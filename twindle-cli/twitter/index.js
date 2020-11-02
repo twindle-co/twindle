@@ -1,2 +1,3 @@
-const { getTweets } = require("./main");
-getTweets('https://twitter.com/AriBerman/status/1320872258085310466');
+const { getTweetsFromURL, getTweetsFromTweetId } = require("./main");
+//getTweetsFromURL('https://twitter.com/ReutersScience/status/1321153493223329797');
+getTweetsFromTweetId('1322551796238327809');

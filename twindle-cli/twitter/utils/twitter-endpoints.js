@@ -5,6 +5,7 @@ const MEDIA_FIELDS = '&media.fields=duration_ms,height,preview_image_url,public_
 const POLL_FIELDS = '&poll.fields=duration_minutes,end_datetime,voting_status';
 const PLACE_FIELDS = '&place.fields=contained_within,country,country_code,geo,name,place_type';
 const EXPANSIONS = '&expansions=author_id';
+const MAX_RESULTS = '&max_results=100';
 const ENDPOINT_TO_FETCH_CONVERSATION_TWEETS = 'https://api.twitter.com/2/tweets/search/recent?query=conversation_id:<conversation_id>+from:<screen_name>';
 
 module.exports = {ENDPOINT_TO_FETCH_CONVERSATION_ID, 
@@ -14,4 +15,4 @@ module.exports = {ENDPOINT_TO_FETCH_CONVERSATION_ID,
                   MEDIA_FIELDS,
                   POLL_FIELDS,
                   PLACE_FIELDS,
-                  EXPANSIONS};
+                  EXPANSIONS, MAX_RESULTS};
