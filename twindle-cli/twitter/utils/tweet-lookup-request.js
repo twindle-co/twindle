@@ -32,7 +32,7 @@ async function doTweetLookup(tweet_id) {
     const response = await fetch(getUrl(tweet_id), getRequestOptions());
     await processResponse(response);
   } catch (err) {
-    console.err(err);
+    console.error(err);
   }
 }
 
@@ -55,7 +55,7 @@ async function processResponse(response) {
     );
   }
 
-  console.log(responseJSON);
+  console.log(tweet);
 
   if (!isProvidedTweetFirstTweetOfTheThread(tweet)) {
     await doTweetLookup(tweet.conversation_id);
