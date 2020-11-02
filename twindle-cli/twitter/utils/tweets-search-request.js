@@ -12,7 +12,7 @@ const fetch = require("node-fetch");
 
 async function doTweetsSearch(conversation_id, screen_name) {
     try {
-        console.log(getUrl(conversation_id, screen_name));
+        // console.log(getUrl(conversation_id, screen_name));
         let response = await fetch(getUrl(conversation_id, screen_name), getRequestOptions());
         await processResponse(response);
     } catch(err) {

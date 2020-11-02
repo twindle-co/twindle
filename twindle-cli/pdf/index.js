@@ -1,16 +1,21 @@
 const renderTemplate = require("./render-template");
 const createPdf = require("./create-pdf");
-// const fs = require("fs");
-const mockData = require("../../mock/twit-thread.json");
 
-async function main() {
+// const fs = require("fs");
+const mockData = require("../twitter/output/twitter-api-response.json");
+
+async function createExample(outputPath) {
 	// creates the html content
 	const htmlContent = renderTemplate({ thread: mockData }, "Thread");
 	// creates the pdf from html and saves it to Twindle.pdf
-	await createPdf("Twindle.pdf", htmlContent);
-
-	// example line for saving the html version
-	// fs.writeFileSync("Twindle.html", htmlContent);
+	await createPdf(outputPath, htmlContent);
 }
 
-main();
+async function generatePDF(tweets, outputPath) {
+	// creates the html content
+	const htmlContent = renderTemplate({ thread: tweets }, "Thread");
+	// creates the pdf from html and saves it to Twindle.pdf
+	await createPdf(outputPath, htmlContent);
+}
+
+module.exports = { generatePDF };
