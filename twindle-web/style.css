@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -16,29 +15,18 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
 }
 
 header nav {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   list-style: none;
   margin-right: 2rem;
 }
@@ -49,30 +37,20 @@ header nav ul li a {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   margin-left: 1rem;
-  -webkit-transition: 0.3s ease-in-out all;
   transition: 0.3s ease-in-out all;
 }
 
-header nav ul li a:hover, header nav ul li a:focus {
+header nav ul li a:hover,
+header nav ul li a:focus {
   background-color: rgba(9, 133, 227, 0.1);
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 main .page_heading {
@@ -122,7 +100,9 @@ main .email_subs .email_input {
   font-size: 15px;
 }
 
-main .email_subs .email_input:focus, main .email_subs .email_input:active, main .email_subs .email_input:hover {
+main .email_subs .email_input:focus,
+main .email_subs .email_input:active,
+main .email_subs .email_input:hover {
   outline: none;
 }
 
@@ -134,8 +114,7 @@ main .email_subs .sign_up_btn {
   border-radius: 5px;
   border: white;
   color: white;
-  -webkit-box-shadow: 0 0px 4px #333;
-          box-shadow: 0 0px 4px #333;
+  box-shadow: 0 0px 4px #333;
   cursor: pointer;
 }
 
@@ -159,40 +138,23 @@ main .what_we_do p {
 footer {
   background: #03a9f4;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
 }
 
 footer nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   padding: 2rem 0;
 }
 
 footer nav ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 footer nav p {
