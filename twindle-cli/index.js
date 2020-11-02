@@ -1,37 +1,52 @@
 // Entry program
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
-import { generateEpub } from './epub/epub.js';
+const path = require("path");
+const yargs = require("yargs");
+const kleur = require("kleur");
+// const { hideBin } = require("yargs/helpers");
+const { generateEpub } = require("./epub/epub");
+const { generatePDF } = require("./pdf");
+const { getTweetsFromTweetId } = require("./twitter");
 
-const options = yargs(hideBin(process.argv))
-  .usage('Usage: -o <file format> -n <filename>')
-  .option({
-    o: {
-      alias: 'output',
-      demandOption: false,
-      describe: 'Output file format',
-      choices: ['mobi', 'epub', 'pdf'],
-      type: 'string',
-      default: 'epub',
-    },
-    n: {
-      alias: 'filename',
-      demandOption: true,
-      describe: 'Filename for the output file',
-      type: 'string',
-    },
-  }).argv;
+async function main() {
+	const options = yargs(process.argv)
+		.usage("Usage: -i <tweet id> -f <file format> -o <filename>")
+		.option({
+			i: {
+				alias: "tweetId",
+				demandOption: true,
+				describe: "First tweet's tweet id in of the twitter thread",
+				type: "string",
+			},
+			f: {
+				alias: "format",
+				demandOption: false,
+				describe: "Output file format",
+				choices: ["mobi", "epub", "pdf"],
+				type: "string",
+				default: "pdf",
+			},
+			o: {
+				alias: "output",
+				demandOption: true,
+				describe: "Filename for the output file",
+				type: "string",
+			},
+		}).argv;
 
-switch (options.output) {
-  case 'epub':
-    generateEpub(`./${options.filename}.epub`);
-    break;
-  case 'pdf':
-    console.log('Sorry this format is not supported yet');
-    break;
-  case 'mobi':
-    console.log('Sorry this format is not supported yet');
-    break;
-  default:
-    break;
+	switch (options.format) {
+		case "epub":
+			generateEpub(`./${options.output}.epub`);
+			break;
+		case "pdf":
+			const tweets = await getTweetsFromTweetId(options.tweetId);
+			generatePDF(tweets, path.join(process.cwd(), options.output + ".pdf"));
+			console.log("Your " + kleur.cyan("tweets") + " are saved into " + kleur.red(options.output + ".pdf"));
+			break;
+		case "mobi":
+			console.log("Sorry this format is not supported yet");
+			break;
+		default:
+			break;
+	}
 }
+main();

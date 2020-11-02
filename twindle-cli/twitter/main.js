@@ -1,10 +1,3 @@
-const { TWEET_LOOKUP , fetchUrl, computeUrl } = require("./utils/tweet-processing");
-const { setTweetId, setScreenName } = require("./utils/tweet-info");
-const fs = require('fs');
-
-function getTweets(url) {
-    setTweetId(url);
-    setScreenName(url);
-    fetchUrl(computeUrl(TWEET_LOOKUP), TWEET_LOOKUP);    
-}
-module.exports = { getTweets };
+const { getTweetsFromURL, getTweetsFromTweetId } = require("./index");
+//getTweetsFromURL('https://twitter.com/ReutersScience/status/1321153493223329797');
+getTweetsFromTweetId("1322551796238327809");
