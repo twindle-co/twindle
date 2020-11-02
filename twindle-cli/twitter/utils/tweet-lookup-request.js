@@ -13,7 +13,7 @@ const fetch = require("node-fetch");
 
 async function doTweetLookup(tweet_id) {
     try {
-        console.log(getUrl(tweet_id));
+        // console.log(getUrl(tweet_id));
         let response = await fetch(getUrl(tweet_id), getRequestOptions());
         await processResponse(response);
     } catch(err) {
