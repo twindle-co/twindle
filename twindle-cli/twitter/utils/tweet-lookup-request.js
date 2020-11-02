@@ -24,7 +24,7 @@ async function doTweetLookup(tweet_id) {
 async function processResponse(response) {
     if(checkIfRequestSuccessful(response)) {
         let responseJSON = await response.json();
-        let tweet = getTweetObject(responseJSON);
+        //let tweet = getTweetObject(responseJSON);
         if(isTweetNotOlderThanSevenDays(tweet)) {
             if(!isProvidedTweetFirstTweetOfTheThread(tweet))
                 await doTweetLookup(tweet.conversation_id);
