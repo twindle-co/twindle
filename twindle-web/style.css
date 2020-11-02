@@ -12,8 +12,6 @@ body {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
