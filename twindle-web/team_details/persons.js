@@ -10,7 +10,7 @@ export const data = {
         website: "https://www.developeratease.com/",
         linkedin: "https://www.linkedin.com/in/akshay-sharma-7962ab13a/",
         github: "https://github.com/Akshay2996",
-        twitter: "https://twitter.com/AkshayS2909"
+        twitter: "https://twitter.com/AkshayS2909",
       },
       Title: "FrontEnd Developer",
       location: {
