@@ -1,7 +1,6 @@
 // Entry program
 const path = require("path");
 const yargs = require("yargs");
-const kleur = require("kleur");
 // const { hideBin } = require("yargs/helpers");
 const { generateEpub } = require("./epub/epub");
 const { generatePDF } = require("./pdf");
@@ -33,28 +32,34 @@ async function main() {
       },
     }).argv;
 
-  switch (options.format) {
-    case "epub":
-      generateEpub(`./${options.output}.epub`);
-      break;
-    case "pdf":
-      const tweets = await getTweetsFromTweetId(options.tweetId);
-      generatePDF(tweets, path.join(process.cwd(), options.output + ".pdf"));
-      console.log(
-        "Your " +
-          kleur.cyan("tweets") +
-          " are saved into " +
-          kleur.red(options.output + ".pdf")
-      );
-      break;
-    case "mobi":
-      console.log("Sorry this format is not supported yet");
-      break;
-    default:
-      break;
+  try {
+    const tweets = await getTweetsFromTweetId(options.tweetId);
+
+    /**
+     * Execute certain function on different format
+     */
+    const mappings = {
+      epub: async () => {},
+
+      pdf: async () => {
+        await generatePDF(
+          tweets,
+          path.join(process.cwd(), options.output + ".pdf")
+        );
+      },
+
+      mobi: async () => {},
+    };
+
+    const generatorFunc = await mappings[options.format];
+    (generatorFunc && generatorFunc()) || null;
+  } catch (e) {
+    console.error(e);
   }
 
-	// If not for this line, the script never ends
+  // If not for this line, the script never ends
   process.exit();
 }
+
+// Execute it
 main();

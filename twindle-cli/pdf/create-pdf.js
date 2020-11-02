@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const fs = require("fs");
+const kleur = require("kleur");
 
 // Creates a pdf document from htmlContent and saves it to outputPath
 async function createPdf(outputPath, htmlContent) {
@@ -16,6 +16,13 @@ async function createPdf(outputPath, htmlContent) {
 
   // Closing the puppeteer browser instance
   await browser.close();
+
+  console.log(
+    "Your " +
+      kleur.cyan("tweets") +
+      " are saved into " +
+      kleur.red(options.output + ".pdf")
+  );
 }
 
 module.exports = createPdf;
