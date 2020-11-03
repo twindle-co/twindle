@@ -1,12 +1,13 @@
 const path = require("path");
+const { getLibraryPath } = require("./library");
 
-const getOutputFilePath = (outputFilename) => {
-  const filenameEndsInPdf = outputFilename.includes("pdf");
-  let outputFilePath = `${process.cwd()}${path.sep}${outputFilename}`;
+const getOutputFilePath = outputFilename => {
+	const filenameEndsInPdf = outputFilename.includes("pdf");
+	let outputFilePath = getLibraryPath(outputFilename);
 
-  if (!filenameEndsInPdf) outputFilePath += ".pdf";
+	if (!filenameEndsInPdf) outputFilePath += ".pdf";
 
-  return outputFilePath;
+	return outputFilePath;
 };
 
 module.exports = { getOutputFilePath };
