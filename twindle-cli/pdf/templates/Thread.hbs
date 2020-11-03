@@ -64,29 +64,24 @@
         color: rgb(45, 45, 45);
     }
 </style>
-<html>
 
-<body>
-    <h1 id="title">Twindle Thread</h1>
+<h1 id="title">Twindle Thread</h1>
 
-    <ul>
-        {{!-- uses the twit mock object from mock API --}}
-        {{#each thread}}
-        <li>
-            <div class="tweetContainer">
-                <div class="header">
-                    <img src="{{image}}" alt="{{twitterHandle}}" />
-                    <div>
-                        <h3>{{name}} - <span>@{{twitterHandle}}</span></h3>
-                        <p><span>{{createdAt}}</span></p>
-                    </div>
+<ul>
+    {{!-- uses the twit mock object from mock API --}}
+    {{#each thread}}
+    <li>
+        <div class="tweetContainer">
+            <div class="header">
+                <img src="{{image}}" alt="{{twitterHandle}}" />
+                <div>
+                    <h3>{{name}} - <span>@{{twitterHandle}}</span></h3>
+                    <p><span>{{createdAt}}</span></p>
                 </div>
-                <p>{{tweet}}</p>
             </div>
-        </li>
-        {{/each}}
+            <p>{{tweet}}</p>
+        </div>
+    </li>
+    {{/each}}
 
-    </ul>
-</body>
-
-</html>
+</ul>
