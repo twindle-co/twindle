@@ -9,7 +9,7 @@ const hbs = require("handlebars");
 async function renderTemplate(data, templateName) {
   const html = await readFile(
     `${__dirname}/templates/${templateName}.hbs`,
-    "utf-8"
+    "utf-8" 
   );
 
   // creates the Handlebars template object
