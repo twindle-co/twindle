@@ -1,7 +1,11 @@
 const { readFile } = require("fs").promises;
 const hbs = require("handlebars");
 
-// renders the html template with the given data and returns the html string
+/**
+ * Renders the html template with the given data and returns the html string
+ * @param {{thread: any[]}} data
+ * @param {string} templateName
+ */
 async function renderTemplate(data, templateName) {
   const html = await readFile(
     `${__dirname}/templates/${templateName}.hbs`,

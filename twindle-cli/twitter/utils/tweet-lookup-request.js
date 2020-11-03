@@ -14,6 +14,7 @@ const { UserError } = require("../../helpers/error");
 const { getTweetObject, checkIfRequestSuccessful } = require("./tweet-utils");
 const { processTweetLookup } = require("./tweet-lookup-response");
 const fetch = require("node-fetch");
+const { writeFile } = require("fs").promises;
 
 /**
  * Returns the API endpoint URL from `tweet_id`
@@ -51,6 +52,12 @@ async function processResponse(response) {
 
   let responseJSON = await response.json();
   let tweet = getTweetObject(responseJSON);
+
+  await writeFile(
+    `${process.cwd()}/twitter/output/twitter-api-response.json`,
+    JSON.stringify(responseJSON),
+    "utf8"
+  );
 
   if (!isTweetNotOlderThanSevenDays(tweet)) {
     throw new UserError(
