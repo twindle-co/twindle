@@ -43,7 +43,6 @@ async function doTweetLookup(tweet_id) {
  * @param {fetch.Response} response
  */
 async function processResponse(response) {
-
   if (!checkIfRequestSuccessful(response)) {
     throw new UserError(
       "request-failed",
@@ -51,8 +50,8 @@ async function processResponse(response) {
     );
   }
 
-
   let responseJSON = await response.json();
+  console.log({ responseJSON });
   let tweet = getTweetObject(responseJSON);
 
   await writeFile(
