@@ -1,5 +1,5 @@
 function devLog(...args) {
-	if (process.env.DEV) {
+	if (process.env.DEV === "true") {
 		console.log(...args);
 	}
 }
