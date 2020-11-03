@@ -1,18 +1,21 @@
-const fs = require("fs");
+const { writeFile } = require("fs").promises;
 let tweets = [];
 
-const addTweet = tweet => tweets.push(tweet);
+const addTweet = (tweet) => tweets.push(tweet);
 
-function writeTweets() {
-	try {
-		fs.writeFileSync("./twitter/output/twitter-api-response.json", JSON.stringify(tweets));
-	} catch (err) {
-		console.error(err);
-	}
+async function writeTweets() {
+  try {
+    await writeFile(
+      "../output/twitter-api-response.json",
+      JSON.stringify(tweets)
+    );
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 function collectTweets() {
-	return tweets;
+  return tweets;
 }
 
 module.exports = { addTweet, writeTweets, collectTweets };
