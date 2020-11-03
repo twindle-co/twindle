@@ -1,9 +1,9 @@
-const { readFileSync } = require("fs");
+const { readFile } = require("fs").promises;
 const hbs = require("handlebars");
 
 // renders the html template with the given data and returns the html string
-function renderTemplate(data, templateName) {
-  const html = readFileSync(
+async function renderTemplate(data, templateName) {
+  const html = await readFile(
     `${__dirname}/templates/${templateName}.hbs`,
     "utf-8"
   );
@@ -14,7 +14,6 @@ function renderTemplate(data, templateName) {
   // renders the html template with the given data
   const rendered = template(data);
 
-  console.log(rendered);
   return rendered;
 }
 
