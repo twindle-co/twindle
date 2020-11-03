@@ -14,6 +14,7 @@ const { UserError } = require("../../helpers/error");
 const { getTweetObject, checkIfRequestSuccessful } = require("./tweet-utils");
 const { processTweetLookup } = require("./tweet-lookup-response");
 const fetch = require("node-fetch");
+const { writeFile } = require("fs").promises;
 
 /**
  * Returns the API endpoint URL from `tweet_id`
@@ -42,7 +43,6 @@ async function doTweetLookup(tweet_id) {
  * @param {fetch.Response} response
  */
 async function processResponse(response) {
-
   if (!checkIfRequestSuccessful(response)) {
     throw new UserError(
       "request-failed",
@@ -50,9 +50,14 @@ async function processResponse(response) {
     );
   }
 
-
   let responseJSON = await response.json();
   let tweet = getTweetObject(responseJSON);
+
+  await writeFile(
+    `${process.cwd()}/twitter/output/twitter-api-response.json`,
+    JSON.stringify(responseJSON),
+    "utf8"
+  );
 
   if (!isTweetNotOlderThanSevenDays(tweet)) {
     throw new UserError(
@@ -62,6 +67,7 @@ async function processResponse(response) {
   }
 
   if (!isProvidedTweetFirstTweetOfTheThread(tweet)) {
+    // This ain't the first tweet of the thread. Find out the first of this thread
     await doTweetLookup(tweet.conversation_id);
   } else {
     await processTweetLookup(responseJSON);
