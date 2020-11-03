@@ -43,12 +43,14 @@ async function doTweetLookup(tweet_id) {
  * @param {fetch.Response} response
  */
 async function processResponse(response) {
+
   if (!checkIfRequestSuccessful(response)) {
     throw new UserError(
       "request-failed",
       "Request failed. Check your network and try again"
     );
   }
+
 
   let responseJSON = await response.json();
   let tweet = getTweetObject(responseJSON);
