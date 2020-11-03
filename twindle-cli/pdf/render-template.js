@@ -15,10 +15,10 @@ function fixLineBreaks(tweet) {
  * @param {string} templateName
  */
 async function renderTemplate(data, templateName) {
-  console.log(data.thread[0]);
+  /*console.log(data.thread[0]);
   for (let i = 0; i < data.thread.length; i++) {
     data.thread[i].tweet = fixLineBreaks(data.thread[i].tweet);
-  }
+  }*/
   
   const html = await readFile(
     `${__dirname}/templates/${templateName}.hbs`,
