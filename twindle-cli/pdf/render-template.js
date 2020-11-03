@@ -1,19 +1,39 @@
+const { readFile } = require("fs").promises;
 const hbs = require("handlebars");
-const fs = require("fs");
-const path = require("path");
 
-// renders the html template with the given data and returns the html string
-function renderTemplate(data, templateName) {
-	const html = fs.readFileSync(path.join(__dirname, `templates/${templateName}.hbs`), {
-		encoding: "utf-8",
-	});
-
-	// creates the Handlebars template object
-	const template = hbs.compile(html);
-
-	// renders the html template with the given data
-	const rendered = template(data);
-	return rendered;
+/**
+ * Replaces `\n` with `<br />`
+ * @param {string} tweet
+ */
+function fixLineBreaks(tweet) {
+  return tweet.replace(/\n/g, "<br />");
 }
 
-module.exports = renderTemplate;
+/**
+ * Renders the html template with the given data and returns the html string
+ * @param {{thread: any[]}} data
+ * @param {string} templateName
+ */
+async function renderTemplate(data, templateName) {
+  console.log(data.thread[0]);
+  for (let i = 0; i < data.thread.length; i++) {
+    data.thread[i].tweet = fixLineBreaks(data.thread[i].tweet);
+  }
+  
+  const html = await readFile(
+    `${__dirname}/templates/${templateName}.hbs`,
+    "utf-8"
+  );
+
+  // creates the Handlebars template object
+  const template = hbs.compile(html, {
+    strict: true,
+  });
+
+  // renders the html template with the given data
+  const rendered = template(data);
+
+  return rendered;
+}
+
+module.exports = { renderTemplate };
