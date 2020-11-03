@@ -6,7 +6,7 @@ const hbs = require("handlebars");
  * @param {string} tweet
  */
 function fixLineBreaks(tweet) {
-  return tweet.replace(/\n/g, "<br />");
+	return tweet.replace(/\n/g, "<br />");
 }
 
 /**
@@ -15,25 +15,22 @@ function fixLineBreaks(tweet) {
  * @param {string} templateName
  */
 async function renderTemplate(data, templateName) {
-  console.log(data.thread[0]);
-  for (let i = 0; i < data.thread.length; i++) {
-    data.thread[i].tweet = fixLineBreaks(data.thread[i].tweet);
-  }
-  
-  const html = await readFile(
-    `${__dirname}/templates/${templateName}.hbs`,
-    "utf-8"
-  );
+	console.devLog(data.thread[0]);
+	for (let i = 0; i < data.thread.length; i++) {
+		data.thread[i].tweet = fixLineBreaks(data.thread[i].tweet);
+	}
 
-  // creates the Handlebars template object
-  const template = hbs.compile(html, {
-    strict: true,
-  });
+	const html = await readFile(`${__dirname}/templates/${templateName}.hbs`, "utf-8");
 
-  // renders the html template with the given data
-  const rendered = template(data);
+	// creates the Handlebars template object
+	const template = hbs.compile(html, {
+		strict: true,
+	});
 
-  return rendered;
+	// renders the html template with the given data
+	const rendered = template(data);
+
+	return rendered;
 }
 
 module.exports = { renderTemplate };
