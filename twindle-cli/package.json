@@ -17,7 +17,9 @@
 		"url": "https://github.com/twindle-co/twindle-cli/issues"
 	},
 	"homepage": "https://github.com/twindle-co/twindle-cli#readme",
-	"devDependencies": {},
+	"devDependencies": {
+		"@types/puppeteer": "^3.0.4"
+	},
 	"dependencies": {
 		"dotenv": "^8.2.0",
 		"epub-gen": "^0.1.0",

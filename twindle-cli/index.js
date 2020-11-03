@@ -34,7 +34,6 @@ async function main() {
 
   try {
     const tweets = await getTweetsFromTweetId(options.tweetId);
-
     /**
      * Execute certain function on different format
      */
@@ -42,22 +41,20 @@ async function main() {
       epub: async () => {},
 
       pdf: async () => {
-        await generatePDF(
-          tweets,
-          path.join(process.cwd(), options.output + ".pdf")
-        );
+        await generatePDF(tweets, `${process.cwd()}/${options.output}.pdf`);
       },
 
       mobi: async () => {},
     };
 
-    const generatorFunc = await mappings[options.format];
-    (generatorFunc && generatorFunc()) || null;
+    const generatorFunc = mappings[options.format];
+
+    generatorFunc && (await generatorFunc());
   } catch (e) {
     console.error(e);
   }
 
-  // If not for this line, the script never ends
+  // If not for this line, the script never finishes
   process.exit();
 }
 

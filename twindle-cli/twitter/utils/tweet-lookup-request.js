@@ -29,6 +29,7 @@ const getUrl = (tweet_id) =>
 async function doTweetLookup(tweet_id) {
   try {
     // console.log(getUrl(tweet_id));
+    /** @type {Response} */
     const response = await fetch(getUrl(tweet_id), getRequestOptions());
     await processResponse(response);
   } catch (err) {
@@ -57,8 +58,6 @@ async function processResponse(response) {
       "The tweet must not be older than 7 days."
     );
   }
-
-  console.log(tweet);
 
   if (!isProvidedTweetFirstTweetOfTheThread(tweet)) {
     await doTweetLookup(tweet.conversation_id);

@@ -34,17 +34,14 @@ const createCustomTweet = (tweet_object, user_object) => {
   };
 };
 
+/**
+ * @param {Response} response
+ */
 const checkIfRequestSuccessful = (response) => {
   // console.log(response.status);
-  if (response.status != 200) {
-    console.log("error", {
-      type: "error",
-      status: response.status,
-      statusText: response.statusText,
-    });
-    return false;
-  }
-  return true;
+  if (response.status === 200) return true;
+
+  return false;
 };
 
 module.exports = {

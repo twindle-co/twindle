@@ -5,9 +5,10 @@ const { extractTweetId } = require("./utils/tweet-utils");
 const { writeTweets, collectTweets } = require("./utils/tweet-info");
 
 async function getTweetsFromURL(url) {
-  console.log({ id: extractTweetId(url) });
   let response = await doTweetLookup(extractTweetId(url));
   await writeTweets();
+
+  return response;
 }
 
 async function getTweetsFromTweetId(tweet_id) {
