@@ -1,6 +1,5 @@
 // const { generateEpub } = require("./epub/epub");
 const { generatePDF } = require("./pdf");
-const { UserError } = require("../helpers/error");
 
 const render = (tweets, format, outputFilePath) => {
   switch (format) {
