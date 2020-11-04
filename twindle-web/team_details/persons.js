@@ -37,5 +37,22 @@ export const data = {
         country: "India",
       },
     },
+    ,{
+      id: uuidv4(),
+      name: "Ameen Shafeeq",
+      img: "https://avatars0.githubusercontent.com/u/49345531?v=4",
+      links: {
+        website: "https://ameencodes.tech/",
+        linkedin: "",
+        github: "https://github.com/unevencoder",
+        twitter: "https://twitter.com/crafter_coder",
+      },
+      title: "Student",
+      location: {
+        city: "Jeddah",
+        state: "",
+        country: "Saudi Arabia"
+      }
+    }
   ],
 };
