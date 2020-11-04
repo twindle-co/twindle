@@ -8,7 +8,8 @@ async function generatePDF(tweets, outputPath) {
   const htmlContent = await renderTemplate({ thread: tweets.data, common: tweets.common }, "Thread");
 
   // creates the pdf from html and saves it to Twindle.pdf
-  await createPdf(outputPath, htmlContent);
+  if(tweets.data.length > 0)
+    await createPdf(outputPath, htmlContent);
 
   return;
 }
