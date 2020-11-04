@@ -1,6 +1,8 @@
 const ENDPOINT_TO_FETCH_CONVERSATION_ID = "https://api.twitter.com/2/tweets?ids=";
 const TWEET_FIELDS =
-  "&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,source,withheld";
+  "&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at," +
+  "entities,geo,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets," +
+  "source,withheld";
 const USER_FIELDS =
   "&user.fields=created_at,description,entities,location,pinned_tweet_id,profile_image_url,protected,public_metrics,url,verified,withheld";
 const MEDIA_FIELDS =

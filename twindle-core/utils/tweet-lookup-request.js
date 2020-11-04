@@ -52,7 +52,7 @@ async function doTweetLookup(tweet_id) {
  */
 async function processResponse(response) {
   if (!checkIfRequestSuccessful(response)) {
-    // console.log(await response.json());
+    console.log(await response.json());
 
     throw new UserError("request-failed", "Request failed. Check your network and try again");
   }
