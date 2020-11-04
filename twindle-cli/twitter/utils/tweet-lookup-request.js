@@ -52,12 +52,10 @@ async function processResponse(response) {
 
   let responseJSON = await response.json();
 
-  if(isTweetDeleted(responseJSON)) {
-    throw new UserError( 
-      "tweet-deleted",
-      "Cannot fetch details of this tweet."
-    );
+  if (isTweetDeleted(responseJSON)) {
+    throw new UserError("tweet-deleted", "Cannot fetch details of this tweet.");
   }
+
   let tweet = getTweetObject(responseJSON);
 
   await writeFile(
@@ -101,10 +99,9 @@ const isTweetNotOlderThanSevenDays = (tweet) => {
 };
 
 const isTweetDeleted = (responseJSON) => {
-  if(responseJSON.errors === undefined)
-    return false;
-  console.log(responseJSON.errors[0])
+  if (responseJSON.errors === undefined) return false;
+  console.log(responseJSON.errors[0]);
   return true;
-}
+};
 
 module.exports = { doTweetLookup };

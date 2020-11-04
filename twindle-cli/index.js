@@ -2,19 +2,19 @@
 require("./helpers/logger");
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsFromTweetId } = require("./twitter");
+const { getTweetsFromTweetId } = require("../twindle-core");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 
 async function main() {
-	prepareCli();
+  prepareCli();
 
-	const { format, outputFilename, tweetId, kindleEmail } = getCommandlineArgs(process.argv);
+  const { format, outputFilename, tweetId, kindleEmail } = getCommandlineArgs(process.argv);
 
-	try {
-		const tweets = await getTweetsFromTweetId(tweetId);
-		const outputFilePath = getOutputFilePath(outputFilename);
-		await Renderer.render(tweets, format, outputFilePath);
+  try {
+    const tweets = await getTweetsFromTweetId(tweetId);
+    const outputFilePath = getOutputFilePath(outputFilename);
+    await Renderer.render(tweets, format, outputFilePath);
 
 		if (kindleEmail) {
 			await sendToKindle(kindleEmail, outputFilePath);
@@ -23,8 +23,8 @@ async function main() {
 		console.error(e);
 	}
 
-	// If not for this line, the script never finishes
-	process.exit();
+  // If not for this line, the script never finishes
+  process.exit();
 }
 
 // Execute it
