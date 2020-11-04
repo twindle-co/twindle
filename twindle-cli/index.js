@@ -1,52 +1,31 @@
 // Entry program
-const path = require("path");
-const yargs = require("yargs");
-const kleur = require("kleur");
-// const { hideBin } = require("yargs/helpers");
-const { generateEpub } = require("./epub/epub");
-const { generatePDF } = require("./pdf");
+require("./helpers/logger");
+const { getCommandlineArgs, prepareCli } = require("./cli");
+const Renderer = require("./renderer");
 const { getTweetsFromTweetId } = require("./twitter");
+const { getOutputFilePath } = require("./utils/path");
+const { sendToKindle } = require("./utils/send-to-kindle");
 
 async function main() {
-	const options = yargs(process.argv)
-		.usage("Usage: -i <tweet id> -f <file format> -o <filename>")
-		.option({
-			i: {
-				alias: "tweetId",
-				demandOption: true,
-				describe: "First tweet's tweet id in of the twitter thread",
-				type: "string",
-			},
-			f: {
-				alias: "format",
-				demandOption: false,
-				describe: "Output file format",
-				choices: ["mobi", "epub", "pdf"],
-				type: "string",
-				default: "pdf",
-			},
-			o: {
-				alias: "output",
-				demandOption: true,
-				describe: "Filename for the output file",
-				type: "string",
-			},
-		}).argv;
+	prepareCli();
 
-	switch (options.format) {
-		case "epub":
-			generateEpub(`./${options.output}.epub`);
-			break;
-		case "pdf":
-			const tweets = await getTweetsFromTweetId(options.tweetId);
-			generatePDF(tweets, path.join(process.cwd(), options.output + ".pdf"));
-			console.log("Your " + kleur.cyan("tweets") + " are saved into " + kleur.red(options.output + ".pdf"));
-			break;
-		case "mobi":
-			console.log("Sorry this format is not supported yet");
-			break;
-		default:
-			break;
+	const { format, outputFilename, tweetId, kindleEmail } = getCommandlineArgs(process.argv);
+
+	try {
+		const tweets = await getTweetsFromTweetId(tweetId);
+		const outputFilePath = getOutputFilePath(outputFilename);
+		await Renderer.render(tweets, format, outputFilePath);
+
+		if (kindleEmail) {
+			await sendToKindle(kindleEmail);
+		}
+	} catch (e) {
+		console.error(e);
 	}
+
+	// If not for this line, the script never finishes
+	process.exit();
 }
+
+// Execute it
 main();
