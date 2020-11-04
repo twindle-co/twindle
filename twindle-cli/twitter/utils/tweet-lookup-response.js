@@ -1,15 +1,23 @@
-const { addTweet } = require("./tweet-info");
-const { getTweetObject, getUserObject, createCustomTweet } = require("./tweet-utils");
+const { addTweet, addCommon } = require("./tweet-info");
+const {
+  getTweetObject,
+  getUserObject,
+  createCustomTweet,
+} = require("./tweet-utils");
 const { doTweetsSearch } = require("./tweets-search-request");
 
+/**
+ *
+ * @param {any} responseJSON
+ */
 async function processTweetLookup(responseJSON) {
-    let tweet = getTweetObject(responseJSON);
-    let user = getUserObject(responseJSON);
-    addTweet(createCustomTweet(tweet, user));
-    await doTweetsSearch(tweet.conversation_id, user.username);
+  let tweet = getTweetObject(responseJSON);
+  let user = getUserObject(responseJSON);
+  addCommon(tweet, user);
+  addTweet(createCustomTweet(tweet, user));
+  await doTweetsSearch(tweet.conversation_id, user.username);
 }
-  
+
 module.exports = {
-    processTweetLookup
-}
-  
+  processTweetLookup,
+};
