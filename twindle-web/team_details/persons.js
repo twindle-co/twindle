@@ -35,6 +35,23 @@ export const data = {
         city: "Kolkata",
         state: "West Bengal",
         country: "India",
+    },
+    {
+      id: uuidv4(),
+      name: "Rafael Rodrigues",
+      img:
+         "https://avatars3.githubusercontent.com/u/46648727?v=4",
+      links: {
+         website: "",
+         linkedin: "https://www.linkedin.com/in/rafaelrodrigues55/",
+         github: "https://github.com/RafaelBatman55",
+         twitter: "https://twitter.com/rafa_55",
+      },
+      Title: "FrontEnd Developer",
+      location: {
+         city: "Resende",
+         state: "Rio de Janeiro",
+         country: "Brazil",
       },
     },
   ],
