@@ -75,8 +75,8 @@ function processSearchResponse(responseJSON) {
                             tweet.referenced_tweets.filter((ref)=>
                                 ref.type == 'replied_to' && ref.id == reply_id).length > 0);
     }
-    console.log(tweets);
-    console.log(tweets.length);
+    console.devLog(tweets);
+    console.devLog(tweets.length);
 }
 
 function getTweetObject(responseJSON) {
@@ -122,7 +122,7 @@ async function fetchURL(url, url_type) {
         headers: myHeaders,
         redirect: 'follow'
     };
-    console.log(url);
+    console.devLog(url);
     await fetch(url, requestOptions)
             .then((response)=>response.json())
             .then((result)=>processResponse(url_type, result))
