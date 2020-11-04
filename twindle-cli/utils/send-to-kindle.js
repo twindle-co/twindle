@@ -1,24 +1,18 @@
-const { Calibre } = require("node-calibre");
-const { getLibraryPath } = require("./library");
-const { sendMail } = require("./send-email");
+const { sendMail } = require("./send-email-smtp");
 const fs = require("fs");
 
-const calibre = new Calibre({ library: getLibraryPath() });
-
-async function sendToKindle(kindleEmail) {
-	const book = getLibraryPath("deneme.pdf");
-	const convertedPath = await calibre.ebookConvert(book, "epub");
-	const file = fs.readFileSync(convertedPath);
+async function sendToKindle(kindleEmail, filePath) {
+	const file = fs.readFileSync(filePath);
 
 	await sendMail({
 		emailTo: [kindleEmail],
 		subject: "From Twindle " + new Date().toLocaleDateString(),
 		attachments: [
 			{
-				filename: "twindle.epub",
+				filename: "twindle.pdf",
 				content: Buffer.from(file, "base64"),
-				contentType: "application/epub+zip",
-				// encoding: "base64",
+				contentType: "application/pdf",
+				encoding: "base64",
 			},
 		],
 	});
