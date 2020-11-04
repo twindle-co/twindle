@@ -1,4 +1,4 @@
-const { sendMail } = require("./send-email");
+const { sendMail } = require("./send-email-smtp");
 const fs = require("fs");
 
 async function sendToKindle(kindleEmail, filePath) {
@@ -18,8 +18,4 @@ async function sendToKindle(kindleEmail, filePath) {
 	});
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> upstream/main
 module.exports = { sendToKindle };
