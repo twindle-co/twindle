@@ -21,15 +21,16 @@ async function createPdf(outputPath, htmlContent) {
 
     // Prints the html page to pdf document and saves it to given outputPath
     await page.emulateMediaType("print");
-    await page.pdf({ path: outputPath, format: "A4" });
+    await page.pdf({ path: outputPath, format: "A5" });
 
     // Closing the puppeteer browser instance
     await browser.close();
 
-    const [fileName] = outputPath.split("/").reverse();
-    
     console.log(
-      "Your " + kleur.cyan("tweets") + " are saved into " + kleur.red(fileName)
+      "Your " +
+        kleur.cyan("tweets") +
+        " are saved into " +
+        kleur.red(outputPath)
     );
   } catch (error) {
     console.error(error);
