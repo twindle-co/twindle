@@ -1,0 +1,9 @@
+{
+  "host": "smtp.gmail.com",
+  "port": 465,
+  "secure": true,
+  "auth": {
+    "user": "devpuruvj@gmail.com",
+    "pass": "161831412718@COSX+ISINX"
+  }
+}
