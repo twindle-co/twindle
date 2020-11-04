@@ -25,10 +25,10 @@
 		"epub-gen": "^0.1.0",
 		"handlebars": "^4.7.6",
 		"kleur": "^4.1.3",
-		"node-calibre": "^2.1.1",
 		"node-fetch": "^2.6.1",
 		"nodemailer": "^6.4.14",
 		"puppeteer": "^5.4.1",
+		"smtp-client": "^0.3.3",
 		"string.prototype.matchall": "^4.0.2",
 		"yargs": "^16.1.0"
 	}
