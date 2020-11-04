@@ -18,4 +18,8 @@ async function sendToKindle(kindleEmail, filePath) {
 	});
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/main
 module.exports = { sendToKindle };
