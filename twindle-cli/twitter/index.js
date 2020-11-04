@@ -5,13 +5,15 @@ const { extractTweetId } = require("./utils/tweet-utils");
 const { writeTweets, collectTweets } = require("./utils/tweet-info");
 
 async function getTweetsFromURL(url) {
-	let response = await doTweetLookup(extractTweetId(url));
-	writeTweets();
+  let response = await doTweetLookup(extractTweetId(url));
+  await writeTweets();
+
+  return response;
 }
 
 async function getTweetsFromTweetId(tweet_id) {
-	await doTweetLookup(tweet_id);
-	return collectTweets();
+  await doTweetLookup(tweet_id);
+  return collectTweets();
 }
 
 module.exports = { getTweetsFromURL, getTweetsFromTweetId };

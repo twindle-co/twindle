@@ -14,3 +14,10 @@ Options:
 ```
 
 It only supports epub & pdf for now.
+
+## Info for developers
+
+### Logging
+
+`console.devLog` function should be used to log everything.
+It is a wrapper around `console.log` which only prints the input when DEV environment var is set true
