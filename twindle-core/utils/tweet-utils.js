@@ -1,4 +1,15 @@
 const matchAll = require("string.prototype.matchall");
+const twemoji = require("twemoji");
+
+const {
+  ENDPOINT_TO_FETCH_CONVERSATION_ID,
+  TWEET_FIELDS,
+  USER_FIELDS,
+  MEDIA_FIELDS,
+  POLL_FIELDS,
+  PLACE_FIELDS,
+  EXPANSIONS,
+} = require("./twitter-endpoints");
 
 /**
  * Get tweet ID from URL `https://twitter.com/[USER]/status/[ID]` | Very flexible,
@@ -7,12 +18,7 @@ const matchAll = require("string.prototype.matchall");
  * @returns {string}
  */
 const extractTweetId = (tweet_url) =>
-  [
-    ...matchAll(
-      tweet_url,
-      /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g
-    ),
-  ][0][1];
+  [...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g)][0][1];
 
 const extractScreenName = (tweet_url) =>
   tweet_url
@@ -27,7 +33,7 @@ const createCustomTweet = (tweet_object, user_object) => {
   return {
     id: tweet_object.id,
     createdAt: tweet_object.created_at,
-    tweet: fixLineBreaks(tweet_object.text),
+    tweet: twemoji.parse(fixLineBreaks(tweet_object.text)),
   };
 };
 
@@ -49,6 +55,13 @@ function fixLineBreaks(tweet) {
   return tweet.replace(/\n/g, "<br />");
 }
 
+/**
+ * Returns the API endpoint URL from `tweet_id`
+ * @param {string} tweet_id
+ */
+const getUrl = (tweet_id) =>
+  `${ENDPOINT_TO_FETCH_CONVERSATION_ID}${tweet_id}${TWEET_FIELDS}${EXPANSIONS}${USER_FIELDS}${MEDIA_FIELDS}${PLACE_FIELDS}${POLL_FIELDS}`;
+
 module.exports = {
   extractTweetId,
   extractScreenName,
@@ -58,4 +71,5 @@ module.exports = {
   createCustomTweet,
   checkIfRequestSuccessful,
   fixLineBreaks,
+  getUrl,
 };
