@@ -66,16 +66,25 @@
 </style>
 
 <h1 id="title">Twindle Thread</h1>
-
+<div class="tweetContainer">
+    <div class="header">
+      <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+      <div>
+        <h3>{{common.user.name}} - <span>@{{common.user.username}}</span></h3>
+        <p><span>{{common.created_at}}</span></p>
+        <p><span>{{common.user.description}}</span></p>
+        <p><span>Number of tweets: {{common.count}}</span></p>
+      </div>
+    </div>
+</div>
+  
 <ul>
   {{!-- uses the twit mock object from mock API --}}
   {{#each thread}}
   <li>
     <div class="tweetContainer">
       <div class="header">
-        <img src="{{image}}" alt="{{twitterHandle}}" />
         <div>
-          <h3>{{name}} - <span>@{{twitterHandle}}</span></h3>
           <p><span>{{createdAt}}</span></p>
         </div>
       </div>

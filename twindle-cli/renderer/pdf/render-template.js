@@ -1,13 +1,6 @@
 const { readFile } = require("fs").promises;
 const hbs = require("handlebars");
-
-/**
- * Replaces `\n` with `<br />`
- * @param {string} tweet
- */
-function fixLineBreaks(tweet) {
-  return tweet.replace(/\n/g, "<br />");
-}
+const { fixLineBreaks } = require("../../twitter/utils/tweet-utils");
 
 /**
  * Renders the html template with the given data and returns the html string
@@ -15,11 +8,6 @@ function fixLineBreaks(tweet) {
  * @param {string} templateName
  */
 async function renderTemplate(data, templateName) {
-  console.log(data.thread[0]);
-  for (let i = 0; i < data.thread.length; i++) {
-    data.thread[i].tweet = fixLineBreaks(data.thread[i].tweet);
-  }
-  
   const html = await readFile(
     `${__dirname}/templates/${templateName}.hbs`,
     "utf-8"
