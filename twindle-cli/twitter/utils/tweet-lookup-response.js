@@ -1,4 +1,4 @@
-const { addTweet } = require("./tweet-info");
+const { addTweet, addCommon } = require("./tweet-info");
 const {
   getTweetObject,
   getUserObject,
@@ -13,7 +13,7 @@ const { doTweetsSearch } = require("./tweets-search-request");
 async function processTweetLookup(responseJSON) {
   let tweet = getTweetObject(responseJSON);
   let user = getUserObject(responseJSON);
-
+  addCommon(tweet, user);
   addTweet(createCustomTweet(tweet, user));
   await doTweetsSearch(tweet.conversation_id, user.username);
 }
