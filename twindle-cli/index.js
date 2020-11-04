@@ -16,12 +16,12 @@ async function main() {
     const outputFilePath = getOutputFilePath(outputFilename);
     await Renderer.render(tweets, format, outputFilePath);
 
-    if (kindleEmail) {
-      await sendToKindle(kindleEmail);
-    }
-  } catch (e) {
-    console.error(e);
-  }
+		if (kindleEmail) {
+			await sendToKindle(kindleEmail, outputFilePath);
+		}
+	} catch (e) {
+		console.error(e);
+	}
 
   // If not for this line, the script never finishes
   process.exit();
