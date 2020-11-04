@@ -67,8 +67,8 @@ function processSearchResponse(responseJSON) {
         directReply = getTweetArray(responseJSON).filter((tweet)=>
             tweet.in_reply_to_screen_name == screen_name && tweet.in_reply_to_status_id_str == replyId);
     }
-    console.log(tweets);
-    console.log(tweets.length);
+    console.devLog(tweets);
+    console.devLog(tweets.length);
 }
 
 function getTweetObject(responseJSON) {
@@ -113,7 +113,7 @@ async function fetchURL(url, url_type) {
         headers: myHeaders,
         redirect: 'follow'
     };
-    console.log(url);
+    console.devLog(url);
     await fetch(url, requestOptions)
             .then((response)=>response.json())
             .then((result)=>processResponse(url_type, result))
