@@ -17,7 +17,7 @@ async function main() {
 		await Renderer.render(tweets, format, outputFilePath);
 
 		if (kindleEmail) {
-			await sendToKindle(kindleEmail);
+			await sendToKindle(kindleEmail, outputFilePath);
 		}
 	} catch (e) {
 		console.error(e);
