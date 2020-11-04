@@ -17,11 +17,7 @@ const addTweet = (tweet) => tweets.data.push(tweet);
 
 const addCommon = (tweet, user) => {
   tweets.common.created_at = tweet.created_at;
-  tweets.common.user.id = user.id;
-  tweets.common.user.username = user.username;
-  tweets.common.user.name = user.name;
-  tweets.common.user.profile_image_url = user.profile_image_url;
-  tweets.common.user.description = user.description;
+  tweets.common.user = { ...user };
 }
 
 async function writeTweets() {
