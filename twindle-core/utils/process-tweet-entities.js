@@ -2,16 +2,27 @@
  * returns data to make the output look like a tweet
  * @param {any} responseJSON
  */
-async function processTweetEntities(responseJSON) {
-  const mediaObj = {};
+async function processMediaFromTweet(responseJSON) {
+  const mediaObj = {
+    photo: [],
+    video: [],
+  };
 
   /** @type {string[]} */
-  const mediaKeys = responseJSON.data[0].attachments;
+  const mediaKeys = responseJSON.data[0].attachments.media_keys;
+
+  /** @type {any[]} */
   const expandedMediaIncludes = responseJSON.includes.media;
-  console.log(mediaKeys);
+  // console.log(mediaKeys);
 
   for (let mediaKey of mediaKeys) {
+    // Search for it in the expandedMedia
+    const mediaInfo = expandedMediaIncludes.find(({ media_key }) => media_key === mediaKey);
+
+    if (mediaInfo.type === "photo") {
+      mediaObj.photos;
+    }
   }
 }
 
-module.exports = { processTweetEntities };
+module.exports = { processMediaFromTweet };

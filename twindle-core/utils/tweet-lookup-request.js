@@ -40,6 +40,7 @@ async function doTweetLookup(tweet_id) {
     // console.log(getUrl(tweet_id));
     /** @type {Response} */
     const response = await fetch(getUrl(tweet_id), getRequestOptions());
+    // console.log(getUrl(tweet_id))
     return await processResponse(response);
   } catch (err) {
     console.error(err);
@@ -65,12 +66,6 @@ async function processResponse(response) {
 
   let tweet = getTweetObject(responseJSON);
 
-  await writeFile(
-    `${process.cwd()}/output/twitter-api-response.json`,
-    JSON.stringify(responseJSON, null, 2),
-    "utf8"
-  );
-
   if (!isTweetNotOlderThanSevenDays(tweet)) {
     throw new UserError("tweet-older-than-7-days", "The tweet must not be older than 7 days.");
   }
@@ -83,26 +78,4 @@ async function processResponse(response) {
   }
 }
 
-<<<<<<< HEAD
-const getRequestOptions = () => {
-  return {
-    method: "GET",
-    headers: { Authorization: BEARER_TOKEN },
-    redirect: "follow",
-  };
-};
-
-const isProvidedTweetFirstTweetOfTheThread = (tweet) =>
-  tweet.id === tweet.conversation_id;
-
-const isTweetNotOlderThanSevenDays = (tweet) => {
-  const currentTime = +new Date();
-  const tweetCreatedAt = +new Date(tweet.created_at);
-
-  const differenceInDays = (currentTime - tweetCreatedAt) / (1000 * 3600 * 24);
-  return differenceInDays <= 7;
-};
-
-=======
->>>>>>> main
 module.exports = { doTweetLookup };

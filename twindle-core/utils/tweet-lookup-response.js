@@ -1,4 +1,4 @@
-const { processTweetEntities } = require("./process-tweet-entities");
+const { processMediaFromTweet } = require("./process-tweet-entities");
 const { addTweet, addCommon, collectTweets } = require("./tweet-info");
 const { getTweetObject, getUserObject, createCustomTweet } = require("./tweet-utils");
 const { doTweetsSearch } = require("./tweets-search-request");
@@ -15,7 +15,7 @@ async function processTweetLookup(responseJSON) {
 
   addTweet(createCustomTweet(tweet, user));
 
-  await processTweetEntities(responseJSON);
+  await processMediaFromTweet(responseJSON);
 
   await doTweetsSearch(tweet.conversation_id, user.username);
 

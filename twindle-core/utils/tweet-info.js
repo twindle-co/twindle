@@ -19,30 +19,23 @@ const addTweet = (tweet) => tweets.data.push(tweet);
 const addCommon = (tweet, user) => {
   tweets.common.created_at = tweet.created_at;
   tweets.common.user = { ...user };
-  tweets.common.user.profile_image_url = tweets.common.user.profile_image_url.replace('_normal.', '.')
+  tweets.common.user.profile_image_url = tweets.common.user.profile_image_url.replace(
+    "_normal.",
+    "."
+  );
 };
 
 async function writeTweets() {
   try {
-    await writeFile(
-      "../output/twitter-api-response.json",
-      JSON.stringify(tweets)
-    );
+    await writeFile("../output/twitter-api-response.json", JSON.stringify(tweets));
   } catch (err) {
     console.error(err);
   }
 }
 
 function collectTweets() {
-<<<<<<< HEAD
-  return tweets;
-}
-
-module.exports = { addTweet, writeTweets, collectTweets };
-=======
   tweets.common.count = tweets.data.length;
   return tweets;
 }
 
 module.exports = { addTweet, addCommon, writeTweets, collectTweets };
->>>>>>> main

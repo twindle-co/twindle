@@ -1,10 +1,6 @@
 {
   "data": [
     {
-      "id": "1323819296267665409",
-      "created_at": "2020-11-04T02:48:10.000Z",
-      "text": "I watched a squirrel eat a pumpkin for like an hour today and it was magical. https://t.co/yqUFJ4vnNP",
-      "conversation_id": "1323819296267665409",
       "context_annotations": [
         {
           "domain": {
@@ -20,45 +16,6 @@
         },
         {
           "domain": {
-<<<<<<< HEAD
-            "id": "3",
-            "name": "TV Shows",
-            "description": "Television shows from around the world"
-          },
-          "entity": { "id": "10024119551", "name": "The Legend of Korra" }
-        }
-      ],
-      "source": "Twitter Web App",
-      "attachments": { "media_keys": ["3_1323137073524613120"] },
-      "public_metrics": {
-        "retweet_count": 0,
-        "reply_count": 0,
-        "like_count": 4,
-        "quote_count": 1
-      }
-    }
-  ],
-  "includes": {
-    "users": [
-      {
-        "username": "puruvjdev",
-        "pinned_tweet_id": "1308682456434868225",
-        "protected": false,
-        "name": "{/* puruvj.dev */}",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1316284643675578369/Ym8iAim8_normal.jpg",
-        "id": "3436392039",
-        "public_metrics": {
-          "followers_count": 289,
-          "following_count": 397,
-          "tweet_count": 3603,
-          "listed_count": 5
-        },
-        "verified": false,
-        "description": "18. Web dev for 5 years. Loves orchestral music.\nLove Star Wars, Avengers, Harry Potter.\n\nWhat's the deal with this 👆 cat? 🤔",
-        "created_at": "2015-08-23T07:46:19.000Z",
-        "location": "Hogwarts, Narnia, Middle Earth",
-        "url": "https://t.co/gdeY0K6smm",
-=======
             "id": "67",
             "name": "Interests and Hobbies",
             "description": "Interests, opinions, and behaviors of individuals, groups, or cultures; like Speciality Cooking or Theme Parks"
@@ -70,16 +27,6 @@
           }
         }
       ],
-      "source": "Twitter for iPhone",
-      "attachments": {
-        "media_keys": [
-          "3_1323819284926255104",
-          "3_1323819285119225857",
-          "3_1323819285555384325",
-          "3_1323819287425986562"
-        ]
-      },
-      "lang": "en",
       "entities": {
         "urls": [
           {
@@ -112,13 +59,27 @@
           }
         ]
       },
+      "conversation_id": "1323819296267665409",
+      "text": "I watched a squirrel eat a pumpkin for like an hour today and it was magical. https://t.co/yqUFJ4vnNP",
+      "lang": "en",
+      "created_at": "2020-11-04T02:48:10.000Z",
+      "source": "Twitter for iPhone",
+      "attachments": {
+        "media_keys": [
+          "3_1323819284926255104",
+          "3_1323819285119225857",
+          "3_1323819285555384325",
+          "3_1323819287425986562"
+        ]
+      },
       "public_metrics": {
-        "retweet_count": 22,
-        "reply_count": 3,
-        "like_count": 106,
+        "retweet_count": 25,
+        "reply_count": 4,
+        "like_count": 118,
         "quote_count": 1
       },
       "possibly_sensitive": false,
+      "id": "1323819296267665409",
       "author_id": "228955392"
     }
   ],
@@ -126,68 +87,50 @@
     "media": [
       {
         "width": 2048,
+        "media_key": "3_1323819284926255104",
         "type": "photo",
         "height": 1536,
-        "media_key": "3_1323819284926255104",
         "url": "https://pbs.twimg.com/media/El8moDDXUAAVhWX.jpg"
       },
       {
         "width": 2048,
+        "media_key": "3_1323819285119225857",
         "type": "photo",
         "height": 1536,
-        "media_key": "3_1323819285119225857",
         "url": "https://pbs.twimg.com/media/El8moDxX0AEi7q-.jpg"
       },
       {
         "width": 1536,
+        "media_key": "3_1323819285555384325",
         "type": "photo",
         "height": 2048,
-        "media_key": "3_1323819285555384325",
         "url": "https://pbs.twimg.com/media/El8moFZXEAUI77Z.jpg"
       },
       {
         "width": 2048,
+        "media_key": "3_1323819287425986562",
         "type": "photo",
         "height": 1536,
-        "media_key": "3_1323819287425986562",
         "url": "https://pbs.twimg.com/media/El8moMXWMAIARks.jpg"
       }
     ],
     "users": [
       {
-        "verified": false,
-        "created_at": "2010-12-21T04:11:13.000Z",
-        "id": "228955392",
-        "public_metrics": {
-          "followers_count": 9109,
-          "following_count": 737,
-          "tweet_count": 14883,
-          "listed_count": 43
-        },
-        "protected": false,
-        "description": "Often funny, always verbosely sincere non-binary woman & jacket lesbian / She/They / Creative / “Easy to be gay about” / DMs Open / INFP / 4w5 @ohsokirious",
         "location": "Grand Rapids, MI",
         "name": "Kiri Anne Ryan Stewart 🌶🥒",
->>>>>>> main
+        "username": "ohheykiri",
+        "description": "Often funny, always verbosely sincere non-binary woman & jacket lesbian / She/They / Creative / “Easy to be gay about” / DMs Open / INFP / 4w5 @ohsokirious",
+        "verified": false,
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1320072536714084352/jwlzDKhx_normal.jpg",
+        "url": "https://t.co/umkTzdgMVM",
+        "created_at": "2010-12-21T04:11:13.000Z",
         "entities": {
           "url": {
             "urls": [
               {
                 "start": 0,
                 "end": 23,
-<<<<<<< HEAD
-                "url": "https://t.co/gdeY0K6smm",
-                "expanded_url": "https://puruvj.dev",
-                "display_url": "puruvj.dev"
-              }
-            ]
-          }
-        }
-      }
-    ]
-  }
-}
-=======
                 "url": "https://t.co/umkTzdgMVM",
                 "expanded_url": "http://bit.ly/2KWHgiC",
                 "display_url": "bit.ly/2KWHgiC"
@@ -204,11 +147,14 @@
             ]
           }
         },
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1320072536714084352/jwlzDKhx_normal.jpg",
-        "url": "https://t.co/umkTzdgMVM",
-        "username": "ohheykiri"
+        "public_metrics": {
+          "followers_count": 9110,
+          "following_count": 737,
+          "tweet_count": 14883,
+          "listed_count": 43
+        },
+        "id": "228955392"
       }
     ]
   }
 }
->>>>>>> main
