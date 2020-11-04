@@ -5,17 +5,13 @@ async function sendMail({ subject, emailTo, attachments }) {
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport(emailConfig);
 
-  console.log(attachments);
-
   // send mail with defined transport object
   const info = await transporter.sendMail({
     from: emailConfig.auth.user, // sender address
     to: emailTo, // list of receivers
     subject, // Subject line
+    text: "Here is your twindle thread",
     attachments: [
-			{
-				
-			},
       ...attachments,
       // {
       // 	filename: "twindle.epub",
