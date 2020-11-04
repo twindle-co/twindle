@@ -1,0 +1,9 @@
+{
+	"host": "// MAIL HOST //",
+	"port": 465,
+	"secure": true,
+	"auth": {
+		"user": "// USERNAME //",
+		"pass": "// PASSWORD //"
+	}
+}

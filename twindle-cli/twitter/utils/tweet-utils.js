@@ -26,11 +26,8 @@ const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 const createCustomTweet = (tweet_object, user_object) => {
   return {
     id: tweet_object.id,
-    name: user_object.name,
-    twitterHandle: user_object.username,
-    image: user_object.profile_image_url,
     createdAt: tweet_object.created_at,
-    tweet: tweet_object.text,
+    tweet: fixLineBreaks(tweet_object.text),
   };
 };
 
@@ -44,6 +41,14 @@ const checkIfRequestSuccessful = (response) => {
   return false;
 };
 
+/**
+ * Replaces `\n` with `<br />`
+ * @param {string} tweet
+ */
+function fixLineBreaks(tweet) {
+  return tweet.replace(/\n/g, "<br />");
+}
+
 module.exports = {
   extractTweetId,
   extractScreenName,
@@ -52,4 +57,5 @@ module.exports = {
   getUserObject,
   createCustomTweet,
   checkIfRequestSuccessful,
+  fixLineBreaks,
 };

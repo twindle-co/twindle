@@ -51,7 +51,11 @@ async function processResponse(response) {
   }
 
   let responseJSON = await response.json();
-  console.log({ responseJSON });
+
+  if (isTweetDeleted(responseJSON)) {
+    throw new UserError("tweet-deleted", "Cannot fetch details of this tweet.");
+  }
+
   let tweet = getTweetObject(responseJSON);
 
   await writeFile(
@@ -68,6 +72,7 @@ async function processResponse(response) {
   }
 
   if (!isProvidedTweetFirstTweetOfTheThread(tweet)) {
+    // This ain't the first tweet of the thread. Find out the first of this thread
     await doTweetLookup(tweet.conversation_id);
   } else {
     await processTweetLookup(responseJSON);
@@ -91,6 +96,12 @@ const isTweetNotOlderThanSevenDays = (tweet) => {
 
   const differenceInDays = (currentTime - tweetCreatedAt) / (1000 * 3600 * 24);
   return differenceInDays <= 7;
+};
+
+const isTweetDeleted = (responseJSON) => {
+  if (responseJSON.errors === undefined) return false;
+  console.log(responseJSON.errors[0]);
+  return true;
 };
 
 module.exports = { doTweetLookup };

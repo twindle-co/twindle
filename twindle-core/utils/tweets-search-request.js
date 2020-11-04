@@ -13,25 +13,29 @@ const {
 const { processSearchResponse } = require("./tweets-search-response");
 const { checkIfRequestSuccessful } = require("./tweet-utils");
 const fetch = require("node-fetch");
+const { UserError } = require("../helpers/error");
 
 async function doTweetsSearch(conversation_id, screen_name) {
   try {
     // console.log(getUrl(conversation_id, screen_name));
-    let response = await fetch(
-      getUrl(conversation_id, screen_name),
-      getRequestOptions()
-    );
+    /** @type {Response} */
+    const response = await fetch(getUrl(conversation_id, screen_name), getRequestOptions());
     await processResponse(response);
   } catch (err) {
     console.log(err);
   }
 }
 
+/**
+ * @param {Response} response
+ */
 async function processResponse(response) {
-  if (checkIfRequestSuccessful(response)) {
-    let responseJSON = await response.json();
-    processSearchResponse(responseJSON);
+  if (!checkIfRequestSuccessful(response)) {
+    throw new UserError("request-failed", "Request failed. Check your network and try again");
   }
+
+  const responseJSON = await response.json();
+  processSearchResponse(responseJSON);
 }
 
 const getUrl = (conversation_id, screen_name) => {
@@ -39,7 +43,9 @@ const getUrl = (conversation_id, screen_name) => {
     "<conversation_id>",
     conversation_id
   ).replace("<screen_name>", screen_name);
+
   url = `${url}${TWEET_FIELDS}${EXPANSIONS}${USER_FIELDS}${MEDIA_FIELDS}${PLACE_FIELDS}${POLL_FIELDS}${MAX_RESULTS}`;
+
   return url;
 };
 

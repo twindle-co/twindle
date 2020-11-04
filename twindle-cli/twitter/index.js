@@ -1,5 +1,4 @@
 require("dotenv/config"); // ACCESSING THE .ENV file
-const fs = require("fs");
 const { doTweetLookup } = require("./utils/tweet-lookup-request");
 const { extractTweetId } = require("./utils/tweet-utils");
 const { writeTweets, collectTweets } = require("./utils/tweet-info");
