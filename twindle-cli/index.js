@@ -1,5 +1,6 @@
 // Entry program
 require("./helpers/logger");
+require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
 const { getTweetsFromTweetId } = require("./twitter");
