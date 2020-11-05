@@ -40,10 +40,10 @@ async function createPdf(outputPath, htmlContent) {
       path: outputPath,
       format: "A5",
       margin: {
-        bottom: 40, // minimum required for footer msg to display
-        left: 25,
-        right: 35,
-        top: 30,
+        bottom: 52, // minimum required for footer msg to display
+        left: 20,
+        right: 20,
+        top: 10,
       },
       printBackground: true,
       displayHeaderFooter: true,

@@ -7,9 +7,7 @@
 
   body {
     margin: 10px 10px 20px 10px;
-
-    font-size: 105%;
-
+    font-size: 107%;
   }
 
   #title {
@@ -23,25 +21,28 @@
     align-items: center;
     justify-content: stretch;
     flex-direction: column;
-
     padding: 0;
   }
 
   ul li {
-
     margin: 0;
-
+    
     page-break-before: always;
     page-break-inside: avoid;
     page-break-after: always;
 
     width: 100%;
+
+    padding: 1rem 0;
+  }
+
+  ul li:not(:last-child) {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   }
 
   .tweetContainer {
     /*display: flex;
     flex-direction: column;*/
-
     width: 100%;
   }
 
@@ -54,15 +55,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    margin-bottom: 10px;
   }
 
   .tweetContainer .header img {
     max-width: 75px;
-
     border-radius: 50%;
-
     margin-right: 10px;
   }
 
@@ -96,7 +93,7 @@
     <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
     <div>
       <h3>{{common.user.name}} - <span>@{{common.user.username}}</span></h3>
-      <p><span>{{common.created_at}}</span></p>
+      <p><span>Thread created: {{common.created_at}}</span></p>
       <p><span>{{common.user.description}}</span></p>
       <p><span>Number of tweets: {{common.count}}</span></p>
     </div>
@@ -108,11 +105,6 @@
   {{#each thread}}
   <li>
     <div class="tweetContainer">
-      <div class="header">
-        <div>
-          <p><span>{{createdAt}}</span></p>
-        </div>
-      </div>
       <p>{{{tweet}}}</p>
     </div>
   </li>
