@@ -1,0 +1,182 @@
+{
+  "data": [
+    {
+      "lang": "en",
+      "possibly_sensitive": false,
+      "conversation_id": "1320872258085310466",
+      "id": "1321087179939057665",
+      "created_at": "2020-10-27T13:51:42.000Z",
+      "source": "Twitter Web App",
+      "entities": {
+        "urls": [
+          {
+            "start": 260,
+            "end": 283,
+            "url": "https://t.co/Elnsnvqr4u",
+            "expanded_url": "https://www.motherjones.com/2020-elections/2020/10/brett-kavanaugh-lays-out-a-plan-to-help-trump-steal-the-election/",
+            "display_url": "motherjones.com/2020-elections…",
+            "images": [
+              {
+                "url": "https://pbs.twimg.com/news_img/1323764821830078465/ybSV2_Z0?format=jpg&name=orig",
+                "width": 1200,
+                "height": 630
+              },
+              {
+                "url": "https://pbs.twimg.com/news_img/1323764821830078465/ybSV2_Z0?format=jpg&name=150x150",
+                "width": 150,
+                "height": 150
+              }
+            ],
+            "status": 200,
+            "title": "Brett Kavanaugh just laid out his plan to help Trump steal the election",
+            "description": "A Bush v. Gore 2.0 crisis just became much more likely.",
+            "unwound_url": "https://www.motherjones.com/2020-elections/2020/10/brett-kavanaugh-lays-out-a-plan-to-help-trump-steal-the-election/"
+          }
+        ],
+        "annotations": [
+          {
+            "start": 68,
+            "end": 76,
+            "probability": 0.9533,
+            "type": "Person",
+            "normalized_text": "Kavanaugh"
+          },
+          {
+            "start": 182,
+            "end": 186,
+            "probability": 0.9978,
+            "type": "Person",
+            "normalized_text": "Trump"
+          },
+          {
+            "start": 242,
+            "end": 254,
+            "probability": 0.5928,
+            "type": "Organization",
+            "normalized_text": "Supreme Court"
+          }
+        ]
+      },
+      "context_annotations": [
+        {
+          "domain": {
+            "id": "10",
+            "name": "Person",
+            "description": "Named people in the world like Nelson Mandela"
+          },
+          "entity": {
+            "id": "799022225751871488",
+            "name": "Donald Trump",
+            "description": "US President Donald Trump"
+          }
+        },
+        {
+          "domain": {
+            "id": "10",
+            "name": "Person",
+            "description": "Named people in the world like Nelson Mandela"
+          },
+          "entity": {
+            "id": "1016678775298260992",
+            "name": "Brett Kavanaugh",
+            "description": "US Supreme Court nominee Brett Kavanaugh"
+          }
+        },
+        {
+          "domain": {
+            "id": "35",
+            "name": "Politician",
+            "description": "Politicians in the world, like Joe Biden"
+          },
+          "entity": {
+            "id": "799022225751871488",
+            "name": "Donald Trump",
+            "description": "US President Donald Trump"
+          }
+        },
+        {
+          "domain": {
+            "id": "35",
+            "name": "Politician",
+            "description": "Politicians in the world, like Joe Biden"
+          },
+          "entity": {
+            "id": "1016678775298260992",
+            "name": "Brett Kavanaugh",
+            "description": "US Supreme Court nominee Brett Kavanaugh"
+          }
+        },
+        {
+          "domain": {
+            "id": "88",
+            "name": "Political Body",
+            "description": "A section of a government, like The Supreme Court"
+          },
+          "entity": {
+            "id": "867872043672326144",
+            "name": "Supreme Court of the United States",
+            "description": "Conversation about the Supreme Court and justices"
+          }
+        }
+      ],
+      "text": "I hope people understand how serious a threat to democracy this is: Kavanaugh is now “swing justice” on 6-3 court &amp; he’s spreading same disinformation about counting mail ballots as Trump\n\nWe need to vote in record numbers to overcome rigged Supreme Court https://t.co/Elnsnvqr4u",
+      "author_id": "15952856",
+      "public_metrics": {
+        "retweet_count": 377,
+        "reply_count": 46,
+        "like_count": 925,
+        "quote_count": 50
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1320899108606017539"
+        }
+      ],
+      "in_reply_to_user_id": "15952856"
+    }
+  ],
+  "includes": {
+    "users": [
+      {
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "start": 77,
+                "end": 100,
+                "url": "https://t.co/q5tNcCdQjy",
+                "expanded_url": "http://amzn.to/2asHld2",
+                "display_url": "amzn.to/2asHld2"
+              }
+            ],
+            "mentions": [
+              {
+                "start": 109,
+                "end": 121,
+                "username": "motherjones"
+              }
+            ]
+          }
+        },
+        "pinned_tweet_id": "1159848529038364672",
+        "public_metrics": {
+          "followers_count": 163109,
+          "following_count": 2796,
+          "tweet_count": 26706,
+          "listed_count": 2772
+        },
+        "username": "AriBerman",
+        "description": "Author: Give Us the Ballot: The Modern Struggle for Voting Rights in America https://t.co/q5tNcCdQjy Writer: @motherjones Speaking: annette@speakersforall.com",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1286763565412753409/KkQAmz2N_normal.jpg",
+        "verified": true,
+        "location": "New York",
+        "created_at": "2008-08-23T01:46:02.000Z",
+        "name": "Ari Berman",
+        "protected": false,
+        "id": "15952856",
+        "url": ""
+      }
+    ]
+  }
+}
