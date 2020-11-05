@@ -33,7 +33,7 @@ const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 const createCustomTweet = (tweet_object, user_object) => {
   return {
     id: tweet_object.id,
-    createdAt: format(new Date(tweet_object.created_at), "MMM d, yyyy"),
+    createdAt: format(new Date(tweet_object.created_at), "MMM d, yyyy  h:mm aaaa"),
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text)),
   };
 };
