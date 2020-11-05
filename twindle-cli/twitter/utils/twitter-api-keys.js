@@ -9,4 +9,4 @@ if (!twitterAuthToken)
   );
 
 const BEARER_TOKEN = "Bearer " + twitterAuthToken;
-module.exports.BEARER_TOKEN = BEARER_TOKEN;
+module.exports = { BEARER_TOKEN };
