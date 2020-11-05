@@ -26,7 +26,7 @@
 
   ul li {
     margin: 0;
-    
+
     page-break-before: always;
     page-break-inside: avoid;
     page-break-after: always;
@@ -88,6 +88,8 @@
 </style>
 
 <h1 id="title">Twindle Thread</h1>
+
+{{#if common}}
 <div class="tweetContainer">
   <div class="header">
     <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
@@ -99,6 +101,8 @@
     </div>
   </div>
 </div>
+{{/if}}
+
 
 <ul>
   {{!-- uses the twit mock object from mock API --}}
@@ -111,4 +115,3 @@
   {{/each}}
 
 </ul>
-
