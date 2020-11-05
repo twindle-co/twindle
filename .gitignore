@@ -108,3 +108,7 @@ dist
 .env
 .DS_Store
 main
+
+twindle-web/scss/
+twindle-web/style.scss
+twindle-web/style.css.map
