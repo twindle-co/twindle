@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Twindle | Create books out of your tweets</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
   <body>
     <!-- Header Section Code for designing navigation -->
     <header>
-      <a href="/"><img src="./images/logo.svg" alt="Twitter Logo" /></a>
+      <svg width="97" height="15" viewBox="0 0 97 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.48 3.8H0.24V0.76H12.52V3.8H8.28V15H4.48V3.8ZM35.5445 0.76L30.4445 15H27.4645L24.4845 6.54L21.4445 15H18.4645L13.3845 0.76H17.2045L20.1245 9.74L23.3045 0.76H25.8645L28.9245 9.9L31.9845 0.76H35.5445ZM37.0613 0.76H40.8213V15H37.0613V0.76ZM56.1294 0.76V15H53.3494L46.8894 6.92V15H43.3894V0.76H46.1294L52.5894 8.8V0.76H56.1294ZM58.7019 0.76H64.5219C66.0952 0.76 67.4485 1.04667 68.5819 1.62C69.7285 2.18 70.6019 2.99333 71.2019 4.06C71.8152 5.12667 72.1219 6.39333 72.1219 7.86C72.1219 9.34 71.8219 10.62 71.2219 11.7C70.6219 12.7667 69.7485 13.5867 68.6019 14.16C67.4685 14.72 66.1085 15 64.5219 15H58.7019V0.76ZM64.2619 12C65.6485 12 66.6819 11.66 67.3619 10.98C68.0552 10.2867 68.4019 9.24667 68.4019 7.86C68.4019 5.12667 67.0219 3.76 64.2619 3.76H62.4619V12H64.2619ZM74.3269 0.76H78.0869V11.96H84.1069V15H74.3269V0.76ZM85.9089 0.76H96.0689V3.64H89.5689V6.32H95.6489V9.2H89.5689V12.12H96.0689V15H85.9089V0.76Z" fill="#2D00F7"/>
+      </svg>
+        
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><i class="material-icons">nights_stay</i></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About Us</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
         </ul>
@@ -21,38 +29,24 @@
 
     <!-- Main section -->
     <main>
-      <section class="page_heading">
-        <h1 class="heading">Twindle</h1>
-        <p class="sub_heading">
-          A better reading experience of twitter threads
-        </p>
-      </section>
-      <section class="coming_soon">
-        <img
-          class="function_image"
-          src="./images/function.svg"
-          alt="What we do here?"
-        />
-        <p class="coming_soon">Coming Soon. Please sign up to know more!!!</p>
-      </section>
-      <section class="email_subs">
-        <form id="email_sub_form">
-          <input
-            type="email"
-            class="email_input"
-            placeholder="Enter your email to sign up"
-          />
-          <button class="sign_up_btn" type="submit">Sign Up</button>
-        </form>
-      </section>
-      <section class="what_we_do">
-        <h2 class="heading_two">What does twindle offer ?</h2>
-        <p>
-          Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
-        </p>
-      </section>
+      <img src="./images/logo.svg" alt="Twitter Logo" />
+      <div id='convert'>
+        <input placeholder='Copy & Paste the twitter thread link ...' type='url' />
+        <select name="changeto">
+          <option value="pdf">PDF</option>
+          <option value="epub">EPUB</option>
+        </select>
+        <button>
+          Click to Convert 
+        </button>
+      </div>
+    <br>
+    <h2>How twitter thread is converted to pdf or epub ?</h2>
+    <br>
+    <h4>Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod <br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br> veniam, quis nostrud exercitation ullamco laboris </h4>
     </main>
-
+    <br>
+    <br>
     <!-- Footer Section Code -->
     <footer>
       <nav>

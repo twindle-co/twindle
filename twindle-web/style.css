@@ -7,7 +7,7 @@
 
 html,
 body {
-  background: #e5e5e5;
+  background: #FFFFFF;
   font-family: "Mulish", sans-serif;
 }
 
@@ -16,8 +16,12 @@ header {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+  margin-top:30px;
 }
 
+header svg{
+  margin-left:20px;
+}
 header nav {
   flex: 1;
 }
@@ -40,8 +44,9 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a:focus {
-  background-color: rgba(9, 133, 227, 0.1);
+  background: rgba(45, 0, 247, 0.2);
 }
+
 
 main {
   display: flex;
@@ -49,88 +54,69 @@ main {
   justify-content: center;
   align-content: center;
   align-items: center;
+  margin-top:40px;
 }
 
-main .page_heading {
+main img{
+  transform: scale(3,3);
+  margin-top:50px;
+  margin-bottom:20px;
+}
+
+#convert{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+#convert input{
+  border:none;
+  background: #F9F9F9;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; 
+  width:350px;
+  height:50px;
+  padding:5px;
+}
+#convert select{
+  border:none;
+  background: #F9F9F9;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; 
+}
+
+#convert button{
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
   text-align: center;
-  padding: 2rem 4rem;
+  color: #F9F9F9;
+  background-color: #2D00F7;
+  border-radius:20%;
+  border:none;
+  padding:7px;
 }
 
-main .page_heading .heading {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-main .page_heading .sub_heading {
-  font-weight: 400;
-}
-
-main .coming_soon {
-  text-align: center;
-  padding: 2rem 4rem;
-}
-
-main .coming_soon img.function_image {
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-
-main .coming_soon p.coming_soon {
-  padding: 3px;
-  font-size: 14px;
-}
-
-main .email_subs {
-  text-align: center;
-  padding: 2rem 4rem;
-}
-
-main .email_subs .email_input {
-  background: white;
-  border-radius: 5px;
-  width: 503px;
-  height: 35px;
-  border: none;
-  padding: 1rem;
-  font-size: 15px;
-}
-
-main .email_subs .email_input:focus,
-main .email_subs .email_input:active,
-main .email_subs .email_input:hover {
-  outline: none;
-}
-
-main .email_subs .sign_up_btn {
-  font-size: 15px;
-  background: #0984e3;
-  width: 99px;
-  height: 35px;
-  border-radius: 5px;
-  border: white;
-  color: white;
-  box-shadow: 0 0px 4px #333;
-  cursor: pointer;
-}
-
-main .what_we_do {
-  text-align: center;
-  padding: 2rem 4rem;
-}
-
-main .what_we_do .heading_two {
+main h2{
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
   font-size: 20px;
-  font-weight: 600;
   line-height: 25px;
-  margin-bottom: 2rem;
+  color: #000000;
+  
 }
 
-main .what_we_do p {
+main h4{
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
   font-size: 15px;
-  width: 534px;
+  line-height: 19px;
+  text-align: center;
+  color: #443B3B;
+  margin-bottom:100px;
 }
 
 footer {
