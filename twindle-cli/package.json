@@ -22,6 +22,7 @@
     "@types/puppeteer": "^3.0.4"
   },
   "dependencies": {
+    "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "epub-gen": "^0.1.0",
     "handlebars": "^4.7.6",
@@ -32,7 +33,7 @@
     "puppeteer": "^5.4.1",
     "smtp-client": "^0.3.3",
     "string.prototype.matchall": "^4.0.2",
-    "yargs": "^16.1.0",
-    "twemoji": "13.0.1"
+    "twemoji": "13.0.1",
+    "yargs": "^16.1.0"
   }
 }
