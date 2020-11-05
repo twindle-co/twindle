@@ -5,7 +5,8 @@
   }
 
   body {
-    margin: 5% auto;
+    margin: 10px 10px 20px 10px;
+    font-size: 105%;
   }
 
   #title {
@@ -16,16 +17,31 @@
     list-style-type: none;
     display: flex;
     align-items: center;
+    justify-content: stretch;
     flex-direction: column;
+    padding: 0;
   }
 
   ul li {
-    margin: 20px;
+    margin: 0;
+    page-break-before: always;
+    page-break-inside: avoid;
+    page-break-after: always;
+
+    width: 100%;
+
+    
+    padding: 1rem 0;
+  }
+
+  ul li:not(:last-child) {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   }
 
   .tweetContainer {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
+    width: 100%;
   }
 
   .tweetContainer * {
@@ -37,14 +53,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 10px;
   }
 
   .tweetContainer .header img {
-    width: 75px;
-    height: 75px;
+    max-width: 75px;
     border-radius: 50%;
-
     margin-right: 10px;
   }
 
@@ -63,31 +76,33 @@
     font-style: italic;
     color: rgb(45, 45, 45);
   }
+
+  img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+  }
 </style>
 
 <h1 id="title">Twindle Thread</h1>
 <div class="tweetContainer">
-    <div class="header">
-      <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
-      <div>
-        <h3>{{common.user.name}} - <span>@{{common.user.username}}</span></h3>
-        <p><span>{{common.created_at}}</span></p>
-        <p><span>{{common.user.description}}</span></p>
-        <p><span>Number of tweets: {{common.count}}</span></p>
-      </div>
+  <div class="header">
+    <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+    <div>
+      <h3>{{common.user.name}} - <span>@{{common.user.username}}</span></h3>
+      <p><span>Thread created: {{common.created_at}}</span></p>
+      <p><span>{{common.user.description}}</span></p>
+      <p><span>Number of tweets: {{common.count}}</span></p>
     </div>
+  </div>
 </div>
-  
+
 <ul>
   {{!-- uses the twit mock object from mock API --}}
   {{#each thread}}
   <li>
     <div class="tweetContainer">
-      <div class="header">
-        <div>
-          <p><span>{{createdAt}}</span></p>
-        </div>
-      </div>
       <p>{{{tweet}}}</p>
     </div>
   </li>
