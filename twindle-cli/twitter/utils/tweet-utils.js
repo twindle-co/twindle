@@ -1,3 +1,4 @@
+const { format } = require("date-fns");
 const matchAll = require("string.prototype.matchall");
 const twemoji = require("twemoji");
 
@@ -32,8 +33,11 @@ const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 const createCustomTweet = (tweet_object, user_object) => {
   return {
     id: tweet_object.id,
-    createdAt: tweet_object.created_at,
-    tweet: twemoji.parse(fixLineBreaks(tweet_object.text)),
+    createdAt: format(new Date(tweet_object.created_at), "MMM d, yyyy  h:mm aaaa"),
+    tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {
+      folder: "svg",
+      ext: ".svg",
+    }),
   };
 };
 

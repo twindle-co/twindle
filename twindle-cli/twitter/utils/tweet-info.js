@@ -1,4 +1,6 @@
 const { writeFile } = require("fs").promises;
+const {format} = require('date-fns')
+
 const tweets = {
   common: {
     created_at: "",
@@ -17,7 +19,7 @@ const tweets = {
 const addTweet = (tweet) => tweets.data.push(tweet);
 
 const addCommon = (tweet, user) => {
-  tweets.common.created_at = tweet.created_at;
+  tweets.common.created_at = format(new Date(tweet.created_at), 'MMM d, yyyy  h:mm aaaa');
   tweets.common.user = { ...user };
   tweets.common.user.profile_image_url = tweets.common.user.profile_image_url.replace(
     "_normal.",
