@@ -30,7 +30,7 @@ export const data = {
         github: "https://github.com/satyaki07",
         twitter: "https://twitter.com/satyaki_07",
       },
-      Title: "Developer",
+      title: "Developer",
       location: {
         city: "Kolkata",
         state: "West Bengal",
@@ -47,7 +47,7 @@ export const data = {
          github: "https://github.com/RafaelBatman55",
          twitter: "https://twitter.com/rafa_55",
       },
-      Title: "FrontEnd Developer",
+      title: "FrontEnd Developer",
       location: {
          city: "Resende",
          state: "Rio de Janeiro",

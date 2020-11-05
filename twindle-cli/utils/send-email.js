@@ -1,5 +1,14 @@
 const nodemailer = require("nodemailer");
-const emailConfig = require("../nodemailer.config.json");
+
+const emailConfig = {
+  host: process.env.HOST,
+  port: process.env.PORT,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
+  },
+};
 
 async function sendMail({ subject, emailTo, attachments }) {
   // create reusable transporter object using the default SMTP transport

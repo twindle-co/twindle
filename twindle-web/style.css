@@ -7,7 +7,7 @@
 
 html,
 body {
-  background: #e5e5e5;
+  background:white;
   font-family: "Mulish", sans-serif;
 }
 
@@ -16,6 +16,17 @@ header {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+  margin-top:20px;
+}
+
+header a{  
+  font-family: Mulish;
+  font-style: normal;
+  color: #2D00F7;
+  text-decoration: none;
+  margin-left:20px;
+  display:flex;
+  align-items:center;
 }
 
 header nav {
@@ -38,6 +49,11 @@ header nav ul li a {
   transition: 0.3s ease-in-out all;
 }
 
+header li{
+  display:flex;
+  align-items: center;
+}
+
 header nav ul li a:hover,
 header nav ul li a:focus {
   background-color: rgba(9, 133, 227, 0.1);
@@ -54,17 +70,15 @@ main {
 main .page_heading {
   text-align: center;
   padding: 2rem 4rem;
-}
-
-main .page_heading .heading {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
+  margin-top:1.5rem;
 }
 
 main .page_heading .sub_heading {
-  font-weight: 400;
+  font-size:1.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  margin-top:2.3rem;
+  
 }
 
 main .coming_soon {
@@ -76,9 +90,11 @@ main .coming_soon img.function_image {
   width: 100%;
   height: auto;
   margin: auto;
+  margin-bottom:0.5rem;
 }
 
 main .coming_soon p.coming_soon {
+  margin-top:0.5rem;
   padding: 3px;
   font-size: 14px;
 }
@@ -89,7 +105,7 @@ main .email_subs {
 }
 
 main .email_subs .email_input {
-  background: white;
+  background-color: #f1f1f1;
   border-radius: 5px;
   width: 503px;
   height: 35px;
@@ -119,18 +135,62 @@ main .email_subs .sign_up_btn {
 main .what_we_do {
   text-align: center;
   padding: 2rem 4rem;
+  
 }
 
 main .what_we_do .heading_two {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 25px;
-  margin-bottom: 2rem;
+  
 }
 
 main .what_we_do p {
+  font-weight:200;
   font-size: 15px;
   width: 534px;
+
+}
+
+#features{
+  width:100vw;
+  height:auto;
+  display:flex;
+  justify-content:space-evenly;
+  align-items:center;
+  padding-top:100px;
+  padding-bottom:100px;
+  background: #2D00F7;
+}
+
+#three_images {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  height:200px;
+}
+
+.right{
+  width:75px;
+  height:75px;
+  justify-self: right;
+}
+
+#left{
+  width:75px;
+  height:75px;
+  transform:translateX(-100px);
+ 
+}
+
+#text{
+  color:white;
+}
+#text>h2{
+  font-weight: 800;
+}
+#text>h4{
+  font-weight: 400;
 }
 
 footer {
