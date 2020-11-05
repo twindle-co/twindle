@@ -1,5 +1,5 @@
 const { format } = require("date-fns");
-const matchAll = require("string.prototype.matchall");
+//const matchAll = require("string.prototype.matchall");
 const twemoji = require("twemoji");
 
 const {
@@ -19,12 +19,14 @@ const {
  * @returns {string}
  */
 const extractTweetId = (tweet_url) =>
-  [...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g)][0][1];
+  //[...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g)][0][1];
+  tweet_url.split('/')[5]
 
 const extractScreenName = (tweet_url) =>
-  tweet_url
-    .substring(0, tweet_url.lastIndexOf("/status"))
-    .substring(tweet_url.lastIndexOf("/") + 1);
+  //tweet_url
+    //.substring(0, tweet_url.lastIndexOf("/status"))
+    //.substring(tweet_url.lastIndexOf("/") + 1);
+    tweet_url.split('/')[3]
 
 const getTweetObject = (responseJSON) => responseJSON.data[0];
 const getTweetArray = (responseJSON) => responseJSON.data || [];
