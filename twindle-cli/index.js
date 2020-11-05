@@ -2,7 +2,7 @@
 require("./helpers/logger");
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsFromTweetId } = require("../twindle-core");
+const { getTweetsFromTweetId } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 

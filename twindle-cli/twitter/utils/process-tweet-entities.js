@@ -9,7 +9,9 @@ async function processMediaFromTweet(responseJSON) {
   };
 
   /** @type {string[]} */
-  const mediaKeys = responseJSON.data[0].attachments.media_keys;
+  const mediaKeys = responseJSON.data[0].attachments && responseJSON.data[0].attachments.media_keys;
+
+  if (!mediaKeys) return;
 
   /** @type {any[]} */
   const expandedMediaIncludes = responseJSON.includes.media;
