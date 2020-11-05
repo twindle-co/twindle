@@ -46,8 +46,7 @@ function generateCard() {
 
 const cardArray = Array.from({length: 7});
 
-const cardHtml = cardArray.map(generateCard).join("");
-
-// console.log(cardHtml);
-
-cards.innerHTML = cardHtml;
+const html = cardArray.map(generateCard).join("");
+// console.log(html);
+cards.innerHTML = html;
+// console.log(cards.innerHTML);

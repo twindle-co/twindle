@@ -14,6 +14,7 @@ async function sendToKindle(kindleEmail, filePath) {
       },
     ],
   });
+  console.log(`Your file ${filename} has been sent to Kindle email address ${kindleEmail}`);
 }
 
 module.exports = { sendToKindle };
