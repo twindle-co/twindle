@@ -19,7 +19,7 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("../twindle-core/twitter_responses/response-version2-tweetthread.json");
+    let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
     if (!mock) tweets = await getTweetsFromTweetId(tweetId);
 
     const outputFilePath = getOutputFilePath(outputFilename);
