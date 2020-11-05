@@ -21,11 +21,17 @@
 
   ul li {
     margin: 20px;
+    page-break-inside: avoid;
+    page-break-after: always;
+
+    width: 100%;
   }
 
   .tweetContainer {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
   }
 
   .tweetContainer * {
@@ -63,21 +69,28 @@
     font-style: italic;
     color: rgb(45, 45, 45);
   }
+
+  img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+  }
 </style>
 
 <h1 id="title">Twindle Thread</h1>
 <div class="tweetContainer">
-    <div class="header">
-      <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
-      <div>
-        <h3>{{common.user.name}} - <span>@{{common.user.username}}</span></h3>
-        <p><span>{{common.created_at}}</span></p>
-        <p><span>{{common.user.description}}</span></p>
-        <p><span>Number of tweets: {{common.count}}</span></p>
-      </div>
+  <div class="header">
+    <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+    <div>
+      <h3>{{common.user.name}} - <span>@{{common.user.username}}</span></h3>
+      <p><span>{{common.created_at}}</span></p>
+      <p><span>{{common.user.description}}</span></p>
+      <p><span>Number of tweets: {{common.count}}</span></p>
     </div>
+  </div>
 </div>
-  
+
 <ul>
   {{!-- uses the twit mock object from mock API --}}
   {{#each thread}}
