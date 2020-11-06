@@ -17,7 +17,6 @@ const { UserError } = require("../../helpers/error");
 
 async function doTweetsSearch(conversation_id, screen_name) {
   try {
-    // console.log(getUrl(conversation_id, screen_name));
     /** @type {Response} */
     const response = await fetch(getUrl(conversation_id, screen_name), getRequestOptions());
     await processResponse(response);
