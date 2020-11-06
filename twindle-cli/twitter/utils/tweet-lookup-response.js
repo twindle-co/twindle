@@ -8,18 +8,14 @@ const { doTweetsSearch } = require("./tweets-search-request");
  * @param {any} responseJSON
  */
 async function processTweetLookup(responseJSON) {
-  let tweet = getTweetObject(responseJSON);
+  let tweet = processMediaFromTweet(getTweetObject(responseJSON));
   let user = getUserObject(responseJSON);
 
   addCommon(tweet, user);
 
   addTweet(createCustomTweet(tweet, user));
 
-  await processMediaFromTweet(responseJSON);
-
   await doTweetsSearch(tweet.conversation_id, user.username);
-
-  // console.log(collectTweets().data);
 
   return collectTweets();
 }

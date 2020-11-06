@@ -35,7 +35,6 @@ async function createPdf(outputPath, htmlContent) {
     // Prints the html page to pdf document and saves it to given outputPath
     await page.emulateMediaType("print");
 
-    // console.log(footerMarkup());
     await page.pdf({
       path: outputPath,
       format: "A5",
