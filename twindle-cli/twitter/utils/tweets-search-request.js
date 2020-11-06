@@ -19,6 +19,7 @@ async function doTweetsSearch(conversation_id, screen_name) {
   try {
     /** @type {Response} */
     const response = await fetch(getUrl(conversation_id, screen_name), getRequestOptions());
+
     await processResponse(response);
   } catch (err) {
     console.log(err);
@@ -34,6 +35,7 @@ async function processResponse(response) {
   }
 
   const responseJSON = await response.json();
+
   processSearchResponse(responseJSON);
 }
 

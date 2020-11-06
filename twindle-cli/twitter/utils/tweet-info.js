@@ -20,7 +20,8 @@ let tweets = {
 const addTweet = (tweet) => tweets.data.push(tweet);
 
 const addCommon = (tweet, user) => {
-  tweets.common.created_at = format(new Date(tweet.created_at), "MMM d, yyyy  h:mm aaaa");
+  // console.log(tweet);
+  tweets.common.created_at = format(new Date(tweet.created_at), "MMM d, yyyy");
   tweets.common.user = { ...user };
 
   tweets = fixUserDescription(tweets);
