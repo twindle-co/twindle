@@ -7,7 +7,8 @@
 
   body {
     margin: 10px 10px 20px 10px;
-    font-size: 107%;
+
+    font-size: 108%;
   }
 
   #title {
@@ -49,6 +50,19 @@
   .tweetContainer * {
     margin: 0;
     padding: 0;
+  }
+
+  .tweetContainer a.media-link {
+    width: 100%;
+  }
+
+  .tweetContainer .tweet-img {
+    margin: 10px 0;
+
+    border-radius: 0.5rem;
+
+    max-width: 100%;
+    height: auto;
   }
 
   .tweetContainer .header {
@@ -109,7 +123,20 @@
   {{#each thread}}
   <li>
     <div class="tweetContainer">
-      <p>{{{tweet}}}</p>
+      <p>
+        {{{tweet}}}
+
+        {{#each customMedia}}
+        {{#if this}}
+        {{#each this}}
+        <a target="_blank" rel="noopener noreferrer" class="media-link" href="https://{{this.link}}">
+          <img class="tweet-img" src="{{this.preview_img_url}}" />
+        </a>
+        {{/each}}
+        {{/if}}
+        {{/each}}
+      </p>
+
     </div>
   </li>
   {{/each}}

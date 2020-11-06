@@ -26,8 +26,13 @@ const extractScreenName = (tweet_url) =>
     .substring(0, tweet_url.lastIndexOf("/status"))
     .substring(tweet_url.lastIndexOf("/") + 1);
 
-const getTweetObject = (responseJSON) => responseJSON.data[0];
-const getTweetArray = (responseJSON) => responseJSON.data || [];
+const getTweetObject = (responseJSON) => ({
+  ...responseJSON.data[0],
+  includes: responseJSON.includes,
+});
+const getTweetArray = (responseJSON) => {
+  return responseJSON.data.map((data) => ({ ...data, includes: responseJSON.includes })) || [];
+};
 const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 
 const createCustomTweet = (tweet_object, user_object) => {
@@ -38,6 +43,7 @@ const createCustomTweet = (tweet_object, user_object) => {
       folder: "svg",
       ext: ".svg",
     }),
+    customMedia: tweet_object.customMedia,
   };
 };
 
@@ -45,7 +51,6 @@ const createCustomTweet = (tweet_object, user_object) => {
  * @param {Response} response
  */
 const checkIfRequestSuccessful = (response) => {
-  // console.log(response.status);
   if (response.status === 200) return true;
 
   return false;
