@@ -1,6 +1,5 @@
 // Entry program
-
-require("./helpers/logger");
+// require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
@@ -18,7 +17,6 @@ async function main() {
     tweetId,
     kindleEmail,
     mock,
-    url,
     shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
 

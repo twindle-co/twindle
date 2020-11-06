@@ -41,12 +41,6 @@ const getCommandlineArgs = (processArgv) =>
         describe: 'If set, will run in mock mode',
         type: 'boolean',
       },
-      u: {
-        alias: 'url',
-        demandOption: false,
-        describe: "First tweet's tweet url of the twitter thread",
-        type: 'string',
-      },
       p: {
         alias: 'shouldUsePuppeteer',
         demandOption: false,
