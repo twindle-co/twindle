@@ -46,6 +46,7 @@ const createCustomTweet = (tweet_object, user_object) => {
       ext: ".svg",
     }),
     customMedia: tweet_object.customMedia,
+    linkWithImage: tweet_object.linkWithImage,
   };
 };
 
