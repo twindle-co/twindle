@@ -1,7 +1,8 @@
 const { writeFile } = require("fs").promises;
-const {format} = require('date-fns')
+const { format } = require("date-fns");
+const { fixUserDescription } = require("./process-tweet-entities");
 
-const tweets = {
+let tweets = {
   common: {
     created_at: "",
     count: "",
@@ -19,8 +20,11 @@ const tweets = {
 const addTweet = (tweet) => tweets.data.push(tweet);
 
 const addCommon = (tweet, user) => {
-  tweets.common.created_at = format(new Date(tweet.created_at), 'MMM d, yyyy  h:mm aaaa');
+  tweets.common.created_at = format(new Date(tweet.created_at), "MMM d, yyyy  h:mm aaaa");
   tweets.common.user = { ...user };
+
+  tweets = fixUserDescription(tweets);
+
   tweets.common.user.profile_image_url = tweets.common.user.profile_image_url.replace(
     "_normal.",
     "."
