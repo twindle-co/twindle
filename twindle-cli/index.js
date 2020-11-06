@@ -1,5 +1,5 @@
 // Entry program
-// require("./helpers/logger");
+require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
@@ -9,47 +9,35 @@ const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweet } = require("./twitter-puppeteer");
 
 async function main() {
-  prepareCli();
+	prepareCli();
 
-  const {
-    format,
-    outputFilename,
-    tweetId,
-    kindleEmail,
-    mock,
-    shouldUsePuppeteer,
-  } = getCommandlineArgs(process.argv);
+	const { format, outputFilename, tweetId, _kindleEmail, mock, shouldUsePuppeteer } = getCommandlineArgs(
+		process.argv
+	);
 
-  try {
-    // this next line is wrong
-    let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
-    if (!mock) {
-      if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
-      else tweets = await getTweetsFromTweetId(tweetId);
-    }
+	try {
+		// this next line is wrong
+		let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
+		if (!mock) {
+			if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
+			else tweets = await getTweetsFromTweetId(tweetId);
+		}
 
-    const outputFilePath = getOutputFilePath(outputFilename);
+		const outputFilePath = getOutputFilePath(outputFilename);
 
-    await Renderer.render(tweets, format, outputFilePath);
+		await Renderer.render(tweets, format, outputFilePath);
 
-<<<<<<< HEAD
+		let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
 		if (kindleEmail) {
+			console.devLog("sending to kindle", kindleEmail);
 			await sendToKindle(kindleEmail, outputFilePath);
 		}
 	} catch (e) {
 		console.error(e);
 	}
-=======
-    if (kindleEmail) {
-      await sendToKindle(kindleEmail, outputFilePath);
-    }
-  } catch (e) {
-    console.error(e);
-  }
->>>>>>> upstream/main
 
-  // If not for this line, the script never finishes
-  process.exit();
+	// If not for this line, the script never finishes
+	process.exit();
 }
 
 // Execute it
