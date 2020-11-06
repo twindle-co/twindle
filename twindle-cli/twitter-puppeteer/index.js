@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { waitFor } = require("../utils/helpers");
 
 /**
  * Get tweets(even older than 7 days) using puppeteer
@@ -9,7 +10,7 @@ const getTweet = async (tweetID) => {
 
   try {
     // Modify this variable to control the size of viewport
-    const factor = 0.3;
+    const factor = 0.1;
     const height = Math.floor(2000 / factor);
     const width = Math.floor(1700 / factor);
 
@@ -27,6 +28,8 @@ const getTweet = async (tweetID) => {
     await page.goto(pageURL, {
       waitUntil: "networkidle2",
     });
+
+    await waitFor(4000);
 
     // page.on("popup", (e) => console.log(e));
 
