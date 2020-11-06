@@ -1,4 +1,7 @@
 // @ts-check
+
+const twemoji = require("twemoji");
+
 /**
  * returns data to make the output look like a tweet
  * @param {any} tweetObj
@@ -68,4 +71,30 @@ function processMediaFromTweet(tweetObj) {
   return tweetObj;
 }
 
-module.exports = { processMediaFromTweet };
+/**
+ * Fix user description
+ */
+function fixUserDescription(tweets) {
+  const descriptionURLs = tweets.common.user.entities.description.urls;
+
+  // Fix spaces
+  tweets.common.user.description = twemoji.parse(
+    tweets.common.user.description.replace(/\n/g, "<br />"),
+    {
+      folder: "svg",
+      ext: ".svg",
+    }
+  );
+
+  for (let descriptionURLObj of descriptionURLs) {
+    tweets.common.user.description = tweets.common.user.description.replace(
+      descriptionURLObj.url,
+      `<a href="${descriptionURLObj.expanded_url}" class="description-link" rel="noopener noreferrer">${descriptionURLObj.display_url}</a>`
+    );
+  }
+  console.log(tweets.common.user.description);
+
+  return tweets;
+}
+
+module.exports = { processMediaFromTweet, fixUserDescription };
