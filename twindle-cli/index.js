@@ -1,4 +1,5 @@
 // Entry program
+
 require('./helpers/logger');
 require('dotenv').config();
 const { getCommandlineArgs, prepareCli } = require('./cli');
