@@ -121,7 +121,7 @@ function renderOutsiderLinks(tweetObj) {
     );
   }
 
-  tweetObj.linkWithImage = linkWithImage;
+  if (Object.entries(linkWithImage).length) tweetObj.linkWithImage = linkWithImage;
 
   return tweetObj;
 }
