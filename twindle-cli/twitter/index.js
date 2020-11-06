@@ -19,11 +19,11 @@ async function getTweetsFromURL(url) {
 async function getTweetsFromTweetId(tweet_id) {
   await doTweetLookup(tweet_id);
 
-  await writeFile(
-    resolve("../twindle-cli/twitter/twitter-mock-responses/images-text.json"),
-    JSON.stringify(collectTweets(), null, 2),
-    "utf-8"
-  );
+  // await writeFile(
+  //   resolve("../twindle-cli/twitter/twitter-mock-responses/images-text.json"),
+  //   JSON.stringify(collectTweets(), null, 2),
+  //   "utf-8"
+  // );
   return collectTweets();
 }
 
