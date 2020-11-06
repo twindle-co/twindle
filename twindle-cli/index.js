@@ -1,22 +1,34 @@
 // Entry program
-require("./helpers/logger");
-require("dotenv").config();
 
-const { getCommandlineArgs, prepareCli } = require("./cli");
-const Renderer = require("./renderer");
-const { getTweetsFromTweetId } = require("./twitter");
-const { getOutputFilePath } = require("./utils/path");
-const { sendToKindle } = require("./utils/send-to-kindle");
+require('./helpers/logger');
+require('dotenv').config();
+const { getCommandlineArgs, prepareCli } = require('./cli');
+const Renderer = require('./renderer');
+const { getTweetsFromTweetId } = require('./twitter');
+const { getOutputFilePath } = require('./utils/path');
+const { sendToKindle } = require('./utils/send-to-kindle');
+const { getTweet } = require('./twitter-puppeteer');
 
 async function main() {
   prepareCli();
 
-  const { format, outputFilename, tweetId, kindleEmail, mock } = getCommandlineArgs(process.argv);
+  const {
+    format,
+    outputFilename,
+    tweetId,
+    kindleEmail,
+    mock,
+    url,
+    shouldUsePuppeteer,
+  } = getCommandlineArgs(process.argv);
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
-    if (!mock) tweets = await getTweetsFromTweetId(tweetId);
+    let tweets = require('./twitter/twitter_responses/response-version2-tweetthread.json');
+    if (!mock) {
+      if (shouldUsePuppeteer) tweets = await getTweet(url);
+      else tweets = await getTweetsFromTweetId(tweetId);
+    }
 
     const outputFilePath = getOutputFilePath(outputFilename);
     await Renderer.render(tweets, format, outputFilePath);
