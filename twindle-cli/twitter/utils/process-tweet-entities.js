@@ -24,7 +24,7 @@ function processMediaFromTweet(tweetObj) {
   /** @type {string[]} */
   const mediaKeys = tweetObj.attachments && tweetObj.attachments.media_keys;
 
-  if (!mediaKeys) return;
+  if (!mediaKeys) return tweetObj;
 
   /** @type {any[]} */
   const expandedMediaIncludes = tweetObj.includes.media;

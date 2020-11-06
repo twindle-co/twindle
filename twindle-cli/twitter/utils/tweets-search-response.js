@@ -2,7 +2,7 @@ const { processMediaFromTweet } = require("./process-tweet-entities");
 const { addTweet } = require("./tweet-info");
 const { createCustomTweet, getUserObject, getTweetArray } = require("./tweet-utils");
 async function processSearchResponse(responseJSON) {
-  var directReplies = getTweetArray(responseJSON).filter(
+  let directReplies = getTweetArray(responseJSON).filter(
     (tweet) =>
       tweet.referenced_tweets.filter(
         (ref) => ref.type == "replied_to" && ref.id == tweet.conversation_id
@@ -10,10 +10,9 @@ async function processSearchResponse(responseJSON) {
   );
 
   while (directReplies.length > 0) {
-    var reply_id = directReplies[0].id;
-    addTweet(
-      createCustomTweet(processMediaFromTweet(directReplies[0]), getUserObject(responseJSON))
-    );
+    let reply_id = directReplies[0].id;
+
+    addTweet(createCustomTweet(processMediaFromTweet(directReplies[0])));
     directReplies = getTweetArray(responseJSON).filter(
       (tweet) =>
         tweet.referenced_tweets.filter((ref) => ref.type == "replied_to" && ref.id == reply_id)

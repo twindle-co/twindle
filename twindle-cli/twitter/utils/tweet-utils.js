@@ -36,6 +36,8 @@ const getTweetArray = (responseJSON) => {
 const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 
 const createCustomTweet = (tweet_object, user_object) => {
+  // if (!tweet_object) return {};
+  // console.log({ tweet_object });
   return {
     id: tweet_object.id,
     createdAt: format(new Date(tweet_object.created_at), "MMM d, yyyy  h:mm aaaa"),
