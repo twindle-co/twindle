@@ -92,7 +92,6 @@ function fixUserDescription(tweets) {
       `<a href="${descriptionURLObj.expanded_url}" class="description-link" rel="noopener noreferrer">${descriptionURLObj.display_url}</a>`
     );
   }
-  console.log(tweets.common.user.description);
 
   return tweets;
 }
