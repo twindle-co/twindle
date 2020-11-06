@@ -30,12 +30,46 @@ export const data = {
         github: "https://github.com/satyaki07",
         twitter: "https://twitter.com/satyaki_07",
       },
-      Title: "Developer",
+      title: "Developer",
       location: {
         city: "Kolkata",
         state: "West Bengal",
         country: "India",
+    },
+    {
+      id: uuidv4(),
+      name: "Rafael Rodrigues",
+      img:
+         "https://avatars3.githubusercontent.com/u/46648727?v=4",
+      links: {
+         website: "",
+         linkedin: "https://www.linkedin.com/in/rafaelrodrigues55/",
+         github: "https://github.com/RafaelBatman55",
+         twitter: "https://twitter.com/rafa_55",
+      },
+      title: "FrontEnd Developer",
+      location: {
+         city: "Resende",
+         state: "Rio de Janeiro",
+         country: "Brazil",
       },
     },
+    ,{
+      id: uuidv4(),
+      name: "Ameen Shafeeq",
+      img: "https://avatars0.githubusercontent.com/u/49345531?v=4",
+      links: {
+        website: "https://ameencodes.tech/",
+        linkedin: "",
+        github: "https://github.com/unevencoder",
+        twitter: "https://twitter.com/crafter_coder",
+      },
+      title: "Student",
+      location: {
+        city: "Jeddah",
+        state: "",
+        country: "Saudi Arabia"
+      }
+    }
   ],
 };

@@ -17,12 +17,8 @@ const { UserError } = require("../../helpers/error");
 
 async function doTweetsSearch(conversation_id, screen_name) {
   try {
-    // console.log(getUrl(conversation_id, screen_name));
     /** @type {Response} */
-    const response = await fetch(
-      getUrl(conversation_id, screen_name),
-      getRequestOptions()
-    );
+    const response = await fetch(getUrl(conversation_id, screen_name), getRequestOptions());
     await processResponse(response);
   } catch (err) {
     console.log(err);
@@ -34,10 +30,7 @@ async function doTweetsSearch(conversation_id, screen_name) {
  */
 async function processResponse(response) {
   if (!checkIfRequestSuccessful(response)) {
-    throw new UserError(
-      "request-failed",
-      "Request failed. Check your network and try again"
-    );
+    throw new UserError("request-failed", "Request failed. Check your network and try again");
   }
 
   const responseJSON = await response.json();
@@ -49,7 +42,9 @@ const getUrl = (conversation_id, screen_name) => {
     "<conversation_id>",
     conversation_id
   ).replace("<screen_name>", screen_name);
+
   url = `${url}${TWEET_FIELDS}${EXPANSIONS}${USER_FIELDS}${MEDIA_FIELDS}${PLACE_FIELDS}${POLL_FIELDS}${MAX_RESULTS}`;
+
   return url;
 };
 

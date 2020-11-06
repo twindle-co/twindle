@@ -1,36 +1,26 @@
-const { readFile } = require("fs").promises;
+const { readFile, writeFile } = require("fs").promises;
 const hbs = require("handlebars");
-
-/**
- * Replaces `\n` with `<br />`
- * @param {string} tweet
- */
-/*function fixLineBreaks(tweet) {
-	return tweet.replace(/\n/g, "<br />");
-} - This function has been moved to twitter/utils/tweet-utils package*/
+const { tmpdir } = require("os");
 
 /**
  * Renders the html template with the given data and returns the html string
- * @param {{thread: any[]}} data
+ * @param {{common: any; thread: any[]}} data
  * @param {string} templateName
  */
 async function renderTemplate(data, templateName) {
-	/*console.devLog(data.thread[0]);
-	for (let i = 0; i < data.thread.length; i++) {
-		data.thread[i].tweet = fixLineBreaks(data.thread[i].tweet);
-	}*/
+  const html = await readFile(`${__dirname}/templates/${templateName}.hbs`, "utf-8");
 
-	const html = await readFile(`${__dirname}/templates/${templateName}.hbs`, "utf-8");
+  // creates the Handlebars template object
+  const template = hbs.compile(html, {
+    strict: true,
+  });
 
-	// creates the Handlebars template object
-	const template = hbs.compile(html, {
-		strict: true,
-	});
+  // renders the html template with the given data
+  const rendered = template(data);
 
-	// renders the html template with the given data
-	const rendered = template(data);
+  await writeFile(`${tmpdir()}/hello.html`, rendered, "utf-8");
 
-	return rendered;
+  return rendered;
 }
 
 module.exports = { renderTemplate };
