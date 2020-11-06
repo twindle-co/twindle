@@ -7,7 +7,6 @@ const Renderer = require("./renderer");
 const { getTweetsFromTweetId } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
-const { writeFile } = require("fs").promises;
 
 async function main() {
   prepareCli();
