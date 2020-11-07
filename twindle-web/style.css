@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;800&display=swap");
 * {
   margin: 0;
@@ -186,17 +187,20 @@ main .what_we_do p {
 #text{
   color:white;
 }
+
 #text>h2{
   font-weight: 800;
 }
+
 #text>h4{
   font-weight: 400;
 }
+
 #who_we_are{
   background: #ffffff;
   color: #2D00F7;
   width:100%;
-  height:auto;
+  height:400px;
   display:flex;
   justify-content:space-around;
   align-items:center;
@@ -204,23 +208,91 @@ main .what_we_do p {
 }
 .text_area h1{
   font-weight: 800;
-  font-size: 40px;
+  font-size: 22px;
   margin-top: 231px;
-  margin-bottom: 38px;
+  margin-bottom: 15px;
   width: 516px;
-  height: 100px;
+  height: 75px;
 }
 .text_area p{
-  font-weight:600;
+  font-weight:500;
   font-size: 20px;
   width: 543px;
-  height: 100px;
+  height: 75px;
   margin-bottom: 231px;
 }
+
 #remote_design{
-  width: 389px;
-  height: 236px;
+  width: 400px;
+  height: auto;
 }
+
+#cs{ 
+  width:100vw;
+  padding-top:50px;
+  padding-bottom:50px;
+  display:flex;
+  height: auto;
+  flex-direction:column;
+  padding-bottom:50px;
+  color:white; 
+
+}
+
+#heading_team{
+  width:100vw;
+  display:flex;
+  justify-content:center;
+  padding-top:75px;
+  background-color: #2D00F7;
+  color:whitesmoke;
+}
+
+#contributors{
+  max-width:100vw;
+  display:flex;
+  height:auto;
+  justify-content:left;
+  flex-wrap: wrap;
+  background-color: #2D00F7;
+  color:white;
+}
+
+.card{
+  text-align: center;
+  padding-left:25px;
+  padding-right:25px;
+  padding-top:50px;
+  width:150px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  height:auto;
+}
+
+#showmore{
+  width:100vw;
+  display:flex;
+  justify-content:center;
+  padding-bottom:75px;
+  padding-top:50px;
+  background-color: #2D00F7;
+  color:white;
+}
+
+#showmore_button{
+  background-color: #DB00B6;
+  border-radius: 10px; 
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  color: #FFFFFF;
+  width:175px;
+  height:50px;
+  font-size:18px;
+}
+
 footer {
   background: #03a9f4;
   color: white;
