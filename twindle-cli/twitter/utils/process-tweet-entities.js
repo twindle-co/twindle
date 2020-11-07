@@ -77,6 +77,9 @@ function renderMedia(tweetObj) {
  */
 function renderOutsiderLinks(tweetObj) {
   /** @type {any[]} */
+  
+  if(!tweetObj.entities) return tweetObj;
+
   let urlObjs = tweetObj.entities.urls;
 
   if (!urlObjs) return tweetObj;
@@ -131,6 +134,8 @@ function renderOutsiderLinks(tweetObj) {
  */
 function fixUserDescription(tweets) {
   // console.log(tweets.common.user.entities);
+  if(!tweets.common.user.entities) return tweets;
+  
   const descriptionURLs =
     tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
 
