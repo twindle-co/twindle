@@ -1,0 +1,365 @@
+{
+  "common": {
+    "created_at": "Nov 5, 2020",
+    "count": 17,
+    "user": {
+      "verified": true,
+      "created_at": "2012-11-01T03:35:00.000Z",
+      "id": "918169628",
+      "pinned_tweet_id": "1324059542343294976",
+      "public_metrics": {
+        "followers_count": 320739,
+        "following_count": 2268,
+        "tweet_count": 16772,
+        "listed_count": 5253
+      },
+      "protected": false,
+      "description": "Decision Desk HQ provides fast & accurate election night results, in-depth data, and non-partisan election news and analysis. info@decisiondeskhq.com",
+      "location": "Everywhere.",
+      "name": "Decision Desk HQ",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "start": 0,
+              "end": 23,
+              "url": "https://t.co/ZYGkeuww9n",
+              "expanded_url": "http://decisiondeskhq.com",
+              "display_url": "decisiondeskhq.com"
+            }
+          ]
+        }
+      },
+      "profile_image_url": "https://pbs.twimg.com/profile_images/1236418774980612096/dz2M0bIw.png",
+      "url": "https://t.co/ZYGkeuww9n",
+      "username": "DecisionDeskHQ"
+    }
+  },
+  "data": [
+    {
+      "id": "1324355635354476545",
+      "createdAt": "Nov 5, 2020  7:49 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 50% (2,432,426 votes)<br />Biden (D): 49% (2,413,836 votes)<br /><br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324368636249821194",
+      "createdAt": "Nov 5, 2020  8:41 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.57% (2,432,552 votes)<br />Biden (D): 49.20% (2,413,966 votes)<br /><br />Estimated: &gt; 99% votes in"
+    },
+    {
+      "id": "1324389777668493313",
+      "createdAt": "Nov 5, 2020  10:05 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.53% (2,434,354 votes)<br />Biden (D): 49.23% (2,419,589 votes)<br /><br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324406442359771138",
+      "createdAt": "Nov 5, 2020  11:11 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.52% (2,436,006 votes)<br />Biden (D): 49.25% (2,422,467 votes)<br /><br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324449301494378501",
+      "createdAt": "Nov 6, 2020  2:01 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.51% (2,438,181 votes)<br />Biden (D): 49.25% (2,425,417 votes)<br /><br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324468859907284992",
+      "createdAt": "Nov 6, 2020  3:19 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.51% (2,438,216 votes)<br />Biden (D): 49.25% (2,425,445 votes)<br /><br />Trump Margin: +12,771<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324469475668873217",
+      "createdAt": "Nov 6, 2020  3:21 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.48% (2,439,678 votes)<br />Biden (D): 49.29% (2,430,153 votes)<br />Jorgensen (L): 1.23% (60,821 votes)<br /><br />Trump Margin: +9,525 (-3,246)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324501109902315521",
+      "createdAt": "Nov 6, 2020  5:27 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.42% (2,445,539 votes)<br />Biden (D): 49.35% (2,441,904 votes)<br /><br />Trump Margin: +3,635 (-5890)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324532001664339971",
+      "createdAt": "Nov 6, 2020  7:30 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.41% (2,447,015 votes)<br />Biden (D): 49.36% (2,444,518 votes)<br /><br />Trump Margin: +2,497 (-1,138)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324543783351078912",
+      "createdAt": "Nov 6, 2020  8:17 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.40% (2,447,223 votes)<br />Biden (D): 49.36% (2,445,321 votes)<br /><br />Trump Margin: +1,902 (-595)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324549301163462656",
+      "createdAt": "Nov 6, 2020  8:38 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.4% (2,447,337 votes)<br />Biden (D): 49.36% (2,445,540 votes)<br /><br />Trump Margin: +1,797 (105)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324588693923995649",
+      "createdAt": "Nov 6, 2020  11:15 a.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.4% (2,448,056 votes)<br />Biden (D): 49.37% (2,446,577 votes)<br /><br />Trump Margin: +1,479 (-318)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324600180176551936",
+      "createdAt": "Nov 6, 2020  12:01 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.39% (2,448,081 votes)<br />Biden (D): 49.37% (2,446,814 votes)<br /><br />Trump Margin: +1,267 (-212)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324617816725737473",
+      "createdAt": "Nov 6, 2020  1:11 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.39% (2,448,183 votes)<br />Biden (D): 49.37% (2,447,518 votes)<br /><br />Trump Margin: +665 (-602)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324632723718311936",
+      "createdAt": "Nov 6, 2020  2:10 p.m.",
+      "tweet": "GA Presidential Election Results<br /><br />Trump (R): 49.39% (2,448,232 votes)<br />Biden (D): 49.38% (2,447,769 votes)<br /><br />Trump Margin: +463 (-202)<br />Estimated: &gt; 99% votes in<br /><br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324643210283593728",
+      "createdAt": "Nov 6, 2020  2:52 p.m.",
+      "tweet": "GA Presidential Election Results - Biden takes the Lead<br /> <br />Biden (D): 49.39.% ( 2,449,371 votes)<br />Trump (R): 49.37% ( 2,448,454 votes)<br /> <br />Biden Margin:  (+917)<br />Estimated: &gt; 99% votes in<br /> <br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    },
+    {
+      "id": "1324655386339794945",
+      "createdAt": "Nov 6, 2020  3:40 p.m.",
+      "tweet": "GA Presidential Election Results <br /> <br />Biden (D): 49.39.% ( 2,449,580 votes)<br />Trump (R): 49.37% ( 2,448,484 votes)<br /> <br />Biden Margin:  (+ 1,096)<br />Estimated: &gt; 99% votes in<br /> <br />More results here: ",
+      "linkWithImage": {
+        "expanded_url": "https://results.decisiondeskhq.com/2020/general/georgia",
+        "images": [
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=orig",
+            "width": 1200,
+            "height": 600
+          },
+          {
+            "url": "https://pbs.twimg.com/news_img/1323782478759403522/Vn3PKu6p?format=jpg&name=150x150",
+            "width": 150,
+            "height": 150
+          }
+        ]
+      }
+    }
+  ]
+}
