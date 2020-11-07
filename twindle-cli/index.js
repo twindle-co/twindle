@@ -11,9 +11,15 @@ const { getTweet } = require("./twitter-puppeteer");
 async function main() {
 	prepareCli();
 
-	const { format, outputFilename, tweetId, _kindleEmail, mock, shouldUsePuppeteer } = getCommandlineArgs(
-		process.argv
-	);
+	const {
+		format,
+		outputFilename,
+		tweetId,
+		kindleEmail: _kindleEmail,
+		sendEmail,
+		mock,
+		shouldUsePuppeteer,
+	} = getCommandlineArgs(process.argv);
 
 	try {
 		// this next line is wrong
@@ -28,7 +34,7 @@ async function main() {
 		await Renderer.render(tweets, format, outputFilePath);
 
 		let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
-		if (kindleEmail) {
+		if (sendEmail && kindleEmail) {
 			console.devLog("sending to kindle", kindleEmail);
 			await sendToKindle(kindleEmail, outputFilePath);
 		}
