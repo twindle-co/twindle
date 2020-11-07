@@ -6,6 +6,7 @@ const Renderer = require("./renderer");
 const { getTweetsFromTweetId } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
+const { getTweet } = require("./twitter-puppeteer");
 
 async function main() {
   prepareCli();
@@ -14,19 +15,33 @@ async function main() {
     format,
     outputFilename,
     tweetId,
-    kindleEmail,
+    _kindleEmail,
     mock,
+    shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
 
   try {
     // this next line is wrong
     let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
-    if (!mock) tweets = await getTweetsFromTweetId(tweetId);
 
-    const outputFilePath = getOutputFilePath(outputFilename);
-    await Renderer.render(tweets, format, outputFilePath);
+    if (!mock) {
+      if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
+      else tweets = await getTweetsFromTweetId(tweetId);
+    }
 
+    const intelligentOutputFileName = `${
+      tweets.common.user.username
+    }-${tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")}`;
+
+    await Renderer.render(
+      tweets,
+      format,
+      getOutputFilePath(outputFilename || intelligentOutputFileName)
+    );
+
+    let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
     if (kindleEmail) {
+      console.devLog("sending to kindle", kindleEmail);
       await sendToKindle(kindleEmail, outputFilePath);
     }
   } catch (e) {
