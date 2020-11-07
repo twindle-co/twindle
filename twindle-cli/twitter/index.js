@@ -2,6 +2,8 @@ require("dotenv/config"); // ACCESSING THE .ENV file
 const { doTweetLookup } = require("./utils/tweet-lookup-request");
 const { extractTweetId } = require("./utils/tweet-utils");
 const { writeTweets, collectTweets } = require("./utils/tweet-info");
+const { writeFile } = require("fs").promises;
+const { resolve } = require("path");
 
 async function getTweetsFromURL(url) {
   let response = await doTweetLookup(extractTweetId(url));
@@ -16,6 +18,12 @@ async function getTweetsFromURL(url) {
  */
 async function getTweetsFromTweetId(tweet_id) {
   await doTweetLookup(tweet_id);
+
+  // await writeFile(
+  //   resolve("../twindle-cli/twitter/twitter-mock-responses/images-text.json"),
+  //   JSON.stringify(collectTweets(), null, 2),
+  //   "utf-8"
+  // );
   return collectTweets();
 }
 
