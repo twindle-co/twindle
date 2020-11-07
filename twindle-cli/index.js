@@ -22,7 +22,7 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
+    let tweets = require("./twitter/twitter-mock-responses/only-links.json");
 
     if (!mock) {
       if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
@@ -30,7 +30,7 @@ async function main() {
     }
 
     const intelligentOutputFileName = `${
-      tweets.common.user.username
+      tweets.common.user.username || "twindle"
     }-${tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")}`;
 
     await Renderer.render(
