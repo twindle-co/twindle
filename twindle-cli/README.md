@@ -15,6 +15,8 @@ Options:
 
 It only supports epub & pdf for now.
 
+[![tutorial](https://img.youtube.com/vi/KWqNm7FBFcI/0.jpg)](https://www.youtube.com/watch?v=KWqNm7FBFcI).
+
 ## Info for developers
 
 ### Logging
