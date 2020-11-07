@@ -22,21 +22,22 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
+    let tweets = require("./twitter/twitter_responses/mock.json");
 
     if (!mock) {
       if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
       else tweets = await getTweetsFromTweetId(tweetId);
-    }
-
-    const intelligentOutputFileName = `${
+	}
+	
+	const intelligentOutputFileName = `${
       tweets.common.user.username
     }-${tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")}`;
-
+	
+	const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
     await Renderer.render(
       tweets,
       format,
-      getOutputFilePath(outputFilename || intelligentOutputFileName)
+      outputFilePath
     );
 
     let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
