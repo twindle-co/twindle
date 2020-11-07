@@ -30,15 +30,14 @@ async function main() {
     }
 
     const intelligentOutputFileName = `${
-      tweets.common.user.username || "twindle"
-    }-${tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")}`;
-	
-	const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
-    await Renderer.render(
-      tweets,
-      format,
-      outputFilePath
-    );
+      (tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
+    }-${
+      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      "thread"
+    }`;
+
+    const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
+    await Renderer.render(tweets, format, outputFilePath);
 
     let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
     if (kindleEmail) {
