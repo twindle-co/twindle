@@ -1,5 +1,10 @@
 // @ts-check
 
+/**
+ * @typedef {{start: number; end: number; username: string}} TMention
+ * @typedef {{start: number; end: number; tag: string}} THashtag
+ */
+
 const twemoji = require("twemoji");
 
 /**
@@ -136,6 +141,45 @@ function renderOutsiderLinks(tweetObj) {
 }
 
 /**
+ * This function takes in the text, rather than a tweet object, and returns that string.
+ * For portability across tweets and user descriptions
+ * @param {Object} param
+ * @param {string} param.text
+ * @param {TMention[]} param.mentions
+ * @param {THashtag[]} param.hashtags
+ * @returns {string}
+ */
+function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
+  // Make the checks
+  if (!mentions.length && !hashtags.length) return text;
+
+  if (mentions.length) {
+    // There are mentions
+    for (let mention of mentions) {
+      const { username } = mention;
+
+      // Replace
+      text = text.replace(
+        `@${username}`,
+        `<a href="https://twitter.com/${username}">@${username}</a>`
+      );
+    }
+  }
+
+  if (hashtags.length) {
+    // There are hashtags
+    for (let hashtag of hashtags) {
+      const { tag } = hashtag;
+
+      // Replace
+      text = text.replace(`#${tag}`, `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`);
+    }
+  }
+
+  return text;
+}
+
+/**
  * Fix user description from multiple tweets combined obj. DO NOT COMPOSE IN THE RENDERRICHTWEETS FUNCTION
  */
 function fixUserDescription(tweets) {
@@ -150,6 +194,12 @@ function fixUserDescription(tweets) {
       ext: ".svg",
     }
   );
+
+  tweets.common.user.description = renderMentionsHashtags({
+    text: tweets.common.user.description,
+    hashtags: tweets.common.user.entities.description.hashtags,
+    mentions: tweets.common.user.entities.description.mentions,
+  });
 
   const descriptionURLs =
     tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
@@ -175,6 +225,12 @@ function renderRichTweets(tweetObj) {
 
   tweetObj = renderMedia(tweetObj);
   tweetObj = renderOutsiderLinks(tweetObj);
+
+  tweetObj.text = renderMentionsHashtags({
+    text: tweetObj.text,
+    mentions: tweetObj.entities.mentions,
+    hashtags: tweetObj.entities.hashtags,
+  });
 
   return tweetObj;
 }
