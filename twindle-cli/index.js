@@ -22,15 +22,15 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/twitter_responses/mock.json");
+    let tweets = require("./twitter/twitter-mock-responses/only-links.json");
 
     if (!mock) {
       if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
       else tweets = await getTweetsFromTweetId(tweetId);
-	}
-	
-	const intelligentOutputFileName = `${
-      tweets.common.user.username
+    }
+
+    const intelligentOutputFileName = `${
+      tweets.common.user.username || "twindle"
     }-${tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")}`;
 	
 	const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);

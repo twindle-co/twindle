@@ -65,6 +65,7 @@ function renderMedia(tweetObj) {
 
   // Modify the object
   tweetObj.text = tweetText;
+
   tweetObj.customMedia = mediaObj;
 
   // Return it
@@ -77,8 +78,8 @@ function renderMedia(tweetObj) {
  */
 function renderOutsiderLinks(tweetObj) {
   /** @type {any[]} */
-  
-  if(!tweetObj.entities) return tweetObj;
+
+  if (!tweetObj.entities) return tweetObj;
 
   let urlObjs = tweetObj.entities.urls;
 
@@ -100,7 +101,7 @@ function renderOutsiderLinks(tweetObj) {
 
   for (let urlObj of urlObjs) {
     const isACard = "images" in urlObj;
-    const hasCustomMedia = "customMedia" in tweetObj;
+    const hasCustomMedia = "customMedia" in tweetObj && !!tweetObj.customMedia;
 
     if (isACard && !linkWithImageChosen && !hasCustomMedia) {
       // Check if it is at the end or not
@@ -109,9 +110,14 @@ function renderOutsiderLinks(tweetObj) {
         tweetObj.text = tweetText.replace(urlObj.url, "");
       }
 
+      // console.log(urlObj)
+
       linkWithImage = {
         expanded_url: urlObj.expanded_url,
         images: urlObj.images,
+        title: urlObj.title,
+        description: urlObj.description,
+        domain: new URL(urlObj.unwound_url).hostname,
       };
 
       linkWithImageChosen = true;
@@ -134,12 +140,7 @@ function renderOutsiderLinks(tweetObj) {
  */
 function fixUserDescription(tweets) {
   // console.log(tweets.common.user.entities);
-  if(!tweets.common.user.entities) return tweets;
-  
-  const descriptionURLs =
-    tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
-
-  if (!descriptionURLs) return tweets;
+  if (!tweets.common.user.entities) return tweets;
 
   // Fix spaces
   tweets.common.user.description = twemoji.parse(
@@ -149,6 +150,11 @@ function fixUserDescription(tweets) {
       ext: ".svg",
     }
   );
+
+  const descriptionURLs =
+    tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
+
+  if (!descriptionURLs) return tweets;
 
   for (let descriptionURLObj of descriptionURLs) {
     tweets.common.user.description = tweets.common.user.description.replace(
