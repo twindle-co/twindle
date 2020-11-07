@@ -17,14 +17,18 @@ async function main() {
 
 	try {
 		// this next line is wrong
-		let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
+		let tweets = require("./twitter/twitter-mock-responses/only-links.json");
+
 		if (!mock) {
 			if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
 			else tweets = await getTweetsFromTweetId(tweetId);
 		}
 
-		const outputFilePath = getOutputFilePath(outputFilename);
+		const intelligentOutputFileName = `${
+			(tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
+		}-${(tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) || "thread"}`;
 
+		const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
 		await Renderer.render(tweets, format, outputFilePath);
 
 		let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;

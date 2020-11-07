@@ -31,7 +31,7 @@ const getTweetObject = (responseJSON) => ({
   includes: responseJSON.includes,
 });
 const getTweetArray = (responseJSON) => {
-  return responseJSON.data.map((data) => ({ ...data, includes: responseJSON.includes })) || [];
+  return (responseJSON.data || []).map((data) => ({ ...data, includes: responseJSON.includes }));
 };
 const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 
@@ -46,6 +46,7 @@ const createCustomTweet = (tweet_object, user_object) => {
       ext: ".svg",
     }),
     customMedia: tweet_object.customMedia,
+    linkWithImage: tweet_object.linkWithImage,
   };
 };
 
