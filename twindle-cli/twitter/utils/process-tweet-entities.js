@@ -195,14 +195,16 @@ function fixUserDescription(tweets) {
     }
   );
 
+  const entitiesDescription = tweets.common.user.entities.description;
+
   tweets.common.user.description = renderMentionsHashtags({
     text: tweets.common.user.description,
-    hashtags: tweets.common.user.entities.description.hashtags,
-    mentions: tweets.common.user.entities.description.mentions,
+    hashtags: (entitiesDescription && entitiesDescription.hashtags) || [],
+    mentions: (entitiesDescription && entitiesDescription.mentions) || [],
   });
 
-  const descriptionURLs =
-    tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
+  const descriptionURLs = entitiesDescription && entitiesDescription.urls;
+
 
   if (!descriptionURLs) return tweets;
 
@@ -228,8 +230,8 @@ function renderRichTweets(tweetObj) {
 
   tweetObj.text = renderMentionsHashtags({
     text: tweetObj.text,
-    mentions: tweetObj.entities.mentions,
-    hashtags: tweetObj.entities.hashtags,
+    mentions: (tweetObj.entities && tweetObj.entities.mentions) || [],
+    hashtags: (tweetObj.entities && tweetObj.entities.hashtags) || [],
   });
 
   return tweetObj;
