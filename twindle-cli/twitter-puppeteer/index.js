@@ -15,7 +15,7 @@ const getTweet = async (tweetID) => {
     const width = Math.floor(1700 / factor);
 
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       defaultViewport: {
         width,
         height,
@@ -48,7 +48,7 @@ const getTweet = async (tweetID) => {
       return data;
     });
 
-    console.log(tweets);
+    // console.log(tweets);
 
     return { data: tweets };
   } catch (e) {

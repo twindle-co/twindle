@@ -22,7 +22,7 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/twitter_responses/response-version2-tweetthread.json");
+    let tweets = require("./twitter/twitter-mock-responses/only-links.json");
 
     if (!mock) {
       if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
@@ -30,14 +30,14 @@ async function main() {
     }
 
     const intelligentOutputFileName = `${
-      tweets.common.user.username
-    }-${tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")}`;
+      (tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
+    }-${
+      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      "thread"
+    }`;
 
-    await Renderer.render(
-      tweets,
-      format,
-      getOutputFilePath(outputFilename || intelligentOutputFileName)
-    );
+    const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
+    await Renderer.render(tweets, format, outputFilePath);
 
     let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
     if (kindleEmail) {

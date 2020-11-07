@@ -1,5 +1,10 @@
 // @ts-check
 
+/**
+ * @typedef {{start: number; end: number; username: string}} TMention
+ * @typedef {{start: number; end: number; tag: string}} THashtag
+ */
+
 const twemoji = require("twemoji");
 
 /**
@@ -65,6 +70,7 @@ function renderMedia(tweetObj) {
 
   // Modify the object
   tweetObj.text = tweetText;
+
   tweetObj.customMedia = mediaObj;
 
   // Return it
@@ -77,8 +83,8 @@ function renderMedia(tweetObj) {
  */
 function renderOutsiderLinks(tweetObj) {
   /** @type {any[]} */
-  
-  if(!tweetObj.entities) return tweetObj;
+
+  if (!tweetObj.entities) return tweetObj;
 
   let urlObjs = tweetObj.entities.urls;
 
@@ -100,7 +106,7 @@ function renderOutsiderLinks(tweetObj) {
 
   for (let urlObj of urlObjs) {
     const isACard = "images" in urlObj;
-    const hasCustomMedia = "customMedia" in tweetObj;
+    const hasCustomMedia = "customMedia" in tweetObj && !!tweetObj.customMedia;
 
     if (isACard && !linkWithImageChosen && !hasCustomMedia) {
       // Check if it is at the end or not
@@ -109,9 +115,14 @@ function renderOutsiderLinks(tweetObj) {
         tweetObj.text = tweetText.replace(urlObj.url, "");
       }
 
+      // console.log(urlObj)
+
       linkWithImage = {
         expanded_url: urlObj.expanded_url,
         images: urlObj.images,
+        title: urlObj.title,
+        description: urlObj.description,
+        domain: new URL(urlObj.unwound_url).hostname,
       };
 
       linkWithImageChosen = true;
@@ -130,16 +141,50 @@ function renderOutsiderLinks(tweetObj) {
 }
 
 /**
+ * This function takes in the text, rather than a tweet object, and returns that string.
+ * For portability across tweets and user descriptions
+ * @param {Object} param
+ * @param {string} param.text
+ * @param {TMention[]} param.mentions
+ * @param {THashtag[]} param.hashtags
+ * @returns {string}
+ */
+function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
+  // Make the checks
+  if (!mentions.length && !hashtags.length) return text;
+
+  if (mentions.length) {
+    // There are mentions
+    for (let mention of mentions) {
+      const { username } = mention;
+
+      // Replace
+      text = text.replace(
+        `@${username}`,
+        `<a href="https://twitter.com/${username}">@${username}</a>`
+      );
+    }
+  }
+
+  if (hashtags.length) {
+    // There are hashtags
+    for (let hashtag of hashtags) {
+      const { tag } = hashtag;
+
+      // Replace
+      text = text.replace(`#${tag}`, `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`);
+    }
+  }
+
+  return text;
+}
+
+/**
  * Fix user description from multiple tweets combined obj. DO NOT COMPOSE IN THE RENDERRICHTWEETS FUNCTION
  */
 function fixUserDescription(tweets) {
   // console.log(tweets.common.user.entities);
-  if(!tweets.common.user.entities) return tweets;
-  
-  const descriptionURLs =
-    tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
-
-  if (!descriptionURLs) return tweets;
+  if (!tweets.common.user.entities) return tweets;
 
   // Fix spaces
   tweets.common.user.description = twemoji.parse(
@@ -149,6 +194,17 @@ function fixUserDescription(tweets) {
       ext: ".svg",
     }
   );
+
+  tweets.common.user.description = renderMentionsHashtags({
+    text: tweets.common.user.description,
+    hashtags: tweets.common.user.entities.description.hashtags,
+    mentions: tweets.common.user.entities.description.mentions,
+  });
+
+  const descriptionURLs =
+    tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
+
+  if (!descriptionURLs) return tweets;
 
   for (let descriptionURLObj of descriptionURLs) {
     tweets.common.user.description = tweets.common.user.description.replace(
@@ -169,6 +225,12 @@ function renderRichTweets(tweetObj) {
 
   tweetObj = renderMedia(tweetObj);
   tweetObj = renderOutsiderLinks(tweetObj);
+
+  tweetObj.text = renderMentionsHashtags({
+    text: tweetObj.text,
+    mentions: tweetObj.entities.mentions,
+    hashtags: tweetObj.entities.hashtags,
+  });
 
   return tweetObj;
 }
