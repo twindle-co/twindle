@@ -205,6 +205,7 @@ function fixUserDescription(tweets) {
 
   const descriptionURLs = entitiesDescription && entitiesDescription.urls;
 
+
   if (!descriptionURLs) return tweets;
 
   for (let descriptionURLObj of descriptionURLs) {
