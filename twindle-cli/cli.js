@@ -26,7 +26,6 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: 'Filename for the output file',
         type: 'string',
-        default: 'twindle-thread.pdf',
       },
       s: {
         alias: 'kindleEmail',
