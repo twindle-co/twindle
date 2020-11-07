@@ -3,7 +3,7 @@ require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsFromTweetId } = require("./twitter");
+const { getTweetsById } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweet } = require("./twitter-puppeteer");
@@ -22,21 +22,34 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/twitter-mock-responses/only-links.json");
+    let tweets = require("./twitter/old/twitter-mock-responses/only-links.json");
 
     if (!mock) {
       if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
-      else tweets = await getTweetsFromTweetId(tweetId);
+      else
+        tweets = await getTweetsById(tweetId, process.env.TWITTER_AUTH_TOKEN);
     }
 
+    // // console.log(JSON.stringify(tweets));
+
+    // return;
+
     const intelligentOutputFileName = `${
-      (tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
+      (tweets &&
+        tweets.common &&
+        tweets.common.user &&
+        tweets.common.user.username) ||
+      "twindle"
     }-${
-      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      (tweets &&
+        tweets.common &&
+        tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
     }`;
 
-    const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
+    const outputFilePath = getOutputFilePath(
+      outputFilename || intelligentOutputFileName
+    );
     await Renderer.render(tweets, format, outputFilePath);
 
     let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;

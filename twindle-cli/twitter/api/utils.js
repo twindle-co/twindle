@@ -10,7 +10,7 @@ const {
   POLL_FIELDS,
   PLACE_FIELDS,
   EXPANSIONS,
-} = require("./twitter-endpoints");
+} = require("./constants");
 
 /**
  * Get tweet ID from URL `https://twitter.com/[USER]/status/[ID]` | Very flexible,
@@ -19,7 +19,12 @@ const {
  * @returns {string}
  */
 const extractTweetId = (tweet_url) =>
-  [...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g)][0][1];
+  [
+    ...matchAll(
+      tweet_url,
+      /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g
+    ),
+  ][0][1];
 
 const extractScreenName = (tweet_url) =>
   tweet_url
@@ -31,7 +36,10 @@ const getTweetObject = (responseJSON) => ({
   includes: responseJSON.includes,
 });
 const getTweetArray = (responseJSON) => {
-  return (responseJSON.data || []).map((data) => ({ ...data, includes: responseJSON.includes }));
+  return (responseJSON.data || []).map((data) => ({
+    ...data,
+    includes: responseJSON.includes,
+  }));
 };
 const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 
@@ -40,7 +48,10 @@ const createCustomTweet = (tweet_object, user_object) => {
   // console.log({ tweet_object });
   return {
     id: tweet_object.id,
-    createdAt: format(new Date(tweet_object.created_at), "MMM d, yyyy  h:mm aaaa"),
+    createdAt: format(
+      new Date(tweet_object.created_at),
+      "MMM d, yyyy  h:mm aaaa"
+    ),
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {
       folder: "svg",
       ext: ".svg",
@@ -66,13 +77,6 @@ const checkIfRequestSuccessful = (response) => {
 function fixLineBreaks(tweet) {
   return tweet.replace(/\n/g, "<br />");
 }
-
-/**
- * Returns the API endpoint URL from `tweet_id`
- * @param {string} tweet_id
- */
-const getUrl = (tweet_id) =>
-  `${ENDPOINT_TO_FETCH_CONVERSATION_ID}${tweet_id}${TWEET_FIELDS}${EXPANSIONS}${USER_FIELDS}${MEDIA_FIELDS}${PLACE_FIELDS}${POLL_FIELDS}`;
 
 module.exports = {
   extractTweetId,
