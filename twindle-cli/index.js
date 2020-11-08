@@ -35,13 +35,21 @@ async function main() {
     }
 
     const intelligentOutputFileName = `${
-      (tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
+      (tweets &&
+        tweets.common &&
+        tweets.common.user &&
+        tweets.common.user.username) ||
+      "twindle"
     }-${
-      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      (tweets &&
+        tweets.common &&
+        tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
     }`;
 
-    const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
+    const outputFilePath = getOutputFilePath(
+      outputFilename || intelligentOutputFileName
+    );
     await Renderer.render(tweets, format, outputFilePath);
 
     if (process.argv.includes("-s")) {
