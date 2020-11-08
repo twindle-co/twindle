@@ -47,12 +47,18 @@ async function main() {
           "empty-kindle-email",
           "Pass your kindle email address with -s or configure it in the .env file"
         );
-        
+
       console.devLog("sending to kindle", kindleEmail);
       await sendToKindle(kindleEmail, outputFilePath);
     }
   } catch (e) {
-    console.error(`${red(e.name)}: ${e.message}`);
+
+    // Show stack errors if Dev logs are enabled in `.env` file
+    if (process.env.DEV) {
+      console.log(e);
+    } else {
+      console.error(`${red(e.name)}: ${e.message}`);
+    }
   }
 
   // If not for this line, the script never finishes
