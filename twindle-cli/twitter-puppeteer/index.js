@@ -1,6 +1,5 @@
 const puppeteer = require("puppeteer");
 const { waitFor } = require("../utils/helpers");
-const clipboardy = require("clipboardy");
 
 /**
  * Get tweets(even older than 7 days) using puppeteer
@@ -64,12 +63,12 @@ const getTweetIDs = async (tweetID) => {
     for (let tweetContainer of tweetContainers) {
       const shareButtonToCLick = tweetContainer.querySelector('[aria-label="Share Tweet"]');
 
-      document.onpaste = async (e) => {
-        console.log(e.clipboardData.getData("text/plain"));
-      };
-
       // Click it
-      shareButtonToCLick.click();
+      try {
+        shareButtonToCLick.click();
+      } catch {
+        shareButtonToCLick.children[0].click();
+      }
 
       // Wait for buttons to show
       await waitFor(100);
@@ -90,6 +89,8 @@ const getTweetIDs = async (tweetID) => {
 
     return ids;
   });
+
+  await browser.close();
 
   return tweetIDs;
 };
