@@ -1,5 +1,8 @@
-const { renderRichTweets } = require("./common");
-const { createCustomTweet, getTweetArray } = require("../utils");
+const {
+  createCustomTweet,
+  getTweetArray,
+  renderRichTweets,
+} = require("./helpers");
 
 function processSearchResponse(responseJSON) {
   const tweets = [];

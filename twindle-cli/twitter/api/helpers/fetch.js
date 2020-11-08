@@ -2,7 +2,7 @@ const nodeFetch = require("node-fetch");
 const { NetworkRequestError, TokenNotProvidedError } = require("./errors");
 
 const fetch = (url, token) => {
-  if (!token) throw TokenNotProvidedError();
+  if (!token) throw new TokenNotProvidedError();
 
   return nodeFetch(url, {
     method: "GET",
