@@ -5,7 +5,6 @@ const { UserError } = require("../../helpers/error");
 const { getTweetObject, checkIfRequestSuccessful, getUrl } = require("./tweet-utils");
 const { processTweetLookup } = require("./tweet-lookup-response");
 const fetch = require("node-fetch");
-const { writeFile } = require("fs").promises;
 
 const getRequestOptions = () => {
   return {
@@ -37,10 +36,8 @@ const isTweetDeleted = (responseJSON) => {
  */
 async function doTweetLookup(tweet_id) {
   try {
-    // console.log(getUrl(tweet_id));
     /** @type {Response} */
     const response = await fetch(getUrl(tweet_id), getRequestOptions());
-    // console.log(getUrl(tweet_id))
     return await processResponse(response);
   } catch (err) {
     console.error(err);
