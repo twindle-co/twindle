@@ -54,37 +54,28 @@ const getTweetIDs = async (tweetID) => {
      */
     const waitFor = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    const tweetNodes = Array.from(document.querySelectorAll('div[lang]:not([lang=""])'));
+    // Find the first Show thread button and click it
+    const showRepliesButton = [...document.querySelectorAll('div[dir="auto"]')]
+      .filter((node) => node.children[0] && node.children[0].tagName === "SPAN")
+      .find((node) => node.children[0].innerHTML === "Show replies");
 
-    const tweetContainers = tweetNodes.map(
-      (node) => node.parentElement.parentElement.parentElement
-    );
+    if (showRepliesButton) {
+      showRepliesButton.click();
 
-    for (let tweetContainer of tweetContainers) {
-      const shareButtonToCLick = tweetContainer.querySelector('[aria-label="Share Tweet"]');
+      await waitFor(2000);
+    }
 
-      // Click it
-      try {
-        shareButtonToCLick.click();
-      } catch {
-        shareButtonToCLick.children[0].click();
-      }
+    const timeNodes = Array.from(document.querySelectorAll("time"));
 
-      // Wait for buttons to show
-      await waitFor(100);
+    for (let timeNode of timeNodes) {
+      /** @type {HTMLAnchorElement | HTMLSpanElement} */
+      const timeContainerAnchor = timeNode.parentElement;
 
-      const copyLinkItem = [...document.querySelectorAll('[role="menuitem"]')].reverse()[0];
+      if (timeContainerAnchor.tagName === "SPAN") continue;
 
-      // Click
-      copyLinkItem.click();
+      const id = timeContainerAnchor.href.split("/").reverse()[0];
 
-      await waitFor(30);
-
-      const url = await navigator.clipboard.readText();
-
-      const tweetID = url.replace("?s=20", "").split("/").reverse()[0];
-
-      ids.push(tweetID);
+      ids.push(id);
     }
 
     return ids;
@@ -92,7 +83,7 @@ const getTweetIDs = async (tweetID) => {
 
   await browser.close();
 
-  return tweetIDs;
+  return [tweetID, ...tweetIDs];
 };
 
 module.exports = { getTweetIDs };
