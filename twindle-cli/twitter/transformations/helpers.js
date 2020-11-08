@@ -1,5 +1,5 @@
 // @ts-check
-
+// this file can be split into multiple files within a helpers folder
 /**
  * @typedef {{start: number; end: number; username: string}} TMention
  * @typedef {{start: number; end: number; tag: string}} THashtag

@@ -1,8 +1,14 @@
 const { getConversationById, getTweetById } = require("./api");
 
-const { firstTweet, finalProcessedTweet } = require("./test/data");
-const TweetEndpoint = require("./transformations/tweet-endpoint");
-const SearchEndpoint = require("./transformations/search-endpoint");
+// const { firstTweet, finalProcessedTweet } = require("./test/data");
+const TweetEndpointValidation = require("./validations/tweet-endpoint");
+
+const TweetEndpointTransformation = require("./transformations/tweet-endpoint");
+const SearchEndpointTransformation = require("./transformations/search-endpoint");
+
+const { ValidationErrors } = require("./error");
+
+const getConversationId = (response) => response.data[0].conversation_id;
 
 const getTweetsById = async (id, token) => {
   let finalTweetsData = {
@@ -20,14 +26,31 @@ const getTweetsById = async (id, token) => {
     data: [],
   };
   // first get the first api
-  // const firstTweet = await getTweetById(id, token);
-  // const tweets = firstTweet;
-  // do validation
-  // do processing
+  let firstTweet = await getTweetById(id, token);
 
-  const [transformedFirstTweet, tweet, user] = TweetEndpoint.processTweetLookup(
-    firstTweet.data
-  );
+  if (firstTweet.status === "error") {
+    throw new Error("something wrong");
+  }
+
+  // do validation
+  const validation = TweetEndpointValidation.processResponse(firstTweet.data);
+
+  if (validation.status === "error") {
+    if (
+      validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError
+    ) {
+      const id = getConversationId(firstTweet.data);
+      firstTweet = await getTweetById(id, token);
+    } else throw validation.error;
+  }
+
+  // do processing
+  const [
+    transformedFirstTweet,
+    tweet,
+    user,
+  ] = TweetEndpointTransformation.processTweetLookup(firstTweet.data);
+
   finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
 
   //get second api
@@ -37,21 +60,16 @@ const getTweetsById = async (id, token) => {
     token
   );
 
-  const transformedSecondTweets = SearchEndpoint.processSearchResponse(
+  const transformedSecondTweets = SearchEndpointTransformation.processSearchResponse(
     conversationTweetsData.data
   );
-  // console.log(transformedSecondTweets);
 
   finalTweetsData = {
     ...finalTweetsData,
     data: [...finalTweetsData.data, ...transformedSecondTweets],
   };
-  console.log(JSON.stringify(finalTweetsData));
 
-  // do validation
-  // do processing
-
-  return Promise.resolve(finalTweetsData);
+  return finalTweetsData;
 };
 
 module.exports = {

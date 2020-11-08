@@ -22,17 +22,13 @@ async function main() {
 
   try {
     // this next line is wrong
-    let tweets = require("./twitter/old/twitter-mock-responses/only-links.json");
+    let tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
 
     if (!mock) {
       if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
       else
         tweets = await getTweetsById(tweetId, process.env.TWITTER_AUTH_TOKEN);
     }
-
-    // // console.log(JSON.stringify(tweets));
-
-    // return;
 
     const intelligentOutputFileName = `${
       (tweets &&

@@ -1,16 +1,20 @@
 const { getTweetById, getConversationById } = require("../api");
-const Errors = require("../api/helpers/errors");
+const { ApiErrors } = require("../error");
 
 describe("api module", () => {
   it("should throw an error if called without tweet id", () => {
-    expect(() => getTweetById()).toThrow(Errors.TweetIDNotProvidedError);
-    expect(() => getConversationById()).toThrow(Errors.TweetIDNotProvidedError);
+    expect(() => getTweetById()).toThrow(ApiErrors.TweetIDNotProvidedError);
+    expect(() => getConversationById()).toThrow(
+      ApiErrors.TweetIDNotProvidedError
+    );
   });
 
   it("should throw an error if called without token", () => {
-    expect(() => getTweetById("tweetId")).toThrow(Errors.TokenNotProvidedError);
+    expect(() => getTweetById("tweetId")).toThrow(
+      ApiErrors.TokenNotProvidedError
+    );
     expect(() => getConversationById("tweetId")).toThrow(
-      Errors.TokenNotProvidedError
+      ApiErrors.TokenNotProvidedError
     );
   });
 });

@@ -1,8 +1,8 @@
 const nodeFetch = require("node-fetch");
-const { NetworkRequestError, TokenNotProvidedError } = require("./errors");
+const { ApiErrors } = require("../../error");
 
 const fetch = (url, token) => {
-  if (!token) throw new TokenNotProvidedError();
+  if (!token) throw new ApiErrors.TokenNotProvidedError();
 
   return nodeFetch(url, {
     method: "GET",
@@ -14,7 +14,7 @@ const fetch = (url, token) => {
         status: "ok",
         data: await response.json(),
       };
-    else throw new NetworkRequestError();
+    else throw new ApiErrors.NetworkRequestError();
   });
 };
 

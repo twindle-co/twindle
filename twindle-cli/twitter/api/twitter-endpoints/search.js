@@ -1,6 +1,6 @@
 const { fetch } = require("../helpers/fetch");
 const { getCommonFields, MAX_RESULTS } = require("../constants");
-const { TweetIDNotProvidedError } = require("../helpers/errors");
+const { ApiErrors } = require("../../error");
 
 const BASE_ENDPOINT =
   "https://api.twitter.com/2/tweets/search/recent?query=conversation_id:<conversation_id>+from:<screen_name>";
@@ -15,7 +15,7 @@ const getUrl = (conversation_id, screen_name) => {
 };
 
 const getConversationById = (id, screenName, token) => {
-  if (!id) throw new TweetIDNotProvidedError();
+  if (!id) throw new ApiErrors.TweetIDNotProvidedError();
 
   const url = getUrl(id, screenName);
   return fetch(url, token);
