@@ -4,7 +4,7 @@ const { createLibraryIfNotExists } = require("./utils/library");
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
     .usage(
-      "Usage: -i <tweet id> -f <file format> -o <filename> -s <send to kindle email>"
+      "Usage: -i <tweet id> -f <file format> -o <filename> -s <send to kindle email| Optionally pass kindle email here>"
     )
     .option({
       i: {
@@ -26,19 +26,25 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "Filename for the output file",
         type: "string",
-        default: "twindle-thread.pdf",
       },
       s: {
-        alias: "kindleEmail",
+        alias: "sendKindleEmail",
         demandOption: false,
         describe:
-          "The email of the kindle device, you wish to send the created pdf",
+          "Send document to your kindle email. Optionally pass kindle email here if not configured in .env file",
         type: "string",
+        default: process.env.KINDLE_EMAIL
       },
       m: {
         alias: "mock",
         demandOption: false,
         describe: "If set, will run in mock mode",
+        type: "boolean",
+      },
+      p: {
+        alias: "shouldUsePuppeteer",
+        demandOption: false,
+        describe: "Should use Puppeteer or not",
         type: "boolean",
       },
     }).argv;

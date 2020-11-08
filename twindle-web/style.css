@@ -192,7 +192,35 @@ main .what_we_do p {
 #text>h4{
   font-weight: 400;
 }
-
+#who_we_are{
+  background: #ffffff;
+  color: #2D00F7;
+  width:100%;
+  height:auto;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding-left: 88px;
+}
+.text_area h1{
+  font-weight: 800;
+  font-size: 40px;
+  margin-top: 231px;
+  margin-bottom: 38px;
+  width: 516px;
+  height: 100px;
+}
+.text_area p{
+  font-weight:600;
+  font-size: 20px;
+  width: 543px;
+  height: 100px;
+  margin-bottom: 231px;
+}
+#remote_design{
+  width: 389px;
+  height: 236px;
+}
 footer {
   background: #03a9f4;
   color: white;
