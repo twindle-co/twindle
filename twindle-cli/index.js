@@ -9,6 +9,7 @@ const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweet } = require("./twitter-puppeteer");
 const { UserError } = require("./helpers/error");
 const { red } = require("kleur");
+const { isValidEmail } = require("./utils/helpers");
 
 async function main() {
   prepareCli();
@@ -48,13 +49,20 @@ async function main() {
           "Pass your kindle email address with -s or configure it in the .env file"
         );
 
+      if (!isValidEmail(kindleEmail)) {
+        const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
+          ? "Enter a valid email address"
+          : "Kindle Email configured in .env file is invalid";
+
+        throw new UserError("invalid-email", errorMessage);
+      }
+
       console.devLog("sending to kindle", kindleEmail);
       await sendToKindle(kindleEmail, outputFilePath);
     }
   } catch (e) {
-
     // Show stack errors if Dev logs are enabled in `.env` file
-    if (process.env.DEV) {
+    if (process.env.DEV === "true") {
       console.log(e);
     } else {
       console.error(`${red(e.name)}: ${e.message}`);
