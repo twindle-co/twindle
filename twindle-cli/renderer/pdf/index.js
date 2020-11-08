@@ -1,19 +1,16 @@
-const { renderTemplate } = require("./render-template");
+const { renderTemplate } = require("../render-template");
 const { createPdf } = require("./create-pdf");
 
 // const mockData = require("../twitter/output/twitter-api-response.json");
 
 async function generatePDF(tweets, outputPath) {
-  // creates the html content
-  const htmlContent = await renderTemplate(
-    { thread: tweets.data, common: tweets.common },
-    "Thread"
-  );
+	// creates the html content
+	const htmlContent = await renderTemplate({ thread: tweets.data, common: tweets.common }, "Thread");
 
-  // creates the pdf from html and saves it to Twindle.pdf
-  if (tweets.data.length > 0) await createPdf(outputPath, htmlContent);
+	// creates the pdf from html and saves it to Twindle.pdf
+	if (tweets.data.length > 0) await createPdf(outputPath, htmlContent);
 
-  return;
+	return;
 }
 
 // ------------------------------
@@ -22,10 +19,10 @@ async function generatePDF(tweets, outputPath) {
  * @param {string} outputPath
  */
 async function createExample(outputPath) {
-  // creates the html content
-  const htmlContent = await renderTemplate({ thread: mockData }, "Thread");
-  // creates the pdf from html and saves it to Twindle.pdf
-  await createPdf(outputPath, htmlContent);
+	// creates the html content
+	const htmlContent = await renderTemplate({ thread: mockData }, "Thread");
+	// creates the pdf from html and saves it to Twindle.pdf
+	await createPdf(outputPath, htmlContent);
 }
 // ------------------------------
 

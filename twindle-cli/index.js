@@ -6,10 +6,8 @@ const Renderer = require("./renderer");
 const { getTweetsFromTweetId, getTweetsFromTweetArray } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
-const { getTweetIDs } = require("./twitter-puppeteer");
-const { UserError } = require("./helpers/error");
-const { red } = require("kleur");
-const { isValidEmail } = require("./utils/helpers");
+const { formatLogColors } = require("./utils/helpers");
+const kleur = require("kleur");
 
 async function main() {
 	prepareCli();
@@ -37,7 +35,7 @@ async function main() {
 			(tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
 		}-${(tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) || "thread"}`;
 
-		const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
+		const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
 		await Renderer.render(tweets, format, outputFilePath);
 
 		let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
@@ -45,6 +43,9 @@ async function main() {
 			console.devLog("sending to kindle", kindleEmail);
 			await sendToKindle(kindleEmail, outputFilePath);
 		}
+
+		const [fileName] = outputFilePath.split("/").reverse();
+		console.log("Your " + kleur.cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
 	} catch (e) {
 		console.error(e);
 	}
