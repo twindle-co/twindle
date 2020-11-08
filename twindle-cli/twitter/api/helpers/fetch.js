@@ -1,7 +1,9 @@
 const nodeFetch = require("node-fetch");
-const { NetworkRequestError } = require("./errors");
+const { NetworkRequestError, TokenNotProvidedError } = require("./errors");
 
 const fetch = (url, token) => {
+  if (!token) throw TokenNotProvidedError();
+
   return nodeFetch(url, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
