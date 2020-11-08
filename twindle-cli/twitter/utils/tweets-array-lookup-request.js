@@ -19,13 +19,9 @@ const getRequestOptions = () => {
  * @param {string} tweet_id
  */
 async function doTweetsLookup(tweet_ids) {
-  try {
-    /** @type {Response} */
-    const response = await fetch(getUrl(tweet_ids.join(",")), getRequestOptions());
-    return await processResponse(response);
-  } catch (err) {
-    console.error(err);
-  }
+  /** @type {Response} */
+  const response = await fetch(getUrl(tweet_ids.join(",")), getRequestOptions());
+  return await processResponse(response);
 }
 
 /**
@@ -41,9 +37,6 @@ async function processResponse(response) {
 
   let responseJSON = await response.json();
   processTweetsArrayResponse(responseJSON);
-
-
-
 }
 
 module.exports = { doTweetsLookup };
