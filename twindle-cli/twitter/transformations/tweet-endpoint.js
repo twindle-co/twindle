@@ -2,9 +2,10 @@ const {
   getTweetObject,
   getUserObject,
   createCustomTweet,
-  renderRichTweets,
-  fixUserDescription,
 } = require("./helpers");
+
+const { renderRichTweets, fixUserDescription } = require("./rich-rendering");
+
 // const { doTweetsSearch } = require("./tweets-search-request");
 const { format } = require("../utils/date");
 
