@@ -33,5 +33,11 @@
     "string.prototype.matchall": "^4.0.2",
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
   }
 }
