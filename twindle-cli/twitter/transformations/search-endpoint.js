@@ -27,4 +27,5 @@ function processSearchResponse(responseJSON) {
 
   return tweets;
 }
+
 module.exports = { processSearchResponse };
