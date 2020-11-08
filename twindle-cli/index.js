@@ -30,7 +30,6 @@ async function main() {
     if (!mock) {
       if (shouldUsePuppeteer) {
         const tweetIDs = await getTweetIDs(tweetId);
-        console.log(tweetIDs);
         tweets = await getTweetsFromTweetArray(tweetIDs);
       } else tweets = await getTweetsFromTweetId(tweetId);
     }
