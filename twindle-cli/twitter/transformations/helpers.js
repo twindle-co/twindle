@@ -238,11 +238,13 @@ function renderRichTweets(tweetObj) {
   tweetObj = renderMedia(tweetObj);
   tweetObj = renderOutsiderLinks(tweetObj);
 
-  tweetObj.text = renderMentionsHashtags({
-    text: tweetObj.text,
-    mentions: (tweetObj.entities && tweetObj.entities.mentions) || [],
-    hashtags: (tweetObj.entities && tweetObj.entities.hashtags) || [],
-  });
+  if (tweetObj.entities) {
+    tweetObj.text = renderMentionsHashtags({
+      text: tweetObj.text,
+      mentions: tweetObj.entities.mentions || [],
+      hashtags: tweetObj.entities.hashtags || [],
+    });
+  }
 
   return tweetObj;
 }
