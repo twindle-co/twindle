@@ -7,6 +7,8 @@ const { getTweetsFromTweetId } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweet } = require("./twitter-puppeteer");
+const { UserError } = require("./helpers/error");
+const { red } = require("kleur");
 
 async function main() {
   prepareCli();
@@ -15,7 +17,7 @@ async function main() {
     format,
     outputFilename,
     tweetId,
-    _kindleEmail,
+    sendKindleEmail: kindleEmail,
     mock,
     shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
@@ -39,13 +41,18 @@ async function main() {
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName);
     await Renderer.render(tweets, format, outputFilePath);
 
-    let kindleEmail = process.env.KINDLE_EMAIL || _kindleEmail;
-    if (kindleEmail) {
+    if (process.argv.includes("-s")) {
+      if (!kindleEmail)
+        throw new UserError(
+          "empty-kindle-email",
+          "Pass your kindle email address with -s or configure it in the .env file"
+        );
+        
       console.devLog("sending to kindle", kindleEmail);
       await sendToKindle(kindleEmail, outputFilePath);
     }
   } catch (e) {
-    console.error(e);
+    console.error(`${red(e.name)}: ${e.message}`);
   }
 
   // If not for this line, the script never finishes
