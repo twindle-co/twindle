@@ -3,10 +3,10 @@ require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsFromTweetId } = require("./twitter");
+const { getTweetsFromTweetId, getTweetsFromTweetArray } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
-const { getTweet } = require("./twitter-puppeteer");
+const { getTweetIDs } = require("./twitter-puppeteer");
 const { UserError } = require("./helpers/error");
 const { red } = require("kleur");
 const { isValidEmail } = require("./utils/helpers");
@@ -28,8 +28,11 @@ async function main() {
     let tweets = require("./twitter/twitter-mock-responses/only-links.json");
 
     if (!mock) {
-      if (shouldUsePuppeteer) tweets = await getTweet(tweetId);
-      else tweets = await getTweetsFromTweetId(tweetId);
+      if (shouldUsePuppeteer) {
+        const tweetIDs = await getTweetIDs(tweetId);
+        console.log(tweetIDs);
+        tweets = await getTweetsFromTweetArray(tweetIDs);
+      } else tweets = await getTweetsFromTweetId(tweetId);
     }
 
     const intelligentOutputFileName = `${
