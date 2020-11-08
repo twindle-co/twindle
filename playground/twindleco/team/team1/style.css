@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.nav-wrapper {
+  background: #085394;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  text-align: right;
+  height: 80px;
+  position: fixed;
+}
+.nav-wrapper a {
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 20px;
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+} 
+.nav-link a {
+  display: block;
+  padding: 1em;
+  transition: color 0.5s;
+}
+.nav-bar {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.nav-bar a:hover{
+  background: white;
+  color: black;
+}
+.main-wrapper {
+  text-align: center;
+  background: #eee;
+}
+.heading {
+  padding-top: 50px;
+  color: #444;
+  font-size: 15px;
+  width: 300px;
+  margin: auto;
+  line-height: 80px;
+}
+.team-wrapper {
+  max-width: 100%;
+  margin: auto;
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.team {
+  margin: 20px;
+  padding: 25px;
+  max-width: 22%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.team:hover {
+  background: #ddd;
+}
+.team img {
+  width: 130px;
+  height: 140px;
+  border: 1px solid #E1E0DE;
+  border-radius: 50%;
+}
+.name {
+  padding: 20px;
+  color: red;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.role {
+  font-style: italic;
+  font-size: 18px;
+  color: #726b6b;
+}
+.details {
+  margin: 20px 0;
+  text-align: justify;
+  font-weight: lighter;
+  line-height: 25px;
+  color: #4E4E4E;
+}
+.footer-wrapper {
+  padding: 30px 0 78px;
+  background-color:#fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-wrapper h1 {
+  font-size: 15px;
+}
+.footer {
+  list-style: none;
+  display: flex;
+}
+.footer i {
+  padding: 12px 28px;
+}
+.social-icon1 i {
+  color: #1DA1F2;
+}
+.social-icon2 i {
+  color: #FF0000;
+}
+.social-icon3 i {
+  color: #000000;
+}
+.copy-right {
+  margin-top: 16px;
+  font-size: 25px;
+  font-weight: 500;
+}
+@media screen and (max-width: 980px) {
+  .team {
+    max-width: 45%;
+  }
+}
+@media screen and (max-width: 600px)  {
+  .team   {
+    max-width: 100%;
+  }
+}

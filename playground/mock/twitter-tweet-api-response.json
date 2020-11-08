@@ -1,0 +1,43 @@
+{
+  "data": {
+    "text": "Please ignore this tweet thread. It is for testing purposes only. Trying out the Twitter v2 beta API for fetching tweet threads from Twitter for #twindle project.\n\nTwindle is the place where beginners contribute to open source by building a product in the open. Contd ...",
+    "author_id": "391224534",
+    "id": "1320972620817260544",
+    "conversation_id": "1320972620817260544",
+    "entities": {
+      "annotations": [
+        {
+          "start": 81,
+          "end": 87,
+          "probability": 0.8492,
+          "type": "Product",
+          "normalized_text": "Twitter"
+        },
+        {
+          "start": 133,
+          "end": 139,
+          "probability": 0.8567,
+          "type": "Product",
+          "normalized_text": "Twitter"
+        }
+      ],
+      "hashtags": [
+        {
+          "start": 145,
+          "end": 153,
+          "tag": "twindle"
+        }
+      ]
+    },
+    "created_at": "2020-10-27T06:16:29.000Z"
+  },
+  "includes": {
+    "users": [
+      {
+        "id": "391224534",
+        "name": "Kenny Jacob ⚡",
+        "username": "johnjacobkenny"
+      }
+    ]
+  }
+}

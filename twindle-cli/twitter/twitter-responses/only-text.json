@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "public_metrics": {
+        "retweet_count": 111,
+        "reply_count": 24,
+        "like_count": 1173,
+        "quote_count": 19
+      },
+      "conversation_id": "1323545207510630400",
+      "possibly_sensitive": false,
+      "created_at": "2020-11-03T08:39:02.000Z",
+      "text": "There's something incredibly beautiful about the rise of both podcasts and newsletters in an age dominated by the walled gardens of big tech. Two basic forms of distribution that rely not on proprietary platforms, but on free and open standards, devoid of corporate lock-in ❤️",
+      "source": "Twitter Web App",
+      "id": "1323545207510630400",
+      "lang": "en",
+      "author_id": "14561327"
+    }
+  ],
+  "includes": {
+    "users": [
+      {
+        "name": "DHH",
+        "username": "dhh",
+        "description": "Creator of Ruby on Rails, Founder & CTO at Basecamp & HEY, NYT best-selling author, and Le Mans 24h class-winning racing driver.",
+        "created_at": "2008-04-27T20:19:25.000Z",
+        "id": "14561327",
+        "url": "https://t.co/472m0ihZkH",
+        "public_metrics": {
+          "followers_count": 434043,
+          "following_count": 153,
+          "tweet_count": 55212,
+          "listed_count": 10333
+        },
+        "protected": false,
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/472m0ihZkH",
+                "expanded_url": "https://dhh.dk",
+                "display_url": "dhh.dk"
+              }
+            ]
+          }
+        },
+        "profile_image_url": "https://pbs.twimg.com/profile_images/975876868455809024/eK7mDppU_normal.jpg",
+        "verified": true
+      }
+    ]
+  }
+}
