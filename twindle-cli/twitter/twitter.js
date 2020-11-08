@@ -4,6 +4,7 @@ const { getConversationById, getTweetById } = require("./api");
 const TweetEndpointValidation = require("./validations/tweet-endpoint");
 
 const TweetEndpointTransformation = require("./transformations/tweet-endpoint");
+const TweetArrayEndpointTransformation = require("./transformations/tweets-array-endpoint");
 const SearchEndpointTransformation = require("./transformations/search-endpoint");
 
 const { ValidationErrors } = require("./error");
@@ -72,6 +73,17 @@ const getTweetsById = async (id, token) => {
   return finalTweetsData;
 };
 
+const getTweetsFromArray = async (ids, token) => {
+  let responseJSON = await getTweetById(ids.join(","), token);
+
+  if (responseJSON.status === "error") {
+    throw new Error("something wrong");
+  }
+
+  // do processing
+  return TweetArrayEndpointTransformation.processTweetsArray(responseJSON);
+};
+
 module.exports = {
-  getTweetsById,
+  getTweetsById, getTweetsFromArray
 };
