@@ -30,7 +30,7 @@ const getTweetIDs = async (tweetID) => {
 
   await page.goto(pageURL, {
     waitUntil: "networkidle2",
-    timeout: 0,
+    timeout: 5 * 60 * 1000,
   });
 
   await waitFor(4000);
