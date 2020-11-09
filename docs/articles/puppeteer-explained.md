@@ -25,7 +25,7 @@ We know that using Twindle we convert long twitter threads to readable PDFs/ePub
 Already @tolgaerdonmez has implemented Puppeteer to generate PDF from HTML. Lets dissect the code :grinning: :hocho: 
 Following is the code from [create-pdf.js](https://github.com/twindle-co/twindle/blob/main/playground/cli/pdf-from-html-cli/create-pdf.js)
 
-```
+```javascript
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
@@ -62,7 +62,7 @@ As simple as we cannot print content without first loading the content. Lets see
 
 Step 1: Launching a new browser instance and then opening a new page.
 
-```
+```javascript
 const browser = await puppeteer.launch();
 	const page = await browser.newPage();
 ```
@@ -71,14 +71,14 @@ Step 2: Setting the page content to our HTML content.
 <br><br>
 
 
-```
+```javascript
 	await page.setContent(htmlContent);
 ```
 <br>
 Step 3: Setting media type to print that enables the page to be in print mode and next step would be printing the page in given "outputPath" and format of the print "A5". At the end, closing the browser.
 <br> <br>
 
-```
+```javascript
 await page.emulateMediaType("print");
 	await page.pdf({ path: outputPath, format: "A5" });
 	await browser.close();
@@ -87,7 +87,7 @@ await page.emulateMediaType("print");
 
 And finally in [index.js](https://github.com/twindle-co/twindle/blob/main/playground/cli/pdf-from-html-cli/index.js), we are creating PDF using below code that will generate Twindle.pdf with the twitter thread content.
 
-```
+```javascript
 await createPdf("Twindle.pdf", htmlContent);
 ```
 
