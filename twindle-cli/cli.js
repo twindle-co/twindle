@@ -28,11 +28,12 @@ const getCommandlineArgs = (processArgv) =>
         type: 'string',
       },
       s: {
-        alias: 'kindleEmail',
+        alias: "sendKindleEmail",
         demandOption: false,
         describe:
-          'The email of the kindle device, you wish to send the created pdf',
-        type: 'string',
+          "Send document to your kindle email. Optionally pass kindle email here if not configured in .env file",
+        type: "string",
+        default: process.env.KINDLE_EMAIL
       },
       m: {
         alias: 'mock',
