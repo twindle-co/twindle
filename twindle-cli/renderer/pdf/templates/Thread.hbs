@@ -196,15 +196,12 @@
     margin-right: 0.5rem;
   }
 </style>
-<h1 id="title">
-  Twindle Thread
-</h1>
 {{#if common}}
 <div class="tweetContainer">
   <div class="header">
     <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
     <div>
-      <h3>
+      <h4>
         {{common.user.name}}
         {{#if common.user.verified}}
         <svg class="verified-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -214,23 +211,23 @@
           </path>
         </svg>
         {{/if}}
-        <span class="user-handle">
-          @
-          {{common.user.username}}
-        </span>
-      </h3>
-      <p>
-        <span>
-          Thread created:
-          {{common.created_at}}
-        </span>
-      </p>
+      </h4>
       <p>
         <span>
           {{{common.user.description}}}
         </span>
       </p>
       <p>
+        <span class="user-handle">
+          <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @{{common.user.username}}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </span>
+      </p>
+      <p>
+        <span>
+          Thread created:
+          {{common.created_at}}
+        </span>
+        |
         <span>
           Number of tweets:
           {{common.count}}

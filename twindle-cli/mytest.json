@@ -1,0 +1,43 @@
+{
+  "common": {
+    "created_at": "Nov 8, 2020",
+    "count": 3,
+    "user": {
+      "description": "Bharatiya by Heart | वसुधैव कुटुम्बकम | Living Hindu Way of Life | Workaholic | Entrepreneur",
+      "profile_image_url": "https://pbs.twimg.com/profile_images/1293124052471537664/J_fkeSvX.jpg",
+      "protected": false,
+      "url": "",
+      "created_at": "2010-02-16T10:27:48.000Z",
+      "name": "Hemant Prasad",
+      "verified": false,
+      "public_metrics": [Object],
+      "pinned_tweet_id": "1317884708840038400",
+      "username": "prasadhemant",
+      "id": "114707915",
+      "location": "Bharat | Malaysia | Singapore"
+    }
+  },
+  "data": [
+    {
+      "id": "1325238683704848385",
+      "createdAt": "Nov 8, 2020  6:18 a.m.",
+      "tweet": "BCG shots can give relief to breathless Covid patients<br /><br />Gora saheb is saying it, so it’s a news and great discovery..<br /><br />Nobody cared when Our duo ⁦<a href=\"https://twitter.com/dasgobardhan\">@dasgobardhan</a>⁩ ⁦<a href=\"https://twitter.com/ARanganathan72\">@ARanganathan72</a>⁩ said the sand 6 months back, thousands of lives cud hv been saved ",
+      "customMedia": undefined,
+      "linkWithImage": [Object]
+    },
+    {
+      "id": "1325371643439452161",
+      "createdAt": "Nov 8, 2020  3:06 p.m.",
+      "tweet": "As always, it’s the UP CM <a href=\"https://twitter.com/myogiadityanath\">@myogiadityanath</a> ahead of everyone in taking initiative<br /><br /><a href=\"https://twitter.com/hashtag/BCGVaccine\">#BCGVaccine</a> to be given to all Ambulance workers in UP after study found it effective in preventing <a href=\"https://twitter.com/hashtag/COVID19\">#COVID19</a> <br /><br />Doctors, Nurses &amp; elderly could be next, Kids anyways get it<br /><br />",
+      "customMedia": undefined,
+      "linkWithImage": [Object]
+    },
+    {
+      "id": "1325382708504059904",
+      "createdAt": "Nov 8, 2020  3:50 p.m.",
+      "tweet": "Prof. Gobardhan Das (<a href=\"https://twitter.com/dasgobardhan\">@dasgobardhan</a>) and Prof. Anand Ranganathan (<a href=\"https://twitter.com/ARanganathan72\">@ARanganathan72</a>) have also conducted research to further enhance <a href=\"https://twitter.com/hashtag/BCG\">#BCG</a> vaccine efficacy..<br /><br />Will Govt of India again wait for western endorsement for this too? Or be serious <a href=\"https://twitter.com/drharshvardhan\">@drharshvardhan</a> ?<br /><br />",
+      "customMedia": undefined,
+      "linkWithImage": [Object]
+    }
+  ]
+}
