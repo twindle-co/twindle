@@ -31,7 +31,6 @@
     "node-fetch": "^2.6.1",
     "nodemailer": "^6.4.14",
     "puppeteer": "^5.4.1",
-    "smtp-client": "^0.3.3",
     "string.prototype.matchall": "^4.0.2",
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
@@ -40,7 +39,8 @@
     "trailingComma": "es5",
     "tabWidth": 2,
     "semi": true,
-    "singleQuote": false
+    "singleQuote": false,
+    "printWidth": 100
   },
   "devDependencies": {
     "husky": "^4.3.0",

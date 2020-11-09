@@ -21,11 +21,7 @@ const getTweetIDs = async (tweetID) => {
     },
     args: [`--force-device-scale-factor=${factor}`, `--window-size=${width},${height}`],
   });
-
-  const context = browser.defaultBrowserContext();
-  context.clearPermissionOverrides();
-  context.overridePermissions("https://twitter.com", ["clipboard-read", "clipboard-write"]);
-
+  
   const page = await browser.newPage();
 
   await page.goto(pageURL, {
