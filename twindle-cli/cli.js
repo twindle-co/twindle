@@ -1,31 +1,31 @@
-const yargs = require('yargs');
-const { createLibraryIfNotExists } = require('./utils/library');
+const yargs = require("yargs");
+const { createLibraryIfNotExists } = require("./utils/library");
 
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
     .usage(
-      'Usage: -i <tweet id> -f <file format> -o <filename> -s <send to kindle email>'
+      "Usage: -i <tweet id> -f <file format> -o <filename> -s <send to kindle email| Optionally pass kindle email here>"
     )
     .option({
       i: {
-        alias: 'tweetId',
+        alias: "tweetId",
         demandOption: false,
         describe: "First tweet's tweet id in of the twitter thread",
-        type: 'string',
+        type: "string",
       },
       f: {
-        alias: 'format',
+        alias: "format",
         demandOption: false,
-        describe: 'Output file format',
-        choices: ['mobi', 'epub', 'pdf'],
-        type: 'string',
-        default: 'pdf',
+        describe: "Output file format",
+        choices: ["mobi", "epub", "pdf"],
+        type: "string",
+        default: "pdf",
       },
       o: {
-        alias: 'outputFilename',
+        alias: "outputFilename",
         demandOption: false,
-        describe: 'Filename for the output file',
-        type: 'string',
+        describe: "Filename for the output file",
+        type: "string",
       },
       s: {
         alias: "sendKindleEmail",
@@ -36,16 +36,16 @@ const getCommandlineArgs = (processArgv) =>
         default: process.env.KINDLE_EMAIL
       },
       m: {
-        alias: 'mock',
+        alias: "mock",
         demandOption: false,
-        describe: 'If set, will run in mock mode',
-        type: 'boolean',
+        describe: "If set, will run in mock mode",
+        type: "boolean",
       },
       p: {
-        alias: 'shouldUsePuppeteer',
+        alias: "shouldUsePuppeteer",
         demandOption: false,
-        describe: 'Should use Puppeteer or not',
-        type: 'boolean',
+        describe: "Should use Puppeteer or not",
+        type: "boolean",
       },
     }).argv;
 
