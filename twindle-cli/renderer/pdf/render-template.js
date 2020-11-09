@@ -1,4 +1,4 @@
-const { readFile, writeFile } = require("fs").promises;
+const { readFile, writeFile, mkdir } = require("fs").promises;
 const hbs = require("handlebars");
 const { tmpdir } = require("os");
 
@@ -18,7 +18,13 @@ async function renderTemplate(data, templateName) {
   // renders the html template with the given data
   const rendered = template(data);
 
-  await writeFile(`${tmpdir()}/hello.html`, rendered, "utf-8");
+  if (process.env.DEV === "true") {
+    try {
+      await mkdir(tmpdir() + "/twindle");
+    } catch {}
+
+    await writeFile(`${tmpdir()}/twindle/temp.html`, rendered, "utf-8");
+  }
 
   return rendered;
 }
