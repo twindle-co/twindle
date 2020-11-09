@@ -3,6 +3,11 @@
 const twemoji = require("twemoji");
 
 /**
+ * @typedef {{start: number; end: number; username: string}} TMention
+ * @typedef {{start: number; end: number; tag: string}} THashtag
+ */
+
+/**
  * Render the images, videos and GIFs
  * @param {any} tweetObj
  */
@@ -34,7 +39,9 @@ function renderMedia(tweetObj) {
 
   for (let mediaKey of mediaKeys) {
     // Search for it in the expandedMedia
-    const mediaInfo = expandedMediaIncludes.find(({ media_key }) => media_key === mediaKey);
+    const mediaInfo = expandedMediaIncludes.find(
+      ({ media_key }) => media_key === mediaKey
+    );
 
     const { width, height, url, preview_image_url } = mediaInfo;
 
@@ -45,7 +52,8 @@ function renderMedia(tweetObj) {
     const urls = tweetObj.entities.urls;
 
     const urlObjOfImage = urls.find(
-      ({ expanded_url }) => expanded_url.includes("/photo/") || expanded_url.includes("/video/")
+      ({ expanded_url }) =>
+        expanded_url.includes("/photo/") || expanded_url.includes("/video/")
     );
 
     // Add to our list
@@ -105,7 +113,9 @@ function renderOutsiderLinks(tweetObj) {
 
     if (isACard && !linkWithImageChosen && !hasCustomMedia) {
       // Check if it is at the end or not
-      if (tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url) {
+      if (
+        tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url
+      ) {
         // Remove from the markup
         tweetObj.text = tweetText.replace(urlObj.url, "");
       }
@@ -130,9 +140,52 @@ function renderOutsiderLinks(tweetObj) {
     );
   }
 
-  if (Object.entries(linkWithImage).length) tweetObj.linkWithImage = linkWithImage;
+  if (Object.entries(linkWithImage).length)
+    tweetObj.linkWithImage = linkWithImage;
 
   return tweetObj;
+}
+
+/**
+ * This function takes in the text, rather than a tweet object, and returns that string.
+ * For portability across tweets and user descriptions
+ * @param {Object} param
+ * @param {string} param.text
+ * @param {TMention[]} param.mentions
+ * @param {THashtag[]} param.hashtags
+ * @returns {string}
+ */
+function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
+  // Make the checks
+  if (!mentions.length && !hashtags.length) return text;
+
+  if (mentions.length) {
+    // There are mentions
+    for (let mention of mentions) {
+      const { username } = mention;
+
+      // Replace
+      text = text.replace(
+        `@${username}`,
+        `<a href="https://twitter.com/${username}">@${username}</a>`
+      );
+    }
+  }
+
+  if (hashtags.length) {
+    // There are hashtags
+    for (let hashtag of hashtags) {
+      const { tag } = hashtag;
+
+      // Replace
+      text = text.replace(
+        `#${tag}`,
+        `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`
+      );
+    }
+  }
+
+  return text;
 }
 
 /**
@@ -151,8 +204,15 @@ function fixUserDescription(tweets) {
     }
   );
 
-  const descriptionURLs =
-    tweets.common.user.entities.description && tweets.common.user.entities.description.urls;
+  const entitiesDescription = tweets.common.user.entities.description;
+
+  tweets.common.user.description = renderMentionsHashtags({
+    text: tweets.common.user.description,
+    hashtags: (entitiesDescription && entitiesDescription.hashtags) || [],
+    mentions: (entitiesDescription && entitiesDescription.mentions) || [],
+  });
+
+  const descriptionURLs = entitiesDescription && entitiesDescription.urls;
 
   if (!descriptionURLs) return tweets;
 
@@ -175,6 +235,14 @@ function renderRichTweets(tweetObj) {
 
   tweetObj = renderMedia(tweetObj);
   tweetObj = renderOutsiderLinks(tweetObj);
+
+  if (tweetObj.entities) {
+    tweetObj.text = renderMentionsHashtags({
+      text: tweetObj.text,
+      mentions: tweetObj.entities.mentions || [],
+      hashtags: tweetObj.entities.hashtags || [],
+    });
+  }
 
   return tweetObj;
 }

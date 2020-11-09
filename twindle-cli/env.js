@@ -1,3 +1,4 @@
+//  possibly include env related errors in a single location here
 const { UserError } = require("../../helpers/error");
 
 const twitterAuthToken = process.env.TWITTER_AUTH_TOKEN;
