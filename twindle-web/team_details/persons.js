@@ -19,23 +19,24 @@ export const data = {
         country: "India",
       },
     },
-    {
-      id: uuidv4(),
-      name: "Satyaki Bose",
-      img:
-        "https://avatars1.githubusercontent.com/u/25426670?s=400&u=7cc72ca148ae88bf19a10b8f36b21806504ffe34&v=4",
-      links: {
-        website: "",
-        linkedin: "https://www.linkedin.com/in/satyaki07/",
-        github: "https://github.com/satyaki07",
-        twitter: "https://twitter.com/satyaki_07",
-      },
-      Title: "Developer",
-      location: {
-        city: "Kolkata",
-        state: "West Bengal",
-        country: "India",
-    },
+        {
+            id: uuidv4(),
+            name: "Satyaki Bose",
+            img:
+                "https://avatars1.githubusercontent.com/u/25426670?s=400&u=7cc72ca148ae88bf19a10b8f36b21806504ffe34&v=4",
+            links: {
+                website: "",
+                linkedin: "https://www.linkedin.com/in/satyaki07/",
+                github: "https://github.com/satyaki07",
+                twitter: "https://twitter.com/satyaki_07",
+            },
+            title: "Developer",
+            location: {
+                city: "Kolkata",
+                state: "West Bengal",
+                country: "India",
+            }
+        },
     {
       id: uuidv4(),
       name: "Rafael Rodrigues",
@@ -47,7 +48,7 @@ export const data = {
          github: "https://github.com/RafaelBatman55",
          twitter: "https://twitter.com/rafa_55",
       },
-      Title: "FrontEnd Developer",
+      title: "FrontEnd Developer",
       location: {
          city: "Resende",
          state: "Rio de Janeiro",

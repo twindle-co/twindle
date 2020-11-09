@@ -75,12 +75,12 @@ Step 2: Setting the page content to our HTML content.
 	await page.setContent(htmlContent);
 ```
 <br>
-Step 3: Setting media type to print that enables the page to be in print mode and next step would be printing the page in given "outputPath" and format of the print "A4". At the end, closing the browser.
+Step 3: Setting media type to print that enables the page to be in print mode and next step would be printing the page in given "outputPath" and format of the print "A5". At the end, closing the browser.
 <br> <br>
 
 ```
 await page.emulateMediaType("print");
-	await page.pdf({ path: outputPath, format: "A4" });
+	await page.pdf({ path: outputPath, format: "A5" });
 	await browser.close();
 ```
 <br>
