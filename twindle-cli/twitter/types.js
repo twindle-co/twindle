@@ -1,3 +1,3 @@
 /**
- * @typedef {import("./types").ConversationsResponse} TwitterConversationResponse
+ * @typedef {import("./types/types").ConversationsResponse} TwitterConversationResponse
  */
