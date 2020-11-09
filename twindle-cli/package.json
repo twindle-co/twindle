@@ -20,12 +20,10 @@
   },
   "homepage": "https://github.com/twindle-co/twindle-cli#readme",
   "dependencies": {
-    "@types/jest": "^26.0.15",
     "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "epub-gen": "^0.1.0",
     "handlebars": "^4.7.6",
-    "jest": "^26.6.3",
     "kleur": "^4.1.3",
     "node-calibre": "^2.1.1",
     "node-fetch": "^2.6.1",
@@ -35,6 +33,12 @@
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
   },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "prettier": "2.1.2",
+    "jest": "^26.6.3",
+    "@types/jest": "^26.0.15"
+  },
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
@@ -42,10 +46,6 @@
     "singleQuote": false,
     "printWidth": 100,
     "arrowParens": "always"
-  },
-  "devDependencies": {
-    "husky": "^4.3.0",
-    "prettier": "2.1.2"
   },
   "husky": {
     "hooks": {
