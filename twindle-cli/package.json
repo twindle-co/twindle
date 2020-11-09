@@ -4,9 +4,10 @@
   "description": "This cli fetches a twitter thread and converts it into PDF, ePub, Mobi, etc",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:mock": "node index.js -m",
-    "start:thread": "node index.js -i 1323618091511607296"
+    "start:thread": "node index.js -i 1323618091511607296",
+    "test": "jest",
+    "test:watch": "npm run test --watch"
   },
   "repository": {
     "type": "git",
@@ -28,9 +29,28 @@
     "node-fetch": "^2.6.1",
     "nodemailer": "^6.4.14",
     "puppeteer": "^5.4.1",
-    "smtp-client": "^0.3.3",
     "string.prototype.matchall": "^4.0.2",
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node-fetch": "^2.5.7",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "prettier": "2.1.2"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 100,
+    "arrowParens": "always"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }

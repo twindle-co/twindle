@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { waitFor } = require("../utils/helpers");
+const { waitFor } = require("../../utils/helpers");
 
 /**
  * Get tweets(even older than 7 days) using puppeteer
@@ -22,10 +22,6 @@ const getTweetIDs = async (tweetID) => {
     args: [`--force-device-scale-factor=${factor}`, `--window-size=${width},${height}`],
   });
 
-  const context = browser.defaultBrowserContext();
-  context.clearPermissionOverrides();
-  context.overridePermissions("https://twitter.com", ["clipboard-read", "clipboard-write"]);
-
   const page = await browser.newPage();
 
   await page.goto(pageURL, {
@@ -34,17 +30,6 @@ const getTweetIDs = async (tweetID) => {
   });
 
   await waitFor(4000);
-
-  // page.on("popup", (e) => console.log(e));
-
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-
-  const session = await page.target().createCDPSession();
-  await session.send("Emulation.setPageScaleFactor", {
-    pageScaleFactor: 0.5, // 400%
-  });
-
-  // await page.exposeFunction("clipboardyRead", clipboardy.read);
 
   const tweetIDs = await page.evaluate(async () => {
     const ids = [];
