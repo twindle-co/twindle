@@ -9,8 +9,14 @@ const SearchEndpointTransformation = require("./transformations/search-endpoint"
 
 const { ValidationErrors } = require("./error");
 
+/** @param {TwitterConversationResponse} response */
 const getConversationId = (response) => response.data[0].conversation_id;
 
+/**
+ * 
+ * @param {string} id 
+ * @param {*} token 
+ */
 const getTweetsById = async (id, token) => {
   let finalTweetsData = {
     common: {
@@ -26,7 +32,7 @@ const getTweetsById = async (id, token) => {
     },
     data: [],
   };
-  
+
   // first get the first api
   let firstTweet = await getTweetById(id, token);
 
