@@ -1,11 +1,11 @@
 // @ts-check
 
+const twemoji = require("twemoji");
+
 /**
  * @typedef {{start: number; end: number; username: string}} TMention
  * @typedef {{start: number; end: number; tag: string}} THashtag
  */
-
-const twemoji = require("twemoji");
 
 /**
  * Render the images, videos and GIFs
@@ -39,7 +39,9 @@ function renderMedia(tweetObj) {
 
   for (let mediaKey of mediaKeys) {
     // Search for it in the expandedMedia
-    const mediaInfo = expandedMediaIncludes.find(({ media_key }) => media_key === mediaKey);
+    const mediaInfo = expandedMediaIncludes.find(
+      ({ media_key }) => media_key === mediaKey
+    );
 
     const { width, height, url, preview_image_url } = mediaInfo;
 
@@ -50,7 +52,8 @@ function renderMedia(tweetObj) {
     const urls = tweetObj.entities.urls;
 
     const urlObjOfImage = urls.find(
-      ({ expanded_url }) => expanded_url.includes("/photo/") || expanded_url.includes("/video/")
+      ({ expanded_url }) =>
+        expanded_url.includes("/photo/") || expanded_url.includes("/video/")
     );
 
     // Add to our list
@@ -110,7 +113,9 @@ function renderOutsiderLinks(tweetObj) {
 
     if (isACard && !linkWithImageChosen && !hasCustomMedia) {
       // Check if it is at the end or not
-      if (tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url) {
+      if (
+        tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url
+      ) {
         // Remove from the markup
         tweetObj.text = tweetText.replace(urlObj.url, "");
       }
@@ -135,7 +140,8 @@ function renderOutsiderLinks(tweetObj) {
     );
   }
 
-  if (Object.entries(linkWithImage).length) tweetObj.linkWithImage = linkWithImage;
+  if (Object.entries(linkWithImage).length)
+    tweetObj.linkWithImage = linkWithImage;
 
   return tweetObj;
 }
@@ -172,7 +178,10 @@ function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
       const { tag } = hashtag;
 
       // Replace
-      text = text.replace(`#${tag}`, `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`);
+      text = text.replace(
+        `#${tag}`,
+        `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`
+      );
     }
   }
 
@@ -205,7 +214,6 @@ function fixUserDescription(tweets) {
 
   const descriptionURLs = entitiesDescription && entitiesDescription.urls;
 
-
   if (!descriptionURLs) return tweets;
 
   for (let descriptionURLObj of descriptionURLs) {
@@ -228,11 +236,13 @@ function renderRichTweets(tweetObj) {
   tweetObj = renderMedia(tweetObj);
   tweetObj = renderOutsiderLinks(tweetObj);
 
-  tweetObj.text = renderMentionsHashtags({
-    text: tweetObj.text,
-    mentions: (tweetObj.entities && tweetObj.entities.mentions) || [],
-    hashtags: (tweetObj.entities && tweetObj.entities.hashtags) || [],
-  });
+  if (tweetObj.entities) {
+    tweetObj.text = renderMentionsHashtags({
+      text: tweetObj.text,
+      mentions: tweetObj.entities.mentions || [],
+      hashtags: tweetObj.entities.hashtags || [],
+    });
+  }
 
   return tweetObj;
 }
