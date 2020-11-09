@@ -58,7 +58,7 @@ function processTweetsArray(responseJSON) {
       );
   }
 
-  resp.common.count = resp.data.length;
+  resp.common.count = resp.data.length; 
   return resp;
 }
 
