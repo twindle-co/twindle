@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { waitFor } = require("../utils/helpers");
+const { waitFor } = require("../../utils/helpers");
 
 /**
  * Get tweets(even older than 7 days) using puppeteer

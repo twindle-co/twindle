@@ -16,6 +16,6 @@ declare namespace NodeJS {
     PASS?: string;
 
     /** Whether to show descriptive error messages or short, prettified ones */
-    DEV?: string;
+    DEV?: "true" | "false";
   }
 }
