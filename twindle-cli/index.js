@@ -6,7 +6,7 @@ const Renderer = require("./renderer");
 const { getTweetsById, getTweetsFromArray } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
-const { getTweetIDs } = require("./twitter-puppeteer");
+const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
 const { red } = require("kleur");
 const { isValidEmail } = require("./utils/helpers");
@@ -63,7 +63,11 @@ async function main() {
       await sendToKindle(kindleEmail, outputFilePath);
     }
   } catch (e) {
-    console.error(e);
+    if (process.env.DEV === "true") {
+      console.error(e);
+    } else {
+      console.log(`${red(e.name)}: ${e.message}`);
+    }
   }
 
   // If not for this line, the script never finishes
