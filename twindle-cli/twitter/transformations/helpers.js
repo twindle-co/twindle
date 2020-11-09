@@ -3,7 +3,7 @@
 
 const twemoji = require("twemoji");
 const { matchAll } = require("../utils/string");
-const { format } = require("../utils/date");
+const { formatTimestamp } = require("../utils/date");
 
 /**
  * Get tweet ID from URL `https://twitter.com/[USER]/status/[ID]` | Very flexible,
@@ -14,10 +14,7 @@ const { format } = require("../utils/date");
 const extractTweetId = (tweet_url) =>
   [
     // @ts-ignore
-    ...matchAll(
-      tweet_url,
-      /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g
-    ),
+    ...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g),
   ][0][1];
 
 const extractScreenName = (tweet_url) =>
@@ -44,10 +41,7 @@ const createCustomTweet = (tweet_object, user_object) => {
   // console.log({ tweet_object });
   return {
     id: tweet_object.id,
-    createdAt: format(
-      new Date(tweet_object.created_at),
-      "MMM d, yyyy  h:mm aaaa"
-    ),
+    createdAt: formatTimestamp(tweet_object.created_at),
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {
       folder: "svg",
       ext: ".svg",
