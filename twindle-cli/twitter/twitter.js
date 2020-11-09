@@ -1,4 +1,5 @@
 const { getConversationById, getTweetById } = require("./api");
+const { getTweetIDs } = require("./scraping")
 
 // const { firstTweet, finalProcessedTweet } = require("./test/data");
 const TweetEndpointValidation = require("./validations/tweet-endpoint");
@@ -47,7 +48,12 @@ const getTweetsById = async (id, token) => {
     if (validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError) {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
-    } else throw validation.error;
+    } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
+      const tweetIDs = await getTweetIDs(id);
+      tweets = await getTweetsFromArray(tweetIDs, token);
+      return tweets;
+    }
+    else throw validation.error;
   }
 
   // do processing
@@ -72,6 +78,7 @@ const getTweetsById = async (id, token) => {
     ...finalTweetsData,
     data: [...finalTweetsData.data, ...transformedSecondTweets],
   };
+  finalTweetsData.common.count = finalTweetsData.data.length;
 
   return finalTweetsData;
 };
