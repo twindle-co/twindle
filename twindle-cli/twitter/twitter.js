@@ -78,6 +78,7 @@ const getTweetsById = async (id, token) => {
     ...finalTweetsData,
     data: [...finalTweetsData.data, ...transformedSecondTweets],
   };
+  finalTweetsData.common.count = finalTweetsData.data.length;
 
   return finalTweetsData;
 };
