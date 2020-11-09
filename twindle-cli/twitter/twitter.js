@@ -26,6 +26,7 @@ const getTweetsById = async (id, token) => {
     },
     data: [],
   };
+  
   // first get the first api
   let firstTweet = await getTweetById(id, token);
 
@@ -37,20 +38,16 @@ const getTweetsById = async (id, token) => {
   const validation = TweetEndpointValidation.processResponse(firstTweet.data);
 
   if (validation.status === "error") {
-    if (
-      validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError
-    ) {
+    if (validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError) {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
     } else throw validation.error;
   }
 
   // do processing
-  const [
-    transformedFirstTweet,
-    tweet,
-    user,
-  ] = TweetEndpointTransformation.processTweetLookup(firstTweet.data);
+  const [transformedFirstTweet, tweet, user] = TweetEndpointTransformation.processTweetLookup(
+    firstTweet.data
+  );
 
   finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
 
@@ -85,5 +82,6 @@ const getTweetsFromArray = async (ids, token) => {
 };
 
 module.exports = {
-  getTweetsById, getTweetsFromArray
+  getTweetsById,
+  getTweetsFromArray,
 };

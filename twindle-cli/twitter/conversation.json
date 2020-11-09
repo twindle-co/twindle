@@ -1,0 +1,320 @@
+{
+  "data": [
+    {
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 1,
+        "quote_count": 0
+      },
+      "conversation_id": "1324263512621883393",
+      "lang": "en",
+      "id": "1325368595803762688",
+      "text": "@noseratio @Ronenl @NehemiahKiv No worries, mate 😊\nNice article 🔥",
+      "possibly_sensitive": false,
+      "source": "Twitter for Android",
+      "author_id": "875776212341329920",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1325357646371713024"
+        }
+      ],
+      "created_at": "2020-11-08T09:24:32.000Z",
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 10,
+            "username": "noseratio"
+          },
+          {
+            "start": 11,
+            "end": 18,
+            "username": "Ronenl"
+          },
+          {
+            "start": 19,
+            "end": 31,
+            "username": "NehemiahKiv"
+          }
+        ]
+      },
+      "in_reply_to_user_id": "181307296"
+    },
+    {
+      "public_metrics": {
+        "retweet_count": 1,
+        "reply_count": 1,
+        "like_count": 3,
+        "quote_count": 0
+      },
+      "conversation_id": "1324263512621883393",
+      "lang": "en",
+      "id": "1324311958317912064",
+      "text": "@noseratio @NehemiahKiv Agreed.\nBoth Promise.race() and Promise.allSettled() are surprisingly underused.",
+      "possibly_sensitive": false,
+      "source": "Twitter Web App",
+      "author_id": "875776212341329920",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1324279739868016640"
+        }
+      ],
+      "created_at": "2020-11-05T11:25:50.000Z",
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 10,
+            "username": "noseratio"
+          },
+          {
+            "start": 11,
+            "end": 23,
+            "username": "NehemiahKiv"
+          }
+        ]
+      },
+      "in_reply_to_user_id": "181307296"
+    },
+    {
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 2,
+        "like_count": 20,
+        "quote_count": 0
+      },
+      "conversation_id": "1324263512621883393",
+      "lang": "en",
+      "id": "1324263528874860544",
+      "text": "🔹 Promise.race()\n\nThe Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an array fulfills or rejects, with the value or reason from that promise. https://t.co/Z9rl80aPlY",
+      "possibly_sensitive": false,
+      "source": "Twitter Web App",
+      "author_id": "875776212341329920",
+      "entities": {
+        "urls": [
+          {
+            "start": 195,
+            "end": 218,
+            "url": "https://t.co/Z9rl80aPlY",
+            "expanded_url": "https://twitter.com/SimonHoiberg/status/1324263528874860544/photo/1",
+            "display_url": "pic.twitter.com/Z9rl80aPlY"
+          }
+        ]
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1324263524206600197"
+        }
+      ],
+      "created_at": "2020-11-05T08:13:23.000Z",
+      "attachments": {
+        "media_keys": [
+          "3_1324262167219240960"
+        ]
+      },
+      "in_reply_to_user_id": "875776212341329920"
+    },
+    {
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 1,
+        "like_count": 17,
+        "quote_count": 0
+      },
+      "conversation_id": "1324263512621883393",
+      "lang": "en",
+      "id": "1324263524206600197",
+      "text": "🔹 Promise.any()\n\nThe Promise.any() method takes an array of promises as an argument and, as soon as one of the promises fulfills, returns a single promise that resolves with the value from that promise. https://t.co/yzrOiAUgaM",
+      "possibly_sensitive": false,
+      "source": "Twitter Web App",
+      "author_id": "875776212341329920",
+      "entities": {
+        "urls": [
+          {
+            "start": 203,
+            "end": 226,
+            "url": "https://t.co/yzrOiAUgaM",
+            "expanded_url": "https://twitter.com/SimonHoiberg/status/1324263524206600197/photo/1",
+            "display_url": "pic.twitter.com/yzrOiAUgaM"
+          }
+        ]
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1324263520398155778"
+        }
+      ],
+      "created_at": "2020-11-05T08:13:22.000Z",
+      "attachments": {
+        "media_keys": [
+          "3_1324262143890497536"
+        ]
+      },
+      "in_reply_to_user_id": "875776212341329920"
+    },
+    {
+      "public_metrics": {
+        "retweet_count": 2,
+        "reply_count": 1,
+        "like_count": 11,
+        "quote_count": 0
+      },
+      "conversation_id": "1324263512621883393",
+      "lang": "en",
+      "id": "1324263520398155778",
+      "text": "🔹 Promise.allSettled()\n\nThe Promise.allSettled() method returns a promise that resolves after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise. https://t.co/4JhJbRWwcr",
+      "possibly_sensitive": false,
+      "source": "Twitter Web App",
+      "author_id": "875776212341329920",
+      "entities": {
+        "urls": [
+          {
+            "start": 229,
+            "end": 252,
+            "url": "https://t.co/4JhJbRWwcr",
+            "expanded_url": "https://twitter.com/SimonHoiberg/status/1324263520398155778/photo/1",
+            "display_url": "pic.twitter.com/4JhJbRWwcr"
+          }
+        ]
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1324263516589690880"
+        }
+      ],
+      "created_at": "2020-11-05T08:13:21.000Z",
+      "attachments": {
+        "media_keys": [
+          "3_1324262128161873921"
+        ]
+      },
+      "in_reply_to_user_id": "875776212341329920"
+    },
+    {
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 1,
+        "like_count": 20,
+        "quote_count": 0
+      },
+      "conversation_id": "1324263512621883393",
+      "lang": "en",
+      "id": "1324263516589690880",
+      "text": "🔹 Promise.all()\n\nThe Promise.all() method takes an array of promises as an argument and returns a single Promise that resolves to an array of the results of the input promises. https://t.co/LT7bDlmLJp",
+      "possibly_sensitive": false,
+      "source": "Twitter Web App",
+      "author_id": "875776212341329920",
+      "entities": {
+        "urls": [
+          {
+            "start": 177,
+            "end": 200,
+            "url": "https://t.co/LT7bDlmLJp",
+            "expanded_url": "https://twitter.com/SimonHoiberg/status/1324263516589690880/photo/1",
+            "display_url": "pic.twitter.com/LT7bDlmLJp"
+          }
+        ]
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1324263512621883393"
+        }
+      ],
+      "created_at": "2020-11-05T08:13:20.000Z",
+      "attachments": {
+        "media_keys": [
+          "3_1324262088722780160"
+        ]
+      },
+      "in_reply_to_user_id": "875776212341329920"
+    }
+  ],
+  "includes": {
+    "users": [
+      {
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/qO9TnGwEPM",
+                "expanded_url": "https://simonhoiberg.com/newsletter",
+                "display_url": "simonhoiberg.com/newsletter"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 56,
+                "end": 79,
+                "url": "https://t.co/ZZrisWRYHe",
+                "expanded_url": "http://youtube.com/SimonHoiberg",
+                "display_url": "youtube.com/SimonHoiberg"
+              }
+            ]
+          }
+        },
+        "verified": false,
+        "created_at": "2017-06-16T18:04:54.000Z",
+        "description": "Software Engineer ‧ Business Owner ‧ Starter.\nYouTube → https://t.co/ZZrisWRYHe \n\n🔥 Freedom and independence",
+        "location": "Newsletter →",
+        "id": "875776212341329920",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 21361,
+          "following_count": 237,
+          "tweet_count": 5401,
+          "listed_count": 161
+        },
+        "username": "SimonHoiberg",
+        "url": "https://t.co/qO9TnGwEPM",
+        "name": "Simon Høiberg",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1314813880607166464/rZdd-ubL_normal.jpg"
+      }
+    ],
+    "media": [
+      {
+        "height": 726,
+        "media_key": "3_1324262167219240960",
+        "type": "photo",
+        "width": 1260,
+        "url": "https://pbs.twimg.com/media/EmC5bMKXgAAiszc.jpg"
+      },
+      {
+        "height": 852,
+        "media_key": "3_1324262143890497536",
+        "type": "photo",
+        "width": 1260,
+        "url": "https://pbs.twimg.com/media/EmC5Z1QXIAAkHBi.jpg"
+      },
+      {
+        "height": 600,
+        "media_key": "3_1324262128161873921",
+        "type": "photo",
+        "width": 1260,
+        "url": "https://pbs.twimg.com/media/EmC5Y6qXYAE3GqO.jpg"
+      },
+      {
+        "height": 768,
+        "media_key": "3_1324262088722780160",
+        "type": "photo",
+        "width": 1226,
+        "url": "https://pbs.twimg.com/media/EmC5WnvWkAAc1bu.jpg"
+      }
+    ]
+  },
+  "meta": {
+    "newest_id": "1325368595803762688",
+    "oldest_id": "1324263516589690880",
+    "result_count": 6
+  }
+}

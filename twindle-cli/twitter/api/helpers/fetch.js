@@ -1,21 +1,30 @@
-const nodeFetch = require("node-fetch");
+// @ts-check
+const nodeFetch = require("node-fetch").default;
 const { ApiErrors } = require("../../error");
 
-const fetch = (url, token) => {
+/**
+ * @param {string} url Twitter endpoint to send request to
+ * @param {string} token Bearer token. Should be provided from the .env file
+ */
+const fetch = async (url, token) => {
   if (!token) throw new ApiErrors.TokenNotProvidedError();
 
-  return nodeFetch(url, {
+  const response = await nodeFetch(url, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
     redirect: "follow",
-  }).then(async (response) => {
-    if (response.status === 200)
-      return {
-        status: "ok",
-        data: await response.json(),
-      };
-    else throw new ApiErrors.NetworkRequestError();
   });
+
+  // REVIEW WANTED: What should we do when its not 200? This below is just a workaround for now
+  if (response.status !== 200) throw new ApiErrors.NetworkRequestError();
+
+  /** @type {TwitterConversationResponse} */
+  const data = await response.json();
+
+  return {
+    status: "ok",
+    data,
+  };
 };
 
 module.exports = {
