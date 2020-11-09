@@ -7,7 +7,7 @@ export interface Mention {
 export interface Hashtag {
   start: number;
   end: number;
-  hashtag: string; 
+  tag: string;
 }
 
 export interface EntityUrl {
@@ -31,43 +31,92 @@ export interface EntityUrl {
   ];
 }
 
-export interface Attachment {
+export interface Attachments {
   poll_id?: string[];
   media_keys?: string[];
 }
 
-export interface ConversationsResponseData {
+export interface User {
+  username: string;
+  description: string;
+  profile_image_url: string;
+  verified: boolean;
+  location: string;
+  created_at: string;
+  name: string;
+  protected: boolean;
+  id: string;
+  url?: string;
+  public_metrics: {
+    followers_count: number;
+    following_count: number;
+    tweet_count: number;
+    listed_count: number;
+  };
+  entities?: {
+    url?: {
+      urls: EntityUrl[];
+    };
+    description?: {
+      mentions?: Mention[];
+      hashtags?: Hashtag[];
+    };
+  };
+}
+
+export interface ConversationResponseData {
+  conversation_id: string;
+  id: string;
+  text: string;
+  author_id: string;
+  created_at: string;
+  in_reply_to_user_id: string;
   public_metrics: {
     retweet_count: number;
     reply_count: number;
     like_count: number;
     quote_count: number;
   };
-  conversation_id: string;
-  id: string;
-  text: string;
-  author_id: string;
+  entities?: {
+    mentions?: Mention[];
+    hashtags?: Hashtag[];
+    urls?: EntityUrl[];
+  };
   referenced_tweets: [
     {
       type: "retweeted" | "quoted" | "replied_to";
       id: string;
     }
   ];
-  created_at: string;
-  entities?: {
-    mentions?: Mention[];
-    hashtags?: Hashtag[];
-    urls?: EntityUrl[];
-  };
-  attachments?: Attachment;
-  in_reply_to_user_id: string;
+  attachments?: Attachments;
+  /** Not returned by twitter API. Added by the code */
+  includes?: ConversationIncludes;
+  customMedia?: any;
+  linkWithImage?: any;
+}
+
+export interface IncludesMedia {
+  height: number;
+  width: number;
+  type: "photo" | "video" | "animated_gif";
+  preview_img_url: string;
+  media_key: string;
+}
+
+export interface ConversationIncludes {
+  media: IncludesMedia[];
+  users: User[];
 }
 
 /**
  * Types from response after cleanup
  */
-export interface ConversationsResponse {
-  data: ConversationsResponseData[];
-  includes: any[];
-  meta: any[];
+export interface ConversationResponse {
+  data: ConversationResponseData[];
+  includes: ConversationIncludes;
+  meta: {
+    newest_id: string;
+    oldest_id: string;
+    result_count: number;
+  };
 }
