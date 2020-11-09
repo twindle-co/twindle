@@ -1,13 +1,9 @@
-const {
-  getTweetObject,
-  getUserObject,
-  createCustomTweet,
-} = require("./helpers");
+const { getTweetObject, getUserObject, createCustomTweet } = require("./helpers");
 
 const { renderRichTweets, fixUserDescription } = require("./rich-rendering");
 
 // const { doTweetsSearch } = require("./tweets-search-request");
-const { format } = require("../utils/date");
+const { formatTimestamp } = require("../utils/date");
 
 /**
  *
@@ -22,15 +18,12 @@ function processTweetLookup(responseJSON) {
     common: {},
   };
 
-  resp.common.created_at = format(new Date(tweet.created_at), "MMM d, yyyy");
+  resp.common.created_at = formatTimestamp(tweet.created_at);
   resp.common.user = { ...user };
 
   resp = fixUserDescription(resp);
 
-  resp.common.user.profile_image_url = resp.common.user.profile_image_url.replace(
-    "_normal.",
-    "."
-  );
+  resp.common.user.profile_image_url = resp.common.user.profile_image_url.replace("_normal.", ".");
 
   resp.data.push(createCustomTweet(tweet, user));
 
