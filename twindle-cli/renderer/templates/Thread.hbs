@@ -15,7 +15,7 @@
     text-decoration: none !important;
   }
 
-  a[href]:not(.link-box-anchor) {
+  a[href]:not(.link-box-anchor):not(.embedded-tweet-anchor) {
 
     color: rgb(29, 161, 242);
     text-decoration: none;
@@ -196,17 +196,62 @@
     margin-right: 0.5rem;
   }
 
+  .embedded-tweet-anchor {
+    color:rgba(0, 0, 0, 0.9) !important;
+    font-size: 1rem;
+    
+  }
+
   .embedded-tweet-container {
     width: 100%;
 
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 
     border-radius: 0.5rem;
+
+    margin: 0.5rem 0;
+
+  }
+
+  .embedded-tweet-container__header {
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .embedded-tweet-container__header img {
+    display: inline-block;
+
+    width: 2rem;
+    height: auto;
+
+    border-radius: 50%;
+  }
+
+  .embedded-tweet-container__header__userhandle, .embedded-tweet-container__header__timestamp {
+    color:rgba(0, 0, 0, 0.7);
+  }
+
+  .embedded-tweet-container__body__image-container img {
+    max-width: 100%;
+  }
+
+  .flex {
+    flex: 1 1 auto;
   }
 </style>
-<h1 id="title">
-  Twindle Thread
-</h1>
+<script>
+  document.onload = () => {
+    const embeddedTweetBody = document.querySelector('.embedded-tweet-container__body');
+    const anchors = embeddedTweetBody.querySelectorAll('a');
+
+    for (let a of anchors) {
+      a.onclick = e => e.preventDefault()
+    }
+  }
+</script>
 {{#if common}}
   <div class="tweetContainer">
     <div class="header">
@@ -304,16 +349,46 @@
             </div>
           {{/if}}
           {{#if embeddedTweet}}
-            <a
-              href="https://twitter.com/
-                {{embeddedTweet.embeddedTweetUser.username}}
-                 /status/
-                {{embeddedTweet.id}}"
-            >
-              <section class="embedded-tweet-container">
-                hello
-              </section>
-            </a>
+            {{#with embeddedTweet}}
+              <a
+                class="embedded-tweet-anchor"
+                href="https://twitter.com/{{embeddedTweetUser.username}}/status/{{id}}"
+              >
+                <section class="embedded-tweet-container">
+                  <div class="embedded-tweet-container__header">
+                    <img src="{{embeddedTweetUser.profile_image_url}}" />
+                    <span class="embedded-tweet-container__header__name">
+                      <b>
+                        {{embeddedTweetUser.name}}
+                      </b>
+                    </span>
+                    <span class="embedded-tweet-container__header__userhandle">
+                      {{embeddedTweetUser.username}}
+                    </span>
+                    <span class="flex"></span>
+                    <span class="embedded-tweet-container__header__timestamp">
+                      {{created_at}}
+                    </span>
+                  </div>
+                  <div class="embedded-tweet-container__body">
+                    {{{text}}}
+                  </div>
+                  {{#if customMedia}}
+                    {{#each customMedia}}
+                      {{#if this}}
+                        {{#each this}}
+                          <div class="embedded-tweet-container__body__image-container">
+                            <a href="{{link}}">
+                              <img src="{{preview_img_url}}" />
+                            </a>
+                          </div>
+                        {{/each}}
+                      {{/if}}
+                    {{/each}}
+                  {{/if}}
+                </section>
+              </a>
+            {{/with}}
           {{/if}}
         </p>
       </div>

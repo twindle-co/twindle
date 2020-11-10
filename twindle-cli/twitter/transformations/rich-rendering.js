@@ -2,6 +2,7 @@
 
 const twemoji = require("twemoji");
 const { getTweetById } = require("../api/twitter-endpoints/tweets");
+const { formatTimestamp } = require("../utils/date");
 const { getTweetObject } = require("./helpers");
 
 /**
@@ -77,8 +78,9 @@ function renderMedia(tweetObj) {
 /**
  * Renders the outsider links(i.e links that are not embedded tweets)
  * @param {TwitterConversationData} tweetObj
+ * @param {boolean} embedded
  */
-function renderOutsiderLinks(tweetObj) {
+function renderOutsiderLinks(tweetObj, embedded) {
   /** @type {any[]} */
 
   if (!tweetObj.entities) return tweetObj;
@@ -103,10 +105,14 @@ function renderOutsiderLinks(tweetObj) {
   // urlObjs = urlObjs.filter((urlObj) => !urlObj.expanded_url.includes("status"));
 
   for (let urlObj of urlObjs) {
+    if (!urlObj) continue;
+
     const isACard = "images" in urlObj;
     const hasCustomMedia = "customMedia" in tweetObj && !!tweetObj.customMedia;
 
-    if (isACard && !linkWithImageChosen && !hasCustomMedia) {
+    const isStatusLink = urlObj.expanded_url.includes("/status/");
+
+    if (isACard && !linkWithImageChosen && !hasCustomMedia && !embedded) {
       // Check if it is at the end or not
       if (tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url) {
         // Remove from the markup
@@ -126,10 +132,12 @@ function renderOutsiderLinks(tweetObj) {
     }
 
     // Replace all short links with their shown links
-    tweetObj.text = tweetObj.text.replace(
-      urlObj.url,
-      `<a target="_blank" rel="noopener noreferrer" href="${urlObj.expanded_url}">${urlObj.display_url}</a>`
-    );
+    if (!isStatusLink) {
+      tweetObj.text = tweetObj.text.replace(
+        urlObj.url,
+        `<a target="_blank" rel="noopener noreferrer" href="${urlObj.expanded_url}">${urlObj.expanded_url}</a>`
+      );
+    }
   }
 
   if (Object.entries(linkWithImage).length) tweetObj.linkWithImage = linkWithImage;
@@ -218,12 +226,13 @@ function fixUserDescription(tweets) {
 /**
  * returns data to make the output look like a tweet
  * @param {TwitterConversationData} tweetObj
+ * @param {boolean} embedded
  */
-function _renderRichTweets(tweetObj) {
+function _renderRichTweets(tweetObj, embedded = false) {
   // NOTE Keep the order of the functions intact. Any wrong order can break the whole process
 
   tweetObj = renderMedia(tweetObj);
-  tweetObj = renderOutsiderLinks(tweetObj);
+  tweetObj = renderOutsiderLinks(tweetObj, embedded);
 
   if (tweetObj.entities) {
     tweetObj.text = renderMentionsHashtags({
@@ -276,11 +285,15 @@ async function _renderEmbeddedTweets(tweetObj, token) {
   // Now render stuff
   const tweet = getTweetObject(data);
 
-  const richEmbeddedTweet = _renderRichTweets(tweet);
+  const richEmbeddedTweet = _renderRichTweets(tweet, true);
 
   richEmbeddedTweet.embeddedTweetUser = tweet.includes.users.find(
     (user) => user.id === richEmbeddedTweet.author_id
   );
+
+  richEmbeddedTweet.embeddedTweetUser.username = `@${richEmbeddedTweet.embeddedTweetUser.username}`;
+
+  richEmbeddedTweet.created_at = formatTimestamp(richEmbeddedTweet.created_at);
 
   tweetObj.embeddedTweet = richEmbeddedTweet;
 
@@ -297,9 +310,9 @@ async function _renderEmbeddedTweets(tweetObj, token) {
     .filter((url) => url.expanded_url.includes("/status/"))
     .filter((url) => !url.expanded_url.includes(tweetID));
 
-  for (let { url, display_url } of urls) {
+  for (let { url, expanded_url } of urls) {
     // Replace with the display url
-    tweetObj.text = tweetObj.text.replace(url, display_url);
+    tweetObj.text = tweetObj.text.replace(url, expanded_url);
   }
 
   return tweetObj;
