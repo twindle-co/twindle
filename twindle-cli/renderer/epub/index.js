@@ -14,7 +14,7 @@ const createOptions = (title, author, html) => ({
 async function generateEpub(tweets, outputPath) {
   const htmlContent = await renderTemplate(
     { thread: tweets.data, common: tweets.common },
-    "Thread"
+    "Thread-epub"
   );
   const options = createOptions(tweets.common.user.name, tweets.common.user.name, htmlContent);
 
