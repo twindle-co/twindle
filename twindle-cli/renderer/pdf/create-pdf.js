@@ -1,6 +1,7 @@
 // @ts-check
 const puppeteer = require("puppeteer");
 const kleur = require("kleur");
+const spinner = require("../../spinner");
 
 function footerMarkup() {
   return `
@@ -54,9 +55,8 @@ async function createPdf(outputPath, htmlContent) {
 
   const [fileName] = outputPath.split("/").reverse();
 
-  console.log(
-    "Your " + kleur.cyan("tweets") + " are saved into " + kleur.red(fileName)
-  );
+  spinner.stop();
+  console.log("Your " + kleur.cyan("tweets") + " are saved into " + kleur.red(fileName));
 }
 
 module.exports = { createPdf };
