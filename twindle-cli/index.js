@@ -19,13 +19,12 @@ async function main() {
     format,
     outputFilename,
     tweetId,
-    sendKindleEmail: kindleEmail,
+    kindleEmail,
     mock,
     shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
 
   try {
-    // this next line is wrong
     let tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
 
     if (!mock) {
