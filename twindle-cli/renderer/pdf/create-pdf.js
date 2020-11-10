@@ -1,6 +1,5 @@
 // @ts-check
 const puppeteer = require("puppeteer");
-const kleur = require("kleur");
 
 function footerMarkup() {
   return `
@@ -20,43 +19,41 @@ function footerMarkup() {
  * @param {string} htmlContent
  */
 async function createPdf(outputPath, htmlContent) {
-  // launches a headless puppeteer browser instance and opens a new page
-  const browser = await puppeteer.launch({
-    args: ["--no-sandbox"],
-    headless: true,
-  });
+  try {
+    // launches a headless puppeteer browser instance and opens a new page
+    const browser = await puppeteer.launch({
+      args: ["--no-sandbox"],
+      headless: true,
+    });
 
-  const page = await browser.newPage();
+    const page = await browser.newPage();
 
-  // sets the html of the page to htmlContent argument
-  await page.setContent(htmlContent);
+    // sets the html of the page to htmlContent argument
+    await page.setContent(htmlContent);
 
-  // Prints the html page to pdf document and saves it to given outputPath
-  await page.emulateMediaType("print");
+    // Prints the html page to pdf document and saves it to given outputPath
+    await page.emulateMediaType("print");
 
-  await page.pdf({
-    path: outputPath,
-    format: "A5",
-    margin: {
-      bottom: 52, // minimum required for footer msg to display
-      left: 20,
-      right: 20,
-      top: 10,
-    },
-    printBackground: true,
-    displayHeaderFooter: true,
-    footerTemplate: footerMarkup(),
-    headerTemplate: "<div></div>",
-  });
+    await page.pdf({
+      path: outputPath,
+      format: "A5",
+      margin: {
+        bottom: 52, // minimum required for footer msg to display
+        left: 20,
+        right: 20,
+        top: 10,
+      },
+      printBackground: true,
+      displayHeaderFooter: true,
+      footerTemplate: footerMarkup(),
+      headerTemplate: "<div></div>",
+    });
 
-  // Closing the puppeteer browser instance
-  await browser.close();
-
-  const [fileName] = outputPath.split("/").reverse();
-
-  console.log(
-    "Your " + kleur.cyan("tweets") + " are saved into " + kleur.red(fileName)
-  );
+    // Closing the puppeteer browser instance
+    await browser.close();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 module.exports = { createPdf };

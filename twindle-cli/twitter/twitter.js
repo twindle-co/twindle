@@ -52,7 +52,6 @@ const getTweetsById = async (id, token) => {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
     } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
-
       const tweetIDs = await Scraping.getTweetIDs(id);
       tweets = await getTweetsFromArray(tweetIDs, token);
       return tweets;

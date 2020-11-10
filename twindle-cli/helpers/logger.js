@@ -1,7 +1,7 @@
 function devLog(...args) {
-	if (process.env.DEV === "true") {
-		console.log(...args);
-	}
+  if (process.env.DEV === "true") {
+    console.log(...args);
+  }
 }
 
 // this adds a new function to console which only prints the input

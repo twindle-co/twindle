@@ -18,7 +18,7 @@ function processSearchResponse(responseJSON) {
     let reply_id = directReplies[0].id;
 
     tweets.push(createCustomTweet(renderRichTweets(directReplies[0])));
-    
+
     directReplies = getTweetArray(responseJSON).filter(
       (tweet) =>
         tweet.referenced_tweets.filter((ref) => ref.type == "replied_to" && ref.id == reply_id)
