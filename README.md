@@ -72,8 +72,6 @@ Initial code goes into twindle-cli
 
 ### 📺 Latest YouTube Videos
 
-<!-- YOUTUBE:START -->
-<!-- YOUTUBE:END -->
 
 ➡️ [more videos...](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA/videos)
 
