@@ -8,19 +8,13 @@ class TweetDeletedError extends TwitterError {
 
 class TweetOlderThan7DaysError extends TwitterError {
   constructor() {
-    super(
-      "tweet-older-than-7-days",
-      "The tweet must not be older than 7 days."
-    );
+    super("tweet-older-than-7-days", "The tweet must not be older than 7 days.");
   }
 }
 
 class TweetNotFirstOfThreadError extends TwitterError {
   constructor() {
-    super(
-      "tweet-not-first-of-thread",
-      "The provided tweet is not the first of the thread."
-    );
+    super("tweet-not-first-of-thread", "The provided tweet is not the first of the thread.");
   }
 }
 
