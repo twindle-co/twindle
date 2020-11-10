@@ -32,8 +32,7 @@ const finalProcessedTweet = {
       },
       description:
         'Christian <img class="emoji" draggable="false" alt="❤️" src="https://twemoji.maxcdn.com/v/13.0.1/svg/2764.svg"/><br />Mentor <a href="https://twitter.com/twindleco">@twindleco</a><br />DM me for any help <img class="emoji" draggable="false" alt="👨‍💻" src="https://twemoji.maxcdn.com/v/13.0.1/svg/1f468-200d-1f4bb.svg"/> <img class="emoji" draggable="false" alt="❤️" src="https://twemoji.maxcdn.com/v/13.0.1/svg/2764.svg"/> JS, React, Typescript<br /><img class="emoji" draggable="false" alt="🎹" src="https://twemoji.maxcdn.com/v/13.0.1/svg/1f3b9.svg"/> Musician <img class="emoji" draggable="false" alt="❤️" src="https://twemoji.maxcdn.com/v/13.0.1/svg/2764.svg"/> Linux <img class="emoji" draggable="false" alt="🎨" src="https://twemoji.maxcdn.com/v/13.0.1/svg/1f3a8.svg"/> Inkscape<br /><img class="emoji" draggable="false" alt="❤️" src="https://twemoji.maxcdn.com/v/13.0.1/svg/2764.svg"/> Arsenal FC fan <img class="emoji" draggable="false" alt="😅" src="https://twemoji.maxcdn.com/v/13.0.1/svg/1f605.svg"/>',
-      profile_image_url:
-        "https://pbs.twimg.com/profile_images/1115624775290839040/9TlEqVgi.jpg",
+      profile_image_url: "https://pbs.twimg.com/profile_images/1115624775290839040/9TlEqVgi.jpg",
       verified: false,
       pinned_tweet_id: "1287729624068132866",
       location: "Find me online here 👉",

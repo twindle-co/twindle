@@ -7,8 +7,7 @@ const USER_FIELDS =
   "&user.fields=created_at,description,entities,location,pinned_tweet_id,profile_image_url,protected,public_metrics,url,verified,withheld";
 const MEDIA_FIELDS =
   "&media.fields=duration_ms,height,preview_image_url,url,media_key,public_metrics,width";
-const PLACE_FIELDS =
-  "&place.fields=contained_within,country,country_code,geo,name,place_type";
+const PLACE_FIELDS = "&place.fields=contained_within,country,country_code,geo,name,place_type";
 const POLL_FIELDS = "&poll.fields=duration_minutes,end_datetime,voting_status";
 const MAX_RESULTS = "&max_results=100";
 
