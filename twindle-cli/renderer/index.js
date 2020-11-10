@@ -1,5 +1,6 @@
 const { generateEpub } = require("./epub");
 const { generatePDF } = require("./pdf");
+const spinner = require("../spinner");
 
 const render = async (tweets, format, outputFilePath) => {
   switch (format) {
@@ -8,7 +9,8 @@ const render = async (tweets, format, outputFilePath) => {
     case "epub":
       return generateEpub(tweets, outputFilePath);
     default:
-      console.error("Error: This renderer is not implemented yet");
+      spinner.fail("Error: This renderer is not implemented yet");
+    //console.error("Error: This renderer is not implemented yet");
   }
 };
 

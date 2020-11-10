@@ -10,10 +10,11 @@ const { UserError } = require("./helpers/error");
 const { red, cyan } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
+const spinner = require("./spinner");
 
 async function main() {
   prepareCli();
-
+  spinner.start();
   const {
     format,
     outputFilename,
@@ -45,17 +46,19 @@ async function main() {
     await Renderer.render(tweets, format, outputFilePath);
 
     if (process.argv.includes("-s")) {
-      if (!kindleEmail)
+      if (!kindleEmail) {
+        spinner.fail("UserError");
         throw new UserError(
           "empty-kindle-email",
           "Pass your kindle email address with -s or configure it in the .env file"
         );
+      }
 
       if (!isValidEmail(kindleEmail)) {
         const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
           ? "Enter a valid email address"
           : "Kindle Email configured in .env file is invalid";
-
+        spinner.fail("UserError");
         throw new UserError("invalid-email", errorMessage);
       }
 
@@ -64,7 +67,11 @@ async function main() {
     }
 
     const [fileName] = outputFilePath.split("/").reverse();
-    console.log("Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
+
+    spinner.succeed(
+      "Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName)
+    );
+    //console.log("Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
   } catch (e) {
     if (process.env.DEV === "true") {
       console.error(e);
