@@ -41,7 +41,7 @@ const createCustomTweet = (tweet_object, user_object) => {
   // console.log({ tweet_object });
   return {
     id: tweet_object.id,
-    createdAt: formatTimestamp(tweet_object.created_at),
+    created_at: formatTimestamp(tweet_object.created_at),
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {
       folder: "svg",
       ext: ".svg",

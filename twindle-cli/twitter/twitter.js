@@ -14,9 +14,8 @@ const { ValidationErrors } = require("./error");
 const getConversationId = (response) => response.data[0].conversation_id;
 
 /**
- * 
  * @param {string} id 
- * @param {*} token 
+ * @param {string} token 
  */
 const getTweetsById = async (id, token) => {
   let finalTweetsData = {

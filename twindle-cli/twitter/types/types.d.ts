@@ -120,3 +120,40 @@ export interface ConversationResponse {
     result_count: number;
   };
 }
+
+export interface CustomMedia {
+  [media: "photo" | "video" | "animated_gif"]: {
+    height: number;
+    width: number;
+    preview_img_url: string;
+    /** Format: pic.twitter.com/*. No HTTPS in the link */
+    link: string;
+  }[];
+}
+
+export interface LinkWithImage {
+  expanded_url: string;
+  images: {
+    url: string;
+    width: number;
+    height: number;
+  }[];
+}
+
+export interface CustomTweetData {
+  id: string;
+  created_at: string;
+  tweet: string;
+  customMedia?: CustomMedia;
+  linkWithImage?: LinkWithImage
+}
+
+export interface CustomTweets {
+  common: {
+    id: string;
+    created_at: string;
+    count: number;
+    user: User;
+  };
+  data: CustomTweetData[];
+}
