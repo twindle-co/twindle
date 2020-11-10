@@ -24,17 +24,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      
-  - name: Get npm cache directory
-    id: npm-cache
-    run: |
-      echo "::set-output name=dir::$(npm config get cache)"
-  - uses: actions/cache@v2
-    with:
-      path: ${{ steps.npm-cache.outputs.dir }}
-      key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      restore-keys: |
-        ${{ runner.os }}-node-
+    - name: Get npm cache directory
+      id: npm-cache
+      run: |
+        echo "::set-output name=dir::$(npm config get cache)"
+    - uses: actions/cache@v2
+      with:
+        path: ${{ steps.npm-cache.outputs.dir }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
     - name: NPM Install
       working-directory: ./twindle-cli
