@@ -21,6 +21,24 @@ class InvalidTokenError extends TwitterError {
   }
 }
 
+class BadTwitterRequestError extends TwitterError {
+  constructor() {
+    super(
+      "bad-request",
+      "Invalid request parameters. This error happens most likely because of invalid tweet id"
+    );
+  }
+}
+
+class TwitterServiceError extends TwitterError {
+  constructor() {
+    super(
+      "twitter-service-error",
+      "Try later. Twitter is facing issues with too many requests or the access token limits were reached."
+    );
+  }
+}
+
 class TweetIDNotProvidedError extends TwitterError {
   constructor() {
     super("tweet-id-not-passed", "Please provide the tweet id");
@@ -38,5 +56,7 @@ module.exports = {
   TokenNotProvidedError,
   TweetIDNotProvidedError,
   InvalidTokenError,
+  BadTwitterRequestError,
+  TwitterServiceError,
   TweetDoesNotExist,
 };
