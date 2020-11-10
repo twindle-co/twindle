@@ -40,14 +40,6 @@
     "jest": "^26.6.3",
     "prettier": "2.1.2"
   },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": false,
-    "printWidth": 100,
-    "arrowParens": "always"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "npm test"

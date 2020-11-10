@@ -1,6 +1,8 @@
 // @ts-check
 
 const twemoji = require("twemoji");
+const { getTweetById } = require("../api/twitter-endpoints/tweets");
+const { getTweetObject } = require("./helpers");
 
 /**
  * @typedef {import("../types/types").Mention} TMention
@@ -40,9 +42,11 @@ function renderMedia(tweetObj) {
     // Let's get the entitites
     const urls = tweetObj.entities.urls;
 
-    const urlObjOfImage = urls.find(
+    const urlObjOfImageIndex = urls.findIndex(
       ({ expanded_url }) => expanded_url.includes("/photo/") || expanded_url.includes("/video/")
     );
+
+    const urlObjOfImage = urls[urlObjOfImageIndex];
 
     // Add to our list
     mediaObj[mediaInfo.type].push({
@@ -57,6 +61,8 @@ function renderMedia(tweetObj) {
 
     // Replace in the tweet text
     tweetText = tweetText.replace(shortURL, "");
+
+    delete tweetObj.entities.urls[urlObjOfImageIndex];
   }
 
   // Modify the object
@@ -83,6 +89,7 @@ function renderOutsiderLinks(tweetObj) {
 
   /**
    * The final link whose image should be rendered
+   * @type {Partial<import("../types/types").LinkWithImage>}
    */
   let linkWithImage = {};
 
@@ -93,7 +100,7 @@ function renderOutsiderLinks(tweetObj) {
   const tweetText = tweetObj.text;
 
   // Filter images and retweets
-  urlObjs = urlObjs.filter((urlObj) => !urlObj.expanded_url.includes("status"));
+  // urlObjs = urlObjs.filter((urlObj) => !urlObj.expanded_url.includes("status"));
 
   for (let urlObj of urlObjs) {
     const isACard = "images" in urlObj;
@@ -107,7 +114,6 @@ function renderOutsiderLinks(tweetObj) {
       }
 
       // console.log(urlObj)
-
       linkWithImage = {
         expanded_url: urlObj.expanded_url,
         images: urlObj.images,
@@ -213,7 +219,7 @@ function fixUserDescription(tweets) {
  * returns data to make the output look like a tweet
  * @param {TwitterConversationData} tweetObj
  */
-function renderRichTweets(tweetObj) {
+function _renderRichTweets(tweetObj) {
   // NOTE Keep the order of the functions intact. Any wrong order can break the whole process
 
   tweetObj = renderMedia(tweetObj);
@@ -228,6 +234,87 @@ function renderRichTweets(tweetObj) {
   }
 
   return tweetObj;
+}
+
+/** @param {TwitterConversationData} tweetObj */
+function sanitizeForHandlebars(tweetObj) {
+  // Remove unnecessary data for the handlebars
+
+  if (tweetObj.embeddedTweet) {
+    delete tweetObj.linkWithImage;
+    return tweetObj;
+  }
+
+  // Combine conditions
+  if (tweetObj.embeddedTweet && tweetObj.customMedia) {
+    tweetObj.embeddedTweet.embeddedTweetCardSize = "large";
+  }
+
+  return tweetObj;
+}
+
+/**
+ *
+ * @param {TwitterConversationData} tweetObj
+ * @param {string} token
+ */
+async function _renderEmbeddedTweets(tweetObj, token) {
+  // Now work on the embedded tweets
+  // Check
+  if (!tweetObj.referenced_tweets) return tweetObj;
+
+  if (tweetObj.referenced_tweets[0].type === "replied_to") return tweetObj;
+
+  const tweetID = tweetObj.referenced_tweets[0].id;
+
+  // Now do the thing
+  const { data } = await getTweetById(tweetID, token);
+
+  // @ts-ignore
+  if (data.errors) return tweetObj;
+
+  // Now render stuff
+  const tweet = getTweetObject(data);
+
+  const richEmbeddedTweet = _renderRichTweets(tweet);
+
+  richEmbeddedTweet.embeddedTweetUser = tweet.includes.users.find(
+    (user) => user.id === richEmbeddedTweet.author_id
+  );
+
+  tweetObj.embeddedTweet = richEmbeddedTweet;
+
+  // Delete the irrelevant URLS
+
+  const url = tweetObj.entities.urls.find((url) =>
+    url.expanded_url.replace("?s=20", "").includes(tweetID)
+  ).url;
+
+  tweetObj.text = tweetObj.text.replace(url, "");
+
+  // Replace rest of status URLS with their displayed version
+  const urls = tweetObj.entities.urls
+    .filter((url) => url.expanded_url.includes("/status/"))
+    .filter((url) => !url.expanded_url.includes(tweetID));
+
+  for (let { url, display_url } of urls) {
+    // Replace with the display url
+    tweetObj.text = tweetObj.text.replace(url, display_url);
+  }
+
+  return tweetObj;
+}
+
+/**
+ *
+ * @param {TwitterConversationData} tweetObj
+ * @param {string} token
+ */
+async function renderRichTweets(tweetObj, token) {
+  tweetObj = _renderRichTweets(tweetObj);
+  tweetObj = await _renderEmbeddedTweets(tweetObj, token);
+
+  return sanitizeForHandlebars(tweetObj);
 }
 
 module.exports = { renderRichTweets, fixUserDescription };
