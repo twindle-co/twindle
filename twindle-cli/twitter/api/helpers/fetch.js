@@ -15,6 +15,8 @@ const fetch = async (url, token) => {
     redirect: "follow",
   });
 
+  if (response.status === 401) throw new ApiErrors.InvalidTokenError();
+
   // REVIEW WANTED: What should we do when its not 200? This below is just a workaround for now
   if (response.status !== 200) throw new ApiErrors.NetworkRequestError();
 
