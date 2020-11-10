@@ -24,6 +24,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+      
+    - name: Cache NPM dependencies
+      uses: actions/cache@v2.1.3
+
     - name: NPM Install
       working-directory: ./twindle-cli
       run: npm install
