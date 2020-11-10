@@ -3,23 +3,16 @@
 const twemoji = require("twemoji");
 
 /**
- * @typedef {{start: number; end: number; username: string}} TMention
- * @typedef {{start: number; end: number; tag: string}} THashtag
+ * @typedef {import("../types/types").Mention} TMention
+ * @typedef {import("../types/types").Hashtag} THashtag
  */
 
 /**
  * Render the images, videos and GIFs
- * @param {any} tweetObj
+ * @param {TwitterConversationData} tweetObj
  */
 function renderMedia(tweetObj) {
-  /** @type {{
-   * [key in 'photo' | 'video' | 'animated_gif'] : {
-    *  width: number;
-    *  height: number;
-    *  preview_img_url: string;
-    *  link: string;
-    * }[]
-     }} */
+  /** @type {import("../types/types").CustomMedia} */
   const mediaObj = {
     photo: [],
     video: [],
@@ -34,26 +27,21 @@ function renderMedia(tweetObj) {
 
   if (!mediaKeys) return tweetObj;
 
-  /** @type {any[]} */
   const expandedMediaIncludes = tweetObj.includes.media;
 
   for (let mediaKey of mediaKeys) {
     // Search for it in the expandedMedia
-    const mediaInfo = expandedMediaIncludes.find(
-      ({ media_key }) => media_key === mediaKey
-    );
+    const mediaInfo = expandedMediaIncludes.find(({ media_key }) => media_key === mediaKey);
 
     const { width, height, url, preview_image_url } = mediaInfo;
 
     // Now let's delete the url matching this media
 
     // Let's get the entitites
-    /** @type {any[]} */
     const urls = tweetObj.entities.urls;
 
     const urlObjOfImage = urls.find(
-      ({ expanded_url }) =>
-        expanded_url.includes("/photo/") || expanded_url.includes("/video/")
+      ({ expanded_url }) => expanded_url.includes("/photo/") || expanded_url.includes("/video/")
     );
 
     // Add to our list
@@ -61,7 +49,7 @@ function renderMedia(tweetObj) {
       width,
       height,
       preview_img_url: preview_image_url || url,
-      link: urlObjOfImage.display_url,
+      link: urlObjOfImage.expanded_url,
     });
 
     // Get the actual short URL (t.co/[STUFF])
@@ -82,7 +70,7 @@ function renderMedia(tweetObj) {
 
 /**
  * Renders the outsider links(i.e links that are not embedded tweets)
- * @param {*} tweetObj
+ * @param {TwitterConversationData} tweetObj
  */
 function renderOutsiderLinks(tweetObj) {
   /** @type {any[]} */
@@ -113,9 +101,7 @@ function renderOutsiderLinks(tweetObj) {
 
     if (isACard && !linkWithImageChosen && !hasCustomMedia) {
       // Check if it is at the end or not
-      if (
-        tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url
-      ) {
+      if (tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url) {
         // Remove from the markup
         tweetObj.text = tweetText.replace(urlObj.url, "");
       }
@@ -140,8 +126,7 @@ function renderOutsiderLinks(tweetObj) {
     );
   }
 
-  if (Object.entries(linkWithImage).length)
-    tweetObj.linkWithImage = linkWithImage;
+  if (Object.entries(linkWithImage).length) tweetObj.linkWithImage = linkWithImage;
 
   return tweetObj;
 }
@@ -178,10 +163,7 @@ function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
       const { tag } = hashtag;
 
       // Replace
-      text = text.replace(
-        `#${tag}`,
-        `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`
-      );
+      text = text.replace(`#${tag}`, `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`);
     }
   }
 
@@ -189,6 +171,7 @@ function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
 }
 
 /**
+ * @param {CustomTweetsObject} tweets
  * Fix user description from multiple tweets combined obj. DO NOT COMPOSE IN THE RENDERRICHTWEETS FUNCTION
  */
 function fixUserDescription(tweets) {
@@ -228,7 +211,7 @@ function fixUserDescription(tweets) {
 
 /**
  * returns data to make the output look like a tweet
- * @param {any} tweetObj
+ * @param {TwitterConversationData} tweetObj
  */
 function renderRichTweets(tweetObj) {
   // NOTE Keep the order of the functions intact. Any wrong order can break the whole process
