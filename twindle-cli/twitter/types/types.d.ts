@@ -58,6 +58,7 @@ export interface User {
       urls: EntityUrl[];
     };
     description?: {
+      urls?: EntityUrl[];
       mentions?: Mention[];
       hashtags?: Hashtag[];
     };
@@ -99,7 +100,8 @@ export interface IncludesMedia {
   height: number;
   width: number;
   type: "photo" | "video" | "animated_gif";
-  preview_img_url: string;
+  url: string;
+  preview_image_url: string;
   media_key: string;
 }
 
@@ -145,7 +147,7 @@ export interface CustomTweetData {
   created_at: string;
   tweet: string;
   customMedia?: CustomMedia;
-  linkWithImage?: LinkWithImage
+  linkWithImage?: LinkWithImage;
 }
 
 export interface CustomTweets {
@@ -153,7 +155,7 @@ export interface CustomTweets {
     id: string;
     created_at: string;
     count: number;
-    user: User;
+    user: Partial<User>;
   };
   data: CustomTweetData[];
 }

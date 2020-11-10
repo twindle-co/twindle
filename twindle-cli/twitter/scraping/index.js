@@ -5,7 +5,7 @@ const { waitFor } = require("../../utils/helpers");
  * Get tweets(even older than 7 days) using puppeteer
  * @param {string} tweetID
  */
-const getTweetIDs = async (tweetID) => {
+const getTweetIDsWithScraping = async (tweetID) => {
   const pageURL = `https://twitter.com/anyone/status/${tweetID}`;
 
   // Modify this variable to control the size of viewport
@@ -72,4 +72,4 @@ const getTweetIDs = async (tweetID) => {
   return [tweetID, ...tweetIDs];
 };
 
-module.exports = { getTweetIDs };
+module.exports = { getTweetIDsWithScraping };

@@ -17,11 +17,13 @@ const extractTweetId = (tweet_url) =>
     ...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g),
   ][0][1];
 
+/** @param {string} tweet_url */
 const extractScreenName = (tweet_url) =>
   tweet_url
     .substring(0, tweet_url.lastIndexOf("/status"))
     .substring(tweet_url.lastIndexOf("/") + 1);
 
+/** @param {TwitterConversationResponse} responseJSON */
 const getTweetArray = (responseJSON) => {
   return (responseJSON.data || []).map((data) => ({
     ...data,
@@ -29,16 +31,20 @@ const getTweetArray = (responseJSON) => {
   }));
 };
 
+/** @param {TwitterConversationResponse} responseJSON */
 const getUserObject = (responseJSON) => responseJSON.includes.users[0];
 
+/** @param {TwitterConversationResponse} responseJSON */
 const getTweetObject = (responseJSON) => ({
   ...responseJSON.data[0],
   includes: responseJSON.includes,
 });
 
+/**
+ * @param {TwitterConversationData} tweet_object
+ * @returns {import("../types/types").CustomTweetData}
+ */
 const createCustomTweet = (tweet_object, user_object) => {
-  // if (!tweet_object) return {};
-  // console.log({ tweet_object });
   return {
     id: tweet_object.id,
     created_at: formatTimestamp(tweet_object.created_at),

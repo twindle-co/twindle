@@ -1,9 +1,15 @@
 //  options for the tweet endpoint
-const { ValidationErrors } = require("../error");
+const { ValidationErrors, ApiErrors } = require("../error");
 
+/**
+ *
+ * @param {TwitterConversationData} tweet
+ */
 const isFirstTweetOfThread = (tweet) => {
   return tweet.id === tweet.conversation_id;
 };
+
+/** @param {TwitterConversationData} tweet */
 const tweetOlderThanSevenDays = (tweet) => {
   const currentTime = +new Date();
   const tweetCreatedAt = +new Date(tweet.created_at);
@@ -12,11 +18,13 @@ const tweetOlderThanSevenDays = (tweet) => {
   return differenceInDays > 7;
 };
 
+/** @param {TwitterConversationResponse} responseJSON */
 const tweetDeleted = (responseJSON) => {
   if (responseJSON.errors === undefined) return false;
   return true;
 };
 
+/** @param {TwitterConversationResponse} responseJSON */
 const getTweetObject = (responseJSON) => {
   return {
     ...responseJSON.data[0],
@@ -26,13 +34,13 @@ const getTweetObject = (responseJSON) => {
 
 /**
  * Process the data received from Twitter API
- * @param {Response} response
+ * @param {TwitterConversationResponse} response
  */
 function processResponse(response) {
   if (tweetDeleted(response)) {
     return {
       status: "error",
-      error: new ValidationErrors.TweetDeletedError(),
+      error: new ApiErrors.TweetDoesNotExist(),
     };
   }
   let tweet = getTweetObject(response);
