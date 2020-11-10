@@ -8,9 +8,10 @@ const { formatTimestamp } = require("../utils/date");
 /**
  *
  * @param {TwitterConversationResponse} responseJSON
+ * @param {string} token
  */
-function processTweetLookup(responseJSON) {
-  let tweet = renderRichTweets(getTweetObject(responseJSON));
+async function processTweetLookup(responseJSON, token) {
+  let tweet = await renderRichTweets(getTweetObject(responseJSON), token);
   let user = getUserObject(responseJSON);
 
   /** @type {CustomTweetsObject} */
@@ -21,6 +22,8 @@ function processTweetLookup(responseJSON) {
 
   resp.common.created_at = formatTimestamp(tweet.created_at);
   resp.common.user = { ...user };
+
+  resp.common.user.username = `@${resp.common.user.username}`;
 
   resp = fixUserDescription(resp);
 
