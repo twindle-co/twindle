@@ -48,7 +48,7 @@ async function processTweetsArray(responseJSON, token) {
   while (directReplies.length > 0) {
     let reply_id = directReplies[0].id;
 
-    resp.data.push(createCustomTweet(await renderRichTweets(directReplies[0])));
+    resp.data.push(createCustomTweet(await renderRichTweets(directReplies[0], token)));
     directReplies = tweets
       .filter((tweet) => tweet.referenced_tweets)
       .filter(
