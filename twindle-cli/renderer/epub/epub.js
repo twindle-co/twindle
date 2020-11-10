@@ -16,6 +16,7 @@ const createOptions = (title, author, html) => ({
         const htmlContent = await renderTemplate({ thread: mockData.data}, "Thread");
         const options = createOptions("nano", "nano", htmlContent);
 
+	
         const book = new Epub(options, outputPath);
         await book;
     }
