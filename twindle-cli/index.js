@@ -19,7 +19,7 @@ async function main() {
     format,
     outputFilename,
     tweetId,
-    sendKindleEmail: kindleEmail,
+    kindleEmail,
     mock,
     shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
