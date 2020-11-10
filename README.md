@@ -56,12 +56,6 @@ Pre-requsites
 
 Initial code goes into twindle-cli
 
-## Connect with us
-
-[<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
-[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
-[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
-
 ## Languages & Tools
 
 <img align="left" alt="Visual Studio Code" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
@@ -88,3 +82,10 @@ Initial code goes into twindle-cli
 ## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
 
 [Google Meet Link](https://meet.google.com/gna-hvym-tfj) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
+
+## Connect with us
+
+[<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
+[<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
+[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
+
