@@ -20,4 +20,4 @@ const createOptions = (title, author, html) => ({
         await book;
     }
 
-    module.exports = createEpub;
+    module.exports = createEpub; 
