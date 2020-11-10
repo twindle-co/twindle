@@ -1,6 +1,7 @@
 // @ts-check
 const { getConversationById, getTweetById } = require("./api");
-const { getTweetIDsWithScraping } = require("./scraping");
+
+const Scraping = require("./scraping");
 
 // const { firstTweet, finalProcessedTweet } = require("./test/data");
 const TweetEndpointValidation = require("./validations/tweet-endpoint");
@@ -51,8 +52,9 @@ const getTweetsById = async (id, token) => {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
     } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
-      const tweetIDs = await getTweetIDsWithScraping(id);
-      const tweets = await getTweetsFromArray(tweetIDs, token);
+
+      const tweetIDs = await Scraping.getTweetIDs(id);
+      tweets = await getTweetsFromArray(tweetIDs, token);
       return tweets;
     } else throw validation.error;
   }
