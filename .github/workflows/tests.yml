@@ -24,4 +24,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd twindle-cli; npm test
+    - run: cd twindle-cli
+    - run: npm install
+    - run: npm test
