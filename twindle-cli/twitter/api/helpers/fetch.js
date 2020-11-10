@@ -15,7 +15,9 @@ const fetch = async (url, token) => {
     redirect: "follow",
   });
 
-  if (response.status === 401) throw new ApiErrors.InvalidTokenError();
+  if (response.status === 401 || response.status === 403) throw new ApiErrors.InvalidTokenError();
+  if (response.status === 400) throw new ApiErrors.BadTwitterRequestError();
+  if (response.status === 429 || response.status === 500 || response.status === 503) throw new ApiErrors.TwitterServiceError();
 
   // REVIEW WANTED: What should we do when its not 200? This below is just a workaround for now
   if (response.status !== 200) throw new ApiErrors.NetworkRequestError();

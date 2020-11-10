@@ -19,13 +19,13 @@ async function main() {
     format,
     outputFilename,
     tweetId,
-    sendKindleEmail: kindleEmail,
+    kindleEmail,
     mock,
     shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
 
   try {
-    // this next line is wrong
+    verifyEnvironmentVariables(kindleEmail);
     let tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
 
     if (!mock) {
@@ -46,22 +46,6 @@ async function main() {
     await Renderer.render(tweets, format, outputFilePath);
 
     if (process.argv.includes("-s")) {
-      if (!kindleEmail) {
-        spinner.fail("UserError");
-        throw new UserError(
-          "empty-kindle-email",
-          "Pass your kindle email address with -s or configure it in the .env file"
-        );
-      }
-
-      if (!isValidEmail(kindleEmail)) {
-        const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
-          ? "Enter a valid email address"
-          : "Kindle Email configured in .env file is invalid";
-        spinner.fail("UserError");
-        throw new UserError("invalid-email", errorMessage);
-      }
-
       console.devLog("sending to kindle", kindleEmail);
       await sendToKindle(kindleEmail, outputFilePath);
     }
@@ -82,6 +66,37 @@ async function main() {
 
   // If not for this line, the script never finishes
   process.exit();
+}
+
+function verifyEnvironmentVariables(kindleEmail) {
+  if (!process.env.TWITTER_AUTH_TOKEN)
+    throw new UserError(
+      "bearer-token-not-provided",
+      "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"
+    );
+
+  if (process.argv.includes("-s")) {
+    if (!process.env.HOST || !process.env.EMAIL || !process.env.PASS)
+      throw new UserError(
+        "mail-server-config-error",
+        "Please setup the credentials for the mail server to send the email to Kindle"
+      );
+    if (!kindleEmail) {
+      spinner.fail("UserError");
+      throw new UserError(
+        "empty-kindle-email",
+        "Pass your kindle email address with -s or configure it in the .env file"
+      );
+    }
+
+    if (!isValidEmail(kindleEmail)) {
+      const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
+        ? "Enter a valid email address"
+        : "Kindle Email configured in .env file is invalid";
+      spinner.fail("UserError");
+      throw new UserError("invalid-email", errorMessage);
+    }
+  }
 }
 
 // Execute it
