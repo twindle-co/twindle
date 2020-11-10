@@ -14,6 +14,7 @@ const getTweetById = (id, token) => {
 
   const COMMON_FIELDS = getCommonFields();
   const url = `${BASE_ENDPOINT}${id}${COMMON_FIELDS}`;
+
   return fetch(url, token);
 };
 
