@@ -1,10 +1,13 @@
-// const { generateEpub } = require("./epub/epub");
+const kleur = require("kleur");
+const { generateEpub } = require("./epub");
 const { generatePDF } = require("./pdf");
 
-const render = (tweets, format, outputFilePath) => {
+const render = async (tweets, format, outputFilePath) => {
 	switch (format) {
 		case "pdf":
 			return generatePDF(tweets, outputFilePath);
+		case "epub":
+			return generateEpub(tweets, outputFilePath);
 		default:
 			console.error("Error: This renderer is not implemented yet");
 	}
