@@ -43,7 +43,7 @@ function generateCard(info) {
 }
 
 async function pushToDom() {
-  let fetchData = await fetch('https://raw.githubusercontent.com/UnevenCoder/twindle/main/twindle-web/team_details/data.json');
+  let fetchData = await fetch('https://raw.githubusercontent.com/twindle-co/twindle/main/twindle-web/team_details/data.json');
   let data = await fetchData.json();
   let users = data.users;
   let html = '';
