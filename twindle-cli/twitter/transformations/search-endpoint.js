@@ -2,8 +2,11 @@ const { createCustomTweet, getTweetArray } = require("./helpers");
 
 const { renderRichTweets } = require("./rich-rendering");
 
-/** @param {TwitterConversationResponse} responseJSON  */
-function processSearchResponse(responseJSON) {
+/**
+ * @param {TwitterConversationResponse} responseJSON
+ * @param {string} token
+ */
+async function processSearchResponse(responseJSON, token) {
   /** @type {import("../types/types").CustomTweetData[]} */
   const tweets = [];
 
@@ -17,7 +20,7 @@ function processSearchResponse(responseJSON) {
   while (directReplies.length > 0) {
     let reply_id = directReplies[0].id;
 
-    tweets.push(createCustomTweet(renderRichTweets(directReplies[0])));
+    tweets.push(createCustomTweet(await renderRichTweets(directReplies[0], token)));
 
     directReplies = getTweetArray(responseJSON).filter(
       (tweet) =>

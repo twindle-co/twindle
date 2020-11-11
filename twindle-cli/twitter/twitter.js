@@ -53,7 +53,7 @@ const getTweetsById = async (id, token) => {
       firstTweet = await getTweetById(id, token);
     } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
       const tweetIDs = await Scraping.getTweetIDs(id);
-      tweets = await getTweetsFromArray(tweetIDs, token);
+      const tweets = await getTweetsFromArray(tweetIDs, token);
       return tweets;
     } else throw validation.error;
   }
@@ -63,7 +63,7 @@ const getTweetsById = async (id, token) => {
     resp: transformedFirstTweet,
     tweet,
     user,
-  } = TweetEndpointTransformation.processTweetLookup(firstTweet.data);
+  } = await TweetEndpointTransformation.processTweetLookup(firstTweet.data, token);
 
   finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
 
@@ -74,8 +74,9 @@ const getTweetsById = async (id, token) => {
     token
   );
 
-  const transformedSecondTweets = SearchEndpointTransformation.processSearchResponse(
-    conversationTweetsData.data
+  const transformedSecondTweets = await SearchEndpointTransformation.processSearchResponse(
+    conversationTweetsData.data,
+    token
   );
 
   finalTweetsData = {
@@ -99,7 +100,7 @@ const getTweetsFromArray = async (ids, token) => {
   }
 
   // do processing
-  return TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data);
+  return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
 };
 
 module.exports = {
