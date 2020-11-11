@@ -41,7 +41,7 @@ async function main() {
     }-${
       (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
-    }-${appendToFilename}`;
+    }${ appendToFilename ? "-" +appendToFilename : ""}`;
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
     await Renderer.render(tweets, format, outputFilePath);
