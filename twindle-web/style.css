@@ -16,7 +16,8 @@ header {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px #dddddd;
 }
 
 header a {
@@ -83,6 +84,7 @@ main .page_heading .sub_heading {
 main .coming_soon {
   text-align: center;
   padding: 2rem 4rem;
+  width: 40%;
 }
 
 main .coming_soon img.function_image {
@@ -96,6 +98,7 @@ main .coming_soon p.coming_soon {
   margin-top: 0.5rem;
   padding: 3px;
   font-size: 14px;
+  width: 100%;
 }
 
 main .email_subs {
@@ -156,7 +159,7 @@ main .what_we_do p {
   align-items: center;
   padding-top: 100px;
   padding-bottom: 100px;
-  background: #2d00f7;
+  background: #222222;
 }
 
 #three_images {
@@ -217,7 +220,7 @@ main .what_we_do p {
   height: 236px;
 }
 footer {
-  background: #2d00f7;
+  background: #ab0202;
   color: white;
   display: flex;
   justify-content: center;
