@@ -47,6 +47,12 @@ const getCommandlineArgs = (processArgv) =>
         describe: "Should use Puppeteer or not",
         type: "boolean",
       },
+      a: {
+        alias: "appendName",
+        demandOption: false,
+        describe: "Adding additional name to the default output file name",
+        type: "string",
+      },
     }).argv;
 
 // Intends to do such things for one time for the user, like config creating, main outputdir creation
