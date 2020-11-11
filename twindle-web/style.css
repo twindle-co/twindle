@@ -169,20 +169,16 @@ main .what_we_do p {
   justify-content: center;
   height:200px;
 }
-
 .right{
   width:75px;
   height:75px;
   justify-self: right;
 }
-
 #left{
   width:75px;
   height:75px;
   transform:translateX(-100px);
- 
 }
-
 #text{
   color:white;
 }
@@ -192,7 +188,7 @@ main .what_we_do p {
 #text>h4{
   font-weight: 400;
 }
-#who_we_are{
+#about{
   background: #ffffff;
   color: #2D00F7;
   width:100%;
@@ -221,6 +217,154 @@ main .what_we_do p {
   width: 389px;
   height: 236px;
 }
+#team{
+  background: #2D00F7;
+  color: white;
+  width: 100%;
+  height: 700px;
+}
+#testimonials{
+  background: white;
+  color: #2D00F7;
+  width: 100%;
+  height: 590px;
+}
+.team_heading{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  text-transform:UPPERCASE;
+  margin-top: 46px;
+  margin-bottom: 102px;
+  position: relative;
+}
+.testimonial_heading{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  text-transform: UPPERCASE;
+  margin-top: 47px;
+  margin-bottom: 102px;
+  position: relative;
+}
+
+.col-center {
+	margin: 0 auto;
+	float: none !important;
+}
+.carousel {
+	padding: 0 70px;
+	background: rgba(0, 0, 0, 0.02);
+	
+}
+.carousel .carousel-item {
+	color: #2D00F7;
+	font-size: 14px;
+	text-align: center;
+	overflow: hidden;
+	min-height: 320px;
+}
+.carousel .carousel-item .img-circle {
+	width: 135px;
+	height: 135px;
+	margin: 0 auto;
+	padding: 10px;
+	border: 5px solid #2D00F7;
+	border-radius: 50%;
+}
+.carousel .img-circle img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial-details {
+	padding: 10px 0 10px;
+	width: 593px;
+}
+.carousel .client {	
+	font-style: italic;
+}
+.carousel .client b {
+	text-transform: uppercase;
+	color: black;
+}
+.carousel-control-prev, .carousel-control-next {
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	top: 50%;
+	background: none;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 68px;
+	line-height: 42px;
+	position: absolute;
+	display: inline-block;
+	color: rgba(45, 10, 247, 0.2);
+	text-shadow: 0 3px 3px #2D00f7, 0 0 0 #2D00F7;
+}
+}
+.carousel-indicators {
+	bottom: -40px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 12px;
+	height: 12px;
+	margin: 1px 3px;
+	border-radius: 50%;
+	border: none;
+}
+.carousel-indicators li {	
+	background: #693cff;
+	border-color: transparent;
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+.carousel-indicators li.active {	
+	background: #2D00F7;		
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+carousel {
+  position: relative;
+}
+
+.carousel.pointer-event {
+  touch-action: pan-y;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  @include clearfix();
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  @include transition($carousel-transition);
+}
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-item_next:not(.carousel-item-left),
+.active.carousel-item-right {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-right),
+.active.carousel-item-left {
+  transform: translateX(-100%);
+}
+
+
 footer {
   background: #03a9f4;
   color: white;

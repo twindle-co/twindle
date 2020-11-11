@@ -2,8 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Twindle | Create books out of your tweets</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
@@ -76,43 +81,100 @@
       </div>
     </section>
     
-    <!-- Who We Are Section -->
-    <section id='who_we_are'>
+    <!-- About -->
+    <section id='about'>
       <div class='text_area'>
         <h1>We're a strong open<br>
         source community</h1>
         <br>
-        <p>Pri id phaedrum tincidunt reformidans, qui ponderum
-        antiopam gloriatur ut. Amet appellantur et eum,
-        habeo debet eu mel. Et denique explicari quo. Ut vel
-        erant euripidis constituto, mel ne molestie recusabo
-        inciderint</p>
+        <p>This project was started to encourage people who
+           just started to learn programming and it took off
+            like a rocket. People from diverse backgrounds
+             engaged together like a football team to make
+              this possible.</p>
       </div>
       <div id='remote_design'>
         <img src='./images/image.png'/>
       </div>
     </section>
+	
+	<!-- Team -->
+    <section id='team' class='team text_center'>
+		<div class='container'>
+			<div class='team_heading'>contributors</div>
+		</div>
+	</section>
     
+	<!-- Testimonials -->
+	
+	<section id='testimonials'>
+	<div class="container-xl">
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+				<div class='testimonial_heading'>testimonials</div>
+				<div id="testimonial" class="carousel slide" data-ride="carousel">
+					 <div class="carousel-inner">
+						<div class="carousel-item active">
+							<p class="testimonial-details">Vestibulum quis quam ut magna consequat faucibus.
+								Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus.
+								Pellentesque viverra sagittis quam at mattis. Suspendisse potenti.
+								Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+							<div class="img-circle"><img src="images/testimage.jpg" alt=''></div>
+							<p class="client"><b>Titi</b>, Market Researcher</p>	
+						</div>			
+						<div class="carousel-item">  
+							<p class="testimonial-details">Vestibulum quis quam ut magna consequat faucibus.
+								Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus.
+								Pellentesque viverra sagittis quam at mattis. Suspendisse potenti.
+								Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+							<div class="img-circle"><img src="images/img1.jpg" alt=''></div>
+							<p class="client"><b>Sarah</b>, Business Analyst</p>
+						</div>
+						<div class="carousel-item">
+							<p class="testimonial-details">Vestibulum quis quam ut magna consequat faucibus.
+								Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus.
+								Pellentesque viverra sagittis quam at mattis. Suspendisse potenti.
+								Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+							<div class="img-circle"><img src="images/testimage.jpg" alt=''></div>
+							<p class="client"><b>Titi</b>, Web Developer</p>
+						</div>
+					   <ol class="carousel-indicators">
+							<li data-target="#testimonial" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial" data-slide-to="1"></li>
+							<li data-target="#testimonial" data-slide-to="2"></li>
+						 </ol>
+					</div>
+					<a class="carousel-control-prev" href="#testimonial" data-slide="prev">
+						<i class="fa fa-angle-left"></i>
+					</a>
+					<a class="carousel-control-next" href="#testimonial" data-slide="next">
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+						
+				
+
     <!-- Footer Section Code -->
     <footer>
       <nav>
         <ul>
           <li>
-            <a href="#"
-              ><img src="./images/twitter.svg" alt="Twitter Link"
-            /></a>
+            <a href="#"><img src="./images/twitter.svg" alt="Twitter Link"/></a>
           </li>
           <li>
             <a href="#"><img src="./images/github.svg" alt="GitHub Link" /></a>
           </li>
           <li>
-            <a href="#"
-              ><img src="./images/youtube.svg" alt="YouTube Link"
-            /></a>
+            <a href="#"><img src="./images/youtube.svg" alt="YouTube Link"/></a>
           </li>
         </ul>
         <p>&copy; Copyright TwindleCo 2020</p>
       </nav>
     </footer>
+	
   </body>
 </html>
