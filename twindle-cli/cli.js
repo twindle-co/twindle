@@ -28,12 +28,12 @@ const getCommandlineArgs = (processArgv) =>
         type: "string",
       },
       s: {
-        alias: "sendKindleEmail",
+        alias: "kindleEmail",
         demandOption: false,
         describe:
           "Send document to your kindle email. Optionally pass kindle email here if not configured in .env file",
         type: "string",
-        default: process.env.KINDLE_EMAIL
+        default: process.env.KINDLE_EMAIL,
       },
       m: {
         alias: "mock",
@@ -47,6 +47,12 @@ const getCommandlineArgs = (processArgv) =>
         describe: "Should use Puppeteer or not",
         type: "boolean",
       },
+      a: {
+        alias: "appendToFilename",
+        demandOption: false,
+        describe: "Append string to the filename",
+        type: "string"
+      }
     }).argv;
 
 // Intends to do such things for one time for the user, like config creating, main outputdir creation

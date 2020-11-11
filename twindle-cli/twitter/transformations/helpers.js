@@ -44,17 +44,30 @@ const getTweetObject = (responseJSON) => ({
  * @param {TwitterConversationData} tweet_object
  * @returns {import("../types/types").CustomTweetData}
  */
-const createCustomTweet = (tweet_object, user_object) => {
-  return {
+const createCustomTweet = (tweet_object) => {
+  /** @type {import("../types/types").CustomTweetData} */
+  const tweet = {
     id: tweet_object.id,
     created_at: formatTimestamp(tweet_object.created_at),
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {
       folder: "svg",
       ext: ".svg",
     }),
-    customMedia: tweet_object.customMedia,
-    linkWithImage: tweet_object.linkWithImage,
   };
+
+  if (tweet_object.customMedia) {
+    tweet.customMedia = tweet_object.customMedia;
+  }
+
+  if (tweet_object.linkWithImage) {
+    tweet.linkWithImage = tweet_object.linkWithImage;
+  }
+
+  if (tweet_object.embeddedTweet) {
+    tweet.embeddedTweet = tweet_object.embeddedTweet;
+  }
+
+  return tweet;
 };
 
 /**

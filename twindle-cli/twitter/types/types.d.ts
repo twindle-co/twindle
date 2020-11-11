@@ -22,13 +22,11 @@ export interface EntityUrl {
   title: string;
   description: string;
   unwound_url: string;
-  images?: [
-    {
-      url: string;
-      height: number;
-      width: string;
-    }
-  ];
+  images?: {
+    url: string;
+    height: number;
+    width: number;
+  }[];
 }
 
 export interface Attachments {
@@ -83,17 +81,22 @@ export interface ConversationResponseData {
     hashtags?: Hashtag[];
     urls?: EntityUrl[];
   };
-  referenced_tweets: [
-    {
-      type: "retweeted" | "quoted" | "replied_to";
-      id: string;
-    }
-  ];
+  referenced_tweets?: {
+    type: "retweeted" | "quoted" | "replied_to";
+    id: string;
+  }[];
   attachments?: Attachments;
   /** Not returned by twitter API. Added by the code */
   includes?: ConversationIncludes;
-  customMedia?: any;
-  linkWithImage?: any;
+
+  customMedia?: CustomMedia;
+
+  linkWithImage?: Partial<LinkWithImage>;
+
+  embeddedTweet?: ConversationResponseData;
+  embeddedTweetUser?: User;
+
+  embeddedTweetCardSize?: "small" | "large";
 }
 
 export interface IncludesMedia {
@@ -140,6 +143,9 @@ export interface LinkWithImage {
     width: number;
     height: number;
   }[];
+  title: string;
+  description: string;
+  domain: string;
 }
 
 export interface CustomTweetData {
@@ -147,7 +153,13 @@ export interface CustomTweetData {
   created_at: string;
   tweet: string;
   customMedia?: CustomMedia;
-  linkWithImage?: LinkWithImage;
+
+  linkWithImage?: Partial<LinkWithImage>;
+
+  embeddedTweet?: ConversationResponseData;
+  embeddedTweetUser?: User;
+
+  embeddedTweetCardSize?: "small" | "large";
 }
 
 export interface CustomTweets {
