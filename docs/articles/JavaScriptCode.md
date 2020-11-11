@@ -47,36 +47,35 @@ And now we are ready to understand the code:
 
     async function pushToDom() {
   
-    // ^ makes the function asynchronous 
+Makes the function asynchronous 
 
     let fdata = await fetch('https://raw.githubusercontent.com/UnevenCoder/twindle/main/twindle-web/team_details/data.json');
  
-    // ^ This is the raw data that the api sends , like it will be in all quotations
+This is the raw data that the api sends , like it will be in all quotations
 
     let data = await fdata.json();
   
-    // ^ Now converting raw data in json , that can be read and worked on by us easily [ await here because we 
-         first need the data to run this ]
+Now converting raw data in json , that can be read and worked on by us easily [ await here because we first need the data to run this ]
 
     let users = data.users;
   
-    //^From an api you receive tons of data so you are saying the thing you want [ will share an img later]
+From an api you receive tons of data so you are saying the thing you want
 
     let str = " "; 
   
-    //[empty string]
+Empty string
 
-    users.forEach(data => str += generateCard(data)) ;
+    users.forEach(data => str += generateCard(data));
       
-    //[ looping through each item of an array , generate card is a function that returns a card component in string format like 
+looping through each item of an array , generate card is a function that returns a card component in string format like 
   
     <h1>hi</h1>
     cards.innerHTML = str; 
   
-    //after str has all the cards we just add / inject it in DOM [ basically the website ]
-    } 
+after str has all the cards we just add / inject it in DOM [ basically the website ]
+   
+   } 
 
-    //[The End :) ]
  ---
 
 From here, we are getting **data.users**:
@@ -162,11 +161,11 @@ In *JavaScript*, we can create *objects* using brackets like
 
    `{ name: "Twindle" }`
    
-It is an *object*. Suppose you save this *object* into a *variable* me
+It is an *object*. Suppose we save this *object* into a *variable* me
 
    `const me = { name: "Twindle" }`
    
-Then you will be able to print this in the *console*
+Then, we will be able to print this in the *console*
 
    `console.log(me.name);`
    
@@ -174,11 +173,11 @@ Because there's an *object* called "me" and in the *object*, there is a *propert
 
    `{ name: "Twindle" }`
    
-Instead, if you already have something like this
+Instead, if we already have something like this
 
    `const name = "Twindle";`
    
-Then, you can use that *variable* to create an *object*
+Then, we can use that *variable* to create an *object*
 
 e.g. `const me = { name: name };`
 
@@ -195,8 +194,8 @@ In the above code, `name:name` looks odd. So, *JavaScript* made the syntax short
 
 e.g. `const me = { name };`
 
-This means find the existing "name" *variable*. And store that with the same *variable* name and the *variable* value
-Then you will be still able to do this
+This means find the existing "name" *variable*. And store that with the same *variable* name and the *variable* value. 
+Then, we will be still able to do this
 
       console.log(me.name);
 
