@@ -73,11 +73,11 @@ Initial code goes into twindle-cli
 ### 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
+- [11 Nov 2020 Wed Twindle Daily Call](https://www.youtube.com/watch?v=veb-mHuiJwA)
 - [Twindle git process high level recommendation](https://www.youtube.com/watch?v=OMmZJW-AHiE)
 - [09 Nov 2020 Mon Twindle Daily call](https://www.youtube.com/watch?v=QLYwgC0KY_w)
 - [Twitter module changes integration with refactored code structure](https://www.youtube.com/watch?v=I-gCFl1ZBPQ)
 - [Troubleshooting pupeteer issue](https://www.youtube.com/watch?v=6OYKmlTvJfg)
-- [Twindle Puppeteer Integration Discussion](https://www.youtube.com/watch?v=b4bGn29m1X4)
 <!-- YOUTUBE:END -->
 
 ➡️ [more videos...](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA/videos)
