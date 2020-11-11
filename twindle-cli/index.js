@@ -22,6 +22,7 @@ async function main() {
     kindleEmail,
     mock,
     shouldUsePuppeteer,
+    appendToFilename
   } = getCommandlineArgs(process.argv);
 
   try {
@@ -36,11 +37,11 @@ async function main() {
     }
 
     const intelligentOutputFileName = `${
-      (tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
+      (tweets && tweets.common && tweets.common.user && tweets.common.user.username).replace("@", "") || "twindle"
     }-${
       (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
-    }`;
+    }${ appendToFilename ? "-" +appendToFilename : ""}`;
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
     await Renderer.render(tweets, format, outputFilePath);

@@ -47,6 +47,12 @@ const getCommandlineArgs = (processArgv) =>
         describe: "Should use Puppeteer or not",
         type: "boolean",
       },
+      a: {
+        alias: "appendToFilename",
+        demandOption: false,
+        describe: "Append string to the filename",
+        type: "string"
+      }
     }).argv;
 
 // Intends to do such things for one time for the user, like config creating, main outputdir creation
