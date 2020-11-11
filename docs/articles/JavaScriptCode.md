@@ -1,6 +1,6 @@
-Here, I am writing some questions and try to give the answer( if you think you have better answer then, you are welcome!! ) regarding 
-**JavaScript** codes (thanks to **Kenny**, who encouraged me to do this), which beginners(like me) mostly face problems to understand and 
-will add new questions/answers in future and I highly suggest everyone to come forward and add your questions/answers. 
+Hello everyone :wave: here, I am writing some questions and try to give the answer( if you think you have better answer then, you are welcome!! ) regarding 
+**JavaScript** codes (thanks to **Kenny** :grinning:, who encouraged me to do this), which beginners(like me) mostly face problems to understand and 
+will add new questions/answers in future and I highly suggest everyone to come forward and add your questions/answers :love_you_gesture:. 
 
 ---
 
@@ -34,7 +34,7 @@ We are here to understand how the code in the last lines are working, which is i
     
 
 I asked about this code to **@UnevenCoder**. He hepled me in understanding the code by writing this code again with *comments* 
-to understand in a better way. Thank you **Ameen**.
+to understand in a better way. Thank you **Ameen** :grinning:.
 
 Firstly, we need to understand about **async** and **await** as both are used for **promise**:
 
@@ -182,7 +182,7 @@ Then, we can use that *variable* to create an *object*
 e.g. `const me = { name: name };`
 
 (Please pay special attention here, we have already created "name" *variable* and we are assigning that "name" *variable* as 
-value in the "name" *property* in the *object*.) Then, you will still be able to print this in the *console*, 
+value in the "name" *property* in the *object*.) Then, you will still be able to print this in the *console*, :golfing:
 
    `console.log(me.name);`
    
@@ -201,4 +201,4 @@ Then, we will be still able to do this
 
 We will get the same result. So, we have to write the same name as the *variable* or you need to create the *variable* name as needed in the *object*.
 
-Suggestions are welcome!!
+Suggestions are welcome :blush:!!
