@@ -7,12 +7,14 @@ const { formatTimestamp } = require("../utils/date");
 
 /**
  *
- * @param {any} responseJSON
+ * @param {TwitterConversationResponse} responseJSON
+ * @param {string} token
  */
-function processTweetLookup(responseJSON) {
-  let tweet = renderRichTweets(getTweetObject(responseJSON));
+async function processTweetLookup(responseJSON, token) {
+  let tweet = await renderRichTweets(getTweetObject(responseJSON), token);
   let user = getUserObject(responseJSON);
 
+  /** @type {CustomTweetsObject} */
   let resp = {
     data: [],
     common: {},
@@ -20,6 +22,8 @@ function processTweetLookup(responseJSON) {
 
   resp.common.created_at = formatTimestamp(tweet.created_at);
   resp.common.user = { ...user };
+
+  resp.common.user.username = `@${resp.common.user.username}`;
 
   resp = fixUserDescription(resp);
 
@@ -30,7 +34,7 @@ function processTweetLookup(responseJSON) {
   // await doTweetsSearch(tweet.conversation_id, user.username);
 
   resp.common.count = resp.data.length;
-  return [resp, tweet, user];
+  return { resp, tweet, user };
 }
 
 module.exports = {

@@ -1,4 +1,3 @@
-// Entry program
 require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
@@ -8,23 +7,25 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
-const { red } = require("kleur");
+const { red, cyan } = require("kleur");
+const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
+const spinner = require("./spinner");
 
 async function main() {
   prepareCli();
-
+  spinner.start();
   const {
     format,
     outputFilename,
     tweetId,
-    sendKindleEmail: kindleEmail,
+    kindleEmail,
     mock,
     shouldUsePuppeteer,
   } = getCommandlineArgs(process.argv);
 
   try {
-    // this next line is wrong
+    verifyEnvironmentVariables(kindleEmail);
     let tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
 
     if (!mock) {
@@ -35,41 +36,26 @@ async function main() {
     }
 
     const intelligentOutputFileName = `${
-      (tweets &&
-        tweets.common &&
-        tweets.common.user &&
-        tweets.common.user.username) ||
-      "twindle"
+      (tweets && tweets.common && tweets.common.user && tweets.common.user.username) || "twindle"
     }-${
-      (tweets &&
-        tweets.common &&
-        tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
     }`;
 
-    const outputFilePath = getOutputFilePath(
-      outputFilename || intelligentOutputFileName
-    );
+    const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
     await Renderer.render(tweets, format, outputFilePath);
 
     if (process.argv.includes("-s")) {
-      if (!kindleEmail)
-        throw new UserError(
-          "empty-kindle-email",
-          "Pass your kindle email address with -s or configure it in the .env file"
-        );
-
-      if (!isValidEmail(kindleEmail)) {
-        const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
-          ? "Enter a valid email address"
-          : "Kindle Email configured in .env file is invalid";
-
-        throw new UserError("invalid-email", errorMessage);
-      }
-
       console.devLog("sending to kindle", kindleEmail);
       await sendToKindle(kindleEmail, outputFilePath);
     }
+
+    const [fileName] = outputFilePath.split("/").reverse();
+
+    spinner.succeed(
+      "Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName)
+    );
+    //console.log("Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
   } catch (e) {
     if (process.env.DEV === "true") {
       console.error(e);
@@ -80,6 +66,37 @@ async function main() {
 
   // If not for this line, the script never finishes
   process.exit();
+}
+
+function verifyEnvironmentVariables(kindleEmail) {
+  if (!process.env.TWITTER_AUTH_TOKEN)
+    throw new UserError(
+      "bearer-token-not-provided",
+      "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"
+    );
+
+  if (process.argv.includes("-s")) {
+    if (!process.env.HOST || !process.env.EMAIL || !process.env.PASS)
+      throw new UserError(
+        "mail-server-config-error",
+        "Please setup the credentials for the mail server to send the email to Kindle"
+      );
+    if (!kindleEmail) {
+      spinner.fail("UserError");
+      throw new UserError(
+        "empty-kindle-email",
+        "Pass your kindle email address with -s or configure it in the .env file"
+      );
+    }
+
+    if (!isValidEmail(kindleEmail)) {
+      const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
+        ? "Enter a valid email address"
+        : "Kindle Email configured in .env file is invalid";
+      spinner.fail("UserError");
+      throw new UserError("invalid-email", errorMessage);
+    }
+  }
 }
 
 // Execute it

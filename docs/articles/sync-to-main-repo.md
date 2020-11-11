@@ -1,5 +1,3 @@
----
-
 Here, I am assuming that you have already connected your **GitHub** account with the **Visual Studio Code**.
 
     
@@ -28,6 +26,3 @@ Here, I am assuming that you have already connected your **GitHub** account with
      for some times. Now, your local repository is synced with main repo.
     
 ![Screen5](https://user-images.githubusercontent.com/72906055/96881590-0ec24b00-149c-11eb-95d5-6e6b8adb2b7a.png)
-
----
-
