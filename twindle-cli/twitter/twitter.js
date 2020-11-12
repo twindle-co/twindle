@@ -105,19 +105,26 @@ const getTweetsFromArray = async (ids, token) => {
   return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
 };
 
-const getTweetsFromUser = async( screenName, token) => {
+/**
+ * @param {string} screenName
+ * @param {string} token
+ */
+const getTweetsFromUser = async (screenName, token) => {
   let responseJSON = await getUserTweets(screenName, token);
-  
+
   if (responseJSON.status === "error") {
     throw new Error("something wrong");
-  }  
+  }
   // do processing
-  return await UserTimelineEndpointTransformation.processUserTweets(screenName, responseJSON.data, token);  
-
-}
+  return await UserTimelineEndpointTransformation.processUserTweets(
+    screenName,
+    responseJSON.data,
+    token
+  );
+};
 
 module.exports = {
   getTweetsById,
   getTweetsFromArray,
-  getTweetsFromUser
+  getTweetsFromUser,
 };

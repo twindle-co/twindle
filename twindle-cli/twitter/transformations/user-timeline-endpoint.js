@@ -5,7 +5,9 @@ const { renderRichTweets, fixUserDescription } = require("./rich-rendering");
 const { formatTimestamp } = require("../utils/date");
 
 /**
+ * @param {screenName} string
  * @param {TwitterConversationResponse} responseJSON
+ * @param {string} token
  */
 async function processUserTweets(screenName, responseJSON, token) {
   const tweets = (responseJSON.data || []).map((resData) => ({
@@ -13,8 +15,7 @@ async function processUserTweets(screenName, responseJSON, token) {
     includes: responseJSON.includes,
   }));
 
-  const userObject = responseJSON.includes.users
-                    .filter((user)=>user.username === screenName)[0];
+  const userObject = responseJSON.includes.users.filter((user) => user.username === screenName)[0];
 
   let user = userObject;
 
@@ -30,19 +31,21 @@ async function processUserTweets(screenName, responseJSON, token) {
   resp = fixUserDescription(resp);
 
   resp.common.user.profile_image_url = resp.common.user.profile_image_url.replace("_normal.", ".");
-
-
+  resp.common.user.username = "@" + resp.common.user.username;
 
   let conversations = [];
   for (let tweet of tweets) {
-    if(!conversations.includes(tweet.conversation_id))  {
+    if (!conversations.includes(tweet.conversation_id)) {
       conversations.push(tweet.conversation_id);
-      let threadTweets = tweets.filter((t)=>tweet.conversation_id === t.conversation_id);
-      for(i = threadTweets.length-1; i >= 0; i--) {
+
+      let threadTweets = tweets.filter((t) => tweet.conversation_id === t.conversation_id);
+
+      for (i = threadTweets.length - 1; i >= 0; i--) {
         resp.data.push(createCustomTweet(await renderRichTweets(threadTweets[i], token)));
       }
     }
   }
+  
   resp.common.count = resp.data.length;
   return resp;
 }
