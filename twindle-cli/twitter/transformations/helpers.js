@@ -2,20 +2,7 @@
 // this file can be split into multiple files within a helpers folder
 
 const twemoji = require("twemoji");
-const { matchAll } = require("../utils/string");
 const { formatTimestamp } = require("../utils/date");
-
-/**
- * Get tweet ID from URL `https://twitter.com/[USER]/status/[ID]` | Very flexible,
- * Will obtain IDs from `status/[ID]/photo/1` or `[ID]?s=20`
- * @param {string} tweet_url
- * @returns {string}
- */
-const extractTweetId = (tweet_url) =>
-  [
-    // @ts-ignore
-    ...matchAll(tweet_url, /https?:\/\/twitter.com\/[a-zA-Z_]{1,20}\/status\/([0-9]*)/g),
-  ][0][1];
 
 /** @param {string} tweet_url */
 const extractScreenName = (tweet_url) =>
@@ -79,7 +66,6 @@ function fixLineBreaks(tweet) {
 }
 
 module.exports = {
-  extractTweetId,
   extractScreenName,
   getTweetArray,
   getUserObject,

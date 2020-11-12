@@ -1,4 +1,5 @@
 //  options for the tweet endpoint
+const { differenceInDays } = require("date-fns");
 const { ValidationErrors, ApiErrors } = require("../error");
 
 /**
@@ -14,8 +15,7 @@ const tweetOlderThanSevenDays = (tweet) => {
   const currentTime = +new Date();
   const tweetCreatedAt = +new Date(tweet.created_at);
 
-  const differenceInDays = (currentTime - tweetCreatedAt) / (1000 * 3600 * 24);
-  return differenceInDays > 7;
+  return differenceInDays(tweetCreatedAt, currentTime) >= 7;
 };
 
 /** @param {TwitterConversationResponse} responseJSON */
