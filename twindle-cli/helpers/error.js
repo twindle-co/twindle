@@ -13,4 +13,4 @@ class UserError extends Error {
   }
 }
 
-export { UserError };
+module.exports = { UserError };

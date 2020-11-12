@@ -1,5 +1,5 @@
 // @ts-check
-import puppeteer from "puppeteer";
+const puppeteer = require("puppeteer");
 
 function footerMarkup() {
   return `
@@ -56,4 +56,4 @@ async function createPdf(outputPath, htmlContent) {
   }
 }
 
-export { createPdf };
+module.exports = { createPdf };

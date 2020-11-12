@@ -1,5 +1,5 @@
-import { renderTemplate } from "../render-template";
-import { createPdf } from "./create-pdf";
+const { renderTemplate } = require("../render-template");
+const { createPdf } = require("./create-pdf");
 
 // const mockData = require("../twitter/output/twitter-api-response.json");
 
@@ -29,4 +29,4 @@ async function createExample(outputPath) {
 }
 // ------------------------------
 
-export { generatePDF };
+module.exports = { generatePDF };

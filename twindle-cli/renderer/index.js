@@ -1,6 +1,6 @@
-import { generateEpub } from "./epub";
-import { generatePDF } from "./pdf";
-import spinner from "../spinner";
+const { generateEpub } = require("./epub");
+const { generatePDF } = require("./pdf");
+const spinner = require("../spinner");
 
 const render = async (tweets, format, outputFilePath) => {
   switch (format) {
@@ -14,4 +14,6 @@ const render = async (tweets, format, outputFilePath) => {
   }
 };
 
-export default { render };
+module.exports = {
+  render,
+};

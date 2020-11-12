@@ -1,5 +1,5 @@
-import yargs from "yargs";
-import { createLibraryIfNotExists } from "./utils/library";
+const yargs = require("yargs");
+const { createLibraryIfNotExists } = require("./utils/library");
 
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
@@ -51,13 +51,12 @@ const getCommandlineArgs = (processArgv) =>
         alias: "appendToFilename",
         demandOption: false,
         describe: "Append string to the filename",
-        type: "string",
+        type: "string"
       },
       u: {
         alias: "userId",
         demandOption: false,
-        describe:
-          "The Twitter ID of the user whose timeline of recent tweets you are trying to read",
+        describe: "The Twitter ID of the user whose timeline of recent tweets you are trying to read",
         type: "string",
       },
       n: {
@@ -65,7 +64,7 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "Used together with u option to specify the number of tweets to be read",
         type: "integer",
-        default: 10,
+        default: 10
       },
     }).argv;
 
@@ -75,4 +74,7 @@ function prepareCli() {
   createLibraryIfNotExists();
 }
 
-export { getCommandlineArgs, prepareCli };
+module.exports = {
+  getCommandlineArgs,
+  prepareCli,
+};
