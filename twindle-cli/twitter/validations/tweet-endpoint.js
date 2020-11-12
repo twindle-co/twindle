@@ -15,7 +15,7 @@ const tweetOlderThanSevenDays = (tweet) => {
   const currentTime = +new Date();
   const tweetCreatedAt = +new Date(tweet.created_at);
 
-  return differenceInDays(tweetCreatedAt, currentTime) > 7;
+  return differenceInDays(tweetCreatedAt, currentTime) >= 7;
 };
 
 /** @param {TwitterConversationResponse} responseJSON */
