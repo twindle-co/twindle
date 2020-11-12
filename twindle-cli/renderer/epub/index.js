@@ -1,5 +1,5 @@
-const { renderTemplate } = require("../render-template");
-const Epub = require("epub-gen");
+import { renderTemplate } from "../render-template";
+import Epub from "epub-gen";
 
 const createOptions = (title, author, html) => ({
   title,
@@ -26,4 +26,4 @@ async function generateEpub(tweets, outputPath) {
   }
 }
 
-module.exports = { generateEpub };
+export { generateEpub };

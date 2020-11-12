@@ -1,6 +1,6 @@
-const { fetch } = require("../helpers/fetch");
-const { getCommonFields } = require("../constants");
-const { ApiErrors } = require("../../error");
+import { fetch } from "../helpers/fetch";
+import { getCommonFields } from "../constants";
+import { ApiErrors } from "../../error";
 
 const BASE_ENDPOINT = "https://api.twitter.com/2/tweets?ids=";
 
@@ -18,6 +18,4 @@ const getTweetById = (id, token) => {
   return fetch(url, token);
 };
 
-module.exports = {
-  getTweetById,
-};
+export { getTweetById };

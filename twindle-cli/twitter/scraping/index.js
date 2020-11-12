@@ -1,5 +1,6 @@
-const puppeteer = require("puppeteer");
-const { waitFor } = require("../../utils/helpers");
+// @ts-check
+import puppeteer from "puppeteer";
+import { waitFor } from "../../utils/helpers";
 
 /**
  * Get tweets(even older than 7 days) using puppeteer
@@ -41,6 +42,7 @@ const getTweetIDs = async (tweetID) => {
     const waitFor = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     // Find the first Show thread button and click it
+    // @ts-ignore
     const showRepliesButton = [...document.querySelectorAll('div[dir="auto"]')]
       .filter((node) => node.children[0] && node.children[0].tagName === "SPAN")
       .find((node) => node.children[0].innerHTML === "Show replies");
@@ -59,6 +61,7 @@ const getTweetIDs = async (tweetID) => {
 
       if (timeContainerAnchor.tagName === "SPAN") continue;
 
+      // @ts-ignore
       const id = timeContainerAnchor.href.split("/").reverse()[0];
 
       ids.push(id);
@@ -72,4 +75,4 @@ const getTweetIDs = async (tweetID) => {
   return [tweetID, ...tweetIDs];
 };
 
-module.exports = { getTweetIDs };
+export { getTweetIDs as getTweetIDsScraping };

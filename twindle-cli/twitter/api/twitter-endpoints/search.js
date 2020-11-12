@@ -1,6 +1,6 @@
-const { fetch } = require("../helpers/fetch");
-const { getCommonFields, MAX_RESULTS } = require("../constants");
-const { ApiErrors } = require("../../error");
+import { fetch } from "../helpers/fetch";
+import { getCommonFields, MAX_RESULTS } from "../constants";
+import { ApiErrors } from "../../error";
 
 const BASE_ENDPOINT =
   "https://api.twitter.com/2/tweets/search/recent?query=conversation_id:<conversation_id>+from:<screen_name>";
@@ -30,6 +30,4 @@ const getConversationById = (id, screenName, token) => {
   return fetch(url, token);
 };
 
-module.exports = {
-  getConversationById,
-};
+export { getConversationById };

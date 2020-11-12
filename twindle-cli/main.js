@@ -1,16 +1,16 @@
-require("./helpers/logger");
-require("dotenv").config();
-const { getCommandlineArgs, prepareCli } = require("./cli");
-const Renderer = require("./renderer");
-const { getTweetsById, getTweetsFromArray, getTweetsFromUser } = require("./twitter");
-const { getOutputFilePath } = require("./utils/path");
-const { sendToKindle } = require("./utils/send-to-kindle");
-const { getTweetIDs } = require("./twitter/scraping");
-const { UserError } = require("./helpers/error");
-const { red, cyan } = require("kleur");
-const { formatLogColors } = require("./utils/helpers");
-const { isValidEmail } = require("./utils/helpers");
-const spinner = require("./spinner");
+import "./helpers/logger";
+import "dotenv/config";
+import { getCommandlineArgs, prepareCli } from "./cli";
+import Renderer from "./renderer";
+import { getTweetsById, getTweetsFromArray, getTweetsFromUser } from "./twitter";
+import { getOutputFilePath } from "./utils/path";
+import { sendToKindle } from "./utils/send-to-kindle";
+import { getTweetIDsScraping } from "./twitter/scraping";
+import { UserError } from "./helpers/error";
+import { red, cyan } from "kleur";
+import { formatLogColors } from "./utils/helpers";
+import { isValidEmail } from "./utils/helpers";
+import spinner from "./spinner";
 
 async function main() {
   prepareCli();
@@ -29,12 +29,14 @@ async function main() {
 
   try {
     verifyEnvironmentVariables(kindleEmail);
+
+    /** @type {CustomTweetsObject} */
     let tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
 
     if (!mock) {
       if (!userId) {
         if (shouldUsePuppeteer) {
-          const tweetIDs = await getTweetIDs(tweetId);
+          const tweetIDs = await getTweetIDsScraping(tweetId);
           tweets = await getTweetsFromArray(tweetIDs, process.env.TWITTER_AUTH_TOKEN);
         } else tweets = await getTweetsById(tweetId, process.env.TWITTER_AUTH_TOKEN);
       } else {

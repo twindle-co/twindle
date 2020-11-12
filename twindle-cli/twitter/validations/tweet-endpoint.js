@@ -1,6 +1,6 @@
 //  options for the tweet endpoint
-const { differenceInDays } = require("date-fns");
-const { ValidationErrors, ApiErrors } = require("../error");
+import { differenceInDays } from "date-fns";
+import { ValidationErrors, ApiErrors } from "../error";
 
 /**
  *
@@ -66,6 +66,4 @@ function processResponse(response) {
   };
 }
 
-module.exports = {
-  processResponse,
-};
+export default { processResponse };

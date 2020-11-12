@@ -1,6 +1,6 @@
 // @ts-check
-const nodeFetch = require("node-fetch").default;
-const { ApiErrors } = require("../../error");
+import nodeFetch from "node-fetch";
+import { ApiErrors } from "../../error";
 
 /**
  * @param {string} url Twitter endpoint to send request to
@@ -17,7 +17,8 @@ const fetch = async (url, token) => {
 
   if (response.status === 401 || response.status === 403) throw new ApiErrors.InvalidTokenError();
   if (response.status === 400) throw new ApiErrors.BadTwitterRequestError();
-  if (response.status === 429 || response.status === 500 || response.status === 503) throw new ApiErrors.TwitterServiceError();
+  if (response.status === 429 || response.status === 500 || response.status === 503)
+    throw new ApiErrors.TwitterServiceError();
 
   // REVIEW WANTED: What should we do when its not 200? This below is just a workaround for now
   if (response.status !== 200) throw new ApiErrors.NetworkRequestError();
@@ -31,6 +32,4 @@ const fetch = async (url, token) => {
   };
 };
 
-module.exports = {
-  fetch,
-};
+export { fetch };
