@@ -16,4 +16,10 @@ describe("api module", () => {
       ApiErrors.TokenNotProvidedError
     );
   });
+
+  it("#getConversationByID() should throw error if screen name not provided", () => {
+    expect(() => getConversationById("1324263512621883393", undefined, "API Key")).toThrow(
+      ApiErrors.UserScreenNameInvalid
+    );
+  });
 });

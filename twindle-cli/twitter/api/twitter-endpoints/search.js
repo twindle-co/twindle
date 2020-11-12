@@ -26,6 +26,11 @@ const getUrl = (conversation_id, screen_name) => {
 const getConversationById = (id, screenName, token) => {
   if (!id) throw new ApiErrors.TweetIDNotProvidedError();
 
+  if (!screenName) throw new ApiErrors.UserScreenNameInvalid();
+
+  // Remove @ in case mutated
+  screenName = screenName.replace("@", "");
+
   const url = getUrl(id, screenName);
   return fetch(url, token);
 };
