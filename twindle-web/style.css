@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +8,9 @@
 
 html,
 body {
-  background: white;
+  background: #FFFCF7;
   font-family: "Mulish", sans-serif;
+  scroll-behavior: smooth;
 }
 
 header {
