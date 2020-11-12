@@ -4,7 +4,7 @@ const { tmpdir } = require("os");
 
 /**
  * Renders the html template with the given data and returns the html string
- * @param {{common: any; thread: any[]}} data
+ * @param {CustomTweetsObject} data
  * @param {string} templateName
  */
 async function renderTemplate(data, templateName) {
