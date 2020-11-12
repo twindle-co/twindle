@@ -9,8 +9,10 @@ const TweetEndpointValidation = require("./validations/tweet-endpoint");
 const TweetEndpointTransformation = require("./transformations/tweet-endpoint");
 const TweetArrayEndpointTransformation = require("./transformations/tweets-array-endpoint");
 const SearchEndpointTransformation = require("./transformations/search-endpoint");
+const UserTimelineEndpointTransformation = require("./transformations/user-timeline-endpoint");
 
 const { ValidationErrors } = require("./error");
+const { getUserTweets } = require("./api/twitter-endpoints/user_timeline");
 
 /** @param {TwitterConversationResponse} response */
 const getConversationId = (response) => response.data[0].conversation_id;
@@ -103,7 +105,19 @@ const getTweetsFromArray = async (ids, token) => {
   return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
 };
 
+const getTweetsFromUser = async( screenName, token) => {
+  let responseJSON = await getUserTweets(screenName, token);
+  
+  if (responseJSON.status === "error") {
+    throw new Error("something wrong");
+  }  
+  // do processing
+  return await UserTimelineEndpointTransformation.processUserTweets(screenName, responseJSON.data, token);  
+
+}
+
 module.exports = {
   getTweetsById,
   getTweetsFromArray,
+  getTweetsFromUser
 };
