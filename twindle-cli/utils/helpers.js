@@ -19,4 +19,4 @@ const formatLogColors = {
   pdf: kleur.red,
 };
 
-module.exports = { waitFor, isValidEmail, formatLogColors };
+export { waitFor, isValidEmail, formatLogColors };

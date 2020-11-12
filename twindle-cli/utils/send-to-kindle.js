@@ -1,7 +1,6 @@
-const fs = require("fs");
-const { sendMail } = require("./send-email");
-const { getFilenameFromPath } = require("../utils/path");
-const { blue, red } = require("kleur");
+import { sendMail } from "./send-email";
+import { getFilenameFromPath } from "../utils/path";
+import { blue, red } from "kleur";
 
 async function sendToKindle(kindleEmail, filePath) {
   const filename = getFilenameFromPath(filePath);
@@ -20,4 +19,4 @@ async function sendToKindle(kindleEmail, filePath) {
   );
 }
 
-module.exports = { sendToKindle };
+export { sendToKindle };

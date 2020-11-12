@@ -1,18 +1,18 @@
 // @ts-check
-const { getConversationById, getTweetById } = require("./api");
+import { getConversationById, getTweetById } from "./api";
 
-const Scraping = require("./scraping");
+import { getTweetIDsScraping } from "./scraping";
 
 // const { firstTweet, finalProcessedTweet } = require("./test/data");
-const TweetEndpointValidation = require("./validations/tweet-endpoint");
+import TweetEndpointValidation from "./validations/tweet-endpoint";
 
-const TweetEndpointTransformation = require("./transformations/tweet-endpoint");
-const TweetArrayEndpointTransformation = require("./transformations/tweets-array-endpoint");
-const SearchEndpointTransformation = require("./transformations/search-endpoint");
-const UserTimelineEndpointTransformation = require("./transformations/user-timeline-endpoint");
+import { processTweetLookup } from "./transformations/tweet-endpoint";
+import { processTweetsArray } from "./transformations/tweets-array-endpoint";
+import { processSearchResponse } from "./transformations/search-endpoint";
+import { processUserTweets } from "./transformations/user-timeline-endpoint";
 
-const { ValidationErrors } = require("./error");
-const { getUserTweets } = require("./api/twitter-endpoints/user_timeline");
+import { ValidationErrors } from "./error";
+import { getUserTweets } from "./api/twitter-endpoints/user_timeline";
 
 /** @param {TwitterConversationResponse} response */
 const getConversationId = (response) => response.data[0].conversation_id;
@@ -54,18 +54,17 @@ const getTweetsById = async (id, token) => {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
     } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
-      const tweetIDs = await Scraping.getTweetIDs(id);
+      const tweetIDs = await getTweetIDsScraping(id);
       const tweets = await getTweetsFromArray(tweetIDs, token);
       return tweets;
     } else throw validation.error;
   }
 
   // do processing
-  const {
-    resp: transformedFirstTweet,
-    tweet,
-    user,
-  } = await TweetEndpointTransformation.processTweetLookup(firstTweet.data, token);
+  const { resp: transformedFirstTweet, tweet, user } = await processTweetLookup(
+    firstTweet.data,
+    token
+  );
 
   finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
 
@@ -76,10 +75,7 @@ const getTweetsById = async (id, token) => {
     token
   );
 
-  const transformedSecondTweets = await SearchEndpointTransformation.processSearchResponse(
-    conversationTweetsData.data,
-    token
-  );
+  const transformedSecondTweets = await processSearchResponse(conversationTweetsData.data, token);
 
   finalTweetsData = {
     ...finalTweetsData,
@@ -102,22 +98,17 @@ const getTweetsFromArray = async (ids, token) => {
   }
 
   // do processing
-  return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
+  return await processTweetsArray(responseJSON.data, token);
 };
 
-const getTweetsFromUser = async( screenName, token) => {
+const getTweetsFromUser = async (screenName, token) => {
   let responseJSON = await getUserTweets(screenName, token);
-  
+
   if (responseJSON.status === "error") {
     throw new Error("something wrong");
-  }  
+  }
   // do processing
-  return await UserTimelineEndpointTransformation.processUserTweets(screenName, responseJSON.data, token);  
-
-}
-
-module.exports = {
-  getTweetsById,
-  getTweetsFromArray,
-  getTweetsFromUser
+  return await processUserTweets(screenName, responseJSON.data, token);
 };
+
+export { getTweetsById, getTweetsFromArray, getTweetsFromUser };

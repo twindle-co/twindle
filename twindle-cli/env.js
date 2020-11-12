@@ -1,5 +1,5 @@
 //  possibly include env related errors in a single location here
-const { UserError } = require("../../helpers/error");
+import { UserError } from "../../helpers/error";
 
 const twitterAuthToken = process.env.TWITTER_AUTH_TOKEN;
 
@@ -10,4 +10,4 @@ if (!twitterAuthToken)
   );
 
 const BEARER_TOKEN = "Bearer " + twitterAuthToken;
-module.exports = { BEARER_TOKEN };
+export { BEARER_TOKEN };
