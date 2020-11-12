@@ -1,8 +1,5 @@
 {
   "typeAcquisition": {
     "include": ["jest"]
-  },
-  "compilerOptions": {
-    "resolveJsonModule": true
   }
 }

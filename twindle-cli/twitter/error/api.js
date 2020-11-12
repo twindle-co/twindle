@@ -1,4 +1,4 @@
-import TwitterError from "./base";
+const { TwitterError } = require("./base");
 
 class NetworkRequestError extends TwitterError {
   constructor() {
@@ -51,7 +51,7 @@ class TweetDoesNotExist extends TwitterError {
   }
 }
 
-export default {
+module.exports = {
   NetworkRequestError,
   TokenNotProvidedError,
   TweetIDNotProvidedError,

@@ -1,2 +1,2 @@
-import { getTweetsById, getTweetsFromArray, getTweetsFromUser } from "./twitter";
-export { getTweetsById, getTweetsFromUser, getTweetsFromArray };
+const twitter = require("./twitter");
+module.exports = twitter;

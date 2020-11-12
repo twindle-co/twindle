@@ -1,5 +1,5 @@
-import { sep } from "path";
-import { getLibraryPath } from "./library";
+const path = require("path");
+const { getLibraryPath } = require("./library");
 
 const getOutputFilePath = (outputFilename, outputFormat) => {
   const n = outputFilename.split(".");
@@ -11,6 +11,6 @@ const getOutputFilePath = (outputFilename, outputFormat) => {
   return outputFilePath;
 };
 
-const getFilenameFromPath = (filename) => filename.split(sep).reverse()[0];
+const getFilenameFromPath = (filename) => filename.split(path.sep).reverse()[0];
 
-export { getFilenameFromPath, getOutputFilePath };
+module.exports = { getFilenameFromPath, getOutputFilePath };

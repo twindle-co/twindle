@@ -1,5 +1,5 @@
-import { createTransport } from "nodemailer";
-import { UserError } from "./../helpers/error";
+const nodemailer = require("nodemailer");
+const {UserError} = require("./../helpers/error");
 
 const emailConfig = {
   host: process.env.HOST,
@@ -14,7 +14,7 @@ const emailConfig = {
 async function sendMail({ subject, emailTo, attachments }) {
   try {
     // create reusable transporter object using the default SMTP transport
-    const transporter = createTransport(emailConfig);
+    const transporter = nodemailer.createTransport(emailConfig);
 
     // send mail with defined transport object
     const info = await transporter.sendMail({
@@ -32,12 +32,12 @@ async function sendMail({ subject, emailTo, attachments }) {
       ],
     });
     console.devLog("Email sent: %s", info.messageId);
-  } catch (e) {
+  } catch(e) {
     throw new UserError(
       "sending-email-error",
       "Sending Email failed. Please check Mail server credentials"
-    );
+    )
   }
 }
 
-export { sendMail };
+module.exports = { sendMail };

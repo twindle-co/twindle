@@ -1,4 +1,4 @@
-import { UserError } from "../../helpers/error";
+const { UserError } = require("../../helpers/error");
 
 class TwitterError extends UserError {
   constructor(name, message) {
@@ -6,4 +6,6 @@ class TwitterError extends UserError {
   }
 }
 
-export default TwitterError;
+module.exports = {
+  TwitterError,
+};

@@ -1,4 +1,4 @@
-import TwitterError from "./base";
+const { TwitterError } = require("./base");
 
 class TweetDeletedError extends TwitterError {
   constructor() {
@@ -18,4 +18,8 @@ class TweetNotFirstOfThreadError extends TwitterError {
   }
 }
 
-export default { TweetDeletedError, TweetOlderThan7DaysError, TweetNotFirstOfThreadError };
+module.exports = {
+  TweetDeletedError,
+  TweetOlderThan7DaysError,
+  TweetNotFirstOfThreadError,
+};

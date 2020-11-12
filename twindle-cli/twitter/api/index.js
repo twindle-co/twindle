@@ -1,4 +1,7 @@
-import { getTweetById } from "./twitter-endpoints/tweets";
-import { getConversationById } from "./twitter-endpoints/search";
+const { getTweetById } = require("./twitter-endpoints/tweets");
+const { getConversationById } = require("./twitter-endpoints/search");
 
-export { getTweetById, getConversationById };
+module.exports = {
+  getTweetById,
+  getConversationById,
+};

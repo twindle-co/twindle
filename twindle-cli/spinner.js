@@ -1,5 +1,5 @@
-import ora from "ora";
+const ora = require("ora");
 
 const spinner = ora({ text: "Loading    ", color: "green", spinner: 'dots' });
 
-export default spinner;
+module.exports = spinner;

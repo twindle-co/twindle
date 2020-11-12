@@ -1,4 +1,7 @@
-import ApiErrors from "./api";
-import ValidationErrors from "./validation";
+const ApiErrors = require("./api");
+const ValidationErrors = require("./validation");
 
-export { ApiErrors, ValidationErrors };
+module.exports = {
+  ApiErrors,
+  ValidationErrors,
+};

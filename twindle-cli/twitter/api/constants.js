@@ -14,4 +14,7 @@ const MAX_RESULTS = "&max_results=100";
 const getCommonFields = () =>
   `${TWEET_FIELDS}${EXPANSIONS}${USER_FIELDS}${MEDIA_FIELDS}${PLACE_FIELDS}${POLL_FIELDS}`;
 
-export { getCommonFields, MAX_RESULTS };
+module.exports = {
+  getCommonFields,
+  MAX_RESULTS,
+};
