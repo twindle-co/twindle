@@ -14,6 +14,10 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
   css,
 });
 
+/**
+ * @param {CustomTweetsObject} tweets
+ * @param {string} outputPath
+ */
 async function generateEpub(tweets, outputPath) {
   const css = await readFile(__dirname + "/../templates/Epub.css");
   const threadContent = await renderTemplate({ thread: tweets.data }, "Tweets");
@@ -22,6 +26,8 @@ async function generateEpub(tweets, outputPath) {
     "Toc",
     "Toc"
   );
+
+  console.log(threadContent);
 
   const options = createOptions({
     title: tweets.common.user.name + "'s Thread",
