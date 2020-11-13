@@ -1,22 +1,41 @@
-const { renderTemplate } = require("../render-template");
+const { renderTemplate, renderTemplateTemp } = require("../render-template");
+const { readFile } = require("fs").promises;
 const Epub = require("epub-gen");
 
-const createOptions = (title, author, html) => ({
+const createOptions = ({ title, author, html, tocPath, css }) => ({
   title,
   author,
-  content: [
-    {
-      data: html,
-    },
-  ],
+  content: [{ title: title, data: html }],
+  appendChapterTitles: false,
+  verbose: false,
+  tocTitle: "Contents",
+  publisher: "Twindle",
+  customHtmlTocTemplatePath: tocPath,
+  css,
 });
 
+/**
+ * @param {CustomTweetsObject} tweets
+ * @param {string} outputPath
+ */
 async function generateEpub(tweets, outputPath) {
-  const htmlContent = await renderTemplate(
-    { thread: tweets.data, common: tweets.common },
-    "Thread-epub"
+  const css = await readFile(__dirname + "/../templates/Epub.css");
+  const threadContent = await renderTemplate({ thread: tweets.data }, "Tweets");
+  const { tempPath: tocTempPath } = await renderTemplateTemp(
+    { common: tweets.common },
+    "Toc",
+    "Toc"
   );
-  const options = createOptions(tweets.common.user.name, tweets.common.user.name, htmlContent);
+
+  console.log(threadContent);
+
+  const options = createOptions({
+    title: tweets.common.user.name + "'s Thread",
+    author: tweets.common.user.name,
+    html: threadContent,
+    css,
+    tocPath: tocTempPath,
+  });
 
   try {
     const book = new Epub(options, outputPath).promise;
