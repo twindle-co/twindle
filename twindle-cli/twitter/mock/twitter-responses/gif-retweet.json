@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "created_at": "2020-11-10T06:27:59.000Z",
+      "source": "Twitter Web App",
+      "id": "1326048944078516226",
+      "author_id": "3436392039",
+      "lang": "en",
+      "text": "Random tweet\n\nhttps://t.co/EF9oK3WrKW\n\nhttps://t.co/4qmTT1NaY9",
+      "entities": {
+        "urls": [
+          {
+            "start": 14,
+            "end": 37,
+            "url": "https://t.co/EF9oK3WrKW",
+            "expanded_url": "https://twitter.com/puruvjdev/status/1325362881961975808?s=20",
+            "display_url": "twitter.com/puruvjdev/stat…"
+          },
+          {
+            "start": 39,
+            "end": 62,
+            "url": "https://t.co/4qmTT1NaY9",
+            "expanded_url": "https://twitter.com/puruvjdev/status/1324638941983567872?s=20",
+            "display_url": "twitter.com/puruvjdev/stat…"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0
+      },
+      "referenced_tweets": [
+        {
+          "type": "quoted",
+          "id": "1324638941983567872"
+        }
+      ],
+      "conversation_id": "1326048944078516226"
+    }
+  ],
+  "includes": {
+    "users": [
+      {
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1316284643675578369/Ym8iAim8_normal.jpg",
+        "username": "puruvjdev",
+        "public_metrics": {
+          "followers_count": 300,
+          "following_count": 405,
+          "tweet_count": 3642,
+          "listed_count": 5
+        },
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/gdeY0K6smm",
+                "expanded_url": "https://puruvj.dev",
+                "display_url": "puruvj.dev"
+              }
+            ]
+          }
+        },
+        "url": "https://t.co/gdeY0K6smm",
+        "protected": false,
+        "location": "Hogwarts, Narnia, Middle Earth",
+        "pinned_tweet_id": "1308682456434868225",
+        "created_at": "2015-08-23T07:46:19.000Z",
+        "description": "18. Web dev for 5 years. Loves orchestral music.\nLove Star Wars, Avengers, Harry Potter.\n\nHe/Him\n\nWhat's the deal with this \uD83D\uDC46 cat? \uD83E\uDD14",
+        "name": "{/* puruvj.dev */}",
+        "id": "3436392039"
+      }
+    ]
+  }
+}

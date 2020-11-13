@@ -1,0 +1,76 @@
+{
+  "common": {
+    "created_at": "Nov 5, 2020",
+    "count": 5,
+    "user": {
+      "verified": false,
+      "created_at": "2017-06-16T18:04:54.000Z",
+      "id": "875776212341329920",
+      "pinned_tweet_id": "1322801496531099650",
+      "public_metrics": {
+        "followers_count": 20641,
+        "following_count": 237,
+        "tweet_count": 5310,
+        "listed_count": 157
+      },
+      "protected": false,
+      "description": "Software Engineer ‧ Business Owner ‧ Starter.\nYouTube → https://t.co/ZZrisWRYHe \n\n🔥 Freedom and independence",
+      "location": "Newsletter →",
+      "name": "Simon Høiberg",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "start": 0,
+              "end": 23,
+              "url": "https://t.co/qO9TnGwEPM",
+              "expanded_url": "https://simonhoiberg.com/newsletter",
+              "display_url": "simonhoiberg.com/newsletter"
+            }
+          ]
+        },
+        "description": {
+          "urls": [
+            {
+              "start": 56,
+              "end": 79,
+              "url": "https://t.co/ZZrisWRYHe",
+              "expanded_url": "http://youtube.com/SimonHoiberg",
+              "display_url": "youtube.com/SimonHoiberg"
+            }
+          ]
+        }
+      },
+      "profile_image_url": "https://pbs.twimg.com/profile_images/1314813880607166464/rZdd-ubL.jpg",
+      "url": "https://t.co/qO9TnGwEPM",
+      "username": "SimonHoiberg"
+    }
+  },
+  "data": [
+    {
+      "id": "1324263512621883393",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "JavaScript <img class=\"emoji\" draggable=\"false\" alt=\"💡\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f4a1.svg\"/><br /><br />Let's take a look at the Promise API.<br />4 methods explained with examples below.<br /><br /><img class=\"emoji\" draggable=\"false\" alt=\"🧵\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f9f5.svg\"/><img class=\"emoji\" draggable=\"false\" alt=\"👇\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f447.svg\"/> https://t.co/vtjTcpbmqd"
+    },
+    {
+      "id": "1324263516589690880",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.all()<br /><br />The Promise.all() method takes an array of promises as an argument and returns a single Promise that resolves to an array of the results of the input promises. https://t.co/LT7bDlmLJp"
+    },
+    {
+      "id": "1324263520398155778",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.allSettled()<br /><br />The Promise.allSettled() method returns a promise that resolves after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise. https://t.co/4JhJbRWwcr"
+    },
+    {
+      "id": "1324263524206600197",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.any()<br /><br />The Promise.any() method takes an array of promises as an argument and, as soon as one of the promises fulfills, returns a single promise that resolves with the value from that promise. https://t.co/yzrOiAUgaM"
+    },
+    {
+      "id": "1324263528874860544",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.race()<br /><br />The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an array fulfills or rejects, with the value or reason from that promise. https://t.co/Z9rl80aPlY"
+    }
+  ]
+}
