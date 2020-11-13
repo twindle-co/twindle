@@ -7,7 +7,6 @@
 
 html,
 body {
-
     background: #FFFCF7;
     font-family: "Mulish", sans-serif;
     scroll-behavior: smooth;
@@ -20,7 +19,6 @@ header {
     align-content: center;
     margin-top: 20px;
 }
-
 
 header a {
     font-family: Mulish;
@@ -124,7 +122,6 @@ main .email_subs .email_input:hover {
 }
 
 main .email_subs .sign_up_btn {
-
     font-size: 15px;
     background: #0984e3;
     width: 99px;
@@ -229,7 +226,6 @@ main .what_we_do p {
 }
 
 footer {
-
     background: transparent;
     color: black;
     display: flex;
@@ -255,3 +251,6 @@ footer nav p {
     position: relative;
     top: 1rem;
 }
+
+
+/*# sourceMappingURL=style.css.map */

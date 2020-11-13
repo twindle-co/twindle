@@ -19,3 +19,7 @@ declare namespace NodeJS {
     DEV?: "true" | "false";
   }
 }
+interface Console {
+  /** Logs only when env var DEV === "true" */
+  devLog: (...data: any[]) => void;
+}

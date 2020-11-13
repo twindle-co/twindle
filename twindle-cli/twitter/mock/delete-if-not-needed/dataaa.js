@@ -83,8 +83,7 @@ const tweetLookupApiProcessed = {
       name: "Kenny Jacob ⚡",
       protected: false,
       url: "https://t.co/SUkzxmt7Gx",
-      profile_image_url:
-        "https://pbs.twimg.com/profile_images/1115624775290839040/9TlEqVgi.jpg",
+      profile_image_url: "https://pbs.twimg.com/profile_images/1115624775290839040/9TlEqVgi.jpg",
       entities: {
         url: {
           urls: [

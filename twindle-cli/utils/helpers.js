@@ -13,4 +13,10 @@ function isValidEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-module.exports = { waitFor, isValidEmail };
+const kleur = require("kleur");
+const formatLogColors = {
+  epub: kleur.green,
+  pdf: kleur.red,
+};
+
+module.exports = { waitFor, isValidEmail, formatLogColors };

@@ -9,8 +9,10 @@ const TweetEndpointValidation = require("./validations/tweet-endpoint");
 const TweetEndpointTransformation = require("./transformations/tweet-endpoint");
 const TweetArrayEndpointTransformation = require("./transformations/tweets-array-endpoint");
 const SearchEndpointTransformation = require("./transformations/search-endpoint");
+const UserTimelineEndpointTransformation = require("./transformations/user-timeline-endpoint");
 
 const { ValidationErrors } = require("./error");
+const { getUserTweets } = require("./api/twitter-endpoints/user_timeline");
 
 /** @param {TwitterConversationResponse} response */
 const getConversationId = (response) => response.data[0].conversation_id;
@@ -52,9 +54,8 @@ const getTweetsById = async (id, token) => {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
     } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
-
       const tweetIDs = await Scraping.getTweetIDs(id);
-      tweets = await getTweetsFromArray(tweetIDs, token);
+      const tweets = await getTweetsFromArray(tweetIDs, token);
       return tweets;
     } else throw validation.error;
   }
@@ -64,7 +65,7 @@ const getTweetsById = async (id, token) => {
     resp: transformedFirstTweet,
     tweet,
     user,
-  } = TweetEndpointTransformation.processTweetLookup(firstTweet.data);
+  } = await TweetEndpointTransformation.processTweetLookup(firstTweet.data, token);
 
   finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
 
@@ -75,8 +76,9 @@ const getTweetsById = async (id, token) => {
     token
   );
 
-  const transformedSecondTweets = SearchEndpointTransformation.processSearchResponse(
-    conversationTweetsData.data
+  const transformedSecondTweets = await SearchEndpointTransformation.processSearchResponse(
+    conversationTweetsData.data,
+    token
   );
 
   finalTweetsData = {
@@ -100,10 +102,22 @@ const getTweetsFromArray = async (ids, token) => {
   }
 
   // do processing
-  return TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data);
+  return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
 };
+
+const getTweetsFromUser = async( screenName, token) => {
+  let responseJSON = await getUserTweets(screenName, token);
+  
+  if (responseJSON.status === "error") {
+    throw new Error("something wrong");
+  }  
+  // do processing
+  return await UserTimelineEndpointTransformation.processUserTweets(screenName, responseJSON.data, token);  
+
+}
 
 module.exports = {
   getTweetsById,
   getTweetsFromArray,
+  getTweetsFromUser
 };

@@ -1,12 +1,13 @@
 const path = require("path");
 const { getLibraryPath } = require("./library");
 
-const getOutputFilePath = (outputFilename) => {
-  const filenameEndsInPdf = outputFilename.includes("pdf");
+const getOutputFilePath = (outputFilename, outputFormat) => {
+  const n = outputFilename.split(".");
+  const includesFormat = n.length > 1 && n[1].includes(outputFormat);
   let outputFilePath = getLibraryPath(outputFilename);
 
-  if (!filenameEndsInPdf) outputFilePath += ".pdf";
-
+  if (!includesFormat) outputFilePath += "." + outputFormat;
+  console.log(outputFilePath);
   return outputFilePath;
 };
 
