@@ -1,0 +1,136 @@
+{
+  "common": {
+    "created_at": "Nov 5, 2020",
+    "count": 5,
+    "user": {
+      "description": "Software Engineer ‧ Business Owner ‧ Starter.<br />YouTube → <a href=\"http://youtube.com/SimonHoiberg\" class=\"description-link\" rel=\"noopener noreferrer\">youtube.com/SimonHoiberg</a> <br /><br /><img class=\"emoji\" draggable=\"false\" alt=\"🔥\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f525.svg\"/> Freedom and independence",
+      "location": "Newsletter →",
+      "id": "875776212341329920",
+      "created_at": "2017-06-16T18:04:54.000Z",
+      "pinned_tweet_id": "1322801496531099650",
+      "public_metrics": {
+        "followers_count": 20709,
+        "following_count": 237,
+        "tweet_count": 5339,
+        "listed_count": 157
+      },
+      "verified": false,
+      "username": "SimonHoiberg",
+      "name": "Simon Høiberg",
+      "protected": false,
+      "url": "https://t.co/qO9TnGwEPM",
+      "profile_image_url": "https://pbs.twimg.com/profile_images/1314813880607166464/rZdd-ubL.jpg",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "start": 0,
+              "end": 23,
+              "url": "https://t.co/qO9TnGwEPM",
+              "expanded_url": "https://simonhoiberg.com/newsletter",
+              "display_url": "simonhoiberg.com/newsletter"
+            }
+          ]
+        },
+        "description": {
+          "urls": [
+            {
+              "start": 56,
+              "end": 79,
+              "url": "https://t.co/ZZrisWRYHe",
+              "expanded_url": "http://youtube.com/SimonHoiberg",
+              "display_url": "youtube.com/SimonHoiberg"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "data": [
+    {
+      "id": "1324263512621883393",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "JavaScript <img class=\"emoji\" draggable=\"false\" alt=\"💡\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f4a1.svg\"/><br /><br />Let's take a look at the Promise API.<br />4 methods explained with examples below.<br /><br /><img class=\"emoji\" draggable=\"false\" alt=\"🧵\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f9f5.svg\"/><img class=\"emoji\" draggable=\"false\" alt=\"👇\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f447.svg\"/> ",
+      "customMedia": {
+        "photo": [
+          {
+            "width": 660,
+            "height": 355,
+            "preview_img_url": "https://pbs.twimg.com/media/EmC6eqIX0AEjRHA.png",
+            "link": "pic.twitter.com/vtjTcpbmqd"
+          }
+        ],
+        "video": [],
+        "animated_gif": []
+      }
+    },
+    {
+      "id": "1324263516589690880",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.all()<br /><br />The Promise.all() method takes an array of promises as an argument and returns a single Promise that resolves to an array of the results of the input promises. ",
+      "customMedia": {
+        "photo": [
+          {
+            "width": 1226,
+            "height": 768,
+            "preview_img_url": "https://pbs.twimg.com/media/EmC5WnvWkAAc1bu.jpg",
+            "link": "pic.twitter.com/LT7bDlmLJp"
+          }
+        ],
+        "video": [],
+        "animated_gif": []
+      }
+    },
+    {
+      "id": "1324263520398155778",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.allSettled()<br /><br />The Promise.allSettled() method returns a promise that resolves after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise. ",
+      "customMedia": {
+        "photo": [
+          {
+            "width": 1260,
+            "height": 600,
+            "preview_img_url": "https://pbs.twimg.com/media/EmC5Y6qXYAE3GqO.jpg",
+            "link": "pic.twitter.com/4JhJbRWwcr"
+          }
+        ],
+        "video": [],
+        "animated_gif": []
+      }
+    },
+    {
+      "id": "1324263524206600197",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.any()<br /><br />The Promise.any() method takes an array of promises as an argument and, as soon as one of the promises fulfills, returns a single promise that resolves with the value from that promise. ",
+      "customMedia": {
+        "photo": [
+          {
+            "width": 1260,
+            "height": 852,
+            "preview_img_url": "https://pbs.twimg.com/media/EmC5Z1QXIAAkHBi.jpg",
+            "link": "pic.twitter.com/yzrOiAUgaM"
+          }
+        ],
+        "video": [],
+        "animated_gif": []
+      }
+    },
+    {
+      "id": "1324263528874860544",
+      "createdAt": "Nov 5, 2020  1:43 p.m.",
+      "tweet": "<img class=\"emoji\" draggable=\"false\" alt=\"🔹\" src=\"https://twemoji.maxcdn.com/v/13.0.1/svg/1f539.svg\"/> Promise.race()<br /><br />The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an array fulfills or rejects, with the value or reason from that promise. ",
+      "customMedia": {
+        "photo": [
+          {
+            "width": 1260,
+            "height": 726,
+            "preview_img_url": "https://pbs.twimg.com/media/EmC5bMKXgAAiszc.jpg",
+            "link": "pic.twitter.com/Z9rl80aPlY"
+          }
+        ],
+        "video": [],
+        "animated_gif": []
+      }
+    }
+  ]
+}

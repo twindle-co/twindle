@@ -1,0 +1,50 @@
+#title {
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+.tweetContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border-style: solid;
+  padding: 20px;
+}
+
+.tweetContainer * {
+  margin: 0;
+  padding: 0;
+}
+
+.tweetContainer .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tweetContainer .header img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.tweetContainer .header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tweetContainer .header > div p {
+  font-size: 14px;
+}
+
+.tweetContainer .header > div span {
+  font-style: italic;
+  color: rgb(45, 45, 45);
+}
