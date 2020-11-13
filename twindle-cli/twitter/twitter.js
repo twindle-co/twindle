@@ -53,8 +53,10 @@ const getTweetsById = async (id, token) => {
     if (validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError) {
       const id = getConversationId(firstTweet.data);
       firstTweet = await getTweetById(id, token);
+      // console.log(1);
     } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
       const tweetIDs = await Scraping.getTweetIDs(id);
+      // console.log(2);
       const tweets = await getTweetsFromArray(tweetIDs, token);
       return tweets;
     } else throw validation.error;
@@ -85,6 +87,7 @@ const getTweetsById = async (id, token) => {
     ...finalTweetsData,
     data: [...finalTweetsData.data, ...transformedSecondTweets],
   };
+
   finalTweetsData.common.count = finalTweetsData.data.length;
 
   return finalTweetsData;
@@ -105,19 +108,22 @@ const getTweetsFromArray = async (ids, token) => {
   return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
 };
 
-const getTweetsFromUser = async( screenName, token) => {
+const getTweetsFromUser = async (screenName, token) => {
   let responseJSON = await getUserTweets(screenName, token);
-  
+
   if (responseJSON.status === "error") {
     throw new Error("something wrong");
-  }  
+  }
   // do processing
-  return await UserTimelineEndpointTransformation.processUserTweets(screenName, responseJSON.data, token);  
-
-}
+  return await UserTimelineEndpointTransformation.processUserTweets(
+    screenName,
+    responseJSON.data,
+    token
+  );
+};
 
 module.exports = {
   getTweetsById,
   getTweetsFromArray,
-  getTweetsFromUser
+  getTweetsFromUser,
 };
