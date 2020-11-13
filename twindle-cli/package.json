@@ -7,6 +7,7 @@
     "start:mock": "node index.js -m",
     "start:thread": "node index.js -i 1323618091511607296",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "npm run test --watch"
   },
   "repository": {
@@ -25,12 +26,10 @@
     "epub-gen": "^0.1.0",
     "handlebars": "^4.7.6",
     "kleur": "^4.1.3",
-    "node-calibre": "^2.1.1",
     "node-fetch": "^2.6.1",
     "nodemailer": "^6.4.14",
     "ora": "^5.1.0",
     "puppeteer": "^5.4.1",
-    "string.prototype.matchall": "^4.0.2",
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
   },

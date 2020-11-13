@@ -4,7 +4,7 @@ const { createLibraryIfNotExists } = require("./utils/library");
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
     .usage(
-      "Usage: -i <tweet id> -f <file format> -o <filename> -s <send to kindle email| Optionally pass kindle email here>"
+      "Usage: -i <tweet id> -u <user_id> -n <default_num_tweets> -f <file format> -o <filename> -s <send to kindle email| Optionally pass kindle email here>"
     )
     .option({
       i: {
@@ -52,7 +52,20 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "Append string to the filename",
         type: "string"
-      }
+      },
+      u: {
+        alias: "userId",
+        demandOption: false,
+        describe: "The Twitter ID of the user whose timeline of recent tweets you are trying to read",
+        type: "string",
+      },
+      n: {
+        alias: "numTweets",
+        demandOption: false,
+        describe: "Used together with u option to specify the number of tweets to be read",
+        type: "integer",
+        default: 10
+      },
     }).argv;
 
 // Intends to do such things for one time for the user, like config creating, main outputdir creation
