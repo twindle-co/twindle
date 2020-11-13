@@ -1,4 +1,4 @@
-const { generateEpub } = require("./epub");
+const { generateEpub } = require("./epub/index");
 const { generatePDF } = require("./pdf");
 const spinner = require("../spinner");
 
