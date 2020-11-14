@@ -90,7 +90,7 @@ const getTweetsById = async (id, token) => {
 
   finalTweetsData.common.count = finalTweetsData.data.length;
 
-  return finalTweetsData;
+  return [ finalTweetsData ];
 };
 
 /**
@@ -105,7 +105,10 @@ const getTweetsFromArray = async (ids, token) => {
   }
 
   // do processing
-  return await TweetArrayEndpointTransformation.processTweetsArray(responseJSON.data, token);
+  let finalTweetsData = await TweetArrayEndpointTransformation.processTweetsArray(
+    responseJSON.data, 
+    token);
+  return [ finalTweetsData ];
 };
 
 const getTweetsFromUser = async (screenName, token) => {
@@ -115,15 +118,104 @@ const getTweetsFromUser = async (screenName, token) => {
     throw new Error("something wrong");
   }
   // do processing
-  return await UserTimelineEndpointTransformation.processUserTweets(
+  let finalTweetsData = await UserTimelineEndpointTransformation.processUserTweets(
     screenName,
     responseJSON.data,
     token
   );
+  return [ finalTweetsData ];
+};
+
+const getTweetsFromThreads = async (ids, token) => {
+  let responseJSON = await getTweetById(ids, token);
+
+  if (responseJSON.status === "error") {
+    throw new Error("something wrong");
+  }
+  //console.log(responseJSON.data.includes);
+  const tweets = (responseJSON.data.data || []).map((resData) => ({
+    ...resData,
+    includes: responseJSON.data.includes
+  }));
+  
+  const tweetThreads = [];
+  const userIds = [];
+  
+  for(let loopTweet of tweets) {
+    let finalTweetsData = {
+      common: {
+        id: "",
+        created_at: "",
+        count: 0,
+        user: {
+          id: "",
+          username: "",
+          name: "",
+          profile_image_url: "",
+          description: "",
+        },
+      },
+      data: [],
+    };
+    // do validation
+    const validation = TweetEndpointValidation.processResponse({data:[loopTweet]});
+
+    if (validation.status === "error") {
+      if (validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError) {
+        const id = getConversationId(loopTweet);
+        loopTweet = await getTweetById(loopTweet.id, token);
+        // console.log(1);
+      } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
+        const tweetIDs = await Scraping.getTweetIDs(loopTweet.id);
+        // console.log(2);
+        tweetThreads.push(await getTweetsFromArray(tweetIDs, token));
+      } else throw validation.error;
+    }
+    // do processing
+    const {
+      resp: transformedFirstTweet,
+      tweet,
+      user,
+    } = await TweetEndpointTransformation.processTweetLookup({data:[loopTweet], includes: loopTweet.includes }, token);
+
+    finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
+    //get second api
+    const conversationTweetsData = await getConversationById(
+      tweet.conversation_id,
+      user.username,
+      token
+    );
+
+    const transformedSecondTweets = await SearchEndpointTransformation
+    .processSearchResponse(
+      conversationTweetsData.data,
+      token
+    );
+
+    finalTweetsData = {
+      ...finalTweetsData,
+      data: [...finalTweetsData.data, ...transformedSecondTweets],
+    };
+
+    finalTweetsData.common.count = finalTweetsData.data.length;
+    if(!userIds.includes(finalTweetsData.common.user.name))
+      userIds.push(finalTweetsData.common.user.name);
+    tweetThreads.push(finalTweetsData);
+  }
+  //console.log(userIds);
+  for(let userId of userIds) {
+    const tts = tweetThreads.filter((thread)=>thread.common.user.name === userId);
+    if(tts.length > 1)
+      for(i = 1; i < tts.length; i++) 
+        delete tts[i].common.user;
+  }
+  //console.log(tweetThreads);
+  return tweetThreads;
 };
 
 module.exports = {
   getTweetsById,
   getTweetsFromArray,
   getTweetsFromUser,
+  getTweetsFromThreads
 };

@@ -19,7 +19,7 @@ const getTweetArray = (responseJSON) => {
 };
 
 /** @param {TwitterConversationResponse} responseJSON */
-const getUserObject = (responseJSON) => responseJSON.includes.users[0];
+const getUserObject = (responseJSON) => responseJSON.includes.users.filter((user)=>user.id === responseJSON.data[0].author_id)[0];
 
 /** @param {TwitterConversationResponse} responseJSON */
 const getTweetObject = (responseJSON) => ({

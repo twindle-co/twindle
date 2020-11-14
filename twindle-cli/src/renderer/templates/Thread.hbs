@@ -261,12 +261,15 @@
 
 <body>
 
-
+  {{#each threads}}
   {{#if common}}
   <div class="tweetContainer">
     <div class="header">
+      {{#if common.user}}
       <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+      {{/if}}
       <div>
+        {{#if common.user}}
         <h3>
           {{common.user.name}}
           {{#if common.user.verified}}
@@ -286,6 +289,7 @@
             {{{common.user.description}}}
           </span>
         </p>
+        {{/if}}
         <p>
           <span>
             Number of tweets:
@@ -303,7 +307,7 @@
   </div>
   {{/if}}
   <ul>
-    {{#each thread}}
+    {{#each data}}
     <li>
       <div class="tweetContainer">
         <p>
@@ -396,6 +400,7 @@
     </li>
     {{/each}}
   </ul>
+  {{/each}}
 
 
   <script>
