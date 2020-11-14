@@ -43,18 +43,20 @@ function renderMedia(tweetObj) {
     // Let's get the entitites
     const urls = tweetObj.entities.urls;
 
-    const urlObjOfImageIndex = urls.filter(url=>url.expanded_url != undefined).findIndex(
-      ({ expanded_url }) => expanded_url.includes("/photo/") || expanded_url.includes("/video/")
-    );
+    const urlObjOfImageIndex = urls
+      .filter((url) => url.expanded_url != undefined)
+      .findIndex(
+        ({ expanded_url }) => expanded_url.includes("/photo/") || expanded_url.includes("/video/")
+      );
 
     const urlObjOfImage = urls[urlObjOfImageIndex];
-    
+
     // Add to our list
     mediaObj[mediaInfo.type].push({
       width,
       height,
       preview_img_url: preview_image_url || url,
-      link: urlObjOfImage === undefined ? "" : urlObjOfImage.expanded_url
+      link: urlObjOfImage === undefined ? "" : urlObjOfImage.expanded_url,
     });
 
     // Get the actual short URL (t.co/[STUFF])
@@ -286,6 +288,11 @@ async function _renderEmbeddedTweets(tweetObj, token) {
   const tweet = getTweetObject(data);
 
   const richEmbeddedTweet = _renderRichTweets(tweet, true);
+
+  richEmbeddedTweet.text = twemoji.parse(richEmbeddedTweet.text, {
+    folder: "svg",
+    ext: ".svg",
+  });
 
   richEmbeddedTweet.embeddedTweetUser = tweet.includes.users.find(
     (user) => user.id === richEmbeddedTweet.author_id
