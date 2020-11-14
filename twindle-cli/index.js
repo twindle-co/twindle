@@ -1,5 +1,5 @@
 require("./helpers/logger");
-require("dotenv").config({path : "./config.env"});
+require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
 const { getTweetsById, getTweetsFromArray, getTweetsFromUser } = require("./twitter");
