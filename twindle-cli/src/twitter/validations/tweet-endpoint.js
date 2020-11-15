@@ -34,7 +34,7 @@ const getTweetObject = (responseJSON) => {
 
 /**
  * Process the data received from Twitter API
- * @param {TwitterConversationResponse} response
+ * @param {Partial<TwitterConversationResponse>} response
  */
 function processResponse(response) {
   if (tweetDeleted(response)) {

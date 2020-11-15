@@ -95,8 +95,6 @@ export interface ConversationResponseData {
 
   embeddedTweet?: ConversationResponseData;
   embeddedTweetUser?: User;
-
-  embeddedTweetCardSize?: "small" | "large";
 }
 
 export interface IncludesMedia {
@@ -158,8 +156,6 @@ export interface CustomTweetData {
 
   embeddedTweet?: ConversationResponseData;
   embeddedTweetUser?: User;
-
-  embeddedTweetCardSize?: "small" | "large";
 }
 
 export interface CustomTweets {
