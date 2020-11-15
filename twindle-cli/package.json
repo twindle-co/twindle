@@ -2,7 +2,7 @@
   "name": "twindle",
   "version": "0.0.1",
   "description": "This cli fetches a twitter thread and converts it into PDF, ePub, Mobi, etc",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start:mock": "node src/index.js -m",
     "start:thread": "node src/index.js -i 1323618091511607296",
