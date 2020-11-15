@@ -27,7 +27,7 @@ function counter({ initial, final }) {
   function increment() {
     current++;
 
-    spinner.text = `Fetching ${current} of ${final} thread${final !== 1 ? "s" : ""}`;
+    spinner.text = `Fetching ${current} of ${final} thread${final !== 1 ? "s" : ""}      `;
   }
 
   return { increment };
