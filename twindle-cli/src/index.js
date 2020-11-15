@@ -44,7 +44,7 @@ async function main() {
         tweets[0].common.user.username
       ).replace("@", "") || "twindle"
     }-${
-      (tweets[0] &&
+      (tweets[0] &&  
         tweets[0].common &&
         tweets[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
