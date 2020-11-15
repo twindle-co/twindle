@@ -12,13 +12,14 @@
 
 <body>
   <h1 id="tocHeader">Your Twindle Thread from</h1>
-  {{#if common}}
+  {{#if commons}}
+  {{#each commons}}
   <div class="tweetContainer">
     <div class="header">
-      <img id="userImage" src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+      <img id="userImage" src="{{user.profile_image_url}}" alt="{{user.username}}" />
       <div>
         <h3>
-          {{common.user.name}} {{#if common.user.verified}}
+          {{user.name}} {{#if user.verified}}
           <svg class="verified-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <defs></defs>
             <path fill="#1da1f2"
@@ -26,20 +27,21 @@
             </path>
           </svg>
           {{/if}}
-          <span class="user-handle"> @ {{common.user.username}} </span>
+          <span class="user-handle"> @ {{user.username}} </span>
         </h3>
         <p>
-          <span> Thread created: {{common.created_at}} </span>
+          <span> Thread created: {{created_at}} </span>
         </p>
         <p>
-          <span> {{{common.user.description}}} </span>
+          <span> {{{user.description}}} </span>
         </p>
         <p>
-          <span> Number of tweets: {{common.count}} </span>
+          <span> Number of tweets: {{count}} </span>
         </p>
       </div>
     </div>
   </div>
+  {{/each}}
   {{/if}}
 </body>
 
