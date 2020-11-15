@@ -2,7 +2,7 @@ require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsById, getTweetsFromArray, getTweetsFromUser } = require("./twitter");
+const { getTweetsById, getTweetsFromArray, getTweetsFromUser, getTweetsFromThreads } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
@@ -36,19 +36,20 @@ async function main() {
         if (shouldUsePuppeteer) {
           const tweetIDs = await getTweetIDs(tweetId);
           tweets = await getTweetsFromArray(tweetIDs, process.env.TWITTER_AUTH_TOKEN);
-        } else tweets = await getTweetsById(tweetId, process.env.TWITTER_AUTH_TOKEN);
+        } else if(tweetId.split(",").length == 1) tweets = await getTweetsById(tweetId, process.env.TWITTER_AUTH_TOKEN);
+        else if(tweetId.split(",").length > 1) tweets = await getTweetsFromThreads(tweetId, process.env.TWITTER_AUTH_TOKEN);
       } else{
          tweets = await getTweetsFromUser(userId, process.env.TWITTER_AUTH_TOKEN);
-         if(tweets.data.length > numTweets) {
-           tweets.data = tweets.data.slice(0, numTweets);
-           tweets.common.count = tweets.data.length;
-         }
+         if(tweets[0].data.length > numTweets) {
+          tweets[0].data = tweets[0].data.slice(0, numTweets);
+          tweets[0].common.count = tweets[0].data.length;
+        }
       }
     }
     const intelligentOutputFileName = `${
-      (tweets && tweets.common && tweets.common.user && tweets.common.user.username).replace("@", "") || "twindle"
+      (tweets[0] && tweets[0].common && tweets[0].common.user && tweets[0].common.user.username).replace("@", "") || "twindle"
     }-${
-      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      (tweets[0] && tweets[0].common && tweets[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
     }${ appendToFilename ? "-" +appendToFilename : ""}`;
 
