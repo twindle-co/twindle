@@ -14,7 +14,7 @@ const spinner = require("./spinner");
 
 async function main() {
   prepareCli();
-  
+
   spinner.start();
 
   const {
@@ -74,6 +74,15 @@ async function main() {
   process.exit();
 }
 
+/**
+ *
+ * @param {Object} param
+ * @param {string} param.tweetId
+ * @param {boolean} param.mock
+ * @param {boolean} param.shouldUsePuppeteer
+ * @param {string} param.userId
+ * @param {number} param.numTweets
+ */
 async function getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets }) {
   /** @type {CustomTweetsObject[]} */
   let tweets;
