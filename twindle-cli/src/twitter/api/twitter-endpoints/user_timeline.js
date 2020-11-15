@@ -1,6 +1,5 @@
 const { fetch } = require("../helpers/fetch");
 const { getCommonFields, MAX_RESULTS } = require("../constants");
-const { ApiErrors } = require("../../error");
 
 const BASE_ENDPOINT =
   "https://api.twitter.com/2/tweets/search/recent?query=from:<screen_name>+-is:retweet+-has:mentions";
@@ -22,11 +21,10 @@ const getUrl = (screen_name) => {
  * @param {string} token
  */
 const getUserTweets = (screenName, token) => {
-  
   const url = getUrl(screenName);
   return fetch(url, token);
 };
 
 module.exports = {
-    getUserTweets,
+  getUserTweets,
 };

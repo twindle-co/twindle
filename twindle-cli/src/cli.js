@@ -41,6 +41,13 @@ const getCommandlineArgs = (processArgv) =>
         describe: "If set, will run in mock mode",
         type: "boolean",
       },
+      "generate-mock": {
+        alias: "generateMock",
+        demandOption: false,
+        describe: "generates a mock json file of the current data",
+        type: "boolean",
+        default: false,
+      },
       p: {
         alias: "shouldUsePuppeteer",
         demandOption: false,
@@ -51,12 +58,13 @@ const getCommandlineArgs = (processArgv) =>
         alias: "appendToFilename",
         demandOption: false,
         describe: "Append string to the filename",
-        type: "string"
+        type: "string",
       },
       u: {
         alias: "userId",
         demandOption: false,
-        describe: "The Twitter ID of the user whose timeline of recent tweets you are trying to read",
+        describe:
+          "The Twitter ID of the user whose timeline of recent tweets you are trying to read",
         type: "string",
       },
       n: {
@@ -64,7 +72,7 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "Used together with u option to specify the number of tweets to be read",
         type: "integer",
-        default: 10
+        default: 10,
       },
     }).argv;
 
