@@ -14,6 +14,25 @@ const UserTimelineEndpointTransformation = require("./transformations/user-timel
 const { ValidationErrors } = require("./error");
 const { getUserTweets } = require("./api/twitter-endpoints/user_timeline");
 
+const spinner = require("../spinner");
+
+/**
+ * @param {Object} param
+ * @param {number} param.initial
+ * @param {number} param.final
+ */
+function counter({ initial, final }) {
+  let current = initial - 1;
+
+  function increment() {
+    current++;
+
+    spinner.text = `Fetching ${current} of ${final} thread${final !== 1 ? "s" : ""}`;
+  }
+
+  return { increment };
+}
+
 /**
  * @param {string[]} ids
  * @param {string} token
@@ -57,6 +76,8 @@ async function getTweetsFromUser(screenName, token) {
  * @param {string} token
  */
 const getTweetsFromThreads = async (ids, token) => {
+  const { increment } = counter({ initial: 1, final: ids.split(",").length });
+
   let { data: responseJSON, status } = await getTweetById(ids, token);
 
   if (status === "error") {
@@ -77,6 +98,8 @@ const getTweetsFromThreads = async (ids, token) => {
   const usersNames = [];
 
   for (let loopTweet of tweets) {
+    increment();
+
     /** @type {CustomTweetsObject} */
     let finalTweetsData = {
       common: {
