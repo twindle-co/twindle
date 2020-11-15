@@ -44,10 +44,6 @@ ul {
 ul li {
   margin: 0;
 
-  page-break-before: always;
-  page-break-inside: avoid;
-  page-break-after: always;
-
   width: 100%;
 
   padding: 1rem 0;
@@ -59,7 +55,7 @@ ul li:not(:last-child) {
 
 .tweetContainer {
   /*display: flex;
-  flex-direction: column;*/
+flex-direction: column;*/
   width: 100%;
 }
 
@@ -232,6 +228,10 @@ img.emoji,
 .embedded-tweet-container__header__userhandle,
 .embedded-tweet-container__header__timestamp {
   color: rgba(0, 0, 0, 0.7);
+}
+
+.embedded-tweet-container__body {
+  padding: 0.5rem;
 }
 
 .embedded-tweet-container__body__image-container img {

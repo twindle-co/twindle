@@ -1,4 +1,5 @@
 const { renderTemplate, renderTemplateTemp } = require("../render-template");
+const { encodeImage } = require("../../utils/image");
 const { readFile } = require("fs").promises;
 const Epub = require("epub-gen");
 
@@ -15,23 +16,32 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
 });
 
 /**
- * @param {CustomTweetsObject} tweets
+ * @param {CustomTweetsObject[]} tweets
  * @param {string} outputPath
  */
 async function generateEpub(tweets, outputPath) {
   const css = await readFile(__dirname + "/../templates/Epub.css");
-  const threadContent = await renderTemplate({ thread: tweets.data }, "Tweets");
+
+  for (let i = 0; i < tweets.length; i++) {
+    tweets[i].common.user.profile_image_url = await encodeImage(
+      tweets[i].common.user.profile_image_url
+    );
+  }
+
+  const threadContent = await renderTemplate({ threads: tweets }, "Tweets");
   const { tempPath: tocTempPath } = await renderTemplateTemp(
-    { common: tweets.common },
+    { commons: tweets.map(({ common }) => common) },
     "Toc",
     "Toc"
   );
 
-  console.log(threadContent);
+  const authors = tweets.reduce((p, c) =>
+    p ? p.common.user.name + " & " + c.common.user.name : c.common.user.name
+  );
 
   const options = createOptions({
-    title: tweets.common.user.name + "'s Thread",
-    author: tweets.common.user.name,
+    title: authors + "'s Thread",
+    author: authors,
     html: threadContent,
     css,
     tocPath: tocTempPath,
