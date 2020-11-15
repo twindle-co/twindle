@@ -31,6 +31,7 @@ const getTweetIDs = async (tweetID) => {
 
   await waitFor(4000);
 
+  /** @type {string[]} */
   const tweetIDs = await page.evaluate(async () => {
     const ids = [];
 

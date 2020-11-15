@@ -129,9 +129,11 @@ const getTweetsFromThreads = async (ids, token) => {
       } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
         const tweetIDs = await Scraping.getTweetIDs(loopTweet.id);
         tweetThreads.push(...(await getTweetsFromArray(tweetIDs, token)));
+        continue;
       } else throw validation.error;
     }
-    // do processing
+
+    // Do processing
     const {
       resp: transformedFirstTweet,
       tweet,
@@ -142,6 +144,7 @@ const getTweetsFromThreads = async (ids, token) => {
     );
 
     finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
+
     //get second api
     const conversationTweetsData = await getConversationById(
       tweet.conversation_id,
@@ -149,10 +152,14 @@ const getTweetsFromThreads = async (ids, token) => {
       token
     );
 
-    const transformedSecondTweets = await SearchEndpointTransformation.processSearchResponse(
-      conversationTweetsData.data,
-      token
-    );
+    let transformedSecondTweets = [];
+
+    if (conversationTweetsData.data.meta.result_count !== 0) {
+      transformedSecondTweets = await SearchEndpointTransformation.processSearchResponse(
+        conversationTweetsData.data,
+        token
+      );
+    }
 
     finalTweetsData = {
       ...finalTweetsData,
@@ -167,12 +174,14 @@ const getTweetsFromThreads = async (ids, token) => {
 
     tweetThreads.push(finalTweetsData);
   }
+
   //console.log(userIds);
   for (let usersName of usersNames) {
     const tts = tweetThreads.filter((thread) => thread.common.user.name === usersName);
     if (tts.length > 1) for (let i = 1; i < tts.length; i++) delete tts[i].common.user;
   }
-  //console.log(tweetThreads);
+
+  // Remove duplicates generating due to puppeteer scraping
   return tweetThreads;
 };
 
