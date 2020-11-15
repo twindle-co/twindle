@@ -5,7 +5,6 @@ const { ApiErrors } = require("../../error");
 const BASE_ENDPOINT = "https://api.twitter.com/2/tweets?ids=";
 
 /**
- * Get the tweet by the ID
  * @param {string} id tweet ID
  * @param {string} token Bearer token
  */

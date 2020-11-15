@@ -5,10 +5,7 @@ const twemoji = require("twemoji");
 const { formatTimestamp } = require("../utils/date");
 
 /** @param {string} tweet_url */
-const extractScreenName = (tweet_url) =>
-  tweet_url
-    .substring(0, tweet_url.lastIndexOf("/status"))
-    .substring(tweet_url.lastIndexOf("/") + 1);
+const extractScreenName = (tweet_url) => tweet_url.replace(/^https?:\/\//, "").split("/")[1];
 
 /** @param {TwitterConversationResponse} responseJSON */
 const getTweetArray = (responseJSON) => {
@@ -19,7 +16,8 @@ const getTweetArray = (responseJSON) => {
 };
 
 /** @param {TwitterConversationResponse} responseJSON */
-const getUserObject = (responseJSON) => responseJSON.includes.users.filter((user)=>user.id === responseJSON.data[0].author_id)[0];
+const getUserObject = (responseJSON) =>
+  responseJSON.includes.users.filter((user) => user.id === responseJSON.data[0].author_id)[0];
 
 /** @param {TwitterConversationResponse} responseJSON */
 const getTweetObject = (responseJSON) => ({

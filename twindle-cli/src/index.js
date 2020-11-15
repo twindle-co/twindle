@@ -11,6 +11,7 @@ const { red, cyan } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
 const spinner = require("./spinner");
+const { writeFile, mkdir } = require("fs").promises;
 
 async function main() {
   prepareCli();
@@ -27,6 +28,7 @@ async function main() {
     appendToFilename,
     userId,
     numTweets,
+    generateMock,
   } = getCommandlineArgs(process.argv);
 
   try {
@@ -42,11 +44,24 @@ async function main() {
         tweets[0].common.user.username
       ).replace("@", "") || "twindle"
     }-${
-      (tweets[0] &&
+      (tweets[0] &&  
         tweets[0].common &&
         tweets[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
     }${appendToFilename ? "-" + appendToFilename : ""}`;
+
+    if (generateMock) {
+      try {
+        await mkdir("./generated-mock");
+      } catch {}
+
+      // Create mock file with the appropriate name
+      await writeFile(
+        `./generated-mock/@CUSTOM-OUTPUT_${intelligentOutputFileName}.json`,
+        JSON.stringify(tweets, null, 2)
+      );
+
+    }
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
     await Renderer.render(tweets, format, outputFilePath);
