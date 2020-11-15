@@ -14,7 +14,7 @@ const UserTimelineEndpointTransformation = require("./transformations/user-timel
 const { ValidationErrors } = require("./error");
 const { getUserTweets } = require("./api/twitter-endpoints/user_timeline");
 
-/** @param {TwitterConversationResponse} response */
+/** @param {Partial<TwitterConversationResponse>} response */
 const getConversationId = (response) => response.data[0].conversation_id;
 
 /**
@@ -90,7 +90,7 @@ const getTweetsById = async (id, token) => {
 
   finalTweetsData.common.count = finalTweetsData.data.length;
 
-  return [ finalTweetsData ];
+  return [finalTweetsData];
 };
 
 /**
@@ -106,11 +106,16 @@ const getTweetsFromArray = async (ids, token) => {
 
   // do processing
   let finalTweetsData = await TweetArrayEndpointTransformation.processTweetsArray(
-    responseJSON.data, 
-    token);
-  return [ finalTweetsData ];
+    responseJSON.data,
+    token
+  );
+  return [finalTweetsData];
 };
 
+/**
+ * @param {string} screenName
+ * @param {string} token
+ */
 const getTweetsFromUser = async (screenName, token) => {
   let responseJSON = await getUserTweets(screenName, token);
 
@@ -123,25 +128,35 @@ const getTweetsFromUser = async (screenName, token) => {
     responseJSON.data,
     token
   );
-  return [ finalTweetsData ];
+  return [finalTweetsData];
 };
 
+/**
+ * @param {string} ids
+ * @param {string} token
+ */
 const getTweetsFromThreads = async (ids, token) => {
-  let responseJSON = await getTweetById(ids, token);
+  let { data: responseJSON, status } = await getTweetById(ids, token);
 
-  if (responseJSON.status === "error") {
+  if (status === "error") {
     throw new Error("something wrong");
   }
+
   //console.log(responseJSON.data.includes);
-  const tweets = (responseJSON.data.data || []).map((resData) => ({
+  /** @type {TwitterConversationData[]}  */
+  const tweets = (responseJSON.data || []).map((resData) => ({
     ...resData,
-    includes: responseJSON.data.includes
+    includes: responseJSON.includes,
   }));
-  
+
+  /** @type {CustomTweetsObject[]} */
   const tweetThreads = [];
+
+  /** @type {string[]} */
   const userIds = [];
-  
-  for(let loopTweet of tweets) {
+
+  for (let loopTweet of tweets) {
+    /** @type {CustomTweetsObject} */
     let finalTweetsData = {
       common: {
         id: "",
@@ -157,18 +172,21 @@ const getTweetsFromThreads = async (ids, token) => {
       },
       data: [],
     };
+
     // do validation
-    const validation = TweetEndpointValidation.processResponse({data:[loopTweet]});
+    // @Mira-Alf processResponse checks into the `errors` field to check if the tweet exists or not. What
+    // do we do to do that check now?
+    const validation = TweetEndpointValidation.processResponse({ data: [loopTweet] });
 
     if (validation.status === "error") {
       if (validation.error instanceof ValidationErrors.TweetNotFirstOfThreadError) {
-        const id = getConversationId(loopTweet);
-        loopTweet = await getTweetById(loopTweet.id, token);
+        const id = getConversationId({ data: [loopTweet] });
+        loopTweet = (await getTweetById(loopTweet.id, token)).data[0];
         // console.log(1);
       } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
         const tweetIDs = await Scraping.getTweetIDs(loopTweet.id);
         // console.log(2);
-        tweetThreads.push(await getTweetsFromArray(tweetIDs, token));
+        tweetThreads.push(...(await getTweetsFromArray(tweetIDs, token)));
       } else throw validation.error;
     }
     // do processing
@@ -176,7 +194,10 @@ const getTweetsFromThreads = async (ids, token) => {
       resp: transformedFirstTweet,
       tweet,
       user,
-    } = await TweetEndpointTransformation.processTweetLookup({data:[loopTweet], includes: loopTweet.includes }, token);
+    } = await TweetEndpointTransformation.processTweetLookup(
+      { data: [loopTweet], includes: loopTweet.includes },
+      token
+    );
 
     finalTweetsData = { ...finalTweetsData, ...transformedFirstTweet };
     //get second api
@@ -186,8 +207,7 @@ const getTweetsFromThreads = async (ids, token) => {
       token
     );
 
-    const transformedSecondTweets = await SearchEndpointTransformation
-    .processSearchResponse(
+    const transformedSecondTweets = await SearchEndpointTransformation.processSearchResponse(
       conversationTweetsData.data,
       token
     );
@@ -198,16 +218,14 @@ const getTweetsFromThreads = async (ids, token) => {
     };
 
     finalTweetsData.common.count = finalTweetsData.data.length;
-    if(!userIds.includes(finalTweetsData.common.user.name))
+    if (!userIds.includes(finalTweetsData.common.user.name))
       userIds.push(finalTweetsData.common.user.name);
     tweetThreads.push(finalTweetsData);
   }
   //console.log(userIds);
-  for(let userId of userIds) {
-    const tts = tweetThreads.filter((thread)=>thread.common.user.name === userId);
-    if(tts.length > 1)
-      for(i = 1; i < tts.length; i++) 
-        delete tts[i].common.user;
+  for (let userId of userIds) {
+    const tts = tweetThreads.filter((thread) => thread.common.user.name === userId);
+    if (tts.length > 1) for (let i = 1; i < tts.length; i++) delete tts[i].common.user;
   }
   //console.log(tweetThreads);
   return tweetThreads;
@@ -217,5 +235,5 @@ module.exports = {
   getTweetsById,
   getTweetsFromArray,
   getTweetsFromUser,
-  getTweetsFromThreads
+  getTweetsFromThreads,
 };
