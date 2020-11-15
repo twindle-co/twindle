@@ -1,5 +1,5 @@
-const { getTweetById, getConversationById } = require("../../twitter/api");
-const { ApiErrors } = require("../../twitter/error");
+const { getTweetById, getConversationById } = require("../../src/twitter/api");
+const { ApiErrors } = require("../../src/twitter/error");
 
 describe("api module", () => {
   it("should throw an error if called without tweet id", () => {

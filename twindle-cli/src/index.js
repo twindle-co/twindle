@@ -2,7 +2,7 @@ require("./helpers/logger");
 require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsById, getTweetsFromArray, getTweetsFromUser } = require("./twitter");
+const { getTweetsFromArray, getTweetsFromUser, getTweetsFromThreads } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
@@ -14,7 +14,9 @@ const spinner = require("./spinner");
 
 async function main() {
   prepareCli();
+
   spinner.start();
+
   const {
     format,
     outputFilename,
@@ -24,33 +26,27 @@ async function main() {
     shouldUsePuppeteer,
     appendToFilename,
     userId,
-    numTweets
+    numTweets,
   } = getCommandlineArgs(process.argv);
 
   try {
     verifyEnvironmentVariables(kindleEmail);
-    let tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
 
-    if (!mock) {
-      if(!userId) {
-        if (shouldUsePuppeteer) {
-          const tweetIDs = await getTweetIDs(tweetId);
-          tweets = await getTweetsFromArray(tweetIDs, process.env.TWITTER_AUTH_TOKEN);
-        } else tweets = await getTweetsById(tweetId, process.env.TWITTER_AUTH_TOKEN);
-      } else{
-         tweets = await getTweetsFromUser(userId, process.env.TWITTER_AUTH_TOKEN);
-         if(tweets.data.length > numTweets) {
-           tweets.data = tweets.data.slice(0, numTweets);
-           tweets.common.count = tweets.data.length;
-         }
-      }
-    }
+    const tweets = await getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets });
+
     const intelligentOutputFileName = `${
-      (tweets && tweets.common && tweets.common.user && tweets.common.user.username).replace("@", "") || "twindle"
+      (
+        tweets[0] &&
+        tweets[0].common &&
+        tweets[0].common.user &&
+        tweets[0].common.user.username
+      ).replace("@", "") || "twindle"
     }-${
-      (tweets && tweets.common && tweets.common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+      (tweets[0] &&
+        tweets[0].common &&
+        tweets[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
-    }${ appendToFilename ? "-" +appendToFilename : ""}`;
+    }${appendToFilename ? "-" + appendToFilename : ""}`;
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
     await Renderer.render(tweets, format, outputFilePath);
@@ -76,6 +72,47 @@ async function main() {
 
   // If not for this line, the script never finishes
   process.exit();
+}
+
+/**
+ *
+ * @param {Object} param
+ * @param {string} param.tweetId
+ * @param {boolean} param.mock
+ * @param {boolean} param.shouldUsePuppeteer
+ * @param {string} param.userId
+ * @param {number} param.numTweets
+ */
+async function getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets }) {
+  /** @type {CustomTweetsObject[]} */
+  let tweets;
+
+  if (mock) {
+    tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
+    return tweets;
+  }
+
+  if (userId) {
+    tweets = await getTweetsFromUser(userId, process.env.TWITTER_AUTH_TOKEN);
+
+    if (tweets[0].data.length > numTweets) {
+      tweets[0].data = tweets[0].data.slice(0, numTweets);
+      tweets[0].common.count = tweets[0].data.length;
+    }
+
+    return tweets;
+  }
+
+  if (shouldUsePuppeteer) {
+    const tweetIDs = await getTweetIDs(tweetId);
+    tweets = await getTweetsFromArray(tweetIDs, process.env.TWITTER_AUTH_TOKEN);
+
+    return tweets;
+  }
+
+  tweets = await getTweetsFromThreads(tweetId, process.env.TWITTER_AUTH_TOKEN);
+
+  return tweets;
 }
 
 function verifyEnvironmentVariables(kindleEmail) {

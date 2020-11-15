@@ -7,7 +7,7 @@ const { formatTimestamp } = require("../utils/date");
 
 /**
  *
- * @param {TwitterConversationResponse} responseJSON
+ * @param {Partial<TwitterConversationResponse>} responseJSON
  * @param {string} token
  */
 async function processTweetLookup(responseJSON, token) {

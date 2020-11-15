@@ -1,4 +1,4 @@
-const { formatTimestamp } = require("../../twitter/utils/date");
+const { formatTimestamp } = require("../../src/twitter/utils/date");
 
 describe("utils module", () => {
   describe("date module", () => {

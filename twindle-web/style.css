@@ -7,8 +7,9 @@
 
 html,
 body {
-  background: white;
+  background: #fffcf7;
   font-family: "Mulish", sans-serif;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -16,13 +17,15 @@ header {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px #ddd;
+  width: 100vw;
 }
 
 header a {
   font-family: Mulish;
   font-style: normal;
-  color: #2d00f7;
+  color: #212121;
   text-decoration: none;
   margin-left: 20px;
   display: flex;
@@ -74,7 +77,7 @@ main .page_heading {
 }
 
 main .page_heading .sub_heading {
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   margin-bottom: 0.25rem;
   font-weight: 600;
   margin-top: 2.3rem;
@@ -83,6 +86,7 @@ main .page_heading .sub_heading {
 main .coming_soon {
   text-align: center;
   padding: 2rem 4rem;
+  font-size: 1.5rem;
 }
 
 main .coming_soon img.function_image {
@@ -154,9 +158,10 @@ main .what_we_do p {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  background: #2d00f7;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 2px solid #212121;
+  border-bottom: 2px solid #212121;
 }
 
 #three_images {
@@ -178,47 +183,49 @@ main .what_we_do p {
   transform: translateX(-100px);
 }
 
-#text {
-  color: white;
-}
 #text > h2 {
   font-weight: 800;
 }
+
 #text > h4 {
   font-weight: 400;
 }
+
 #who_we_are {
-  background: #ffffff;
-  color: #2d00f7;
+  color: #212121;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-left: 88px;
+  padding: 20px;
 }
+
 .text_area h1 {
   font-weight: 800;
   font-size: 40px;
   margin-top: 231px;
   margin-bottom: 38px;
   width: 516px;
-  height: 100px;
+  height: 75px;
 }
+
 .text_area p {
   font-weight: 600;
   font-size: 20px;
   width: 543px;
-  height: 100px;
+  height: 75px;
   margin-bottom: 231px;
 }
+
 #remote_design {
   width: 389px;
   height: 236px;
 }
+
 footer {
-  background: #2d00f7;
-  color: white;
+  background: #fffcf7;
+  color: black;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -242,4 +249,5 @@ footer nav p {
   position: relative;
   top: 1rem;
 }
+
 /*# sourceMappingURL=style.css.map */
