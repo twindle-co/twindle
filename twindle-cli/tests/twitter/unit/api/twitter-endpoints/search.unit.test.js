@@ -1,5 +1,5 @@
-const { ApiErrors } = require("../../error");
-const { getConversationById } = require("./search");
+const { ApiErrors } = require("../../../../../src/twitter/error");
+const { getConversationById } = require("../../../../../src/twitter/api/twitter-endpoints/search");
 
 describe("twitter |> api |> twitter-endpoints |> search", () => {
   it("should throw error if ID is falsey(undefined, null, false, etc)", () => {
