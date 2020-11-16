@@ -8,7 +8,7 @@
     "start:thread": "node src/index.js -i 1323618091511607296",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "npm run test --watch"
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
