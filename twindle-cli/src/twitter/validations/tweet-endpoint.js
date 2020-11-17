@@ -12,10 +12,10 @@ const isFirstTweetOfThread = (tweet) => {
 
 /** @param {TwitterConversationData} tweet */
 const tweetOlderThanSevenDays = (tweet) => {
-  const currentTime = +new Date();
-  const tweetCreatedAt = +new Date(tweet.created_at);
+  const currentTime = new Date();
+  const tweetCreatedAt = new Date(tweet.created_at);
 
-  return differenceInDays(tweetCreatedAt, currentTime) >= 7;
+  return differenceInDays(currentTime, tweetCreatedAt) >= 7;
 };
 
 /** @param {TwitterConversationResponse} responseJSON */
@@ -34,7 +34,7 @@ const getTweetObject = (responseJSON) => {
 
 /**
  * Process the data received from Twitter API
- * @param {TwitterConversationResponse} response
+ * @param {Partial<TwitterConversationResponse>} response
  */
 function processResponse(response) {
   if (tweetDeleted(response)) {
@@ -43,6 +43,7 @@ function processResponse(response) {
       error: new ApiErrors.TweetDoesNotExist(),
     };
   }
+
   let tweet = getTweetObject(response);
 
   if (tweetOlderThanSevenDays(tweet)) {
