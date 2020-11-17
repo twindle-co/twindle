@@ -4,7 +4,7 @@ const { createConnection } = require("mysql2/promise");
 /**
  * Initializes connection and ensures minimum required structures exist
  */
-async function dbInstance() {
+async function dbInstance() { 
   const conn = await createConnection({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
@@ -29,7 +29,7 @@ async function dbInstance() {
     );`
   );
 
-  return { conn };
+  return { connection: conn };
 }
 
 module.exports = { dbInstance };
