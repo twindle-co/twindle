@@ -7,19 +7,18 @@
 
 html,
 body {
-  background: #fffcf7;
+  background: #FFFDF9;
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  align-content: center;
-  padding: 20px;
+  padding: 1.3rem;
   box-shadow: 0 2px 4px #ddd;
-  width: 100vw;
 }
 
 header a {
@@ -68,6 +67,7 @@ main {
   justify-content: center;
   align-content: center;
   align-items: center;
+  width: 100vw;
 }
 
 main .page_heading {
@@ -92,7 +92,7 @@ main .coming_soon {
 main .coming_soon img.function_image {
   width: 100%;
   height: auto;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: 0.5rem;
 }
 
@@ -192,7 +192,7 @@ main .what_we_do p {
 }
 
 #who_we_are {
-  color: #212121;
+  color: black;
   width: 100%;
   height: auto;
   display: flex;
