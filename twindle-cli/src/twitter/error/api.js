@@ -51,6 +51,12 @@ class TweetDoesNotExist extends TwitterError {
   }
 }
 
+class UserScreenNameInvalid extends TwitterError {
+  constructor() {
+    super("user-screen-name-invalid", "Invalid user screen user name");
+  }
+}
+
 module.exports = {
   NetworkRequestError,
   TokenNotProvidedError,
@@ -59,4 +65,5 @@ module.exports = {
   BadTwitterRequestError,
   TwitterServiceError,
   TweetDoesNotExist,
+  UserScreenNameInvalid,
 };

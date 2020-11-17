@@ -5,7 +5,9 @@ const { renderRichTweets, fixUserDescription } = require("./rich-rendering");
 const { formatTimestamp } = require("../utils/date");
 
 /**
+ * @param {screenName} string
  * @param {TwitterConversationResponse} responseJSON
+ * @param {string} token
  */
 async function processUserTweets(screenName, responseJSON, token) {
   const tweets = (responseJSON.data || []).map((resData) => ({
@@ -29,6 +31,7 @@ async function processUserTweets(screenName, responseJSON, token) {
   resp = fixUserDescription(resp);
 
   resp.common.user.profile_image_url = resp.common.user.profile_image_url.replace("_normal.", ".");
+  resp.common.user.username = "@" + resp.common.user.username;
 
   let conversations = [];
   for (let tweet of tweets) {
@@ -40,6 +43,7 @@ async function processUserTweets(screenName, responseJSON, token) {
       }
     }
   }
+  
   resp.common.count = resp.data.length;
   return resp;
 }

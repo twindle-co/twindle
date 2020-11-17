@@ -18,8 +18,9 @@ async function renderTemplate(data, templateName) {
   // renders the html template with the given data
   const rendered = template(data);
 
-  await writeFile(join(tmpdir(), "hello.html"), rendered, "utf-8");
-
+  const tmpPath = join(tmpdir(), "hello.html");
+  await writeFile(tmpPath, rendered, "utf-8");
+  console.devLog("rendered saved to ", tmpPath);
   return rendered;
 }
 
@@ -41,6 +42,7 @@ async function renderTemplateTemp(data, templateName, tempFilename) {
   const rendered = template(data);
   const tempPath = join(tmpdir(), `${tempFilename}.html`);
   await writeFile(tempPath, rendered, "utf-8");
+  console.devLog("toc saved to ", tempPath);
 
   return { renderedHtml: rendered, tempPath };
 }
