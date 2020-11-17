@@ -122,8 +122,10 @@ main .email_subs .email_input {
   width: 503px;
   height: 35px;
   border: none;
+  box-shadow: none;
   padding: 1rem;
   font-size: 15px;
+  transition: border 0.1s ease-in, box-shadow 0.1s ease-in;
 }
 
 main .email_subs .email_input:focus,
@@ -142,8 +144,19 @@ main .email_subs .sign_up_btn {
   border-radius: 5px;
   border: white;
   color: white;
-  box-shadow: 0 0px 4px #333;
+  box-shadow: 0 0px 2px #333;
   cursor: pointer;
+  outline: none;
+  position: relative;
+  transition: background 0.1s ease-in;
+}
+
+main .email_subs .sign_up_btn:hover {
+    background: #0a74c5;
+}
+
+main .email_subs .sign_up_btn:active{
+    top: 1.5px;
 }
 
 main .what_we_do {
