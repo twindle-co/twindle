@@ -10,8 +10,18 @@ body {
   background: #FFFDF9;
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
+
+/* Creates a line to divide the sections */
+
+.line{
+    max-width: 85vw;
+    height: 1.5px;
+    background-color: rgba(0,0,0,0.2);
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
 
 header {
   display: flex;
@@ -67,7 +77,6 @@ main {
   justify-content: center;
   align-content: center;
   align-items: center;
-  width: 100vw;
 }
 
 main .page_heading {
@@ -108,7 +117,7 @@ main .email_subs {
 }
 
 main .email_subs .email_input {
-  background-color: #f1f1f1;
+  background-color: #e7e7e7;
   border-radius: 5px;
   width: 503px;
   height: 35px;
@@ -121,6 +130,8 @@ main .email_subs .email_input:focus,
 main .email_subs .email_input:active,
 main .email_subs .email_input:hover {
   outline: none;
+  border: 2px solid #0b91f7;
+  box-shadow: 0 1px 3px #13598f;
 }
 
 main .email_subs .sign_up_btn {
@@ -152,23 +163,25 @@ main .what_we_do p {
   width: 534px;
 }
 
+/* Features Section */
+
 #features {
-  width: 100vw;
+  /* max-width: 100vw; */
   height: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-top: 2px solid #212121;
-  border-bottom: 2px solid #212121;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  /* border-top: 2px solid #212121;
+  border-bottom: 2px solid #212121; */
 }
 
 #three_images {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
+  /* height: 200px; */
 }
 
 .right {
@@ -191,14 +204,14 @@ main .what_we_do p {
   font-weight: 400;
 }
 
+/* Who we are Section */
+
 #who_we_are {
-  color: black;
-  width: 100%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
+  padding-bottom: 0.5rem;
 }
 
 .text_area h1 {
@@ -216,6 +229,7 @@ main .what_we_do p {
   width: 543px;
   height: 75px;
   margin-bottom: 231px;
+  color: rgba(12,12,12,0.9);
 }
 
 #remote_design {
