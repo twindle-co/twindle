@@ -3,6 +3,7 @@ const epub = require("epub-gen");
 const options = {
   title: "The Hello World",
   author: "Hello MacWorld",
+  cover: "./epubLogo.svg",
   content: [
     {
       title: "Chapter 1: First Hello",
