@@ -74,7 +74,6 @@ Initial code goes into twindle-cli
 ### 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
-
 - [Fireside chat - Kenny & Allen | Part 3](https://www.youtube.com/watch?v=z0CnYZkQSFU)
 - [Fireside chat - Kenny & Allen | Part 2](https://www.youtube.com/watch?v=hmbIUe6Hbbg)
 - [Fireside chat - Kenny & Allen | Part 1](https://www.youtube.com/watch?v=emOtBdB7PRg)
