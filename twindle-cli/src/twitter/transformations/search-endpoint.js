@@ -16,11 +16,12 @@ async function processSearchResponse(responseJSON, token) {
         (ref) => ref.type == "replied_to" && ref.id == tweet.conversation_id
       ).length > 0
   );
+  
 
   while (directReplies.length > 0) {
-    let reply_id = directReplies[0].id;
+    let reply_id = directReplies[directReplies.length-1].id;
 
-    tweets.push(createCustomTweet(await renderRichTweets(directReplies[0], token)));
+    tweets.push(createCustomTweet(await renderRichTweets(directReplies[directReplies.length-1], token)));
 
     directReplies = getTweetArray(responseJSON).filter(
       (tweet) =>
