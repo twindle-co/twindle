@@ -308,7 +308,7 @@
     <li>
       <div class="tweetContainer">
         <p>
-          {{{tweet}}}
+          {{#if created_at}}{{{created_at}}}: {{/if}}{{{tweet}}}
           <br />
           {{#if customMedia}}
           {{#each customMedia}}

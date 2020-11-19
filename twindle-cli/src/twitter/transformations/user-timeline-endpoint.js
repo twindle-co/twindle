@@ -40,7 +40,7 @@ async function processUserTweets(screenName, responseJSON, token) {
       conversations.push(tweet.conversation_id);
       let threadTweets = tweets.filter((t) => tweet.conversation_id === t.conversation_id);
       for (i = threadTweets.length - 1; i >= 0; i--) {
-        resp.data.push(createCustomTweet(await renderRichTweets(threadTweets[i], token)));
+        resp.data.push(createCustomTweet(await renderRichTweets(threadTweets[i], token, true)));
       }
     }
   }
