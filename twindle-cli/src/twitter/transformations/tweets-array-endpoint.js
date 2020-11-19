@@ -37,7 +37,7 @@ async function processTweetsArray(responseJSON, token) {
   resp.data.push(createCustomTweet(tweet, user));
 
   let directReplies = tweets
-    .filter((tweet) => tweet.referenced_tweets)
+    .filter((tweet) => tweet.author_id === resp.common.user.id && tweet.referenced_tweets)
     .filter(
       (tweet) =>
         tweet.referenced_tweets.filter(
@@ -50,7 +50,7 @@ async function processTweetsArray(responseJSON, token) {
 
     resp.data.push(createCustomTweet(await renderRichTweets(directReplies[directReplies.length-1], token)));
     directReplies = tweets
-      .filter((tweet) => tweet.referenced_tweets)
+      .filter((tweet) => tweet.author_id === resp.common.user.id && tweet.referenced_tweets)
       .filter(
         (tweet) =>
           tweet.referenced_tweets.filter((ref) => ref.type == "replied_to" && ref.id == reply_id)
