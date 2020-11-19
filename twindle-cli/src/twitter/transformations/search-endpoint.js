@@ -21,7 +21,7 @@ async function processSearchResponse(responseJSON, token) {
   while (directReplies.length > 0) {
     let reply_id = directReplies[directReplies.length-1].id;
 
-    tweets.push(createCustomTweet(await renderRichTweets(directReplies[directReplies.length-1], token)));
+    tweets.push(createCustomTweet(await renderRichTweets(directReplies[directReplies.length-1], token, false)));
 
     directReplies = getTweetArray(responseJSON).filter(
       (tweet) =>
