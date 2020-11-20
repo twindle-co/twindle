@@ -36,7 +36,7 @@ async function generateEpub(tweets, outputPath) {
   );
 
   const authors = tweets.reduce((p, c) =>
-    p ? p.common.user.name + " & " + c.common.user.name : c.common.user.name
+    p && p.common && p.common.user && c && c.common && c.common.user ? p.common.user.name + " & " + c.common.user.name : c.common.user.name
   );
 
   const options = createOptions({

@@ -330,11 +330,15 @@ async function _renderEmbeddedTweets(tweetObj, token) {
  * @param {TwitterConversationData} tweetObj
  * @param {string} token
  */
-async function renderRichTweets(tweetObj, token) {
+async function renderRichTweets(tweetObj, token, isUserTimeline) {
   tweetObj = _renderRichTweets(tweetObj);
   tweetObj = await _renderEmbeddedTweets(tweetObj, token);
+  tweetObj = sanitizeForHandlebars(tweetObj);
 
-  return sanitizeForHandlebars(tweetObj);
+  if(!isUserTimeline)
+    delete tweetObj.created_at;
+
+  return tweetObj;
 }
 
 module.exports = { renderRichTweets, fixUserDescription };
