@@ -11,7 +11,7 @@ const { formatTimestamp } = require("../utils/date");
  * @param {string} token
  */
 async function processTweetLookup(responseJSON, token) {
-  let tweet = await renderRichTweets(getTweetObject(responseJSON), token);
+  let tweet = await renderRichTweets(getTweetObject(responseJSON), token, false);
   let user = getUserObject(responseJSON);
 
   /** @type {CustomTweetsObject} */

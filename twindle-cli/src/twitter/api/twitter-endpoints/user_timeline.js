@@ -2,7 +2,7 @@ const { fetch } = require("../helpers/fetch");
 const { getCommonFields, MAX_RESULTS } = require("../constants");
 
 const BASE_ENDPOINT =
-  "https://api.twitter.com/2/tweets/search/recent?query=from:<screen_name>+-is:retweet+-has:mentions";
+  "https://api.twitter.com/2/tweets/search/recent?query=from:<screen_name>+-is:retweet";
 
 /**
  * @param {string} screen_name
