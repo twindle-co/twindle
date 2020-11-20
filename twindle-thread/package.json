@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "dependencies": {
+    "svelte": "^3.24.0"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.0.4",
+    "@snowpack/plugin-optimize": "^0.2.9",
+    "@snowpack/plugin-svelte": "^3.3.0",
+    "snowpack": "^2.17.1"
+  }
+}
