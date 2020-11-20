@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Twindle | Create books out of your tweets</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -24,7 +26,7 @@
     </header>
 
     <!-- Main section -->
-    <main id='home'>
+    <main id="home">
       <section class="page_heading">
         <p class="sub_heading">
           A better reading experience of twitter threads
@@ -39,11 +41,13 @@
         <p class="coming_soon">Coming Soon. Please sign up to know more!!!</p>
       </section>
       <section class="email_subs">
-        <form id="email_sub_form">
+        <form method="POST" autocomplete="off" name="email_sub_form">
           <input
             type="email"
             class="email_input"
             placeholder="Enter your email to sign up"
+            name="Email Address"
+            id="email_entry"
           />
           <button class="sign_up_btn" type="submit">Sign Up</button>
         </form>
@@ -52,54 +56,60 @@
         <h2 class="heading_two">What is <span>Twindle</span>?</h2>
         <br />
         <p>
-          Twindle converts your favourite Twitter threads & present it right in your mobile
+          Twindle converts your favourite Twitter threads & present it right in
+          your mobile
         </p>
       </section>
     </main>
-    
+
     <!-- Feature Section -->
-    <section id='features'>
-      <div id='shape'>
-        <img src='./images/Shape.png'alt='dotted rectangle'/>
+    <section id="features">
+      <div id="shape">
+        <img src="./images/Shape.png" alt="dotted rectangle" />
       </div>
-      <div id='three_images'>
-        <img class='right' src='./images/image 18.png'>
-        <img id='left' src='./images/image 19.png'>
-        <img class='right' src='./images/image 17.png'>
+      <div id="three_images">
+        <img class="right" src="./images/image 18.png" />
+        <img id="left" src="./images/image 19.png" />
+        <img class="right" src="./images/image 17.png" />
       </div>
-      <div id='text'>
+      <div id="text">
         <h1>A little about our features</h1>
-        <br>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing <br>
-           elit, sed do eiusmod tempor incididunt ut labore et<br>
-          dolore magna aliqua. Ut enim ad minim veniam, quis<br>
-             nostrud exercitation ullamco laboris </h4>
+        <br />
+        <h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+          elit, sed do eiusmod tempor incididunt ut labore et<br />
+          dolore magna aliqua. Ut enim ad minim veniam, quis<br />
+          nostrud exercitation ullamco laboris
+        </h4>
       </div>
     </section>
 
     <!-- Line Division between sections -->
     <div class="line"></div>
-    
+
     <!-- Who We Are Section -->
-    <section id='who_we_are'>
-      <div class='text_area'>
-        <h1>We're a strong open<br>
-        source community</h1>
-        <br>
-        <p>Pri id phaedrum tincidunt reformidans, qui ponderum
-        antiopam gloriatur ut. Amet appellantur et eum,
-        habeo debet eu mel. Et denique explicari quo. Ut vel
-        erant euripidis constituto, mel ne molestie recusabo
-        inciderint</p>
+    <section id="who_we_are">
+      <div class="text_area">
+        <h1>
+          We're a strong open<br />
+          source community
+        </h1>
+        <br />
+        <p>
+          Pri id phaedrum tincidunt reformidans, qui ponderum antiopam gloriatur
+          ut. Amet appellantur et eum, habeo debet eu mel. Et denique explicari
+          quo. Ut vel erant euripidis constituto, mel ne molestie recusabo
+          inciderint
+        </p>
       </div>
-      <div id='remote_design'>
-        <img src='./images/mimage.svg'alt='svg showcasing remote design'>
+      <div id="remote_design">
+        <img src="./images/mimage.svg" alt="svg showcasing remote design" />
       </div>
     </section>
 
     <!-- Line Division between sections -->
     <div class="line"></div>
-    
+
     <!-- Footer Section Code -->
     <footer>
       <nav>
@@ -121,5 +131,6 @@
         <p>&copy; Copyright TwindleCo 2020</p>
       </nav>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
