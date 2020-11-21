@@ -7,18 +7,18 @@
 
 html,
 body {
-  background: #FFFDF9;
+  background: #fffdf9;
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
 }
 
 /* Creates a line to divide the sections */
 
-.line{
-    max-width: 85vw;
-    height: 1.5px;
-    background-color: rgba(0,0,0,0.2);
-    margin: 0 auto;
+.line {
+  max-width: 85vw;
+  height: 1.5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 }
 
 /* Navigation Bar */
@@ -152,11 +152,11 @@ main .email_subs .sign_up_btn {
 }
 
 main .email_subs .sign_up_btn:hover {
-    background: #0a74c5;
+  background: #0a74c5;
 }
 
-main .email_subs .sign_up_btn:active{
-    top: 1.5px;
+main .email_subs .sign_up_btn:active {
+  top: 1.5px;
 }
 
 main .what_we_do {
@@ -242,7 +242,7 @@ main .what_we_do p {
   width: 543px;
   height: 75px;
   margin-bottom: 231px;
-  color: rgba(12,12,12,0.9);
+  color: rgba(12, 12, 12, 0.9);
 }
 
 #remote_design {
@@ -250,6 +250,86 @@ main .what_we_do p {
   height: 236px;
 }
 
+#testimonials {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:2px
+}
+
+#testimonials button {
+  background: none;
+  font-weight: 800;
+  font-size: 3rem;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+#tD {
+  margin-top: -75px;
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#tCard {
+  margin-top: 80px;
+  width: 600px;
+  height: auto;
+  padding-left: 30px;
+  padding-right: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#color {
+  background: #fffcf7;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#user {
+  text-align: right;
+  margin-right: 40px;
+}
+#tCard #quot1 {
+  width: 50px;
+  transform: rotate(180deg);
+}
+#tCard #quot2 {
+  width: 50px;
+  align-self: flex-end;
+}
+#tCard #userImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid blue;
+}
+#userimgD {
+  margin-top: -40px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  }
+  
+  .arrow {
+  outline: none;
+  text-decoration: none;
+  }
+  
 footer {
   background: #fffcf7;
   color: black;
