@@ -79,7 +79,6 @@ async function processReplies(responseJSON, token) {
 }
 
 async function updateReplies(responseJSON, replies, finalTweetsData, token) {
-  console.log(responseJSON);
   for(let tweet of finalTweetsData.data) {
     tweet.replies = [];
   }
