@@ -22,6 +22,7 @@ async function main() {
     format,
     outputFilename,
     tweetId,
+    includeReplies,
     kindleEmail,
     mock,
     shouldUsePuppeteer,
@@ -34,7 +35,7 @@ async function main() {
   try {
     verifyEnvironmentVariables(kindleEmail);
 
-    const tweets = await getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets });
+    const tweets = await getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets });
 
     const intelligentOutputFileName = `${
       (
@@ -98,7 +99,7 @@ async function main() {
  * @param {string} param.userId
  * @param {number} param.numTweets
  */
-async function getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets }) {
+async function getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets }) {
   /** @type {CustomTweetsObject[]} */
   let tweets;
 
@@ -120,12 +121,12 @@ async function getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets 
 
   if (shouldUsePuppeteer) {
     const tweetIDs = await getTweetIDs(tweetId);
-    tweets = await getTweetsFromArray(tweetIDs, process.env.TWITTER_AUTH_TOKEN);
+    tweets = await getTweetsFromArray(tweetIDs, includeReplies, process.env.TWITTER_AUTH_TOKEN);
 
     return tweets;
   }
 
-  tweets = await getTweetsFromThreads(tweetId, process.env.TWITTER_AUTH_TOKEN);
+  tweets = await getTweetsFromThreads(tweetId, includeReplies, process.env.TWITTER_AUTH_TOKEN);
 
   return tweets;
 }
