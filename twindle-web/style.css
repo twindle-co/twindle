@@ -321,6 +321,15 @@ main .what_we_do p {
   background-color: none;
 }
 
+.arrow:hover {
+  cursor: pointer;
+  }
+  
+  .arrow {
+  outline: none;
+  text-decoration: none;
+  }
+  
 footer {
   background: #fffcf7;
   color: black;
