@@ -58,7 +58,7 @@ async function goFront(d) {
   let info = await d[i[0].id + 1] ? d[i[0].id + 1] : null;
   if(info != null)
 { 
-  console.log(pinfo.innerHTML)
+
   pinfo.innerText = ''
   pinfo.innerText = info.text;
   name.innerText = "- " + info.name;
@@ -72,7 +72,7 @@ async function goBack(d) {
     }
   });
   let info = await d[i[0].id - 1] ? d[i[0].id - 1] : null;
-  console.log(info.text===d[i[0].id - 1].text)
+
   if (info != null)
   {
     pinfo.innerText = info.text;
