@@ -41,13 +41,11 @@
         <p class="coming_soon">Coming Soon. Please sign up to know more!!!</p>
       </section>
       <section class="email_subs">
-        <form method="POST" autocomplete="off" name="email_sub_form">
+        <form id="email_sub_form">
           <input
             type="email"
             class="email_input"
             placeholder="Enter your email to sign up"
-            name="Email Address"
-            id="email_entry"
           />
           <button class="sign_up_btn" type="submit">Sign Up</button>
         </form>
@@ -108,8 +106,35 @@
     </section>
 
     <!-- Line Division between sections -->
-    <div class="line"></div>
-
+    <section id="testimonials">
+      <h1>Testimonials</h1>
+      <div id="tD">
+        <button class='arrow' id="back">&lt;</button>
+        <div id="tCard">
+          <div id="color">
+            <img
+              id="quot1"
+              src="./images/format_quote-24px.svg"
+            />
+            <p id="ptext">
+              This project was started to encourage people who just started to learn programming and it took off like a rocket.People from diverse backgrounds enagaged together like a football team to make this possible.
+            </p>
+            <img
+              id="quot2"
+              src="./images/format_quote-24px.svg" alt='' />
+            />
+            <p id="user">- Random1</p>
+          </div>
+          <div id="userimgD">
+            <img
+              id="userImg"
+              src="https://www.bestfunnies.com/wp-content/uploads/2015/06/Pictures-of-Ugly-People-18-570x428.jpg"
+            />
+          </div>
+        </div>
+        <button class='arrow'id="front">&gt;</button>
+      </div>
+    </section>
     <!-- Footer Section Code -->
     <footer>
       <nav>
@@ -131,6 +156,6 @@
         <p>&copy; Copyright TwindleCo 2020</p>
       </nav>
     </footer>
-    <script src="./index.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
