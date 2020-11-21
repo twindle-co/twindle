@@ -393,6 +393,17 @@
         {{/with}}
         {{/if}}
         </p>
+        {{#if replies}}
+        {{#each replies}}
+        <p>
+          Question:{{{tweet}}}
+          <br/>
+          Asked by:{{{user.name}}}
+          <br/>
+          Answer:{{{answer.tweet}}}
+        </p>
+        {{/each}}
+        {{/if}}
       </div>
     </li>
     {{/each}}
