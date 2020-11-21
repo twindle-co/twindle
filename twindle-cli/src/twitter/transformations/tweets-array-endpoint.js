@@ -14,11 +14,12 @@ async function processTweetsArray(responseJSON, token) {
   }));
 
   const firstTweet = tweets.filter((tweet) => tweet.id === tweet.conversation_id)[0];
+  const created_at = firstTweet.created_at;
   const userObject = responseJSON.includes.users.filter(
     (user) => user.id === firstTweet.author_id
   )[0];
 
-  let tweet = await renderRichTweets(firstTweet, token);
+  let tweet = await renderRichTweets(firstTweet, token, false);
   let user = userObject;
 
   /** @type {CustomTweetsObject} */
@@ -27,7 +28,7 @@ async function processTweetsArray(responseJSON, token) {
     common: {},
   };
 
-  resp.common.created_at = formatTimestamp(tweet.created_at);
+  resp.common.created_at = formatTimestamp(created_at);
   resp.common.user = { ...user };
 
   resp = fixUserDescription(resp);
@@ -37,7 +38,7 @@ async function processTweetsArray(responseJSON, token) {
   resp.data.push(createCustomTweet(tweet, user));
 
   let directReplies = tweets
-    .filter((tweet) => tweet.referenced_tweets)
+    .filter((tweet) => tweet.author_id === resp.common.user.id && tweet.referenced_tweets)
     .filter(
       (tweet) =>
         tweet.referenced_tweets.filter(
@@ -48,9 +49,9 @@ async function processTweetsArray(responseJSON, token) {
   while (directReplies.length > 0) {
     let reply_id = directReplies[directReplies.length-1].id;
 
-    resp.data.push(createCustomTweet(await renderRichTweets(directReplies[directReplies.length-1], token)));
+    resp.data.push(createCustomTweet(await renderRichTweets(directReplies[directReplies.length-1], token, false)));
     directReplies = tweets
-      .filter((tweet) => tweet.referenced_tweets)
+      .filter((tweet) => tweet.author_id === resp.common.user.id && tweet.referenced_tweets)
       .filter(
         (tweet) =>
           tweet.referenced_tweets.filter((ref) => ref.type == "replied_to" && ref.id == reply_id)

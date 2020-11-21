@@ -3,6 +3,8 @@ const express = require("express");
 const { addThread } = require("./src/add-thread");
 const bodyParser = require("body-parser");
 
+require("dotenv").config();
+
 const port = 3800;
 
 const app = express();
