@@ -11,7 +11,7 @@ Once you are part of the twindle team, please join us here to keep in touch.
 
 2. Subscribe to YT channel: [<img src ='https://cdn2.iconfinder.com/data/icons/colorful-guache-social-media-logos-1/157/social-media_youtube-512.png'  width=20 height=20 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
 
-3. Join discord [<img src ='https://cdn2.iconfinder.com/data/icons/colorful-guache-social-media-logos-1/159/social-media_discord-alt-512.png'  width=20 height=20 />](https://discord.gg/rZJxqZ4)
+3. Join discord [<img src ='https://cdn2.iconfinder.com/data/icons/colorful-guache-social-media-logos-1/159/social-media_discord-alt-512.png'  width=20 height=20 />](https://discord.com/invite/jBj2zMR)
 
 <br>
 
