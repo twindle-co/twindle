@@ -4,7 +4,7 @@ const { createLibraryIfNotExists } = require("./utils/library");
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
     .usage(
-      "Usage: -i <tweet id> -u <user_id> -n <default_num_tweets> -f <file format> -o <filename> -s <send to kindle email| Optionally pass kindle email here>"
+      "Usage: -i <tweet id or a comma separated list of tweet ids> -r <include replies by author of thread to other users> -u <user_id> -n <default_num_tweets> -f <file format> -o <filename> -s <send to kindle email| Optionally pass kindle email here>"
     )
     .option({
       i: {
@@ -12,6 +12,13 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "First tweet's tweet id in of the twitter thread",
         type: "string",
+      },
+      r: {
+        alias: "includeReplies",
+        demandOption: false,
+        describe: "include replies by thread author",
+        type: "boolean",
+        default: true
       },
       f: {
         alias: "format",

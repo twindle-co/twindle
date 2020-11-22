@@ -11,7 +11,7 @@ const { formatTimestamp } = require("../utils/date");
  * @param {string} token
  */
 async function processTweetLookup(responseJSON, token) {
-  let tweet = await renderRichTweets(getTweetObject(responseJSON), token);
+  let tweet = await renderRichTweets(getTweetObject(responseJSON), token, false);
   let user = getUserObject(responseJSON);
 
   /** @type {CustomTweetsObject} */
@@ -20,12 +20,12 @@ async function processTweetLookup(responseJSON, token) {
     common: {},
   };
 
-  resp.common.created_at = formatTimestamp(tweet.created_at);
+  resp.common.created_at = formatTimestamp(getTweetObject(responseJSON).created_at);
   resp.common.user = { ...user };
 
   resp.common.user.username = `@${resp.common.user.username}`;
 
-  resp = fixUserDescription(resp);
+  resp.common.user = fixUserDescription(resp.common.user);
 
   resp.common.user.profile_image_url = resp.common.user.profile_image_url.replace("_normal.", ".");
 

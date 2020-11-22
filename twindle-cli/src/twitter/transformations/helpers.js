@@ -33,12 +33,15 @@ const createCustomTweet = (tweet_object) => {
   /** @type {import("../types/types").CustomTweetData} */
   const tweet = {
     id: tweet_object.id,
-    created_at: formatTimestamp(tweet_object.created_at),
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {
       folder: "svg",
       ext: ".svg",
     }),
   };
+
+  if(tweet_object.created_at)
+    tweet.created_at = formatTimestamp(tweet_object.created_at);
+    
 
   if (tweet_object.customMedia) {
     tweet.customMedia = tweet_object.customMedia;
