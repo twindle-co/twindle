@@ -28,7 +28,7 @@ async function processUserTweets(screenName, responseJSON, token) {
   resp.common.created_at = formatTimestamp(new Date() + "");
   resp.common.user = { ...user };
 
-  resp = fixUserDescription(resp);
+  resp.common.user = fixUserDescription(resp.common.user);
 
   resp.common.user.profile_image_url = resp.common.user.profile_image_url.replace("_normal.", ".");
   resp.common.user.username = "@" + resp.common.user.username;

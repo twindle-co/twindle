@@ -187,42 +187,42 @@ function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
 }
 
 /**
- * @param {CustomTweetsObject} tweets
+ * @param {CustomTweetsObject} user
  * Fix user description from multiple tweets combined obj. DO NOT COMPOSE IN THE RENDERRICHTWEETS FUNCTION
  */
-function fixUserDescription(tweets) {
+function fixUserDescription(user) {
   // console.log(tweets.common.user.entities);
-  if (!tweets.common.user.entities) return tweets;
+  if (!user.entities) return user;
 
   // Fix spaces
-  tweets.common.user.description = twemoji.parse(
-    tweets.common.user.description.replace(/\n/g, "<br />"),
+  user.description = twemoji.parse(
+    user.description.replace(/\n/g, "<br />"),
     {
       folder: "svg",
       ext: ".svg",
     }
   );
 
-  const entitiesDescription = tweets.common.user.entities.description;
+  const entitiesDescription = user.entities.description;
 
-  tweets.common.user.description = renderMentionsHashtags({
-    text: tweets.common.user.description,
+  user.description = renderMentionsHashtags({
+    text: user.description,
     hashtags: (entitiesDescription && entitiesDescription.hashtags) || [],
     mentions: (entitiesDescription && entitiesDescription.mentions) || [],
   });
 
   const descriptionURLs = entitiesDescription && entitiesDescription.urls;
 
-  if (!descriptionURLs) return tweets;
+  if (!descriptionURLs) return user;
 
   for (let descriptionURLObj of descriptionURLs) {
-    tweets.common.user.description = tweets.common.user.description.replace(
+    user.description = user.description.replace(
       descriptionURLObj.url,
       `<a href="${descriptionURLObj.expanded_url}" class="description-link" rel="noopener noreferrer">${descriptionURLObj.display_url}</a>`
     );
   }
 
-  return tweets;
+  return user;
 }
 
 /**

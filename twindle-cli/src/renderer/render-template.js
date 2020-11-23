@@ -1,4 +1,4 @@
-const { readFile, writeFile, rm } = require("fs").promises;
+const { readFile, writeFile } = require("fs").promises;
 const hbs = require("handlebars");
 const { tmpdir } = require("os");
 const { join } = require("path");
@@ -20,6 +20,7 @@ async function renderTemplate(data, templateName) {
 
   const tmpPath = join(tmpdir(), "hello.html");
   await writeFile(tmpPath, rendered, "utf-8");
+  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
   console.devLog("rendered saved to ", tmpPath);
   return rendered;
 }
