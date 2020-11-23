@@ -6,7 +6,7 @@ const data = [
     id: 0,
     name: "Random1",
     text:
-      "This project was started to encourage people who just started to learn programming and it took off like a rocket.People from diverse backgrounds enagaged together like a football team to make this possible.",
+      "This project was started to encourage people who just started to learn programming and it took off like a rocket. People from diverse backgrounds engaged together like a football team to make this possible.",
     img: "https://avatars0.githubusercontent.com/u/354596?s=64&v=4g"
   },
   {
@@ -50,8 +50,8 @@ const data = [
 ];
 async function goFront(d) {
   let i = await d.filter((x) => {
-    if (name.innerText == '- '+x.name) {
-      return x
+    if (name.innerText == '- ' + x.name) {
+      return x;
     }
   });
 
