@@ -87,7 +87,7 @@ Initial code goes into twindle-cli
 
 ## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
 
-[Google Meet Link](https://meet.google.com/gna-hvym-tfj) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
+[Discord Link](https://discord.gg/jBj2zMR) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
 
 ## Connect with us
 
