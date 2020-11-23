@@ -2,7 +2,7 @@
 
 /* CSS Variables in the root element */
 :root {
-  --primary-heading-text: #1d1d1e;
+  --primary-heading-text: #181818;
   --primary-background-color: #fffdf9;
 
   --secondary-background-color: #faeee7;
@@ -43,7 +43,7 @@ header {
 header a {
   font-family: Mulish;
   font-style: normal;
-  color: #212121;
+  color: #202020;
   text-decoration: none;
   margin-left: 20px;
   display: flex;
@@ -80,6 +80,7 @@ header nav ul li a:focus {
   background-color: rgba(9, 133, 227, 0.2);
 }
 
+/* Main Section / HomePage */
 main {
   display: flex;
   flex-direction: column;
@@ -99,6 +100,7 @@ main .page_heading .sub_heading {
   margin-bottom: 0.25rem;
   font-weight: 600;
   margin-top: 2.3rem;
+  color: var(--primary-heading-text);
 }
 
 main .coming_soon {
@@ -153,7 +155,7 @@ main .email_subs .sign_up_btn {
   border-radius: 5px;
   border: white;
   color: white;
-  box-shadow: 0 0px 2px #333;
+  box-shadow: 0 0 2px #333;
   cursor: pointer;
   outline: none;
   position: relative;
@@ -216,8 +218,9 @@ main .what_we_do p {
   transform: translateX(-100px);
 }
 
-#text > h2 {
+#text > h1 {
   font-weight: 800;
+  color: var(--primary-heading-text);
 }
 
 #text > h4 {
@@ -241,6 +244,7 @@ main .what_we_do p {
   margin-bottom: 38px;
   width: 516px;
   height: 75px;
+  color: var(--primary-heading-text);
 }
 
 .text_area p {
@@ -272,6 +276,7 @@ main .what_we_do p {
 #testimonials h1 {
   font-size: 2.5rem;
   padding-bottom: 1rem;
+  color: var(--primary-heading-text);
 }
 
 #testimonials button {

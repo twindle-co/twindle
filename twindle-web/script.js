@@ -50,8 +50,8 @@ const data = [
 ];
 async function goFront(d) {
   let i = await d.filter((x) => {
-    if (name.innerText == '- '+x.name) {
-      return x
+    if (name.innerText == '- ' + x.name) {
+      return x;
     }
   });
 
