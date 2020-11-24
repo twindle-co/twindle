@@ -38,6 +38,11 @@ header {
   align-items: center;
   padding: 1.3rem;
   box-shadow: 0 2px 4px #ddd;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: var(--primary-background-color);
+  z-index: 2;
 }
 
 header a {
@@ -87,6 +92,7 @@ main {
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding-top: 5rem;
 }
 
 main .page_heading {
@@ -199,11 +205,14 @@ main .what_we_do p {
   padding-bottom: 4rem;
 }
 
+/* .gif{
+  object-fit: cover;
+} */
+
 #three_images {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* height: 200px; */
 }
 
 .right {
@@ -289,11 +298,11 @@ main .what_we_do p {
 }
 
 #tD {
-  width: 70vw;
+  max-width: 80vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
   background-color: var(--secondary-background-color);
   border-radius: 10px;
   -webkit-box-shadow: 3px 3px 5px 3px #fde5cb; 
