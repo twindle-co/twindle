@@ -8,8 +8,6 @@ const converter = new showdown.Converter()
 
 const convertHTML = (fetchURL)=>{
 const url = new URL(fetchURL)
-console.log(url.pathname);
-console.log(path.basename(url.pathname,'.md'));
 const readmeFileName = path.basename(url.pathname,'.md')
 const repoName = url.pathname.split('/')[2]
 const rawFile = fetchURL.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
