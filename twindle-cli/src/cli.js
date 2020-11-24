@@ -81,6 +81,12 @@ const getCommandlineArgs = (processArgv) =>
         type: "integer",
         default: 10,
       },
+      g: {
+        alias: "gitHubURL",
+        demandOption: false,
+        describe: "The README.md file of git Repo",
+        type: "string"
+      }
     }).argv;
 
 // Intends to do such things for one time for the user, like config creating, main outputdir creation
