@@ -73,11 +73,11 @@ Initial code goes into twindle-cli
 ### 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
-- [Fireside chat - Kenny & Allen | Part 3](https://www.youtube.com/watch?v=z0CnYZkQSFU)
-- [Fireside chat - Kenny & Allen | Part 2](https://www.youtube.com/watch?v=hmbIUe6Hbbg)
-- [Fireside chat - Kenny & Allen | Part 1](https://www.youtube.com/watch?v=emOtBdB7PRg)
-- [12 Nov 2020 - Twindle UI/UX Design discussion](https://www.youtube.com/watch?v=rmD2NRi2vd4)
-- [11 Nov 2020 Wed Twindle Daily Call](https://www.youtube.com/watch?v=veb-mHuiJwA)
+- [Twindle Live Stream](https://www.youtube.com/watch?v=S2CT8wtLXRU)
+- [Twindle PDF Rendering](https://www.youtube.com/watch?v=3WdxnAOTZq0)
+- [Svelte Overview and Discussion](https://www.youtube.com/watch?v=tp5lYJdJ1XE)
+- [Twindle Hacker News Integration](https://www.youtube.com/watch?v=kX4ejOw46Vg)
+- [Twindle Thread Bookmark & Management](https://www.youtube.com/watch?v=yKL-6QXKQMw)
 <!-- YOUTUBE:END -->
 
 ➡️ [more videos...](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA/videos)
