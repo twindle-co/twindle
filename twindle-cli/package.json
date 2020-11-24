@@ -30,6 +30,7 @@
     "nodemailer": "^6.4.14",
     "ora": "^5.1.0",
     "puppeteer": "^5.4.1",
+    "showdown": "^1.9.1",
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
   },
