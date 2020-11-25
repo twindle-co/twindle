@@ -1,5 +1,5 @@
 require("./helpers/logger");
-require("dotenv").config({path: './config.env'});
+require("dotenv").config();
 const { getCommandlineArgs, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
 const { getTweetsFromArray, getTweetsFromUser, getTweetsFromThreads } = require("./twitter");
@@ -39,7 +39,7 @@ async function main() {
     const giturl = new URL(gitHubURL)
     const urlExtension = path.extname(giturl.pathname)
     if(urlExtension !== ".md"){
-    return spinner.fail(bgRed("Please enter another URL haaving markdown extension(.md)"));
+    return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
     }
     converthtml(gitHubURL)
     return spinner.succeed(bgGreen("Your file is saved"))
