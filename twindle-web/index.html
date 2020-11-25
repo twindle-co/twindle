@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <header>
@@ -18,8 +19,8 @@
           <li><i class="material-icons">nights_stay</i></li>
           <li><a href="#home">Home</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#who_we_are">About</a></li>
+          <li><a href="./team_details/team_details.html">Team</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
         </ul>
       </nav>
@@ -51,7 +52,7 @@
         </form>
       </section>
       <section class="what_we_do">
-        <h2 class="heading_two">What is <span>Twindle</span>?</h2>
+        <h2 class="heading_two">What is Twindle?</h2>
         <br />
         <p>
           Twindle converts your favourite Twitter threads & present it right in
@@ -62,23 +63,33 @@
 
     <!-- Feature Section -->
     <section id="features">
-      <div id="shape">
-        <img src="./images/Shape.png" alt="dotted rectangle" />
-      </div>
-      <div id="three_images">
-        <img class="right" src="./images/image 18.png" />
-        <img id="left" src="./images/image 19.png" />
-        <img class="right" src="./images/image 17.png" />
-      </div>
-      <div id="text">
-        <h1>A little about our features</h1>
-        <br />
-        <h4>
-          Lorem ipsum dolor sit amet, consectetur adipiscing <br />
-          elit, sed do eiusmod tempor incididunt ut labore et<br />
-          dolore magna aliqua. Ut enim ad minim veniam, quis<br />
-          nostrud exercitation ullamco laboris
-        </h4>
+      <div class="container">
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_e9of4o97.json"
+          background="transparent"
+          speed="1"
+          style="width: 350px; height: 350px"
+          loop
+          autoplay
+        ></lottie-player>
+        <!-- <div id="shape">
+              <img src="./images/Shape.png" alt="dotted rectangle" />
+            </div>
+            <div id="three_images">
+              <img class="right" src="./images/image 18.png" />
+              <img id="left" src="./images/image 19.png" />
+              <img class="right" src="./images/image 17.png" />
+            </div> -->
+        <div id="text">
+          <h1>A little about our features</h1>
+          <br />
+          <h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+            elit, sed do eiusmod tempor incididunt ut labore et<br />
+            dolore magna aliqua. Ut enim ad minim veniam, quis<br />
+            nostrud exercitation ullamco laboris
+          </h4>
+        </div>
       </div>
     </section>
 
@@ -105,24 +116,21 @@
       </div>
     </section>
 
-    <!-- Line Division between sections -->
+    <!-- Testimonials Section -->
     <section id="testimonials">
       <h1>Testimonials</h1>
       <div id="tD">
-        <button class='arrow' id="back">&lt;</button>
+        <button class="arrow" id="back">&lt;</button>
         <div id="tCard">
           <div id="color">
-            <img
-              id="quot1"
-              src="./images/format_quote-24px.svg"
-            />
+            <img id="quot1" src="./images/format_quote-24px.svg" />
             <p id="ptext">
-              This project was started to encourage people who just started to learn programming and it took off like a rocket.People from diverse backgrounds enagaged together like a football team to make this possible.
+              This project was started to encourage people who just started to
+              learn programming and it took off like a rocket. People from
+              diverse backgrounds engaged together like a football team to make
+              this possible.
             </p>
-            <img
-              id="quot2"
-              src="./images/format_quote-24px.svg" alt='' 
-            />
+            <img id="quot2" src="./images/format_quote-24px.svg" alt="" />
             <p id="user">- Random1</p>
           </div>
           <div id="userimgD">
@@ -132,9 +140,13 @@
             />
           </div>
         </div>
-        <button class='arrow'id="front">&gt;</button>
+        <button class="arrow" id="front">&gt;</button>
       </div>
     </section>
+
+    <!-- Line Division between sections -->
+    <div class="line"></div>
+
     <!-- Footer Section Code -->
     <footer>
       <nav>

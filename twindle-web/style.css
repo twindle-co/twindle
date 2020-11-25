@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;800&display=swap");
+
+/* CSS Variables in the root element */
+:root {
+  --primary-heading-text: #181818;
+  --primary-background-color: #fffdf9;
+
+  --secondary-background-color: #faeee7;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +16,7 @@
 
 html,
 body {
-  background: #fffdf9;
+  background: var(--primary-background-color);
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
 }
@@ -16,9 +25,10 @@ body {
 
 .line {
   max-width: 85vw;
-  height: 1.5px;
+  height: 2px;
   background-color: rgba(0, 0, 0, 0.2);
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 /* Navigation Bar */
@@ -29,12 +39,17 @@ header {
   align-items: center;
   padding: 1.3rem;
   box-shadow: 0 2px 4px #ddd;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: var(--primary-background-color);
+  z-index: 2;
 }
 
 header a {
   font-family: Mulish;
   font-style: normal;
-  color: #212121;
+  color: #202020;
   text-decoration: none;
   margin-left: 20px;
   display: flex;
@@ -68,15 +83,17 @@ header li {
 
 header nav ul li a:hover,
 header nav ul li a:focus {
-  background-color: rgba(9, 133, 227, 0.1);
+  background-color: rgba(9, 133, 227, 0.2);
 }
 
+/* Main Section / HomePage */
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding-top: 5rem;
 }
 
 main .page_heading {
@@ -90,6 +107,7 @@ main .page_heading .sub_heading {
   margin-bottom: 0.25rem;
   font-weight: 600;
   margin-top: 2.3rem;
+  color: var(--primary-heading-text);
 }
 
 main .coming_soon {
@@ -144,7 +162,7 @@ main .email_subs .sign_up_btn {
   border-radius: 5px;
   border: white;
   color: white;
-  box-shadow: 0 0px 2px #333;
+  box-shadow: 0 0 2px #333;
   cursor: pointer;
   outline: none;
   position: relative;
@@ -179,22 +197,24 @@ main .what_we_do p {
 /* Features Section */
 
 #features {
-  /* max-width: 100vw; */
-  height: auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  max-width: 100vw;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  /* border-top: 2px solid #212121;
-  border-bottom: 2px solid #212121; */
 }
 
+.container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 75vw;
+}
+
+/* 
 #three_images {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* height: 200px; */
 }
 
 .right {
@@ -207,17 +227,19 @@ main .what_we_do p {
   width: 75px;
   height: 75px;
   transform: translateX(-100px);
-}
+} 
+*/
 
-#text > h2 {
+#text > h1 {
   font-weight: 800;
+  color: var(--primary-heading-text);
 }
 
 #text > h4 {
   font-weight: 400;
 }
 
-/* Who we are Section */
+/* Who we are / About Section */
 
 #who_we_are {
   /* height: auto; */
@@ -234,6 +256,7 @@ main .what_we_do p {
   margin-bottom: 38px;
   width: 516px;
   height: 75px;
+  color: var(--primary-heading-text);
 }
 
 .text_area p {
@@ -250,14 +273,22 @@ main .what_we_do p {
   height: 236px;
 }
 
+/* Testimonials Section */
+
 #testimonials {
-  width: 100vw;
-  height: auto;
+  max-width: 100vw;
+  max-height: 60vh;
+  padding-bottom: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top:2px
+}
+
+#testimonials h1 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  color: var(--primary-heading-text);
 }
 
 #testimonials button {
@@ -268,12 +299,17 @@ main .what_we_do p {
   width: 80px;
   border-radius: 50%;
 }
+
 #tD {
-  margin-top: -75px;
-  width: 70vw;
+  max-width: 80vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1rem;
+  background-color: var(--secondary-background-color);
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px 3px #fde5cb; 
+  box-shadow: 3px 3px 5px 3px #fde5cb;
 }
 
 #tCard {
@@ -286,31 +322,37 @@ main .what_we_do p {
   display: flex;
   flex-direction: column;
 }
+
 #color {
-  background: #fffcf7;
+  background-color: var(--secondary-background-color);
   display: flex;
   flex-direction: column;
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
 #user {
   text-align: right;
   margin-right: 40px;
 }
+
 #tCard #quot1 {
   width: 50px;
   transform: rotate(180deg);
 }
+
 #tCard #quot2 {
   width: 50px;
   align-self: flex-end;
 }
+
 #tCard #userImg {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   border: 2px solid blue;
 }
+
 #userimgD {
   margin-top: -40px;
   width: 100%;
@@ -321,17 +363,17 @@ main .what_we_do p {
   background-color: none;
 }
 
+.arrow {
+  outline: none;
+}
+
 .arrow:hover {
   cursor: pointer;
-  }
-  
-  .arrow {
-  outline: none;
-  text-decoration: none;
-  }
-  
+}
+
+/* Footer Section */
+
 footer {
-  background: #fffcf7;
   color: black;
   display: flex;
   justify-content: center;
@@ -356,5 +398,3 @@ footer nav p {
   position: relative;
   top: 1rem;
 }
-
-/*# sourceMappingURL=style.css.map */

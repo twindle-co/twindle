@@ -146,6 +146,12 @@ export interface LinkWithImage {
   domain: string;
 }
 
+export interface Answer extends Pick<CustomTweetData, "id" | "tweet"> {}
+
+export interface Reply extends Pick<CustomTweetData, "id" | "tweet" | "user"> {
+  answer: Answer;
+}
+
 export interface CustomTweetData {
   id: string;
   created_at: string;
@@ -156,14 +162,16 @@ export interface CustomTweetData {
 
   embeddedTweet?: ConversationResponseData;
   embeddedTweetUser?: User;
+
+  replies?: Reply[];
 }
 
 export interface CustomTweets {
   common: {
     id: string;
-    created_at: string;
     count: number;
-    user: Partial<User>;
+    created_at?: string;
+    user?: Partial<User>;
   };
   data: CustomTweetData[];
 }

@@ -74,11 +74,11 @@ Initial code goes into twindle-cli
 ### 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
+- [Twindle PDF Rendering](https://www.youtube.com/watch?v=3WdxnAOTZq0)
 - [Svelte Overview and Discussion](https://www.youtube.com/watch?v=tp5lYJdJ1XE)
 - [Twindle Hacker News Integration](https://www.youtube.com/watch?v=kX4ejOw46Vg)
 - [Twindle Thread Bookmark & Management](https://www.youtube.com/watch?v=yKL-6QXKQMw)
 - [Twindle Github as source](https://www.youtube.com/watch?v=2SyHZglZZFo)
-- [Twindle Web Discussion Part 2](https://www.youtube.com/watch?v=e3L0RS68zWY)
 <!-- YOUTUBE:END -->
 
 ➡️ [more videos...](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA/videos)
@@ -87,7 +87,7 @@ Initial code goes into twindle-cli
 
 ## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
 
-[Google Meet Link](https://meet.google.com/gna-hvym-tfj) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
+[Discord Link](https://discord.gg/jBj2zMR) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
 
 ## Connect with us
 
