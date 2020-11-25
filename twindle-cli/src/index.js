@@ -7,11 +7,13 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
-const { red, cyan } = require("kleur");
+const { red, cyan ,bgGreen,bgRed } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
 const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
+const converthtml = require('./github/convert')
+const path = require('path')
 
 async function main() {
   prepareCli();
@@ -30,7 +32,18 @@ async function main() {
     userId,
     numTweets,
     generateMock,
+    gitHubURL
   } = getCommandlineArgs(process.argv);
+
+  if(gitHubURL){
+    const giturl = new URL(gitHubURL)
+    const urlExtension = path.extname(giturl.pathname)
+    if(urlExtension !== ".md"){
+    return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
+    }
+    converthtml(gitHubURL)
+    return spinner.succeed(bgGreen("Your file is saved"))
+  }
 
   try {
     verifyEnvironmentVariables(kindleEmail);
