@@ -7,11 +7,13 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
-const { red, cyan } = require("kleur");
+const { red, cyan ,bgGreen,bgRed } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
 const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
+const converthtml = require('./github/convert')
+const path = require('path')
 
 async function main() {
   prepareCli();
@@ -22,6 +24,7 @@ async function main() {
     format,
     outputFilename,
     tweetId,
+    includeReplies,
     kindleEmail,
     mock,
     shouldUsePuppeteer,
@@ -29,12 +32,23 @@ async function main() {
     userId,
     numTweets,
     generateMock,
+    gitHubURL
   } = getCommandlineArgs(process.argv);
+
+  if(gitHubURL){
+    const giturl = new URL(gitHubURL)
+    const urlExtension = path.extname(giturl.pathname)
+    if(urlExtension !== ".md"){
+    return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
+    }
+    converthtml(gitHubURL)
+    return spinner.succeed(bgGreen("Your file is saved"))
+  }
 
   try {
     verifyEnvironmentVariables(kindleEmail);
 
-    const tweets = await getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets });
+    const tweets = await getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets });
 
     const intelligentOutputFileName = `${
       (
@@ -98,7 +112,7 @@ async function main() {
  * @param {string} param.userId
  * @param {number} param.numTweets
  */
-async function getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets }) {
+async function getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets }) {
   /** @type {CustomTweetsObject[]} */
   let tweets;
 
@@ -120,12 +134,12 @@ async function getTweets({ tweetId, mock, shouldUsePuppeteer, userId, numTweets 
 
   if (shouldUsePuppeteer) {
     const tweetIDs = await getTweetIDs(tweetId);
-    tweets = await getTweetsFromArray(tweetIDs, process.env.TWITTER_AUTH_TOKEN);
+    tweets = await getTweetsFromArray(tweetIDs, includeReplies, process.env.TWITTER_AUTH_TOKEN);
 
     return tweets;
   }
 
-  tweets = await getTweetsFromThreads(tweetId, process.env.TWITTER_AUTH_TOKEN);
+  tweets = await getTweetsFromThreads(tweetId, includeReplies, process.env.TWITTER_AUTH_TOKEN);
 
   return tweets;
 }

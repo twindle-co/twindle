@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Twindle | Create books out of your tweets</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <header>
@@ -16,15 +19,15 @@
           <li><i class="material-icons">nights_stay</i></li>
           <li><a href="#home">Home</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#who_we_are">About</a></li>
+          <li><a href="./team_details/team_details.html">Team</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Main section -->
-    <main id='home'>
+    <main id="home">
       <section class="page_heading">
         <p class="sub_heading">
           A better reading experience of twitter threads
@@ -49,50 +52,101 @@
         </form>
       </section>
       <section class="what_we_do">
-        <h2 class="heading_two">What does twindle offer ?</h2>
+        <h2 class="heading_two">What is Twindle?</h2>
         <br />
         <p>
-          Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
+          Twindle converts your favourite Twitter threads & present it right in
+          your mobile
         </p>
       </section>
     </main>
+
     <!-- Feature Section -->
-    <section id='features'>
-      <div id='shape'>
-        <img src='./images/Shape.png'alt='dotted rectangle'/>
-      </div>
-      <div id='three_images'>
-        <img class='right' src='./images/image 18.png'>
-        <img id='left' src='./images/image 19.png'>
-        <img class='right' src='./images/image 17.png'>
-      </div>
-      <div id='text'>
-        <h1>A little about our features</h1>
-        <br>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing <br>
-           elit, sed do eiusmod tempor incididunt ut labore et<br>
-          dolore magna aliqua. Ut enim ad minim veniam, quis<br>
-             nostrud exercitation ullamco laboris </h4>
+    <section id="features">
+      <div class="container">
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_e9of4o97.json"
+          background="transparent"
+          speed="1"
+          style="width: 350px; height: 350px"
+          loop
+          autoplay
+        ></lottie-player>
+        <!-- <div id="shape">
+              <img src="./images/Shape.png" alt="dotted rectangle" />
+            </div>
+            <div id="three_images">
+              <img class="right" src="./images/image 18.png" />
+              <img id="left" src="./images/image 19.png" />
+              <img class="right" src="./images/image 17.png" />
+            </div> -->
+        <div id="text">
+          <h1>A little about our features</h1>
+          <br />
+          <h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+            elit, sed do eiusmod tempor incididunt ut labore et<br />
+            dolore magna aliqua. Ut enim ad minim veniam, quis<br />
+            nostrud exercitation ullamco laboris
+          </h4>
+        </div>
       </div>
     </section>
-    
+
+    <!-- Line Division between sections -->
+    <div class="line"></div>
+
     <!-- Who We Are Section -->
-    <section id='who_we_are'>
-      <div class='text_area'>
-        <h1>We're a strong open<br>
-        source community</h1>
-        <br>
-        <p>Pri id phaedrum tincidunt reformidans, qui ponderum
-        antiopam gloriatur ut. Amet appellantur et eum,
-        habeo debet eu mel. Et denique explicari quo. Ut vel
-        erant euripidis constituto, mel ne molestie recusabo
-        inciderint</p>
+    <section id="who_we_are">
+      <div class="text_area">
+        <h1>
+          We're a strong open<br />
+          source community
+        </h1>
+        <br />
+        <p>
+          Pri id phaedrum tincidunt reformidans, qui ponderum antiopam gloriatur
+          ut. Amet appellantur et eum, habeo debet eu mel. Et denique explicari
+          quo. Ut vel erant euripidis constituto, mel ne molestie recusabo
+          inciderint
+        </p>
       </div>
-      <div id='remote_design'>
-        <img src='./images/mimage.svg'alt='svg showcasing remote design'>
+      <div id="remote_design">
+        <img src="./images/mimage.svg" alt="svg showcasing remote design" />
       </div>
     </section>
-    
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h1>Testimonials</h1>
+      <div id="tD">
+        <button class="arrow" id="back">&lt;</button>
+        <div id="tCard">
+          <div id="color">
+            <img id="quot1" src="./images/format_quote-24px.svg" />
+            <p id="ptext">
+              This project was started to encourage people who just started to
+              learn programming and it took off like a rocket. People from
+              diverse backgrounds engaged together like a football team to make
+              this possible.
+            </p>
+            <img id="quot2" src="./images/format_quote-24px.svg" alt="" />
+            <p id="user">- Random1</p>
+          </div>
+          <div id="userimgD">
+            <img
+              id="userImg"
+              src="https://www.bestfunnies.com/wp-content/uploads/2015/06/Pictures-of-Ugly-People-18-570x428.jpg"
+            />
+          </div>
+        </div>
+        <button class="arrow" id="front">&gt;</button>
+      </div>
+    </section>
+
+    <!-- Line Division between sections -->
+    <div class="line"></div>
+
     <!-- Footer Section Code -->
     <footer>
       <nav>
@@ -114,5 +168,6 @@
         <p>&copy; Copyright TwindleCo 2020</p>
       </nav>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>

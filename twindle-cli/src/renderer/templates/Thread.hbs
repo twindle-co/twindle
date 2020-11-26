@@ -243,6 +243,7 @@
 
     .embedded-tweet-container__body {
       padding: 0.5rem;
+      margin: 0 1rem 0 1rem;
     }
 
     .embedded-tweet-container__body__image-container img {
@@ -307,7 +308,7 @@
     <li>
       <div class="tweetContainer">
         <p>
-          {{{tweet}}}
+          {{#if created_at}}{{{created_at}}}: {{/if}}{{{tweet}}}
           <br />
           {{#if customMedia}}
           {{#each customMedia}}
@@ -392,6 +393,17 @@
         {{/with}}
         {{/if}}
         </p>
+        {{#if replies}}
+        {{#each replies}}
+        <p>
+          Question:{{{tweet}}}
+          <br/>
+          Asked by:{{{user.name}}}
+          <br/>
+          Answer:{{{answer.tweet}}}
+        </p>
+        {{/each}}
+        {{/if}}
       </div>
     </li>
     {{/each}}
