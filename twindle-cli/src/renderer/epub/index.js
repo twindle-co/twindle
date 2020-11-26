@@ -19,29 +19,33 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
  * @param {CustomTweetsObject[]} tweets
  * @param {string} outputPath
  */
-async function generateEpub(tweets, outputPath) {
-  const css = await readFile(__dirname + "/../templates/Epub.css");
+async function generateEpub(srcData, src, outputPath) {
+  const css = await readFile(__dirname + "/" + src + "/Epub.css");
+  
 
-  for (let i = 0; i < tweets.length; i++) {
-    tweets[i].common.user.profile_image_url = await encodeImage(
-      tweets[i].common.user.profile_image_url
+  for (let i = 0; i < srcData.length; i++) {
+    srcData[i].common.user.profile_image_url = await encodeImage(
+      srcData[i].common.user.profile_image_url
     );
   }
 
-  const threadContent = await renderTemplate({ threads: tweets }, "Tweets");
+  const threadContent = await renderTemplate({ threads: srcData }, "/epub/" + src + "/Tweets");
+  
   const { tempPath: tocTempPath } = await renderTemplateTemp(
-    { commons: tweets.map(({ common }) => common) },
-    "Toc",
+    { commons: srcData.map(({ common }) => common) },
+    "/epub/twitter/Toc",
     "Toc"
   );
-
-  const authors = tweets.reduce((p, c) =>
-    p && p.common && p.common.user && c && c.common && c.common.user ? p.common.user.name + " & " + c.common.user.name : c.common.user.name
-  );
-
+  const authors = [];
+  for(let thread of srcData) {
+    if(thread.common && thread.common.user && thread.common.user.name)
+      authors.push(thread.common.user.name);
+  }
+  const authorNames = authors.join(",");
+  
   const options = createOptions({
-    title: authors + "'s Thread",
-    author: authors,
+    title: authorNames + "'s Thread",
+    author: authorNames,
     html: threadContent,
     css,
     tocPath: tocTempPath,
