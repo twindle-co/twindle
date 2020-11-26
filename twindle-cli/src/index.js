@@ -7,7 +7,7 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
-const { red, cyan ,bgGreen,bgRed } = require("kleur");
+const { red, cyan ,bgRed } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
 const spinner = require("./spinner");
@@ -41,8 +41,8 @@ async function main() {
     if(urlExtension !== ".md"){
     return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
     }
-    converthtml(gitHubURL)
-    return spinner.succeed(bgGreen("Your file is saved"))
+    
+    return spinner.succeed(`Your ${cyan('files')} are saved into ${formatLogColors[format](converthtml(gitHubURL))}`)
   }
 
   try {
