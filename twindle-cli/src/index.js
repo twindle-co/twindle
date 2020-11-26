@@ -34,8 +34,9 @@ async function main() {
     generateMock,
     gitHubURL
   } = getCommandlineArgs(process.argv);
-
+  let dataSrc = "";
   if(gitHubURL){
+    dataSrc = "github";
     const giturl = new URL(gitHubURL)
     const urlExtension = path.extname(giturl.pathname)
     if(urlExtension !== ".md"){
@@ -49,7 +50,8 @@ async function main() {
     verifyEnvironmentVariables(kindleEmail);
 
     const tweets = await getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets });
-
+    if(tweets.length > 0)
+      dataSrc = "twitter";
     const intelligentOutputFileName = `${
       (
         tweets[0] &&
@@ -78,7 +80,7 @@ async function main() {
     }
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
-    await Renderer.render(tweets, format, outputFilePath);
+    await Renderer.render(tweets, dataSrc, format, outputFilePath);
 
     if (process.argv.includes("-s")) {
       console.devLog("sending to kindle", kindleEmail);

@@ -3,17 +3,17 @@ const { createPdf } = require("./create-pdf");
 
 // const mockData = require("../twitter/output/twitter-api-response.json");
 
-async function generatePDF(tweets, outputPath) {
+async function generatePDF(srcData, src, outputPath) {
 
-  const parameter = {threads: tweets};
+  const parameter = {threads: srcData};
   // creates the html content
   const htmlContent = await renderTemplate(
     parameter,
-    "Thread"
+    "pdf/" + src + "/Thread"
   );
 
   // creates the pdf from html and saves it to Twindle.pdf
-  if (tweets[0].data.length > 0) await createPdf(outputPath, htmlContent);
+  if (srcData[0].data.length > 0) await createPdf(outputPath, htmlContent);
 
   return;
 }
