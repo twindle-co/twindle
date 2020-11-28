@@ -10,249 +10,249 @@
 
   <style type="text/css">
     * {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-        "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
 
-    }
+  }
 
-    body {
-      margin: 10px 10px 20px 10px;
+  body {
+    margin: 10px 10px 20px 10px;
 
-      font-size: 108%;
-    }
+    font-size: 108%;
+  }
 
-    a[href] {
-      text-decoration: none !important;
-    }
+  a[href] {
+    text-decoration: none !important;
+  }
 
-    a[href]:not(.link-box-anchor):not(.embedded-tweet-anchor) {
+  a[href]:not(.link-box-anchor):not(.embedded-tweet-anchor) {
 
-      color: rgb(29, 161, 242);
-      text-decoration: none;
-      background-image: linear-gradient(transparent 0%, transparent 35%, rgba(29, 161, 242, 0.3) 35%, rgba(29, 161, 242, 0.3) 100%);
-      background-size: 100% 200%;
-      background-position: 0px 0px;
-      word-break: break-word;
-    }
+    color: rgb(29, 161, 242);
+    text-decoration: none;
+    background-image: linear-gradient(transparent 0%, transparent 35%, rgba(29, 161, 242, 0.3) 35%, rgba(29, 161, 242, 0.3) 100%);
+    background-size: 100% 200%;
+    background-position: 0px 0px;
+    word-break: break-word;
+  }
 
-    #title {
-      text-align: center;
-    }
+  #title {
+    text-align: center;
+  }
 
-    ul {
-      list-style-type: none;
+  ul {
+    list-style-type: none;
 
-      display: flex;
-      align-items: center;
-      justify-content: stretch;
-      flex-direction: column;
-      padding: 0;
-    }
+    /*display: flex;*/
+    align-items: center;
+    justify-content: stretch;
+    /*flex-direction: column;*/
+    padding: 0;
+  }
 
-    ul li {
-      margin: 0;
+  ul li {
+    margin: 0;
 
-      width: 100%;
+    width: 100%;
 
-      padding: 1rem 0;
-    }
+    padding: 1rem 0;
+  }
 
-    ul li:not(:last-child) {
-      border-bottom: solid 1px rgba(0, 0, 0, 0.3);
-    }
+  ul li:not(:last-child) {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+  }
 
-    .tweetContainer {
-      /*display: flex;
+  .tweetContainer {
+    /*display: flex;
+  flex-direction: column;*/
+    width: 100%;
+  }
+
+  .tweetContainer * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tweetContainer a.media-link {
+    width: 100%;
+  }
+
+  .tweetContainer .tweet-img {
+    margin: 10px 0;
+
+    border-radius: 0.5rem;
+
+    max-width: 100%;
+    height: auto;
+  }
+
+  .tweetContainer .header {
+    /*display: flex;
+    flex-direction: row;*/
+    align-items: center;
+  }
+
+  .tweetContainer .header img {
+    max-width: 75px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .tweetContainer .header>div {
+    /*display: flex;
     flex-direction: column;*/
-      width: 100%;
-    }
+    align-items: flex-start;
+    justify-content: center;
+  }
 
-    .tweetContainer * {
-      margin: 0;
-      padding: 0;
-    }
+  .tweetContainer .header>div p {
+    font-size: 14px;
+  }
 
-    .tweetContainer a.media-link {
-      width: 100%;
-    }
+  .tweetContainer .header>div span {
+    font-style: italic;
+    color: rgb(45, 45, 45);
+  }
 
-    .tweetContainer .tweet-img {
-      margin: 10px 0;
+  img.emoji,
+  .verified-badge {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+  }
 
-      border-radius: 0.5rem;
+  .user-handle {
+    color: rgba(0, 0, 0, 0.5) !important;
+  }
 
-      max-width: 100%;
-      height: auto;
-    }
+  .link-box-anchor {
+    width: 100%;
+  }
 
-    .tweetContainer .header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
+  .link-box {
+    width: 100%;
+    height: 135px;
 
-    .tweetContainer .header img {
-      max-width: 75px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
+    margin: 10px 0;
 
-    .tweetContainer .header>div {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
+    border-radius: 0.5rem;
 
-    .tweetContainer .header>div p {
-      font-size: 14px;
-    }
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 
-    .tweetContainer .header>div span {
-      font-style: italic;
-      color: rgb(45, 45, 45);
-    }
+    background-color: rgba(0, 0, 0, 0.06);
 
-    img.emoji,
-    .verified-badge {
-      height: 1em;
-      width: 1em;
-      margin: 0 .05em 0 .1em;
-      vertical-align: -0.1em;
-    }
+    /*display: flex;*/
+  }
 
-    .user-handle {
-      color: rgba(0, 0, 0, 0.5) !important;
-    }
+  .link-box .link-img-container {
+    height: 100%;
 
-    .link-box-anchor {
-      width: 100%;
-    }
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
 
-    .link-box {
-      width: 100%;
-      height: 135px;
+  .link-box .link-img-container img {
+    border-radius: inherit;
 
-      margin: 10px 0;
+    height: 100%;
+    width: auto;
+  }
 
-      border-radius: 0.5rem;
+  .link-box>.link-box-content {
 
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+    /*flex: 1;*/
 
-      background-color: rgba(0, 0, 0, 0.06);
+    color: initial;
 
-      display: flex;
-    }
+    position: relative;
 
-    .link-box .link-img-container {
-      height: 100%;
+    padding: 5px 0;
+    padding-left: .5rem;
 
-      border-radius: 0.5rem 0 0 0.5rem;
-    }
+    /*display: flex;
+    flex-direction: column;*/
+    justify-content: space-between;
+  }
 
-    .link-box .link-img-container img {
-      border-radius: inherit;
+  .link-box-content-heading,
+  .link-box-content-description,
+  .link-box-content-domain {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
-      height: 100%;
-      width: auto;
-    }
+    font-size: 0.95rem;
+  }
 
-    .link-box>.link-box-content {
+  .link-box-content-description,
+  .link-box-content-domain {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.85rem;
+  }
 
-      flex: 1;
+  .link-box-content-domain {
+    /*display: flex;*/
+    align-items: center;
+  }
 
-      color: initial;
+  .link-box-content-domain .link-svg {
+    width: 0.9rem;
+    fill: rgba(0, 0, 0, 0.7);
 
-      position: relative;
+    margin-right: 0.5rem;
+  }
 
-      padding: 5px 0;
-      padding-left: .5rem;
+  .embedded-tweet-anchor {
+    color: rgba(0, 0, 0, 0.9) !important;
+    font-size: 1rem;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+  }
 
-    .link-box-content-heading,
-    .link-box-content-description,
-    .link-box-content-domain {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+  .embedded-tweet-container {
+    width: 100%;
 
-      font-size: 0.95rem;
-    }
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 
-    .link-box-content-description,
-    .link-box-content-domain {
-      color: rgba(0, 0, 0, 0.7);
-      font-size: 0.85rem;
-    }
+    border-radius: 0.5rem;
 
-    .link-box-content-domain {
-      display: flex;
-      align-items: center;
-    }
+    margin: 0.5rem 0;
 
-    .link-box-content-domain .link-svg {
-      width: 0.9rem;
-      fill: rgba(0, 0, 0, 0.7);
+  }
 
-      margin-right: 0.5rem;
-    }
+  .embedded-tweet-container__header {
+    padding: 0.5rem;
 
-    .embedded-tweet-anchor {
-      color: rgba(0, 0, 0, 0.9) !important;
-      font-size: 1rem;
+    /*display: flex;*/
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-    }
+  .embedded-tweet-container__header img {
+    display: inline-block;
 
-    .embedded-tweet-container {
-      width: 100%;
+    width: 2rem;
+    height: auto;
 
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
 
-      border-radius: 0.5rem;
+  .embedded-tweet-container__header__userhandle,
+  .embedded-tweet-container__header__timestamp {
+    color: rgba(0, 0, 0, 0.7);
+  }
 
-      margin: 0.5rem 0;
+  .embedded-tweet-container__body {
+    padding: 0.5rem;
+    margin: 0 1rem 0 1rem;
+  }
 
-    }
+  .embedded-tweet-container__body__image-container img {
+    max-width: 100%;
+  }
 
-    .embedded-tweet-container__header {
-      padding: 0.5rem;
-
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .embedded-tweet-container__header img {
-      display: inline-block;
-
-      width: 2rem;
-      height: auto;
-
-      border-radius: 50%;
-    }
-
-    .embedded-tweet-container__header__userhandle,
-    .embedded-tweet-container__header__timestamp {
-      color: rgba(0, 0, 0, 0.7);
-    }
-
-    .embedded-tweet-container__body {
-      padding: 0.5rem;
-      margin: 0 1rem 0 1rem;
-    }
-
-    .embedded-tweet-container__body__image-container img {
-      max-width: 100%;
-    }
-
-    .flex {
-      flex: 1 1 auto;
-    }
+  .flex {
+    /*flex: 1 1 auto;*/
+  }
   </style>
 </head>
 
@@ -315,18 +315,18 @@
           {{#if this}}
           {{#each this}}
           <a target="_blank" rel="noopener noreferrer" class="media-link" href="{{this.link}}">
-            <img class="tweet-img" src="{{this.preview_img_url}}" />
+            <img class="tweet-img" src="{{this.preview_img_url}}" style="page-break-inside: avoid;" />
           </a>
           {{/each}}
           {{/if}}
           {{/each}}
           {{/if}}
           {{#if linkWithImage}}
-        <div>
+          <div>
           <a href="{{linkWithImage.expanded_url}}" class="link-box-anchor">
             <div class="link-box">
               <div class="link-img-container">
-                <img src="{{linkWithImage.images.1.url}}" />
+                <img src="{{linkWithImage.images.1.url}}" style="page-break-inside: avoid;" />
               </div>
               <div class="link-box-content">
                 <div class="link-box-content-heading">
@@ -356,7 +356,7 @@
         {{#if embeddedTweet}}
         {{#with embeddedTweet}}
         <a class="embedded-tweet-anchor" href="https://twitter.com/{{embeddedTweetUser.username}}/status/{{id}}">
-          <section class="embedded-tweet-container">
+          <section class="embedded-tweet-container" style="page-break-inside: avoid;">
             <div class="embedded-tweet-container__header">
               <img src="{{embeddedTweetUser.profile_image_url}}" />
               <span class="embedded-tweet-container__header__name">
@@ -379,7 +379,7 @@
             {{#each customMedia}}
             {{#if this}}
             {{#each this}}
-            <div class="embedded-tweet-container__body__image-container">
+            <div class="embedded-tweet-container__body__image-container" style="page-break-inside: avoid;">
               <a href="{{link}}">
                 <img src="{{preview_img_url}}" />
               </a>
