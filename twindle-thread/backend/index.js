@@ -18,6 +18,6 @@ app.listen(port, () => {
   console.log(`API listening at port ${port}`);
 });
 
-app.get('/threads/:threadID', getThreadData);
+app.get('/threads/:id', getThreadData);
 
-app.post('/threads/:threadID', addThread);
+app.post('/threads/', addThread);

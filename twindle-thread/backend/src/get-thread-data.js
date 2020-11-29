@@ -9,7 +9,7 @@ const { dbInstance } = require('../connection');
  * @returns {Promise<void>}
  */
 async function getThreadData(req, res) {
-  const { threadID } = req.params;
+  const { id } = req.params;
 
   const responseObj = {
     message: '',
@@ -24,9 +24,7 @@ async function getThreadData(req, res) {
      * @type {[rows: import('mysql2').RowDataPacket[]]}
      */
     // @ts-ignore
-    const [rows] = await connection.execute('SELECT * FROM threads WHERE conversation_id=?', [
-      threadID,
-    ]);
+    const [rows] = await connection.execute('SELECT * FROM threads WHERE id=?', [id]);
 
     if (!rows.length) {
       // Empty result
