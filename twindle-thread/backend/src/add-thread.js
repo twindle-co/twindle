@@ -1,7 +1,7 @@
 // @ts-check
 
-const { getTweetById } = require("./twitter");
-const { dbInstance } = require("./helpers/connection");
+const { getTweetById } = require('./twitter');
+const { dbInstance } = require('./helpers/connection');
 
 /**
  *
@@ -15,8 +15,8 @@ async function addThread(req, res) {
   const { threadID } = req.body;
 
   const responseObj = {
-    message: "",
-    error: "unable-to-add-thread",
+    message: '',
+    error: 'unable-to-add-thread',
   };
 
   const { connection } = await dbInstance();
@@ -29,7 +29,7 @@ async function addThread(req, res) {
   );
 
   if (twitterResponseJSON.errors) {
-    responseObj.error = "tweet-does-not-exists";
+    responseObj.error = 'tweet-does-not-exists';
     return res.json(responseObj);
   }
 
@@ -46,12 +46,12 @@ async function addThread(req, res) {
   try {
     // Do the thing
     await connection.execute(
-      "INSERT INTO threads (conversation_id, text, likes, retweets) VALUES (?, ?, ?, ?) ",
-      [basicData.conversation_id + "", basicData.text, basicData.likes, basicData.retweets]
+      'INSERT INTO threads (conversation_id, text, likes, retweets) VALUES (?, ?, ?, ?) ',
+      [basicData.conversation_id + '', basicData.text, basicData.likes, basicData.retweets]
     );
 
-    responseObj.error = "";
-    responseObj.message = "successful";
+    responseObj.error = '';
+    responseObj.message = 'successful';
     return res.json(responseObj);
   } catch (e) {
     console.error(e);

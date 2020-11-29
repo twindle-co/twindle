@@ -1,7 +1,5 @@
-const { getTweetById } = require("./twitter-endpoints/tweets");
-const { getConversationById } = require("./twitter-endpoints/search");
+const { getTweetById } = require('./twitter-endpoints/tweets');
 
 module.exports = {
   getTweetById,
-  getConversationById,
 };
