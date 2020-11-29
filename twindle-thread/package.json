@@ -2,7 +2,7 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "postbuild": "workbox generateSW workbox-config.js"
+    "post-build": "workbox generateSW workbox-config.js"
   },
   "dependencies": {
     "svelte": "^3.30.0"
