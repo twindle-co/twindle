@@ -6,6 +6,7 @@ const { dbInstance } = require('../connection');
  * Get the data related to the specific thread ID passed
  * @param {import('express').Request} req
  * @param {import('express').Response} res
+ * @returns {Promise<void>}
  */
 async function getThreadData(req, res) {
   const { threadID } = req.query;
@@ -37,13 +38,11 @@ async function getThreadData(req, res) {
     responseObj.error = '';
     responseObj.message = 'successful';
     responseObj.data = rows[0];
-
-    return void res.json(responseObj);
   } catch (e) {
     console.log(e);
   }
 
-  return;
+  return void res.json(responseObj);
 }
 
 module.exports = { getThreadData };
