@@ -18,10 +18,10 @@ npm install
 
 You need to have MySQL Database and Server installed on your device. The guides to download these are below:
 
-Windows: https://www.liquidweb.com/kb/install-mysql-windows/
-MacOS: https://flaviocopes.com/mysql-how-to-install/
-Ubuntu/Debian: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
-Fedora Linux: https://computingforgeeks.com/how-to-install-mysql-8-on-fedora/
+Windows: https://www.liquidweb.com/kb/install-mysql-windows/ \
+MacOS: https://flaviocopes.com/mysql-how-to-install/ \
+Ubuntu/Debian: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04 \
+Fedora Linux: https://computingforgeeks.com/how-to-install-mysql-8-on-fedora/ \
 
 After completing the above steps, run the below command
 
