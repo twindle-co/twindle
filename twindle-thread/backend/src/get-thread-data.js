@@ -9,7 +9,7 @@ const { dbInstance } = require('../connection');
  * @returns {Promise<void>}
  */
 async function getThreadData(req, res) {
-  const { threadID } = req.query;
+  const { threadID } = req.params;
 
   const responseObj = {
     message: '',
