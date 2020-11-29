@@ -9,8 +9,6 @@ const { dbInstance } = require('./helpers/connection');
  * @param {import('express').Response} res
  */
 async function addThread(req, res) {
-  /**
-   */
   const { threadID } = req.params;
 
   const responseObj = {
