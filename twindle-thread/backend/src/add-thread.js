@@ -9,9 +9,6 @@ const { dbInstance } = require('./helpers/connection');
  * @param {import('express').Response} res
  */
 async function addThread(req, res) {
-  /**
-   * @type {{threadID: string}}
-   */
   const { threadID } = req.body;
 
   const responseObj = {
@@ -44,6 +41,23 @@ async function addThread(req, res) {
   };
 
   try {
+    // First check if this ID already in DB
+
+    /**
+     * @type {[rows: import('mysql2').RowDataPacket[]]}
+     */
+    // @ts-ignore
+    const [rows] = await connection.execute('SELECT * FROM threads WHERE conversation_id=?', [
+      threadID,
+    ]);
+
+    if (rows.length) {
+      responseObj.error = 'thread-id-already-in-database';
+      responseObj.message = '';
+
+      return void res.json(responseObj);
+    }
+
     // Do the thing
     await connection.execute(
       'INSERT INTO threads (conversation_id, text, likes, retweets) VALUES (?, ?, ?, ?) ',
