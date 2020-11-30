@@ -1,7 +1,7 @@
 // @ts-check
 
-const { getTweetById } = require("./twitter");
-const { dbInstance } = require("./helpers/connection");
+const { getTweetById } = require('./twitter');
+const { dbInstance } = require('./helpers/connection');
 
 /**
  *
@@ -9,14 +9,11 @@ const { dbInstance } = require("./helpers/connection");
  * @param {import('express').Response} res
  */
 async function addThread(req, res) {
-  /**
-   * @type {{threadID: string}}
-   */
   const { threadID } = req.body;
 
   const responseObj = {
-    message: "",
-    error: "unable-to-add-thread",
+    message: '',
+    error: 'unable-to-add-thread',
   };
 
   const { connection } = await dbInstance();
@@ -29,7 +26,7 @@ async function addThread(req, res) {
   );
 
   if (twitterResponseJSON.errors) {
-    responseObj.error = "tweet-does-not-exists";
+    responseObj.error = 'tweet-does-not-exists';
     return res.json(responseObj);
   }
 
@@ -44,14 +41,31 @@ async function addThread(req, res) {
   };
 
   try {
+    // First check if this ID already in DB
+
+    /**
+     * @type {[rows: import('mysql2').RowDataPacket[]]}
+     */
+    // @ts-ignore
+    const [rows] = await connection.execute('SELECT * FROM threads WHERE conversation_id=?', [
+      threadID,
+    ]);
+
+    if (rows.length) {
+      responseObj.error = 'thread-id-already-in-database';
+      responseObj.message = '';
+
+      return void res.json(responseObj);
+    }
+
     // Do the thing
     await connection.execute(
-      "INSERT INTO threads (conversation_id, text, likes, retweets) VALUES (?, ?, ?, ?) ",
-      [basicData.conversation_id + "", basicData.text, basicData.likes, basicData.retweets]
+      'INSERT INTO threads (conversation_id, text, likes, retweets) VALUES (?, ?, ?, ?) ',
+      [basicData.conversation_id + '', basicData.text, basicData.likes, basicData.retweets]
     );
 
-    responseObj.error = "";
-    responseObj.message = "successful";
+    responseObj.error = '';
+    responseObj.message = 'successful';
     return res.json(responseObj);
   } catch (e) {
     console.error(e);

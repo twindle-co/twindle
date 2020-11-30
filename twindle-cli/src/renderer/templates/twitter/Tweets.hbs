@@ -1,0 +1,18 @@
+{{#each this}}
+  {{> commonUserPartial this }}
+  <ul>
+    {{#each data}}
+    <li>
+      {{> tweetPartial this}}
+    </li>
+    {{#if replies}}
+      {{#each replies}}
+        <li>
+          {{> replyPartial this}}
+        </li>
+      {{/each}}
+    {{/if}}
+    
+    {{/each}}
+  </ul>
+  {{/each}}

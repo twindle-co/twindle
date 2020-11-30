@@ -7,7 +7,7 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
-const { red, cyan ,bgGreen,bgRed } = require("kleur");
+const { red, cyan ,bgRed } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
 const spinner = require("./spinner");
@@ -34,22 +34,24 @@ async function main() {
     generateMock,
     gitHubURL
   } = getCommandlineArgs(process.argv);
-
+  let dataSrc = "";
   if(gitHubURL){
+    dataSrc = "github";
     const giturl = new URL(gitHubURL)
     const urlExtension = path.extname(giturl.pathname)
     if(urlExtension !== ".md"){
     return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
     }
-    converthtml(gitHubURL)
-    return spinner.succeed(bgGreen("Your file is saved"))
+    
+    return spinner.succeed(`Your ${cyan('files')} are saved into ${formatLogColors[format](converthtml(gitHubURL))}`)
   }
 
   try {
     verifyEnvironmentVariables(kindleEmail);
 
     const tweets = await getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets });
-
+    if(tweets.length > 0)
+      dataSrc = "twitter";
     const intelligentOutputFileName = `${
       (
         tweets[0] &&
@@ -78,7 +80,7 @@ async function main() {
     }
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
-    await Renderer.render(tweets, format, outputFilePath);
+    await Renderer.render(tweets, dataSrc, format, outputFilePath);
 
     if (process.argv.includes("-s")) {
       console.devLog("sending to kindle", kindleEmail);
