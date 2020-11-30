@@ -32,6 +32,18 @@
     --color: var(--app-color-dark);
     --border-color: transparent;
 
+    /* Redefining variables here so they can defined for this specific component */
+    --app-main-font-family: var(--app-main-font-family);
+    --app-border-radius-small: var(--app-border-radius-small);
+
+    --app-color-light: var(--app-color-light);
+    --app-color-light-contrast: var(--app-color-light-contrast);
+
+    --app-color-dark: var(--app-color-dark);
+
+    --app-color-primary: var(--app-color-primary);
+    --app-color-primary-contrast: var(--app-color-primary-contrast);
+
     font-family: var(--app-main-font-family);
     font-size: 0.875rem;
     font-weight: 500;
@@ -93,6 +105,7 @@
     --color: var(--app-color-primary);
   }
 
+  /* Disabled states */
   button.disabled {
     --color: rgba(var(--app-color-dark-rgb), 0.3) !important;
 
@@ -105,6 +118,11 @@
 
   button.disabled.button-variant-outlined {
     --border-color: rgba(var(--app-color-dark-rgb), 0.15);
+  }
+
+  /* Hover states */
+  button.button-variant-contained.button-color-light:hover {
+    --bgcolor: var(--app-color-light-contrast);
   }
 </style>
 
