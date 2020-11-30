@@ -1,14 +1,14 @@
 {{#each this}}
-  {{> commonUserPartial this }}
+  {{> user-info-partial this }}
   <ul>
     {{#each data}}
     <li>
-      {{> tweetPartial this}}
+      {{> tweet-partial this}}
     </li>
     {{#if replies}}
       {{#each replies}}
         <li>
-          {{> replyPartial this}}
+          {{> reply-partial this}}
         </li>
       {{/each}}
     {{/if}}
