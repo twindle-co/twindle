@@ -1,4 +1,4 @@
-const { renderTemplate } = require("../render-template");
+const { renderTemplate } = require("./render-template");
 const { createPdf } = require("./create-pdf");
 
 // const mockData = require("../twitter/output/twitter-api-response.json");
@@ -9,7 +9,7 @@ async function generatePDF(srcData, src, outputPath) {
   // creates the html content
   const htmlContent = await renderTemplate(
     parameter,
-    "pdf/" + src + "/Thread"
+    src
   );
 
   // creates the pdf from html and saves it to Twindle.pdf
