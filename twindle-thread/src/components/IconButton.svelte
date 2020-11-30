@@ -119,6 +119,8 @@
   class={classes}
   class:disabled
   class:size-medium={size === 'medium'}
-  class:size-small={size === 'small'}>
+  class:size-small={size === 'small'}
+  {...$$props}
+  >
   <slot />
 </button>
