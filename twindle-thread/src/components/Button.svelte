@@ -33,7 +33,7 @@
 
     /* Redefining variables here so they can defined for this specific component */
     --button-main-font-family: var(--app-main-font-family);
-    --button-border-radius-small: var(--app-border-radius-small);
+    --button-border-radius: var(--app-border-radius-small);
 
     --button-color-light: var(--app-color-light);
     --button-color-light-contrast: var(--app-color-light-contrast);
@@ -46,6 +46,11 @@
     --button-color-primary-contrast: var(--app-color-primary-contrast);
     --button-color-primary-rgb: var(--app-color-primary-rgb);
 
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
     font-family: var(--button-main-font-family);
     font-size: 0.875rem;
     font-weight: 500;
@@ -53,6 +58,18 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color);
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    user-select: none;
+    vertical-align: top;
+    vertical-align: -webkit-baseline-middle;
+    pointer-events: auto;
+
+    font-kerning: none;
 
     transition: background-color 150ms ease-in, box-shadow 150ms ease-in;
 
@@ -63,7 +80,7 @@
 
     background-color: var(--bgcolor);
 
-    border-radius: var(--button-border-radius-small);
+    border-radius: var(--button-border-radius);
     border: solid 1px var(--border-color);
   }
 
@@ -145,15 +162,15 @@
   }
 
   button.button-variant-contained.button-color-light:hover {
-    --bgcolor: rgba(var(--button-color-light-rgb), 0.92);
+    --bgcolor: rgba(var(--button-color-light-rgb), 0.85);
   }
 
   button.button-variant-contained.button-color-default:hover {
-    --bgcolor: rgba(var(--button-color-dark-rgb), 0.92);
+    --bgcolor: rgba(var(--button-color-dark-rgb), 0.85);
   }
 
   button.button-variant-contained.button-color-primary:hover {
-    --bgcolor: rgba(var(--button-color-primary-rgb), 0.92);
+    --bgcolor: rgba(var(--button-color-primary-rgb), 0.85);
   }
 
   button.button-color-light:focus {
@@ -167,8 +184,29 @@
   button.button-color-primary:focus {
     --focus-ring-color: rgba(var(--button-color-primary-rgb), 0.5);
   }
+
+  :global(button > *, button > *) {
+    display: flex;
+    align-items: center;
+  }
+
+  :global([slot]) {
+    fill: var(--color);
+  }
+
+  :global([slot='icon-start'] svg) {
+    margin-left: -6px;
+    margin-right: 4px;
+  }
+
+  :global([slot='icon-end'] svg) {
+    margin-left: 4px;
+    margin-right: -5px;
+  }
 </style>
 
 <button on:click class={classes} class:disabled {...$$props}>
+  <slot name="icon-start" />
   <slot />
+  <slot name="icon-end" />
 </button>
