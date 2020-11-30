@@ -2,4 +2,6 @@
   import Button from './components/Button.svelte';
 </script>
 
-<Button onClick={(e) => console.log(e)} class="hello">Hello</Button>
+<Button on:click={(e) => console.log(e)} color="primary" variant="contained" class="hello">
+  Hello
+</Button>
