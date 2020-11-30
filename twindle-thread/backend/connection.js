@@ -1,5 +1,5 @@
 // @ts-check
-const { createConnection } = require("mysql2/promise");
+const { createConnection } = require('mysql2/promise');
 
 /**
  * Initializes connection and ensures minimum required structures exist
@@ -12,9 +12,9 @@ async function dbInstance() {
   });
 
   // Create database if not exists
-  await conn.query("CREATE DATABASE IF NOT EXISTS twindle_threads");
+  await conn.query('CREATE DATABASE IF NOT EXISTS twindle_threads');
 
-  await conn.query("USE twindle_threads;");
+  await conn.query('USE twindle_threads;');
 
   // Create the table
   await conn.query(
@@ -29,7 +29,7 @@ async function dbInstance() {
     );`
   );
 
-  return { conn };
+  return { connection: conn };
 }
 
 module.exports = { dbInstance };

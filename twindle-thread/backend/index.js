@@ -1,9 +1,11 @@
 // @ts-check
-const express = require("express");
-const { addThread } = require("./src/add-thread");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
 
-require("dotenv").config();
+const { addThread } = require('./src/add-thread');
+const { getThreadData } = require('./src/get-thread-data');
+
+require('dotenv').config();
 
 const port = 3800;
 
@@ -16,4 +18,6 @@ app.listen(port, () => {
   console.log(`API listening at port ${port}`);
 });
 
-app.post("/api/add-thread/", addThread);
+app.get('/threads/:id', getThreadData);
+
+app.post('/threads/', addThread);
