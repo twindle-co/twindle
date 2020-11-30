@@ -1,0 +1,34 @@
+@import './theme.css';
+
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--app-main-font-family);
+
+  background-color: var(--app-color-shell);
+}
+
+* {
+  transition: background-color 150ms ease-in, background 150ms ease-in;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+*:focus-visible {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+
+  box-shadow: 0 0 0 1.5px var(--app-color-dark);
+}
