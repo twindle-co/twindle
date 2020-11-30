@@ -5,6 +5,7 @@
     "post-build": "workbox generateSW workbox-config.js"
   },
   "dependencies": {
+    "@mdi/js": "^5.8.55",
     "svelte": "^3.30.0"
   },
   "devDependencies": {
