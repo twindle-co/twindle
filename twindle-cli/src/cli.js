@@ -18,7 +18,7 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "include replies by thread author",
         type: "boolean",
-        default: true
+        default: false
       },
       f: {
         alias: "format",

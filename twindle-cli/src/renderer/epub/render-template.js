@@ -18,14 +18,14 @@ async function renderTwitterTemplate(data) {
     const css = await readFile(`${__dirname}/../templates/twitter/style.css`, "utf-8");
   
 
-    const tweetsHtml = await readFile(`${__dirname}/../templates/twitter/Tweets.hbs`, "utf-8");
-    const userInfohtml = await readFile(`${__dirname}/../templates/twitter/UserInfo.hbs`, "utf-8");
-    const tweethtml = await readFile(`${__dirname}/../templates/twitter/Tweet.hbs`, "utf-8");
-    const replyhtml = await readFile(`${__dirname}/../templates/twitter/Reply.hbs`, "utf-8");
+    const tweetsHtml = await readFile(`${__dirname}/../templates/twitter/tweets-partial.hbs`, "utf-8");
+    const userInfohtml = await readFile(`${__dirname}/../templates/twitter/user-info-partial.hbs`, "utf-8");
+    const tweethtml = await readFile(`${__dirname}/../templates/twitter/tweet-partial.hbs`, "utf-8");
+    const replyhtml = await readFile(`${__dirname}/../templates/twitter/reply-partial.hbs`, "utf-8");
   
-    hbs.registerPartial('commonUserPartial', userInfohtml);
-    hbs.registerPartial('tweetPartial', tweethtml);
-    hbs.registerPartial('replyPartial', replyhtml);
+    hbs.registerPartial('user-info-partial', userInfohtml);
+    hbs.registerPartial('tweet-partial', tweethtml);
+    hbs.registerPartial('reply-partial', replyhtml);
   
     const tweetsTemplate = hbs.compile(tweetsHtml, {
         strict: true,
@@ -33,7 +33,7 @@ async function renderTwitterTemplate(data) {
     // renders the html template with the given data
     const threadContent = tweetsTemplate(data.threads);
     
-    const tocHtml = await readFile(`${__dirname}/../templates/twitter/Toc.hbs`, "utf-8");
+    const tocHtml = await readFile(`${__dirname}/../templates/twitter/toc.hbs`, "utf-8");
 
     // creates the Handlebars template object
     const tocTemplate = hbs.compile(tocHtml, {
@@ -42,7 +42,7 @@ async function renderTwitterTemplate(data) {
     // renders the html template with the given data
     const tocContent = tocTemplate(data.threads);
     
-    const tempPath = join(tmpdir(), `Toc.html`);
+    const tempPath = join(tmpdir(), `toc.html`);
     await writeFile(tempPath, tocContent, "utf-8");
     console.devLog("toc saved to ", tempPath);
 
