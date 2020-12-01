@@ -2,10 +2,11 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "postbuild": "workbox generateSW workbox-config.js"
+    "post-build": "workbox generateSW workbox-config.js"
   },
   "dependencies": {
-    "svelte": "^3.29.7"
+    "@mdi/js": "^5.8.55",
+    "svelte": "^3.30.0"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.0.4",
