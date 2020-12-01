@@ -13,25 +13,24 @@ async function renderTemplate(data, src) {
 }
 
 async function renderTwitterTemplate(data) {
-  console.log(`${__dirname}`);
-  const threadsHtml = await readFile(`${__dirname}/../templates/twitter/Threads.hbs`, "utf-8");
-  const tweetsHtml = await readFile(`${__dirname}/../templates/twitter/Tweets.hbs`, "utf-8");
-  const userInfohtml = await readFile(`${__dirname}/../templates/twitter/UserInfo.hbs`, "utf-8");
-  const tweethtml = await readFile(`${__dirname}/../templates/twitter/Tweet.hbs`, "utf-8");
-  const replyhtml = await readFile(`${__dirname}/../templates/twitter/Reply.hbs`, "utf-8");
+  const threadsHtml = await readFile(`${__dirname}/../templates/twitter/threads-template.hbs`, "utf-8");
+  const tweetsHtml = await readFile(`${__dirname}/../templates/twitter/tweets-partial.hbs`, "utf-8");
+  const userInfohtml = await readFile(`${__dirname}/../templates/twitter/user-info-partial.hbs`, "utf-8");
+  const tweethtml = await readFile(`${__dirname}/../templates/twitter/tweet-partial.hbs`, "utf-8");
+  const replyhtml = await readFile(`${__dirname}/../templates/twitter/reply-partial.hbs`, "utf-8");
   const css = await readFile(`${__dirname}/../templates/twitter/style.css`, "utf-8");
 
+  hbs.registerPartial('tweets-partial', tweetsHtml);
+  hbs.registerPartial('user-info-partial', userInfohtml);
+  hbs.registerPartial('tweet-partial', tweethtml);
+  hbs.registerPartial('reply-partial', replyhtml);
+  hbs.registerPartial('style', css);
+  
   // creates the Handlebars template object
   const template = hbs.compile(threadsHtml, {
     strict: true,
   });
-  hbs.registerPartial('tweetsPartial', tweetsHtml);
-  hbs.registerPartial('commonUserPartial', userInfohtml);
-  hbs.registerPartial('tweetPartial', tweethtml);
-  hbs.registerPartial('replyPartial', replyhtml);
-  hbs.registerPartial('cssPartial', css);
   
-
   // renders the html template with the given data
   const rendered = template(data);
 
