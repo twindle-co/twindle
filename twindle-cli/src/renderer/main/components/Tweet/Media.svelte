@@ -1,6 +1,6 @@
 <script>
   /**
-   * @type {CustomMedia | undefined}
+   * @type {CustomMedia}
    */
   export let customMedia = undefined;
 </script>

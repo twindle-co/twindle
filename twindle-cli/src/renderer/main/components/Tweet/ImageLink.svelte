@@ -1,6 +1,6 @@
 <script>
   /**
-   * @type {Partial<LinkWithImage> | undefined}
+   * @type {Partial<LinkWithImage>}
    */
   export let linkWithImage = undefined;
 </script>
