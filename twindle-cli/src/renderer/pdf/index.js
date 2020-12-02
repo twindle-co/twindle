@@ -11,9 +11,11 @@ async function generatePDF(srcData, src, outputPath) {
     parameter,
     src
   );
+  
 
   // creates the pdf from html and saves it to Twindle.pdf
-  if (srcData[0].data.length > 0) await createPdf(outputPath, htmlContent);
+  if (srcData.length > 0) await createPdf(outputPath, htmlContent);
+  
 
   return;
 }
