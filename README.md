@@ -20,21 +20,6 @@ Note:  No meeting on Sat & Sun
 
 Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
 
-## Articles
-
-- [Joined Twindle. What next?](./docs/ONBOARDING.md)
-- [FAQ](./docs/FAQ.md)
-- [Resources](./docs/RESOURCES.md)
-- [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
-
-## Twindle - high level design (DRAFT)
-
-![image](https://user-images.githubusercontent.com/354596/95971617-2d519200-0e5d-11eb-9e4b-2a77bd1ecb67.png)
-
-![phase-1](./assets/phase-1.png)
-
-![phase-2](./assets/phase-2.png)
-
 ## Projects
 
 #### twindle-web
@@ -46,6 +31,13 @@ Twindle (Twitter + Kindle = Twindle) is an open source project made for the purp
 - Any articles/links to PDF, epub & mobi
 
 
+## Twindle - high level design (DRAFT)
+
+![image](https://user-images.githubusercontent.com/354596/95971617-2d519200-0e5d-11eb-9e4b-2a77bd1ecb67.png)
+
+![phase-1](./assets/phase-1.png)
+
+![phase-2](./assets/phase-2.png)
 
 ## Want to contribute on twindle.co home page design
 
@@ -93,6 +85,12 @@ Initial code goes into twindle-cli
 
 ---
 
+## Articles
+
+- [Joined Twindle. What next?](./docs/ONBOARDING.md)
+- [FAQ](./docs/FAQ.md)
+- [Resources](./docs/RESOURCES.md)
+- [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
 
 
 ## Connect with us
