@@ -26,10 +26,6 @@ Twindle (Twitter + Kindle = Twindle) is an open source project made for the purp
 - [FAQ](./docs/FAQ.md)
 - [Resources](./docs/RESOURCES.md)
 - [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
-- [Handlebar Explained](./docs/articles/handlebar-explained.md)
-- [Puppeteer Explained](./docs/articles/puppeteer-explained.md)
-- [How to sync to the main repo](./docs/articles/sync-to-main-repo.md)
-- [How to solve "commits ahead" issue when already in sync](./docs/articles/solving-forked-commit-ahead.md)]
 
 ## Twindle - high level design (DRAFT)
 
@@ -39,13 +35,17 @@ Twindle (Twitter + Kindle = Twindle) is an open source project made for the purp
 
 ![phase-2](./assets/phase-2.png)
 
-### Roadmap 🛣
+## Projects
 
-- [ ] In depth detail roadmap discussion
-- [ ] Node.js CLI
-- [ ] A webpage providing the same services
-- [ ] Converting blogs from sites such as Hashnode and Medium
-- [ ] Browser Extension with similiar functionality
+#### twindle-web
+#### twindle-thread
+#### twindle-cli
+- Twitter Thread to PDF, epub & mobi
+- Github markdown to PDF, epub & mobi
+- Hacker News Comments to PDF, epub & mobi
+- Any articles/links to PDF, epub & mobi
+
+
 
 ## Want to contribute on twindle.co home page design
 
