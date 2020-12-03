@@ -215,27 +215,6 @@ main .what_we_do p {
     max-width: 75vw;
 }
 
-
-/* 
-#three_images {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.right {
-    width: 75px;
-    height: 75px;
-    justify-self: right;
-}
-
-#left {
-  width: 75px;
-  height: 75px;
-  transform: translateX(-100px);
-} 
-*/
-
 #text>h1 {
     font-weight: 800;
     color: var(--primary-heading-text);
