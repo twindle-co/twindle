@@ -8,6 +8,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![image](https://visitor-badge.glitch.me/badge?page_id=Twindle-co.twindle)
 
+## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
+
+Meet other Developer on [Discord Link](https://discord.gg/jBj2zMR) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
+
 ## What is Twindle? 🤔
 
 Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
@@ -85,9 +89,7 @@ Initial code goes into twindle-cli
 
 ---
 
-## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
 
-[Discord Link](https://discord.gg/jBj2zMR) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
 
 ## Connect with us
 
