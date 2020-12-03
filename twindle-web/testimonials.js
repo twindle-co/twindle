@@ -1,6 +1,7 @@
-let  pinfo = document.getElementById("ptext"),
-  name = document.getElementById("user"),
-  imgD = document.getElementById("userimgD");
+let  pinfo = document.getElementById("ptext");
+let  name = document.getElementById("user");
+let  imgD = document.getElementById("userimgD");
+
 const data = [
   {
     id: 0,
@@ -48,6 +49,7 @@ const data = [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09f66320974015.562f438db41be.jpg"
   }
 ];
+
 async function goFront(d) {
   let i = await d.filter((x) => {
     if (name.innerText == '- ' + x.name) {
