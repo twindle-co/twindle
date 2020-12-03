@@ -1,0 +1,26 @@
+{{#if common}}
+  <div class="tweetContainer" style="page-break-before: always;">
+    <div class="header">
+      {{#if common.user}}
+      <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+      {{/if}}
+      <div>
+        {{#if common.user}}
+        <h3>
+          {{common.user.username}}
+          {{/if}}
+          <span class="user-handle">
+            <a href="https://github.com/{{common.user.username}}/{{common.repoName}}">{{common.repoName}}</a>
+          </span>
+        </h3>
+        <p>
+          <span>
+            Repository created:
+            {{common.created_at}}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+{{/if}}
+  
