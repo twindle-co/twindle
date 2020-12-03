@@ -13,11 +13,13 @@ if(extension !== ".md"){
 }
 const gituser = url.pathname.split('/')[1]
 const repoName = url.pathname.split('/')[2]
+const branch = url.pathname.split('/')[4];
 const rawFile = fetchURL.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
-
+const replaceURL = `https://raw.githubusercontent.com/${gituser}/${repoName}/${branch}/`;
 return fetch(rawFile)
     .then(response => response.text())
     .then((body)=>{
+        body = body.replace(/\.\//g, replaceURL);
         const dataJSON = converter.makeHtml(body)
         
        return dataJSON

@@ -1,4 +1,5 @@
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
+const {formatTimestamp} = require('../../utils/date');
 
 const jsonfetchData= (url) => fetch(url)
 .then(res => res.json())
@@ -6,11 +7,12 @@ const jsonfetchData= (url) => fetch(url)
     const datajson = {
         
             repoName : jsonData.name,
-            creationDate : jsonData.created_at,
-            loginName : jsonData.owner.login,
-            ownerImage :jsonData.owner.avatar_url
-       
-    }
+            created_at : formatTimestamp(jsonData.created_at),
+            user : {
+                username: jsonData.owner.login,
+                profile_image_url: jsonData.owner.avatar_url
+            }       
+    };
 
     return datajson
 
