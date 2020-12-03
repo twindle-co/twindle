@@ -1,6 +1,6 @@
 require("./helpers/logger");
 require("dotenv").config();
-const { getCommandlineArgs, prepareCli } = require("./cli");
+const { getCommandLineObject, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
 const { getTweetsFromArray, getTweetsFromUser, getTweetsFromThreads } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
@@ -9,88 +9,39 @@ const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
 const { red, cyan ,bgRed } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
-const { isValidEmail } = require("./utils/helpers");
+
 const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
 const converthtml = require('./github/convert')
-const path = require('path')
+const path = require('path');
+const { getHtml } = require("./github/githubparse/app");
+const cli = require("./cli");
 
 async function main() {
-  prepareCli();
-
-  spinner.start();
-
-  const {
-    format,
-    outputFilename,
-    tweetId,
-    includeReplies,
-    kindleEmail,
-    mock,
-    shouldUsePuppeteer,
-    appendToFilename,
-    userId,
-    numTweets,
-    generateMock,
-    gitHubURL
-  } = getCommandlineArgs(process.argv);
-  let dataSrc = "";
-  if(gitHubURL){
-    dataSrc = "github";
-    const giturl = new URL(gitHubURL)
-    const urlExtension = path.extname(giturl.pathname)
-    if(urlExtension !== ".md"){
-    return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
-    }
-    
-    return spinner.succeed(`Your ${cyan('files')} are saved into ${formatLogColors[format](converthtml(gitHubURL))}`)
-  }
-
   try {
-    verifyEnvironmentVariables(kindleEmail);
+    prepareCli();
+    spinner.start();
+    let cliObject = getCommandLineObject();
+    //console.log(cliObject);
+    const data = await getDataFromSource(cliObject);
+    let outputFilename = cliObject.fileName && cliObject.fileName.outputFilename ? 
+                          cliObject.fileName.outputFilename : "";
+    if(!outputFilename)
+      outputFilename = calculateFileName(cliObject, data);
+    await writeToMockFile(cliObject, outputFilename, data);
 
-    const tweets = await getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets });
-    if(tweets.length > 0)
-      dataSrc = "twitter";
-    const intelligentOutputFileName = `${
-      (
-        tweets[0] &&
-        tweets[0].common &&
-        tweets[0].common.user &&
-        tweets[0].common.user.username
-      ).replace("@", "") || "twindle"
-    }-${
-      (tweets[0] &&  
-        tweets[0].common &&
-        tweets[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
-      "thread"
-    }${appendToFilename ? "-" + appendToFilename : ""}`;
+    const outputFilePath = getOutputFilePath(outputFilename, cliObject.format);
+    await Renderer.render(data, cliObject.dataSource, cliObject.format, outputFilePath);
 
-    if (generateMock) {
-      try {
-        await mkdir("./generated-mock");
-      } catch {}
-
-      // Create mock file with the appropriate name
-      await writeFile(
-        `./generated-mock/@CUSTOM-OUTPUT_${intelligentOutputFileName}.json`,
-        JSON.stringify(tweets, null, 2)
-      );
-
-    }
-
-    const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
-    await Renderer.render(tweets, dataSrc, format, outputFilePath);
-
-    if (process.argv.includes("-s")) {
-      console.devLog("sending to kindle", kindleEmail);
-      await sendToKindle(kindleEmail, outputFilePath);
+    if (cliObject.kindleEmail) {
+      console.devLog("sending to kindle", cliObject.kindleEmail);
+      await sendToKindle(cliObject.kindleEmail, outputFilePath);
     }
 
     const [fileName] = outputFilePath.split("/").reverse();
 
     spinner.succeed(
-      "Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName)
+      "Your " + cyan("data") + " saved into " + formatLogColors[cliObject.format](fileName)
     );
     //console.log("Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
   } catch (e) {
@@ -105,6 +56,20 @@ async function main() {
   process.exit();
 }
 
+async function getDataFromSource(cliObject) {
+  if(cliObject.dataSource) {
+    if(cliObject.dataSource === "github")
+      return getDataFromGithub(cliObject.github);
+    else if(cliObject.dataSource === "twitter")
+      return getTweets(cliObject.twitter);
+    else if(cliObject.dataSource === "hackernews")
+      return getDataFromHackernews(cliObject.hackernews);
+  }
+  if(cliObject.mock) {
+    return getDataFromMock(cliObject.mock);
+  }  
+}
+
 /**
  *
  * @param {Object} param
@@ -114,19 +79,14 @@ async function main() {
  * @param {string} param.userId
  * @param {number} param.numTweets
  */
-async function getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets }) {
+async function getTweets(cliObject) {
   /** @type {CustomTweetsObject[]} */
   let tweets;
 
-  if (mock) {
-    tweets = require("./twitter/mock/twitter-mock-responses/only-links.json");
-    return tweets;
-  }
+  if (cliObject.userId) {
+    tweets = await getTweetsFromUser(cliObject.userId, process.env.TWITTER_AUTH_TOKEN);
 
-  if (userId) {
-    tweets = await getTweetsFromUser(userId, process.env.TWITTER_AUTH_TOKEN);
-
-    if (tweets[0].data.length > numTweets) {
+    if (tweets[0].data.length > cliObject.numTweets) {
       tweets[0].data = tweets[0].data.slice(0, numTweets);
       tweets[0].common.count = tweets[0].data.length;
     }
@@ -134,48 +94,45 @@ async function getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, us
     return tweets;
   }
 
-  if (shouldUsePuppeteer) {
-    const tweetIDs = await getTweetIDs(tweetId);
-    tweets = await getTweetsFromArray(tweetIDs, includeReplies, process.env.TWITTER_AUTH_TOKEN);
-
-    return tweets;
-  }
-
-  tweets = await getTweetsFromThreads(tweetId, includeReplies, process.env.TWITTER_AUTH_TOKEN);
-
+  tweets = await getTweetsFromThreads(cliObject.tweetId, cliObject.includeReplies, process.env.TWITTER_AUTH_TOKEN);
   return tweets;
 }
 
-function verifyEnvironmentVariables(kindleEmail) {
-  if (!process.env.TWITTER_AUTH_TOKEN)
-    throw new UserError(
-      "bearer-token-not-provided",
-      "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"
-    );
 
-  if (process.argv.includes("-s")) {
-    if (!process.env.HOST || !process.env.EMAIL || !process.env.PASS)
-      throw new UserError(
-        "mail-server-config-error",
-        "Please setup the credentials for the mail server to send the email to Kindle"
-      );
-    if (!kindleEmail) {
-      spinner.fail("UserError");
-      throw new UserError(
-        "empty-kindle-email",
-        "Pass your kindle email address with -s or configure it in the .env file"
-      );
-    }
-
-    if (!isValidEmail(kindleEmail)) {
-      const errorMessage = !!process.argv[process.argv.indexOf("-s") + 1]
-        ? "Enter a valid email address"
-        : "Kindle Email configured in .env file is invalid";
-      spinner.fail("UserError");
-      throw new UserError("invalid-email", errorMessage);
-    }
-  }
+async function getDataFromGithub({githubURL}) {
+  return await getHtml(githubURL);
 }
 
+function calculateFileName(cliObject, data) {
+  const intelligentOutputFileName = `${
+    (
+      data[0] &&
+      data[0].common &&
+      data[0].common.user &&
+      data[0].common.user.username
+    ).replace("@", "") || "twindle"
+  }-${
+    (data[0] &&  
+      data[0].common &&
+      data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+    "thread"
+  }${cliObject.appendToFilename ? "-" + cliObject.appendToFilename : ""}`;
+  return intelligentOutputFileName;
+}
+
+async function writeToMockFile(cliObject, outputFilename, data) {
+  if (cliObject.generateMock) {
+    try {
+      await mkdir("./generated-mock");
+    } catch {}
+
+    // Create mock file with the appropriate name
+    await writeFile(
+      `./generated-mock/@CUSTOM-OUTPUT_${outputFilename}.json`,
+      JSON.stringify(data, null, 2)
+    );
+
+  }
+}
 // Execute it
 main();

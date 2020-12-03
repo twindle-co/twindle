@@ -12,6 +12,8 @@ const { encodeImage } = require("../../utils/image");
 async function renderTemplate(data, src) {
   if(src == "twitter")
     return await renderTwitterTemplate(data);
+  else if(src == "github")
+    return await renderGithubTemplate(data);
 }
 
 async function renderTwitterTemplate(data) {
@@ -61,6 +63,53 @@ async function renderTwitterTemplate(data) {
         tocPath: tempPath,
     };    
     return optionDetails;
+}
+
+async function renderGithubTemplate(data) {
+  const css = await readFile(`${__dirname}/../templates/github/style.css`, "utf-8");
+
+
+  const reposHtml = await readFile(`${__dirname}/../templates/github/repos-partial.hbs`, "utf-8");
+  const userInfohtml = await readFile(`${__dirname}/../templates/github/user-info-partial.hbs`, "utf-8");
+  const repohtml = await readFile(`${__dirname}/../templates/github/repo-partial.hbs`, "utf-8");
+  hbs.registerPartial('user-info-partial', userInfohtml);
+  hbs.registerPartial('repo-partial', repohtml);
+  
+
+  const reposTemplate = hbs.compile(reposHtml, {
+      strict: true,
+    });
+  // renders the html template with the given data
+  const threadContent = reposTemplate(data.threads);
+  
+  const tocHtml = await readFile(`${__dirname}/../templates/github/toc.hbs`, "utf-8");
+
+  // creates the Handlebars template object
+  const tocTemplate = hbs.compile(tocHtml, {
+      strict: true,
+  });
+  // renders the html template with the given data
+  const tocContent = tocTemplate(data.threads);
+  
+  const tempPath = join(tmpdir(), `toc.html`);
+  await writeFile(tempPath, tocContent, "utf-8");
+  console.devLog("toc saved to ", tempPath);
+
+  
+  const authors = [];
+  for(let thread of data.threads) {
+    if(thread.common && thread.common.user && thread.common.user.username)
+      authors.push(thread.common.username);
+  }
+  const authorNames = authors.join(",");
+  const optionDetails = {
+      title: authorNames + "'s Repositories",
+      author: authorNames,
+      html: threadContent,
+      css,
+      tocPath: tempPath,
+  };    
+  return optionDetails;
 }
 
 module.exports = { renderTemplate };

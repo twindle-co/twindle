@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <h1 id="title">
+        <center>Stories from Hacker News</center>
+    </h1>
+
+    <ul>
+        {{!-- discussion forum HN --}}
+        {{#each Story }}
+        <div class="StoryHeader">
+            <h1><a href={{Website}}>{{Story}}</a></h1>
+            <div><span>{{Date}}</span></div>
+
+        </div>
+        <div class="Discussion" {{#if discussion}} discussion: {{{discussion}}} html-escaped: {{discussion}} </div>
+            {{/if}}
+        {{/each}}
+    </ul>
+</body>
+
+</html>
