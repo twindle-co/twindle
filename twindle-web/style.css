@@ -88,7 +88,6 @@ header nav ul li a:focus {
     background-color: rgba(9, 133, 227, 0.2);
 }
 
-
 /* Main Section / HomePage */
 
 main {
@@ -214,27 +213,6 @@ main .what_we_do p {
     align-items: center;
     max-width: 75vw;
 }
-
-
-/* 
-#three_images {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.right {
-    width: 75px;
-    height: 75px;
-    justify-self: right;
-}
-
-#left {
-  width: 75px;
-  height: 75px;
-  transform: translateX(-100px);
-} 
-*/
 
 #text>h1 {
     font-weight: 800;
