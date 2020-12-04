@@ -10,7 +10,10 @@
 
 ### Daily Meeting Mon-Fri (5 PM IST)
 
-Meet other Developer on Discord [<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i1.wp.com/slfgchurch.com/wp-content/uploads/2019/08/lets-connect-1.png?ssl=1" alt="connect" width="20%" height="10%">
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR) 
 
 [Time Zone Converter](https://time.is/compare/1700_in_IST)
 
