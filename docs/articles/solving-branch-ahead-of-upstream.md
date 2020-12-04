@@ -17,7 +17,7 @@ A word:
 
 # Yeah, but tell me how to get rid of those stowaway commits!
 
-Right! All you have to do go to your `main` branch, and run these 3 commands
+Right! All you have to do is run these commands
 
 ```bash
 git checkout main

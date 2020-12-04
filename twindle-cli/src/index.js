@@ -104,6 +104,15 @@ async function getDataFromGithub({githubURL}) {
 }
 
 function calculateFileName(cliObject, data) {
+  if(cliObject.dataSource == "twitter"){
+    return calculateFileNameForTwitter(cliObject, data);
+  }
+  else if(cliObject.dataSource == "github"){
+    return calculateFileNameForGitHub(cliObject, data);
+  }
+}
+
+function calculateFileNameForTwitter(cliObject, data) {
   const intelligentOutputFileName = `${
     (
       data[0] &&
@@ -118,6 +127,15 @@ function calculateFileName(cliObject, data) {
     "thread"
   }${cliObject.appendToFilename ? "-" + cliObject.appendToFilename : ""}`;
   return intelligentOutputFileName;
+}
+
+function calculateFileNameForGitHub(cliObject, data) {
+   let userName = data[0].common.user.username;
+   let reponame = data[0].common.repoName;
+   let date     = new Date();
+   let month    = date.toLocaleString('default', { month: 'short' });
+
+   return userName + "-" + reponame + "-" + month + "-" + date.getDay() + "-" + date.getFullYear();
 }
 
 async function writeToMockFile(cliObject, outputFilename, data) {
