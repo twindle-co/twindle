@@ -89,3 +89,7 @@
 |                                                          | [Pratham](https://github.com/prasoonpratham)  | 2+ experience in JavaScript, always open to help :smile:                                           |
 |                                                          | [Sarath](http://http://www.sarathnagaraj.ca/) | 6+ experience in JavaScript, Currently working on a side project using ReactJS :man_technologist:  |
 |![Puru's profile pic](https://github.com/puruvj.png?size=80) | [Puru Vijay](https://github.com/puruvj) | 5+ experience in HTML, CSS, JS, Angular, React, Svelte, NodeJS, Python, StencilJS, Firebase, feel free to ping me for help 😁 | 
+
+
+-------------------------------------------------------------------------------------------------- |
+| <img src="./images/team/simrin_joshi.jpg" width="80px">        | [Simrin](https://github.com/simrin051) | 1.5 yr of experience from Bangalore India | I am a passionate professional focussed on full stack web development. I have 1 year of professional experience in Angular , HTML ,CSS ,JavaScipt, Java and i am rigorously looking for opportunities in Node , Express and Database to mold me to become rich experienced full stack developement.
