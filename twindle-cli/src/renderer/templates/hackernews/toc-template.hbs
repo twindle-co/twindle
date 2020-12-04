@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="<%- lang %>"
+  lang="<%- lang %>">
+
+<head>
+  <title><%= title %></title>
+  <meta charset="UTF-8" />
+  <!--<link rel="stylesheet" type="text/css" href="Epub.css" />-->
+</head>
+
+<body>
+  <h1 id="tocHeader">Your Twindle Thread from</h1>
+  
+  {{#each this}}
+  {{#if common}}
+  <div class="tweetContainer" style="page-break-before: always;">
+    <div class="header">
+      <div>
+        {{#if common.user}}
+        <h3>
+          <span class="user-handle">
+            <a href="https://news.ycombinator.com/user?id={{common.user.username}}">{{common.user.username}}</a>
+          </span>
+        </h3>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/if}}
+{{/each}}
+  
+</body>
+
+</html>
