@@ -85,7 +85,7 @@ async function renderHackernewsTemplate(data) {
   hbs.registerPartial('style', css);
   hbs.registerHelper('levelcalculator', function (level) {
     return (level-1)*50;
-})
+  });
   
   // creates the Handlebars template object
   const template = hbs.compile(threadsHtml, {

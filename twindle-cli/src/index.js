@@ -20,6 +20,7 @@ async function main() {
     let cliObject = getCommandLineObject();
     //console.log(cliObject);
     const data = await getDataFromSource(cliObject);
+    //console.log(JSON.stringify(data));
     let outputFilename = cliObject.fileName && cliObject.fileName.outputFilename ? 
                           cliObject.fileName.outputFilename : "";
     if(!outputFilename)
@@ -83,7 +84,7 @@ async function getTweets(cliObject) {
     tweets = await getTweetsFromUser(cliObject.userId, process.env.TWITTER_AUTH_TOKEN);
 
     if (tweets[0].data.length > cliObject.numTweets) {
-      tweets[0].data = tweets[0].data.slice(0, numTweets);
+      tweets[0].data = tweets[0].data.slice(0, cliObject.numTweets);
       tweets[0].common.count = tweets[0].data.length;
     }
 
