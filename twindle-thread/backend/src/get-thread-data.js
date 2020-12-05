@@ -1,6 +1,6 @@
 // @ts-check
 
-const { dbInstance } = require('../connection');
+const { dbInstance } = require('./helpers/connection');
 
 /**
  * Get the data related to the specific thread ID passed
@@ -20,9 +20,7 @@ async function getThreadData(req, res) {
   const { connection } = await dbInstance();
 
   try {
-    /**
-     * @type {[rows: import('mysql2').RowDataPacket[]]}
-     */
+    /** @type {[rows: import('mysql2').RowDataPacket[]]} */
     // @ts-ignore
     const [rows] = await connection.execute('SELECT * FROM threads WHERE id=?', [id]);
 
