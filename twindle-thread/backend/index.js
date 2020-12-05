@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const { addThread } = require('./src/add-thread');
 const { getThreadData } = require('./src/get-thread-data');
+const { getThreadsLists } = require('./src/get-threads-list');
 
 require('dotenv').config();
 
@@ -19,5 +20,6 @@ app.listen(port, () => {
 });
 
 app.get('/threads/:id', getThreadData);
+app.get('/threads/', getThreadsLists);
 
 app.post('/threads/', addThread);

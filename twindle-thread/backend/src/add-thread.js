@@ -12,13 +12,6 @@ const { calculateTwitterScore } = require('./helpers/score');
 async function addThread(req, res) {
   const { threadID } = req.body;
 
-  const fallbackResponseObj = {
-    message: '',
-    error: 'unable-to-add-thread',
-  };
-
-  const { connection } = await dbInstance();
-
   // FUTURE: Do some checking here
   // Get basic info about the tweet
   const { data: twitterResponseJSON } = await getTweetById(
@@ -42,6 +35,8 @@ async function addThread(req, res) {
   };
 
   try {
+    const { connection } = await dbInstance();
+
     // First check if this ID already in DB
 
     /** @type {[rows: import('mysql2').RowDataPacket[]]} */
@@ -51,6 +46,7 @@ async function addThread(req, res) {
     ]);
 
     if (rows.length) {
+      await connection.end();
       return void Response('thread-id-already-in-database', '', res);
     }
 
@@ -76,12 +72,13 @@ async function addThread(req, res) {
       ]
     );
 
+    await connection.end();
     return void Response('', 'successful', res);
   } catch (e) {
     console.error(e);
   }
 
-  return void res.json(fallbackResponseObj);
+  return void Response('unable-to-add-thread', '', res);
 }
 
 /**
