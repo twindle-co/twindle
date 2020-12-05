@@ -6,6 +6,9 @@
   --primary-heading-text: #181818;
   --primary-background-color: #fffdf9;
   --secondary-background-color: #faeee7;
+
+  --scrollbar-track-color: #eee;
+  --scrollbar-thumb-color: #c8c8c8;
 }
 
 * {
@@ -19,6 +22,21 @@ body {
   background: var(--primary-background-color);
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
+
+  /* Specifically for firefox browser */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+body::-webkit-scrollbar{
+  width: 0.7rem;
+}
+body::-webkit-scrollbar-track{
+  background-color: var(--scrollbar-track-color);
+}
+body::-webkit-scrollbar-thumb{
+  border-radius: 3px;
+  background-color: var(--scrollbar-thumb-color);
 }
 
 /* Creates a line to divide the sections */
