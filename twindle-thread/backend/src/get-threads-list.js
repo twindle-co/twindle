@@ -40,7 +40,7 @@ async function getThreadsLists(req, res) {
   }
 
   // Check page
-  if (isNaN(+page) || !Number.isInteger(+page) || +page === 0) {
+  if (isNaN(+page) || !Number.isInteger(+page) || +page <= 0) {
     return void Response(
       'invalid-value-of-page',
       'page should be a integer greater than 0',
@@ -50,7 +50,7 @@ async function getThreadsLists(req, res) {
   }
 
   // Check `limit`
-  if (isNaN(+limit) || !Number.isInteger(+limit) || +limit === 0) {
+  if (isNaN(+limit) || !Number.isInteger(+limit) || +limit <= 0) {
     return void Response('invalid-value-of-limit', 'limit should be a number', [], res);
   }
 
