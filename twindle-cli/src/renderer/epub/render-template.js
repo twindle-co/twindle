@@ -14,6 +14,8 @@ async function renderTemplate(data, src) {
     return await renderTwitterTemplate(data);
   else if(src == "github")
     return await renderGithubTemplate(data);
+  else if(src == "hackernews")
+    return await renderHackernewsTemplate(data);
 }
 
 async function renderTwitterTemplate(data) {
@@ -35,7 +37,7 @@ async function renderTwitterTemplate(data) {
     // renders the html template with the given data
     const threadContent = tweetsTemplate(data.threads);
     
-    const tocHtml = await readFile(`${__dirname}/../templates/twitter/toc.hbs`, "utf-8");
+    const tocHtml = await readFile(`${__dirname}/../templates/twitter/toc-template.hbs`, "utf-8");
 
     // creates the Handlebars template object
     const tocTemplate = hbs.compile(tocHtml, {
@@ -82,7 +84,7 @@ async function renderGithubTemplate(data) {
   // renders the html template with the given data
   const threadContent = reposTemplate(data.threads);
   
-  const tocHtml = await readFile(`${__dirname}/../templates/github/toc.hbs`, "utf-8");
+  const tocHtml = await readFile(`${__dirname}/../templates/github/toc-template.hbs`, "utf-8");
 
   // creates the Handlebars template object
   const tocTemplate = hbs.compile(tocHtml, {
@@ -112,4 +114,52 @@ async function renderGithubTemplate(data) {
   return optionDetails;
 }
 
+async function renderHackernewsTemplate(data) {
+  const css = await readFile(`${__dirname}/../templates/hackernews/style.css`, "utf-8");
+
+
+  const articlesHtml = await readFile(`${__dirname}/../templates/hackernews/articles-partial.hbs`, "utf-8");
+  const commonInfoHtml = await readFile(`${__dirname}/../templates/hackernews/common-info-partial.hbs`, "utf-8");
+  const commentHtml = await readFile(`${__dirname}/../templates/hackernews/comment-partial.hbs`, "utf-8");
+  hbs.registerPartial('common-info-partial', commonInfoHtml);
+  hbs.registerPartial('comment-partial', commentHtml);
+  hbs.registerHelper('levelcalculator', function (level) {
+    return (level-1)*50;
+  });
+
+  const articlesTemplate = hbs.compile(articlesHtml, {
+      strict: true,
+    });
+  // renders the html template with the given data
+  const threadContent = articlesTemplate(data.threads);
+  
+  const tocHtml = await readFile(`${__dirname}/../templates/hackernews/toc-template.hbs`, "utf-8");
+
+  // creates the Handlebars template object
+  const tocTemplate = hbs.compile(tocHtml, {
+      strict: true,
+  });
+  // renders the html template with the given data
+  const tocContent = tocTemplate(data.threads);
+  
+  const tempPath = join(tmpdir(), `toc.html`);
+  await writeFile(tempPath, tocContent, "utf-8");
+  console.devLog("toc saved to ", tempPath);
+
+  
+  const authors = [];
+  for(let thread of data.threads) {
+    if(thread.common && thread.common.user && thread.common.user.username)
+      authors.push(thread.common.username);
+  }
+  const authorNames = authors.join(",");
+  const optionDetails = {
+      title: authorNames + "'s Repositories",
+      author: authorNames,
+      html: threadContent,
+      css,
+      tocPath: tempPath,
+  };    
+  return optionDetails;
+}
 module.exports = { renderTemplate };

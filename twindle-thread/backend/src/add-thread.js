@@ -2,6 +2,7 @@
 
 const { getTweetById } = require('./twitter');
 const { dbInstance } = require('./helpers/connection');
+const { calculateTwitterScore } = require('./helpers/score');
 
 /**
  *
@@ -11,7 +12,7 @@ const { dbInstance } = require('./helpers/connection');
 async function addThread(req, res) {
   const { threadID } = req.body;
 
-  const responseObj = {
+  const fallbackResponseObj = {
     message: '',
     error: 'unable-to-add-thread',
   };
@@ -26,8 +27,7 @@ async function addThread(req, res) {
   );
 
   if (twitterResponseJSON.errors) {
-    responseObj.error = 'tweet-does-not-exists';
-    return res.json(responseObj);
+    return void Response('tweet-does-not-exists', '', res);
   }
 
   const { text, public_metrics } = twitterResponseJSON.data[0];
@@ -36,42 +36,61 @@ async function addThread(req, res) {
   const basicData = {
     text,
     conversation_id: threadID,
-    likes: public_metrics.like_count,
-    retweets: public_metrics.retweet_count,
+    likes: +public_metrics.like_count,
+    retweets: +public_metrics.retweet_count,
+    repliesCount: +public_metrics.reply_count,
   };
 
   try {
     // First check if this ID already in DB
 
-    /**
-     * @type {[rows: import('mysql2').RowDataPacket[]]}
-     */
+    /** @type {[rows: import('mysql2').RowDataPacket[]]} */
     // @ts-ignore
     const [rows] = await connection.execute('SELECT * FROM threads WHERE conversation_id=?', [
       threadID,
     ]);
 
     if (rows.length) {
-      responseObj.error = 'thread-id-already-in-database';
-      responseObj.message = '';
-
-      return void res.json(responseObj);
+      return void Response('thread-id-already-in-database', '', res);
     }
+
+    // Calculate the score
+    const score = calculateTwitterScore(
+      basicData.likes,
+      basicData.retweets,
+      basicData.repliesCount,
+      new Date() + '',
+      new Date() + ''
+    );
 
     // Do the thing
     await connection.execute(
-      'INSERT INTO threads (conversation_id, text, likes, retweets) VALUES (?, ?, ?, ?) ',
-      [basicData.conversation_id + '', basicData.text, basicData.likes, basicData.retweets]
+      'INSERT INTO threads (conversation_id, text, likes, retweets, replies_count, score) VALUES (?, ?, ?, ?, ?, ?) ',
+      [
+        basicData.conversation_id + '',
+        basicData.text,
+        basicData.likes,
+        basicData.retweets,
+        basicData.repliesCount,
+        score,
+      ]
     );
 
-    responseObj.error = '';
-    responseObj.message = 'successful';
-    return res.json(responseObj);
+    return void Response('', 'successful', res);
   } catch (e) {
     console.error(e);
   }
 
-  return res.json(responseObj);
+  return void res.json(fallbackResponseObj);
+}
+
+/**
+ * @param {string} error
+ * @param {string} message
+ * @param {import('express').Response} res
+ */
+function Response(error, message, res) {
+  return res.json({ error, message });
 }
 
 module.exports = { addThread };

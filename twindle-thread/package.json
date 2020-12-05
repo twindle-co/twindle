@@ -6,13 +6,13 @@
   },
   "dependencies": {
     "@mdi/js": "^5.8.55",
-    "svelte": "^3.30.0"
+    "svelte": "^3.31.0"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.0.4",
     "@snowpack/plugin-optimize": "^0.2.9",
     "@snowpack/plugin-svelte": "^3.3.0",
     "snowpack": "^2.17.1",
-    "workbox-cli": "^5.1.4"
+    "workbox-cli": "^6.0.0"
   }
 }

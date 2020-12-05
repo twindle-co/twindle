@@ -104,17 +104,17 @@ const getCommandlineArgs = (processArgv) =>
         type: "string"
       },
       h: {
-        alias: "storyKeyword",
+        alias: "storyId",
         demandOption: false,
-        describe: "Keyword to search for hackernews stories",
+        describe: "Hackernews story ids",
         type: "string"
       },
-      nh: {
-        alias: "numStories",
+      nc: {
+        alias: "numCommentLevels",
         demandOption: false,
-        describe: "Used together with h option to specify the number of stories to be read",
+        describe: "Used together with h option to specify the number of levels of comments to be picked up",
         type: "integer",
-        default: 10,
+        default: 3,
       }
     }).argv;
 
@@ -139,8 +139,8 @@ function getCommandLineObject() {
     numTweets,
     generateMock,
     gitHubURL,
-    storyKeyword,
-    numStories
+    storyId,
+    numCommentLevels
   } = getCommandlineArgs(process.argv);
   
   const cliObject = {};
@@ -149,7 +149,7 @@ function getCommandLineObject() {
   appendKindleEmail(cliObject, kindleEmail);
   appendTwitterSource(cliObject, tweetId, includeReplies, userId, numTweets);
   appendGithubSource(cliObject, gitHubURL);
-  appendHackernewsSource(cliObject, storyKeyword, numStories);
+  appendHackernewsSource(cliObject, storyId, numCommentLevels);
   appendMock(cliObject, mock, mockSource);
   validateCliObject(cliObject);
   cliObject.generateMock = process.argv.includes("-generate-mock") && generateMock;
@@ -242,7 +242,7 @@ const appendGithubSource = (cliObject, gitHubURL) => {
   return cliObject;
 }
 
-const appendHackernewsSource = (cliObject, storyKeyword, numStories) => {
+const appendHackernewsSource = (cliObject, storyId, numCommentLevels) => {
   if(cliObject.dataSource && process.argv.includes("-h")) {
     throw new UserError("invalid-combination-of-input-arguments", 
         "Cannot include -h together with twitter or github related params");
@@ -250,8 +250,8 @@ const appendHackernewsSource = (cliObject, storyKeyword, numStories) => {
   if(process.argv.includes("-h")) {
     cliObject.dataSource = "hackernews";
     cliObject.hackernews = {};
-    cliObject.hackernews.storyKeyword = storyKeyword;
-    cliObject.hackernews.numStories = numStories;
+    cliObject.hackernews.storyId = storyId;
+    cliObject.hackernews.numCommentLevels = numCommentLevels;
   }
   return cliObject;
 }
