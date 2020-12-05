@@ -6,7 +6,14 @@ const { UserError } = require('../../helpers/error');
 
 
 async function getHtml(urlData){
-    const url =  new URL(urlData);
+    const dataArray = []
+    var data = [];  
+    if( /[,\-]/.test(urlData)){
+        dataArray.push(urlData.split(','))
+    }
+    
+    for(let element of dataArray[0]){
+    const url =  new URL(element);
     const urlExtension = path.extname(url.pathname);
     if(urlExtension !== ".md"){
         throw new UserError("invalid-file-format-github", "Can currently only read MD files");
@@ -16,18 +23,20 @@ async function getHtml(urlData){
     const repoName = url.pathname.split('/')[2]
     const branch = url.pathname.split('/')[4];
     const repoURL = `https://api.github.com/repos/${gituser}/${repoName}`
-    const data = [];
     const repoResponse = {
         common : await jsonfetchData(repoURL),
-        htmlValue : await convertHTML(urlData)
+        htmlValue : await convertHTML(element)
     };
     repoResponse.common.branch = branch;
 
     data.push(repoResponse);
-    fs.writeFileSync(`${__dirname}/jsonLibrary/${repoName}_${readmeFileName}.json`, JSON.stringify(data,null,2) )
-    return data;    
+    
+}
+//fs.writeFileSync(`${__dirname}/jsonLibrary/test.json`, JSON.stringify(data,null,2) )
+
+return data;    
 }
 
-//main("https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md")
+//getHtml("https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md , https://github.com/kentcdodds/react-fundamentals/blob/main/src/exercise/02.md")
 
 module.exports = {getHtml};
