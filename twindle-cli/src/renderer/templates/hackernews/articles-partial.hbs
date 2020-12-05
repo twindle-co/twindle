@@ -1,0 +1,12 @@
+{{#each this}}
+  {{> common-info-partial this }}
+  <ul>
+    {{#if comments}}
+      {{#each comments}}
+        <li>
+          {{> comment-partial this}}
+        </li>
+      {{/each}}
+    {{/if}}
+  </ul>
+  {{/each}}

@@ -2,20 +2,16 @@ require("./helpers/logger");
 require("dotenv").config();
 const { getCommandLineObject, prepareCli } = require("./cli");
 const Renderer = require("./renderer");
-const { getTweetsFromArray, getTweetsFromUser, getTweetsFromThreads } = require("./twitter");
+const { getTweetsFromUser, getTweetsFromThreads } = require("./twitter");
 const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
-const { getTweetIDs } = require("./twitter/scraping");
-const { UserError } = require("./helpers/error");
-const { red, cyan ,bgRed } = require("kleur");
+const { red, cyan } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
-
+const { formatTimestamp } = require('./utils/date');
 const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
-const converthtml = require('./github/convert')
-const path = require('path');
 const { getHtml } = require("./github/githubparse/app");
-const cli = require("./cli");
+const { getStories } = require("./hacker-news/code");
 
 async function main() {
   try {
@@ -24,6 +20,7 @@ async function main() {
     let cliObject = getCommandLineObject();
     //console.log(cliObject);
     const data = await getDataFromSource(cliObject);
+    //console.log(JSON.stringify(data));
     let outputFilename = cliObject.fileName && cliObject.fileName.outputFilename ? 
                           cliObject.fileName.outputFilename : "";
     if(!outputFilename)
@@ -87,7 +84,7 @@ async function getTweets(cliObject) {
     tweets = await getTweetsFromUser(cliObject.userId, process.env.TWITTER_AUTH_TOKEN);
 
     if (tweets[0].data.length > cliObject.numTweets) {
-      tweets[0].data = tweets[0].data.slice(0, numTweets);
+      tweets[0].data = tweets[0].data.slice(0, cliObject.numTweets);
       tweets[0].common.count = tweets[0].data.length;
     }
 
@@ -103,39 +100,77 @@ async function getDataFromGithub({githubURL}) {
   return await getHtml(githubURL);
 }
 
+async function getDataFromHackernews({storyId, numCommentLevels}) {
+  return await getStories(storyId, numCommentLevels);
+}
+
 function calculateFileName(cliObject, data) {
   if(cliObject.dataSource == "twitter"){
     return calculateFileNameForTwitter(cliObject, data);
-  }
-  else if(cliObject.dataSource == "github"){
+  } else if(cliObject.dataSource == "github"){
     return calculateFileNameForGitHub(cliObject, data);
+  } else if(cliObject.dataSource == "hackernews") {
+    return calculateFileNameForHackernews(cliObject, data);
   }
 }
 
-function calculateFileNameForTwitter(cliObject, data) {
+function calculateGenericFileName(cliObject, component1, component2) {
   const intelligentOutputFileName = `${
-    (
-      data[0] &&
-      data[0].common &&
-      data[0].common.user &&
-      data[0].common.user.username
-    ).replace("@", "") || "twindle"
+    component1 || "twindle"
   }-${
-    (data[0] &&  
-      data[0].common &&
-      data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
+    component2 ||
     "thread"
   }${cliObject.appendToFilename ? "-" + cliObject.appendToFilename : ""}`;
   return intelligentOutputFileName;
 }
 
-function calculateFileNameForGitHub(cliObject, data) {
-   let userName = data[0].common.user.username;
-   let reponame = data[0].common.repoName;
-   let date     = new Date();
-   let month    = date.toLocaleString('default', { month: 'short' });
+function calculateFileNameForTwitter(cliObject, data) {
+  let username = (
+    data[0] &&
+    data[0].common &&
+    data[0].common.user &&
+    data[0].common.user.username
+  ).replace("@", "");
 
-   return userName + "-" + reponame + "-" + month + "-" + date.getDay() + "-" + date.getFullYear();
+  let date = (data[0] &&  
+      data[0].common &&
+      data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-"));
+  return calculateGenericFileName(cliObject, username, date);
+}
+
+function calculateFileNameForGitHub(cliObject, data) {
+  let username = (
+    data[0] &&
+    data[0].common &&
+    data[0].common.user &&
+    data[0].common.user.username
+  ).replace("@", "");
+  let repoName = (
+    data[0] &&
+    data[0].common &&
+    data[0].common.repoName
+  );
+  let date = new Date();
+  date = formatTimestamp(date).replace(/,/g, "").replace(/ /g, "-");
+  return calculateGenericFileName(cliObject, `${username}-${repoName}`, date);
+}
+
+function calculateFileNameForHackernews(cliObject, data) {
+  let username = (
+    data[0] &&
+    data[0].common &&
+    data[0].common.user &&
+    data[0].common.user.username
+  ).replace("@", "");
+  let title = (
+    data[0] &&
+    data[0].common &&
+    data[0].common.title
+  ).replace(/,/g, "").replace(/ /g, "-").substring(0, 10);
+  let date = (data[0] &&  
+    data[0].common &&
+    data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-"));
+  return calculateGenericFileName(cliObject, `${username}-${title}`, date);
 }
 
 async function writeToMockFile(cliObject, outputFilename, data) {

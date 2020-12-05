@@ -1,0 +1,46 @@
+{{#if common}}
+  <div class="tweetContainer" style="page-break-before: always;">
+    <div class="header">
+      <div>
+        {{#if common.user}}
+        <h3>
+          <span class="user-handle">
+            <a href="https://news.ycombinator.com/user?id={{common.user.username}}">{{common.user.username}}</a>
+          </span>
+        </h3>
+        {{/if}}
+        <p>
+          <span>
+            Title:
+            <a href="https://news.ycombinator.com/item?id={{common.id}}">{{common.title}}</a>
+          </span>
+        </p>
+        <p>
+          <span>
+            Link:
+            <a href="{{common.url}}">Original article</a>
+          </span>
+        </p>
+        <p>
+          <span>
+            Entry created:
+            {{common.created_at}}
+          </span>
+        </p>
+        <p>
+          <span>
+            Number of comments:
+            {{common.numComments}}
+          </span>
+        </p>
+        <p>
+          <span>
+            Story rating:
+            {{common.score}}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+{{/if}}
+  
