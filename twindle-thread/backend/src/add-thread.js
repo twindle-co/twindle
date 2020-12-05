@@ -12,11 +12,6 @@ const { calculateTwitterScore } = require('./helpers/score');
 async function addThread(req, res) {
   const { threadID } = req.body;
 
-  const fallbackResponseObj = {
-    message: '',
-    error: 'unable-to-add-thread',
-  };
-
   const { connection } = await dbInstance();
 
   // FUTURE: Do some checking here
@@ -81,7 +76,7 @@ async function addThread(req, res) {
     console.error(e);
   }
 
-  return void res.json(fallbackResponseObj);
+  return void Response('unable-to-add-thread', '', res);
 }
 
 /**

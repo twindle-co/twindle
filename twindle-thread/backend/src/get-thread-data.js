@@ -11,12 +11,6 @@ const { dbInstance } = require('./helpers/connection');
 async function getThreadData(req, res) {
   const { id } = req.params;
 
-  const responseObj = {
-    message: '',
-    error: 'unable-to-get-thread-data',
-    data: {},
-  };
-
   const { connection } = await dbInstance();
 
   try {
@@ -26,19 +20,25 @@ async function getThreadData(req, res) {
 
     if (!rows.length) {
       // Empty result
-      responseObj.error = 'thread-not-in-database';
-      responseObj.message = '';
-      return void res.json(responseObj);
+      return void Response('thread-not-in-database', '', {}, res);
     }
 
-    responseObj.error = '';
-    responseObj.message = 'successful';
-    responseObj.data = rows[0];
+    return void Response('', 'successful', rows[0], res);
   } catch (e) {
     console.log(e);
   }
 
-  return void res.json(responseObj);
+  return void Response('unable-to-get-thread-data', '', {}, res);
+}
+
+/**
+ * @param {string} error
+ * @param {string} message
+ * @param {Object} data
+ * @param {import('express').Response} res
+ */
+function Response(error, message, data, res) {
+  return res.json({ error, message, data });
 }
 
 module.exports = { getThreadData };
