@@ -11,18 +11,20 @@ const { dbInstance } = require('./helpers/connection');
 async function getThreadData(req, res) {
   const { id } = req.params;
 
-  const { connection } = await dbInstance();
-
   try {
+    const { connection } = await dbInstance();
+
     /** @type {[rows: import('mysql2').RowDataPacket[]]} */
     // @ts-ignore
     const [rows] = await connection.execute('SELECT * FROM threads WHERE id=?', [id]);
 
     if (!rows.length) {
       // Empty result
+      await connection.end();
       return void Response('thread-not-in-database', '', {}, res);
     }
 
+    await connection.end();
     return void Response('', 'successful', rows[0], res);
   } catch (e) {
     console.log(e);
@@ -37,7 +39,7 @@ async function getThreadData(req, res) {
  * @param {Object} data
  * @param {import('express').Response} res
  */
-function Response(error, message, data, res) {
+async function Response(error, message, data, res) {
   return res.json({ error, message, data });
 }
 
