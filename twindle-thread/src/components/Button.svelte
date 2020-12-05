@@ -85,7 +85,7 @@
   }
 
   button:focus {
-    box-shadow: 0 0 0 3px var(--focus-ring-color) !important;
+    box-shadow: 0 0 0 4px var(--focus-ring-color) !important;
   }
 
   button.button-variant-contained.button-color-light {
@@ -174,15 +174,15 @@
   }
 
   button.button-color-light:focus {
-    --focus-ring-color: rgba(var(--button-color-light-rgb), 0.5);
+    --focus-ring-color: rgba(var(--button-color-light-rgb), 0.4);
   }
 
   button.button-color-default:focus {
-    --focus-ring-color: rgba(var(--button-color-dark-rgb), 0.5);
+    --focus-ring-color: rgba(var(--button-color-dark-rgb), 0.4);
   }
 
   button.button-color-primary:focus {
-    --focus-ring-color: rgba(var(--button-color-primary-rgb), 0.5);
+    --focus-ring-color: rgba(var(--button-color-primary-rgb), 0.4);
   }
 
   :global(button > *, button > *) {

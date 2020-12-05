@@ -99,15 +99,15 @@
   }
 
   button.color-default:focus {
-    --focus-ring-color: rgba(var(--button-color-dark-rgb), 0.5)
+    --focus-ring-color: rgba(var(--button-color-dark-rgb), 0.4)
   }
 
   button.color-light:focus {
-    --focus-ring-color: rgba(var(--button-color-light-rgb), 0.5)
+    --focus-ring-color: rgba(var(--button-color-light-rgb), 0.4)
   }
 
   button.color-primary:focus {
-    --focus-ring-color: rgba(var(--button-color-primary-rgb), 0.5)
+    --focus-ring-color: rgba(var(--button-color-primary-rgb), 0.4)
   }
 
   :global(svg) {
