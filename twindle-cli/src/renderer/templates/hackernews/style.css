@@ -1,246 +1,158 @@
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body {
-  margin: 10px 10px 20px 10px;
-  font-size: 108%;
+html { height: 101%; }
+body { /*background: #e3e0ef url('images/bg.png');*/ font-size: 62.5%; line-height: 1; font-family: Arial, sans-serif; padding-bottom: 65px; }
+
+::selection { background: #d7d0f3; }
+::-moz-selection { background: #d7d0f3; }
+::-webkit-selection { background: #d7d0f3; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; } 
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+h1 { font-family: 'Wellfleet', 'Trebuchet MS', Tahoma, Arial, sans-serif; font-size: 2.85em; line-height: 1.6em; font-weight: normal; color: #756f8b; text-shadow: 0px 1px 1px #fff; margin-bottom: 21px; }
+
+p { font-family: Arial, Geneva, Verdana, sans-serif; font-size: 1.3em; line-height: 1.42em; margin-bottom: 12px; font-weight: normal; color: #656565; }
+
+a { color: #896dc6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+#common-info{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  max-width: 720px;
 }
 
-a[href] {
-  text-decoration: none !important;
+.article-info {
+  margin: 20px auto 10px;
+  padding: 40px 30px;
+  background: #191c1d;
+  color: #fff;
 }
 
-a[href]:not(.link-box-anchor):not(.embedded-tweet-anchor) {
-  color: rgb(29, 161, 242);
+.article-info .avatar {
+  vertical-align: middle;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 10%;
+  float: left;
+}
+
+.article-info-content {
+  margin-left: 135px;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.article-name {
+  margin-top: 0;
+  font-size: 24px;
+  padding-top: 0;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.article-date a {
+  color: #f8b147;
+}
+
+.author-bio-text {
+  font-size: 16px;
+  line-height: 24px;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-top: 20px;
+}
+
+.author-bio-text a, .author-bio-text a:hover {
+  color: #f8b147;
   text-decoration: none;
-  background-image: linear-gradient(
-    transparent 0%,
-    transparent 35%,
-    rgba(29, 161, 242, 0.3) 35%,
-    rgba(29, 161, 242, 0.3) 100%
-  );
-  background-size: 100% 200%;
-  background-position: 0px 0px;
-  word-break: break-word;
-}
-
-#title {
-  text-align: center;
-}
-
-ul {
-  list-style-type: none;
-
-  /*display: flex;*/
-  align-items: center;
-  justify-content: stretch;
-  /*flex-direction: column;*/
-  padding: 0;
-}
-
-ul li {
-  margin: 0;
-
-  width: 100%;
-
-  padding: 1rem 0;
-}
-
-ul li:not(:last-child) {
-  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
-}
-
-.tweetContainer {
-  /*display: flex;
-  flex-direction: column;*/
-  width: 100%;
-}
-
-.tweetContainer * {
-  margin: 0;
-  padding: 0;
-}
-
-.tweetContainer a.media-link {
-  width: 100%;
-}
-
-.tweetContainer .tweet-img {
-  margin: 10px 0;
-
-  border-radius: 0.5rem;
-
-  max-width: 100%;
-  height: auto;
-}
-
-.tweetContainer .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.tweetContainer .header img {
-  max-width: 75px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.tweetContainer .header > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.tweetContainer .header > div p {
-  font-size: 14px;
-}
-
-.tweetContainer .header > div span {
-  font-style: italic;
-  color: rgb(45, 45, 45);
-}
-
-img.emoji,
-.verified-badge {
-  height: 1em;
-  width: 1em;
-  margin: 0 0.05em 0 0.1em;
-  vertical-align: -0.1em;
-}
-
-.user-handle {
-  color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.link-box-anchor {
-  width: 100%;
-}
-
-.link-box {
-  width: 100%;
-  height: 135px;
-
-  margin: 10px 0;
-
-  border-radius: 0.5rem;
-
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-
-  background-color: rgba(0, 0, 0, 0.06);
-
-  /*display: flex;*/
-}
-
-.link-box .link-img-container {
-  height: 100%;
-
-  border-radius: 0.5rem 0 0 0.5rem;
-}
-
-.link-box .link-img-container img {
-  border-radius: inherit;
-
-  height: 100%;
-  width: auto;
-}
-
-.link-box > .link-box-content {
-  /*flex: 1;*/
-
-  color: initial;
-
   position: relative;
-
-  padding: 5px 0;
-  padding-left: 0.5rem;
-
-  /*display: flex;
-    flex-direction: column;*/
-  justify-content: space-between;
+  white-space: nowrap;
 }
 
-.link-box-content-heading,
-.link-box-content-description,
-.link-box-content-domain {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  font-size: 0.95rem;
+.author-bio-text a::after {
+  background: #f8b147;
 }
 
-.link-box-content-description,
-.link-box-content-domain {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 0.85rem;
+.author-bio-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  background: #fcbc3e;
+  width: 0;
 }
 
-.link-box-content-domain {
-  /*display: flex;*/
-  align-items: center;
+/* page layout structure */ 
+#w { display: block; width: 700px; margin: 0 auto; padding-top: 35px; }
+
+#container { 
+  display: block; 
+  width: 100%; 
+  background: #fff; 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px; 
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
-.link-box-content-domain .link-svg {
-  width: 0.9rem;
-  fill: rgba(0, 0, 0, 0.7);
 
-  margin-right: 0.5rem;
+/* comments area */
+#comments { display: block; }
+
+#comments .cmmnt, ul .cmmnt, ul ul .cmmnt { display: block; position: relative; padding-left: 35px; border-top: 1px solid #ddd; }
+
+#comments .cmmnt .avatar  { position: absolute; top: 8px; left: 0; }
+#comments .cmmnt .avatar img { 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.44);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.44);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.44);
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
-.embedded-tweet-anchor {
-  color: rgba(0, 0, 0, 0.9) !important;
-  font-size: 1rem;
-}
+#comments .cmmnt .avatar a:hover img { opacity: 0.77; }
 
-.embedded-tweet-container {
-  width: 100%;
+#comments .cmmnt .cmmnt-content { padding: 0px 3px; padding-bottom: 12px; padding-top: 8px; }
 
-  /*box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);*/
+#comments .cmmnt .cmmnt-content header { font-size: 1.3em; display: block; margin-bottom: 8px; }
+#comments .cmmnt .cmmnt-content header .pubdate { color: #777; }
+#comments .cmmnt .cmmnt-content header .userlink { font-weight: bold; } 
 
-  border-radius: 0.5rem;
-
-  margin: 0.5rem 0;
-}
-
-.embedded-tweet-container__header {
-  padding: 0.5rem;
-
-  /*display: flex;*/
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.embedded-tweet-container__header img {
-  display: inline-block;
-
-  width: 2rem;
-  height: auto;
-
-  border-radius: 50%;
-}
-
-.embedded-tweet-container__header__userhandle,
-.embedded-tweet-container__header__timestamp {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.embedded-tweet-container__body {
-  padding: 0.5rem;
-  margin: 0 1rem 0 1rem;
-}
-
-.embedded-tweet-container__body__image-container img {
-  max-width: 100%;
-}
-
-.flex {
-  /*flex: 1 1 auto;*/
-}
-
-img {
-  max-width: 100%;
-}
+#comments .cmmnt .replies { margin-bottom: 7px; }

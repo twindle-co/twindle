@@ -17,7 +17,7 @@ async function main() {
   try {
     prepareCli();
     spinner.start();
-    let cliObject = getCommandLineObject();
+    let cliObject = await getCommandLineObject();
     //console.log(cliObject);
     const data = await getDataFromSource(cliObject);
     //console.log(JSON.stringify(data));
@@ -100,8 +100,8 @@ async function getDataFromGithub({githubURL}) {
   return await getHtml(githubURL);
 }
 
-async function getDataFromHackernews({storyId, numCommentLevels}) {
-  return await getStories(storyId, numCommentLevels);
+async function getDataFromHackernews({storyId, numTopComments, numCommentLevels}) {
+  return await getStories(storyId, numTopComments, numCommentLevels);
 }
 
 function calculateFileName(cliObject, data) {
@@ -150,9 +150,14 @@ function calculateFileNameForGitHub(cliObject, data) {
     data[0].common &&
     data[0].common.repoName
   );
+  let fileName = (
+    data[0] &&
+    data[0].common &&
+    data[0].common.fileName
+  );
   let date = new Date();
   date = formatTimestamp(date).replace(/,/g, "").replace(/ /g, "-");
-  return calculateGenericFileName(cliObject, `${username}-${repoName}`, date);
+  return calculateGenericFileName(cliObject, `${username}-${repoName}-${fileName}`, date);
 }
 
 function calculateFileNameForHackernews(cliObject, data) {
@@ -166,7 +171,7 @@ function calculateFileNameForHackernews(cliObject, data) {
     data[0] &&
     data[0].common &&
     data[0].common.title
-  ).replace(/,/g, "").replace(/ /g, "-").substring(0, 10);
+  ).replace(/\W/g, "-").substring(0, 10);
   let date = (data[0] &&  
     data[0].common &&
     data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-"));
