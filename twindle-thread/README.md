@@ -47,3 +47,14 @@ For now, we're sticking only to ES Modules. However, we may introduce Differenti
 ### Destination
 
 These bundles are generated in the `build` folder (not in the repo).
+
+## Documentation
+
+### Media Queries
+
+We'll follow the breakpoint:
+
+- `960px` for tablets
+- `600px` for mobile screens
+
+This value will need to be hard coded into our code, so it's better to keep as low of these breakpoints as possible for better maintainability.
