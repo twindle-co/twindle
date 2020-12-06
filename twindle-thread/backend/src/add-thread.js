@@ -8,6 +8,7 @@ const { calculateTwitterScore } = require('./helpers/score');
  *
  * @param {import('express').Request} req
  * @param {import('express').Response} res
+ * @returns {Promise<void>}
  */
 async function addThread(req, res) {
   const { threadID } = req.body;
@@ -24,6 +25,7 @@ async function addThread(req, res) {
   }
 
   const { text, public_metrics } = twitterResponseJSON.data[0];
+  const { profile_image_url } = twitterResponseJSON.includes.users[0];
 
   // Get the basic data
   const basicData = {
@@ -32,6 +34,7 @@ async function addThread(req, res) {
     likes: +public_metrics.like_count,
     retweets: +public_metrics.retweet_count,
     repliesCount: +public_metrics.reply_count,
+    user_profile_photo: profile_image_url,
   };
 
   try {
@@ -61,9 +64,10 @@ async function addThread(req, res) {
 
     // Do the thing
     await connection.execute(
-      'INSERT INTO threads (conversation_id, text, likes, retweets, replies_count, score) VALUES (?, ?, ?, ?, ?, ?) ',
+      'INSERT INTO threads (conversation_id, user_profile_photo, text, likes, retweets, replies_count, score) VALUES (?, ?, ?, ?, ?, ?, ?) ',
       [
         basicData.conversation_id + '',
+        basicData.user_profile_photo,
         basicData.text,
         basicData.likes,
         basicData.retweets,

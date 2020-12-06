@@ -21,6 +21,7 @@ async function dbInstance() {
     `CREATE TABLE IF NOT EXISTS threads (
       id INT NOT NULL AUTO_INCREMENT,
       conversation_id VARCHAR(45) NOT NULL,
+      user_profile_photo VARCHAR(150) NOT NULL,
       text VARCHAR(300) NOT NULL,
       likes INT(20) NULL DEFAULT 0,
       retweets INT(20) NULL DEFAULT 0,

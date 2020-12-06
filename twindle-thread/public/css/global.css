@@ -21,6 +21,8 @@ body {
 
 * {
   transition: background-color 150ms ease-in, background 150ms ease-in;
+
+  box-sizing: border-box;
 }
 
 *:focus {
