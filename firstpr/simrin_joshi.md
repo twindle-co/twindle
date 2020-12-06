@@ -1,0 +1,1 @@
+I am a passionate professional focussed on full stack developement. I have 1.5 years of experience in Angular, HTML, CSS , JS,  Java and MySQL.  I am looking forward to actively contribute to Twindle.
