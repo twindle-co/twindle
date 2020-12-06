@@ -83,8 +83,11 @@ async function renderHackernewsTemplate(data) {
   hbs.registerPartial('common-info-partial', commonInfoHtml);
   hbs.registerPartial('comment-partial', commentHtml);
   hbs.registerPartial('style', css);
-  hbs.registerHelper('levelcalculator', function (level) {
-    return (level-1)*50;
+  hbs.registerHelper('levelcalculator', function (comment) {
+    if(comment.level-1 == 0 && comment.index != 0 && comment.comments.length > 0)
+      return "style='page-break-before:always'";
+    else
+      return "";
   });
   
   // creates the Handlebars template object

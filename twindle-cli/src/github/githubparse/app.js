@@ -11,7 +11,6 @@ async function getHtml(urlData){
     if( /[,\-]/.test(urlData)){
         dataArray.push(urlData.split(','))
     }
-    
     for(let element of dataArray[0]){
     const url =  new URL(element);
     const urlExtension = path.extname(url.pathname);
@@ -22,12 +21,14 @@ async function getHtml(urlData){
     const gituser = url.pathname.split('/')[1]
     const repoName = url.pathname.split('/')[2]
     const branch = url.pathname.split('/')[4];
+    const fileName = url.pathname.substring(url.pathname.lastIndexOf('/')+1);
     const repoURL = `https://api.github.com/repos/${gituser}/${repoName}`
     const repoResponse = {
         common : await jsonfetchData(repoURL),
         htmlValue : await convertHTML(element)
     };
     repoResponse.common.branch = branch;
+    repoResponse.common.fileName = fileName;
 
     data.push(repoResponse);
     
