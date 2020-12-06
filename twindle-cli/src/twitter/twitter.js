@@ -198,10 +198,10 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
   }
 
   //console.log(userIds);
-  for (let usersName of usersNames) {
+  /*for (let usersName of usersNames) {
     const tts = tweetThreads.filter((thread) => thread.common.user.name === usersName);
     if (tts.length > 1) for (let i = 1; i < tts.length; i++) delete tts[i].common.user;
-  }
+  }*/
 
   // Remove duplicates generating due to puppeteer scraping
   return tweetThreads;

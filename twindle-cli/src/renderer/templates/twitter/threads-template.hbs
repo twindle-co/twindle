@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  </meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </meta>
+  <title>Twindle thread </title>
+
+  <style type="text/css">
+    {{> style}}
+  </style>
+</head>
+
+<body>
+  {{#with threads}}
+  {{> tweets-partial this}}
+  {{/with}}
+
+  <script>
+    document.onload = () => {
+      const embeddedTweetBody = document.querySelector('.embedded-tweet-container__body');
+      const anchors = embeddedTweetBody.querySelectorAll('a');
+
+      for (let a of anchors) {
+        a.onclick = e => e.preventDefault()
+      }
+    }
+  </script>
+</body>
+
+</html>

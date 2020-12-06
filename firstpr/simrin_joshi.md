@@ -1,2 +1,0 @@
-I am a passionate professional focussed on full stack web development.
-I have 1 year of professional experience in Angular,HTML,CSS,JS and i am rigorously looking for opportunities in Node , Express and Database to mold me to become rich experienced full stack developement.

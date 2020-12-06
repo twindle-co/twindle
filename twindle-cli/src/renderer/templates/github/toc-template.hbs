@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="<%- lang %>"
+  lang="<%- lang %>">
+
+<head>
+  <title><%= title %></title>
+  <meta charset="UTF-8" />
+  <!--<link rel="stylesheet" type="text/css" href="Epub.css" />-->
+</head>
+
+<body>
+  <h1 id="tocHeader">Your Twindle Thread from</h1>
+  
+  {{#each this}}
+  {{#if common}}
+  <div class="tweetContainer" style="page-break-before: always;">
+    <div class="header">
+      {{#if common.user}}
+      <img src="{{common.user.profile_image_url}}" alt="{{common.user.username}}" />
+      {{/if}}
+      <div>
+        {{#if common.user}}
+        <h3>
+          {{common.user.username}}
+          {{/if}}
+          <span class="user-handle">
+            <a href="https://github.com/{{common.user.username}}/{{common.repoName}}">{{common.repoName}}</a>
+          </span>
+        </h3>
+      </div>
+    </div>
+  </div>
+{{/if}}
+{{/each}}
+  
+</body>
+
+</html>

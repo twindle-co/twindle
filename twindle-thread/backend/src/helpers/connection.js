@@ -21,9 +21,14 @@ async function dbInstance() {
     `CREATE TABLE IF NOT EXISTS threads (
       id INT NOT NULL AUTO_INCREMENT,
       conversation_id VARCHAR(45) NOT NULL,
-      text VARCHAR(100) NOT NULL,
+      user_profile_photo VARCHAR(150) NOT NULL,
+      text VARCHAR(300) NOT NULL,
       likes INT(20) NULL DEFAULT 0,
       retweets INT(20) NULL DEFAULT 0,
+      replies_count INT(20) NULL DEFAULT 0,
+      score FLOAT(20) NULL DEFAULT 0,
+      date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       PRIMARY KEY (id),
       UNIQUE INDEX conversation_id_UNIQUE (conversation_id ASC) VISIBLE
     );`

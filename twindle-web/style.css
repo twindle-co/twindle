@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;800&display=swap");
 
 /* CSS Variables in the root element */
+
 :root {
   --primary-heading-text: #181818;
   --primary-background-color: #fffdf9;
-
   --secondary-background-color: #faeee7;
+
+  --scrollbar-track-color: #eee;
+  --scrollbar-thumb-color: #c8c8c8;
 }
 
 * {
@@ -19,6 +22,21 @@ body {
   background: var(--primary-background-color);
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
+
+  /* Specifically for firefox browser */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+body::-webkit-scrollbar{
+  width: 0.7rem;
+}
+body::-webkit-scrollbar-track{
+  background-color: var(--scrollbar-track-color);
+}
+body::-webkit-scrollbar-thumb{
+  border-radius: 3px;
+  background-color: var(--scrollbar-thumb-color);
 }
 
 /* Creates a line to divide the sections */
@@ -37,13 +55,18 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1.3rem;
-  box-shadow: 0 2px 4px #ddd;
-  position: fixed;
-  top: 0px;
+  padding: 1.5rem;
   width: 100%;
+  position: fixed;
   background-color: var(--primary-background-color);
   z-index: 2;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.sticky {
+  padding: 0.7rem 1.5rem;
+  box-shadow: 0 2px 4px #ddd;
 }
 
 header a {
@@ -87,6 +110,7 @@ header nav ul li a:focus {
 }
 
 /* Main Section / HomePage */
+
 main {
   display: flex;
   flex-direction: column;
@@ -202,33 +226,13 @@ main .what_we_do p {
   padding-bottom: 4rem;
 }
 
-.container{
+.container {
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   max-width: 75vw;
 }
-
-/* 
-#three_images {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.right {
-  width: 75px;
-  height: 75px;
-  justify-self: right;
-}
-
-#left {
-  width: 75px;
-  height: 75px;
-  transform: translateX(-100px);
-} 
-*/
 
 #text > h1 {
   font-weight: 800;
@@ -270,7 +274,7 @@ main .what_we_do p {
 
 #remote_design {
   width: 389px;
-  height: 236px;
+  /* height: 436px; */
 }
 
 /* Testimonials Section */
@@ -308,7 +312,7 @@ main .what_we_do p {
   padding: 1rem;
   background-color: var(--secondary-background-color);
   border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 5px 3px #fde5cb; 
+  -webkit-box-shadow: 3px 3px 5px 3px #fde5cb;
   box-shadow: 3px 3px 5px 3px #fde5cb;
 }
 
