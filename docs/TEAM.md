@@ -73,9 +73,11 @@
 | <img src="./images/team/marcus.jpg" width="80px">                                                                                                                                                                                                              | [Marcus](https://github.com/mar-code)                     | I'm a self taught frontend developer from Lagos, Nigeria with experience in HTML/CSS, Javascript, React, Redux, bootstrap and d3 data presentation. i am currently learning NodeJs.                                                                                                                                         |
 |                                                                                                                                                                                                                                                                | [Samuel Adeniyi](https://github.com/samueladeniyi)        | I am proficient in HTML, CSS and Javascript. I am comfortable with react. I intend to become a fullstack developer with the MERN stack. I am from Nigeria.                                                                                                                                                                  |
 | <img src="./images/team/aditya.jpg" width="80px">                                                                                                                                                                                                              | [Aditya Satpute](https://github.com/Foxtrot-1418)                     | I'm a Full Stack Web Developer From Nashik, Maharashtra, India. I've experience in HTML, CSS, JS, Jquery, Bootstrap, PHP and currently working fo r Multinational Company as AWS Developer.                                                                                                  
- 
- | <img src="./images/team/simrin_joshi.jpg" 
- width="80px">        | [Simrin](https://github.com/simrin051) | 1.5 yr of experience from Bangalore India | I am a passionate professional focussed on full stack web development. I have 1 year of professional experience in Angular , HTML ,CSS ,JavaScipt, Java and i am rigorously looking for opportunities in Node , Express and Database to enrich me in  full stack developement.  I want to actively contribute to Twindle.
+                                                                |
+ | <img src="./images/team/aditya.jpg" width="80px">      
+         
+         | [Simrin](https://github.com/simrin051) | 1.5 yr of experience from Bangalore India | I am a 
+passionate professional focussed on full stack web development. I have 1 year of professional experience in Angular , HTML ,CSS ,JavaScipt, Java and i am rigorously looking for opportunities in Node , Express and Database to enrich me in  full stack developement.  I want to actively contribute to Twindle.
 
 
 ---
