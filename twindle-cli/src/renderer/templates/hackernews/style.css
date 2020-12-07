@@ -29,7 +29,7 @@ img { border: 0; max-width: 100%; }
 
 h1 { font-family: 'Wellfleet', 'Trebuchet MS', Tahoma, Arial, sans-serif; font-size: 2.85em; line-height: 1.6em; font-weight: normal; color: #756f8b; text-shadow: 0px 1px 1px #fff; margin-bottom: 21px; }
 
-p { font-family: Arial, Geneva, Verdana, sans-serif; font-size: 1.3em; line-height: 1.42em; margin-bottom: 12px; font-weight: normal; color: #656565; }
+p { font-family: Arial, Geneva, Verdana, sans-serif; font-size: 2.0em; line-height: 1.42em; margin-bottom: 12px; font-weight: normal; color: #656565; }
 
 a { color: #896dc6; text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -111,13 +111,13 @@ a:hover { text-decoration: underline; }
 }
 
 /* page layout structure */ 
-#w { display: block; width: 700px; margin: 0 auto; padding-top: 35px; }
+#w { display: block; width: 720px; margin: 0 auto; padding-top: 35px; }
 
 #container { 
   display: block; 
   width: 100%; 
   background: #fff; 
-  padding: 14px 20px; 
+  /*padding: 14px 20px; */
   -webkit-border-radius: 4px; 
   -moz-border-radius: 4px; 
   border-radius: 4px; 
@@ -130,7 +130,7 @@ a:hover { text-decoration: underline; }
 /* comments area */
 #comments { display: block; }
 
-#comments .cmmnt, ul .cmmnt, ul ul .cmmnt { display: block; position: relative; padding-left: 35px; border-top: 1px solid #ddd; }
+#comments .cmmnt, ul .cmmnt, ul ul .cmmnt { display: block; position: relative; /*padding-left: 35px; border-top: 1px solid #ddd;*/ }
 
 #comments .cmmnt .avatar  { position: absolute; top: 8px; left: 0; }
 #comments .cmmnt .avatar img { 
@@ -151,7 +151,7 @@ a:hover { text-decoration: underline; }
 
 #comments .cmmnt .cmmnt-content { padding: 0px 3px; padding-bottom: 12px; padding-top: 8px; }
 
-#comments .cmmnt .cmmnt-content header { font-size: 1.3em; display: block; margin-bottom: 8px; }
+#comments .cmmnt .cmmnt-content header { font-size: 2.0em; display: block; margin-bottom: 8px; }
 #comments .cmmnt .cmmnt-content header .pubdate { color: #777; }
 #comments .cmmnt .cmmnt-content header .userlink { font-weight: bold; } 
 

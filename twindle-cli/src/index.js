@@ -155,6 +155,7 @@ function calculateFileNameForGitHub(cliObject, data) {
     data[0].common &&
     data[0].common.fileName
   );
+  fileName = fileName.substring(0, fileName.indexOf("."));
   let date = new Date();
   date = formatTimestamp(date).replace(/,/g, "").replace(/ /g, "-");
   return calculateGenericFileName(cliObject, `${username}-${repoName}-${fileName}`, date);
