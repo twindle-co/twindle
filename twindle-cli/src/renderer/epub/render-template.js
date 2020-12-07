@@ -124,10 +124,16 @@ async function renderHackernewsTemplate(data) {
   hbs.registerPartial('common-info-partial', commonInfoHtml);
   hbs.registerPartial('comment-partial', commentHtml);
   hbs.registerHelper('levelcalculator', function (comment) {
-    if(comment.level-1 == 0 && comment.index != 0 && comment.comments.length > 0)
-      return "style='page-break-before:always'";
-    else
+    if(comment.level-1 == 0 && comment.index == 0)
       return "";
+    else if(comment.level-1 == 0 && comment.index != 0) {
+      if(comment.comments.length > 0)
+        return "style='page-break-before:always;'";
+      else
+        return "style='border-top: 1px solid #ddd;'";
+    }
+    else if(comment.level - 1 > 0)
+      return "style='padding-left:35px'";
   });
 
   const articlesTemplate = hbs.compile(articlesHtml, {
