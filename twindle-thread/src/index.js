@@ -11,6 +11,7 @@ export default app;
 // Learn more: https://www.snowpack.dev/#hot-module-replacement
 if (import.meta.hot) {
   import.meta.hot.accept();
+  // window.location.reload();
   import.meta.hot.dispose(() => {
     app.$destroy();
   });

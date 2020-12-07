@@ -1,0 +1,14 @@
+{{#each this}}
+{{> common-info-partial this }}
+  <div id="w">
+    <div id="container">    
+      {{#if comments}}
+      <ul id="comments">    
+        {{#each comments}}
+          {{> comment-partial this}}
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+  </div>
+  {{/each}}

@@ -4,6 +4,7 @@ const { UserError } = require("./helpers/error");
 const { createLibraryIfNotExists } = require("./utils/library");
 const sendEmail = require("./utils/send-email");
 const { isValidEmail } = require("./utils/helpers");
+const { readFile } = require("fs").promises;
 
 
 const getCommandlineArgs = (processArgv) =>
@@ -104,17 +105,24 @@ const getCommandlineArgs = (processArgv) =>
         type: "string"
       },
       h: {
-        alias: "storyKeyword",
+        alias: "storyId",
         demandOption: false,
-        describe: "Keyword to search for hackernews stories",
+        describe: "Hackernews story ids",
         type: "string"
       },
-      nh: {
-        alias: "numStories",
+      t: {
+        alias: "numTopComments",
         demandOption: false,
-        describe: "Used together with h option to specify the number of stories to be read",
+        describe: "Used together with h option to specify the number of levels of comments to be picked up",
         type: "integer",
-        default: 10,
+        default: 5,
+      },
+      d: {
+        alias: "numCommentLevels",
+        demandOption: false,
+        describe: "Used together with h option to specify the number of levels of comments to be picked up",
+        type: "integer",
+        default: 3,
       }
     }).argv;
 
@@ -124,7 +132,7 @@ function prepareCli() {
   createLibraryIfNotExists();
 }
 
-function getCommandLineObject() {
+async function getCommandLineObject() {
   const {
     format,
     outputFilename,
@@ -139,8 +147,9 @@ function getCommandLineObject() {
     numTweets,
     generateMock,
     gitHubURL,
-    storyKeyword,
-    numStories
+    storyId,
+    numTopComments,
+    numCommentLevels,
   } = getCommandlineArgs(process.argv);
   
   const cliObject = {};
@@ -148,8 +157,8 @@ function getCommandLineObject() {
   appendOutputFileName(cliObject, outputFilename, appendToFilename);
   appendKindleEmail(cliObject, kindleEmail);
   appendTwitterSource(cliObject, tweetId, includeReplies, userId, numTweets);
-  appendGithubSource(cliObject, gitHubURL);
-  appendHackernewsSource(cliObject, storyKeyword, numStories);
+  await appendGithubSource(cliObject, gitHubURL);
+  appendHackernewsSource(cliObject, storyId, numTopComments, numCommentLevels);
   appendMock(cliObject, mock, mockSource);
   validateCliObject(cliObject);
   cliObject.generateMock = process.argv.includes("-generate-mock") && generateMock;
@@ -204,12 +213,13 @@ const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTwee
   if(process.argv.includes("-i") && process.argv.includes("-u"))
     throw new UserError("invalid-combination-of-twitter-params", 
       "Please choose either tweet ids or user ids");
-  if (!process.env.TWITTER_AUTH_TOKEN)
-    throw new UserError(
+  if(process.argv.includes("-i") || process.argv.includes("-u")) {
+    if (!process.env.TWITTER_AUTH_TOKEN)
+      throw new UserError(
       "bearer-token-not-provided",
       "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"
-    );
-  if(process.argv.includes("-i") || process.argv.includes("-u")) {
+      );
+  
     cliObject.dataSource = "twitter";
     cliObject.twitter = {};
     if(tweetId) {
@@ -229,7 +239,7 @@ const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTwee
   return cliObject;
 }
 
-const appendGithubSource = (cliObject, gitHubURL) => {
+const appendGithubSource = async (cliObject, gitHubURL) => {
   if(cliObject.dataSource && process.argv.includes("-g")) {
     throw new UserError("invalid-combination-of-input-arguments", 
         "Cannot include -g together with twitter related params");
@@ -237,12 +247,24 @@ const appendGithubSource = (cliObject, gitHubURL) => {
   if(process.argv.includes("-g")) {
     cliObject.dataSource = "github";
     cliObject.github = {};
-    cliObject.github.githubURL = gitHubURL;
+    cliObject.github.githubURL = await validateGithubURL(gitHubURL);
   }
   return cliObject;
 }
 
-const appendHackernewsSource = (cliObject, storyKeyword, numStories) => {
+async function validateGithubURL(gitHubURL) {
+  if(!(gitHubURL.toLowerCase().endsWith(".md") || gitHubURL.toLowerCase().endsWith(".txt")))
+    throw new UserError("invalid-value-for-input-argument", 
+      "Can only include an MD file or a txt file for -g parameter");
+  if(gitHubURL.toLowerCase().endsWith(".md"))
+    return gitHubURL;
+  else {
+    const reposText = await readFile(`${__dirname}/github/input/${gitHubURL}`, "utf-8");
+    return reposText.split(/\r?\n/).join(",");
+  }
+}
+
+const appendHackernewsSource = (cliObject, storyId, numTopComments, numCommentLevels) => {
   if(cliObject.dataSource && process.argv.includes("-h")) {
     throw new UserError("invalid-combination-of-input-arguments", 
         "Cannot include -h together with twitter or github related params");
@@ -250,8 +272,9 @@ const appendHackernewsSource = (cliObject, storyKeyword, numStories) => {
   if(process.argv.includes("-h")) {
     cliObject.dataSource = "hackernews";
     cliObject.hackernews = {};
-    cliObject.hackernews.storyKeyword = storyKeyword;
-    cliObject.hackernews.numStories = numStories;
+    cliObject.hackernews.storyId = storyId;
+    cliObject.hackernews.numTopComments = numTopComments;
+    cliObject.hackernews.numCommentLevels = numCommentLevels;
   }
   return cliObject;
 }
