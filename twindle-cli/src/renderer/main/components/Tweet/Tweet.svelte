@@ -6,8 +6,9 @@
 
   import Media from "./Media.svelte";
   import ImageLink from "./ImageLink.svelte";
+  import Embedded from "./Embedded.svelte";
 
-  const { customMedia, tweet, linkWithImage } = data;
+  const { customMedia, tweet, linkWithImage, embeddedTweet } = data;
   console.log(customMedia);
 </script>
 
@@ -16,4 +17,5 @@
 
   <Media {customMedia} />
   <ImageLink {linkWithImage} />
+  <Embedded {embeddedTweet} />
 </section>
