@@ -5,8 +5,8 @@
   export let customMedia = undefined;
 </script>
 
-<section>
-  {#if customMedia}
+{#if customMedia}
+  <section>
     {#each Object.values(customMedia) as media}
       {#each media as data, i}
         <a target="_blank" rel="noopener noreferrer" class="media-link" href={data.link}>
@@ -18,5 +18,5 @@
         </a>
       {/each}
     {/each}
-  {/if}
-</section>
+  </section>
+{/if}

@@ -1,7 +1,8 @@
-const render = require("./index");
+const { render, wrapWithHtml } = require("./index");
 const fs = require("fs");
 const mock = require("../../../generated-mock/mock.json");
 
-const { html } = render({ threads: mock });
-const wrap = `<html><body>${html}</body></html>`;
+const data = render({ threads: mock });
+const wrap = wrapWithHtml(data);
+
 fs.writeFileSync(__dirname + "/output.html", wrap);

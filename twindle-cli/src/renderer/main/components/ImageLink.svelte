@@ -5,8 +5,8 @@
   export let linkWithImage = undefined;
 </script>
 
-<section>
-  {#if linkWithImage}
+{#if linkWithImage}
+  <section>
     <div>
       <a href={linkWithImage.expanded_url} class="link-box-anchor">
         <div class="link-box">
@@ -34,5 +34,5 @@
         </div>
       </a>
     </div>
-  {/if}
-</section>
+  </section>
+{/if}

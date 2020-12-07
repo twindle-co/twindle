@@ -1,16 +1,17 @@
 const { renderTemplate } = require("./render-template");
+const { join } = require("path");
 const Epub = require("epub-gen");
 
 const createOptions = ({ title, author, html, tocPath, css }) => ({
   title,
   author,
-  cover: "./renderer/templates/resources/twindle_logo.jpg",
+  cover: join(__dirname, "..", "main", "resources", "twindle_logo.jpg"),
   content: [{ title: title, data: html }],
   appendChapterTitles: false,
   verbose: false,
   tocTitle: "Contents",
   publisher: "Twindle",
-  customHtmlTocTemplatePath: tocPath,
+  // customHtmlTocTemplatePath: tocPath,
   css,
 });
 
@@ -19,7 +20,7 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
  * @param {string} outputPath
  */
 async function generateEpub(srcData, src, outputPath) {
-  const parameter = {threads: srcData};
+  const parameter = { threads: srcData };
   const optionDetails = await renderTemplate(parameter, src);
   const options = createOptions(optionDetails);
   try {

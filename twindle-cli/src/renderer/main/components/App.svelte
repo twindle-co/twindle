@@ -5,13 +5,26 @@
   export let threads;
 
   import Tweet from "./Tweet/Tweet.svelte";
+  import Reply from "./Tweet/Reply.svelte";
+  import User from "./User.svelte";
 </script>
 
 <main>
-  <h1>A Twindle Thread</h1>
-  {#each threads as { common, data }}
-    {#each data as tweet}
-      <Tweet data={tweet} />
+  <ul>
+    {#each threads as { common, data }}
+      <User {common} />
+      {#each data as tweet}
+        <li>
+          <Tweet data={tweet} />
+        </li>
+        {#if tweet.replies}
+          {#each tweet.replies as reply}
+            <li>
+              <Reply {reply} />
+            </li>
+          {/each}
+        {/if}
+      {/each}
     {/each}
-  {/each}
+  </ul>
 </main>

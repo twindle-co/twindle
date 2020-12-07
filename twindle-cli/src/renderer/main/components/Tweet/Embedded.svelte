@@ -2,11 +2,11 @@
   /** @type {EmbeddedTweetData}*/
   export let embeddedTweet;
 
-  import Media from "./Media.svelte";
+  import Media from "../Media.svelte";
 </script>
 
-<section>
-  {#if embeddedTweet}
+{#if embeddedTweet}
+  <section>
     <a
       class="embedded-tweet-anchor"
       href="https://twitter.com/{embeddedTweet.embeddedTweetUser.username}/status/{embeddedTweet.id}">
@@ -28,5 +28,5 @@
         <Media customMedia={embeddedTweet.customMedia} />
       </section>
     </a>
-  {/if}
-</section>
+  </section>
+{/if}
