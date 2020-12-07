@@ -1,27 +1,15 @@
-<section class="embedded-tweet-container" style="text-indent: {{levelcalculator level}}px">
-    <div class="embedded-tweet-container__header">
-        <a href="https://news.ycombinator.com/user?id={{username}}">
-            <span class="embedded-tweet-container__header__name">
-            <b>
-                {{username}}
-            </b>
-            </span>
-        </a>
-        <span class="flex"></span>
-        {{#if created_at}}
-            <span class="embedded-tweet-container__header__timestamp">
-                {{created_at}}
-            </span>
-        {{/if}}
+<div {{{levelcalculator this}}}>
+<li class="cmmnt">
+    <div class="cmmnt-content">
+    <header><a href="javascript:void(0);" class="userlink">{{username}}</a> - <span class="pubdate">{{created_at}}</span></header>
+    <p>{{{text}}}</p>
     </div>
-    <div class="embedded-tweet-container__body">
-        {{{text}}}
-    </div>
-</section>
-{{#if comments}}
-    {{#each comments}}
-    <li>
-        {{> comment-partial this}}
-    </li>
-    {{/each}}
-{{/if}}
+    {{#if comments}}
+        <ul class="replies">
+            {{#each comments}}
+                {{> comment-partial this}}
+            {{/each}}    
+        </ul>
+    {{/if}}    
+</li>
+</div>

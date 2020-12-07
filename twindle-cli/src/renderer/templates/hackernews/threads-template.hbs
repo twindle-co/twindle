@@ -11,23 +11,14 @@
   <style type="text/css">
     {{> style}}
   </style>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Wellfleet">
 </head>
 
 <body>
   {{#with threads}}
-  {{> articles-partial this}}
+    {{> articles-partial this}}
   {{/with}}
 
-  <script>
-    document.onload = () => {
-      const embeddedTweetBody = document.querySelector('.embedded-tweet-container__body');
-      const anchors = embeddedTweetBody.querySelectorAll('a');
-
-      for (let a of anchors) {
-        a.onclick = e => e.preventDefault()
-      }
-    }
-  </script>
 </body>
 
 </html>

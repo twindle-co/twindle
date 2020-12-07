@@ -1,21 +1,24 @@
 <script>
-  import Button from './components/Button.svelte';
-  import AppIcon from './components/utils/AppIcon.svelte';
-
-  import { mdiPlus } from '@mdi/js';
-  import IconButton from './components/IconButton.svelte';
+  // @ts-check
+  import { Router, Route } from 'svelte-routing';
+  import Feed from './pages/Feed.svelte';
 </script>
 
-<Button on:click={(e) => console.log(e)} color="primary" variant="contained" class="hello">
-  <span slot="icon-start">
-    <AppIcon size={20} path={mdiPlus} />
-  </span>
-  Hello
-  <span slot="icon-end">
-    <AppIcon size={20} path={mdiPlus} />
-  </span>
-</Button>
+<style>
+  /** This is the direct child of `body`*/
+  main {
+    /** Always keep this to make it stretch cross-axis
+     * https://stackoverflow.com/questions/29467660/how-to-stretch-children-to-fill-cross-axis
+     */
+    flex: 1;
 
-<IconButton size="small" color="default">
-  <AppIcon path={mdiPlus} />
-</IconButton>
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<main>
+  <Router>
+    <Route path="/" component={Feed} />
+  </Router>
+</main>
