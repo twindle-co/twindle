@@ -166,12 +166,14 @@ export interface CustomTweetData {
   replies?: Reply[];
 }
 
+export interface CommonData {
+  id: string;
+  count: number;
+  created_at?: string;
+  user?: Partial<User>;
+}
+
 export interface CustomTweets {
-  common: {
-    id: string;
-    count: number;
-    created_at?: string;
-    user?: Partial<User>;
-  };
+  common: CommonData;
   data: CustomTweetData[];
 }
