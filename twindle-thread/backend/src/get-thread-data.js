@@ -28,7 +28,43 @@ async function getThreadData(req, res) {
       return void Response('thread-not-in-database', '', {}, res);
     }
 
-    return void Response('', 'successful', rows[0], res);
+    const finalData = rows.map(
+      ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user_id,
+        verified,
+        handle,
+        name,
+        profile_photo,
+      }) => ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user: {
+          user_id,
+          verified,
+          handle,
+          name,
+          profile_photo,
+        },
+      })
+    );
+
+    return void Response('', 'successful', finalData[0], res);
   } catch (e) {
     console.log(e);
   } finally {
