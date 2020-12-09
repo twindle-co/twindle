@@ -40,7 +40,7 @@ async function addThread(req, res) {
     user_id: twitterUser.id,
     handle: twitterUser.username,
     name: twitterUser.name,
-    profile_photo: twitterUser.profile_image_url,
+    profile_photo: twitterUser.profile_image_url.replace('_normal', '_reasonably_small'),
     verified: twitterUser.verified + '',
   };
 

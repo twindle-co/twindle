@@ -8,16 +8,16 @@ const Fetch = fetchRetry(fetch);
  * Custom GET implementation of fetch in web worker
  * @param {string} url The base URL to which to make the requests
  * @param {RequestInit} options Options to be passed to the fetch API
- * @param {{[key: string]: any}} params
+ * @param {{[key: string]: string | number}} params
  */
 export async function getFetch(url, params = {}, options = {}) {
   // Construct params from the `params` object
   const param =
     '?' +
     Object.keys(params)
-      .map((prop) => `${prop}=${params[prop]}`)
+      .map((prop) => `${encodeURI(prop)}=${encodeURI(params[prop] + '')}`)
       .join('&');
-    
+
   return await Fetch(url + param, { ...options }).then((res) => res.json());
 }
 

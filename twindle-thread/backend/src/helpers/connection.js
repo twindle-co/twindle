@@ -25,7 +25,7 @@ async function dbInstance() {
       user_id VARCHAR(20) NOT NULL PRIMARY KEY,
       handle VARCHAR(30) NOT NULL,
       name VARCHAR(40) NOT NULL,
-      profile_photo VARCHAR(80) NOT NULL,
+      profile_photo VARCHAR(200) NOT NULL,
       verified ENUM('true', 'false') NOT NULL
     );`
   );

@@ -75,7 +75,43 @@ async function getThreadsLists(req, res) {
       `
     );
 
-    return void Response('', 'successful', rows, res);
+    const finalData = rows.map(
+      ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user_id,
+        verified,
+        handle,
+        name,
+        profile_photo,
+      }) => ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user: {
+          user_id,
+          verified,
+          handle,
+          name,
+          profile_photo,
+        },
+      })
+    );
+
+    return void Response('', 'successful', finalData, res);
   } catch (e) {
     console.log(e);
   } finally {

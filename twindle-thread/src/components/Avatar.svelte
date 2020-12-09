@@ -18,6 +18,10 @@
 </script>
 
 <style>
+  * {
+    user-select: none;
+  }
+
   div {
     --placeholder-bgcolor: rgba(var(--app-color-dark-rgb), 0.15);
     --avatar-color-primary: var(--app-color-primary);
