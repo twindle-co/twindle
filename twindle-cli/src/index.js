@@ -12,6 +12,7 @@ const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
 const { getHtml } = require("./github/githubparse/app");
 const { getStories } = require("./hacker-news/code");
+const { readURL } = require("./readability");
 
 async function main() {
   try {
@@ -61,6 +62,8 @@ async function getDataFromSource(cliObject) {
       return getTweets(cliObject.twitter);
     else if(cliObject.dataSource === "hackernews")
       return getDataFromHackernews(cliObject.hackernews);
+    else if(cliObject.dataSource === "article")
+      return getDataFromArticle(cliObject.article);
   }
   if(cliObject.mock) {
     return getDataFromMock(cliObject.mock);
@@ -104,6 +107,10 @@ async function getDataFromHackernews({storyId, numTopComments, numCommentLevels}
   return await getStories(storyId, numTopComments, numCommentLevels);
 }
 
+async function getDataFromArticle({articleUrl}) {
+  return await readURL(articleUrl);
+}
+
 function calculateFileName(cliObject, data) {
   if(cliObject.dataSource == "twitter"){
     return calculateFileNameForTwitter(cliObject, data);
@@ -111,7 +118,10 @@ function calculateFileName(cliObject, data) {
     return calculateFileNameForGitHub(cliObject, data);
   } else if(cliObject.dataSource == "hackernews") {
     return calculateFileNameForHackernews(cliObject, data);
+  } else if(cliObject.dataSource == "article") {
+    return calculateFileNameForArticle(cliObject, data);
   }
+
 }
 
 function calculateGenericFileName(cliObject, component1, component2) {
@@ -177,6 +187,16 @@ function calculateFileNameForHackernews(cliObject, data) {
     data[0].common &&
     data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-"));
   return calculateGenericFileName(cliObject, `${username}-${title}`, date);
+}
+
+function calculateFileNameForArticle(cliObject, data) {
+  let title = (
+    data[0] &&
+    data[0].title
+  ).replace(/\W/g, "-").substring(0, 10);
+  let date = new Date();
+  date = formatTimestamp(date).replace(/,/g, "").replace(/ /g, "-");
+  return calculateGenericFileName(cliObject, `${title}`, date);
 }
 
 async function writeToMockFile(cliObject, outputFilename, data) {

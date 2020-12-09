@@ -123,6 +123,12 @@ const getCommandlineArgs = (processArgv) =>
         describe: "Used together with h option to specify the number of levels of comments to be picked up",
         type: "integer",
         default: 3,
+      },
+      e: {
+        alias: "articleUrl",
+        demandOption: false,
+        describe: "URL to read from",
+        type: "string"
       }
     }).argv;
 
@@ -150,8 +156,8 @@ async function getCommandLineObject() {
     storyId,
     numTopComments,
     numCommentLevels,
+    articleUrl
   } = getCommandlineArgs(process.argv);
-  
   const cliObject = {};
   appendFileFormat(cliObject, format);
   appendOutputFileName(cliObject, outputFilename, appendToFilename);
@@ -159,6 +165,7 @@ async function getCommandLineObject() {
   appendTwitterSource(cliObject, tweetId, includeReplies, userId, numTweets);
   await appendGithubSource(cliObject, gitHubURL);
   appendHackernewsSource(cliObject, storyId, numTopComments, numCommentLevels);
+  appendArticleSource(cliObject, articleUrl);
   appendMock(cliObject, mock, mockSource);
   validateCliObject(cliObject);
   cliObject.generateMock = process.argv.includes("-generate-mock") && generateMock;
@@ -275,6 +282,19 @@ const appendHackernewsSource = (cliObject, storyId, numTopComments, numCommentLe
     cliObject.hackernews.storyId = storyId;
     cliObject.hackernews.numTopComments = numTopComments;
     cliObject.hackernews.numCommentLevels = numCommentLevels;
+  }
+  return cliObject;
+}
+
+const appendArticleSource = (cliObject, articleUrl) => {
+  if(cliObject.dataSource && process.argv.includes("-read")) {
+    throw new UserError("invalid-combination-of-input-arguments", 
+        "Cannot include -read together with twitter or github or hackernews related params");
+  }
+  if(process.argv.includes("-e")) {
+    cliObject.dataSource = "article";
+    cliObject.article = {};
+    cliObject.article.articleUrl = articleUrl;
   }
   return cliObject;
 }
