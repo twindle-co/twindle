@@ -1,5 +1,3 @@
-// @ts-check
-
 const { dbInstance } = require('./helpers/connection');
 
 /**
@@ -11,23 +9,66 @@ const { dbInstance } = require('./helpers/connection');
 async function getThreadData(req, res) {
   const { id } = req.params;
 
+  const { pool } = await dbInstance();
   try {
-    const { connection } = await dbInstance();
-
     /** @type {[rows: import('mysql2').RowDataPacket[]]} */
     // @ts-ignore
-    const [rows] = await connection.execute('SELECT * FROM threads WHERE id=?', [id]);
+    const [rows] = await pool.execute(
+      `SELECT tt.*, tu.* FROM twitter_threads tt 
+        INNER JOIN twitter_users tu 
+        ON tt.user_id = tu.user_id 
+        WHERE id=?
+        GROUP BY tt.user_id
+        `,
+      [id]
+    );
 
     if (!rows.length) {
       // Empty result
-      await connection.end();
       return void Response('thread-not-in-database', '', {}, res);
     }
 
-    await connection.end();
-    return void Response('', 'successful', rows[0], res);
+    const finalData = rows.map(
+      ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user_id,
+        verified,
+        handle,
+        name,
+        profile_photo,
+      }) => ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user: {
+          user_id,
+          verified,
+          handle,
+          name,
+          profile_photo,
+        },
+      })
+    );
+
+    return void Response('', 'successful', finalData[0], res);
   } catch (e) {
     console.log(e);
+  } finally {
+    await pool.end();
   }
 
   return void Response('unable-to-get-thread-data', '', {}, res);

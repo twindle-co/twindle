@@ -8,6 +8,8 @@ body {
 
   /* Border radii */
   --app-border-radius-small: 8px;
+
+  --app-easing: cubic-bezier(0, 0, 0.2, 1);
 }
 
 body.light {
