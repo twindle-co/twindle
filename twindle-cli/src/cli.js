@@ -322,5 +322,6 @@ const validateCliObject = (cliObject) => {
 module.exports = {
   getCommandlineArgs,
   prepareCli,
-  getCommandLineObject
+  getCommandLineObject,
+  validateGithubURL
 };
