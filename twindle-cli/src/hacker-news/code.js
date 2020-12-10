@@ -108,4 +108,4 @@ async function getUser(author) {
 }
 
 
-module.exports = { getStories };
+module.exports = { getStories,getUser };

@@ -20,7 +20,8 @@ body {
 }
 
 * {
-  transition: background-color 150ms ease-in, background 150ms ease-in;
+  transition: background-color 150ms var(--app-easing), background 150ms var(--app-easing),
+    box-shadow 150ms var(--app-easing);
 
   box-sizing: border-box;
 }
@@ -34,4 +35,8 @@ body {
   -webkit-tap-highlight-color: transparent;
 
   box-shadow: 0 0 0 1.5px var(--app-color-dark);
+}
+
+::selection {
+  background-color: rgba(var(--app-color-primary-rgb), 0.2);
 }

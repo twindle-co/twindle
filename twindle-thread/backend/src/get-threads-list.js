@@ -3,7 +3,7 @@
 const { dbInstance } = require('./helpers/connection');
 
 /**
- * @typedef {{page: number | string; limit: number | string; by: 'popular:desc' | 'date:desc' | 'date:asc'}} By
+ * @typedef {{page: number | string; limit: number | string; by: 'popular:desc' | 'date:desc' | 'date:asc'}} ParamData
  */
 
 /**
@@ -13,7 +13,7 @@ const { dbInstance } = require('./helpers/connection');
  * @returns {Promise<void>}
  */
 async function getThreadsLists(req, res) {
-  /** @type {By} */
+  /** @type {ParamData} */
   // @ts-ignore
   const { page = 1, limit = 20, by = 'popular:desc' } = req.query;
 
@@ -60,22 +60,62 @@ async function getThreadsLists(req, res) {
     order: suffix.toUpperCase(),
   };
 
-  try {
-    const { connection } = await dbInstance();
+  const { pool } = await dbInstance();
 
+  try {
     // Get items
     /** @type {[rows: import('mysql2').RowDataPacket[]]} */
     // @ts-ignore
-    const [rows] = await connection.execute(
-      `SELECT * FROM threads ORDER BY ${tokens.column} ${tokens.order} LIMIT ${+limit} OFFSET ${
-        +limit * (+page - 1)
-      }`
+    const [rows] = await pool.execute(
+      `SELECT tt.*, tu.* FROM twitter_threads tt 
+        INNER JOIN twitter_users tu 
+        ON tt.user_id = tu.user_id 
+        GROUP BY tt.user_id
+        ORDER BY tt.${tokens.column} ${tokens.order} LIMIT ${+limit} OFFSET ${+limit * (+page - 1)}
+      `
     );
 
-    await connection.end();
-    return void Response('', 'successful', rows, res);
+    const finalData = rows.map(
+      ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user_id,
+        verified,
+        handle,
+        name,
+        profile_photo,
+      }) => ({
+        conversation_id,
+        date_created,
+        last_updated,
+        id,
+        likes,
+        replies_count,
+        retweets,
+        score,
+        text,
+        user: {
+          user_id,
+          verified,
+          handle,
+          name,
+          profile_photo,
+        },
+      })
+    );
+
+    return void Response('', 'successful', finalData, res);
   } catch (e) {
     console.log(e);
+  } finally {
+    await pool.end();
   }
 
   return void Response('unable-to-get-threads-list', '', [], res);

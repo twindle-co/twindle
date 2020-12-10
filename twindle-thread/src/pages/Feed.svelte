@@ -1,5 +1,5 @@
 <script>
-  import Avatar from '../components/Avatar.svelte';
+  import List from '../components/list/List.svelte';
 </script>
 
 <style>
@@ -18,5 +18,5 @@
 </style>
 
 <section class="container">
-  <Avatar src="https://pbs.twimg.com/profile_images/759557613445001216/6M2E1l4q_normal.jpg" />
+  <List />
 </section>
