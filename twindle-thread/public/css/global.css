@@ -20,7 +20,8 @@ body {
 }
 
 * {
-  transition: background-color 150ms var(--app-easing), background 150ms var(--app-easing);
+  transition: background-color 150ms var(--app-easing), background 150ms var(--app-easing),
+    box-shadow 150ms var(--app-easing);
 
   box-sizing: border-box;
 }
