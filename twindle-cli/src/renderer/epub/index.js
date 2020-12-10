@@ -1,11 +1,10 @@
-const { renderTemplate, renderTemplateTemp } = require("../render-template");
-const { encodeImage } = require("../../utils/image");
-const { readFile } = require("fs").promises;
+const { renderTemplate } = require("./render-template");
 const Epub = require("epub-gen");
 
 const createOptions = ({ title, author, html, tocPath, css }) => ({
   title,
   author,
+  cover: "./renderer/templates/resources/twindle_logo.jpg",
   content: [{ title: title, data: html }],
   appendChapterTitles: false,
   verbose: false,
@@ -19,34 +18,10 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
  * @param {CustomTweetsObject[]} tweets
  * @param {string} outputPath
  */
-async function generateEpub(tweets, outputPath) {
-  const css = await readFile(__dirname + "/../templates/Epub.css");
-
-  for (let i = 0; i < tweets.length; i++) {
-    tweets[i].common.user.profile_image_url = await encodeImage(
-      tweets[i].common.user.profile_image_url
-    );
-  }
-
-  const threadContent = await renderTemplate({ threads: tweets }, "Tweets");
-  const { tempPath: tocTempPath } = await renderTemplateTemp(
-    { commons: tweets.map(({ common }) => common) },
-    "Toc",
-    "Toc"
-  );
-
-  const authors = tweets.reduce((p, c) =>
-    p && p.common && p.common.user && c && c.common && c.common.user ? p.common.user.name + " & " + c.common.user.name : c.common.user.name
-  );
-
-  const options = createOptions({
-    title: authors + "'s Thread",
-    author: authors,
-    html: threadContent,
-    css,
-    tocPath: tocTempPath,
-  });
-
+async function generateEpub(srcData, src, outputPath) {
+  const parameter = { threads: srcData };
+  const optionDetails = await renderTemplate(parameter, src);
+  const options = createOptions(optionDetails);
   try {
     const book = new Epub(options, outputPath).promise;
     await book;

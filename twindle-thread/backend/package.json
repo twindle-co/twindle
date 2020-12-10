@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.9",
-    "@types/mysql2": "github:types/mysql2"
+    "@types/mysql2": "github:types/mysql2",
+    "nodemon": "2.0.6"
   }
 }

@@ -2,16 +2,20 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "postbuild": "workbox generateSW workbox-config.js"
+    "post-build": "workbox generateSW workbox-config.js"
   },
   "dependencies": {
-    "svelte": "^3.29.7"
+    "@mdi/js": "^5.8.55",
+    "fetch-retry": "^4.0.1",
+    "lazysizes": "^5.2.2",
+    "svelte": "^3.31.0",
+    "svelte-routing": "^1.4.2"
   },
   "devDependencies": {
-    "@snowpack/plugin-dotenv": "^2.0.4",
-    "@snowpack/plugin-optimize": "^0.2.9",
-    "@snowpack/plugin-svelte": "^3.3.0",
-    "snowpack": "^2.17.1",
-    "workbox-cli": "^5.1.4"
+    "@snowpack/plugin-dotenv": "^2.0.5",
+    "@snowpack/plugin-optimize": "^0.2.10",
+    "@snowpack/plugin-svelte": "^3.3.1",
+    "snowpack": "^2.18.2",
+    "workbox-cli": "^6.0.2"
   }
 }

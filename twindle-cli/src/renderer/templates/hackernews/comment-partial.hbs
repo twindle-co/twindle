@@ -1,0 +1,15 @@
+<div {{{levelcalculator this}}}>
+<li class="cmmnt">
+    <div class="cmmnt-content">
+    <header><a href="javascript:void(0);" class="userlink">{{username}}</a> - <span class="pubdate">{{created_at}}</span></header>
+    <p>{{{text}}}</p>
+    </div>
+    {{#if comments}}
+        <ul class="replies">
+            {{#each comments}}
+                {{> comment-partial this}}
+            {{/each}}    
+        </ul>
+    {{/if}}    
+</li>
+</div>

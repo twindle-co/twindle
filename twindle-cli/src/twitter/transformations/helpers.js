@@ -39,9 +39,7 @@ const createCustomTweet = (tweet_object) => {
     }),
   };
 
-  if(tweet_object.created_at)
-    tweet.created_at = formatTimestamp(tweet_object.created_at);
-    
+  if (tweet_object.created_at) tweet.created_at = formatTimestamp(tweet_object.created_at);
 
   if (tweet_object.customMedia) {
     tweet.customMedia = tweet_object.customMedia;

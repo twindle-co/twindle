@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/twindle-co/twindle-cli#readme",
   "dependencies": {
+    "@mozilla/readability": "^0.3.0",
     "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "epub-gen": "^0.1.0",
@@ -30,6 +31,7 @@
     "nodemailer": "^6.4.14",
     "ora": "^5.1.0",
     "puppeteer": "^5.4.1",
+    "showdown": "^1.9.1",
     "twemoji": "13.0.1",
     "yargs": "^16.1.0"
   },
