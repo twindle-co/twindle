@@ -14,6 +14,8 @@ async function renderTemplate(data, src) {
     return await renderGithubTemplate(data);
   else if(src == "hackernews")
     return await renderHackernewsTemplate(data);
+  else if(src == "article")
+    return await renderArticleTemplate(data);
 }
 
 async function renderTwitterTemplate(data) {
@@ -96,6 +98,28 @@ async function renderHackernewsTemplate(data) {
       return "style='padding-left:35px'";
   });
   
+  // creates the Handlebars template object
+  const template = hbs.compile(threadsHtml, {
+    strict: true,
+  });
+  
+  // renders the html template with the given data
+  const rendered = template(data);
+
+  const tmpPath = join(tmpdir(), "hello.html");
+  await writeFile(tmpPath, rendered, "utf-8");
+  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
+  console.devLog("rendered saved to ", tmpPath);
+  return rendered;
+}
+
+async function renderArticleTemplate(data) {
+  const threadsHtml = await readFile(`${__dirname}/../templates/article/threads-template.hbs`, "utf-8");
+  const css = await readFile(`${__dirname}/../templates/article/style.css`, "utf-8");
+  const articlesHtml = await readFile(`${__dirname}/../templates/article/articles-partial.hbs`, "utf-8");
+
+  hbs.registerPartial('style', css);
+  hbs.registerPartial('articles-partial', articlesHtml);
   // creates the Handlebars template object
   const template = hbs.compile(threadsHtml, {
     strict: true,
