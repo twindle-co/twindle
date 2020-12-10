@@ -34,7 +34,7 @@ async function createPdf(outputPath, htmlContent) {
     // Prints the html page to pdf document and saves it to given outputPath
     await page.emulateMediaType("print");
     await page.addStyleTag({
-      content: '@page { size: auto; }',
+      content: "@page { size: auto; }",
     });
     await page.pdf({
       path: outputPath,

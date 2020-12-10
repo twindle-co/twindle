@@ -7,7 +7,7 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { red, cyan } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
-const { formatTimestamp } = require('./utils/date');
+const { formatTimestamp } = require("./utils/date");
 const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
 const { getHtml } = require("./github/githubparse/app");
@@ -22,10 +22,11 @@ async function main() {
     //console.log(cliObject);
     const data = await getDataFromSource(cliObject);
     //console.log(JSON.stringify(data));
-    let outputFilename = cliObject.fileName && cliObject.fileName.outputFilename ? 
-                          cliObject.fileName.outputFilename : "";
-    if(!outputFilename)
-      outputFilename = calculateFileName(cliObject, data);
+    let outputFilename =
+      cliObject.fileName && cliObject.fileName.outputFilename
+        ? cliObject.fileName.outputFilename
+        : "";
+    if (!outputFilename) outputFilename = calculateFileName(cliObject, data);
     await writeToMockFile(cliObject, outputFilename, data);
 
     const outputFilePath = getOutputFilePath(outputFilename, cliObject.format);
@@ -55,19 +56,16 @@ async function main() {
 }
 
 async function getDataFromSource(cliObject) {
-  if(cliObject.dataSource) {
-    if(cliObject.dataSource === "github")
-      return getDataFromGithub(cliObject.github);
-    else if(cliObject.dataSource === "twitter")
-      return getTweets(cliObject.twitter);
-    else if(cliObject.dataSource === "hackernews")
+  if (cliObject.dataSource) {
+    if (cliObject.dataSource === "github") return getDataFromGithub(cliObject.github);
+    else if (cliObject.dataSource === "twitter") return getTweets(cliObject.twitter);
+    else if (cliObject.dataSource === "hackernews")
       return getDataFromHackernews(cliObject.hackernews);
-    else if(cliObject.dataSource === "article")
-      return getDataFromArticle(cliObject.article);
+    else if (cliObject.dataSource === "article") return getDataFromArticle(cliObject.article);
   }
-  if(cliObject.mock) {
+  if (cliObject.mock) {
     return getDataFromMock(cliObject.mock);
-  }  
+  }
 }
 
 /**
@@ -94,43 +92,42 @@ async function getTweets(cliObject) {
     return tweets;
   }
 
-  tweets = await getTweetsFromThreads(cliObject.tweetId, cliObject.includeReplies, process.env.TWITTER_AUTH_TOKEN);
+  tweets = await getTweetsFromThreads(
+    cliObject.tweetId,
+    cliObject.includeReplies,
+    process.env.TWITTER_AUTH_TOKEN
+  );
   return tweets;
 }
 
-
-async function getDataFromGithub({githubURL}) {
+async function getDataFromGithub({ githubURL }) {
   return await getHtml(githubURL);
 }
 
-async function getDataFromHackernews({storyId, numTopComments, numCommentLevels}) {
+async function getDataFromHackernews({ storyId, numTopComments, numCommentLevels }) {
   return await getStories(storyId, numTopComments, numCommentLevels);
 }
 
-async function getDataFromArticle({articleUrl}) {
+async function getDataFromArticle({ articleUrl }) {
   return await readURL(articleUrl);
 }
 
 function calculateFileName(cliObject, data) {
-  if(cliObject.dataSource == "twitter"){
+  if (cliObject.dataSource == "twitter") {
     return calculateFileNameForTwitter(cliObject, data);
-  } else if(cliObject.dataSource == "github"){
+  } else if (cliObject.dataSource == "github") {
     return calculateFileNameForGitHub(cliObject, data);
-  } else if(cliObject.dataSource == "hackernews") {
+  } else if (cliObject.dataSource == "hackernews") {
     return calculateFileNameForHackernews(cliObject, data);
-  } else if(cliObject.dataSource == "article") {
+  } else if (cliObject.dataSource == "article") {
     return calculateFileNameForArticle(cliObject, data);
   }
-
 }
 
 function calculateGenericFileName(cliObject, component1, component2) {
-  const intelligentOutputFileName = `${
-    component1 || "twindle"
-  }-${
-    component2 ||
-    "thread"
-  }${cliObject.appendToFilename ? "-" + cliObject.appendToFilename : ""}`;
+  const intelligentOutputFileName = `${component1 || "twindle"}-${component2 || "thread"}${
+    cliObject.appendToFilename ? "-" + cliObject.appendToFilename : ""
+  }`;
   return intelligentOutputFileName;
 }
 
@@ -142,9 +139,8 @@ function calculateFileNameForTwitter(cliObject, data) {
     data[0].common.user.username
   ).replace("@", "");
 
-  let date = (data[0] &&  
-      data[0].common &&
-      data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-"));
+  let date =
+    data[0] && data[0].common && data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-");
   return calculateGenericFileName(cliObject, username, date);
 }
 
@@ -155,16 +151,8 @@ function calculateFileNameForGitHub(cliObject, data) {
     data[0].common.user &&
     data[0].common.user.username
   ).replace("@", "");
-  let repoName = (
-    data[0] &&
-    data[0].common &&
-    data[0].common.repoName
-  );
-  let fileName = (
-    data[0] &&
-    data[0].common &&
-    data[0].common.fileName
-  );
+  let repoName = data[0] && data[0].common && data[0].common.repoName;
+  let fileName = data[0] && data[0].common && data[0].common.fileName;
   fileName = fileName.substring(0, fileName.indexOf("."));
   let date = new Date();
   date = formatTimestamp(date).replace(/,/g, "").replace(/ /g, "-");
@@ -178,22 +166,16 @@ function calculateFileNameForHackernews(cliObject, data) {
     data[0].common.user &&
     data[0].common.user.username
   ).replace("@", "");
-  let title = (
-    data[0] &&
-    data[0].common &&
-    data[0].common.title
-  ).replace(/\W/g, "-").substring(0, 10);
-  let date = (data[0] &&  
-    data[0].common &&
-    data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-"));
+  let title = (data[0] && data[0].common && data[0].common.title)
+    .replace(/\W/g, "-")
+    .substring(0, 10);
+  let date =
+    data[0] && data[0].common && data[0].common.created_at.replace(/,/g, "").replace(/ /g, "-");
   return calculateGenericFileName(cliObject, `${username}-${title}`, date);
 }
 
 function calculateFileNameForArticle(cliObject, data) {
-  let title = (
-    data[0] &&
-    data[0].title
-  ).replace(/\W/g, "-").substring(0, 10);
+  let title = (data[0] && data[0].title).replace(/\W/g, "-").substring(0, 10);
   let date = new Date();
   date = formatTimestamp(date).replace(/,/g, "").replace(/ /g, "-");
   return calculateGenericFileName(cliObject, `${title}`, date);
@@ -210,7 +192,6 @@ async function writeToMockFile(cliObject, outputFilename, data) {
       `./generated-mock/@CUSTOM-OUTPUT_${outputFilename}.json`,
       JSON.stringify(data, null, 2)
     );
-
   }
 }
 // Execute it

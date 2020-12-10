@@ -1,20 +1,18 @@
-const { getUser}= require("./code")
+const { getUser } = require("./code");
 
 //1
-test('fetch function is returning json', async() => {
-  const data=await getUser("pg");
-   expect(data).toMatchObject(/{}/)
-})
+test("fetch function is returning json", async () => {
+  const data = await getUser("pg");
+  expect(data).toMatchObject(/{}/);
+});
 
 //2
-test('tested for fetch error ', async () => {
- try {
+test("tested for fetch error ", async () => {
+  try {
     await getUser("pg");
-   } catch (e) {
+  } catch (e) {
     expect(e).toEqual({
-      error: 'User with pg not found.',
+      error: "User with pg not found.",
     });
   }
 });
-
-

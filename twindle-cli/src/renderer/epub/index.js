@@ -19,7 +19,7 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
  * @param {string} outputPath
  */
 async function generateEpub(srcData, src, outputPath) {
-  const parameter = {threads: srcData};
+  const parameter = { threads: srcData };
   const optionDetails = await renderTemplate(parameter, src);
   const options = createOptions(optionDetails);
   try {
