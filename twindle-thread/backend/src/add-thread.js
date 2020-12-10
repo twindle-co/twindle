@@ -25,7 +25,7 @@ async function addThread(req, res) {
   }
 
   const { text, public_metrics } = twitterResponseJSON.data[0];
-  const { profile_image_url } = twitterResponseJSON.includes.users[0];
+  const twitterUser = twitterResponseJSON.includes.users[0];
 
   // Get the basic data
   const basicData = {
@@ -34,22 +34,28 @@ async function addThread(req, res) {
     likes: +public_metrics.like_count,
     retweets: +public_metrics.retweet_count,
     repliesCount: +public_metrics.reply_count,
-    user_profile_photo: profile_image_url,
   };
 
-  try {
-    const { connection } = await dbInstance();
+  const userData = {
+    user_id: twitterUser.id,
+    handle: twitterUser.username,
+    name: twitterUser.name,
+    profile_photo: twitterUser.profile_image_url.replace('_normal', '_reasonably_small'),
+    verified: twitterUser.verified + '',
+  };
 
+  const { pool } = await dbInstance();
+
+  try {
     // First check if this ID already in DB
 
     /** @type {[rows: import('mysql2').RowDataPacket[]]} */
     // @ts-ignore
-    const [rows] = await connection.execute('SELECT * FROM threads WHERE conversation_id=?', [
+    const [rows] = await pool.execute('SELECT * FROM twitter_threads WHERE conversation_id=?', [
       threadID,
     ]);
 
     if (rows.length) {
-      await connection.end();
       return void Response('thread-id-already-in-database', '', res);
     }
 
@@ -62,12 +68,48 @@ async function addThread(req, res) {
       new Date() + ''
     );
 
+    // Do the checks
+    /** @type {[rows: import('mysql2').RowDataPacket[]]} */
+    // @ts-ignore
+    const [checkUser__Rows] = await pool.execute('SELECT * FROM twitter_users WHERE user_id=?', [
+      userData.user_id,
+    ]);
+
+    /**
+     * NOTE: This part below looks super verbose and seems like can be deduplicated. That is the plan.
+     * But not now. When Twindle Threads becomes stable, we'll be coming for this code.
+     * @todo Deduplicate below part
+     */
+    if (checkUser__Rows.length) {
+      await pool.execute(
+        'UPDATE twitter_users SET handle=?, name=?, profile_photo=?, verified=? WHERE user_id=?',
+        [
+          userData.handle,
+          userData.name,
+          userData.profile_photo,
+          userData.verified,
+          userData.user_id,
+        ]
+      );
+    } else {
+      await pool.execute(
+        'INSERT INTO twitter_users (user_id, handle, name, profile_photo, verified) VALUES (?, ?, ?, ?, ?)',
+        [
+          userData.user_id,
+          userData.handle,
+          userData.name,
+          userData.profile_photo,
+          userData.verified,
+        ]
+      );
+    }
+
     // Do the thing
-    await connection.execute(
-      'INSERT INTO threads (conversation_id, user_profile_photo, text, likes, retweets, replies_count, score) VALUES (?, ?, ?, ?, ?, ?, ?) ',
+    await pool.execute(
+      'INSERT INTO twitter_threads (conversation_id, user_id, text, likes, retweets, replies_count, score) VALUES (?, ?, ?, ?, ?, ?, ?)',
       [
         basicData.conversation_id + '',
-        basicData.user_profile_photo,
+        userData.user_id + '',
         basicData.text,
         basicData.likes,
         basicData.retweets,
@@ -76,10 +118,11 @@ async function addThread(req, res) {
       ]
     );
 
-    await connection.end();
     return void Response('', 'successful', res);
   } catch (e) {
     console.error(e);
+  } finally {
+    await pool.end();
   }
 
   return void Response('unable-to-add-thread', '', res);
