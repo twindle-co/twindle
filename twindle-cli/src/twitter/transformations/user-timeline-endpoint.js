@@ -34,7 +34,9 @@ async function processUserTweets(screenName, responseJSON, token) {
   resp.common.user.username = "@" + resp.common.user.username;
 
   let conversations = [];
-  tweets = tweets.filter((t)=> !t.in_reply_to_user_id || (t.in_reply_to_user_id && t.in_reply_to_user_id === user.id) );
+  tweets = tweets.filter(
+    (t) => !t.in_reply_to_user_id || (t.in_reply_to_user_id && t.in_reply_to_user_id === user.id)
+  );
   for (let tweet of tweets) {
     if (!conversations.includes(tweet.conversation_id)) {
       conversations.push(tweet.conversation_id);
@@ -44,7 +46,7 @@ async function processUserTweets(screenName, responseJSON, token) {
       }
     }
   }
-  
+
   resp.common.count = resp.data.length;
   return resp;
 }

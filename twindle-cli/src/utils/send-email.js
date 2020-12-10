@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const {UserError} = require("./../helpers/error");
+const { UserError } = require("./../helpers/error");
 
 const emailConfig = {
   host: process.env.HOST,
@@ -32,11 +32,11 @@ async function sendMail({ subject, emailTo, attachments }) {
       ],
     });
     console.devLog("Email sent: %s", info.messageId);
-  } catch(e) {
+  } catch (e) {
     throw new UserError(
       "sending-email-error",
       "Sending Email failed. Please check Mail server credentials"
-    )
+    );
   }
 }
 
