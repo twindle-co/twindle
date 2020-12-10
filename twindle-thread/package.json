@@ -15,7 +15,7 @@
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-optimize": "^0.2.10",
     "@snowpack/plugin-svelte": "^3.3.1",
-    "snowpack": "^2.18.0",
+    "snowpack": "^2.18.2",
     "workbox-cli": "^6.0.2"
   }
 }

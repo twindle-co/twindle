@@ -40,8 +40,6 @@
 
     border-radius: 50%;
     /* box-shadow: 0 0 0 4px var(--avatar-color-primary); */
-
-    margin: 0.25rem;
   }
 
   img {
