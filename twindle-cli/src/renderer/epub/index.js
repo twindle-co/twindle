@@ -11,7 +11,7 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
   verbose: false,
   tocTitle: "Contents",
   publisher: "Twindle",
-  customHtmlTocTemplatePath: tocPath,
+  // customHtmlTocTemplatePath: tocPath,
   css,
 });
 
