@@ -1,4 +1,5 @@
 const { render, getCSS } = require("../main");
+const { renderTOC } = require("../main/toc");
 const { writeFile } = require("fs").promises;
 const { tmpdir } = require("os");
 const { join } = require("path");
@@ -17,9 +18,9 @@ async function renderTwitterTemplate(data) {
 
   // renders the html template with the given data
   const { html } = render(data);
-  console.log(html);
+
   // renders the html template with the given data
-  const tocContent = ""; //renderTOC(data);
+  const { html: tocContent } = renderTOC(data);
 
   const tempPath = join(tmpdir(), `toc.html`);
   await writeFile(tempPath, tocContent, "utf-8");

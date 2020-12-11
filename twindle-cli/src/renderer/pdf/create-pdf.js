@@ -33,7 +33,7 @@ async function createPdf(outputPath, htmlContent) {
     await page.setContent(htmlContent);
 
     // setting the css of the page
-    await page.addStyleTag({ path: getCSS() });
+    await page.addStyleTag({ content: getCSS() });
 
     // Prints the html page to pdf document and saves it to given outputPath
     await page.emulateMediaType("print");
