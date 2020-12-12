@@ -84,6 +84,23 @@
         "state": "Telangana",
         "country": "India"
       }
-    }
+    },
+    {
+      "id": 6,
+      "name": "Devarshi Doshi",
+      "img": "https://avatars2.githubusercontent.com/u/63865514?s=460&u=e295ee204b98c925b3a21c441e9ef6673cfe0bac&v=4",
+      "links": {
+        "website": "https://devarshidoshi.github.io/Portfolio/",
+        "linkedin": "https://www.linkedin.com/in/devarshi-doshi-45571a13b/",
+        "github": "https://github.com/devarshidoshi",
+        "twitter": "https://twitter.com/DoshiDevarshi"
+      },
+      "title": "Web Developer",
+      "location": {
+        "city": "Vadodara",
+        "state": "Gujarat",
+        "country": "India"
+      }
+    } 
   ]
 }
