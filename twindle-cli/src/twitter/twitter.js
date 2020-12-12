@@ -50,13 +50,18 @@ const getTweetsFromArray = async (ids, includeReplies, token) => {
     token
   );
 
-  if(includeReplies) {
+  if (includeReplies) {
     let replies = await TweetArrayEndpointTransformation.processReplies(responseJSON.data, token);
-    let replyIds = replies.map((r)=>r.id);
-    if(replyIds.length > 0) {
+    let replyIds = replies.map((r) => r.id);
+    if (replyIds.length > 0) {
       responseJSON = await getTweetById(replyIds.join(","), token);
-      if(responseJSON.data && !responseJSON.data.errors) {
-        finalTweetsData = await TweetArrayEndpointTransformation.updateReplies(responseJSON.data, replies, finalTweetsData, token);
+      if (responseJSON.data && !responseJSON.data.errors) {
+        finalTweetsData = await TweetArrayEndpointTransformation.updateReplies(
+          responseJSON.data,
+          replies,
+          finalTweetsData,
+          token
+        );
       }
     }
   }
@@ -183,13 +188,21 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
       usersNames.push(finalTweetsData.common.user.name);
     }
 
-    if(includeReplies) {
-      let replies = await SearchEndpointTransformation.processReplies(conversationTweetsData.data, token);
-      let replyIds = replies.map((r)=>r.id);
-      if(replyIds.length > 0) {
+    if (includeReplies) {
+      let replies = await SearchEndpointTransformation.processReplies(
+        conversationTweetsData.data,
+        token
+      );
+      let replyIds = replies.map((r) => r.id);
+      if (replyIds.length > 0) {
         responseJSON = await getTweetById(replyIds.join(","), token);
-        if(responseJSON.data && !responseJSON.data.errors) {
-          finalTweetsData = await SearchEndpointTransformation.updateReplies(responseJSON.data, replies, finalTweetsData, token);
+        if (responseJSON.data && !responseJSON.data.errors) {
+          finalTweetsData = await SearchEndpointTransformation.updateReplies(
+            responseJSON.data,
+            replies,
+            finalTweetsData,
+            token
+          );
         }
       }
     }
