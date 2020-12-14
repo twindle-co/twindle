@@ -1,6 +1,1 @@
-I am Simrin Joshi.
-I have 0.6 months of experience in Angular.
-I am learning MEAN stack.
-Find me in Github https://github.com/simrin051
-
-
+I am a passionate professional focussed on full stack developement. I have 1.5 years of experience in Angular, HTML, CSS , JS,  Java and MySQL.  I am looking forward to actively contribute to Twindle.
