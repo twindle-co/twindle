@@ -47,7 +47,7 @@ async function getCommentResponses(parent, numTopComments) {
     const requests = kids.map((id) =>
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
     );
-    kids.forEach((k) => parent.kids.pop(k));
+    kids.forEach((k) => parent.kids.shift(k));
     const response = await Promise.all(requests);
     let filter = await Promise.all(response.map((res) => res.json()));
     filter = filter.filter((result) => !result.deleted);
@@ -55,7 +55,7 @@ async function getCommentResponses(parent, numTopComments) {
     else {
       let newFilter = await getCommentResponses(parent, numTopComments - filter.length);
       newFilter.forEach((result) => filter.push(result));
-      return newFilter;
+      return filter;
     }
   }
 }
