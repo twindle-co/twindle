@@ -49,7 +49,7 @@ prettier --write filename.js
 or, to format all kinds of files all at once
 
 ```powershell
-prettier --write "src/**/*.{html|css|js|json|jsx|tsx}"
+prettier --write "src/**/*.{html,css,js,json,jsx,tsx}"
 ```
 
 ## Why should I bother with the NPM package?
@@ -151,7 +151,7 @@ npx prettier --write "./src/**/*.js"
 You can target multiple file formats too
 
 ```powershell
-npx prettier --write "./src/**/*.{js|ts|html|css|json}"
+npx prettier --write "./src/**/*.{js,ts,html,css,json}"
 ```
 
 The possibilities are endless.
