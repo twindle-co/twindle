@@ -22,10 +22,7 @@ function addEmailToGoogleSheet(event) {
 
   fetch(proxyUrl + scriptUrl, { method: "POST", body: new FormData(form) })
     .then(
-      (response) =>
-        alert(
-          `Thanks for subscribing to our service! We will contact you soon...`
-        ) // again, this can be enhanced using flash messages
+      (response) => alert(`Thanks for subscribing to our service! We will contact you soon...`) // again, this can be enhanced using flash messages
     )
     .catch((error) => console.error("Error!", error.message));
 }
