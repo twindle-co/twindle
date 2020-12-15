@@ -7,13 +7,13 @@ const { getOutputFilePath } = require("./utils/path");
 const { sendToKindle } = require("./utils/send-to-kindle");
 const { getTweetIDs } = require("./twitter/scraping");
 const { UserError } = require("./helpers/error");
-const { red, cyan ,bgRed } = require("kleur");
+const { red, cyan, bgRed } = require("kleur");
 const { formatLogColors } = require("./utils/helpers");
 const { isValidEmail } = require("./utils/helpers");
 const spinner = require("./spinner");
 const { writeFile, mkdir } = require("fs").promises;
-const converthtml = require('./github/convert')
-const path = require('path')
+const converthtml = require("./github/convert");
+const path = require("path");
 
 async function main() {
   prepareCli();
@@ -32,26 +32,34 @@ async function main() {
     userId,
     numTweets,
     generateMock,
-    gitHubURL
+    gitHubURL,
   } = getCommandlineArgs(process.argv);
   let dataSrc = "";
-  if(gitHubURL){
+  if (gitHubURL) {
     dataSrc = "github";
-    const giturl = new URL(gitHubURL)
-    const urlExtension = path.extname(giturl.pathname)
-    if(urlExtension !== ".md"){
-    return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
+    const giturl = new URL(gitHubURL);
+    const urlExtension = path.extname(giturl.pathname);
+    if (urlExtension !== ".md") {
+      return spinner.fail(bgRed("Please enter another URL having markdown extension(.md)"));
     }
-    
-    return spinner.succeed(`Your ${cyan('files')} are saved into ${formatLogColors[format](converthtml(gitHubURL))}`)
+
+    return spinner.succeed(
+      `Your ${cyan("files")} are saved into ${formatLogColors[format](converthtml(gitHubURL))}`
+    );
   }
 
   try {
     verifyEnvironmentVariables(kindleEmail);
 
-    const tweets = await getTweets({ tweetId, includeReplies, mock, shouldUsePuppeteer, userId, numTweets });
-    if(tweets.length > 0)
-      dataSrc = "twitter";
+    const tweets = await getTweets({
+      tweetId,
+      includeReplies,
+      mock,
+      shouldUsePuppeteer,
+      userId,
+      numTweets,
+    });
+    if (tweets.length > 0) dataSrc = "twitter";
     const intelligentOutputFileName = `${
       (
         tweets[0] &&
@@ -60,7 +68,7 @@ async function main() {
         tweets[0].common.user.username
       ).replace("@", "") || "twindle"
     }-${
-      (tweets[0] &&  
+      (tweets[0] &&
         tweets[0].common &&
         tweets[0].common.created_at.replace(/,/g, "").replace(/ /g, "-")) ||
       "thread"
@@ -76,7 +84,6 @@ async function main() {
         `./generated-mock/@CUSTOM-OUTPUT_${intelligentOutputFileName}.json`,
         JSON.stringify(tweets, null, 2)
       );
-
     }
 
     const outputFilePath = getOutputFilePath(outputFilename || intelligentOutputFileName, format);
