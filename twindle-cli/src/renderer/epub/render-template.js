@@ -1,4 +1,4 @@
-const { render, getCSS } = require("../main");
+const { render } = require("../main");
 const { renderTOC } = require("../main/toc");
 const { writeFile } = require("fs").promises;
 const { tmpdir } = require("os");
@@ -14,10 +14,23 @@ async function renderTemplate(data, src) {
 }
 
 async function renderTwitterTemplate(data) {
-  const css = getCSS("epub");
+  // const css = getCSS("epub");
 
   // renders the html template with the given data
-  const { html } = render(data);
+  let { html, css } = render(data);
+
+  html = `<!doctype html> 
+          <html> 
+            <head>
+              <meta charset="UTF-8" /
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <style>${css.code}</style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+`;
 
   // renders the html template with the given data
   const { html: tocContent } = renderTOC(data);
@@ -35,7 +48,7 @@ async function renderTwitterTemplate(data) {
   const optionDetails = {
     title: authorNames + "'s Thread",
     author: authorNames,
-    html: html,
+    html,
     css,
     tocPath: tempPath,
   };
