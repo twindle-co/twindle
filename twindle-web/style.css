@@ -15,7 +15,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   background: var(--primary-background-color);
   font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
@@ -113,7 +114,8 @@ header nav ul li a:focus {
   display: none;
 }
 
-.nav-links, .logo {
+.nav-links,
+.logo {
   text-decoration: none;
   color: black;
 }
@@ -121,7 +123,6 @@ header nav ul li a:focus {
 .main-nav li {
   text-align: center;
   margin: 15px auto;
-
 }
 
 .main-nav li a {
@@ -236,7 +237,7 @@ main .email_subs {
   padding: 2rem 4rem;
 }
 
-main .email_subs  {
+main .email_subs {
   border-radius: 5px;
   width: 80vw;
   height: 35px;
@@ -259,7 +260,9 @@ main .email_subs  {
   transition: border 0.1s ease-in, box-shadow 0.1s ease-in;
 }
 
-main .email_subs .email_input:focus, main .email_subs .email_input:active, main .email_subs .email_input:hover {
+main .email_subs .email_input:focus,
+main .email_subs .email_input:active,
+main .email_subs .email_input:hover {
   outline: none;
   border: 2px solid #0b91f7;
   box-shadow: 0 1px 3px #13598f;
@@ -322,18 +325,17 @@ main .what_we_do p {
 }
 
 @media only screen and (max-width: 768px) {
-
   .container {
-    flex-direction:column;
+    flex-direction: column;
   }
 }
 
-#text>h1 {
+#text > h1 {
   font-weight: 800;
   color: var(--primary-heading-text);
 }
 
-#text>h4 {
+#text > h4 {
   font-weight: 400;
 }
 
@@ -346,7 +348,6 @@ main .what_we_do p {
   align-items: center;
   padding-bottom: 0.5rem;
 }
-
 
 .text_area h1 {
   font-weight: 600;
@@ -364,21 +365,19 @@ main .what_we_do p {
 }
 
 @media only screen and (max-width: 768px) {
-  
-.gap{
-  margin-top:30px;
-}
-.text_area {
-  width:80vw;
-}
-.text_area p {
-  width: auto;
-}
-
+  .gap {
+    margin-top: 30px;
+  }
+  .text_area {
+    width: 80vw;
+  }
+  .text_area p {
+    width: auto;
+  }
 }
 
 #remote_design {
-  width:auto;
+  width: auto;
   /* height: 436px; */
 }
 
