@@ -92,5 +92,3 @@
 |                                                          | [Sarath](http://http://www.sarathnagaraj.ca/) | 6+ experience in JavaScript, Currently working on a side project using ReactJS :man_technologist:  |
 |![Puru's profile pic](https://github.com/puruvj.png?size=80) | [Puru Vijay](https://github.com/puruvj) | 5+ experience in HTML, CSS, JS, Angular, React, Svelte, NodeJS, Python, StencilJS, Firebase, feel free to ping me for help 😁 | 
 
-
--------------------------------------------------------------------------------------------------- |
