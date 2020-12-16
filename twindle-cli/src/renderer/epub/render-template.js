@@ -56,7 +56,6 @@ async function renderTwitterTemplate(data) {
     title: authorNames + "'s Thread",
     author: authorNames,
     html,
-    css,
     tocPath: tempPath,
   };
   return optionDetails;
