@@ -106,12 +106,30 @@ async function updateReplies(responseJSON, replies, finalTweetsData, token) {
 
     replyData.tweet = replyData.tweet
       .split(" ")
-      .filter((text) => !(text.includes("@") || text.startsWith("<a")))
+      .filter(
+        (text, i, arr) =>
+          !(
+            (text.startsWith("<a") &&
+              arr[i + 1] &&
+              arr[i + 1].includes("@") &&
+              arr[i + 1].includes("href")) ||
+            (text.includes("@") && text.includes("href="))
+          )
+      )
       .join(" ");
 
     replyData.answer.tweet = replyData.answer.tweet
       .split(" ")
-      .filter((text) => !(text.includes("@") || text.startsWith("<a")))
+      .filter(
+        (text, i, arr) =>
+          !(
+            (text.startsWith("<a") &&
+              arr[i + 1] &&
+              arr[i + 1].includes("@") &&
+              arr[i + 1].includes("href")) ||
+            (text.includes("@") && text.includes("href="))
+          )
+      )
       .join(" ");
 
     let finalTweet = finalTweetsData.data.filter((tweet) => tweet.id === tweetOnThreadId)[0];
@@ -121,7 +139,6 @@ async function updateReplies(responseJSON, replies, finalTweetsData, token) {
     }
   }
 
-  console.log(finalTweetsData.data[0].replies);
   return finalTweetsData;
 }
 

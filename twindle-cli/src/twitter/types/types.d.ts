@@ -149,9 +149,9 @@ export interface LinkWithImage {
 
 export interface Answer extends Pick<CustomTweetData, "id" | "tweet"> {}
 
-export interface Reply
-  extends Pick<Partial<CustomTweetData>, "id" | "tweet" | "user" | "includes"> {
+export interface Reply extends Pick<Partial<CustomTweetData>, "id" | "tweet" | "includes"> {
   answer: Answer;
+  user?: User;
 }
 
 export interface CustomTweetData {

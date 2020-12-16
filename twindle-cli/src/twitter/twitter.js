@@ -215,6 +215,8 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
       }
     }
 
+    // console.log(finalTweetsData);
+
     tweetThreads.push(finalTweetsData);
   }
 
