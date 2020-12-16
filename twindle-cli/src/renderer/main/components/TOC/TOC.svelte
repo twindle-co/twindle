@@ -1,6 +1,6 @@
 <script>
   /**
-   * @type {CustomTweetsObject}
+   * @type {import("../../../twitter/types/types").CustomTweets[]}
    */
   export let threads;
 </script>
