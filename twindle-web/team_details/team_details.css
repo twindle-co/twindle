@@ -55,8 +55,7 @@ a {
     1px 1px 5px 3px rgba(150, 150, 150, 0.5);
   -moz-box-shadow: 0px 5px 5px -3px rgba(150, 150, 150, 0.5),
     1px 1px 5px 3px rgba(150, 150, 150, 0.5);
-  box-shadow: 0px 5px 5px -3px rgba(150, 150, 150, 0.5),
-    1px 1px 5px 3px rgba(150, 150, 150, 0.5);
+  box-shadow: 0px 5px 5px -3px rgba(150, 150, 150, 0.5), 1px 1px 5px 3px rgba(150, 150, 150, 0.5);
 
   background-color: rgba(21, 155, 218, 0.8);
 }

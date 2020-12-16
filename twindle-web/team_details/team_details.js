@@ -1,7 +1,7 @@
 const cards = document.querySelector(".card-gallery");
 
 function generateCard(info) {
-    return `
+  return `
     <div class="card">
         <div class="card-heading">
           <img
@@ -43,14 +43,14 @@ function generateCard(info) {
 }
 
 async function pushToDom() {
-  let fetchData = await fetch('https://raw.githubusercontent.com/twindle-co/twindle/main/twindle-web/team_details/data.json');
+  let fetchData = await fetch(
+    "https://raw.githubusercontent.com/twindle-co/twindle/main/twindle-web/team_details/data.json"
+  );
   let data = await fetchData.json();
   let users = data.users;
-  let html = '';
-  users.forEach(info => html += generateCard(info)
-      )
+  let html = "";
+  users.forEach((info) => (html += generateCard(info)));
   cards.innerHTML = html;
-  }
-
+}
 
 pushToDom();

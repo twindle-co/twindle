@@ -1,35 +1,26 @@
 // @ts-check
-const { createConnection } = require("mysql2/promise");
+const { createPool } = require('mysql2');
+const fs = require('fs').promises;
 
 /**
  * Initializes connection and ensures minimum required structures exist
  */
-async function dbInstance() { 
-  const conn = await createConnection({
+async function dbInstance() {
+  const conn = createPool({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
-  });
+    waitForConnections: true,
+    connectionLimit: 50,
+    queueLimit: 0,
+    multipleStatements: true,
+  }).promise();
 
-  // Create database if not exists
-  await conn.query("CREATE DATABASE IF NOT EXISTS twindle_threads");
+  const commands = await fs.readFile(__dirname + '/setup-db.sql', 'utf-8');
 
-  await conn.query("USE twindle_threads;");
+  await conn.query(commands);
 
-  // Create the table
-  await conn.query(
-    `CREATE TABLE IF NOT EXISTS threads (
-      id INT NOT NULL AUTO_INCREMENT,
-      conversation_id VARCHAR(45) NOT NULL,
-      text VARCHAR(100) NOT NULL,
-      likes INT(20) NULL DEFAULT 0,
-      retweets INT(20) NULL DEFAULT 0,
-      PRIMARY KEY (id),
-      UNIQUE INDEX conversation_id_UNIQUE (conversation_id ASC) VISIBLE
-    );`
-  );
-
-  return { connection: conn };
+  return { pool: conn };
 }
 
 module.exports = { dbInstance };

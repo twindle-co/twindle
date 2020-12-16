@@ -8,20 +8,31 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![image](https://visitor-badge.glitch.me/badge?page_id=Twindle-co.twindle)
 
+### Daily Meeting Mon-Fri (5 PM IST)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i1.wp.com/slfgchurch.com/wp-content/uploads/2019/08/lets-connect-1.png?ssl=1" alt="connect" width="20%" height="10%">
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR) 
+
+[Time Zone Converter](https://time.is/compare/1700_in_IST)
+
+Note:  No meeting on Sat & Sun
+
 ## What is Twindle? 🤔
 
 Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
 
-## Articles
+## Projects
 
-- [Joined Twindle. What next?](./docs/ONBOARDING.md)
-- [FAQ](./docs/FAQ.md)
-- [Resources](./docs/RESOURCES.md)
-- [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
-- [Handlebar Explained](./docs/articles/handlebar-explained.md)
-- [Puppeteer Explained](./docs/articles/puppeteer-explained.md)
-- [How to sync to the main repo](./docs/articles/sync-to-main-repo.md)
-- [How to solve "commits ahead" issue when already in sync](./docs/articles/solving-forked-commit-ahead.md)]
+#### twindle-web
+#### twindle-thread
+#### twindle-cli
+- Twitter Thread to PDF, epub & mobi
+- Github markdown to PDF, epub & mobi
+- Hacker News Comments to PDF, epub & mobi
+- Any articles/links to PDF, epub & mobi
+
 
 ## Twindle - high level design (DRAFT)
 
@@ -30,14 +41,6 @@ Twindle (Twitter + Kindle = Twindle) is an open source project made for the purp
 ![phase-1](./assets/phase-1.png)
 
 ![phase-2](./assets/phase-2.png)
-
-### Roadmap 🛣
-
-- [ ] In depth detail roadmap discussion
-- [ ] Node.js CLI
-- [ ] A webpage providing the same services
-- [ ] Converting blogs from sites such as Hashnode and Medium
-- [ ] Browser Extension with similiar functionality
 
 ## Want to contribute on twindle.co home page design
 
@@ -85,9 +88,13 @@ Initial code goes into twindle-cli
 
 ---
 
-## Daily Meeting Mon-Fri (5 PM IST) (No meeting on Sat & Sun)
+## Articles
 
-[Discord Link](https://discord.gg/jBj2zMR) - [Time Zone Converter](https://time.is/compare/1700_in_IST)
+- [Joined Twindle. What next?](./docs/ONBOARDING.md)
+- [FAQ](./docs/FAQ.md)
+- [Resources](./docs/RESOURCES.md)
+- [How to create your first pull request](./docs/articles/creating-first-pull-request.md)
+
 
 ## Connect with us
 

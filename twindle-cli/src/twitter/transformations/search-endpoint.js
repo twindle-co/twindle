@@ -61,7 +61,6 @@ async function processReplies(responseJSON, token) {
       id: indirectReply.referenced_tweets.filter((ref) => ref.type === "replied_to")[0].id,
       answer: replyAnswer,
     };
-
     replies.push(reply);
   }
   return replies;

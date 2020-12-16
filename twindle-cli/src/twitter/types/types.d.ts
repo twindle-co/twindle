@@ -95,6 +95,7 @@ export interface ConversationResponseData {
 
   embeddedTweet?: ConversationResponseData;
   embeddedTweetUser?: User;
+  embeddedTweetCardSize: "large" | "small";
 }
 
 export interface IncludesMedia {
@@ -156,7 +157,7 @@ export interface Reply extends Pick<Partial<CustomTweetData>, "id" | "tweet" | "
 
 export interface CustomTweetData {
   id: string;
-  created_at: string;
+  created_at?: string;
   tweet: string;
   customMedia?: CustomMedia;
 
