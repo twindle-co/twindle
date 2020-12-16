@@ -203,7 +203,6 @@ async function renderArticleTemplate(data) {
     title: authorNames + "'s articles",
     author: authorNames,
     html: threadContent,
-    css,
     tocPath: tempPath,
   };
   return optionDetails;
