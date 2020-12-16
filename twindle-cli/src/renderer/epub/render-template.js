@@ -1,13 +1,15 @@
-const { readFile, writeFile } = require("fs").promises;
-const hbs = require("handlebars");
+// @ts-check
+const { render } = require("../main");
+const { renderTOC } = require("../main/toc");
+const { writeFile, readFile } = require("fs").promises;
 const { tmpdir } = require("os");
 const { join } = require("path");
-const { encodeImage } = require("../../utils/image");
+const hbs = require("handlebars");
 
 /**
  * Renders the html template with the given data and returns the html string
  * @param {CustomTweetsObject} data
- * @param {string} templateName
+ * @param {string} src
  */
 async function renderTemplate(data, src) {
   if (src == "twitter") return await renderTwitterTemplate(data);
@@ -17,40 +19,31 @@ async function renderTemplate(data, src) {
 }
 
 async function renderTwitterTemplate(data) {
-  const css = await readFile(`${__dirname}/../templates/twitter/style.css`, "utf-8");
+  // const css = getCSS("epub");
 
-  const tweetsHtml = await readFile(
-    `${__dirname}/../templates/twitter/tweets-partial.hbs`,
-    "utf-8"
-  );
-  const userInfohtml = await readFile(
-    `${__dirname}/../templates/twitter/user-info-partial.hbs`,
-    "utf-8"
-  );
-  const tweethtml = await readFile(`${__dirname}/../templates/twitter/tweet-partial.hbs`, "utf-8");
-  const replyhtml = await readFile(`${__dirname}/../templates/twitter/reply-partial.hbs`, "utf-8");
-
-  hbs.registerPartial("user-info-partial", userInfohtml);
-  hbs.registerPartial("tweet-partial", tweethtml);
-  hbs.registerPartial("reply-partial", replyhtml);
-
-  const tweetsTemplate = hbs.compile(tweetsHtml, {
-    strict: true,
-  });
   // renders the html template with the given data
-  const threadContent = tweetsTemplate(data.threads);
+  let { html, css } = render(data);
 
-  const tocHtml = await readFile(`${__dirname}/../templates/twitter/toc-template.hbs`, "utf-8");
+  html = `<!doctype html> 
+          <html> 
+            <head>
+              <meta charset="UTF-8" /
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <style>${css.code}</style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+`;
 
-  // creates the Handlebars template object
-  const tocTemplate = hbs.compile(tocHtml, {
-    strict: true,
-  });
   // renders the html template with the given data
-  const tocContent = tocTemplate(data.threads);
+  const { html: tocContent } = renderTOC(data);
 
   const tempPath = join(tmpdir(), `toc.html`);
+
   await writeFile(tempPath, tocContent, "utf-8");
+
   console.devLog("toc saved to ", tempPath);
 
   const authors = [];
@@ -62,8 +55,7 @@ async function renderTwitterTemplate(data) {
   const optionDetails = {
     title: authorNames + "'s Thread",
     author: authorNames,
-    html: threadContent,
-    css,
+    html,
     tocPath: tempPath,
   };
   return optionDetails;
@@ -211,7 +203,6 @@ async function renderArticleTemplate(data) {
     title: authorNames + "'s articles",
     author: authorNames,
     html: threadContent,
-    css,
     tocPath: tempPath,
   };
   return optionDetails;

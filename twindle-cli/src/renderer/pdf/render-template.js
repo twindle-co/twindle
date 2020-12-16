@@ -1,11 +1,14 @@
-const { readFile, writeFile } = require("fs").promises;
-const hbs = require("handlebars");
+// @ts-check
+const { writeFile, readFile } = require("fs").promises;
+const { render } = require("../main");
 const { tmpdir } = require("os");
 const { join } = require("path");
+const hbs = require("handlebars");
+
 /**
  * Renders the html template with the given data and returns the html string
  * @param {CustomTweetsObject} data
- * @param {string} templateName
+ * @param {string} src
  */
 async function renderTemplate(data, src) {
   if (src == "twitter") return await renderTwitterTemplate(data);
@@ -15,41 +18,27 @@ async function renderTemplate(data, src) {
 }
 
 async function renderTwitterTemplate(data) {
-  const threadsHtml = await readFile(
-    `${__dirname}/../templates/twitter/threads-template.hbs`,
-    "utf-8"
-  );
-  const tweetsHtml = await readFile(
-    `${__dirname}/../templates/twitter/tweets-partial.hbs`,
-    "utf-8"
-  );
-  const userInfohtml = await readFile(
-    `${__dirname}/../templates/twitter/user-info-partial.hbs`,
-    "utf-8"
-  );
-  const tweethtml = await readFile(`${__dirname}/../templates/twitter/tweet-partial.hbs`, "utf-8");
-  const replyhtml = await readFile(`${__dirname}/../templates/twitter/reply-partial.hbs`, "utf-8");
-  const css = await readFile(`${__dirname}/../templates/twitter/style.css`, "utf-8");
+  // rendering the svelte component to html
+  let { html, css } = render(data);
 
-  hbs.registerPartial("tweets-partial", tweetsHtml);
-  hbs.registerPartial("user-info-partial", userInfohtml);
-  hbs.registerPartial("tweet-partial", tweethtml);
-  hbs.registerPartial("reply-partial", replyhtml);
-  hbs.registerPartial("style", css);
-
-  // creates the Handlebars template object
-  const template = hbs.compile(threadsHtml, {
-    strict: true,
-  });
-
-  // renders the html template with the given data
-  const rendered = template(data);
+  html = `<!doctype html> 
+          <html> 
+            <head>
+              <meta charset="UTF-8" /
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <style>${css.code}</style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+`;
 
   const tmpPath = join(tmpdir(), "hello.html");
-  await writeFile(tmpPath, rendered, "utf-8");
+  await writeFile(tmpPath, html, "utf-8");
   await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
   console.devLog("rendered saved to ", tmpPath);
-  return rendered;
+  return html;
 }
 
 async function renderGithubTemplate(data) {
@@ -148,15 +137,6 @@ async function renderArticleTemplate(data) {
   const template = hbs.compile(threadsHtml, {
     strict: true,
   });
-
-  // renders the html template with the given data
-  const rendered = template(data);
-
-  const tmpPath = join(tmpdir(), "hello.html");
-  await writeFile(tmpPath, rendered, "utf-8");
-  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
-  console.devLog("rendered saved to ", tmpPath);
-  return rendered;
 }
 
 module.exports = { renderTemplate };

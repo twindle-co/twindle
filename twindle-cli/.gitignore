@@ -1,5 +1,6 @@
 TwindleLibrary
 nodemailer.config.json
 generated-mock
+!src/renderer/main
 jsonLibrary
 input
