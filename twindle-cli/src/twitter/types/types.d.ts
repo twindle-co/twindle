@@ -122,6 +122,7 @@ export interface ConversationResponse {
     oldest_id: string;
     result_count: number;
   };
+  errors?: any;
 }
 
 export interface CustomMedia {
@@ -148,8 +149,9 @@ export interface LinkWithImage {
 
 export interface Answer extends Pick<CustomTweetData, "id" | "tweet"> {}
 
-export interface Reply extends Pick<CustomTweetData, "id" | "tweet" | "user"> {
+export interface Reply extends Pick<Partial<CustomTweetData>, "id" | "tweet" | "includes"> {
   answer: Answer;
+  user?: User;
 }
 
 export interface CustomTweetData {

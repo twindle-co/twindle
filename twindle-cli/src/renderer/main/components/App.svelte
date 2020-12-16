@@ -133,9 +133,10 @@
           <Tweet data={tweet} />
         </li>
         {#if tweet.replies}
+          <h2>Replies</h2>
           {#each tweet.replies as reply}
             <li>
-              <Reply {reply} />
+              <Reply {reply} {common} />
             </li>
           {/each}
         {/if}
