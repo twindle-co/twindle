@@ -32,7 +32,7 @@ First go to the new branch, and in that branch go in a file called firstpr of th
         the steps given below: 
         
 a) Click the add file  
-b) Type a file name with .md as file extensin ( .md means this is a file in markdown format) like, ramesh.md and give info about yourself, you can also use markdown to make file looks better. There are some rules for writing markdown.
+b) Type a file name with .md as file extension ( .md means this is a file in markdown format) like, ramesh.md and give info about yourself, you can also use markdown to make file looks better. There are some rules for writing markdown.
 c) Then, write Create ramesh.md and then, click commit new file.
         
 This file will be saved in your account. To incorporate these changes in the main file, you have to raise pr.
@@ -67,6 +67,8 @@ git push origin [new-branch]
 ```
 where, `origin` is the remote name. Please go here, if you want to know more [Gt Commands](https://github.com/twindle-co/twindle/blob/main/docs/articles/git%20-github-related.md).
 
+> :mushroom: Tip: If you are facing pr commit issue then, please go through this very nice article written by @PuruVJ [PR Clean Commits](https://github.com/twindle-co/twindle/blob/main/docs/articles/pr-clean-commits.md).
+
 ### Step 9
 :sound: So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to `twindle/docs/TEAM.md` in your new branch and edit the page, put this code `<img src="./images/team/yourName.jpg" width="80px">` in the image section in front of your name, according to the markdown syntax. 
 
@@ -74,8 +76,6 @@ where, `origin` is the remote name. Please go here, if you want to know more [Gt
  you confidence to express yourself and makes it easier for people to learn new things :relaxed: .
  
 ### Step 10
-for 4th pr
- 
-Now, you can select any of the section like either you can go to twindle-cli or twindl-web or twindle-thread according to your choice.
+Now, you can select any of the section like either you can go to twindle-cli, twindl-web or twindle-thread according to your choice.
 
 Suggestions are welcome !! :blush:
