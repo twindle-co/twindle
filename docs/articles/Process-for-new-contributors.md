@@ -20,9 +20,9 @@ Replace `[YOUR_USERNAME]` with your git username.
 
 The whole repository will be copied in that folder.
 
-> Tip: Always remember to work or make changes in a new branch, for this, you have to create a new branch and then, work in it like make changes or add something.
+> :mushroom: Tip: Always remember to work or make changes in a new branch, for this, you have to create a new branch and then, work in it like make changes or add something.
         
-What is Pull Request and why should we raise one? Pull Request(PR) is just you requesting from the authority, the original upstream branch, whose application you have forked, and in that forked application, you have done some changes or added some codes. To incorporate those changes in the main file, you have to raise a pull request(pr) to the authority. So, just making some meaningful changes and save it in your account won't be beneficial until those changes are added in to the main file. That's where pull request(pr) comes into the picture. 
+What is Pull Request and why should we raise one? :confused: Pull Request(PR) is just you requesting from the authority, the original upstream branch, whose application you have forked, and in that forked application, you have done some changes or added some codes. To incorporate those changes in the main file, you have to raise a pull request(pr) to the authority. So, just making some meaningful changes and save it in your account won't be beneficial until those changes are added in to the main file. That's where pull request(pr) comes into the picture. 
 
 ### Step 5
 Make a new branch in your fork.
@@ -37,7 +37,7 @@ c) Then, write Create ramesh.md and then, click commit new file.
         
 This file will be saved in your account. To incorporate these changes in the main file, you have to raise pr.
         
-> Tip: Before raising a pr from the main branch in order to merge your changes into the main file, always update your repository by pulling latest code from upstream branch by running this 👇
+> :mushroom: Tip: Before raising a pr from the main branch in order to merge your changes into the main file, always update your repository by pulling latest code from upstream branch by running this 👇
 
 ```bash
 git pull upstream main
@@ -54,7 +54,7 @@ Now, we are ready to raise our first PR in upstream. So, we need to do this by u
 - Give a name of your file like yourName.md, where .md is the name of the markdown extension
 - Now, write about yourself in the space given below. Here, you have to use markdown language.
    
-> Tip: Markdown Language is a simple markup language, one can use to format any doucment. If you want to learn basic syntax, you can go here :point_right: [Markdown Language](https://www.markdownguide.org/basic-syntax/).
+> :mushroom: Tip: Markdown Language is a simple markup language, one can use to format any doucment. If you want to learn basic syntax, you can go here :point_right: [Markdown Language](https://www.markdownguide.org/basic-syntax/).
 
 ### Step 8
 Now, we are going for the 2nd pr but this time, we are raising a pr through our local machine. For this, again update your repo first in your both local as well
@@ -70,10 +70,12 @@ where, `origin` is the remote name. Please go here, if you want to know more [Gt
 ### Step 9
 So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to  `twindle/docs/TEAM.md` in your new branch and edit the page, where in the image section in front of your name, put this code    `<img src="./images/team/yourName.jpg" width="80px">` according to the markdown syntax. 
 
->In between doing these things, you can write article also, where you can share simple approach of doing the steps, where you feel difficulties. This wiil surely give
+> :mushroom: Tip: In between doing these things, you can write article also, where you can share simple approach of doing the steps, where you feel difficulties. This wiil surely give
  you confidence to express yourself and makes it easier for people to learn new things :relaxed: .
  
 ### Step 10
 for 4th pr
  
 Now, you can select any of the section like either you can go to twindle-cli or twindl-web or twindle-thread according to your choice.
+
+Suggestions are welcome !! :blush:
