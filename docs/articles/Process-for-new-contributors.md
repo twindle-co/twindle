@@ -68,7 +68,8 @@ git push origin [new-branch]
 where, `origin` is the remote name. Please go here, if you want to know more [Gt Commands](https://github.com/twindle-co/twindle/blob/main/docs/articles/git%20-github-related.md).
 
 ### Step 9
-:sound: So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to `twindle/docs/TEAM.md` in your new branch and edit the page, where in the image section in front of your name, put this code `<img src="./images/team/yourName.jpg" width="80px">` according to the markdown syntax. 
+:sound: So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to `twindle/docs/TEAM.md` in your new branch and edit the page, where in the image section in front of your name, put this code 
+`<img src="./images/team/yourName.jpg" width="80px">` according to the markdown syntax. 
 
 > :mushroom: Tip: In between doing these things, you can write article also, where you can share simple approach of doing the steps, where you feel difficulties. This wiil surely give
  you confidence to express yourself and makes it easier for people to learn new things :relaxed: .
