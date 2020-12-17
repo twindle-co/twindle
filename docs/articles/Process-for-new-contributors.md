@@ -54,7 +54,7 @@ Now, we are ready to raise our first PR in upstream. So, we need to do this by u
 - Give a name of your file like yourName.md, where .md is the name of the markdown extension
 - Now, write about yourself in the space given below. Here, you have to use markdown language.
    
-> Tip: Markdown Language is a simple markup language, one can use to format any doucment. If you want to learn basic syntax, you can go here, [Markdown Language](https://www.markdownguide.org/basic-syntax/).
+> Tip: Markdown Language is a simple markup language, one can use to format any doucment. If you want to learn basic syntax, you can go here :point_right: [Markdown Language](https://www.markdownguide.org/basic-syntax/).
 
 ### Step 8
 Now, we are going for the 2nd pr but this time, we are raising a pr through our local machine. For this, again update your repo first in your both local as well
@@ -70,6 +70,9 @@ where, `origin` is the remote name. Please go here, if you want to know more [Gt
 ### Step 9
 So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to  `twindle/docs/TEAM.md` in your new branch and edit the page, where in the image section in front of your name, put this code `<img src="./images/team/yourName.jpg" width="80px">`. 
 
+>In between doing these things, you can write article also, where you can share simple approach of doing the steps, where you feel difficulties. This wiil surely give
+ you confidence to express yourself and makes it easier for people to learn new things :relaxed: .
+ 
 ### Step 10
 for 4th pr
  
