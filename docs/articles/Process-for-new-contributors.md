@@ -43,6 +43,8 @@ This file will be saved in your account. To incorporate these changes in the mai
 git pull upstream main
 ```
 
+You can update your github account by following this amazing article written by @SarveshKadam [Sync to main repo using pull request](https://github.com/twindle-co/twindle/blob/main/docs/articles/sync-to-main-repo-using-pull-request.md).
+
 ### Step 7
 Now, we are ready to raise our first PR in upstream. So, we need to do this by using our github account by following the steps given below:
    
@@ -56,7 +58,14 @@ Now, we are ready to raise our first PR in upstream. So, we need to do this by u
 > Tip: Markdown Language is a simple markup language, one can use to format any doucment. If you want to learn basic syntax, you can go here, [Markdown Language](https://www.markdownguide.org/basic-syntax/).
 
 ### Step 8
-for 2nd pr
+Now, we are going for the 2nd pr but this time, we are raising a pr through our local machine. For this, again update your repo first in your both local as well
+as remote account and you should follow this, `twindle/docs/Team.md` in your local branch. This is about the team members, where one has to write his/her name with some description about himself/herself using markdown language. For pushing the changes from your local machine to your github account, you need to execute this 
+command,
+
+```bash
+git push origin [new-branch]
+```
+where,`origin` is the remote name. Please go here, if you want to know about [Gt Commands](https://github.com/twindle-co/twindle/blob/main/docs/articles/git%20-github-related.md).
 
 ### Step 9
 for 3rd pr
