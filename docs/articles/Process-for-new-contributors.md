@@ -27,24 +27,14 @@ What is Pull Request and why should we raise one? :confused: Pull Request(PR) is
 ### Step 5
 Make a new branch in your fork.
 
-### Step 6
-First go to the new branch, and in that branch go in a file called firstpr of the forked file of twindleco, go there and follow     
-        the steps given below: 
-        
-a) Click the add file  
-b) Type a file name with .md as file extension ( .md means this is a file in markdown format) like, ramesh.md and give info about yourself, you can also use markdown to make file looks better. There are some rules for writing markdown.
-c) Then, write Create ramesh.md and then, click commit new file.
-        
-This file will be saved in your account. To incorporate these changes in the main file, you have to raise pr.
-        
 > :mushroom: Tip: Before raising a pr from the main branch in order to merge your changes into the main file, always update your repository by pulling latest code from upstream branch by running this 👇
 
 ```bash
 git pull upstream main
 ```
-And you can update your github account by following this amazing article written by @SarveshKadam [Sync to main repo using pull request](https://github.com/twindle-co/twindle/blob/main/docs/articles/sync-to-main-repo-using-pull-request.md).
+And you can update your github account with the parent repository by following this amazing article written by @SarveshKadam [Sync to main repo using pull request](https://github.com/twindle-co/twindle/blob/main/docs/articles/sync-to-main-repo-using-pull-request.md).
 
-### Step 7
+### Step 6
 Now, we are ready to raise our first PR in upstream. So, we need to do this by using our github account by following the steps given below:
    
 - Switch to our new branch
@@ -56,7 +46,7 @@ Now, we are ready to raise our first PR in upstream. So, we need to do this by u
    
 > :mushroom: Tip: Markdown Language is a simple markup language, one can use to format any doucment. If you want to learn basic syntax, you can go here :point_right: [Markdown Language](https://www.markdownguide.org/basic-syntax/).
 
-### Step 8
+### Step 7
 Now, we are going for the 2nd pr but this time, we are raising a pr through our local machine. For this, again update your repo first in your both local as well
 as remote account and you should follow this, `twindle/docs/Team.md` in your local branch. This is about the team members, where one has to write his/her name with 
 github account link and some description about himself/herself using markdown language. For pushing the changes from your local machine to your github account, you need to execute this 
@@ -69,13 +59,13 @@ where, `origin` is the remote name. Please go here, if you want to know more [Gt
 
 > :mushroom: Tip: If you are facing pr commit issue then, please go through this very nice article written by @PuruVJ [PR Clean Commits](https://github.com/twindle-co/twindle/blob/main/docs/articles/pr-clean-commits.md).
 
-### Step 9
+### Step 8
 :sound: So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to `twindle/docs/TEAM.md` in your new branch and edit the page, put this code `<img src="./images/team/yourName.jpg" width="80px">` in the image section in front of your name, according to the markdown syntax. 
 
 > :mushroom: Tip: In between doing these things, you can write article also, where you can share simple approach of doing the steps, where you feel difficulties. This wiil surely give
  you confidence to express yourself and makes it easier for people to learn new things :relaxed: .
  
-### Step 10
+### Step 9
 Now, you can select any of the section like either you can go to twindle-cli, twindl-web or twindle-thread according to your choice.
 
 Suggestions are welcome !! :blush:
