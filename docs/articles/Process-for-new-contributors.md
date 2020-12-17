@@ -1,5 +1,5 @@
-Hi everyone, usually when people get connected to an open-source project(which is yes, pretty much exciting), they are mostly unware about the project. Sure, they have some knowledge about the project but not enough to contribute to it. So, they must have enough knowledge about the project and the process, like to do what or where should they first start, etc. 
-That's where this article comes in handy, as suggested by @Proful to write. So, let's go and try to know every process step by step. 
+Hi everyone :wave:, usually when people get connected to an open-source project(which is yes, pretty much exciting :open_mouth: ), they are mostly unware about the project. Sure, they have some knowledge about the project but not enough to contribute to it. So, they must have enough knowledge about the project and the process, like to do what or where should they first start, etc. 
+That's where this article comes in handy :metal: , as suggested by @Proful to write. So, let's go and try to know every process step by step. 
 
 ### Step 1
 From the [twindle-co](https://github.com/twindle-co/twindle) to get a copy of that github account in your account.
@@ -42,8 +42,7 @@ This file will be saved in your account. To incorporate these changes in the mai
 ```bash
 git pull upstream main
 ```
-
-You can update your github account by following this amazing article written by @SarveshKadam [Sync to main repo using pull request](https://github.com/twindle-co/twindle/blob/main/docs/articles/sync-to-main-repo-using-pull-request.md).
+And you can update your github account by following this amazing article written by @SarveshKadam [Sync to main repo using pull request](https://github.com/twindle-co/twindle/blob/main/docs/articles/sync-to-main-repo-using-pull-request.md).
 
 ### Step 7
 Now, we are ready to raise our first PR in upstream. So, we need to do this by using our github account by following the steps given below:
@@ -59,16 +58,17 @@ Now, we are ready to raise our first PR in upstream. So, we need to do this by u
 
 ### Step 8
 Now, we are going for the 2nd pr but this time, we are raising a pr through our local machine. For this, again update your repo first in your both local as well
-as remote account and you should follow this, `twindle/docs/Team.md` in your local branch. This is about the team members, where one has to write his/her name with some description about himself/herself using markdown language. For pushing the changes from your local machine to your github account, you need to execute this 
+as remote account and you should follow this, `twindle/docs/Team.md` in your local branch. This is about the team members, where one has to write his/her name with 
+github account link and some description about himself/herself using markdown language. For pushing the changes from your local machine to your github account, you need to execute this 
 command,
 
 ```bash
 git push origin [new-branch]
 ```
-where,`origin` is the remote name. Please go here, if you want to know about [Gt Commands](https://github.com/twindle-co/twindle/blob/main/docs/articles/git%20-github-related.md).
+where, `origin` is the remote name. Please go here, if you want to know more [Gt Commands](https://github.com/twindle-co/twindle/blob/main/docs/articles/git%20-github-related.md).
 
 ### Step 9
-for 3rd pr
+So, you are about to raise your 3rd pr. In the 3rd pr, you will add your photo in the `Team.md`. First, you need to upload your photo here, `twindle/docs/images/team` through new branch by raising pr. After merging the changes, update your repo(it's compulsory) and then, go to  `twindle/docs/TEAM.md` in your new branch and edit the page, where in the image section in front of your name, put this code `<img src="./images/team/yourName.jpg" width="80px">`. 
 
 ### Step 10
 for 4th pr
