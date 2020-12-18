@@ -47,7 +47,10 @@ async function getCommentResponses(parent, numTopComments) {
     const requests = kids.map((id) =>
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
     );
-    kids.forEach((k) => parent.kids.shift(k));
+
+    while (kids.length) {
+      parent.kids.shift();
+    }
     const response = await Promise.all(requests);
     let filter = await Promise.all(response.map((res) => res.json()));
     filter = filter.filter((result) => !result.deleted);
