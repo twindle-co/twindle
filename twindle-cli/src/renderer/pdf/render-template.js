@@ -43,16 +43,16 @@ async function renderTwitterTemplate(data) {
 
 async function renderGithubTemplate(data) {
   const threadsHtml = await readFile(
-    `${__dirname}/../templates/github/threads-template.hbs`,
+    `${__dirname}/../main/github/threads-template.hbs`,
     "utf-8"
   );
-  const reposHtml = await readFile(`${__dirname}/../templates/github/repos-partial.hbs`, "utf-8");
+  const reposHtml = await readFile(`${__dirname}/../main/github/repos-partial.hbs`, "utf-8");
   const userInfohtml = await readFile(
-    `${__dirname}/../templates/github/user-info-partial.hbs`,
+    `${__dirname}/../main/github/user-info-partial.hbs`,
     "utf-8"
   );
-  const repoHtml = await readFile(`${__dirname}/../templates/github/repo-partial.hbs`, "utf-8");
-  const css = await readFile(`${__dirname}/../templates/github/style.css`, "utf-8");
+  const repoHtml = await readFile(`${__dirname}/../main/github/repo-partial.hbs`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/github/style.css`, "utf-8");
 
   hbs.registerPartial("repos-partial", reposHtml);
   hbs.registerPartial("user-info-partial", userInfohtml);
@@ -76,22 +76,22 @@ async function renderGithubTemplate(data) {
 
 async function renderHackernewsTemplate(data) {
   const threadsHtml = await readFile(
-    `${__dirname}/../templates/hackernews/threads-template.hbs`,
+    `${__dirname}/../main/hackernews/threads-template.hbs`,
     "utf-8"
   );
   const articlesHtml = await readFile(
-    `${__dirname}/../templates/hackernews/articles-partial.hbs`,
+    `${__dirname}/../main/hackernews/articles-partial.hbs`,
     "utf-8"
   );
   const commonInfoHtml = await readFile(
-    `${__dirname}/../templates/hackernews/common-info-partial.hbs`,
+    `${__dirname}/../main/hackernews/common-info-partial.hbs`,
     "utf-8"
   );
   const commentHtml = await readFile(
-    `${__dirname}/../templates/hackernews/comment-partial.hbs`,
+    `${__dirname}/../main/hackernews/comment-partial.hbs`,
     "utf-8"
   );
-  const css = await readFile(`${__dirname}/../templates/hackernews/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/hackernews/style.css`, "utf-8");
 
   hbs.registerPartial("articles-partial", articlesHtml);
   hbs.registerPartial("common-info-partial", commonInfoHtml);
@@ -122,12 +122,12 @@ async function renderHackernewsTemplate(data) {
 
 async function renderArticleTemplate(data) {
   const threadsHtml = await readFile(
-    `${__dirname}/../templates/article/threads-template.hbs`,
+    `${__dirname}/../main/article/threads-template.hbs`,
     "utf-8"
   );
-  const css = await readFile(`${__dirname}/../templates/article/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/article/style.css`, "utf-8");
   const articlesHtml = await readFile(
-    `${__dirname}/../templates/article/articles-partial.hbs`,
+    `${__dirname}/../main/article/articles-partial.hbs`,
     "utf-8"
   );
 
@@ -137,6 +137,15 @@ async function renderArticleTemplate(data) {
   const template = hbs.compile(threadsHtml, {
     strict: true,
   });
+
+  // renders the html template with the given data
+  const rendered = template(data);
+
+  const tmpPath = join(tmpdir(), "hello.html");
+  await writeFile(tmpPath, rendered, "utf-8");
+  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
+  console.devLog("rendered saved to ", tmpPath);
+  return rendered;
 }
 
 module.exports = { renderTemplate };
