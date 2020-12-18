@@ -62,14 +62,14 @@ async function renderTwitterTemplate(data) {
 }
 
 async function renderGithubTemplate(data) {
-  const css = await readFile(`${__dirname}/../templates/github/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/github/style.css`, "utf-8");
 
-  const reposHtml = await readFile(`${__dirname}/../templates/github/repos-partial.hbs`, "utf-8");
+  const reposHtml = await readFile(`${__dirname}/../main/github/repos-partial.hbs`, "utf-8");
   const userInfohtml = await readFile(
-    `${__dirname}/../templates/github/user-info-partial.hbs`,
+    `${__dirname}/../main/github/user-info-partial.hbs`,
     "utf-8"
   );
-  const repohtml = await readFile(`${__dirname}/../templates/github/repo-partial.hbs`, "utf-8");
+  const repohtml = await readFile(`${__dirname}/../main/github/repo-partial.hbs`, "utf-8");
   hbs.registerPartial("user-info-partial", userInfohtml);
   hbs.registerPartial("repo-partial", repohtml);
 
@@ -79,7 +79,7 @@ async function renderGithubTemplate(data) {
   // renders the html template with the given data
   const threadContent = reposTemplate(data.threads);
 
-  const tocHtml = await readFile(`${__dirname}/../templates/github/toc-template.hbs`, "utf-8");
+  const tocHtml = await readFile(`${__dirname}/../main/github/toc-template.hbs`, "utf-8");
 
   // creates the Handlebars template object
   const tocTemplate = hbs.compile(tocHtml, {
@@ -109,18 +109,18 @@ async function renderGithubTemplate(data) {
 }
 
 async function renderHackernewsTemplate(data) {
-  const css = await readFile(`${__dirname}/../templates/hackernews/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/hackernews/style.css`, "utf-8");
 
   const articlesHtml = await readFile(
-    `${__dirname}/../templates/hackernews/articles-partial.hbs`,
+    `${__dirname}/../main/hackernews/articles-partial.hbs`,
     "utf-8"
   );
   const commonInfoHtml = await readFile(
-    `${__dirname}/../templates/hackernews/common-info-partial.hbs`,
+    `${__dirname}/../main/hackernews/common-info-partial.hbs`,
     "utf-8"
   );
   const commentHtml = await readFile(
-    `${__dirname}/../templates/hackernews/comment-partial.hbs`,
+    `${__dirname}/../main/hackernews/comment-partial.hbs`,
     "utf-8"
   );
   hbs.registerPartial("common-info-partial", commonInfoHtml);
@@ -139,7 +139,7 @@ async function renderHackernewsTemplate(data) {
   // renders the html template with the given data
   const threadContent = articlesTemplate(data.threads);
 
-  const tocHtml = await readFile(`${__dirname}/../templates/hackernews/toc-template.hbs`, "utf-8");
+  const tocHtml = await readFile(`${__dirname}/../main/hackernews/toc-template.hbs`, "utf-8");
 
   // creates the Handlebars template object
   const tocTemplate = hbs.compile(tocHtml, {
@@ -169,9 +169,9 @@ async function renderHackernewsTemplate(data) {
 }
 
 async function renderArticleTemplate(data) {
-  const css = await readFile(`${__dirname}/../templates/article/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/article/style.css`, "utf-8");
   const articlesHtml = await readFile(
-    `${__dirname}/../templates/article/articles-partial.hbs`,
+    `${__dirname}/../main/article/articles-partial.hbs`,
     "utf-8"
   );
 
@@ -181,7 +181,7 @@ async function renderArticleTemplate(data) {
   // renders the html template with the given data
   const threadContent = articlesTemplate(data.threads);
 
-  const tocHtml = await readFile(`${__dirname}/../templates/article/toc-template.hbs`, "utf-8");
+  const tocHtml = await readFile(`${__dirname}/../main/article/toc-template.hbs`, "utf-8");
 
   // creates the Handlebars template object
   const tocTemplate = hbs.compile(tocHtml, {
