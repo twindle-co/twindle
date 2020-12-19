@@ -1,6 +1,6 @@
 # [Twindle](https://twindle-co.github.io/twindle/.) 📖
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > ### An open source project for beginners.
@@ -71,6 +71,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://tidible.app"><img src="https://avatars0.githubusercontent.com/u/45141388?v=4" width="100px;" alt=""/><br /><sub><b>Tolga Erdönmez</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=tolgaerdonmez" title="Code">💻</a></td>
+    <td align="center"><a href="https://m.youtube.com/channel/UCKmIFs7rFKdTE6t1y8bKAHQ/videos"><img src="https://avatars0.githubusercontent.com/u/49345531?v=4" width="100px;" alt=""/><br /><sub><b>Ameen Shafeeq</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=UnevenCoder" title="Code">💻</a></td>
   </tr>
 </table>
 
