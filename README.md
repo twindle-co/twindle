@@ -8,10 +8,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![image](https://visitor-badge.glitch.me/badge?page_id=Twindle-co.twindle)
 
-### Hangout with other developer (Twindler) Discord [<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR)
+### Hangout with Twindle developer => Discord [<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR)
 
 
-## Want to contribute on twindle cli (phase 1 application)
+## Want to contribute on twindle cli
 
 Pre-requsites
 
@@ -26,6 +26,7 @@ npm install
 cp .env.example .env
 ```
 *Note:* Create .env file under twindle-cli
+
 You need Twitter Developer API bearer token ([instructions](https://github.com/twindle-co/twindle/wiki/Applying-for-Developer-Access-from-Twitter))
 
 # How to Run twindle?
@@ -35,8 +36,11 @@ node . -i 1002103360646823936
 
 ## Reading sources suppoorted
 [x] Twitter Thread
+
 [x] Hacker News Comments
+
 [x] Github markdown pages
+
 [x] Any articles (URL)
 
 ## Connect with us
