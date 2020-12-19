@@ -35,13 +35,13 @@ node . -i 1002103360646823936
 ```
 
 ## Reading sources suppoorted
-[x] Twitter Thread
+✅ Twitter Thread
 
-[x] Hacker News Comments
+✅ Hacker News Comments
 
-[x] Github markdown pages
+✅ Github markdown pages
 
-[x] Any articles (URL)
+✅ Any articles (URL)
 
 ## Connect with us
 
