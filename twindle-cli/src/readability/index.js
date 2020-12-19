@@ -1,6 +1,7 @@
 const { Readability } = require("@mozilla/readability");
 const image = require("../utils/image");
 const JSDOM = require("jsdom").JSDOM;
+const { UserError } = require("../helpers/error")
 
 async function readURL(testUrl) {
   let urls = testUrl.split(",");
@@ -8,6 +9,11 @@ async function readURL(testUrl) {
   for (let url of urls) {
     let windowDocument = await getJSDOM(url);
     let article = getParsedArticle(windowDocument);
+    if(article === null)
+      throw new UserError(
+        "mozilla-readability-error",
+        "Failed to load article from page"
+      );
     threads.push(getArticleJSON(article, url, windowDocument));
   }
   return threads;
