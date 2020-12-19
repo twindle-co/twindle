@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "shekhar10feb",
+      "name": "Shekhar Ranjan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/72906055?v=4",
+      "profile": "https://codepen.io/shekhar4nov",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "twindle",
+  "projectOwner": "twindle-co",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
