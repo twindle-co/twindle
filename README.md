@@ -1,4 +1,7 @@
 # [Twindle](https://twindle-co.github.io/twindle/.) 📖
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > ### An open source project for beginners.
 >
@@ -48,3 +51,22 @@ node . -i 1002103360646823936
 [<img src='https://www.creativefreedom.co.uk/wp-content/uploads/2017/06/Twitter-featured.png' height=45 width=55 />](https://twitter.com/twindleco)
 [<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ342VRbRlgLDPviYYJgxfCVEHKmtuV8LIisA&usqp=CAU'  width=50 height=50 />](https://www.youtube.com/channel/UCKxUmbHq5P5pd5IyUiZ8MHA)
 [<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=50 width=50 />](https://discord.gg/jBj2zMR)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://codepen.io/shekhar4nov"><img src="https://avatars0.githubusercontent.com/u/72906055?v=4" width="100px;" alt=""/><br /><sub><b>Shekhar Ranjan</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=shekhar10feb" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
