@@ -10,12 +10,7 @@
 
 ### Hangout with other developer (Twindler)
 
-[<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR)
-
-
-## What is Twindle? 🤔
-
-Twindle (Twitter + Kindle = Twindle) is an open source project made for the purpose of converting long Twitter threads into ePub's or PDF documents to allow users to read longscroll threads on a kindle or as a PDF on their device of choice.
+Discord [<img src='https://cdn.vox-cdn.com/thumbor/nU3aFhQTGn1z9ImiSHXkF0bnyLk=/0x0:1600x1600/1400x1400/filters:focal(659x770:915x1026):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/56262027/discord_logo.0.jpg' height=40 width=40 />](https://discord.gg/jBj2zMR)
 
 
 ## Want to contribute on twindle cli (phase 1 application)
@@ -39,6 +34,11 @@ cp .env.example .env
 node . -i 1002103360646823936
 ```
 
+## Reading sources suppoorted
+[x] Twitter Thread
+[x] Hacker News Comments
+[x] Github markdown pages
+[x] Any articles (URL)
 
 ## Connect with us
 
