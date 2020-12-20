@@ -4,16 +4,16 @@ const { UserError } = require("./helpers/error");
 const { createLibraryIfNotExists } = require("./utils/library");
 const sendEmail = require("./utils/send-email");
 const { isValidEmail } = require("./utils/helpers");
-
+const { readFile } = require("fs").promises;
 
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
     .usage(
-      "Usage: -i <tweet id or a comma separated list of tweet ids> -r <include replies by author of thread to other users>" + 
-       " -u <user_id> -n <default_num_tweets>" + 
-       " -f <file format - pdf | epub>" + 
-       " -o <filename> -a<if o is not present a file name is calculated and this a text can be appended to it" + 
-       " -s <send to kindle email| Optionally pass kindle email here>"
+      "Usage: -i <tweet id or a comma separated list of tweet ids> -r <include replies by author of thread to other users>" +
+        " -u <user_id> -n <default_num_tweets>" +
+        " -f <file format - pdf | epub>" +
+        " -o <filename> -a<if o is not present a file name is calculated and this a text can be appended to it" +
+        " -s <send to kindle email| Optionally pass kindle email here>"
     )
     .option({
       f: {
@@ -35,7 +35,7 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "Append string to the filename",
         type: "string",
-      },    
+      },
       i: {
         alias: "tweetId",
         demandOption: false,
@@ -47,7 +47,7 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "include replies by thread author",
         type: "boolean",
-        default: false
+        default: false,
       },
       s: {
         alias: "kindleEmail",
@@ -68,7 +68,7 @@ const getCommandlineArgs = (processArgv) =>
         demandOption: false,
         describe: "To be used with mock flag",
         type: "string",
-        default: "twitter"
+        default: "twitter",
       },
       "generate-mock": {
         alias: "generateMock",
@@ -101,21 +101,36 @@ const getCommandlineArgs = (processArgv) =>
         alias: "gitHubURL",
         demandOption: false,
         describe: "The README.md file of git Repo",
-        type: "string"
+        type: "string",
       },
       h: {
         alias: "storyId",
         demandOption: false,
         describe: "Hackernews story ids",
-        type: "string"
+        type: "string",
       },
-      nc: {
+      t: {
+        alias: "numTopComments",
+        demandOption: false,
+        describe:
+          "Used together with h option to specify the number of levels of comments to be picked up",
+        type: "integer",
+        default: 5,
+      },
+      d: {
         alias: "numCommentLevels",
         demandOption: false,
-        describe: "Used together with h option to specify the number of levels of comments to be picked up",
+        describe:
+          "Used together with h option to specify the number of levels of comments to be picked up",
         type: "integer",
         default: 3,
-      }
+      },
+      e: {
+        alias: "articleUrl",
+        demandOption: false,
+        describe: "URL to read from",
+        type: "string",
+      },
     }).argv;
 
 // Intends to do such things for one time for the user, like config creating, main outputdir creation
@@ -124,7 +139,7 @@ function prepareCli() {
   createLibraryIfNotExists();
 }
 
-function getCommandLineObject() {
+async function getCommandLineObject() {
   const {
     format,
     outputFilename,
@@ -140,16 +155,18 @@ function getCommandLineObject() {
     generateMock,
     gitHubURL,
     storyId,
-    numCommentLevels
+    numTopComments,
+    numCommentLevels,
+    articleUrl,
   } = getCommandlineArgs(process.argv);
-  
   const cliObject = {};
   appendFileFormat(cliObject, format);
   appendOutputFileName(cliObject, outputFilename, appendToFilename);
   appendKindleEmail(cliObject, kindleEmail);
   appendTwitterSource(cliObject, tweetId, includeReplies, userId, numTweets);
-  appendGithubSource(cliObject, gitHubURL);
-  appendHackernewsSource(cliObject, storyId, numCommentLevels);
+  await appendGithubSource(cliObject, gitHubURL);
+  appendHackernewsSource(cliObject, storyId, numTopComments, numCommentLevels);
+  appendArticleSource(cliObject, articleUrl);
   appendMock(cliObject, mock, mockSource);
   validateCliObject(cliObject);
   cliObject.generateMock = process.argv.includes("-generate-mock") && generateMock;
@@ -157,23 +174,23 @@ function getCommandLineObject() {
 }
 
 const appendFileFormat = (cliObject, format) => {
-  if(format != "pdf" && format != "epub")
-    throw new UserError("file-format-not-supported", 
-      "Currently only pdf and epub formats are supported. Please choose one of the two");
+  if (format != "pdf" && format != "epub")
+    throw new UserError(
+      "file-format-not-supported",
+      "Currently only pdf and epub formats are supported. Please choose one of the two"
+    );
   cliObject.format = format;
   return cliObject;
-}
+};
 
 const appendOutputFileName = (cliObject, outputFilename, appendToFilename) => {
-  if(outputFilename || appendToFilename) {
+  if (outputFilename || appendToFilename) {
     cliObject.fileName = {};
-    if(outputFilename)
-      cliObject.fileName.outputFilename = outputFilename;
-    else
-      cliObject.fileName.appendToFilename = appendToFilename;
+    if (outputFilename) cliObject.fileName.outputFilename = outputFilename;
+    else cliObject.fileName.appendToFilename = appendToFilename;
   }
   return cliObject;
-}
+};
 
 const appendKindleEmail = (cliObject, kindleEmail) => {
   if (process.argv.includes("-s")) {
@@ -198,86 +215,133 @@ const appendKindleEmail = (cliObject, kindleEmail) => {
     cliObject.kindleEmail = kindleEmail;
   }
   return cliObject;
-}
+};
 
 const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTweets) => {
-  if(process.argv.includes("-i") && process.argv.includes("-u"))
-    throw new UserError("invalid-combination-of-twitter-params", 
-      "Please choose either tweet ids or user ids");
-  if (!process.env.TWITTER_AUTH_TOKEN)
+  if (process.argv.includes("-i") && process.argv.includes("-u"))
     throw new UserError(
-      "bearer-token-not-provided",
-      "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"
+      "invalid-combination-of-twitter-params",
+      "Please choose either tweet ids or user ids"
     );
-  if(process.argv.includes("-i") || process.argv.includes("-u")) {
+  if (process.argv.includes("-i") || process.argv.includes("-u")) {
+    if (!process.env.TWITTER_AUTH_TOKEN)
+      throw new UserError(
+        "bearer-token-not-provided",
+        "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"
+      );
+
     cliObject.dataSource = "twitter";
     cliObject.twitter = {};
-    if(tweetId) {
-      if(process.argv.includes("-n"))
-        throw new UserError("invalid-combination-of-twitter-params", 
-          "Cannot include -n for the tweet id option");
+    if (tweetId) {
+      if (process.argv.includes("-n"))
+        throw new UserError(
+          "invalid-combination-of-twitter-params",
+          "Cannot include -n for the tweet id option"
+        );
       cliObject.twitter.tweetId = tweetId;
       cliObject.twitter.includeReplies = process.argv.includes("-r") && includeReplies;
     } else {
-      if(process.argv.includes("-r"))
-        throw new UserError("invalid-combination-of-twitter-params", 
-          "Cannot include -r for the user id option");
+      if (process.argv.includes("-r"))
+        throw new UserError(
+          "invalid-combination-of-twitter-params",
+          "Cannot include -r for the user id option"
+        );
       cliObject.twitter.userId = userId;
       cliObject.twitter.numTweets = numTweets;
     }
   }
   return cliObject;
-}
+};
 
-const appendGithubSource = (cliObject, gitHubURL) => {
-  if(cliObject.dataSource && process.argv.includes("-g")) {
-    throw new UserError("invalid-combination-of-input-arguments", 
-        "Cannot include -g together with twitter related params");
+const appendGithubSource = async (cliObject, gitHubURL) => {
+  if (cliObject.dataSource && process.argv.includes("-g")) {
+    throw new UserError(
+      "invalid-combination-of-input-arguments",
+      "Cannot include -g together with twitter related params"
+    );
   }
-  if(process.argv.includes("-g")) {
+  if (process.argv.includes("-g")) {
     cliObject.dataSource = "github";
     cliObject.github = {};
-    cliObject.github.githubURL = gitHubURL;
+    cliObject.github.githubURL = await validateGithubURL(gitHubURL);
   }
   return cliObject;
+};
+
+async function validateGithubURL(gitHubURL) {
+  if (!(gitHubURL.toLowerCase().endsWith(".md") || gitHubURL.toLowerCase().endsWith(".txt")))
+    throw new UserError(
+      "invalid-value-for-input-argument",
+      "Can only include an MD file or a txt file for -g parameter"
+    );
+  if (gitHubURL.toLowerCase().endsWith(".md")) return gitHubURL;
+  else {
+    const reposText = await readFile(`${__dirname}/github/input/${gitHubURL}`, "utf-8");
+    return reposText.split(/\r?\n/).join(",");
+  }
 }
 
-const appendHackernewsSource = (cliObject, storyId, numCommentLevels) => {
-  if(cliObject.dataSource && process.argv.includes("-h")) {
-    throw new UserError("invalid-combination-of-input-arguments", 
-        "Cannot include -h together with twitter or github related params");
+const appendHackernewsSource = (cliObject, storyId, numTopComments, numCommentLevels) => {
+  if (cliObject.dataSource && process.argv.includes("-h")) {
+    throw new UserError(
+      "invalid-combination-of-input-arguments",
+      "Cannot include -h together with twitter or github related params"
+    );
   }
-  if(process.argv.includes("-h")) {
+  if (process.argv.includes("-h")) {
     cliObject.dataSource = "hackernews";
     cliObject.hackernews = {};
     cliObject.hackernews.storyId = storyId;
+    cliObject.hackernews.numTopComments = numTopComments;
     cliObject.hackernews.numCommentLevels = numCommentLevels;
   }
   return cliObject;
-}
+};
+
+const appendArticleSource = (cliObject, articleUrl) => {
+  if (cliObject.dataSource && process.argv.includes("-read")) {
+    throw new UserError(
+      "invalid-combination-of-input-arguments",
+      "Cannot include -read together with twitter or github or hackernews related params"
+    );
+  }
+  if (process.argv.includes("-e")) {
+    cliObject.dataSource = "article";
+    cliObject.article = {};
+    cliObject.article.articleUrl = articleUrl;
+  }
+  return cliObject;
+};
 
 const appendMock = (cliObject, mock, mockSource) => {
-  if(cliObject.dataSource && process.argv.includes("-m")) {
-    throw new UserError("invalid-combination-of-input-arguments", 
-        "Cannot include -m together with twitter or github or hackernews related params");
+  if (cliObject.dataSource && process.argv.includes("-m")) {
+    throw new UserError(
+      "invalid-combination-of-input-arguments",
+      "Cannot include -m together with twitter or github or hackernews related params"
+    );
   }
-  if(cliObject.mock && !process.argv.includes("-ms")) {
-    throw new UserError("invalid-combination-of-input-arguments", 
-        "Cannot use -m option without -ms which is the source for the mock option");
+  if (cliObject.mock && !process.argv.includes("-ms")) {
+    throw new UserError(
+      "invalid-combination-of-input-arguments",
+      "Cannot use -m option without -ms which is the source for the mock option"
+    );
   }
-  if(process.argv.includes("-m")) {
+  if (process.argv.includes("-m")) {
     cliObject.mockSource = mockSource;
   }
-}
+};
 
 const validateCliObject = (cliObject) => {
-  if(!cliObject.dataSource && !cliObject.mock) 
-    throw new UserError("invalid-combination-of-input-arguments", 
-      "Either one of the sources information must be specified or the mock flag must be set, otherwise the application will not run");
-}
+  if (!cliObject.dataSource && !cliObject.mock)
+    throw new UserError(
+      "invalid-combination-of-input-arguments",
+      "Either one of the sources information must be specified or the mock flag must be set, otherwise the application will not run"
+    );
+};
 
 module.exports = {
   getCommandlineArgs,
   prepareCli,
-  getCommandLineObject
+  getCommandLineObject,
+  validateGithubURL,
 };

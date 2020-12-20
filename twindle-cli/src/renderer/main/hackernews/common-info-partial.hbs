@@ -1,0 +1,21 @@
+{{#if common}}
+  <div id="common-info">
+    <div class="article-info clearfix">
+      <img alt="" src="{{common.image}}" class="avatar avatar-114 photo" width="114" height="114">
+      <div class="article-info-content">
+        <h2 class="article-name">
+          <a href="{{common.url}}">{{common.title}}</a>
+        </h2>
+        <h3 class="article-name">{{common.created_at}}</h3>        
+      </div>
+      <div class="author-bio-text">
+        <a data-title="user-name" href="https://news.ycombinator.com/user?id={{common.user.username}}">{{common.user.username}}</a>
+        <span style="padding-left:20px"><a data-title="hacker-news-link" href="https://news.ycombinator.com/item?id={{common.id}}">&#128279;Hacker News</a></span>
+        <span style="float:right">&#8618;{{common.numComments}}</span>
+        <span style="padding-left:20px">&#9733;{{common.score}}</span>
+        
+      </div>
+    </div>  
+  </div>
+{{/if}}
+  

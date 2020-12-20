@@ -1,0 +1,51 @@
+body {
+  /* heading font */
+  --app-heading-font-family: 'Comfortaa', 'Helevtica', 'Arial' sans-serif;
+
+  /* Main font */
+  --app-main-font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Border radii */
+  --app-border-radius-small: 8px;
+
+  --app-easing: cubic-bezier(0, 0, 0.2, 1);
+}
+
+body.light {
+  --app-color-primary: #cc444b;
+  --app-color-primary-rgb: 204, 68, 75;
+  --app-color-primary-tint: #db7c81;
+  --app-color-primary-shade: #8f3035;
+  --app-color-primary-contrast: #fff;
+
+  --app-color-light: #f4f5f8;
+  --app-color-light-rgb: 244, 244, 244;
+  --app-color-light-contrast: #000000;
+
+  --app-color-dark: #222428;
+  --app-color-dark-rgb: 34, 34, 34;
+  --app-color-dark-contrast: #ffffff;
+
+  /* The background color of shell */
+  --app-color-shell: white;
+}
+
+body.dark {
+  --app-color-primary: #cc444b;
+  --app-color-primary-rgb: 204, 68, 75;
+  --app-color-primary-tint: #db7c81;
+  --app-color-primary-shade: #8f3035;
+  --app-color-primary-contrast: #fff;
+
+  --app-color-dark: #f4f5f8;
+  --app-color-dark-rgb: 244, 244, 244;
+  --app-color-dark-contrast: #000000;
+
+  --app-color-light: #222428;
+  --app-color-light-rgb: 34, 34, 34;
+  --app-color-light-contrast: #ffffff;
+
+  /* The background color of shell */
+  --app-color-shell: #222428;
+}

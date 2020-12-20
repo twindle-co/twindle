@@ -1,5 +1,6 @@
 // @ts-check
 const puppeteer = require("puppeteer");
+const { getCSS } = require("../main");
 
 function footerMarkup() {
   return `
@@ -31,10 +32,13 @@ async function createPdf(outputPath, htmlContent) {
     // sets the html of the page to htmlContent argument
     await page.setContent(htmlContent);
 
+    // setting the css of the page
+    await page.addStyleTag({ content: getCSS() });
+
     // Prints the html page to pdf document and saves it to given outputPath
     await page.emulateMediaType("print");
     await page.addStyleTag({
-      content: '@page { size: auto; }',
+      content: "@page { size: auto; }",
     });
     await page.pdf({
       path: outputPath,

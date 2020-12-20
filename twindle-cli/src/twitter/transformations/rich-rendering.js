@@ -137,7 +137,7 @@ function renderOutsiderLinks(tweetObj, embedded) {
     if (!isStatusLink) {
       tweetObj.text = tweetObj.text.replace(
         urlObj.url,
-        `<a target="_blank" rel="noopener noreferrer" href="${urlObj.expanded_url}">${urlObj.expanded_url}</a>`
+        `<a href="${urlObj.expanded_url}">${urlObj.expanded_url}</a>`
       );
     }
   }
@@ -187,7 +187,7 @@ function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
 }
 
 /**
- * @param {CustomTweetsObject} user
+ * @param {import("../types/types").User} user
  * Fix user description from multiple tweets combined obj. DO NOT COMPOSE IN THE RENDERRICHTWEETS FUNCTION
  */
 function fixUserDescription(user) {
@@ -195,13 +195,10 @@ function fixUserDescription(user) {
   if (!user.entities) return user;
 
   // Fix spaces
-  user.description = twemoji.parse(
-    user.description.replace(/\n/g, "<br />"),
-    {
-      folder: "svg",
-      ext: ".svg",
-    }
-  );
+  user.description = twemoji.parse(user.description.replace(/\n/g, "<br />"), {
+    folder: "svg",
+    ext: ".svg",
+  });
 
   const entitiesDescription = user.entities.description;
 
@@ -335,8 +332,7 @@ async function renderRichTweets(tweetObj, token, isUserTimeline) {
   tweetObj = await _renderEmbeddedTweets(tweetObj, token);
   tweetObj = sanitizeForHandlebars(tweetObj);
 
-  if(!isUserTimeline)
-    delete tweetObj.created_at;
+  if (!isUserTimeline) delete tweetObj.created_at;
 
   return tweetObj;
 }
