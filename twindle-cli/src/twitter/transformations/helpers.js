@@ -9,7 +9,7 @@ const extractScreenName = (tweet_url) => tweet_url.replace(/^https?:\/\//, "").s
 
 /** @param {TwitterConversationResponse} responseJSON */
 const getTweetArray = (responseJSON) => {
-  return (responseJSON.data || []).map((data) => ({
+  return ((responseJSON && responseJSON.data) || []).map((data) => ({
     ...data,
     includes: responseJSON.includes,
   }));
