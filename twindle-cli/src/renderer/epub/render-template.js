@@ -65,10 +65,7 @@ async function renderGithubTemplate(data) {
   const css = await readFile(`${__dirname}/../main/github/style.css`, "utf-8");
 
   const reposHtml = await readFile(`${__dirname}/../main/github/repos-partial.hbs`, "utf-8");
-  const userInfohtml = await readFile(
-    `${__dirname}/../main/github/user-info-partial.hbs`,
-    "utf-8"
-  );
+  const userInfohtml = await readFile(`${__dirname}/../main/github/user-info-partial.hbs`, "utf-8");
   const repohtml = await readFile(`${__dirname}/../main/github/repo-partial.hbs`, "utf-8");
   hbs.registerPartial("user-info-partial", userInfohtml);
   hbs.registerPartial("repo-partial", repohtml);
@@ -170,10 +167,7 @@ async function renderHackernewsTemplate(data) {
 
 async function renderArticleTemplate(data) {
   const css = await readFile(`${__dirname}/../main/article/style.css`, "utf-8");
-  const articlesHtml = await readFile(
-    `${__dirname}/../main/article/articles-partial.hbs`,
-    "utf-8"
-  );
+  const articlesHtml = await readFile(`${__dirname}/../main/article/articles-partial.hbs`, "utf-8");
 
   const articlesTemplate = hbs.compile(articlesHtml, {
     strict: true,
