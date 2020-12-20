@@ -1,0 +1,1 @@
+if(typeof document!="undefined"){const t=".container.svelte-high9o{--width:61.8%;width:var(--width);min-height:100%}@media screen and (max-width: 961px){.container.svelte-high9o{--width:100%}}",e=document.createElement("style"),d=document.createTextNode(t);e.type="text/css",e.appendChild(d),document.head.appendChild(e)}

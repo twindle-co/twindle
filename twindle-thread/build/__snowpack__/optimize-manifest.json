@@ -1,0 +1,30 @@
+{
+  "imports": {
+    "/index.html": {
+      "entry": [
+        "/_dist_/index.js"
+      ],
+      "css": [
+        "/css/global.css",
+        "/favicon.ico",
+        "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&family=Roboto:wght@300;400;500;600&display=swap",
+        "https://fonts.gstatic.com"
+      ],
+      "js": [
+        "/__snowpack__/env.js",
+        "/_dist_/App.css.proxy.js",
+        "/_dist_/App.js",
+        "/_dist_/components/Avatar.css.proxy.js",
+        "/_dist_/components/Avatar.js",
+        "/_dist_/index.js",
+        "/_dist_/pages/Feed.css.proxy.js",
+        "/_dist_/pages/Feed.js",
+        "/web_modules/common/index-9f3822ed.js",
+        "/web_modules/svelte-routing.js",
+        "/web_modules/svelte.js",
+        "/web_modules/svelte/internal.js"
+      ]
+    }
+  },
+  "generated": {}
+}

@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "fetch-retry": "./fetch-retry.js",
+    "lazysizes": "./lazysizes.js",
+    "svelte": "./svelte.js",
+    "svelte-routing": "./svelte-routing.js",
+    "svelte/internal": "./svelte/internal.js"
+  }
+}
