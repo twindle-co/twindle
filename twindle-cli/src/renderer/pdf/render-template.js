@@ -1,11 +1,14 @@
-const { readFile, writeFile } = require("fs").promises;
-const hbs = require("handlebars");
+// @ts-check
+const { writeFile, readFile } = require("fs").promises;
+const { render } = require("../main");
 const { tmpdir } = require("os");
 const { join } = require("path");
+const hbs = require("handlebars");
+
 /**
  * Renders the html template with the given data and returns the html string
  * @param {CustomTweetsObject} data
- * @param {string} templateName
+ * @param {string} src
  */
 async function renderTemplate(data, src) {
   if (src == "twitter") return await renderTwitterTemplate(data);
@@ -15,55 +18,41 @@ async function renderTemplate(data, src) {
 }
 
 async function renderTwitterTemplate(data) {
-  const threadsHtml = await readFile(
-    `${__dirname}/../templates/twitter/threads-template.hbs`,
-    "utf-8"
-  );
-  const tweetsHtml = await readFile(
-    `${__dirname}/../templates/twitter/tweets-partial.hbs`,
-    "utf-8"
-  );
-  const userInfohtml = await readFile(
-    `${__dirname}/../templates/twitter/user-info-partial.hbs`,
-    "utf-8"
-  );
-  const tweethtml = await readFile(`${__dirname}/../templates/twitter/tweet-partial.hbs`, "utf-8");
-  const replyhtml = await readFile(`${__dirname}/../templates/twitter/reply-partial.hbs`, "utf-8");
-  const css = await readFile(`${__dirname}/../templates/twitter/style.css`, "utf-8");
+  // rendering the svelte component to html
+  let { html, css } = render(data);
 
-  hbs.registerPartial("tweets-partial", tweetsHtml);
-  hbs.registerPartial("user-info-partial", userInfohtml);
-  hbs.registerPartial("tweet-partial", tweethtml);
-  hbs.registerPartial("reply-partial", replyhtml);
-  hbs.registerPartial("style", css);
-
-  // creates the Handlebars template object
-  const template = hbs.compile(threadsHtml, {
-    strict: true,
-  });
-
-  // renders the html template with the given data
-  const rendered = template(data);
+  html = `<!doctype html> 
+          <html> 
+            <head>
+              <meta charset="UTF-8" /
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <style>${css.code}</style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+`;
 
   const tmpPath = join(tmpdir(), "hello.html");
-  await writeFile(tmpPath, rendered, "utf-8");
+  await writeFile(tmpPath, html, "utf-8");
   await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
   console.devLog("rendered saved to ", tmpPath);
-  return rendered;
+  return html;
 }
 
 async function renderGithubTemplate(data) {
   const threadsHtml = await readFile(
-    `${__dirname}/../templates/github/threads-template.hbs`,
+    `${__dirname}/../main/github/threads-template.hbs`,
     "utf-8"
   );
-  const reposHtml = await readFile(`${__dirname}/../templates/github/repos-partial.hbs`, "utf-8");
+  const reposHtml = await readFile(`${__dirname}/../main/github/repos-partial.hbs`, "utf-8");
   const userInfohtml = await readFile(
-    `${__dirname}/../templates/github/user-info-partial.hbs`,
+    `${__dirname}/../main/github/user-info-partial.hbs`,
     "utf-8"
   );
-  const repoHtml = await readFile(`${__dirname}/../templates/github/repo-partial.hbs`, "utf-8");
-  const css = await readFile(`${__dirname}/../templates/github/style.css`, "utf-8");
+  const repoHtml = await readFile(`${__dirname}/../main/github/repo-partial.hbs`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/github/style.css`, "utf-8");
 
   hbs.registerPartial("repos-partial", reposHtml);
   hbs.registerPartial("user-info-partial", userInfohtml);
@@ -87,22 +76,22 @@ async function renderGithubTemplate(data) {
 
 async function renderHackernewsTemplate(data) {
   const threadsHtml = await readFile(
-    `${__dirname}/../templates/hackernews/threads-template.hbs`,
+    `${__dirname}/../main/hackernews/threads-template.hbs`,
     "utf-8"
   );
   const articlesHtml = await readFile(
-    `${__dirname}/../templates/hackernews/articles-partial.hbs`,
+    `${__dirname}/../main/hackernews/articles-partial.hbs`,
     "utf-8"
   );
   const commonInfoHtml = await readFile(
-    `${__dirname}/../templates/hackernews/common-info-partial.hbs`,
+    `${__dirname}/../main/hackernews/common-info-partial.hbs`,
     "utf-8"
   );
   const commentHtml = await readFile(
-    `${__dirname}/../templates/hackernews/comment-partial.hbs`,
+    `${__dirname}/../main/hackernews/comment-partial.hbs`,
     "utf-8"
   );
-  const css = await readFile(`${__dirname}/../templates/hackernews/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/hackernews/style.css`, "utf-8");
 
   hbs.registerPartial("articles-partial", articlesHtml);
   hbs.registerPartial("common-info-partial", commonInfoHtml);
@@ -133,12 +122,12 @@ async function renderHackernewsTemplate(data) {
 
 async function renderArticleTemplate(data) {
   const threadsHtml = await readFile(
-    `${__dirname}/../templates/article/threads-template.hbs`,
+    `${__dirname}/../main/article/threads-template.hbs`,
     "utf-8"
   );
-  const css = await readFile(`${__dirname}/../templates/article/style.css`, "utf-8");
+  const css = await readFile(`${__dirname}/../main/article/style.css`, "utf-8");
   const articlesHtml = await readFile(
-    `${__dirname}/../templates/article/articles-partial.hbs`,
+    `${__dirname}/../main/article/articles-partial.hbs`,
     "utf-8"
   );
 

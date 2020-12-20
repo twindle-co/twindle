@@ -53,8 +53,10 @@ const getTweetsFromArray = async (ids, includeReplies, token) => {
   if (includeReplies) {
     let replies = await TweetArrayEndpointTransformation.processReplies(responseJSON.data, token);
     let replyIds = replies.map((r) => r.id);
+
     if (replyIds.length > 0) {
       responseJSON = await getTweetById(replyIds.join(","), token);
+
       if (responseJSON.data && !responseJSON.data.errors) {
         finalTweetsData = await TweetArrayEndpointTransformation.updateReplies(
           responseJSON.data,
@@ -107,7 +109,7 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
     includes: responseJSON.includes,
   }));
 
-  /** @type {CustomTweetsObject[]} */
+  /** @type {import("./types/types").CustomTweets[]} */
   const tweetThreads = [];
 
   /** @type {string[]} */
@@ -116,7 +118,7 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
   for (let loopTweet of tweets) {
     increment();
 
-    /** @type {CustomTweetsObject} */
+    /** @type {import("./types/types").CustomTweets} */
     let finalTweetsData = {
       common: {
         id: "",
@@ -144,6 +146,7 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
         loopTweet = (await getTweetById(loopTweet.conversation_id, token)).data[0];
       } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
         const tweetIDs = await Scraping.getTweetIDs(loopTweet.id);
+        // @ts-ignore
         tweetThreads.push(...(await getTweetsFromArray(tweetIDs, includeReplies, token)));
         continue;
       } else throw validation.error;
@@ -189,16 +192,21 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
     }
 
     if (includeReplies) {
+      /** @type {Reply[]} */
       let replies = await SearchEndpointTransformation.processReplies(
         conversationTweetsData.data,
         token
       );
-      let replyIds = replies.map((r) => r.id);
+
+      let replyIds = replies.map(({ id }) => id);
       if (replyIds.length > 0) {
-        responseJSON = await getTweetById(replyIds.join(","), token);
-        if (responseJSON.data && !responseJSON.data.errors) {
+        const repliesResponse = await getTweetById(replyIds.join(","), token);
+
+        // console.log(responseJSON);
+
+        if (repliesResponse.data && !repliesResponse.data.errors) {
           finalTweetsData = await SearchEndpointTransformation.updateReplies(
-            responseJSON.data,
+            repliesResponse.data,
             replies,
             finalTweetsData,
             token
@@ -207,14 +215,10 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
       }
     }
 
+    // console.log(finalTweetsData);
+
     tweetThreads.push(finalTweetsData);
   }
-
-  //console.log(userIds);
-  /*for (let usersName of usersNames) {
-    const tts = tweetThreads.filter((thread) => thread.common.user.name === usersName);
-    if (tts.length > 1) for (let i = 1; i < tts.length; i++) delete tts[i].common.user;
-  }*/
 
   // Remove duplicates generating due to puppeteer scraping
   return tweetThreads;

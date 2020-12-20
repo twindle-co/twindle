@@ -1,0 +1,107 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "proful",
+      "name": "Proful Sadangi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/354596?v=4",
+      "profile": "https://github.com/proful",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "tr0mbl3y",
+      "name": "tr0mbl3y",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/72851843?v=4",
+      "profile": "https://github.com/tr0mbl3y",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "PuruVJ",
+      "name": "Puru Vijay",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/47742487?v=4",
+      "profile": "https://puruvj.dev",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "johnjacobkenny",
+      "name": "Kenny John Jacob",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/19240564?v=4",
+      "profile": "https://kennyj.me/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Mira-Alf",
+      "name": "Mira-Alf",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/64691316?v=4",
+      "profile": "https://github.com/Mira-Alf",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Akshay2996",
+      "name": "Akshay Sharma",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/37118877?v=4",
+      "profile": "https://www.developeratease.com/",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "shekhar10feb",
+      "name": "Shekhar Ranjan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/72906055?v=4",
+      "profile": "https://codepen.io/shekhar4nov",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tolgaerdonmez",
+      "name": "Tolga Erdönmez",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/45141388?v=4",
+      "profile": "http://tidible.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "UnevenCoder",
+      "name": "Ameen Shafeeq",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/49345531?v=4",
+      "profile": "https://m.youtube.com/channel/UCKmIFs7rFKdTE6t1y8bKAHQ/videos",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "SarveshKadam",
+      "name": "Sarvesh Kadam",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/66166738?v=4",
+      "profile": "https://www.sarveshkadam.com/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "twindle",
+  "projectOwner": "twindle-co",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -1,10 +1,11 @@
 const { renderTemplate } = require("./render-template");
+const { join } = require("path");
 const Epub = require("epub-gen");
 
 const createOptions = ({ title, author, html, tocPath, css }) => ({
   title,
   author,
-  cover: "./renderer/templates/resources/twindle_logo.jpg",
+  cover: join(__dirname, "..", "main", "resources", "twindle_logo.jpg"),
   content: [{ title: title, data: html }],
   appendChapterTitles: false,
   verbose: false,
