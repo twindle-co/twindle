@@ -1,7 +1,7 @@
 <script>
   export let common;
 
-  const { repoName, created_at, user, branch } = common;
+  const { repoName, created_at, user } = common;
 </script>
 
 <style>
