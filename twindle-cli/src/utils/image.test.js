@@ -1,7 +1,7 @@
 const { encodeImage } = require("./image");
 
 describe("using mock url to test encoding function", () => {
-  test("matches email", async () => {
+  test("correct response", async () => {
     //this is to test that function is responding
     const response = await encodeImage("https://google.com");
     expect(response).toMatch(/^(data:image)/);
