@@ -1,7 +1,7 @@
 const { Readability } = require("@mozilla/readability");
 const image = require("../utils/image");
 const JSDOM = require("jsdom").JSDOM;
-const { UserError } = require("../helpers/error")
+const { UserError } = require("../helpers/error");
 
 async function readURL(testUrl) {
   let urls = testUrl.split(",");

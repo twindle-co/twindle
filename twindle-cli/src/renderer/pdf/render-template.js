@@ -6,6 +6,7 @@ const { tmpdir } = require("os");
 const { join } = require("path");
 const hbs = require("handlebars");
 const GithubApp = require("../main/github/components/App.svelte").default;
+const MozReadabilityApp = require("../main/article/components/App.svelte").default;
 
 /**
  * Renders the html template with the given data and returns the html string
@@ -114,31 +115,27 @@ async function renderHackernewsTemplate(data) {
 }
 
 async function renderArticleTemplate(data) {
-  const threadsHtml = await readFile(
-    `${__dirname}/../main/article/threads-template.hbs`,
-    "utf-8"
-  );
-  const css = await readFile(`${__dirname}/../main/article/style.css`, "utf-8");
-  const articlesHtml = await readFile(
-    `${__dirname}/../main/article/articles-partial.hbs`,
-    "utf-8"
-  );
+  // @ts-ignore
+  let { html, css } = MozReadabilityApp.render(data);
 
-  hbs.registerPartial("style", css);
-  hbs.registerPartial("articles-partial", articlesHtml);
-  // creates the Handlebars template object
-  const template = hbs.compile(threadsHtml, {
-    strict: true,
-  });
+  html = `<!doctype html> 
+          <html> 
+            <head>
+              <meta charset="UTF-8" /
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <style>${css.code}</style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+`;
 
-  // renders the html template with the given data
-  const rendered = template(data);
-
-  const tmpPath = join(tmpdir(), "hello.html");
-  await writeFile(tmpPath, rendered, "utf-8");
-  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
+  const tmpPath = join(tmpdir(), "readability.html");
+  await writeFile(tmpPath, html, "utf-8");
+  await writeFile(tmpdir() + "/readability.json", JSON.stringify(data, null, 2), "utf-8");
   console.devLog("rendered saved to ", tmpPath);
-  return rendered;
+  return html;
 }
 
 module.exports = { renderTemplate };
