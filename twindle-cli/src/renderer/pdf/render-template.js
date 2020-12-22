@@ -1,9 +1,11 @@
 // @ts-check
+require('svelte/register');
 const { writeFile, readFile } = require("fs").promises;
 const { render } = require("../main");
 const { tmpdir } = require("os");
 const { join } = require("path");
 const hbs = require("handlebars");
+const GithubApp = require("../main/github/components/App.svelte").default;
 
 /**
  * Renders the html template with the given data and returns the html string
@@ -34,44 +36,35 @@ async function renderTwitterTemplate(data) {
           </html>
 `;
 
-  const tmpPath = join(tmpdir(), "hello.html");
+  const tmpPath = join(tmpdir(), "twitter.html");
   await writeFile(tmpPath, html, "utf-8");
-  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
+  await writeFile(tmpdir() + "/twitter.json", JSON.stringify(data, null, 2), "utf-8");
   console.devLog("rendered saved to ", tmpPath);
   return html;
 }
 
 async function renderGithubTemplate(data) {
-  const threadsHtml = await readFile(
-    `${__dirname}/../main/github/threads-template.hbs`,
-    "utf-8"
-  );
-  const reposHtml = await readFile(`${__dirname}/../main/github/repos-partial.hbs`, "utf-8");
-  const userInfohtml = await readFile(
-    `${__dirname}/../main/github/user-info-partial.hbs`,
-    "utf-8"
-  );
-  const repoHtml = await readFile(`${__dirname}/../main/github/repo-partial.hbs`, "utf-8");
-  const css = await readFile(`${__dirname}/../main/github/style.css`, "utf-8");
+  // @ts-ignore
+  let { html, css } = GithubApp.render(data);
 
-  hbs.registerPartial("repos-partial", reposHtml);
-  hbs.registerPartial("user-info-partial", userInfohtml);
-  hbs.registerPartial("repo-partial", repoHtml);
-  hbs.registerPartial("style", css);
+  html = `<!doctype html> 
+          <html> 
+            <head>
+              <meta charset="UTF-8" /
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <style>${css.code}</style>
+            </head>
+            <body>
+              ${html}
+            </body>
+          </html>
+`;
 
-  // creates the Handlebars template object
-  const template = hbs.compile(threadsHtml, {
-    strict: true,
-  });
-
-  // renders the html template with the given data
-  const rendered = template(data);
-
-  const tmpPath = join(tmpdir(), "hello.html");
-  await writeFile(tmpPath, rendered, "utf-8");
-  await writeFile(tmpdir() + "/x.json", JSON.stringify(data, null, 2), "utf-8");
+  const tmpPath = join(tmpdir(), "github.html");
+  await writeFile(tmpPath, html, "utf-8");
+  await writeFile(tmpdir() + "/github.json", JSON.stringify(data, null, 2), "utf-8");
   console.devLog("rendered saved to ", tmpPath);
-  return rendered;
+  return html;
 }
 
 async function renderHackernewsTemplate(data) {

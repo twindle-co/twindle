@@ -1,5 +1,6 @@
+// @ts-check
 require("svelte/register");
-const App = require("./components/App.svelte").default;
+const twitterApp = require("./components/App.svelte").default;
 const { readFileSync, existsSync } = require("fs");
 const { join } = require("path");
 
@@ -8,7 +9,7 @@ const { join } = require("path");
  * @returns {{html:string;css:{code:string;map:any};head:string}}
  */
 function render({ threads }) {
-  return App.render({ threads });
+  return twitterApp.render({ threads });
 }
 
 /**
