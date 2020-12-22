@@ -108,7 +108,7 @@ export interface IncludesMedia {
 }
 
 export interface ConversationIncludes {
-  media: IncludesMedia[];
+  media?: IncludesMedia[];
   users: User[];
 }
 
