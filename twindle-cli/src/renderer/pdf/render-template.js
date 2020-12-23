@@ -1,5 +1,5 @@
 // @ts-check
-require('svelte/register');
+require("svelte/register");
 const { writeFile, readFile } = require("fs").promises;
 const { render } = require("../main");
 const { tmpdir } = require("os");
