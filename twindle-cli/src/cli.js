@@ -174,7 +174,7 @@ async function getCommandLineObject() {
 }
 
 const appendFileFormat = (cliObject, format) => {
-  if (format != "pdf" && format != "epub")
+  if (format != "pdf" && format != "epub" && format != "mobi")
     throw new UserError(
       "file-format-not-supported",
       "Currently only pdf and epub formats are supported. Please choose one of the two"
