@@ -16,7 +16,8 @@ const createOptions = ({ title, author, html, tocPath, css }) => ({
 });
 
 /**
- * @param {CustomTweetsObject[]} tweets
+ * @param {CustomTweetsObject[]} srcData
+ * @param {string} src
  * @param {string} outputPath
  */
 async function generateEpub(srcData, src, outputPath) {
