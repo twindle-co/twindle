@@ -17,6 +17,7 @@ const kleur = require("kleur");
 const formatLogColors = {
   epub: kleur.green,
   pdf: kleur.red,
+  mobi: kleur.yellow,
 };
 
 module.exports = { waitFor, isValidEmail, formatLogColors };
