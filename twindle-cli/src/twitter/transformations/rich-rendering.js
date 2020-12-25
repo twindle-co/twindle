@@ -337,4 +337,4 @@ async function renderRichTweets(tweetObj, token, isUserTimeline) {
   return tweetObj;
 }
 
-module.exports = { renderRichTweets, fixUserDescription };
+module.exports = { renderRichTweets, fixUserDescription,renderMentionsHashtags };
