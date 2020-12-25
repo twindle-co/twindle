@@ -74,10 +74,6 @@ async function processReplies(responseJSON, token) {
  * @param {string} token
  */
 async function updateReplies(responseJSON, replies, finalTweetsData, token) {
-  for (let tweet of finalTweetsData.data) {
-    tweet.replies = [];
-  }
-
   for (let reply of replies) {
     let replyResponseData = responseJSON.data.filter((tweet) => tweet.id === reply.id)[0];
 
@@ -134,6 +130,8 @@ async function updateReplies(responseJSON, replies, finalTweetsData, token) {
     let finalTweet = finalTweetsData.data.filter((tweet) => tweet.id === tweetOnThreadId)[0];
 
     if (finalTweet) {
+      if(!finalTweet.replies)
+        finalTweet.replies = [];
       finalTweet.replies.push(replyData);
     }
   }
