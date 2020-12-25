@@ -1,6 +1,6 @@
 require("svelte/register");
-const App = require("./components/TOC/TOC.svelte").default;
-const { createTOC } = require("./components/TOC/toc");
+const App = require("./twitter/components/TOC/TOC.svelte").default;
+const { createTOC } = require("./twitter/components/TOC/toc");
 
 /**
  * @param {CustomTweetsObject} threads
