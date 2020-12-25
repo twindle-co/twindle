@@ -110,7 +110,7 @@ async function getCommentResponses(parent, numTopComments) {
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
     );
 
-    while (kids.length) {
+    while (parent.kids.length) {
       parent.kids.shift();
     }
 

@@ -25,6 +25,34 @@
   .padding-left {
     padding-left: 35px;
   }
+
+  .cmmnt,
+  :global(ul .cmmnt, ul ul .cmmnt) {
+    display: block;
+    position: relative; /*padding-left: 35px; border-top: 1px solid #ddd;*/
+  }
+
+  .cmmnt .cmmnt-content {
+    padding: 0px 3px;
+    padding-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .cmmnt .cmmnt-content header {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .cmmnt .cmmnt-content header .pubdate {
+    color: #777;
+  }
+  .cmmnt .cmmnt-content header .userlink {
+    font-weight: bold;
+  }
+
+  .cmmnt .replies {
+    margin-bottom: 7px;
+  }
 </style>
 
 <div class:page-break={pageBreak} class:border-top={borderTop} class:padding-left={nested}>
