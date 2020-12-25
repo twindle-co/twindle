@@ -5,6 +5,87 @@
   const { image, url, title, created_at, user, numComments, score, id } = common;
 </script>
 
+<style>
+  #common-info {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    max-width: 720px;
+  }
+
+  .article-info {
+    margin: 20px auto 10px;
+    padding: 40px 30px;
+    background: #191c1d;
+    color: #fff;
+  }
+
+  .article-info .avatar {
+    vertical-align: middle;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 10%;
+    float: left;
+  }
+
+  .article-info-content {
+    margin-left: 135px;
+  }
+
+  .clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  .avatar {
+    position: absolute;
+    top: 8px;
+    left: 0;
+  }
+
+  .article-name {
+    margin-top: 0;
+    font-size: 24px;
+    padding-top: 0;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .author-bio-text {
+    font-size: 16px;
+    line-height: 24px;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding-top: 20px;
+  }
+
+  .author-bio-text a,
+  .author-bio-text a:hover {
+    color: #f8b147;
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .author-bio-text a::after {
+    background: #f8b147;
+  }
+
+  .author-bio-text a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background: #fcbc3e;
+    width: 0;
+  }
+</style>
+
 {#if common}
   <div id="common-info">
     <div class="article-info clearfix">

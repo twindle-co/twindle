@@ -3,7 +3,8 @@ require("svelte/register");
 const { writeFile, readFile } = require("fs").promises;
 const { render } = require("../main");
 const { tmpdir } = require("os");
-const { join } = require("path");
+const { join, resolve } = require("path");
+
 const GithubApp = require("../main/github/components/App.svelte").default;
 const MozReadabilityApp = require("../main/article/components/App.svelte").default;
 const HackerNewsApp = require("../main/hackernews/components/App.svelte").default;
@@ -72,12 +73,18 @@ async function renderHackernewsTemplate(data) {
   // @ts-ignore
   let { html, css } = HackerNewsApp.render(data);
 
+  // Augment with global CSS
+  const globalCSS = await readFile(resolve(__dirname + "/../main/hackernews/style.css"), "utf-8");
+
+  css = `${css.code} \n ${globalCSS}`;
+
   html = `<!doctype html> 
           <html> 
             <head>
               <meta charset="UTF-8" /
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <style>${css.code}</style>
+              <style>${css}</style>
+              <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Wellfleet">
             </head>
             <body>
               ${html}
