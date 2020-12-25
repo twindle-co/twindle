@@ -78,8 +78,6 @@ async function renderHackernewsTemplate(data) {
 
   css = `${css.code} \n ${globalCSS}`;
 
-  console.log(css);
-
   html = `<!doctype html> 
           <html> 
             <head>
