@@ -10,7 +10,7 @@
 
   const borderTop = indented && !comment.length;
 
-  const nested = level - 1 > 0;
+  const nested = !indented && level - 1 > 0;
 </script>
 
 <style>

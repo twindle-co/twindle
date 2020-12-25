@@ -14,21 +14,6 @@ function render({ threads }) {
 }
 
 /**
- * @param {"epub" | "pdf"} cssFor
- * @returns {string}
- */
-function getCSS(cssFor) {
-  let specific = ""; // css for specific file format
-  if (cssFor) {
-    const specPath = join(__dirname, "style", cssFor + ".css");
-    if (existsSync(specPath)) specific = readFileSync(specPath);
-  }
-
-  const main = readFileSync(join(__dirname, "style", "main.css"));
-  return main + " " + specific;
-}
-
-/**
  * @param {{html:string;head:string}}
  * @returns {string}
  */
@@ -37,4 +22,4 @@ function wrapWithHtml({ html, head }) {
   return wrap;
 }
 
-module.exports = { render, wrapWithHtml, getCSS };
+module.exports = { render, wrapWithHtml };
