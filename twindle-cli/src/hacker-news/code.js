@@ -87,6 +87,7 @@ async function appendComments(parent, numTopComments, iterationLevel, numComment
 
     for (let result of filter) {
       let comment = await getCommentObject(result, iterationLevel);
+      // @ts-ignore
       comment = await appendComments(comment, numTopComments, iterationLevel + 1, numCommentLevels);
       comment.index = parent.comments.length;
       parent.comments.push(comment);
@@ -114,6 +115,8 @@ async function getCommentResponses(parent, numTopComments) {
     }
 
     const response = await Promise.all(requests);
+
+    /** @type {import('hacker-news-api-types').IItem[]} */
     let filter = await Promise.all(response.map((res) => res.json()));
 
     filter = filter.filter((result) => !result.deleted);
@@ -170,7 +173,7 @@ async function getStoryObject(result) {
 
 /**
  *
- * @param {Story} result
+ * @param {import("hacker-news-api-types").IItem} result
  * @param {number} iterationLevel
  */
 async function getCommentObject(result, iterationLevel) {
@@ -195,8 +198,8 @@ async function getUser(author) {
   const url = `https://hacker-news.firebaseio.com/v0/user/${author}.json?print=pretty`;
 
   /** @type {import('hacker-news-api-types').IUser} */
-
   const result = await fetchItem(url);
+
   return { username: result.id, desc: result.about, karma: result.karma };
 }
 
