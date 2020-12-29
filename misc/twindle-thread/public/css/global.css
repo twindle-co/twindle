@@ -1,0 +1,42 @@
+@import './theme.css';
+
+html {
+  font-size: 100%;
+
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100%;
+
+  display: flex;
+
+  font-family: var(--app-main-font-family);
+
+  background-color: var(--app-color-shell);
+}
+
+* {
+  transition: background-color 150ms var(--app-easing), background 150ms var(--app-easing),
+    box-shadow 150ms var(--app-easing);
+
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+*:focus-visible {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+
+  box-shadow: 0 0 0 1.5px var(--app-color-dark);
+}
+
+::selection {
+  background-color: rgba(var(--app-color-primary-rgb), 0.2);
+}

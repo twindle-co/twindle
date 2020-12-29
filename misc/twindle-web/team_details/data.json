@@ -1,0 +1,106 @@
+ {
+    "users": [
+    {
+      "id": 1,
+      "name": "Akshay Sharma",
+      "img": "https://avatars0.githubusercontent.com/u/37118877?v=4",
+      "links": {
+        "website": "https://www.developeratease.com/",
+        "linkedin": "https://www.linkedin.com/in/akshay-sharma-7962ab13a/",
+        "github": "https://github.com/Akshay2996",
+        "twitter": "https://twitter.com/AkshayS2909"
+      },
+      "title": "FrontEnd Developer",
+      "location": {
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "country": "India"
+      }
+    }, 
+    {
+      "id": 2,
+      "name": "Satyaki Bose",
+      "img": "https://avatars1.githubusercontent.com/u/25426670?s=400&u=7cc72ca148ae88bf19a10b8f36b21806504ffe34&v=4",
+      "links": {
+        "website": "",
+        "linkedin": "https://www.linkedin.com/in/satyaki07/",
+        "github": "https://github.com/satyaki07",
+        "twitter": "https://twitter.com/satyaki_07"
+      },
+      "title": "Developer",
+      "location": {
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "country": "India"
+      }
+    }, 
+    {
+      "id": 3,
+      "name": "Rafael Rodrigues",
+      "img": "https://avatars3.githubusercontent.com/u/46648727?v=4",
+      "links": {
+        "website": "",
+        "linkedin": "https://www.linkedin.com/in/rafaelrodrigues55/",
+        "github": "https://github.com/RafaelBatman55",
+        "twitter": "https://twitter.com/rafa_55"
+      },
+      "title": "FrontEnd Developer",
+      "location": {
+        "city": "Resende",
+        "state": "Rio de Janeiro",
+        "country": "Brazil"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Ameen Shafeeq",
+      "img": "https://avatars0.githubusercontent.com/u/49345531?v=4",
+      "links": {
+        "website": "https://ameencodes.tech/",
+        "linkedin": "",
+        "github": "https://github.com/unevencoder",
+        "twitter": "https://twitter.com/crafter_coder"
+      },
+      "title": "Student",
+      "location": {
+        "city": "Jeddah",
+        "state": "",
+        "country": "Saudi Arabia"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Joel Vinay Kumar",
+      "img": "https://avatars0.githubusercontent.com/u/16177724?s=460&u=e309b78e0ea859ec30fa897b65e7625f150f3615&v=4",
+      "links": {
+        "website": "http://joel.swecha.io/",
+        "linkedin": "",
+        "github": "https://github.com/JoelVinayKumar",
+        "twitter": "https://twitter.com/JoelVinayKumar"
+      },
+      "title": "Software Engineer",
+      "location": {
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "country": "India"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Devarshi Doshi",
+      "img": "https://avatars2.githubusercontent.com/u/63865514?s=460&u=e295ee204b98c925b3a21c441e9ef6673cfe0bac&v=4",
+      "links": {
+        "website": "https://devarshidoshi.github.io/Portfolio/",
+        "linkedin": "https://www.linkedin.com/in/devarshi-doshi-45571a13b/",
+        "github": "https://github.com/devarshidoshi",
+        "twitter": "https://twitter.com/DoshiDevarshi"
+      },
+      "title": "Web Developer",
+      "location": {
+        "city": "Vadodara",
+        "state": "Gujarat",
+        "country": "India"
+      }
+    } 
+  ]
+}
