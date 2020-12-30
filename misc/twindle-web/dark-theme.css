@@ -1,0 +1,118 @@
+:root {
+  --primary-heading-text: #eee;
+  --primary-background-color: #060606;
+  --secondary-background-color: #0c0c0b;
+  --scrollbar-track-color: #121211;
+  --scrollbar-thumb-color: #3b3c38;
+}
+
+html,
+body {
+  background: var(--primary-background-color);
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+}
+
+.line {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+header {
+  background-color: var(--primary-background-color);
+}
+
+.sticky {
+  box-shadow: 0 2px 4px #353632;
+}
+
+.nav-links,
+.logo {
+  color: #fff;
+}
+
+.main-nav li a {
+  color: #fff;
+}
+
+.logo {
+  color: #dbdbdb;
+}
+
+.navbar-toggle {
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-links:hover {
+    color: #fff;
+    background-color: rgba(4, 95, 165, 0.2);
+  }
+}
+
+main .page_heading .sub_heading {
+  color: var(--primary-heading-text);
+}
+
+.email_input {
+  background-color: #292a27;
+}
+
+main .email_subs .email_input:focus,
+main .email_subs .email_input:active,
+main .email_subs .email_input:hover {
+  outline: none;
+  border: 2px solid #0b91f7;
+  box-shadow: 0 1px 3px #13598f;
+}
+
+main .email_subs .sign_up_btn {
+  background: #0984e3;
+  border: white;
+  color: #f9f9f9;
+  box-shadow: 0 0 2px #dbdbdb;
+}
+
+main .email_subs .sign_up_btn:hover {
+  background: #0a74c5;
+}
+
+#text > h1 {
+  font-weight: 800;
+  color: var(--primary-heading-text);
+}
+
+.text_area h1 {
+  color: var(--primary-heading-text);
+}
+
+.text_area p {
+  color: #c8c8c8e6;
+}
+
+#testimonials h1 {
+  color: var(--primary-heading-text);
+}
+
+#tD {
+  background-color: var(--secondary-background-color);
+  box-shadow: 3px 3px 5px 3px #faebdc;
+}
+
+#color {
+  background-color: var(--secondary-background-color);
+}
+
+#tCard #userImg {
+  border: 2px solid blue;
+}
+
+footer {
+  color: #f4f4f4;
+}
