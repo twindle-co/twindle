@@ -124,15 +124,6 @@ async function renderOutsiderLinks(tweetObj, embedded) {
         domain: new URL(urlObj.unwound_url).hostname,
       };
 
-      linkWithImage.images = await Promise.all(
-        linkWithImage.images.filter(async ({ url }) => {
-          // Make request
-          const req = await fetch(url);
-
-          return req.status !== 404;
-        })
-      );
-
       /**
        * @type {{
        *   url: string;
