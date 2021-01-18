@@ -138,7 +138,7 @@ async function renderOutsiderLinks(tweetObj, embedded) {
        *   url: string;
        *   width: number;
        *   height: number;
-       * }[]}
+       *  }[]}
        */
       const newList = [];
 
