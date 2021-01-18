@@ -1,7 +1,7 @@
 <script>
   // @ts-check
   /**
-   * @type {import("../../../twitter/types/types").CustomTweets[]}
+   * @type {import("../../../../types/twitter").CustomTweets[]}
    */
   export let threads;
 
@@ -9,6 +9,27 @@
   import Reply from "./Tweet/Reply.svelte";
   import User from "./User.svelte";
 </script>
+
+<main>
+  <ul>
+    {#each threads as { common, data }}
+      <User {common} />
+      {#each data as tweet}
+        <li>
+          <Tweet data={tweet} />
+        </li>
+        {#if tweet.replies}
+          <h2>Replies</h2>
+          {#each tweet.replies as reply}
+            <li>
+              <Reply {reply} {common} />
+            </li>
+          {/each}
+        {/if}
+      {/each}
+    {/each}
+  </ul>
+</main>
 
 <style>
   :global(*) {
@@ -123,24 +144,3 @@
     border-bottom: solid 1px rgba(0, 0, 0, 0.3);
   }
 </style>
-
-<main>
-  <ul>
-    {#each threads as { common, data }}
-      <User {common} />
-      {#each data as tweet}
-        <li>
-          <Tweet data={tweet} />
-        </li>
-        {#if tweet.replies}
-          <h2>Replies</h2>
-          {#each tweet.replies as reply}
-            <li>
-              <Reply {reply} {common} />
-            </li>
-          {/each}
-        {/if}
-      {/each}
-    {/each}
-  </ul>
-</main>

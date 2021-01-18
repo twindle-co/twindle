@@ -7,16 +7,6 @@
   const { count, user, created_at } = common;
 </script>
 
-<style>
-  .header div h3 {
-    margin: 0px;
-  }
-
-  .header div p {
-    margin: 0px;
-  }
-</style>
-
 {#if common}
   <section>
     <div class="tweetContainer" style="page-break-before: always;">
@@ -43,12 +33,13 @@
           {/if}
           <p>
             <span> &#8986; {created_at},</span>
-            <span> &#35; {count}
-            {#if count > 1}
-              &nbsp;tweets
-            {:else}
-              &nbsp;tweet
-            {/if}
+            <span>
+              &#35; {count}
+              {#if count > 1}
+                &nbsp;tweets
+              {:else}
+                &nbsp;tweet
+              {/if}
             </span>
           </p>
         </div>
@@ -56,3 +47,13 @@
     </div>
   </section>
 {/if}
+
+<style>
+  .header div h3 {
+    margin: 0px;
+  }
+
+  .header div p {
+    margin: 0px;
+  }
+</style>

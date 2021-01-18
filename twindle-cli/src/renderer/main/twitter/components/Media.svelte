@@ -2,10 +2,27 @@
   // @ts-check
 
   /**
-   * @type {import("../../../twitter/types/types").CustomMedia}
+   * @type {import("../../../../types/twitter").CustomMedia}
    */
   export let customMedia;
 </script>
+
+{#if customMedia}
+  <section>
+    {#each Object.entries(customMedia) as [type, media]}
+      {#each media as data, i}
+        <a class="media-link" href={data.link}>
+          <picture>
+            <img class="tweet-img" src={data.preview_img_url} alt={"media #" + i} />
+            {#if ["video", "animated_gif"].includes(type)}
+              <div class="play-button" />
+            {/if}
+          </picture>
+        </a>
+      {/each}
+    {/each}
+  </section>
+{/if}
 
 <style>
   .media-link {
@@ -36,20 +53,3 @@
     position: absolute;
   }
 </style>
-
-{#if customMedia}
-  <section>
-    {#each Object.entries(customMedia) as [type, media]}
-      {#each media as data, i}
-        <a class="media-link" href={data.link}>
-          <picture>
-            <img class="tweet-img" src={data.preview_img_url} alt={'media #' + i} />
-            {#if ['video', 'animated_gif'].includes(type)}
-              <div class="play-button" />
-            {/if}
-          </picture>
-        </a>
-      {/each}
-    {/each}
-  </section>
-{/if}
