@@ -7,7 +7,33 @@
   export let linkWithImage;
 </script>
 
+{#if linkWithImage}
+  <section class="container">
+    <div>
+      <a href={linkWithImage.expanded_url}>
+        <div class="box">
+          <div class="img-container">
+            <img src={linkWithImage.images[0].url} alt="of the link" />
+          </div>
+          <div class="content">
+            <div class="content-heading">{linkWithImage.title}</div>
+            <div class="content-description">{linkWithImage.description}</div>
+            <div class="content-domain">
+              <LinkSvg />
+              {linkWithImage.domain}
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+{/if}
+
 <style>
+  .container {
+    page-break-inside: avoid;
+  }
+
   a {
     width: 100%;
   }
@@ -92,25 +118,3 @@
     margin-right: 0.5rem;
   }
 </style>
-
-{#if linkWithImage}
-  <section>
-    <div>
-      <a href={linkWithImage.expanded_url}>
-        <div class="box">
-          <div class="img-container">
-            <img src={linkWithImage.images[0].url} alt="of the link" />
-          </div>
-          <div class="content">
-            <div class="content-heading">{linkWithImage.title}</div>
-            <div class="content-description">{linkWithImage.description}</div>
-            <div class="content-domain">
-              <LinkSvg />
-              {linkWithImage.domain}
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-{/if}

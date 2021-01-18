@@ -126,15 +126,15 @@ export interface ConversationResponse {
   errors?: any;
 }
 
-export interface CustomMedia {
-  [media: "photo" | "video" | "animated_gif"]: {
+export type CustomMedia = {
+  [media in "photo" | "video" | "animated_gif"]: {
     height: number;
     width: number;
     preview_img_url: string;
     /** Format: pic.twitter.com/*. No HTTPS in the link */
     link: string;
   }[];
-}
+};
 
 export interface LinkWithImage {
   expanded_url: string;
@@ -150,9 +150,10 @@ export interface LinkWithImage {
 
 export interface Answer extends Pick<CustomTweetData, "id" | "tweet"> {}
 
-export interface Reply extends Pick<Partial<CustomTweetData>, "id" | "tweet" | "includes"> {
+export interface Reply extends Pick<CustomTweetData, "id" | "tweet"> {
   answer: Answer;
   user?: User;
+  includes?: ConversationIncludes;
 }
 
 export interface CustomTweetData {
