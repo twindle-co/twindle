@@ -150,9 +150,10 @@ export interface LinkWithImage {
 
 export interface Answer extends Pick<CustomTweetData, "id" | "tweet"> {}
 
-export interface Reply extends Pick<Partial<CustomTweetData>, "id" | "tweet" | "includes"> {
+export interface Reply extends Pick<CustomTweetData, "id" | "tweet"> {
   answer: Answer;
   user?: User;
+  includes?: ConversationIncludes;
 }
 
 export interface CustomTweetData {

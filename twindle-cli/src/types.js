@@ -1,11 +1,11 @@
 /**
- * @typedef {import("./types/types").ConversationResponse} TwitterConversationResponse
- * @typedef {import("./types/types").ConversationResponseData} TwitterConversationData
- * @typedef {{threads: import("./types/types").CustomTweets[]}} CustomTweetsObject
- * @typedef {import("./types/types").CustomTweetData} CustomTweetData
- * @typedef {import("./types/types").CustomMedia} CustomMedia
- * @typedef {import("./types/types").LinkWithImage} LinkWithImage
- * @typedef {import("./types/types").ConversationResponseData} EmbeddedTweetData
- * @typedef {import("./types/types").Reply} Reply
- * @typedef {import("./types/types").CommonData} CommonData
+ * @typedef {import("./types/twitter").ConversationResponse} TwitterConversationResponse
+ * @typedef {import("./types/twitter").ConversationResponseData} TwitterConversationData
+ * @typedef {{threads: import("./types/twitter").CustomTweets[]}} CustomTweetsObject
+ * @typedef {import("./types/twitter").CustomTweetData} CustomTweetData
+ * @typedef {import("./types/twitter").CustomMedia} CustomMedia
+ * @typedef {import("./types/twitter").LinkWithImage} LinkWithImage
+ * @typedef {import("./types/twitter").ConversationResponseData} EmbeddedTweetData
+ * @typedef {import("./types/twitter").Reply} Reply
+ * @typedef {import("./types/twitter").CommonData} CommonData
  */

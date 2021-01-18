@@ -6,8 +6,8 @@ const { formatTimestamp } = require("../utils/date");
 const { getTweetObject } = require("./helpers");
 
 /**
- * @typedef {import("../../types/types").Mention} TMention
- * @typedef {import("../../types/types").Hashtag} THashtag
+ * @typedef {import("../../types/twitter").Mention} TMention
+ * @typedef {import("../../types/twitter").Hashtag} THashtag
  */
 
 /**
@@ -15,7 +15,7 @@ const { getTweetObject } = require("./helpers");
  * @param {TwitterConversationData} tweetObj
  */
 function renderMedia(tweetObj) {
-  /** @type {import("../../types/types").CustomMedia} */
+  /** @type {import("../../types/twitter").CustomMedia} */
   const mediaObj = {
     photo: [],
     video: [],
@@ -93,7 +93,7 @@ function renderOutsiderLinks(tweetObj, embedded) {
 
   /**
    * The final link whose image should be rendered
-   * @type {Partial<import("../../types/types").LinkWithImage>}
+   * @type {Partial<import("../../types/twitter").LinkWithImage>}
    */
   let linkWithImage = {};
 
@@ -187,7 +187,7 @@ function renderMentionsHashtags({ text = "", mentions = [], hashtags = [] }) {
 }
 
 /**
- * @param {import("../../types/types").User} user
+ * @param {import("../../types/twitter").User} user
  * Fix user description from multiple tweets combined obj. DO NOT COMPOSE IN THE RENDERRICHTWEETS FUNCTION
  */
 function fixUserDescription(user) {
@@ -337,4 +337,4 @@ async function renderRichTweets(tweetObj, token, isUserTimeline) {
   return tweetObj;
 }
 
-module.exports = { renderRichTweets, fixUserDescription,renderMentionsHashtags };
+module.exports = { renderRichTweets, fixUserDescription, renderMentionsHashtags };
