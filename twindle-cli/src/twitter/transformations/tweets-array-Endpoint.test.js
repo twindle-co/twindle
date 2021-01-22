@@ -116,7 +116,7 @@ describe("testing functionality of processTweetsArray() function", () => {
     const result = await processTweetsArray(response);
     expect(result).toMatchObject({
       data: [{ id: "123", tweet: "lorem ipsum" }],
-      common: { created_at: "Oct 24, 2018", user: {}, count: 1 },
+      common: { created_at: "Oct 23, 2018", user: {}, count: 1 },
     });
   });
 });
