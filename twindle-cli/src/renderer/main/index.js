@@ -1,6 +1,6 @@
 // @ts-check
 require("svelte/register");
-const twitterApp = require("./components/App.svelte").default;
+const twitterApp = require("./twitter/components/App.svelte").default;
 const { readFileSync, existsSync } = require("fs");
 const { join } = require("path");
 
@@ -9,22 +9,8 @@ const { join } = require("path");
  * @returns {{html:string;css:{code:string;map:any};head:string}}
  */
 function render({ threads }) {
+  // @ts-ignore
   return twitterApp.render({ threads });
-}
-
-/**
- * @param {"epub" | "pdf"} cssFor
- * @returns {string}
- */
-function getCSS(cssFor = "") {
-  let specific = ""; // css for specific file format
-  if (cssFor) {
-    const specPath = join(__dirname, "style", cssFor + ".css");
-    if (existsSync(specPath)) specific = readFileSync(specPath);
-  }
-
-  const main = readFileSync(join(__dirname, "style", "main.css"));
-  return main + " " + specific;
 }
 
 /**
@@ -36,4 +22,4 @@ function wrapWithHtml({ html, head }) {
   return wrap;
 }
 
-module.exports = { render, wrapWithHtml, getCSS };
+module.exports = { render, wrapWithHtml };

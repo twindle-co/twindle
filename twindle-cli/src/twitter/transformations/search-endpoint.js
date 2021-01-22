@@ -9,7 +9,7 @@ const { renderRichTweets, fixUserDescription } = require("./rich-rendering");
  * @param {string} token
  */
 async function processSearchResponse(responseJSON, token) {
-  /** @type {import("../types/types").CustomTweetData[]} */
+  /** @type {import("../../types/twitter").CustomTweetData[]} */
   const tweets = [];
 
   let directReplies = getTweetArray(responseJSON).filter(
@@ -52,7 +52,7 @@ async function processReplies(responseJSON, token) {
   let replies = [];
 
   for (let indirectReply of indirectReplies) {
-    /** @type {import("../types/types").Answer} */
+    /** @type {import("../../types/twitter").Answer} */
     let replyAnswer = createCustomTweet(await renderRichTweets(indirectReply, token, false));
 
     /** @type {Reply} */
@@ -70,14 +70,10 @@ async function processReplies(responseJSON, token) {
  *
  * @param {TwitterConversationResponse} responseJSON
  * @param {Reply[]} replies
- * @param {import("../types/types").CustomTweets} finalTweetsData
+ * @param {import("../../types/twitter").CustomTweets} finalTweetsData
  * @param {string} token
  */
 async function updateReplies(responseJSON, replies, finalTweetsData, token) {
-  for (let tweet of finalTweetsData.data) {
-    tweet.replies = [];
-  }
-
   for (let reply of replies) {
     let replyResponseData = responseJSON.data.filter((tweet) => tweet.id === reply.id)[0];
 
@@ -134,6 +130,7 @@ async function updateReplies(responseJSON, replies, finalTweetsData, token) {
     let finalTweet = finalTweetsData.data.filter((tweet) => tweet.id === tweetOnThreadId)[0];
 
     if (finalTweet) {
+      if (!finalTweet.replies) finalTweet.replies = [];
       finalTweet.replies.push(replyData);
     }
   }

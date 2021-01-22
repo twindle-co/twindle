@@ -29,10 +29,10 @@ const getTweetObject = (responseJSON) => ({
 
 /**
  * @param {TwitterConversationData} tweet_object
- * @returns {import("../types/types").CustomTweetData}
+ * @returns {import("../../types/twitter").CustomTweetData}
  */
 const createCustomTweet = (tweet_object) => {
-  /** @type {import("../types/types").CustomTweetData} */
+  /** @type {import("../../types/twitter").CustomTweetData} */
   const tweet = {
     id: tweet_object.id,
     tweet: twemoji.parse(fixLineBreaks(tweet_object.text), {

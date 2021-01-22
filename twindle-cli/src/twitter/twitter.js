@@ -109,7 +109,7 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
     includes: responseJSON.includes,
   }));
 
-  /** @type {import("./types/types").CustomTweets[]} */
+  /** @type {import("../types/twitter").CustomTweets[]} */
   const tweetThreads = [];
 
   /** @type {string[]} */
@@ -118,7 +118,7 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
   for (let loopTweet of tweets) {
     increment();
 
-    /** @type {import("./types/types").CustomTweets} */
+    /** @type {import("../types/twitter").CustomTweets} */
     let finalTweetsData = {
       common: {
         id: "",

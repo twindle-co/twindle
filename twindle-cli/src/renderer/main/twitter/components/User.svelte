@@ -7,9 +7,6 @@
   const { count, user, created_at } = common;
 </script>
 
-<style>
-</style>
-
 {#if common}
   <section>
     <div class="tweetContainer" style="page-break-before: always;">
@@ -26,16 +23,37 @@
                 <a href="https://twitter.com/{user.username}/">{user.username}</a>
               </span>
             </h3>
-            <p>
-              <span>
-                {@html user.description}
-              </span>
-            </p>
+            {#if user.description}
+              <p>
+                <span>
+                  {@html user.description}
+                </span>
+              </p>
+            {/if}
           {/if}
-          <p><span> Number of tweets: {count} </span></p>
-          <p><span> Thread created: {created_at} </span></p>
+          <p>
+            <span> &#8986; {created_at},</span>
+            <span>
+              &#35; {count}
+              {#if count > 1}
+                &nbsp;tweets
+              {:else}
+                &nbsp;tweet
+              {/if}
+            </span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 {/if}
+
+<style>
+  .header div h3 {
+    margin: 0px;
+  }
+
+  .header div p {
+    margin: 0px;
+  }
+</style>
