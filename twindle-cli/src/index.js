@@ -18,18 +18,23 @@ async function main() {
   try {
     prepareCli();
     spinner.start();
+
     let cliObject = await getCommandLineObject();
     //console.log(cliObject);
     const data = await getDataFromSource(cliObject);
     //console.log(JSON.stringify(data));
+
     let outputFilename =
       cliObject.fileName && cliObject.fileName.outputFilename
         ? cliObject.fileName.outputFilename
         : "";
+
     if (!outputFilename) outputFilename = calculateFileName(cliObject, data);
+
     await writeToMockFile(cliObject, outputFilename, data);
 
     const outputFilePath = getOutputFilePath(outputFilename, cliObject.format);
+
     await Renderer.render(data, cliObject.dataSource, cliObject.format, outputFilePath);
 
     if (cliObject.kindleEmail) {
@@ -133,10 +138,8 @@ function calculateGenericFileName(cliObject, component1, component2) {
 
 function calculateFileNameForTwitter(cliObject, data) {
   let username = (
-    data[0] &&
-    data[0].common &&
-    data[0].common.user &&
-    data[0].common.user.username
+    (data[0] && data[0].common && data[0].common.user && data[0].common.user.username) ||
+    ""
   ).replace("@", "");
 
   let date =

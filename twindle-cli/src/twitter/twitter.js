@@ -145,10 +145,13 @@ const getTweetsFromThreads = async (ids, includeReplies, token) => {
         // const id = getConversationId({ data: [loopTweet] });
         loopTweet = (await getTweetById(loopTweet.conversation_id, token)).data[0];
       } else if (validation.error instanceof ValidationErrors.TweetOlderThan7DaysError) {
-        const tweetIDs = await Scraping.getTweetIDs(loopTweet.id);
-        // @ts-ignore
-        tweetThreads.push(...(await getTweetsFromArray(tweetIDs, includeReplies, token)));
-        continue;
+        if (process.env.SCRAPE_TWEETS === "true") {
+          const tweetIDs = await Scraping.getTweetIDs(loopTweet.id);
+          // @ts-ignore
+          tweetThreads.push(...(await getTweetsFromArray(tweetIDs, includeReplies, token)));
+          continue;
+        }
+        throw validation.error;
       } else throw validation.error;
     }
 
