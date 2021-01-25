@@ -1,5 +1,5 @@
 // @ts-check
-
+const fetch = require("node-fetch").default;
 const twemoji = require("twemoji");
 const { getTweetById } = require("../api/twitter-endpoints/tweets");
 const { formatTimestamp } = require("../utils/date");
@@ -82,7 +82,7 @@ function renderMedia(tweetObj) {
  * @param {TwitterConversationData} tweetObj
  * @param {boolean} embedded
  */
-function renderOutsiderLinks(tweetObj, embedded) {
+async function renderOutsiderLinks(tweetObj, embedded) {
   /** @type {any[]} */
 
   if (!tweetObj.entities) return tweetObj;
@@ -115,12 +115,6 @@ function renderOutsiderLinks(tweetObj, embedded) {
     const isStatusLink = urlObj.expanded_url.includes("/status/");
 
     if (isACard && !linkWithImageChosen && !hasCustomMedia && !embedded) {
-      // Check if it is at the end or not
-      if (tweetText.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url) {
-        // Remove from the markup
-        tweetObj.text = tweetText.replace(urlObj.url, "");
-      }
-
       // console.log(urlObj)
       linkWithImage = {
         expanded_url: urlObj.expanded_url,
@@ -129,6 +123,38 @@ function renderOutsiderLinks(tweetObj, embedded) {
         description: urlObj.description,
         domain: new URL(urlObj.unwound_url).hostname,
       };
+
+      /**
+       * @type {{
+       *   url: string;
+       *   width: number;
+       *   height: number;
+       *  }[]}
+       */
+      const newList = [];
+
+      for (let img of linkWithImage.images) {
+        const req = await fetch(img.url);
+
+        if (req.status !== 404) {
+          newList.push(img);
+        }
+      }
+
+      linkWithImage.images = newList;
+
+      if (!linkWithImage.images.length) {
+        // Nothing here
+        linkWithImage = {};
+        continue;
+      }
+
+      // Check if it is at the end or not
+      if (tweetObj.text.trim().substring(urlObj.start, urlObj.end + 1) === urlObj.url.trim()) {
+        // console.log(1);
+        // Remove from the markup
+        tweetObj.text = tweetText.replace(urlObj.url, "");
+      }
 
       linkWithImageChosen = true;
     }
@@ -227,11 +253,11 @@ function fixUserDescription(user) {
  * @param {TwitterConversationData} tweetObj
  * @param {boolean} embedded
  */
-function _renderRichTweets(tweetObj, embedded = false) {
+async function _renderRichTweets(tweetObj, embedded = false) {
   // NOTE Keep the order of the functions intact. Any wrong order can break the whole process
 
   tweetObj = renderMedia(tweetObj);
-  tweetObj = renderOutsiderLinks(tweetObj, embedded);
+  tweetObj = await renderOutsiderLinks(tweetObj, embedded);
 
   if (tweetObj.entities) {
     tweetObj.text = renderMentionsHashtags({
@@ -284,7 +310,7 @@ async function _renderEmbeddedTweets(tweetObj, token) {
   // Now render stuff
   const tweet = getTweetObject(data);
 
-  const richEmbeddedTweet = _renderRichTweets(tweet, true);
+  const richEmbeddedTweet = await _renderRichTweets(tweet, true);
 
   richEmbeddedTweet.text = twemoji.parse(richEmbeddedTweet.text, {
     folder: "svg",
@@ -328,7 +354,7 @@ async function _renderEmbeddedTweets(tweetObj, token) {
  * @param {string} token
  */
 async function renderRichTweets(tweetObj, token, isUserTimeline) {
-  tweetObj = _renderRichTweets(tweetObj);
+  tweetObj = await _renderRichTweets(tweetObj);
   tweetObj = await _renderEmbeddedTweets(tweetObj, token);
   tweetObj = sanitizeForHandlebars(tweetObj);
 

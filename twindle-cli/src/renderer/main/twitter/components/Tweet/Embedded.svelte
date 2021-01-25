@@ -10,6 +10,31 @@
   import VerifiedBadge from "../VerifiedBadge.svelte";
 </script>
 
+{#if embeddedTweet}
+  <section>
+    <a href="https://twitter.com/{embeddedTweetUser.username}/status/{id}">
+      <section class="container">
+        <div class="header">
+          <img src={embeddedTweetUser.profile_image_url} alt="profile" />
+          <span class="name">
+            <b> {embeddedTweetUser.name} </b>
+            {#if embeddedTweetUser.verified}
+              <VerifiedBadge />
+            {/if}
+          </span>
+          <span class="userhandle"> {embeddedTweetUser.username} </span>
+          <span class="flex" />
+          <span class="timestamp"> {created_at} </span>
+        </div>
+        <div class="body">
+          {@html text}
+        </div>
+        <Media {customMedia} />
+      </section>
+    </a>
+  </section>
+{/if}
+
 <style>
   a {
     color: rgba(0, 0, 0, 0.9) !important;
@@ -59,28 +84,3 @@
     flex: 1 1 auto;
   }
 </style>
-
-{#if embeddedTweet}
-  <section>
-    <a href="https://twitter.com/{embeddedTweetUser.username}/status/{id}">
-      <section class="container">
-        <div class="header">
-          <img src={embeddedTweetUser.profile_image_url} alt="profile" />
-          <span class="name">
-            <b> {embeddedTweetUser.name} </b>
-            {#if embeddedTweetUser.verified}
-              <VerifiedBadge />
-            {/if}
-          </span>
-          <span class="userhandle"> {embeddedTweetUser.username} </span>
-          <span class="flex" />
-          <span class="timestamp"> {created_at} </span>
-        </div>
-        <div class="body">
-          {@html text}
-        </div>
-        <Media {customMedia} />
-      </section>
-    </a>
-  </section>
-{/if}

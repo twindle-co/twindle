@@ -1,15 +1,38 @@
 <script>
   // @ts-check
-  /** @type {import("../../../../twitter/types/types").Reply}*/
+  /** @type {import("../../../../../types/twitter").Reply}*/
   export let reply;
 
-  /** @type {import("../../../../twitter/types/types").CommonData} */
+  /** @type {import("../../../../../types/twitter").CommonData} */
   export let common;
 
   import Tweet from "./Tweet.svelte";
 
   const { tweet, id, user } = reply;
 </script>
+
+<section>
+  <div class="question">
+    <div class="question-header">
+      <img
+        class="question-user-profile-pic"
+        src={user.profile_image_url}
+        alt="{user.name}'s profile Pic"
+      />
+    </div>
+    <Tweet data={reply} />
+  </div>
+  <div class="answer">
+    <div class="answer-header">
+      <img
+        class="question-user-profile-pic"
+        src={common.user.profile_image_url}
+        alt="{common.user.name}'s profile Pic"
+      />
+    </div>
+    <Tweet data={reply.answer} />
+  </div>
+</section>
 
 <style>
   section {
@@ -38,24 +61,3 @@
     margin: 0.5rem;
   }
 </style>
-
-<section>
-  <div class="question">
-    <div class="question-header">
-      <img
-        class="question-user-profile-pic"
-        src={user.profile_image_url}
-        alt="{user.name}'s profile Pic" />
-    </div>
-    <Tweet data={reply} />
-  </div>
-  <div class="answer">
-    <div class="answer-header">
-      <img
-        class="question-user-profile-pic"
-        src={common.user.profile_image_url}
-        alt="{common.user.name}'s profile Pic" />
-    </div>
-    <Tweet data={reply.answer} />
-  </div>
-</section>
