@@ -17,6 +17,9 @@ declare namespace NodeJS {
 
     /** Whether to show descriptive error messages or short, prettified ones */
     DEV?: "true" | "false";
+
+    /** Scrape tweets or not */
+    SCRAPE_TWEETS?: "true" | "false";
   }
 }
 interface Console {
