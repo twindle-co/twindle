@@ -31,6 +31,7 @@
     "node-fetch": "^2.6.1",
     "nodemailer": "^6.4.17",
     "ora": "^5.3.0",
+    "prompt": "^1.1.0",
     "puppeteer": "^5.5.0",
     "showdown": "^1.9.1",
     "svelte": "^3.31.2",

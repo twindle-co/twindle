@@ -13,6 +13,8 @@ const { writeFile, mkdir } = require("fs").promises;
 const { getHtml } = require("./github/githubparse/app");
 const { getStories } = require("./hacker-news/code");
 const { readURL } = require("./readability");
+const { getBearerToken } = require("./utils/env");
+const token = getBearerToken();
 
 async function main() {
   try {
@@ -87,7 +89,7 @@ async function getTweets(cliObject) {
   let tweets;
 
   if (cliObject.userId) {
-    tweets = await getTweetsFromUser(cliObject.userId, process.env.TWITTER_AUTH_TOKEN);
+    tweets = await getTweetsFromUser(cliObject.userId, token);
 
     if (tweets[0].data.length > cliObject.numTweets) {
       tweets[0].data = tweets[0].data.slice(0, cliObject.numTweets);
@@ -100,7 +102,7 @@ async function getTweets(cliObject) {
   tweets = await getTweetsFromThreads(
     cliObject.tweetId,
     cliObject.includeReplies,
-    process.env.TWITTER_AUTH_TOKEN
+    token
   );
   return tweets;
 }
