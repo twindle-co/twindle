@@ -4,7 +4,9 @@ const { UserError } = require("./helpers/error");
 const { createLibraryIfNotExists } = require("./utils/library");
 const sendEmail = require("./utils/send-email");
 const { isValidEmail } = require("./utils/helpers");
+const { getEmailConfig, getBearerToken } = require("./utils/env");
 const { readFile } = require("fs").promises;
+const emailConfig = getEmailConfig();
 
 const getCommandlineArgs = (processArgv) =>
   yargs(processArgv)
@@ -55,7 +57,7 @@ const getCommandlineArgs = (processArgv) =>
         describe:
           "Send document to your kindle email. Optionally pass kindle email here if not configured in .env file",
         type: "string",
-        default: process.env.KINDLE_EMAIL,
+        default: emailConfig.kindleEmail,
       },
       m: {
         alias: "mock",
@@ -194,7 +196,7 @@ const appendOutputFileName = (cliObject, outputFilename, appendToFilename) => {
 
 const appendKindleEmail = (cliObject, kindleEmail) => {
   if (process.argv.includes("-s")) {
-    if (!process.env.HOST || !process.env.EMAIL || !process.env.PASS)
+    if (!emailConfig.host || !emailConfig.senderEmail || !emailConfig.password)
       throw new UserError(
         "mail-server-config-error",
         "Please setup the credentials for the mail server to send the email to Kindle"
@@ -224,7 +226,7 @@ const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTwee
       "Please choose either tweet ids or user ids"
     );
   if (process.argv.includes("-i") || process.argv.includes("-u")) {
-    if (!process.env.TWITTER_AUTH_TOKEN)
+    if (!getBearerToken())
       throw new UserError(
         "bearer-token-not-provided",
         "Please ensure that you have a .env file containing a value for TWITTER_AUTH_TOKEN"

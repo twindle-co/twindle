@@ -1,10 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 const { green, cyan } = require("kleur");
+const { getTwindleLibraryPath } = require("./env");
+const libraryPath = getTwindleLibraryPath();
 
 const getLibraryPath = (...extraPaths) => {
-  const libPath = process.env.TWINDLE_LIBRARY_PATH
-    ? process.env.TWINDLE_LIBRARY_PATH
+  const libPath = libraryPath
+    ? libraryPath
     : path.join(process.cwd(), "TwindleLibrary");
 
   // if extra paths given, combine them with the library path
