@@ -46,12 +46,12 @@ async function main() {
     }
 
     const [fileName] = outputFilePath.split("/").reverse();
-    openFile(outputFilePath);
+    
     spinner.succeed(
       "Your " + cyan("data") + " saved into " + formatLogColors[cliObject.format](fileName)
     );
 
-    //openFile(outputFilePath);
+    openFile(outputFilePath);
 
     //console.log("Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
   } catch (e) {
