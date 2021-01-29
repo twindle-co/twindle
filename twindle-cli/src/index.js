@@ -86,7 +86,7 @@ async function getDataFromSource(cliObject) {
  * @param {boolean} param.mock
  * @param {boolean} param.shouldUsePuppeteer
  * @param {string} param.userId
- * @param {number} param.numTweets
+ * @param {number} param.numTweetOrComments
  */
 async function getTweets(cliObject) {
   /** @type {CustomTweetsObject[]} */
@@ -95,8 +95,8 @@ async function getTweets(cliObject) {
   if (cliObject.userId) {
     tweets = await getTweetsFromUser(cliObject.userId, token);
 
-    if (tweets[0].data.length > cliObject.numTweets) {
-      tweets[0].data = tweets[0].data.slice(0, cliObject.numTweets);
+    if (tweets[0].data.length > cliObject.numTweetOrComments) {
+      tweets[0].data = tweets[0].data.slice(0, cliObject.numTweetOrComments);
       tweets[0].common.count = tweets[0].data.length;
     }
 
