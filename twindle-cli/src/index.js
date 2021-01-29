@@ -15,6 +15,7 @@ const { getStories } = require("./hacker-news/code");
 const { readURL } = require("./readability");
 const { getBearerToken } = require("./utils/env");
 const token = getBearerToken();
+const { openFile } = require("./fileOpener.js");
 
 async function main() {
   try {
@@ -45,10 +46,13 @@ async function main() {
     }
 
     const [fileName] = outputFilePath.split("/").reverse();
-
+    
     spinner.succeed(
       "Your " + cyan("data") + " saved into " + formatLogColors[cliObject.format](fileName)
     );
+
+    openFile(outputFilePath);
+
     //console.log("Your " + cyan("tweets") + " are saved into " + formatLogColors[format](fileName));
   } catch (e) {
     if (process.env.DEV === "true") {
@@ -99,11 +103,7 @@ async function getTweets(cliObject) {
     return tweets;
   }
 
-  tweets = await getTweetsFromThreads(
-    cliObject.tweetId,
-    cliObject.includeReplies,
-    token
-  );
+  tweets = await getTweetsFromThreads(cliObject.tweetId, cliObject.includeReplies, token);
   return tweets;
 }
 
