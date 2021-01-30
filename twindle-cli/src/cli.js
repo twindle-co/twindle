@@ -93,9 +93,9 @@ const getCommandlineArgs = (processArgv) =>
         type: "string",
       },
       n: {
-        alias: "numTweets",
+        alias: "numTweetOrComments",
         demandOption: false,
-        describe: "Used together with u option to specify the number of tweets to be read",
+        describe: "Used together with u/h option to specify the number of tweets/comments to be read",
         type: "integer",
         default: 10,
       },
@@ -111,14 +111,7 @@ const getCommandlineArgs = (processArgv) =>
         describe: "Hackernews story ids",
         type: "string",
       },
-      t: {
-        alias: "numTopComments",
-        demandOption: false,
-        describe:
-          "Used together with h option to specify the number of levels of comments to be picked up",
-        type: "integer",
-        default: 5,
-      },
+
       d: {
         alias: "numCommentLevels",
         demandOption: false,
@@ -153,11 +146,11 @@ async function getCommandLineObject() {
     shouldUsePuppeteer,
     appendToFilename,
     userId,
-    numTweets,
+    numTweetOrComments,
     generateMock,
     gitHubURL,
     storyId,
-    numTopComments,
+    //numTopComments,
     numCommentLevels,
     articleUrl,
   } = getCommandlineArgs(process.argv);
@@ -165,9 +158,9 @@ async function getCommandLineObject() {
   appendFileFormat(cliObject, format);
   appendOutputFileName(cliObject, outputFilename, appendToFilename);
   appendKindleEmail(cliObject, kindleEmail);
-  appendTwitterSource(cliObject, tweetId, includeReplies, userId, numTweets);
+  appendTwitterSource(cliObject, tweetId, includeReplies, userId, numTweetOrComments);
   await appendGithubSource(cliObject, gitHubURL);
-  appendHackernewsSource(cliObject, storyId, numTopComments, numCommentLevels);
+  appendHackernewsSource(cliObject, storyId, numTweetOrComments, numCommentLevels);
   appendArticleSource(cliObject, articleUrl);
   appendMock(cliObject, mock, mockSource);
   validateCliObject(cliObject);
@@ -219,7 +212,7 @@ const appendKindleEmail = (cliObject, kindleEmail) => {
   return cliObject;
 };
 
-const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTweets) => {
+const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTweetOrComments) => {
   if (process.argv.includes("-i") && process.argv.includes("-u"))
     throw new UserError(
       "invalid-combination-of-twitter-params",
@@ -249,7 +242,7 @@ const appendTwitterSource = (cliObject, tweetId, includeReplies, userId, numTwee
           "Cannot include -r for the user id option"
         );
       cliObject.twitter.userId = userId;
-      cliObject.twitter.numTweets = numTweets;
+      cliObject.twitter.numTweetOrComments = numTweetOrComments;
     }
   }
   return cliObject;
