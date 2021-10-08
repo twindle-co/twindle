@@ -17,6 +17,13 @@ It only supports epub & pdf for now.
 
 [![tutorial](https://img.youtube.com/vi/KWqNm7FBFcI/0.jpg)](https://www.youtube.com/watch?v=KWqNm7FBFcI).
 
+## Example
+Tested on 8th Oct 2021 (Mac)
+```
+node src/index.js -e https://fasterthanli.me/articles/frustrated-its-not-you-its-rust -s
+```
+
+
 ## Info for developers
 
 ### Testing
