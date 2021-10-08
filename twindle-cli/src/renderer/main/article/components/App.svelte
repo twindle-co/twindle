@@ -19,7 +19,7 @@
     --blue-40-a30: rgba(69, 161, 255, 0.3);
     --blue-60: #0060df;
     --active-color: #0b83ff;
-    --font-size: 6px;
+    --font-size: 16px;
     --content-width: 100em;
     --line-height: 1.6em;
     --tooltip-background: var(--grey-90-a80);
@@ -233,8 +233,8 @@
     display: initial;
   }
 </style>
-
-<main style="--font-size:16px;">
+<!-- IMPORTANT this is the place font size controlled -->
+<main style="--font-size:22px;">
   {#each threads as thread}
     <div class="container" style="--line-height:1.6em;" dir="ltr">
       <Header {thread} />
