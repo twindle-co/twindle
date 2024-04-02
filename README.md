@@ -70,7 +70,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://codepen.io/shekhar4nov"><img src="https://avatars0.githubusercontent.com/u/72906055?v=4" width="100px;" alt=""/><br /><sub><b>Shekhar Ranjan</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=shekhar10feb" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="http://tidible.app"><img src="https://avatars0.githubusercontent.com/u/45141388?v=4" width="100px;" alt=""/><br /><sub><b>Tolga Erdönmez</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=tolgaerdonmez" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/tolgaerdonmez"><img src="https://avatars0.githubusercontent.com/u/45141388?v=4" width="100px;" alt=""/><br /><sub><b>Tolga Erdönmez</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=tolgaerdonmez" title="Code">💻</a></td>
     <td align="center"><a href="https://m.youtube.com/channel/UCKmIFs7rFKdTE6t1y8bKAHQ/videos"><img src="https://avatars0.githubusercontent.com/u/49345531?v=4" width="100px;" alt=""/><br /><sub><b>Ameen Shafeeq</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=UnevenCoder" title="Code">💻</a></td>
     <td align="center"><a href="https://www.sarveshkadam.com/"><img src="https://avatars1.githubusercontent.com/u/66166738?v=4" width="100px;" alt=""/><br /><sub><b>Sarvesh Kadam</b></sub></a><br /><a href="https://github.com/twindle-co/twindle/commits?author=SarveshKadam" title="Code">💻</a></td>
   </tr>
